@@ -22,6 +22,25 @@ cookTime: 0 minutes
 totalTime: 10 minutes
 servings: 4
 calories: 380
+ingredientsGrams:
+  - item: "2 (15-ounce) cans chickpeas, rinsed and drained, plus 1/4 cup reserved liquid"
+    grams: 508
+    fdcId: 173801
+  - item: "1/2 cup good quality tahini, stirred well"
+    grams: 120
+    fdcId: 170189
+  - item: "1/4 cup fresh lemon juice (approx. 2 medium lemons)"
+    grams: 61
+    fdcId: 167747
+  - item: "2-3 cloves garlic, roughly chopped"
+    grams: 7.5
+    fdcId: 169230
+  - item: "1/4 teaspoon salt, or to taste"
+    grams: 1.5
+    fdcId: 173468
+  - item: "2 tablespoons extra virgin olive oil, plus more for drizzling"
+    grams: 27
+    fdcId: 171413
 difficulty: Easy
 recipeCuisine: "Middle Eastern"
 ingredients:

@@ -20,6 +20,28 @@ cookTime: "15-20 minutes"
 totalTime: "20-25 minutes"
 servings: 4
 calories: 250
+ingredientsGrams:
+  - item: "1.5 lbs boneless, skinless chicken breasts"
+    grams: 678
+    fdcId: 171077
+  - item: "1 tbsp olive oil"
+    grams: 13.5
+    fdcId: 171413
+  - item: "1 tsp smoked paprika"
+    grams: 2.3
+    fdcId: 171329
+  - item: "1/2 tsp garlic powder"
+    grams: 1.55
+    fdcId: 171325
+  - item: "1/2 tsp onion powder"
+    grams: 1.2
+    fdcId: 171327
+  - item: "1/4 tsp black pepper"
+    grams: 0.57
+    fdcId: 170931
+  - item: "1/4 tsp salt (or to taste)"
+    grams: 1.5
+    fdcId: 173468
 difficulty: "Easy"
 recipeCuisine: "American"
 ingredients:

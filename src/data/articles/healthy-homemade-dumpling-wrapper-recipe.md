@@ -10,7 +10,7 @@ tags:
 image: "/images/healthy-homemade-dumpling-wrapper-recipe-main.jpg"
 imageAlt: A pair of hands folds a round, thin sheet of dough around a dumpling filling on a lightly floured wooden surface.
 date: 2026-04-28
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 quickAnswer: >-
   Mix whole-wheat pastry flour or a half whole-wheat blend with warm water and
@@ -22,7 +22,11 @@ prepTime: "20 minutes"
 cookTime: "10 minutes"
 totalTime: "30 minutes"
 servings: 4
-calories: 160
+calories: 204
+ingredientsGrams:
+  - item: "2 cups whole wheat pastry flour (or a 50/50 white and whole wheat mix)"
+    grams: 240
+    fdcId: 168893
 difficulty: "Medium"
 recipeCuisine: "Chinese"
 ingredients:

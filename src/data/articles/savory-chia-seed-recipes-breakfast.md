@@ -24,6 +24,28 @@ cookTime: "0 minutes"
 totalTime: "4 hours"
 servings: 1
 calories: 360
+ingredientsGrams:
+  - item: "3 tbsp chia seeds (about 36 g)"
+    grams: 36
+    fdcId: 170554
+  - item: "1 cup unsweetened almond milk or low-sodium vegetable broth"
+    grams: 262
+    fdcId: 174832
+  - item: "1/4 tsp garlic powder"
+    grams: 0.78
+    fdcId: 171325
+  - item: "1/8 tsp smoked paprika"
+    grams: 0.29
+    fdcId: 171329
+  - item: "1/4 cup cherry tomatoes, halved (about 37 g)"
+    grams: 37
+    fdcId: 170457
+  - item: "1/2 small avocado (about 50 g), sliced"
+    grams: 50
+    fdcId: 171705
+  - item: "1 tbsp shelled hemp seeds or sunflower seeds (about 10 g)"
+    grams: 10
+    fdcId: 170148
 difficulty: "Easy"
 recipeCuisine: "American"
 recipeName: "Savory Chia Seed Pudding with Tomato and Avocado"

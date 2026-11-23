@@ -24,6 +24,34 @@ cookTime: 30 minutes
 totalTime: 45 minutes
 servings: 4
 calories: 410
+ingredientsGrams:
+  - item: "1 tablespoon olive oil"
+    grams: 13.5
+    fdcId: 171413
+  - item: "1 large yellow onion, diced"
+    grams: 150
+    fdcId: 170000
+  - item: "3 cloves garlic, minced"
+    grams: 9
+    fdcId: 169230
+  - item: "1 tablespoon grated fresh ginger"
+    grams: 6
+    fdcId: 169231
+  - item: "2 tablespoons mild curry powder"
+    grams: 12.6
+    fdcId: 170924
+  - item: "1 (15 oz) can chickpeas, drained and rinsed"
+    grams: 254
+    fdcId: 173801
+  - item: "1 (15 oz) can full-fat coconut milk"
+    grams: 425.24
+    fdcId: 170172
+  - item: "1 medium head cauliflower, cut into florets"
+    grams: 588
+    fdcId: 169986
+  - item: "2 cups fresh baby spinach"
+    grams: 60
+    fdcId: 168462
 difficulty: Easy
 recipeCuisine: "Indian"
 ingredients:

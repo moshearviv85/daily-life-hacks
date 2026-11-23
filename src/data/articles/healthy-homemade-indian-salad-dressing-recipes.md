@@ -18,6 +18,22 @@ cookTime: "0 minutes"
 totalTime: "5 minutes"
 servings: 4
 calories: 85
+ingredientsGrams:
+  - item: "3 tbsp extra virgin olive oil"
+    grams: 40.5
+    fdcId: 171413
+  - item: "1 tbsp apple cider vinegar or lemon juice"
+    grams: 14.9
+    fdcId: 173469
+  - item: "1/2 tsp ground turmeric"
+    grams: 1.5
+    fdcId: 172231
+  - item: "1/4 tsp ginger paste or freshly grated ginger"
+    grams: 0.5
+    fdcId: 169231
+  - item: "1/2 tsp honey or maple syrup"
+    grams: 3.5
+    fdcId: 169640
 difficulty: "Easy"
 recipeCuisine: "Indian"
 ingredients:

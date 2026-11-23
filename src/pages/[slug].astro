@@ -4,7 +4,11 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
 import RecipeMetaBar from "../components/RecipeMetaBar.astro";
+import RecipeNutritionBox from "../components/RecipeNutritionBox.astro";
 import RecipeServingScaler from "../components/RecipeServingScaler.astro";
+import fdcCache from "../data/fdc-cache.json";
+import { nutritionFromFrontmatter, schemaNutrition } from "../lib/recipe-nutrition.mjs";
+import { costForRows, formatCostLine } from "../lib/recipe-cost.mjs";
 import RelatedArticles from "../components/RelatedArticles.astro";
 import ArticleTableOfContents from "../components/ArticleTableOfContents.astro";
 import { getCollection, render } from "astro:content";
@@ -322,6 +326,17 @@ const breadcrumbSchema = {
   ],
 };
 
+const recipeNutrition = isRecipe && article.data.ingredientsGrams?.length
+  ? nutritionFromFrontmatter({ ...article.data, id: article.id }, fdcCache)
+  : null;
+if (recipeNutrition?.error) {
+  throw new Error(recipeNutrition.error);
+}
+const recipeCost = recipeNutrition
+  ? costForRows(recipeNutrition.rows, article.data.servings ?? 1)
+  : null;
+const recipeCostLine = recipeCost ? formatCostLine(recipeCost) : "";
+
 const jsonLd = isRecipe
   ? {
       "@context": "https://schema.org",
@@ -346,10 +361,19 @@ const jsonLd = isRecipe
         : undefined,
       recipeCategory,
       recipeCuisine,
-      nutrition: article.data.calories
+      nutrition: recipeNutrition
+        ? schemaNutrition(recipeNutrition.rounded)
+        : article.data.calories
+          ? {
+              "@type": "NutritionInformation",
+              calories: `${article.data.calories} calories`,
+            }
+          : undefined,
+      estimatedCost: recipeCost?.complete
         ? {
-            "@type": "NutritionInformation",
-            calories: `${article.data.calories} calories`,
+            "@type": "MonetaryAmount",
+            currency: "USD",
+            value: recipeCost.perServing.toFixed(2),
           }
         : undefined,
       keywords: article.data.tags?.join(", "),
@@ -1175,6 +1199,20 @@ const newsletterSignup = newsletterSignupForArticle({
               </ol>
             </div>
           </div>
+        </div>
+      )
+    }
+
+    {
+      recipeNutrition && (
+        <div class="order-[31] mb-10">
+          <RecipeNutritionBox
+            rows={recipeNutrition.rows}
+            perServing={recipeNutrition.rounded}
+            publishedCalories={article.data.calories}
+            servings={article.data.servings ?? 1}
+            costLine={recipeCostLine}
+          />
         </div>
       )
     }

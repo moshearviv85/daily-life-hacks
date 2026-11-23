@@ -23,6 +23,28 @@ cookTime: 35 minutes
 totalTime: 55 minutes
 servings: 4
 calories: 185
+ingredientsGrams:
+  - item: "About 2 pounds trimmed cauliflower florets, washed"
+    grams: 907.18
+    fdcId: 169986
+  - item: "1/2 cup almond flour"
+    grams: 54
+    fdcId: 170567
+  - item: "1/4 cup finely grated Parmesan cheese"
+    grams: 25
+    fdcId: 171247
+  - item: "1 large egg"
+    grams: 50
+    fdcId: 171287
+  - item: "1 teaspoon dried oregano"
+    grams: 1
+    fdcId: 171328
+  - item: "1/2 teaspoon garlic powder"
+    grams: 1.55
+    fdcId: 171325
+  - item: "1/4 teaspoon salt"
+    grams: 1.5
+    fdcId: 173468
 difficulty: Easy
 recipeCuisine: "Italian"
 recipeName: "Cauliflower Crust Pizza"

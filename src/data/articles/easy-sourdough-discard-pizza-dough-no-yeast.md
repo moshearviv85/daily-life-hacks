@@ -24,6 +24,19 @@ cookTime: "15 minutes"
 totalTime: "40 minutes"
 servings: 2
 calories: 595
+ingredientsGrams:
+  - item: "227 g sourdough discard, 100% hydration"
+    grams: 113.5
+    fdcId: 168894
+  - item: "180 g all-purpose flour, plus a little for dusting"
+    grams: 180
+    fdcId: 168894
+  - item: "1 tsp baking powder"
+    grams: 4.6
+    fdcId: 172803
+  - item: "1 tbsp olive oil"
+    grams: 13.5
+    fdcId: 171413
 difficulty: "Easy"
 recipeCuisine: "Italian"
 ingredients:

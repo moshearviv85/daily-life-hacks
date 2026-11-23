@@ -10,14 +10,21 @@ tags:
 image: "/images/best-way-to-cook-baked-potatoes-main.jpg"
 imageAlt: A perfectly baked russet potato is split open on a wooden board with melting butter and chives inside.
 date: 2026-05-31
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
 cookTime: "60 to 75 minutes"
 totalTime: "65 to 80 minutes"
 servings: 4
-calories: 160
+calories: 198
+ingredientsGrams:
+  - item: "4 medium Russet potatoes"
+    grams: 852
+    fdcId: 170027
+  - item: "1 tablespoon olive oil"
+    grams: 13.5
+    fdcId: 171413
 difficulty: "Easy"
 ingredients:
   - "4 medium Russet potatoes"

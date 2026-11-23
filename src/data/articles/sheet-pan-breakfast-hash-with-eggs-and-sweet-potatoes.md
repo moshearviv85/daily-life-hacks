@@ -11,14 +11,36 @@ tags:
 image: "/images/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes-main.jpg"
 imageAlt: A sheet pan filled with golden roasted sweet potato cubes and fried eggs topped with fresh rosemary, shot from above in bright natural light.
 date: 2026-06-17
-dateModified: 2026-07-28
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "15 min"
 cookTime: "35 min"
 totalTime: "50 min"
 servings: 4
-calories: 380
+calories: 262
+ingredientsGrams:
+  - item: "2 medium sweet potatoes, cut into 1/2-inch cubes (about 4 cups)"
+    grams: 532
+    fdcId: 168482
+  - item: "1 red bell pepper, diced"
+    grams: 119
+    fdcId: 170108
+  - item: "1/2 yellow onion, diced"
+    grams: 55
+    fdcId: 170000
+  - item: "2 tablespoons olive oil"
+    grams: 27
+    fdcId: 171413
+  - item: "1 teaspoon smoked paprika"
+    grams: 2.3
+    fdcId: 171329
+  - item: "1/2 teaspoon garlic powder"
+    grams: 1.55
+    fdcId: 171325
+  - item: "4 large eggs"
+    grams: 200
+    fdcId: 171287
 difficulty: Easy
 ingredients:
   - "2 medium sweet potatoes, cut into 1/2-inch cubes (about 4 cups)"

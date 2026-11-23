@@ -22,7 +22,44 @@ prepTime: "10 minutes"
 cookTime: "25 minutes"
 totalTime: "35 minutes"
 servings: 4
-calories: 345
+calories: 475
+ingredientsGrams:
+  - item: "1 tbsp coconut oil or olive oil"
+    grams: 13.6
+    fdcId: 171412
+  - item: "1 large yellow onion, diced"
+    grams: 150
+    fdcId: 170000
+  - item: "3 cloves garlic, minced"
+    grams: 9
+    fdcId: 169230
+  - item: "1 tbsp fresh ginger, grated"
+    grams: 6
+    fdcId: 169231
+  - item: "1 tbsp yellow curry powder"
+    grams: 6.3
+    fdcId: 170924
+  - item: "1 tsp ground turmeric"
+    grams: 3
+    fdcId: 172231
+  - item: "1 cup dry red lentils, rinsed well"
+    grams: 192
+    fdcId: 174284
+  - item: "1 (14.5 oz) can diced tomatoes, with juices"
+    grams: 411.07
+    fdcId: 170051
+  - item: "1 (13.5 oz) can full-fat coconut milk"
+    grams: 382.72
+    fdcId: 170172
+  - item: "2 cups vegetable broth"
+    grams: 442
+    fdcId: 171583
+  - item: "1/2 tsp salt, plus more to taste"
+    grams: 3
+    fdcId: 173468
+  - item: "2 cups fresh baby spinach"
+    grams: 60
+    fdcId: 168462
 difficulty: "Easy"
 recipeCuisine: "Indian"
 ingredients:

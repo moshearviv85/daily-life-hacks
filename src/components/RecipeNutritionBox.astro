@@ -1,0 +1,97 @@
+---
+interface Row {
+  item: string;
+  grams: number;
+  fdcId: number;
+  description?: string;
+  kcal: number;
+  fiber: number;
+  protein: number;
+}
+
+interface PerServing {
+  kcal: number;
+  protein: number;
+  fiber: number;
+  sodium: number;
+  sugar: number;
+}
+
+interface Props {
+  rows: Row[];
+  perServing: PerServing;
+  publishedCalories?: number | null;
+  servings: number;
+  costLine?: string;
+}
+
+const { rows, perServing, publishedCalories, servings, costLine } = Astro.props;
+const divisor = servings || 1;
+const format = (value: number, digits = 1) =>
+  value.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+const cardDiffers = publishedCalories != null && publishedCalories !== perServing.kcal;
+---
+
+<details class="rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)]">
+  <summary class="cursor-pointer px-5 py-4 text-base font-bold text-[var(--heading-color)]">
+    How we calculated this: {perServing.kcal} kcal per serving
+  </summary>
+  <div class="space-y-4 px-5 pb-5">
+    <p class="text-sm leading-relaxed" style="color: var(--muted-color);">
+      Raw weights, divided by {servings} {servings === 1 ? "serving" : "servings"}. A cup, spoon, or piece uses the gram weight on that food's USDA FoodData Central record. If the line already states ounces or grams, that stated weight is the one in the math. Two foods on one line means the first one is counted. A range uses the midpoint. Optional add-ins, plain water, unmeasured garnishes, and kosher or sea salt are left out, because the teaspoon weight in FoodData Central is for table salt. No cooking-loss adjustment.
+    </p>
+    {
+      cardDiffers && (
+        <p class="text-sm leading-relaxed" style="color: var(--text-color);">
+          The recipe card still shows {publishedCalories} kcal. That published figure is within 15% of this total.
+        </p>
+      )
+    }
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <caption class="sr-only">Ingredient gram weights and USDA FoodData Central nutrients for one serving</caption>
+        <thead>
+          <tr class="border-b" style="border-color: var(--border-color); color: var(--heading-color);">
+            <th class="py-2 pr-3 font-semibold">Ingredient</th>
+            <th class="py-2 pr-3 font-semibold">Grams</th>
+            <th class="py-2 pr-3 font-semibold">FDC ID</th>
+            <th class="py-2 pr-3 font-semibold">kcal</th>
+            <th class="py-2 pr-3 font-semibold">Fiber</th>
+            <th class="py-2 font-semibold">Protein</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr class="border-b align-top" style="border-color: var(--border-color); color: var(--text-color);">
+              <td class="py-2 pr-3">{row.item}</td>
+              <td class="py-2 pr-3 tabular-nums">{format(row.grams / divisor)}</td>
+              <td class="py-2 pr-3">
+                <a
+                  href={`https://fdc.nal.usda.gov/food-details/${row.fdcId}/nutrients`}
+                  class="underline"
+                  style="color: #F29B30;"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  {row.fdcId}
+                </a>
+                {row.description && (
+                  <span class="mt-0.5 block text-xs" style="color: var(--muted-color);">{row.description}</span>
+                )}
+              </td>
+              <td class="py-2 pr-3 tabular-nums">{format(row.kcal / divisor)}</td>
+              <td class="py-2 pr-3 tabular-nums">{format(row.fiber / divisor)} g</td>
+              <td class="py-2 tabular-nums">{format(row.protein / divisor)} g</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm leading-relaxed" style="color: var(--text-color);">
+      Per serving: {format(perServing.protein)} g protein, {format(perServing.fiber)} g fiber, {perServing.sodium.toLocaleString("en-US")} mg sodium, {format(perServing.sugar)} g sugar. The serving total is rounded once from the unrounded row math.
+    </p>
+    {costLine && (
+      <p class="text-sm leading-relaxed" style="color: var(--text-color);">{costLine}</p>
+    )}
+  </div>
+</details>

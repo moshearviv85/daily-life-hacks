@@ -22,6 +22,19 @@ cookTime: 0 minutes
 totalTime: 5 minutes
 servings: 4
 calories: 180
+ingredientsGrams:
+  - item: "1/2 cup tahini (ensure it's well-stirred, creamy stuff)"
+    grams: 120
+    fdcId: 170189
+  - item: "1/4 cup fresh lemon juice (about 2 lemons, squeezed hard)"
+    grams: 61
+    fdcId: 167747
+  - item: "1 small clove garlic, minced super fine or grated"
+    grams: 3
+    fdcId: 169230
+  - item: "1/4 teaspoon black pepper, freshly ground is best"
+    grams: 0.57
+    fdcId: 170931
 difficulty: Easy
 recipeCuisine: "Middle Eastern"
 recipeName: "Lemon Tahini Dressing"

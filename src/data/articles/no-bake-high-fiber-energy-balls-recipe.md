@@ -21,6 +21,25 @@ cookTime: 0 minutes
 totalTime: 15 minutes
 servings: 16
 calories: 120
+ingredientsGrams:
+  - item: "2 cups rolled oats"
+    grams: 162
+    fdcId: 173904
+  - item: "1/2 cup natural peanut butter or almond butter"
+    grams: 129
+    fdcId: 174266
+  - item: "1/3 cup ground flaxseed"
+    grams: 37.33
+    fdcId: 169414
+  - item: "1/3 cup honey or maple syrup"
+    grams: 113
+    fdcId: 169640
+  - item: "1 tsp vanilla extract"
+    grams: 4.2
+    fdcId: 173471
+  - item: "1/4 tsp salt"
+    grams: 1.5
+    fdcId: 173468
 difficulty: Easy
 recipeCuisine: "American"
 ingredients:

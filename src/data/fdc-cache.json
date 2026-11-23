@@ -1,0 +1,7709 @@
+{
+  "source": "USDA FoodData Central SR Legacy CSV, April 2018 release",
+  "downloadedFrom": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+  "apiSpotCheck": {
+    "date": "2026-11-23",
+    "endpoint": "https://api.nal.usda.gov/fdc/v1/food/{fdcId}?api_key=DEMO_KEY",
+    "note": "Portion gram weights and kcal, protein, fiber, sodium, and total sugars for these ids matched this cache on 2026-11-23.",
+    "ids": [
+      171413,
+      169640,
+      175238,
+      173801
+    ]
+  },
+  "foods": {
+    "167533": {
+      "fdcId": 167533,
+      "description": "Bagels, wheat",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 250,
+        "protein": 10.2,
+        "fiber": 4.1,
+        "sodium": 439,
+        "sugar": 6.12
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "bagel",
+          "grams": 98
+        }
+      ]
+    },
+    "167535": {
+      "fdcId": 167535,
+      "description": "Tortillas, ready-to-bake or -fry, flour, shelf stable",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 297,
+        "protein": 8.01,
+        "fiber": 2.4,
+        "sodium": 742,
+        "sugar": 2.66
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tortilla",
+          "grams": 49
+        },
+        {
+          "amount": 1,
+          "modifier": "package",
+          "grams": 484
+        }
+      ]
+    },
+    "167746": {
+      "fdcId": 167746,
+      "description": "Lemons, raw, without peel",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 29,
+        "protein": 1.1,
+        "fiber": 2.8,
+        "sodium": 2,
+        "sugar": 2.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, sections",
+          "grams": 212
+        },
+        {
+          "amount": 1,
+          "modifier": "fruit (2-1/8\" dia)",
+          "grams": 58
+        },
+        {
+          "amount": 1,
+          "modifier": "fruit (2-3/8\" dia)",
+          "grams": 84
+        },
+        {
+          "amount": 1,
+          "modifier": "wedge or slice (1/8 of one 2-1/8\" dia lemon)",
+          "grams": 7
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 58
+        }
+      ]
+    },
+    "167747": {
+      "fdcId": 167747,
+      "description": "Lemon juice, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 22,
+        "protein": 0.35,
+        "fiber": 0.3,
+        "sodium": 1,
+        "sugar": 2.52
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 244
+        },
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 30.5
+        },
+        {
+          "amount": 1,
+          "modifier": "lemon yields",
+          "grams": 48
+        },
+        {
+          "amount": 1,
+          "modifier": "wedge yields",
+          "grams": 5.9
+        }
+      ]
+    },
+    "167755": {
+      "fdcId": 167755,
+      "description": "Raspberries, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 52,
+        "protein": 1.2,
+        "fiber": 6.5,
+        "sodium": 1,
+        "sugar": 4.42
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 123
+        },
+        {
+          "amount": 1,
+          "modifier": "pint as purchased, yields",
+          "grams": 312
+        },
+        {
+          "amount": 10,
+          "modifier": "raspberries",
+          "grams": 19
+        }
+      ]
+    },
+    "167762": {
+      "fdcId": 167762,
+      "description": "Strawberries, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 32,
+        "protein": 0.67,
+        "fiber": 2,
+        "sodium": 1,
+        "sugar": 4.89
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, halves",
+          "grams": 152
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, pureed",
+          "grams": 232
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 166
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, whole",
+          "grams": 144
+        },
+        {
+          "amount": 1,
+          "modifier": "extra large (1-5/8\" dia)",
+          "grams": 27
+        },
+        {
+          "amount": 1,
+          "modifier": "large (1-3/8\" dia)",
+          "grams": 18
+        },
+        {
+          "amount": 1,
+          "modifier": "medium (1-1/4\" dia)",
+          "grams": 12
+        },
+        {
+          "amount": 1,
+          "modifier": "pint as purchased, yields",
+          "grams": 357
+        },
+        {
+          "amount": 1,
+          "modifier": "small (1\" dia)",
+          "grams": 7
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 147
+        }
+      ]
+    },
+    "167776": {
+      "fdcId": 167776,
+      "description": "Pears, raw, bartlett (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 63,
+        "protein": 0.39,
+        "fiber": 3.1,
+        "sodium": 1,
+        "sugar": 9.69
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 140
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 152
+        },
+        {
+          "amount": 1,
+          "modifier": "medium",
+          "grams": 177
+        },
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 227
+        }
+      ]
+    },
+    "167853": {
+      "fdcId": 167853,
+      "description": "Pork, fresh, spareribs, separable lean and fat, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 277,
+        "protein": 15.47,
+        "fiber": 0,
+        "sodium": 81,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        }
+      ]
+    },
+    "167914": {
+      "fdcId": 167914,
+      "description": "Pork, cured, bacon, cooked, baked",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 548,
+        "protein": 35.73,
+        "fiber": 0,
+        "sodium": 2193,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 3,
+          "modifier": "oz",
+          "grams": 85
+        },
+        {
+          "amount": 1,
+          "modifier": "slice cooked",
+          "grams": 8.1
+        }
+      ]
+    },
+    "167976": {
+      "fdcId": 167976,
+      "description": "Candies, semisweet chocolate",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 480,
+        "protein": 4.2,
+        "fiber": 5.9,
+        "sodium": 11,
+        "sugar": 54.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "serving",
+          "grams": 14.5
+        },
+        {
+          "amount": 1,
+          "modifier": "cup large chips",
+          "grams": 182
+        },
+        {
+          "amount": 1,
+          "modifier": "cup mini chips",
+          "grams": 173
+        },
+        {
+          "amount": 1,
+          "modifier": "oz (approx 60 pcs)",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "cup chips (6 oz package)",
+          "grams": 168
+        }
+      ]
+    },
+    "168155": {
+      "fdcId": 168155,
+      "description": "Limes, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 30,
+        "protein": 0.7,
+        "fiber": 2.8,
+        "sodium": 2,
+        "sugar": 1.69
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "fruit (2\" dia)",
+          "grams": 67
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 67
+        }
+      ]
+    },
+    "168156": {
+      "fdcId": 168156,
+      "description": "Lime juice, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 25,
+        "protein": 0.42,
+        "fiber": 0.4,
+        "sodium": 2,
+        "sugar": 1.69
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 242
+        },
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 30.8
+        },
+        {
+          "amount": 1,
+          "modifier": "lime yields",
+          "grams": 44
+        }
+      ]
+    },
+    "168165": {
+      "fdcId": 168165,
+      "description": "Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 299,
+        "protein": 3.3,
+        "fiber": 4.5,
+        "sodium": 26,
+        "sugar": 65.18
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, packed",
+          "grams": 165
+        },
+        {
+          "amount": 1,
+          "modifier": "cup (not packed)",
+          "grams": 145
+        },
+        {
+          "amount": 1,
+          "modifier": "miniature box (.5 oz)",
+          "grams": 14
+        },
+        {
+          "amount": 1,
+          "modifier": "small box (1.5 oz)",
+          "grams": 43
+        },
+        {
+          "amount": 50,
+          "modifier": "raisins",
+          "grams": 26
+        },
+        {
+          "amount": 1,
+          "modifier": "oz (60 raisins)",
+          "grams": 28.35
+        }
+      ]
+    },
+    "168238": {
+      "fdcId": 168238,
+      "description": "Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 170,
+        "protein": 20.71,
+        "fiber": 0,
+        "sodium": 55,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "chop without refuse (Yield from 1 raw chop, with refuse, weighing 259g)",
+          "grams": 199
+        }
+      ]
+    },
+    "168249": {
+      "fdcId": 168249,
+      "description": "Pork, fresh, loin, tenderloin, separable lean only, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 109,
+        "protein": 20.95,
+        "fiber": 0,
+        "sodium": 53,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "lb",
+          "grams": 453.6
+        },
+        {
+          "amount": 1,
+          "modifier": "roast",
+          "grams": 505
+        }
+      ]
+    },
+    "168389": {
+      "fdcId": 168389,
+      "description": "Asparagus, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 20,
+        "protein": 2.2,
+        "fiber": 2.1,
+        "sodium": 2,
+        "sugar": 1.88
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 134
+        },
+        {
+          "amount": 1,
+          "modifier": "spear, small (5\" long or less)",
+          "grams": 12
+        },
+        {
+          "amount": 1,
+          "modifier": "spear, medium (5-1/4\" to 7\" long)",
+          "grams": 16
+        },
+        {
+          "amount": 1,
+          "modifier": "spear, large (7-1/4\" to 8-1/2\")",
+          "grams": 20
+        },
+        {
+          "amount": 1,
+          "modifier": "spear, extra large (8-3/4\" to 10\" long)",
+          "grams": 24
+        },
+        {
+          "amount": 1,
+          "modifier": "spear tip (2\" long or less)",
+          "grams": 3.5
+        }
+      ]
+    },
+    "168398": {
+      "fdcId": 168398,
+      "description": "Corn, sweet, yellow, frozen, kernels cut off cob, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 88,
+        "protein": 3.02,
+        "fiber": 2.1,
+        "sodium": 3,
+        "sugar": 2.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 136
+        },
+        {
+          "amount": 1,
+          "modifier": "package",
+          "grams": 284
+        }
+      ]
+    },
+    "168409": {
+      "fdcId": 168409,
+      "description": "Cucumber, with peel, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 15,
+        "protein": 0.65,
+        "fiber": 0.5,
+        "sodium": 2,
+        "sugar": 1.67
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.5,
+          "modifier": "cup slices",
+          "grams": 52
+        },
+        {
+          "amount": 1,
+          "modifier": "cucumber (8-1/4\")",
+          "grams": 301
+        }
+      ]
+    },
+    "168410": {
+      "fdcId": 168410,
+      "description": "Edamame, frozen, unprepared",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 109,
+        "protein": 11.22,
+        "fiber": 4.8,
+        "sodium": 6,
+        "sugar": 2.48
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 118
+        },
+        {
+          "amount": 1,
+          "modifier": "package",
+          "grams": 432
+        }
+      ]
+    },
+    "168421": {
+      "fdcId": 168421,
+      "description": "Kale, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 35,
+        "protein": 2.92,
+        "fiber": 4.1,
+        "sodium": 53,
+        "sugar": 0.99
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 21
+        }
+      ]
+    },
+    "168429": {
+      "fdcId": 168429,
+      "description": "Lettuce, butterhead (includes boston and bibb types), raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 13,
+        "protein": 1.35,
+        "fiber": 1.1,
+        "sodium": 5,
+        "sugar": 0.94
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, shredded or chopped",
+          "grams": 55
+        },
+        {
+          "amount": 1,
+          "modifier": "head (5\" dia)",
+          "grams": 163
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf, large",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf, medium",
+          "grams": 7.5
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf",
+          "grams": 5
+        }
+      ]
+    },
+    "168434": {
+      "fdcId": 168434,
+      "description": "Mushrooms, brown, italian, or crimini, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 22,
+        "protein": 2.5,
+        "fiber": 0.6,
+        "sodium": 6,
+        "sugar": 1.72
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup whole",
+          "grams": 87
+        },
+        {
+          "amount": 1,
+          "modifier": "cup sliced",
+          "grams": 72
+        },
+        {
+          "amount": 1,
+          "modifier": "piece whole",
+          "grams": 20
+        }
+      ]
+    },
+    "168462": {
+      "fdcId": 168462,
+      "description": "Spinach, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 23,
+        "protein": 2.86,
+        "fiber": 2.2,
+        "sodium": 79,
+        "sugar": 0.42
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 30
+        },
+        {
+          "amount": 1,
+          "modifier": "bunch",
+          "grams": 340
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf",
+          "grams": 10
+        },
+        {
+          "amount": 1,
+          "modifier": "package (10 oz)",
+          "grams": 284
+        }
+      ]
+    },
+    "168482": {
+      "fdcId": 168482,
+      "description": "Sweet potato, raw, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 86,
+        "protein": 1.57,
+        "fiber": 3,
+        "sodium": 55,
+        "sugar": 4.18
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, cubes",
+          "grams": 133
+        },
+        {
+          "amount": 1,
+          "modifier": "sweetpotato, 5\" long",
+          "grams": 130
+        }
+      ]
+    },
+    "168556": {
+      "fdcId": 168556,
+      "description": "Catsup",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 101,
+        "protein": 1.04,
+        "fiber": 0.3,
+        "sodium": 907,
+        "sugar": 21.27
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "packet",
+          "grams": 9
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 240
+        }
+      ]
+    },
+    "168576": {
+      "fdcId": 168576,
+      "description": "Peppers, jalapeno, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 29,
+        "protein": 0.91,
+        "fiber": 2.8,
+        "sodium": 3,
+        "sugar": 4.12
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 90
+        },
+        {
+          "amount": 1,
+          "modifier": "pepper",
+          "grams": 14
+        }
+      ]
+    },
+    "168588": {
+      "fdcId": 168588,
+      "description": "Nuts, almond butter, plain, without salt added",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 614,
+        "protein": 20.96,
+        "fiber": 10.3,
+        "sodium": 7,
+        "sugar": 4.43
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 16
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 250
+        }
+      ]
+    },
+    "168675": {
+      "fdcId": 168675,
+      "description": "Beef, rib, whole (ribs 6-12), separable lean and fat, trimmed to 1/8\" fat, choice, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 322,
+        "protein": 16.34,
+        "fiber": 0,
+        "sodium": 54,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "lb",
+          "grams": 453.6
+        }
+      ]
+    },
+    "168833": {
+      "fdcId": 168833,
+      "description": "Sugars, brown",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 380,
+        "protein": 0.12,
+        "fiber": 0,
+        "sodium": 28,
+        "sugar": 97.02
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp unpacked",
+          "grams": 3
+        },
+        {
+          "amount": 1,
+          "modifier": "cup packed",
+          "grams": 220
+        },
+        {
+          "amount": 1,
+          "modifier": "cup unpacked",
+          "grams": 145
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp packed",
+          "grams": 4.6
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp brownulated",
+          "grams": 3.2
+        }
+      ]
+    },
+    "168872": {
+      "fdcId": 168872,
+      "description": "Oat bran, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 246,
+        "protein": 17.3,
+        "fiber": 15.4,
+        "sodium": 4,
+        "sugar": 1.45
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 94
+        }
+      ]
+    },
+    "168874": {
+      "fdcId": 168874,
+      "description": "Quinoa, uncooked",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 368,
+        "protein": 14.12,
+        "fiber": 7,
+        "sodium": 5,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 170
+        }
+      ]
+    },
+    "168877": {
+      "fdcId": 168877,
+      "description": "Rice, white, long-grain, regular, raw, enriched",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 365,
+        "protein": 7.13,
+        "fiber": 1.3,
+        "sodium": 5,
+        "sugar": 0.12
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 185
+        }
+      ]
+    },
+    "168878": {
+      "fdcId": 168878,
+      "description": "Rice, white, long-grain, regular, enriched, cooked",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 130,
+        "protein": 2.69,
+        "fiber": 0.4,
+        "sodium": 1,
+        "sugar": 0.05
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 158
+        }
+      ]
+    },
+    "168893": {
+      "fdcId": 168893,
+      "description": "Wheat flour, whole-grain (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 340,
+        "protein": 13.21,
+        "fiber": 10.7,
+        "sodium": 2,
+        "sugar": 0.41
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 120
+        }
+      ]
+    },
+    "168894": {
+      "fdcId": 168894,
+      "description": "Wheat flour, white, all-purpose, enriched, bleached",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 364,
+        "protein": 10.33,
+        "fiber": 2.7,
+        "sodium": 2,
+        "sugar": 0.27
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 125
+        }
+      ]
+    },
+    "168896": {
+      "fdcId": 168896,
+      "description": "Wheat flour, white, bread, enriched",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 361,
+        "protein": 11.98,
+        "fiber": 2.4,
+        "sodium": 2,
+        "sugar": 0.31
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 137
+        }
+      ]
+    },
+    "168917": {
+      "fdcId": 168917,
+      "description": "Quinoa, cooked",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 120,
+        "protein": 4.4,
+        "fiber": 2.8,
+        "sodium": 7,
+        "sugar": 0.87
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 185
+        }
+      ]
+    },
+    "169094": {
+      "fdcId": 169094,
+      "description": "Olives, ripe, canned (small-extra large)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 116,
+        "protein": 0.84,
+        "fiber": 1.6,
+        "sodium": 735,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 8.4
+        },
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 4.4
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 3.2
+        }
+      ]
+    },
+    "169205": {
+      "fdcId": 169205,
+      "description": "Artichokes, (globe or french), raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 47,
+        "protein": 3.27,
+        "fiber": 5.4,
+        "sodium": 94,
+        "sugar": 0.99
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "artichoke, medium",
+          "grams": 128
+        },
+        {
+          "amount": 1,
+          "modifier": "artichoke, large",
+          "grams": 162
+        }
+      ]
+    },
+    "169214": {
+      "fdcId": 169214,
+      "description": "Corn, sweet, yellow, canned, whole kernel, drained solids",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 67,
+        "protein": 2.29,
+        "fiber": 2,
+        "sodium": 205,
+        "sugar": 4.44
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 164
+        },
+        {
+          "amount": 1,
+          "modifier": "can (12 oz) yields",
+          "grams": 211
+        },
+        {
+          "amount": 1,
+          "modifier": "can (303 x 406)",
+          "grams": 298
+        }
+      ]
+    },
+    "169230": {
+      "fdcId": 169230,
+      "description": "Garlic, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 149,
+        "protein": 6.36,
+        "fiber": 2.1,
+        "sodium": 17,
+        "sugar": 1
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 136
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2.8
+        },
+        {
+          "amount": 1,
+          "modifier": "clove",
+          "grams": 3
+        },
+        {
+          "amount": 3,
+          "modifier": "cloves",
+          "grams": 9
+        }
+      ]
+    },
+    "169231": {
+      "fdcId": 169231,
+      "description": "Ginger root, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 80,
+        "protein": 1.82,
+        "fiber": 2,
+        "sodium": 13,
+        "sugar": 1.7
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2
+        },
+        {
+          "amount": 0.25,
+          "modifier": "cup slices (1\" dia)",
+          "grams": 24
+        },
+        {
+          "amount": 5,
+          "modifier": "slices (1\" dia)",
+          "grams": 11
+        }
+      ]
+    },
+    "169246": {
+      "fdcId": 169246,
+      "description": "Leeks, (bulb and lower leaf-portion), raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 61,
+        "protein": 1.5,
+        "fiber": 1.8,
+        "sodium": 20,
+        "sugar": 3.9
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 89
+        },
+        {
+          "amount": 1,
+          "modifier": "leek",
+          "grams": 89
+        },
+        {
+          "amount": 1,
+          "modifier": "slice",
+          "grams": 6
+        }
+      ]
+    },
+    "169247": {
+      "fdcId": 169247,
+      "description": "Lettuce, cos or romaine, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 17,
+        "protein": 1.23,
+        "fiber": 2.1,
+        "sodium": 8,
+        "sugar": 1.19
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup shredded",
+          "grams": 47
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf inner",
+          "grams": 6
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf outer",
+          "grams": 28
+        },
+        {
+          "amount": 1,
+          "modifier": "head",
+          "grams": 626
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 85
+        }
+      ]
+    },
+    "169248": {
+      "fdcId": 169248,
+      "description": "Lettuce, iceberg (includes crisphead types), raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 14,
+        "protein": 0.9,
+        "fiber": 1.2,
+        "sodium": 10,
+        "sugar": 1.97
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup shredded",
+          "grams": 72
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, chopped (1/2\" pieces, loosely packed)",
+          "grams": 57
+        },
+        {
+          "amount": 1,
+          "modifier": "head, large",
+          "grams": 755
+        },
+        {
+          "amount": 1,
+          "modifier": "head, medium (6\" dia)",
+          "grams": 539
+        },
+        {
+          "amount": 1,
+          "modifier": "head, small",
+          "grams": 324
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf, large",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf, medium",
+          "grams": 8
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf, small",
+          "grams": 5
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA Serving",
+          "grams": 89
+        }
+      ]
+    },
+    "169251": {
+      "fdcId": 169251,
+      "description": "Mushrooms, white, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 22,
+        "protein": 3.09,
+        "fiber": 1,
+        "sodium": 5,
+        "sugar": 1.98
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, pieces or slices",
+          "grams": 70
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, whole",
+          "grams": 96
+        },
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 23
+        },
+        {
+          "amount": 1,
+          "modifier": "medium",
+          "grams": 18
+        },
+        {
+          "amount": 1,
+          "modifier": "slice",
+          "grams": 6
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 10
+        },
+        {
+          "amount": 0.5,
+          "modifier": "cup pieces",
+          "grams": 35
+        }
+      ]
+    },
+    "169255": {
+      "fdcId": 169255,
+      "description": "Mushrooms, portabella, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 22,
+        "protein": 2.11,
+        "fiber": 1.3,
+        "sodium": 9,
+        "sugar": 2.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup diced",
+          "grams": 86
+        },
+        {
+          "amount": 1,
+          "modifier": "piece whole",
+          "grams": 84
+        }
+      ]
+    },
+    "169282": {
+      "fdcId": 169282,
+      "description": "Soybeans, green, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 147,
+        "protein": 12.95,
+        "fiber": 4.2,
+        "sodium": 15,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 256
+        }
+      ]
+    },
+    "169291": {
+      "fdcId": 169291,
+      "description": "Squash, summer, zucchini, includes skin, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 17,
+        "protein": 1.21,
+        "fiber": 1,
+        "sodium": 8,
+        "sugar": 2.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 124
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 323
+        },
+        {
+          "amount": 1,
+          "modifier": "medium",
+          "grams": 196
+        },
+        {
+          "amount": 1,
+          "modifier": "slice",
+          "grams": 9.9
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 118
+        }
+      ]
+    },
+    "169383": {
+      "fdcId": 169383,
+      "description": "Peppers, sweet, yellow, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 27,
+        "protein": 1,
+        "fiber": 0.9,
+        "sodium": 2,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "pepper, large (3-3/4\" long, 3\" dia)",
+          "grams": 186
+        },
+        {
+          "amount": 10,
+          "modifier": "strips",
+          "grams": 52
+        }
+      ]
+    },
+    "169414": {
+      "fdcId": 169414,
+      "description": "Seeds, flaxseed",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 534,
+        "protein": 18.29,
+        "fiber": 27.3,
+        "sodium": 30,
+        "sugar": 1.55
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp, whole",
+          "grams": 10.3
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, whole",
+          "grams": 168
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp, ground",
+          "grams": 7
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp, whole",
+          "grams": 3.4
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp, ground",
+          "grams": 2.5
+        }
+      ]
+    },
+    "169593": {
+      "fdcId": 169593,
+      "description": "Cocoa, dry powder, unsweetened",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 228,
+        "protein": 19.6,
+        "fiber": 37,
+        "sodium": 21,
+        "sugar": 1.75
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 86
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 5.4
+        }
+      ]
+    },
+    "169640": {
+      "fdcId": 169640,
+      "description": "Honey",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 304,
+        "protein": 0.3,
+        "fiber": 0.2,
+        "sodium": 4,
+        "sugar": 82.12
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 339
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 21
+        },
+        {
+          "amount": 1,
+          "modifier": "packet (0.5 oz)",
+          "grams": 14
+        }
+      ]
+    },
+    "169655": {
+      "fdcId": 169655,
+      "description": "Sugars, granulated",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 387,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 1,
+        "sugar": 99.8
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "serving packet",
+          "grams": 2.8
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.2
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 200
+        },
+        {
+          "amount": 1,
+          "modifier": "serving 1 cube",
+          "grams": 2.3
+        }
+      ]
+    },
+    "169661": {
+      "fdcId": 169661,
+      "description": "Syrups, maple",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 260,
+        "protein": 0.04,
+        "fiber": 0,
+        "sodium": 12,
+        "sugar": 60.46
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 20
+        },
+        {
+          "amount": 1,
+          "modifier": "serving 1/4 cup",
+          "grams": 83
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 315
+        }
+      ]
+    },
+    "169698": {
+      "fdcId": 169698,
+      "description": "Cornstarch",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 381,
+        "protein": 0.26,
+        "fiber": 0.9,
+        "sodium": 9,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 128
+        }
+      ]
+    },
+    "169703": {
+      "fdcId": 169703,
+      "description": "Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 367,
+        "protein": 7.54,
+        "fiber": 3.6,
+        "sodium": 5,
+        "sugar": 0.66
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 185
+        }
+      ]
+    },
+    "169704": {
+      "fdcId": 169704,
+      "description": "Rice, brown, long-grain, cooked (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 123,
+        "protein": 2.74,
+        "fiber": 1.6,
+        "sodium": 4,
+        "sugar": 0.24
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 202
+        }
+      ]
+    },
+    "169722": {
+      "fdcId": 169722,
+      "description": "Wheat bran, crude",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 216,
+        "protein": 15.55,
+        "fiber": 42.8,
+        "sodium": 2,
+        "sugar": 0.41
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 58
+        }
+      ]
+    },
+    "169736": {
+      "fdcId": 169736,
+      "description": "Pasta, dry, enriched",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 371,
+        "protein": 13.04,
+        "fiber": 3.2,
+        "sodium": 6,
+        "sugar": 2.67
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup spaghetti",
+          "grams": 91
+        },
+        {
+          "amount": 2,
+          "modifier": "oz",
+          "grams": 57
+        },
+        {
+          "amount": 1,
+          "modifier": "cup elbows",
+          "grams": 122
+        },
+        {
+          "amount": 1,
+          "modifier": "cup penne",
+          "grams": 95
+        },
+        {
+          "amount": 1,
+          "modifier": "cup farfalle",
+          "grams": 81
+        },
+        {
+          "amount": 1,
+          "modifier": "cup rotini",
+          "grams": 96
+        },
+        {
+          "amount": 1,
+          "modifier": "cup shells",
+          "grams": 64
+        },
+        {
+          "amount": 1,
+          "modifier": "cup lasagna",
+          "grams": 90
+        }
+      ]
+    },
+    "169738": {
+      "fdcId": 169738,
+      "description": "Pasta, whole-wheat, dry (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 352,
+        "protein": 13.87,
+        "fiber": 9.2,
+        "sodium": 6,
+        "sugar": 2.74
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup spaghetti",
+          "grams": 91
+        },
+        {
+          "amount": 1,
+          "modifier": "cup elbows",
+          "grams": 122
+        },
+        {
+          "amount": 1,
+          "modifier": "cup penne",
+          "grams": 95
+        },
+        {
+          "amount": 1,
+          "modifier": "cup farfalle",
+          "grams": 81
+        },
+        {
+          "amount": 1,
+          "modifier": "cup rotini",
+          "grams": 96
+        },
+        {
+          "amount": 1,
+          "modifier": "cup shells",
+          "grams": 64
+        },
+        {
+          "amount": 1,
+          "modifier": "cup lasagne",
+          "grams": 90
+        }
+      ]
+    },
+    "169961": {
+      "fdcId": 169961,
+      "description": "Beans, snap, green, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 31,
+        "protein": 1.83,
+        "fiber": 2.7,
+        "sodium": 6,
+        "sugar": 3.26
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup 1/2\" pieces",
+          "grams": 100
+        },
+        {
+          "amount": 10,
+          "modifier": "beans (4\" long)",
+          "grams": 55
+        }
+      ]
+    },
+    "169975": {
+      "fdcId": 169975,
+      "description": "Cabbage, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 25,
+        "protein": 1.28,
+        "fiber": 2.5,
+        "sodium": 18,
+        "sugar": 3.2
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 89
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, shredded",
+          "grams": 70
+        },
+        {
+          "amount": 1,
+          "modifier": "head, large (about 7\" dia)",
+          "grams": 1248
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf, large",
+          "grams": 33
+        },
+        {
+          "amount": 1,
+          "modifier": "head, medium (about 5-3/4\" dia)",
+          "grams": 908
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf, medium",
+          "grams": 23
+        },
+        {
+          "amount": 1,
+          "modifier": "head, small (about 4-1/2\" dia)",
+          "grams": 714
+        },
+        {
+          "amount": 1,
+          "modifier": "leaf",
+          "grams": 15
+        }
+      ]
+    },
+    "169986": {
+      "fdcId": 169986,
+      "description": "Cauliflower, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 25,
+        "protein": 1.92,
+        "fiber": 2,
+        "sodium": 30,
+        "sugar": 1.91
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup chopped (1/2\" pieces)",
+          "grams": 107
+        },
+        {
+          "amount": 1,
+          "modifier": "floweret",
+          "grams": 13
+        },
+        {
+          "amount": 1,
+          "modifier": "head large (6-7\" dia.)",
+          "grams": 840
+        },
+        {
+          "amount": 1,
+          "modifier": "head medium (5-6\" dia.)",
+          "grams": 588
+        },
+        {
+          "amount": 1,
+          "modifier": "head small (4\" dia.)",
+          "grams": 265
+        }
+      ]
+    },
+    "169988": {
+      "fdcId": 169988,
+      "description": "Celery, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 14,
+        "protein": 0.69,
+        "fiber": 1.6,
+        "sodium": 80,
+        "sugar": 1.34
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup chopped",
+          "grams": 101
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 110
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 7.5
+        },
+        {
+          "amount": 1,
+          "modifier": "stalk, large (11\"-12\" long)",
+          "grams": 64
+        },
+        {
+          "amount": 1,
+          "modifier": "stalk, medium (7-1/2\" - 8\" long)",
+          "grams": 40
+        },
+        {
+          "amount": 1,
+          "modifier": "stalk, small (5\" long)",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "strip (4\" long)",
+          "grams": 4
+        }
+      ]
+    },
+    "169997": {
+      "fdcId": 169997,
+      "description": "Coriander (cilantro) leaves, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 23,
+        "protein": 2.13,
+        "fiber": 2.8,
+        "sodium": 46,
+        "sugar": 0.87
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.25,
+          "modifier": "cup",
+          "grams": 4
+        },
+        {
+          "amount": 9,
+          "modifier": "sprigs",
+          "grams": 20
+        }
+      ]
+    },
+    "170000": {
+      "fdcId": 170000,
+      "description": "Onions, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 40,
+        "protein": 1.1,
+        "fiber": 1.7,
+        "sodium": 4,
+        "sugar": 4.24
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 160
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 115
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp chopped",
+          "grams": 10
+        },
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 150
+        },
+        {
+          "amount": 1,
+          "modifier": "slice, large (1/4\" thick)",
+          "grams": 38
+        },
+        {
+          "amount": 1,
+          "modifier": "medium (2-1/2\" dia)",
+          "grams": 110
+        },
+        {
+          "amount": 1,
+          "modifier": "slice, medium (1/8\" thick)",
+          "grams": 14
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 70
+        },
+        {
+          "amount": 1,
+          "modifier": "slice, thin",
+          "grams": 9
+        },
+        {
+          "amount": 10,
+          "modifier": "rings",
+          "grams": 60
+        }
+      ]
+    },
+    "170005": {
+      "fdcId": 170005,
+      "description": "Onions, spring or scallions (includes tops and bulb), raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 32,
+        "protein": 1.83,
+        "fiber": 2.6,
+        "sodium": 16,
+        "sugar": 2.33
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 100
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp chopped",
+          "grams": 6
+        },
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 25
+        },
+        {
+          "amount": 1,
+          "modifier": "medium (4-1/8\" long)",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "small (3\" long)",
+          "grams": 5
+        }
+      ]
+    },
+    "170010": {
+      "fdcId": 170010,
+      "description": "Peas, edible-podded, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 42,
+        "protein": 2.8,
+        "fiber": 2.6,
+        "sodium": 4,
+        "sugar": 4
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 98
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, whole",
+          "grams": 63
+        },
+        {
+          "amount": 10,
+          "modifier": "pea pods",
+          "grams": 34
+        }
+      ]
+    },
+    "170016": {
+      "fdcId": 170016,
+      "description": "Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 77,
+        "protein": 5.22,
+        "fiber": 4.5,
+        "sodium": 108,
+        "sugar": 5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 134
+        },
+        {
+          "amount": 1,
+          "modifier": "package",
+          "grams": 284
+        }
+      ]
+    },
+    "170027": {
+      "fdcId": 170027,
+      "description": "Potatoes, russet, flesh and skin, raw (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 79,
+        "protein": 2.14,
+        "fiber": 1.3,
+        "sodium": 5,
+        "sugar": 0.62
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.5,
+          "modifier": "cup, diced",
+          "grams": 75
+        },
+        {
+          "amount": 1,
+          "modifier": "potato large (3\" to 4-1/4\" dia)",
+          "grams": 369
+        },
+        {
+          "amount": 1,
+          "modifier": "Potato medium (2-1/4\" to 3-1/4\" dia)",
+          "grams": 213
+        },
+        {
+          "amount": 1,
+          "modifier": "Potato small (1-3/4\" to 2-1/4\" dia)",
+          "grams": 170
+        }
+      ]
+    },
+    "170029": {
+      "fdcId": 170029,
+      "description": "Potatoes, red, flesh and skin, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 70,
+        "protein": 1.89,
+        "fiber": 1.7,
+        "sodium": 18,
+        "sugar": 1.29
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.5,
+          "modifier": "cup, diced",
+          "grams": 75
+        },
+        {
+          "amount": 1,
+          "modifier": "potato large (3\" to 4-1/4\" dia)",
+          "grams": 369
+        },
+        {
+          "amount": 1,
+          "modifier": "potato medium (2-1/4\" to 3-1/4\" dia)",
+          "grams": 213
+        },
+        {
+          "amount": 1,
+          "modifier": "potato small (1-3/4\" to 2-1/4\" dia)",
+          "grams": 170
+        }
+      ]
+    },
+    "170051": {
+      "fdcId": 170051,
+      "description": "Tomatoes, red, ripe, canned, packed in tomato juice",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 16,
+        "protein": 0.79,
+        "fiber": 1.9,
+        "sodium": 115,
+        "sugar": 2.55
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 240
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "can",
+          "grams": 190
+        },
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 164
+        },
+        {
+          "amount": 1,
+          "modifier": "medium",
+          "grams": 111
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 82
+        }
+      ]
+    },
+    "170054": {
+      "fdcId": 170054,
+      "description": "Tomato products, canned, sauce",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 24,
+        "protein": 1.2,
+        "fiber": 1.5,
+        "sodium": 474,
+        "sugar": 3.56
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 245
+        }
+      ]
+    },
+    "170108": {
+      "fdcId": 170108,
+      "description": "Peppers, sweet, red, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 26,
+        "protein": 0.99,
+        "fiber": 2.1,
+        "sodium": 4,
+        "sugar": 4.2
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 149
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 92
+        },
+        {
+          "amount": 1,
+          "modifier": "tablespoon",
+          "grams": 9.3
+        },
+        {
+          "amount": 1,
+          "modifier": "large (2-1/4 per pound, approx 3-3/4\" long, 3\" dia.)",
+          "grams": 164
+        },
+        {
+          "amount": 1,
+          "modifier": "medium (approx 2-3/4\" long, 2-1/2 dia.)",
+          "grams": 119
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 74
+        },
+        {
+          "amount": 1,
+          "modifier": "ring (3\" dia., 1/4\" thick)",
+          "grams": 10
+        }
+      ]
+    },
+    "170148": {
+      "fdcId": 170148,
+      "description": "Seeds, hemp seed, hulled",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 553,
+        "protein": 31.56,
+        "fiber": 4,
+        "sodium": 5,
+        "sugar": 1.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 3,
+          "modifier": "tbsp",
+          "grams": 30
+        }
+      ]
+    },
+    "170150": {
+      "fdcId": 170150,
+      "description": "Seeds, sesame seeds, whole, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 573,
+        "protein": 17.73,
+        "fiber": 11.8,
+        "sodium": 11,
+        "sugar": 0.3
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 144
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 9
+        }
+      ]
+    },
+    "170162": {
+      "fdcId": 170162,
+      "description": "Nuts, cashew nuts, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 553,
+        "protein": 18.22,
+        "fiber": 3.3,
+        "sodium": 12,
+        "sugar": 5.91
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "170172": {
+      "fdcId": 170172,
+      "description": "Nuts, coconut milk, raw (liquid expressed from grated meat and water)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 230,
+        "protein": 2.29,
+        "fiber": 2.2,
+        "sodium": 15,
+        "sugar": 3.34
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 240
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 15
+        }
+      ]
+    },
+    "170182": {
+      "fdcId": 170182,
+      "description": "Nuts, pecans",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 691,
+        "protein": 9.17,
+        "fiber": 9.6,
+        "sodium": 0,
+        "sugar": 3.97
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 109
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, halves",
+          "grams": 99
+        },
+        {
+          "amount": 1,
+          "modifier": "oz (19 halves)",
+          "grams": 28.35
+        }
+      ]
+    },
+    "170187": {
+      "fdcId": 170187,
+      "description": "Nuts, walnuts, english",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 654,
+        "protein": 15.23,
+        "fiber": 6.7,
+        "sodium": 2,
+        "sugar": 2.61
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 117
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, ground",
+          "grams": 80
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, in shell, edible yield (7 nuts)",
+          "grams": 28
+        },
+        {
+          "amount": 1,
+          "modifier": "cup shelled (50 halves)",
+          "grams": 100
+        },
+        {
+          "amount": 1,
+          "modifier": "cup pieces or chips",
+          "grams": 120
+        },
+        {
+          "amount": 1,
+          "modifier": "oz (14 halves)",
+          "grams": 28.35
+        }
+      ]
+    },
+    "170189": {
+      "fdcId": 170189,
+      "description": "Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 595,
+        "protein": 17,
+        "fiber": 9.3,
+        "sodium": 115,
+        "sugar": 0.49
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "170284": {
+      "fdcId": 170284,
+      "description": "Barley, pearled, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 352,
+        "protein": 9.91,
+        "fiber": 15.6,
+        "sodium": 9,
+        "sugar": 0.8
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 200
+        }
+      ]
+    },
+    "170379": {
+      "fdcId": 170379,
+      "description": "Broccoli, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 34,
+        "protein": 2.82,
+        "fiber": 2.6,
+        "sodium": 33,
+        "sugar": 1.7
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup chopped",
+          "grams": 91
+        },
+        {
+          "amount": 1,
+          "modifier": "bunch",
+          "grams": 608
+        },
+        {
+          "amount": 1,
+          "modifier": "spear (about 5\" long)",
+          "grams": 31
+        },
+        {
+          "amount": 1,
+          "modifier": "stalk",
+          "grams": 151
+        },
+        {
+          "amount": 0.5,
+          "modifier": "cup, chopped or diced",
+          "grams": 44
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 148
+        }
+      ]
+    },
+    "170393": {
+      "fdcId": 170393,
+      "description": "Carrots, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 41,
+        "protein": 0.93,
+        "fiber": 2.8,
+        "sodium": 69,
+        "sugar": 4.74
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup chopped",
+          "grams": 128
+        },
+        {
+          "amount": 1,
+          "modifier": "cup grated",
+          "grams": 110
+        },
+        {
+          "amount": 1,
+          "modifier": "cup strips or slices",
+          "grams": 122
+        },
+        {
+          "amount": 1,
+          "modifier": "large (7-1/4\" to 8-/1/2\" long)",
+          "grams": 72
+        },
+        {
+          "amount": 1,
+          "modifier": "medium",
+          "grams": 61
+        },
+        {
+          "amount": 1,
+          "modifier": "small (5-1/2\" long)",
+          "grams": 50
+        },
+        {
+          "amount": 1,
+          "modifier": "slice",
+          "grams": 3
+        },
+        {
+          "amount": 1,
+          "modifier": "strip large (3\" long)",
+          "grams": 7
+        },
+        {
+          "amount": 1,
+          "modifier": "strip medium",
+          "grams": 4
+        }
+      ]
+    },
+    "170416": {
+      "fdcId": 170416,
+      "description": "Parsley, fresh",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 36,
+        "protein": 2.97,
+        "fiber": 3.3,
+        "sodium": 56,
+        "sugar": 0.85
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup chopped",
+          "grams": 60
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 3.8
+        },
+        {
+          "amount": 10,
+          "modifier": "sprigs",
+          "grams": 10
+        }
+      ]
+    },
+    "170427": {
+      "fdcId": 170427,
+      "description": "Peppers, sweet, green, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 20,
+        "protein": 0.86,
+        "fiber": 1.7,
+        "sodium": 3,
+        "sugar": 2.4
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped",
+          "grams": 149
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 92
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 9.3
+        },
+        {
+          "amount": 1,
+          "modifier": "large (2-1/4 per lb, approx 3-3/4\" long, 3\" dia)",
+          "grams": 164
+        },
+        {
+          "amount": 1,
+          "modifier": "medium (approx 2-3/4\" long, 2-1/2\" dia)",
+          "grams": 119
+        },
+        {
+          "amount": 1,
+          "modifier": "ring (3\" dia, 1/4\" thick)",
+          "grams": 10
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 74
+        },
+        {
+          "amount": 10,
+          "modifier": "strips",
+          "grams": 27
+        }
+      ]
+    },
+    "170457": {
+      "fdcId": 170457,
+      "description": "Tomatoes, red, ripe, raw, year round average",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 18,
+        "protein": 0.88,
+        "fiber": 1.2,
+        "sodium": 5,
+        "sugar": 2.63
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup cherry tomatoes",
+          "grams": 149
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, chopped or sliced",
+          "grams": 180
+        },
+        {
+          "amount": 1,
+          "modifier": "Italian tomato",
+          "grams": 62
+        },
+        {
+          "amount": 1,
+          "modifier": "cherry",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "large whole (3\" dia)",
+          "grams": 182
+        },
+        {
+          "amount": 1,
+          "modifier": "medium whole (2-3/5\" dia)",
+          "grams": 123
+        },
+        {
+          "amount": 1,
+          "modifier": "slice, medium (1/4\" thick)",
+          "grams": 20
+        },
+        {
+          "amount": 1,
+          "modifier": "plum tomato",
+          "grams": 62
+        },
+        {
+          "amount": 1,
+          "modifier": "small whole (2-2/5\" dia)",
+          "grams": 91
+        },
+        {
+          "amount": 1,
+          "modifier": "slice, thick/large (1/2\" thick)",
+          "grams": 27
+        },
+        {
+          "amount": 1,
+          "modifier": "wedge (1/4 of medium tomato)",
+          "grams": 31
+        },
+        {
+          "amount": 1,
+          "modifier": "slice, thin/small",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 148
+        }
+      ]
+    },
+    "170459": {
+      "fdcId": 170459,
+      "description": "Tomato products, canned, paste, without salt added (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 82,
+        "protein": 4.32,
+        "fiber": 4.1,
+        "sodium": 59,
+        "sugar": 12.18
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.25,
+          "modifier": "cup",
+          "grams": 66
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 262
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 16
+        },
+        {
+          "amount": 1,
+          "modifier": "can (6 oz)",
+          "grams": 170
+        }
+      ]
+    },
+    "170471": {
+      "fdcId": 170471,
+      "description": "Vegetables, mixed, frozen, unprepared",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 72,
+        "protein": 3.33,
+        "fiber": 4,
+        "sodium": 47,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 0.33,
+          "modifier": "package (10 oz)",
+          "grams": 95
+        },
+        {
+          "amount": 1,
+          "modifier": "package (10 oz)",
+          "grams": 284
+        },
+        {
+          "amount": 1,
+          "modifier": "pack (2-1/2 lb)",
+          "grams": 1134
+        }
+      ]
+    },
+    "170499": {
+      "fdcId": 170499,
+      "description": "Shallots, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 72,
+        "protein": 2.5,
+        "fiber": 3.2,
+        "sodium": 12,
+        "sugar": 7.87
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp chopped",
+          "grams": 10
+        }
+      ]
+    },
+    "170501": {
+      "fdcId": 170501,
+      "description": "Tomatoes, crushed, canned",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 32,
+        "protein": 1.64,
+        "fiber": 1.9,
+        "sodium": 186,
+        "sugar": 4.4
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.5,
+          "modifier": "cup",
+          "grams": 121
+        }
+      ]
+    },
+    "170554": {
+      "fdcId": 170554,
+      "description": "Seeds, chia seeds, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 486,
+        "protein": 16.54,
+        "fiber": 34.4,
+        "sodium": 16,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "170556": {
+      "fdcId": 170556,
+      "description": "Seeds, pumpkin and squash seed kernels, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 559,
+        "protein": 30.23,
+        "fiber": 6,
+        "sodium": 7,
+        "sugar": 1.4
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 129
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "170562": {
+      "fdcId": 170562,
+      "description": "Seeds, sunflower seed kernels, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 584,
+        "protein": 20.78,
+        "fiber": 8.6,
+        "sodium": 9,
+        "sugar": 2.62
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, with hulls, edible yield",
+          "grams": 46
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 140
+        }
+      ]
+    },
+    "170567": {
+      "fdcId": 170567,
+      "description": "Nuts, almonds",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 579,
+        "protein": 21.15,
+        "fiber": 12.5,
+        "sodium": 1,
+        "sugar": 4.35
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, whole",
+          "grams": 143
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 92
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, slivered",
+          "grams": 108
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, ground",
+          "grams": 95
+        },
+        {
+          "amount": 1,
+          "modifier": "oz (23 whole kernels)",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "almond",
+          "grams": 1.2
+        }
+      ]
+    },
+    "170688": {
+      "fdcId": 170688,
+      "description": "Bulgur, dry",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 342,
+        "protein": 12.29,
+        "fiber": 12.5,
+        "sodium": 17,
+        "sugar": 0.41
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 140
+        }
+      ]
+    },
+    "170847": {
+      "fdcId": 170847,
+      "description": "Cheese, mozzarella, part skim milk",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 254,
+        "protein": 24.26,
+        "fiber": 0,
+        "sodium": 619,
+        "sugar": 1.13
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "170850": {
+      "fdcId": 170850,
+      "description": "Cheese, provolone",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 351,
+        "protein": 25.58,
+        "fiber": 0,
+        "sodium": 727,
+        "sugar": 0.56
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, diced",
+          "grams": 132
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "cubic inch",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "slice (1 oz)",
+          "grams": 28
+        },
+        {
+          "amount": 1,
+          "modifier": "package (6 oz)",
+          "grams": 170
+        }
+      ]
+    },
+    "170851": {
+      "fdcId": 170851,
+      "description": "Cheese, ricotta, whole milk",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 150,
+        "protein": 7.54,
+        "fiber": 0,
+        "sodium": 110,
+        "sugar": 0.27
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.5,
+          "modifier": "cup",
+          "grams": 124
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 246
+        }
+      ]
+    },
+    "170859": {
+      "fdcId": 170859,
+      "description": "Cream, fluid, heavy whipping",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 340,
+        "protein": 2.84,
+        "fiber": 0,
+        "sodium": 27,
+        "sugar": 2.92
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, whipped",
+          "grams": 120
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, fluid (yields 2 cups whipped)",
+          "grams": 238
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 29.8
+        }
+      ]
+    },
+    "170874": {
+      "fdcId": 170874,
+      "description": "Milk, buttermilk, fluid, cultured, lowfat",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 40,
+        "protein": 3.31,
+        "fiber": 0,
+        "sodium": 148,
+        "sugar": 5.36
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 245
+        },
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 30.6
+        },
+        {
+          "amount": 1,
+          "modifier": "quart",
+          "grams": 980
+        }
+      ]
+    },
+    "170886": {
+      "fdcId": 170886,
+      "description": "Yogurt, plain, low fat",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 63,
+        "protein": 5.25,
+        "fiber": 0,
+        "sodium": 70,
+        "sugar": 7.04
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "container (6 oz)",
+          "grams": 170
+        },
+        {
+          "amount": 1,
+          "modifier": "container (8 oz)",
+          "grams": 227
+        },
+        {
+          "amount": 0.5,
+          "modifier": "container (4 oz)",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "cup (8 fl oz)",
+          "grams": 245
+        }
+      ]
+    },
+    "170894": {
+      "fdcId": 170894,
+      "description": "Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 59,
+        "protein": 10.19,
+        "fiber": 0,
+        "sodium": 36,
+        "sugar": 3.24
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "container",
+          "grams": 170
+        }
+      ]
+    },
+    "170903": {
+      "fdcId": 170903,
+      "description": "Yogurt, Greek, plain, lowfat",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 73,
+        "protein": 9.95,
+        "fiber": 0,
+        "sodium": 34,
+        "sugar": 3.56
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "container (7 oz)",
+          "grams": 200
+        }
+      ]
+    },
+    "170917": {
+      "fdcId": 170917,
+      "description": "Spices, bay leaf",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 313,
+        "protein": 7.61,
+        "fiber": 26.3,
+        "sodium": 23,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp, crumbled",
+          "grams": 0.6
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp, crumbled",
+          "grams": 1.8
+        }
+      ]
+    },
+    "170923": {
+      "fdcId": 170923,
+      "description": "Spices, cumin seed",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 375,
+        "protein": 17.81,
+        "fiber": 10.5,
+        "sodium": 168,
+        "sugar": 2.25
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp, whole",
+          "grams": 2.1
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp, whole",
+          "grams": 6
+        }
+      ]
+    },
+    "170924": {
+      "fdcId": 170924,
+      "description": "Spices, curry powder",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 325,
+        "protein": 14.29,
+        "fiber": 53.2,
+        "sodium": 52,
+        "sugar": 2.76
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 6.3
+        }
+      ]
+    },
+    "170926": {
+      "fdcId": 170926,
+      "description": "Spices, ginger, ground",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 335,
+        "protein": 8.98,
+        "fiber": 14.1,
+        "sodium": 27,
+        "sugar": 3.39
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 1.8
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 5.2
+        }
+      ]
+    },
+    "170930": {
+      "fdcId": 170930,
+      "description": "Spices, parsley, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 292,
+        "protein": 26.63,
+        "fiber": 26.7,
+        "sodium": 452,
+        "sugar": 7.27
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 0.5
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 1.6
+        }
+      ]
+    },
+    "170931": {
+      "fdcId": 170931,
+      "description": "Spices, pepper, black",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 251,
+        "protein": 10.39,
+        "fiber": 25.3,
+        "sodium": 20,
+        "sugar": 0.64
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp, ground",
+          "grams": 2.3
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp, ground",
+          "grams": 6.9
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp, whole",
+          "grams": 2.9
+        },
+        {
+          "amount": 1,
+          "modifier": "dash",
+          "grams": 0.1
+        }
+      ]
+    },
+    "170932": {
+      "fdcId": 170932,
+      "description": "Spices, pepper, red or cayenne",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 318,
+        "protein": 12.01,
+        "fiber": 27.2,
+        "sodium": 30,
+        "sugar": 10.34
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 1.8
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 5.3
+        }
+      ]
+    },
+    "170938": {
+      "fdcId": 170938,
+      "description": "Spices, thyme, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 276,
+        "protein": 9.11,
+        "fiber": 37,
+        "sodium": 55,
+        "sugar": 1.71
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp, leaves",
+          "grams": 1
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp, leaves",
+          "grams": 2.7
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp, ground",
+          "grams": 1.4
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp, ground",
+          "grams": 4.3
+        }
+      ]
+    },
+    "171009": {
+      "fdcId": 171009,
+      "description": "Salad dressing, mayonnaise, regular",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 680,
+        "protein": 0.96,
+        "fiber": 0,
+        "sodium": 635,
+        "sugar": 0.57
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 13.8
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 220
+        },
+        {
+          "amount": 1,
+          "modifier": "packet",
+          "grams": 10
+        }
+      ]
+    },
+    "171016": {
+      "fdcId": 171016,
+      "description": "Oil, sesame, salad or cooking",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 0,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tablespoon",
+          "grams": 13.6
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 218
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.5
+        }
+      ]
+    },
+    "171019": {
+      "fdcId": 171019,
+      "description": "Salad dressing, italian dressing, commercial, regular",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 240,
+        "protein": 0.41,
+        "fiber": 0,
+        "sodium": 993,
+        "sugar": 10.77
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.7
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 235
+        }
+      ]
+    },
+    "171077": {
+      "fdcId": 171077,
+      "description": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 120,
+        "protein": 22.5,
+        "fiber": 0,
+        "sodium": 45,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "piece",
+          "grams": 272
+        },
+        {
+          "amount": 1,
+          "modifier": "package",
+          "grams": 926
+        }
+      ]
+    },
+    "171116": {
+      "fdcId": 171116,
+      "description": "Chicken, ground, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 143,
+        "protein": 17.44,
+        "fiber": 0,
+        "sodium": 60,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz crumbled",
+          "grams": 113
+        }
+      ]
+    },
+    "171146": {
+      "fdcId": 171146,
+      "description": "Soup, cream of chicken, canned, condensed",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 90,
+        "protein": 2.38,
+        "fiber": 0,
+        "sodium": 702,
+        "sugar": 0.54
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.5,
+          "modifier": "cup (4 fl oz)",
+          "grams": 126
+        },
+        {
+          "amount": 1,
+          "modifier": "can (10.75 oz)",
+          "grams": 305
+        }
+      ]
+    },
+    "171192": {
+      "fdcId": 171192,
+      "description": "Sauce, pasta, spaghetti/marinara, ready-to-serve",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 50,
+        "protein": 1.39,
+        "fiber": 1.8,
+        "sodium": 437,
+        "sugar": 4.91
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "serving 1/2 cup",
+          "grams": 132
+        }
+      ]
+    },
+    "171247": {
+      "fdcId": 171247,
+      "description": "Cheese, parmesan, grated",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 420,
+        "protein": 28.42,
+        "fiber": 0,
+        "sodium": 1804,
+        "sugar": 0.07
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 100
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 5
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "171255": {
+      "fdcId": 171255,
+      "description": "Cream, fluid, half and half",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 131,
+        "protein": 3.13,
+        "fiber": 0,
+        "sodium": 61,
+        "sugar": 4.13
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 30.2
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 242
+        },
+        {
+          "amount": 1,
+          "modifier": "container, individual (.5 fl oz)",
+          "grams": 15
+        }
+      ]
+    },
+    "171257": {
+      "fdcId": 171257,
+      "description": "Cream, sour, cultured",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 198,
+        "protein": 2.44,
+        "fiber": 0,
+        "sodium": 31,
+        "sugar": 3.41
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 12
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 230
+        }
+      ]
+    },
+    "171265": {
+      "fdcId": 171265,
+      "description": "Milk, whole, 3.25% milkfat, with added vitamin D",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 61,
+        "protein": 3.15,
+        "fiber": 0,
+        "sodium": 43,
+        "sugar": 5.05
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 244
+        },
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 30.5
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 15
+        },
+        {
+          "amount": 1,
+          "modifier": "quart",
+          "grams": 976
+        }
+      ]
+    },
+    "171287": {
+      "fdcId": 171287,
+      "description": "Egg, whole, raw, fresh",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 143,
+        "protein": 12.56,
+        "fiber": 0,
+        "sodium": 142,
+        "sugar": 0.37
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "large",
+          "grams": 50
+        },
+        {
+          "amount": 1,
+          "modifier": "extra large",
+          "grams": 56
+        },
+        {
+          "amount": 1,
+          "modifier": "jumbo",
+          "grams": 63
+        },
+        {
+          "amount": 1,
+          "modifier": "cup (4.86 large eggs)",
+          "grams": 243
+        },
+        {
+          "amount": 1,
+          "modifier": "medium",
+          "grams": 44
+        },
+        {
+          "amount": 1,
+          "modifier": "small",
+          "grams": 38
+        }
+      ]
+    },
+    "171314": {
+      "fdcId": 171314,
+      "description": "Butter, Clarified butter (ghee)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 900,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 0,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": []
+    },
+    "171319": {
+      "fdcId": 171319,
+      "description": "Spices, chili powder",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 282,
+        "protein": 13.46,
+        "fiber": 34.8,
+        "sodium": 2867,
+        "sugar": 7.19
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2.7
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 8
+        }
+      ]
+    },
+    "171320": {
+      "fdcId": 171320,
+      "description": "Spices, cinnamon, ground",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 247,
+        "protein": 3.99,
+        "fiber": 53.1,
+        "sodium": 10,
+        "sugar": 2.17
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2.6
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 7.8
+        }
+      ]
+    },
+    "171322": {
+      "fdcId": 171322,
+      "description": "Spices, dill weed, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 253,
+        "protein": 19.96,
+        "fiber": 13.6,
+        "sodium": 208,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 1
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 3.1
+        }
+      ]
+    },
+    "171325": {
+      "fdcId": 171325,
+      "description": "Spices, garlic powder",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 331,
+        "protein": 16.55,
+        "fiber": 9,
+        "sodium": 60,
+        "sugar": 2.43
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 3.1
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 9.7
+        }
+      ]
+    },
+    "171326": {
+      "fdcId": 171326,
+      "description": "Spices, nutmeg, ground",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 525,
+        "protein": 5.84,
+        "fiber": 20.8,
+        "sodium": 16,
+        "sugar": 2.99
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2.2
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 7
+        }
+      ]
+    },
+    "171327": {
+      "fdcId": 171327,
+      "description": "Spices, onion powder",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 341,
+        "protein": 10.41,
+        "fiber": 15.2,
+        "sodium": 73,
+        "sugar": 6.63
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2.4
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 6.9
+        }
+      ]
+    },
+    "171328": {
+      "fdcId": 171328,
+      "description": "Spices, oregano, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 265,
+        "protein": 9,
+        "fiber": 42.5,
+        "sodium": 25,
+        "sugar": 4.09
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp, leaves",
+          "grams": 1
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp, ground",
+          "grams": 1.8
+        }
+      ]
+    },
+    "171329": {
+      "fdcId": 171329,
+      "description": "Spices, paprika",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 282,
+        "protein": 14.14,
+        "fiber": 34.9,
+        "sodium": 68,
+        "sugar": 10.34
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 2.3
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 6.8
+        }
+      ]
+    },
+    "171333": {
+      "fdcId": 171333,
+      "description": "Spices, rosemary, dried",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 331,
+        "protein": 4.88,
+        "fiber": 42.6,
+        "sodium": 50,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 1.2
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 3.3
+        }
+      ]
+    },
+    "171411": {
+      "fdcId": 171411,
+      "description": "Oil, soybean, salad or cooking",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 0,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 13.6
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 218
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.5
+        }
+      ]
+    },
+    "171412": {
+      "fdcId": 171412,
+      "description": "Oil, coconut",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 892,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 0,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 13.6
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 218
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.5
+        }
+      ]
+    },
+    "171413": {
+      "fdcId": 171413,
+      "description": "Oil, olive, salad or cooking",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 2,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tablespoon",
+          "grams": 13.5
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 216
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.5
+        }
+      ]
+    },
+    "171477": {
+      "fdcId": 171477,
+      "description": "Chicken, broilers or fryers, breast, meat only, cooked, roasted",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 165,
+        "protein": 31.02,
+        "fiber": 0,
+        "sodium": 74,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, chopped or diced",
+          "grams": 140
+        },
+        {
+          "amount": 1,
+          "modifier": "unit (yield from 1 lb ready-to-cook chicken)",
+          "grams": 52
+        },
+        {
+          "amount": 0.5,
+          "modifier": "breast, bone and skin removed",
+          "grams": 86
+        }
+      ]
+    },
+    "171518": {
+      "fdcId": 171518,
+      "description": "Chicken, broilers or fryers, rotisserie, original seasoning, breast, meat only, cooked",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 137,
+        "protein": 28,
+        "fiber": 0,
+        "sodium": 313,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 3,
+          "modifier": "oz",
+          "grams": 85
+        },
+        {
+          "amount": 1,
+          "modifier": "breast breast with skin and bone",
+          "grams": 483
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "171538": {
+      "fdcId": 171538,
+      "description": "Soup, beef broth or bouillon canned, ready-to-serve",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 7,
+        "protein": 1.14,
+        "fiber": 0,
+        "sodium": 372,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 240
+        },
+        {
+          "amount": 1,
+          "modifier": "can 14.5 oz",
+          "grams": 435
+        },
+        {
+          "amount": 1,
+          "modifier": "container 32 oz",
+          "grams": 960
+        }
+      ]
+    },
+    "171583": {
+      "fdcId": 171583,
+      "description": "Soup, vegetable broth, ready to serve",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 5,
+        "protein": 0.24,
+        "fiber": 0,
+        "sodium": 296,
+        "sugar": 0.55
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 221
+        },
+        {
+          "amount": 1,
+          "modifier": "can",
+          "grams": 390
+        },
+        {
+          "amount": 1,
+          "modifier": "carton (32 oz)",
+          "grams": 926
+        }
+      ]
+    },
+    "171610": {
+      "fdcId": 171610,
+      "description": "Sauce, worcestershire",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 77,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 1300,
+        "sugar": 10.03
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 275
+        }
+      ]
+    },
+    "171688": {
+      "fdcId": 171688,
+      "description": "Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 52,
+        "protein": 0.26,
+        "fiber": 2.4,
+        "sodium": 1,
+        "sugar": 10.39
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, quartered or chopped",
+          "grams": 125
+        },
+        {
+          "amount": 1,
+          "modifier": "cup slices",
+          "grams": 109
+        },
+        {
+          "amount": 1,
+          "modifier": "large (3-1/4\" dia)",
+          "grams": 223
+        },
+        {
+          "amount": 1,
+          "modifier": "medium (3\" dia)",
+          "grams": 182
+        },
+        {
+          "amount": 1,
+          "modifier": "small (2-3/4\" dia)",
+          "grams": 149
+        },
+        {
+          "amount": 1,
+          "modifier": "extra small (2-1/2\" dia)",
+          "grams": 101
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 242
+        }
+      ]
+    },
+    "171705": {
+      "fdcId": 171705,
+      "description": "Avocados, raw, all commercial varieties",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 160,
+        "protein": 2,
+        "fiber": 6.7,
+        "sodium": 7,
+        "sugar": 0.66
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, cubes",
+          "grams": 150
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, pureed",
+          "grams": 230
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 146
+        },
+        {
+          "amount": 1,
+          "modifier": "avocado, NS as to Florida or California",
+          "grams": 201
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA Serving",
+          "grams": 50
+        }
+      ]
+    },
+    "171711": {
+      "fdcId": 171711,
+      "description": "Blueberries, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 57,
+        "protein": 0.74,
+        "fiber": 2.4,
+        "sodium": 1,
+        "sugar": 9.96
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 148
+        },
+        {
+          "amount": 50,
+          "modifier": "berries",
+          "grams": 68
+        }
+      ]
+    },
+    "171796": {
+      "fdcId": 171796,
+      "description": "Beef, ground, 85% lean meat / 15% fat, raw (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 215,
+        "protein": 18.59,
+        "fiber": 0,
+        "sodium": 66,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        }
+      ]
+    },
+    "171955": {
+      "fdcId": 171955,
+      "description": "Fish, cod, Atlantic, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 82,
+        "protein": 17.81,
+        "fiber": 0,
+        "sodium": 54,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 3,
+          "modifier": "oz",
+          "grams": 85
+        },
+        {
+          "amount": 1,
+          "modifier": "fillet",
+          "grams": 231
+        }
+      ]
+    },
+    "172175": {
+      "fdcId": 172175,
+      "description": "Cheese, blue",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 353,
+        "protein": 21.4,
+        "fiber": 0,
+        "sodium": 1146,
+        "sugar": 0.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "cubic inch",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, crumbled, not packed",
+          "grams": 135
+        }
+      ]
+    },
+    "172179": {
+      "fdcId": 172179,
+      "description": "Cheese, cottage, creamed, large or small curd",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 98,
+        "protein": 11.12,
+        "fiber": 0,
+        "sodium": 315,
+        "sugar": 2.67
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, large curd (not packed)",
+          "grams": 210
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, small curd (not packed)",
+          "grams": 225
+        }
+      ]
+    },
+    "172231": {
+      "fdcId": 172231,
+      "description": "Spices, turmeric, ground",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 312,
+        "protein": 9.68,
+        "fiber": 22.7,
+        "sodium": 27,
+        "sugar": 3.21
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 3
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 9.4
+        }
+      ]
+    },
+    "172232": {
+      "fdcId": 172232,
+      "description": "Basil, fresh",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 23,
+        "protein": 3.15,
+        "fiber": 1.6,
+        "sodium": 4,
+        "sugar": 0.3
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 5,
+          "modifier": "leaves",
+          "grams": 2.5
+        },
+        {
+          "amount": 2,
+          "modifier": "tbsp, chopped",
+          "grams": 5.3
+        },
+        {
+          "amount": 0.25,
+          "modifier": "cup leaves, whole",
+          "grams": 6
+        }
+      ]
+    },
+    "172233": {
+      "fdcId": 172233,
+      "description": "Dill weed, fresh",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 43,
+        "protein": 3.46,
+        "fiber": 2.1,
+        "sodium": 61,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 5,
+          "modifier": "sprigs",
+          "grams": 1
+        },
+        {
+          "amount": 1,
+          "modifier": "cup sprigs",
+          "grams": 8.9
+        }
+      ]
+    },
+    "172234": {
+      "fdcId": 172234,
+      "description": "Mustard, prepared, yellow",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 60,
+        "protein": 3.74,
+        "fiber": 4,
+        "sodium": 1104,
+        "sugar": 0.92
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp or 1 packet",
+          "grams": 5
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 249
+        }
+      ]
+    },
+    "172237": {
+      "fdcId": 172237,
+      "description": "Vinegar, distilled",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 18,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 2,
+        "sugar": 0.04
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.9
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 238
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 5
+        }
+      ]
+    },
+    "172238": {
+      "fdcId": 172238,
+      "description": "Capers, canned",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 23,
+        "protein": 2.36,
+        "fiber": 3.2,
+        "sodium": 2348,
+        "sugar": 0.41
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp, drained",
+          "grams": 8.6
+        }
+      ]
+    },
+    "172240": {
+      "fdcId": 172240,
+      "description": "Vinegar, red wine",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 19,
+        "protein": 0.04,
+        "fiber": 0,
+        "sodium": 8,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.9
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 239
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 5
+        }
+      ]
+    },
+    "172241": {
+      "fdcId": 172241,
+      "description": "Vinegar, balsamic",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 88,
+        "protein": 0.49,
+        "fiber": null,
+        "sodium": 23,
+        "sugar": 14.95
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 16
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 255
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 5.3
+        }
+      ]
+    },
+    "172243": {
+      "fdcId": 172243,
+      "description": "Seasoning mix, dry, taco, original",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 322,
+        "protein": 4.5,
+        "fiber": 13.3,
+        "sodium": 7203,
+        "sugar": 10.83
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 2,
+          "modifier": "tsp",
+          "grams": 5.7
+        }
+      ]
+    },
+    "172336": {
+      "fdcId": 172336,
+      "description": "Oil, canola",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 0,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 218
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.5
+        }
+      ]
+    },
+    "172420": {
+      "fdcId": 172420,
+      "description": "Lentils, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 352,
+        "protein": 24.63,
+        "fiber": 10.7,
+        "sodium": 6,
+        "sugar": 2.03
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 192
+        },
+        {
+          "amount": 1,
+          "modifier": "tablespoon",
+          "grams": 12
+        }
+      ]
+    },
+    "172428": {
+      "fdcId": 172428,
+      "description": "Peas, green, split, mature seeds, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 364,
+        "protein": 23.12,
+        "fiber": 22.2,
+        "sodium": 5,
+        "sugar": 3.14
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 196
+        }
+      ]
+    },
+    "172473": {
+      "fdcId": 172473,
+      "description": "Soy sauce made from soy and wheat (shoyu), low sodium",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 57,
+        "protein": 9.05,
+        "fiber": 0.7,
+        "sodium": 3598,
+        "sugar": 0.5
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.2
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.5
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 255
+        }
+      ]
+    },
+    "172475": {
+      "fdcId": 172475,
+      "description": "Tofu, raw, firm, prepared with calcium sulfate",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 144,
+        "protein": 17.27,
+        "fiber": 2.3,
+        "sodium": 14,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 0.5,
+          "modifier": "cup",
+          "grams": 126
+        },
+        {
+          "amount": 0.25,
+          "modifier": "block",
+          "grams": 81
+        }
+      ]
+    },
+    "172675": {
+      "fdcId": 172675,
+      "description": "Bread, french or vienna (includes sourdough)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 272,
+        "protein": 10.75,
+        "fiber": 2.2,
+        "sodium": 602,
+        "sugar": 4.62
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "slice",
+          "grams": 139
+        }
+      ]
+    },
+    "172688": {
+      "fdcId": 172688,
+      "description": "Bread, whole-wheat, commercially prepared",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 252,
+        "protein": 12.45,
+        "fiber": 6,
+        "sodium": 455,
+        "sugar": 4.34
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "slice",
+          "grams": 32
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        }
+      ]
+    },
+    "172803": {
+      "fdcId": 172803,
+      "description": "Leavening agents, baking powder, double-acting, sodium aluminum sulfate",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 53,
+        "protein": 0,
+        "fiber": 0.2,
+        "sodium": 10600,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.6
+        },
+        {
+          "amount": 0.5,
+          "modifier": "tsp",
+          "grams": 2.3
+        }
+      ]
+    },
+    "172850": {
+      "fdcId": 172850,
+      "description": "Turkey, ground, 93% lean, 7% fat, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 150,
+        "protein": 18.73,
+        "fiber": 0,
+        "sodium": 69,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "lb",
+          "grams": 453
+        },
+        {
+          "amount": 1,
+          "modifier": "serving (cooked from 4 oz)",
+          "grams": 85
+        }
+      ]
+    },
+    "173190": {
+      "fdcId": 173190,
+      "description": "Alcoholic beverage, wine, table, red",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 85,
+        "protein": 0.07,
+        "fiber": 0,
+        "sodium": 4,
+        "sugar": 0.62
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 29.4
+        },
+        {
+          "amount": 1,
+          "modifier": "serving (5 fl oz)",
+          "grams": 147
+        }
+      ]
+    },
+    "173410": {
+      "fdcId": 173410,
+      "description": "Butter, salted",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 717,
+        "protein": 0.85,
+        "fiber": 0,
+        "sodium": 643,
+        "sugar": 0.06
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "pat (1\" sq, 1/3\" high)",
+          "grams": 5
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.2
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 227
+        },
+        {
+          "amount": 1,
+          "modifier": "stick",
+          "grams": 113
+        }
+      ]
+    },
+    "173414": {
+      "fdcId": 173414,
+      "description": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 403,
+        "protein": 22.87,
+        "fiber": 0,
+        "sodium": 653,
+        "sugar": 0.48
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, diced",
+          "grams": 132
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, melted",
+          "grams": 244
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, shredded",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "cubic inch",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "slice (1 oz)",
+          "grams": 28
+        }
+      ]
+    },
+    "173418": {
+      "fdcId": 173418,
+      "description": "Cheese, cream",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 350,
+        "protein": 6.15,
+        "fiber": 0,
+        "sodium": 314,
+        "sugar": 3.76
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.5
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 232
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp, whipped",
+          "grams": 10
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "cubic inch",
+          "grams": 16
+        },
+        {
+          "amount": 1,
+          "modifier": "package, small (3 oz)",
+          "grams": 85
+        }
+      ]
+    },
+    "173420": {
+      "fdcId": 173420,
+      "description": "Cheese, feta",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 265,
+        "protein": 14.21,
+        "fiber": 0,
+        "sodium": 1139,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, crumbled",
+          "grams": 150
+        },
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "cubic inch",
+          "grams": 17
+        },
+        {
+          "amount": 1,
+          "modifier": "wedge (1.33 oz)",
+          "grams": 38
+        }
+      ]
+    },
+    "173430": {
+      "fdcId": 173430,
+      "description": "Butter, without salt",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 717,
+        "protein": 0.85,
+        "fiber": 0,
+        "sodium": 11,
+        "sugar": 0.06
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "pat (1\" sq, 1/3\" high)",
+          "grams": 5
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.2
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 227
+        },
+        {
+          "amount": 1,
+          "modifier": "stick",
+          "grams": 113
+        }
+      ]
+    },
+    "173468": {
+      "fdcId": 173468,
+      "description": "Salt, table",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 0,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 38758,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 6
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 18
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 292
+        },
+        {
+          "amount": 1,
+          "modifier": "dash",
+          "grams": 0.4
+        }
+      ]
+    },
+    "173469": {
+      "fdcId": 173469,
+      "description": "Vinegar, cider",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 21,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 5,
+        "sugar": 0.4
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14.9
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 239
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 5
+        }
+      ]
+    },
+    "173470": {
+      "fdcId": 173470,
+      "description": "Thyme, fresh",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 101,
+        "protein": 5.56,
+        "fiber": 14,
+        "sodium": 9,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 0.8
+        },
+        {
+          "amount": 0.5,
+          "modifier": "tsp",
+          "grams": 0.4
+        }
+      ]
+    },
+    "173471": {
+      "fdcId": 173471,
+      "description": "Vanilla extract",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 288,
+        "protein": 0.06,
+        "fiber": 0,
+        "sodium": 9,
+        "sugar": 12.65
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.2
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 13
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 208
+        }
+      ]
+    },
+    "173473": {
+      "fdcId": 173473,
+      "description": "Rosemary, fresh",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 131,
+        "protein": 3.31,
+        "fiber": 14.1,
+        "sodium": 26,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 0.7
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 1.7
+        }
+      ]
+    },
+    "173474": {
+      "fdcId": 173474,
+      "description": "Peppermint, fresh",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 70,
+        "protein": 3.75,
+        "fiber": 8,
+        "sodium": 31,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 2,
+          "modifier": "leaves",
+          "grams": 0.1
+        },
+        {
+          "amount": 2,
+          "modifier": "tbsp",
+          "grams": 3.2
+        }
+      ]
+    },
+    "173573": {
+      "fdcId": 173573,
+      "description": "Oil, avocado",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 0,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 14
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 218
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.5
+        }
+      ]
+    },
+    "173627": {
+      "fdcId": 173627,
+      "description": "Chicken, broilers or fryers, dark meat, thigh, meat only, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 121,
+        "protein": 19.66,
+        "fiber": 0,
+        "sodium": 95,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        },
+        {
+          "amount": 1,
+          "modifier": "thigh without skin",
+          "grams": 149
+        }
+      ]
+    },
+    "173734": {
+      "fdcId": 173734,
+      "description": "Beans, black, mature seeds, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 341,
+        "protein": 21.6,
+        "fiber": 15.5,
+        "sodium": 5,
+        "sugar": 2.12
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 194
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 12.1
+        }
+      ]
+    },
+    "173745": {
+      "fdcId": 173745,
+      "description": "Beans, navy, mature seeds, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 337,
+        "protein": 22.33,
+        "fiber": 15.3,
+        "sodium": 5,
+        "sugar": 3.88
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 208
+        }
+      ]
+    },
+    "173756": {
+      "fdcId": 173756,
+      "description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 378,
+        "protein": 20.47,
+        "fiber": 12.2,
+        "sodium": 24,
+        "sugar": 10.7
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 200
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 12.5
+        }
+      ]
+    },
+    "173797": {
+      "fdcId": 173797,
+      "description": "Beans, pinto, mature seeds, canned, drained solids, rinsed in tap water",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 117,
+        "protein": 7.04,
+        "fiber": null,
+        "sodium": 212,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 169
+        },
+        {
+          "amount": 1,
+          "modifier": "can",
+          "grams": 258
+        }
+      ]
+    },
+    "173801": {
+      "fdcId": 173801,
+      "description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained, rinsed in tap water",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 138,
+        "protein": 7.04,
+        "fiber": 6.3,
+        "sodium": 212,
+        "sugar": 4
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "can drained, rinsed",
+          "grams": 254
+        },
+        {
+          "amount": 1,
+          "modifier": "cup drained, rinsed",
+          "grams": 152
+        }
+      ]
+    },
+    "173904": {
+      "fdcId": 173904,
+      "description": "Cereals, oats, regular and quick, not fortified, dry",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 379,
+        "protein": 13.15,
+        "fiber": 10.1,
+        "sodium": 6,
+        "sugar": 0.99
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 81
+        },
+        {
+          "amount": 0.33,
+          "modifier": "cup",
+          "grams": 27
+        }
+      ]
+    },
+    "173933": {
+      "fdcId": 173933,
+      "description": "Apple juice, canned or bottled, unsweetened, without added ascorbic acid",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 46,
+        "protein": 0.1,
+        "fiber": 0.2,
+        "sodium": 4,
+        "sugar": 9.62
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 248
+        },
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 31
+        },
+        {
+          "amount": 1,
+          "modifier": "drink box (8.45 fl oz)",
+          "grams": 262
+        }
+      ]
+    },
+    "173944": {
+      "fdcId": 173944,
+      "description": "Bananas, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 89,
+        "protein": 1.09,
+        "fiber": 2.6,
+        "sodium": 1,
+        "sugar": 12.23
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup, mashed",
+          "grams": 225
+        },
+        {
+          "amount": 1,
+          "modifier": "cup, sliced",
+          "grams": 150
+        },
+        {
+          "amount": 1,
+          "modifier": "extra small (less than 6\" long)",
+          "grams": 81
+        },
+        {
+          "amount": 1,
+          "modifier": "small (6\" to 6-7/8\" long)",
+          "grams": 101
+        },
+        {
+          "amount": 1,
+          "modifier": "medium (7\" to 7-7/8\" long)",
+          "grams": 118
+        },
+        {
+          "amount": 1,
+          "modifier": "large (8\" to 8-7/8\" long)",
+          "grams": 136
+        },
+        {
+          "amount": 1,
+          "modifier": "extra large (9\" or longer)",
+          "grams": 152
+        },
+        {
+          "amount": 1,
+          "modifier": "NLEA serving",
+          "grams": 126
+        }
+      ]
+    },
+    "174036": {
+      "fdcId": 174036,
+      "description": "Beef, ground, 80% lean meat / 20% fat, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 254,
+        "protein": 17.17,
+        "fiber": 0,
+        "sodium": 66,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 4,
+          "modifier": "oz",
+          "grams": 113
+        }
+      ]
+    },
+    "174266": {
+      "fdcId": 174266,
+      "description": "Peanut butter, smooth style, with salt (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 598,
+        "protein": 22.21,
+        "fiber": 5,
+        "sodium": 426,
+        "sugar": 10.49
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 2,
+          "modifier": "tbsp",
+          "grams": 32
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 258
+        }
+      ]
+    },
+    "174277": {
+      "fdcId": 174277,
+      "description": "Soy sauce made from soy and wheat (shoyu)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 53,
+        "protein": 8.14,
+        "fiber": 0.8,
+        "sodium": 5493,
+        "sugar": 0.4
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 16
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 5.3
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 255
+        },
+        {
+          "amount": 1,
+          "modifier": "individual packet",
+          "grams": 8.9
+        }
+      ]
+    },
+    "174278": {
+      "fdcId": 174278,
+      "description": "Soy sauce made from soy (tamari)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 60,
+        "protein": 10.51,
+        "fiber": 0.8,
+        "sodium": 5586,
+        "sugar": 1.7
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 18
+        },
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 6
+        }
+      ]
+    },
+    "174284": {
+      "fdcId": 174284,
+      "description": "Lentils, pink or red, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 358,
+        "protein": 23.91,
+        "fiber": 10.8,
+        "sodium": 7,
+        "sugar": null
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 192
+        }
+      ]
+    },
+    "174285": {
+      "fdcId": 174285,
+      "description": "Beans, kidney, red, mature seeds, canned, drained solids",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 124,
+        "protein": 7.98,
+        "fiber": 5.5,
+        "sodium": 231,
+        "sugar": 3.8
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "can drained solids",
+          "grams": 266
+        }
+      ]
+    },
+    "174290": {
+      "fdcId": 174290,
+      "description": "Tofu, extra firm, prepared with nigari",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 83,
+        "protein": 9.98,
+        "fiber": 1,
+        "sodium": 4,
+        "sugar": 0.71
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 0.2,
+          "modifier": "block",
+          "grams": 91
+        }
+      ]
+    },
+    "174523": {
+      "fdcId": 174523,
+      "description": "Sauce, barbecue",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 172,
+        "protein": 0.82,
+        "fiber": 0.9,
+        "sodium": 1027,
+        "sugar": 33.24
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 17
+        },
+        {
+          "amount": 0.5,
+          "modifier": "cup",
+          "grams": 143
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 279
+        }
+      ]
+    },
+    "174524": {
+      "fdcId": 174524,
+      "description": "Sauce, salsa, ready-to-serve",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 29,
+        "protein": 1.52,
+        "fiber": 1.9,
+        "sodium": 711,
+        "sugar": 4.01
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 2,
+          "modifier": "tbsp",
+          "grams": 36
+        },
+        {
+          "amount": 0.5,
+          "modifier": "cup",
+          "grams": 130
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 259
+        }
+      ]
+    },
+    "174528": {
+      "fdcId": 174528,
+      "description": "Sauce, ready-to-serve, pepper, TABASCO",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 12,
+        "protein": 1.29,
+        "fiber": 0.6,
+        "sodium": 633,
+        "sugar": 0.13
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.7
+        },
+        {
+          "amount": 0.25,
+          "modifier": "tsp",
+          "grams": 1.2
+        }
+      ]
+    },
+    "174529": {
+      "fdcId": 174529,
+      "description": "Sauce, oyster, ready-to-serve",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 51,
+        "protein": 1.35,
+        "fiber": 0.3,
+        "sodium": 2733,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 18
+        }
+      ]
+    },
+    "174536": {
+      "fdcId": 174536,
+      "description": "Soup, chicken broth, ready-to-serve",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 6,
+        "protein": 0.64,
+        "fiber": 0,
+        "sodium": 371,
+        "sugar": 0.43
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 249
+        }
+      ]
+    },
+    "174584": {
+      "fdcId": 174584,
+      "description": "Sausage, smoked link sausage, pork",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 309,
+        "protein": 11.98,
+        "fiber": 0,
+        "sodium": 827,
+        "sugar": 0.94
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "link (4\" long x 1-1/8\" dia)",
+          "grams": 68
+        },
+        {
+          "amount": 1,
+          "modifier": "link, little (2\" long x 3/4\" dia)",
+          "grams": 16
+        }
+      ]
+    },
+    "174832": {
+      "fdcId": 174832,
+      "description": "Beverages, almond milk, unsweetened, shelf stable",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 15,
+        "protein": 0.4,
+        "fiber": 0.2,
+        "sodium": 72,
+        "sugar": 0.81
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 262
+        }
+      ]
+    },
+    "174837": {
+      "fdcId": 174837,
+      "description": "Alcoholic beverage, wine, table, white",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 82,
+        "protein": 0.07,
+        "fiber": 0,
+        "sodium": 5,
+        "sugar": 0.96
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "fl oz",
+          "grams": 29.4
+        },
+        {
+          "amount": 1,
+          "modifier": "serving (5 fl oz)",
+          "grams": 147
+        }
+      ]
+    },
+    "174928": {
+      "fdcId": 174928,
+      "description": "Bread, crumbs, dry, grated, plain",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 395,
+        "protein": 13.35,
+        "fiber": 4.5,
+        "sodium": 732,
+        "sugar": 6.2
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 108
+        }
+      ]
+    },
+    "174982": {
+      "fdcId": 174982,
+      "description": "Crackers, standard snack-type, regular",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 510,
+        "protein": 6.64,
+        "fiber": 2.3,
+        "sodium": 726,
+        "sugar": 8.18
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 5,
+          "modifier": "crackers",
+          "grams": 16
+        },
+        {
+          "amount": 5,
+          "modifier": "crackers, regular size, round (1 serving)",
+          "grams": 16
+        },
+        {
+          "amount": 1,
+          "modifier": "cracker, round",
+          "grams": 3.2
+        },
+        {
+          "amount": 1,
+          "modifier": "cracker, rectangular",
+          "grams": 4
+        },
+        {
+          "amount": 1,
+          "modifier": "cup crushed",
+          "grams": 52
+        }
+      ]
+    },
+    "175036": {
+      "fdcId": 175036,
+      "description": "Tortillas, ready-to-bake or -fry, corn",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 218,
+        "protein": 5.7,
+        "fiber": 6.3,
+        "sodium": 45,
+        "sugar": 0.88
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "oz",
+          "grams": 28.35
+        },
+        {
+          "amount": 1,
+          "modifier": "enchilada",
+          "grams": 19
+        },
+        {
+          "amount": 1,
+          "modifier": "tortilla",
+          "grams": 24
+        }
+      ]
+    },
+    "175040": {
+      "fdcId": 175040,
+      "description": "Leavening agents, baking soda",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 0,
+        "protein": 0,
+        "fiber": 0,
+        "sodium": 27360,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4.6
+        },
+        {
+          "amount": 0.5,
+          "modifier": "tsp",
+          "grams": 2.3
+        }
+      ]
+    },
+    "175043": {
+      "fdcId": 175043,
+      "description": "Leavening agents, yeast, baker's, active dry",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 325,
+        "protein": 40.44,
+        "fiber": 26.9,
+        "sodium": 51,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "tsp",
+          "grams": 4
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 12
+        },
+        {
+          "amount": 1,
+          "modifier": "packet",
+          "grams": 7.2
+        }
+      ]
+    },
+    "175167": {
+      "fdcId": 175167,
+      "description": "Fish, salmon, Atlantic, farmed, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 208,
+        "protein": 20.42,
+        "fiber": 0,
+        "sodium": 59,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 3,
+          "modifier": "oz",
+          "grams": 85
+        },
+        {
+          "amount": 0.5,
+          "modifier": "fillet",
+          "grams": 198
+        }
+      ]
+    },
+    "175176": {
+      "fdcId": 175176,
+      "description": "Fish, tilapia, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 96,
+        "protein": 20.08,
+        "fiber": 0,
+        "sodium": 52,
+        "sugar": 0
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "fillet",
+          "grams": 116
+        }
+      ]
+    },
+    "175192": {
+      "fdcId": 175192,
+      "description": "Beans, great northern, mature seeds, canned",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 114,
+        "protein": 7.37,
+        "fiber": 4.9,
+        "sodium": 370,
+        "sugar": 1.41
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 262
+        }
+      ]
+    },
+    "175193": {
+      "fdcId": 175193,
+      "description": "Beans, kidney, all types, mature seeds, raw",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 333,
+        "protein": 23.58,
+        "fiber": 24.9,
+        "sodium": 24,
+        "sugar": 2.23
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 184
+        }
+      ]
+    },
+    "175199": {
+      "fdcId": 175199,
+      "description": "Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 347,
+        "protein": 21.42,
+        "fiber": 15.5,
+        "sodium": 12,
+        "sugar": 2.11
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 193
+        },
+        {
+          "amount": 1,
+          "modifier": "tbsp",
+          "grams": 12
+        }
+      ]
+    },
+    "175204": {
+      "fdcId": 175204,
+      "description": "Beans, white, mature seeds, canned",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 114,
+        "protein": 7.26,
+        "fiber": 4.8,
+        "sodium": 340,
+        "sugar": 0.29
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 262
+        }
+      ]
+    },
+    "175238": {
+      "fdcId": 175238,
+      "description": "Beans, black, mature seeds, canned, low sodium",
+      "dataType": "SR Legacy",
+      "nutrientsPer100g": {
+        "kcal": 91,
+        "protein": 6.03,
+        "fiber": 6.9,
+        "sodium": 138,
+        "sugar": 0.23
+      },
+      "nutrientIds": {
+        "kcal": 1008,
+        "protein": 1003,
+        "fiber": 1079,
+        "sodium": 1093,
+        "sugar": 2000
+      },
+      "portions": [
+        {
+          "amount": 1,
+          "modifier": "cup",
+          "grams": 240
+        }
+      ]
+    }
+  }
+}

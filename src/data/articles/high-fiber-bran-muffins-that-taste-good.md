@@ -23,6 +23,43 @@ cookTime: 20 minutes
 totalTime: 45 minutes
 servings: 12
 calories: 293
+ingredientsGrams:
+  - item: "1 ½ cups wheat bran"
+    grams: 87
+    fdcId: 169722
+  - item: "½ cup oat bran"
+    grams: 47
+    fdcId: 168872
+  - item: "1 ½ cups whole wheat flour, spooned and leveled"
+    grams: 180
+    fdcId: 168893
+  - item: "½ cup granulated sugar"
+    grams: 100
+    fdcId: 169655
+  - item: "2 teaspoons baking soda"
+    grams: 9.2
+    fdcId: 175040
+  - item: "½ teaspoon salt"
+    grams: 3
+    fdcId: 173468
+  - item: "1 ½ cups buttermilk (or milk + 1 tablespoon lemon juice or vinegar, rested 5 minutes)"
+    grams: 367.5
+    fdcId: 170874
+  - item: "½ cup honey"
+    grams: 169.5
+    fdcId: 169640
+  - item: "½ cup vegetable oil (or melted coconut oil, cooled)"
+    grams: 109
+    fdcId: 171411
+  - item: "2 large eggs, lightly beaten"
+    grams: 100
+    fdcId: 171287
+  - item: "1 teaspoon vanilla extract"
+    grams: 4.2
+    fdcId: 173471
+  - item: "1 cup raisins (or other dried fruit)"
+    grams: 145
+    fdcId: 168165
 difficulty: Easy
 recipeCuisine: "American"
 recipeName: "High-Fiber Bran Muffins"
