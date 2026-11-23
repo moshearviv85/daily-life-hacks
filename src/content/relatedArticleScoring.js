@@ -1,4 +1,41 @@
 /**
+ * The two budget pillars were repeating as related cards on dozens of
+ * unrelated recipes and tips. They may appear only on indexable nutrition
+ * pages that also carry a budget or per-dollar tag. That is inside the
+ * allowed set (nutrition, or a budget/per-dollar tag, never recipes or tips)
+ * and keeps each card title on 20 built pages or fewer.
+ */
+export const REPEATED_BUDGET_CARD_IDS = new Set([
+  "how-to-eat-more-fiber-on-a-budget-complete-guide",
+  "high-protein-on-a-budget-complete-guide",
+]);
+
+export function hasBudgetOrPerDollarTag(tags) {
+  for (const tag of tags || []) {
+    const normalized = String(tag).trim().toLowerCase();
+    if (normalized.includes("per dollar") || normalized.includes("per-dollar")) {
+      return true;
+    }
+    if (/(^|[^a-z0-9])budget([^a-z0-9]|$)/.test(normalized)) return true;
+  }
+  return false;
+}
+
+export function repeatedBudgetCardAllowed({
+  candidateId,
+  currentCategory,
+  currentTags,
+  currentIndexPruned = false,
+}) {
+  if (!REPEATED_BUDGET_CARD_IDS.has(candidateId)) return true;
+  if (currentIndexPruned) return false;
+  const category = String(currentCategory || "").trim().toLowerCase();
+  if (category === "recipes" || category === "tips") return false;
+  if (category !== "nutrition") return false;
+  return hasBudgetOrPerDollarTag(currentTags);
+}
+
+/**
  * Score one candidate for the article-page "Keep Reading" section.
  *
  * Pillars are intentionally exclusive: a page may surface only the pillar
@@ -13,7 +50,19 @@ export function scoreRelatedCandidate({
   currentCategory,
   pillarSlugs,
   preferredPillar,
+  currentIndexPruned = false,
 }) {
+  if (
+    !repeatedBudgetCardAllowed({
+      candidateId,
+      currentCategory,
+      currentTags,
+      currentIndexPruned,
+    })
+  ) {
+    return null;
+  }
+
   const isPillar = pillarSlugs.has(candidateId);
   if (isPillar && candidateId !== preferredPillar) return null;
 

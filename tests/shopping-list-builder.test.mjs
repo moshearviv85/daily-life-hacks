@@ -70,11 +70,10 @@ test("ingredient math fails safely instead of inventing conversions", async () =
   assert.doesNotMatch(source, /convertUnit|unitConversion/);
 });
 
-test("page includes WebApplication and matching five-entry FAQ schema", async () => {
+test("page includes WebApplication and a visible five-entry FAQ", async () => {
   const source = await readFile(sourcePath, "utf8");
   assert.match(source, /"@type": "WebApplication"/);
-  assert.match(source, /"@type": "FAQPage"/);
-  assert.match(source, /mainEntity: faqs\.map/);
+  assert.doesNotMatch(source, /"@type": "FAQPage"/);
   assert.match(source, /\{faqs\.map\(\(\[question, answer\]\)/);
   const faqBlock = source.match(/const faqs = \[(.*?)\];/s)?.[1] ?? "";
   assert.equal((faqBlock.match(/^\s*\["/gm) ?? []).length, 5);

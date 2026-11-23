@@ -12,7 +12,7 @@ tags:
 image: /images/how-to-store-fruits-and-vegetables-properly-main.jpg
 imageAlt: How to Store Fruits and Vegetables Properly - fresh produce perfectly organized
   in clear bins inside a clean refrigerator
-date: 2026-01-17
+date: 2026-04-28
 author: "David Miller"
 featured: false
 editorsPick: false

@@ -9,7 +9,7 @@ tags:
 - best high fiber
 image: /images/high-fiber-hummus-recipe-homemade-main.jpg
 imageAlt: Creamy homemade hummus topped with olive oil, chickpeas, and paprika
-date: 2026-01-08
+date: 2026-04-28
 dateModified: 2026-07-20
 author: "David Miller"
 quickAnswer: "For creamy homemade hummus, process two cans of well-rinsed chickpeas with tahini, lemon, garlic, cumin, and salt for at least one full minute. Drizzle in olive oil, then add reserved chickpea liquid or ice water one tablespoon at a time. You don't need to peel every chickpea; enough blending time and controlled liquid do most of the work."

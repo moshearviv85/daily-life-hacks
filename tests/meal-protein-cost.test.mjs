@@ -194,7 +194,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   const canned = proteinRow("Canned black beans");
   const rice = proteinRow("White rice (long grain, dry)");
   const cannedFiber = fiberRow("Canned black beans");
-  assert.match(beans, /dateModified: 2026-09-06/);
+  assert.match(beans, /dateModified: 2026-11-23/);
   assert.match(beans, new RegExp(`\\$${Number(canned.package_price_usd).toFixed(2)} each`));
   assert.match(beans, /\$1\.76 for the pot/);
   assert.match(beans, /about 53 grams of protein/);

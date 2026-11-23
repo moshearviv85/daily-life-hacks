@@ -170,9 +170,9 @@ const sourceSummary = (
   note: string,
 ) => {
   if (!measured) return "Not measured";
-  if (status === "exact") return `Exact USDA match${form ? ` — ${form}` : ""}`;
-  if (status === "proxy") return `Close USDA proxy${note ? ` — ${note}` : ""}`;
-  return `Unresolved — recorded only${note ? `. ${note}` : ""}`;
+  if (status === "exact") return `Exact USDA match${form ? `: ${form}` : ""}`;
+  if (status === "proxy") return `Close USDA proxy${note ? `: ${note}` : ""}`;
+  return `Unresolved, recorded only${note ? `. ${note}` : ""}`;
 };
 ---
 

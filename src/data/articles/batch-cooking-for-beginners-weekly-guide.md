@@ -12,7 +12,7 @@ tags:
 image: /images/batch-cooking-for-beginners-weekly-guide-main.jpg
 imageAlt: Batch Cooking for Beginners Weekly Guide - multiple glass containers filled
   with pre-cooked grains, roasted vegetables, and proteins aligned on a counter
-date: 2026-01-06
+date: 2026-04-28
 dateModified: 2026-07-20
 author: "David Miller"
 quickAnswer: "Batch cooking works best when you prepare flexible building blocks instead of five identical finished meals. In about 90 minutes, cook one grain, roast two pans of vegetables, prepare a simply seasoned protein, and mix two sauces. Cool everything promptly, store components separately, and combine them differently through the week."

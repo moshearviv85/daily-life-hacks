@@ -96,6 +96,10 @@ faq:
 
 **author:** Always exactly `"David Miller"` - never omit.
 
+**date:** `YYYY-MM-DD`, on or after 2026-01-24 (the domain registration date). Do not backdate an article so it looks older than the site.
+
+**dateModified:** Set or change this only for a substantive edit: new sections, corrected facts, or a real rewrite. Leave it unchanged for typos, title tweaks, link edits, and template changes. CI runs `scripts/check-datemodified-churn.mjs` and fails a pull request that changes `dateModified` in more than five article files unless that pull request is labeled `content-refresh`.
+
 **Boolean flags:** All four default to `false`. Only set `featured: true` if explicitly requested. Never set more than one flag to true per article.
 
 **faq:** Always include 4-5 FAQ entries. Each question should target a real long-tail keyword variant. Answers use hedging language for any health claims. Answers range 40-90 words each.
@@ -201,7 +205,7 @@ The last section should feel like a natural ending, not a formal conclusion. Opt
 - [ ] Image alt text describes the visual content specifically (not generic)
 - [ ] Image filename is `/images/{slug}-main.jpg` exactly (slug matches the article file slug)
 - [ ] 4-5 FAQ entries with long-tail keyword variants in the questions
-- [ ] Date is correct and in YYYY-MM-DD format
+- [ ] Date is correct, in YYYY-MM-DD format, and not earlier than 2026-01-24. Change `dateModified` only when the edit is substantive
 - [ ] Excerpt is 130-170 characters (aim for this range)
 - [ ] Tags include the main keyword concept, category concepts, and format/audience modifiers
 

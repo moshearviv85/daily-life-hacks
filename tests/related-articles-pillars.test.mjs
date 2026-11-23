@@ -13,7 +13,12 @@ const pillars = new Set([
   "meal-prep-for-beginners-complete-system",
 ]);
 
-function score(candidateId, preferredPillar = null) {
+const repeatedBudgetCards = new Set([
+  "how-to-eat-more-fiber-on-a-budget-complete-guide",
+  "high-protein-on-a-budget-complete-guide",
+]);
+
+function score(candidateId, preferredPillar = null, overrides = {}) {
   return scoreRelatedCandidate({
     candidateId,
     candidateTags: ["meal prep"],
@@ -22,6 +27,7 @@ function score(candidateId, preferredPillar = null) {
     currentCategory: "tips",
     pillarSlugs: pillars,
     preferredPillar,
+    ...overrides,
   });
 }
 
@@ -33,7 +39,11 @@ test("at most the preferred cluster pillar can enter related articles", () => {
 
     assert.ok(includedPillars.length <= 1);
     assert.notEqual(includedPillars.length, 3);
-    if (preferredPillar) assert.deepEqual(includedPillars, [preferredPillar]);
+    if (!preferredPillar || repeatedBudgetCards.has(preferredPillar)) {
+      assert.deepEqual(includedPillars, []);
+    } else {
+      assert.deepEqual(includedPillars, [preferredPillar]);
+    }
   }
 });
 
@@ -97,8 +107,52 @@ test("unrelated pillars cannot leak into an explicitly assigned cluster", () => 
   const resolution = resolve({ explicitCluster: "budget-protein" });
   const preferred = resolution.cluster.parentPillar;
   const included = [...pillars].filter(
-    (candidateId) => score(candidateId, preferred) !== null,
+    (candidateId) =>
+      score(candidateId, preferred, {
+        currentCategory: "nutrition",
+        currentTags: new Set(["protein per dollar"]),
+      }) !== null,
   );
 
   assert.deepEqual(included, [clusters[2].parentPillar]);
+});
+
+test("fiber and protein budget cards stay off recipes, tips, and untagged pages", () => {
+  for (const candidateId of repeatedBudgetCards) {
+    assert.equal(
+      score(candidateId, candidateId, {
+        currentCategory: "recipes",
+        currentTags: new Set(["budget", "per dollar"]),
+      }),
+      null,
+    );
+    assert.equal(
+      score(candidateId, candidateId, {
+        currentCategory: "tips",
+        currentTags: new Set(["budget"]),
+      }),
+      null,
+    );
+    assert.equal(
+      score(candidateId, candidateId, {
+        currentCategory: "nutrition",
+        currentTags: new Set(["fiber"]),
+      }),
+      null,
+    );
+    assert.equal(
+      score(candidateId, candidateId, {
+        currentCategory: "nutrition",
+        currentTags: new Set(["protein per dollar"]),
+        currentIndexPruned: true,
+      }),
+      null,
+    );
+    assert.ok(
+      score(candidateId, candidateId, {
+        currentCategory: "nutrition",
+        currentTags: new Set(["high fiber on a budget"]),
+      }) > 0,
+    );
+  }
 });

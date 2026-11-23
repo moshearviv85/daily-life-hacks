@@ -10,7 +10,7 @@ tags:
 - beans
 image: /images/high-fiber-meals-for-constipation-relief-main.jpg
 imageAlt: Breakfast bowl of chia pudding topped with raspberries, blueberries, and sliced pear
-date: 2025-12-31
+date: 2026-04-28
 dateModified: 2026-07-20
 author: "David Miller"
 quickAnswer: "For occasional constipation, build meals around oats, beans, lentils, whole grains, fruit, vegetables, and enough liquids for your needs. NIDDK recommends increasing fiber gradually, not rebuilding your diet overnight. Food changes aren't a guaranteed quick fix. If symptoms persist or come with bleeding, constant pain, vomiting, fever, or unplanned weight loss, seek medical care."

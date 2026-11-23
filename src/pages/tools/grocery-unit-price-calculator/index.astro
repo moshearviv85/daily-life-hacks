@@ -25,21 +25,6 @@ const schemas = [
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      ["How does the grocery price benchmark work?", "Choose a food and enter its current package price and weight. The tool compares your price per 100 grams with our published July 2026 snapshot."],
-      ["Where do the benchmark prices come from?", "They come from the 53-food fiber study and 49-food protein study published by Daily Life Hacks in July 2026, using documented Walmart and BLS price sources."],
-      ["What does fiber or protein per dollar mean?", "It estimates how many grams of the selected nutrient one dollar buys at your entered price, using the same food data and edible-yield assumptions as our studies."],
-      ["Does a good price mean I should buy the biggest package?", "No. A low unit price loses its charm if half the package goes stale behind three jars of mustard."],
-      ["Can I still compare two packages directly?", "Yes. Open the two-package comparison below the benchmark to compare weight, volume, or count units."],
-    ].map(([name, text]) => ({
-      "@type": "Question",
-      name,
-      acceptedAnswer: { "@type": "Answer", text },
-    })),
-  },
 ];
 const breadcrumbSchema = {
   "@context": "https://schema.org",

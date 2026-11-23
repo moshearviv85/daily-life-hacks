@@ -16,8 +16,12 @@ pipeline-data/index-update-report-{YYYY-MM}.md. Rank changes are highlighted —
 they are newsletter/social content.
 
 Usage:
-  python scripts/update-price-index.py            # real run: updates CSVs + writes report
-  python scripts/update-price-index.py --dry-run  # report only, writes nothing
+  python scripts/update-price-index.py                 # update numbers in existing CSVs
+  python scripts/update-price-index.py --create-files  # also write the monthly report file
+  python scripts/update-price-index.py --dry-run       # print the report, write nothing
+
+File creation is off unless --create-files is passed. This script never writes
+under src/data/articles.
 
 Env vars:
   BLS_API_KEY   optional BLS registration key (raises daily API quota); works without it
@@ -340,8 +344,11 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true",
                         help="report what would change without writing any files")
     parser.add_argument("--report-only", action="store_true",
-                        help="write the monthly Price Watch report but leave the CSVs untouched "
+                        help="leave the CSVs untouched "
                              "(keeps the published ranking on its single consistent price basis)")
+    parser.add_argument("--create-files", action="store_true",
+                        help="allow creating the monthly report file. Off by default. "
+                             "Never creates article files.")
     args = parser.parse_args()
 
     # Live ranking CSVs only. Derived slices and the BLS timeseries share the
@@ -385,15 +392,33 @@ def main() -> int:
         print("Dry run complete — no files written.")
         return 0
 
+    articles_dir = (REPO_ROOT / "src" / "data" / "articles").resolve()
+
+    def guarded_write(path: Path, write) -> None:
+        resolved = path.resolve()
+        if resolved == articles_dir or articles_dir in resolved.parents:
+            raise SystemExit(
+                f"Refusing to write an article file: {resolved}. "
+                "update-price-index only updates numbers in existing datasets."
+            )
+        if not path.exists() and not args.create_files:
+            raise SystemExit(
+                f"Refusing to create {path.relative_to(REPO_ROOT)} without --create-files."
+            )
+        write()
+
     if not args.report_only:
         for res in results:
-            write_csv(res)
+            guarded_write(res["path"], lambda result=res: write_csv(result))
             print(f"Wrote {res['path'].relative_to(REPO_ROOT)}")
 
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    report_path = REPORT_DIR / f"index-update-report-{month_tag}.md"
-    report_path.write_text(report, encoding="utf-8")
-    print(f"Wrote {report_path.relative_to(REPO_ROOT)}")
+    if args.create_files:
+        REPORT_DIR.mkdir(parents=True, exist_ok=True)
+        report_path = REPORT_DIR / f"index-update-report-{month_tag}.md"
+        guarded_write(report_path, lambda: report_path.write_text(report, encoding="utf-8"))
+        print(f"Wrote {report_path.relative_to(REPO_ROOT)}")
+    else:
+        print("File creation disabled. Pass --create-files to write the monthly report. No article files created.")
     if args.report_only:
         print("Report-only mode: CSVs left untouched (ranking keeps its consistent price basis).")
     return 0

@@ -41,15 +41,6 @@ const schemas = [
   },
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map(([name, answer]) => ({
-      "@type": "Question",
-      name,
-      acceptedAnswer: { "@type": "Answer", text: answer },
-    })),
-  },
-  {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },

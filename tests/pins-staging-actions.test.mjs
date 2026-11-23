@@ -17,6 +17,9 @@ function makeDb() {
             async run() {
               return { success: true, meta: { changes: 1 } };
             },
+            async first() {
+              return { count: 0 };
+            },
           };
         },
         async run() {

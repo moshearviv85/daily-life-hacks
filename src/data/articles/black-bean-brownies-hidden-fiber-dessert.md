@@ -10,7 +10,7 @@ tags:
 - gluten free dessert
 image: /images/black-bean-brownies-hidden-fiber-dessert-main.jpg
 imageAlt: Stack of fudgy black bean brownies with melted chocolate chips on a wire cooling rack
-date: 2026-01-19
+date: 2026-04-28
 dateModified: 2026-07-12
 author: "David Miller"
 featured: false

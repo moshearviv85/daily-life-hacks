@@ -15,7 +15,7 @@ tags:
 - fiber rich
 image: /images/pear-salad-with-walnuts-fiber-rich-main.jpg
 imageAlt: Sliced pear, toasted walnuts, and blue cheese over mixed greens
-date: 2025-12-29
+date: 2026-04-28
 dateModified: 2026-07-20
 author: "David Miller"
 featured: false

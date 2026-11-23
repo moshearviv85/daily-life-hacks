@@ -11,7 +11,7 @@ tags:
 image: /images/high-fiber-bran-muffins-that-taste-good-main.jpg
 imageAlt: Golden bran muffins with raisins cooling on a wire rack beside a jar of honey
 quickAnswer: "Soak wheat bran and oat bran in buttermilk for 10 minutes, then mix with whole wheat flour, honey, oil, eggs, and raisins. Bake at 400 degrees F for 18 to 22 minutes. The original batch makes 12 large muffins, estimated at 5.9 g fiber and 293 calories each."
-date: 2025-12-28
+date: 2026-04-28
 dateModified: 2026-09-23
 author: "David Miller"
 featured: false

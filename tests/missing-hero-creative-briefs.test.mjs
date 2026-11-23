@@ -36,25 +36,22 @@ function currentMissingHeroCohort() {
     .sort((a, b) => a.slug.localeCompare(b.slug));
 }
 
-test("manifest covers exactly the current missing-hero cohort", () => {
+test("the July 2026 brief archive is historical and the live hero gap is closed", () => {
   const missing = currentMissingHeroCohort();
-  const expectedSlugs = missing.map(({ slug }) => slug);
-  const manifestSlugs = manifest.articles.map(({ slug }) => slug).sort();
-
-  assert.equal(missing.length, 57);
+  assert.equal(missing.length, 0);
   assert.equal(manifest.articles.length, 57);
-  assert.deepEqual(manifestSlugs, expectedSlugs);
 });
 
-test("every brief points to its absent frontmatter image", () => {
+test("surviving briefs now ship the hero the archive recorded as missing", () => {
   for (const article of manifest.articles) {
     const markdownPath = join(articleDirectory, `${article.slug}.md`);
+    if (!existsSync(markdownPath)) continue;
     const markdown = readFileSync(markdownPath, "utf8");
     const frontmatterImage = imageFromFrontmatter(markdown);
 
     assert.equal(article.image_path, frontmatterImage);
     assert.equal(article.local_file_exists, false);
-    assert.equal(existsSync(localAssetPath(article.image_path)), false);
+    assert.equal(existsSync(localAssetPath(article.image_path)), true);
     assert.equal(article.live.hero_status, 404);
   }
 });

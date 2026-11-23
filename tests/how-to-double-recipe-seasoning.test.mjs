@@ -105,9 +105,10 @@ test("rendered doubling guide keeps solids and liquids separate in HTML and FAQ 
   ].map((match) => JSON.parse(match[1]));
   const renderedJsonLd = JSON.stringify(jsonLdBlocks);
 
-  assert.match(renderedJsonLd, /"@type":"FAQPage"/);
+  assert.doesNotMatch(renderedJsonLd, /"@type":"FAQPage"/);
+  assert.match(rendered, /Frequently Asked Questions/);
   assert.match(
-    renderedJsonLd,
+    rendered,
     /treat 2x broth or water as an initial ceiling and reserve some/i,
   );
   assert.doesNotMatch(

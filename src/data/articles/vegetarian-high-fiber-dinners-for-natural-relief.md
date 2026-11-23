@@ -11,7 +11,7 @@ tags:
 - relief
 image: /images/vegetarian-high-fiber-dinners-for-natural-relief-main.jpg
 imageAlt: Vegetarian high fiber chickpea cauliflower curry in a bowl with cilantro
-date: 2026-01-18
+date: 2026-04-28
 dateModified: 2026-07-20
 author: "David Miller"
 quickAnswer: "For an easy high-fiber vegetarian dinner, simmer chickpeas and cauliflower in a mild coconut curry, then wilt in spinach at the end. Keep the sauce at a gentle simmer so the cauliflower cooks without falling apart. Serve it with rice, yogurt, or flatbread, and introduce higher-fiber meals gradually if your usual diet is lower in fiber."
