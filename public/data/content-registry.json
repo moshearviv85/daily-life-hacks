@@ -820,10 +820,10 @@
     },
     "freezer-meal-prep-ideas-for-beginners": {
       "article": {
-        "base_slug": "freezer-meal-prep-ideas-for-beginners",
+        "base_slug": "meal-prep-for-beginners-complete-system",
         "category": "tips",
-        "canonical_url": "https://www.daily-life-hacks.com/freezer-meal-prep-ideas-for-beginners",
-        "content_path": "src/data/articles/freezer-meal-prep-ideas-for-beginners.md",
+        "canonical_url": "https://www.daily-life-hacks.com/meal-prep-for-beginners-complete-system",
+        "content_path": "src/data/articles/meal-prep-for-beginners-complete-system.md",
         "image": "/images/freezer-meal-prep-ideas-for-beginners-main.jpg",
         "image_alt": "Freezer Meal Prep Ideas for Beginners - five flat frozen ziplock bags stacked",
         "title": "Easy Meal Prep Ideas to Freeze",

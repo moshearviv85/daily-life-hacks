@@ -45,7 +45,7 @@ Quinoa is particularly useful because it cooks in about 15 minutes and acts like
 
 Some people can't stand the smell of an office microwave, and I don't blame them. If that's you, look toward "adult Lunchables" or dense bean salads. A container filled with hard-boiled eggs, rolled-up deli turkey, some sharp cheddar, and almonds is a high-protein win that requires zero heat.
 
-A chickpea and tuna salad is another heavy hitter. Use a vinaigrette instead of mayo if you're worried about it sitting in your bag for a few hours. The acidity in the dressing keeps things fresh, and the fiber in the beans works with the protein in the tuna to keep you full. Just maybe don't eat the tuna in a small, unventilated conference room if you want to keep your work friends. And if sandwiches are more your speed, these [high protein bagel sandwich ideas for lunch](/high-protein-bagel-sandwich-ideas-lunch/) skip the microwave line entirely.
+A chickpea and tuna salad is another heavy hitter. Use a vinaigrette instead of mayo if you're worried about it sitting in your bag for a few hours. The acidity in the dressing keeps things fresh, and the fiber in the beans works with the protein in the tuna to keep you full. Just maybe don't eat the tuna in a small, unventilated conference room if you want to keep your work friends. And if sandwiches are more your speed, these [high protein bagel sandwich ideas for lunch](/how-much-protein-in-bagel-sandwich/#high-protein-bagel-sandwich-ideas) skip the microwave line entirely.
 
 ## Master the art of the sauce
 

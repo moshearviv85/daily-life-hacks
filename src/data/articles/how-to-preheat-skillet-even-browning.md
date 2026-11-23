@@ -38,7 +38,7 @@ The first rule is patience. You can't rush physics. Put your empty pan on the st
 
 A heavy cast iron skillet takes about five minutes. The reason isn't mystical: there's a lot of metal there, and all of it has to absorb heat before the cooking surface stops changing temperature. That same mass is why cast iron barely flinches when cold food hits it. Cast iron also conducts heat far more slowly than aluminum or copper, so the spot over the burner runs ahead of the rim and the extra minutes are what let the two meet in the middle. A stainless steel pan is thinner and gets there in two or three minutes.
 
-The preheat only pays off if the surface is in good shape, so it's worth learning [how to season a cast iron skillet properly](/how-to-season-cast-iron-skillet-properly/) first.
+The preheat only pays off if the surface is in good shape, so it's worth learning how to season a cast iron skillet properly first.
 
 ## The temperature you're actually aiming for
 

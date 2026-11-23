@@ -69,7 +69,7 @@ USDA's Food Safety and Inspection Service advises using cooked leftovers within 
 
 Four servings is the sweet spot for most households. Two people eat it twice, a family of four eats it once, and either way it's gone inside the window. A ten serving pot for one person is how good intentions end up in the bin, and food you paid for and threw out costs full price and feeds nobody. There's more of that thinking in [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/).
 
-Cool things properly before they go in, especially rice. The safe method is in storing cooked grains for meal prep. Beyond four days, freeze it, and [freezer meal prep for beginners](/freezer-meal-prep-ideas-for-beginners/) covers the portioning.
+Cool things properly before they go in, especially rice. The safe method is in storing cooked grains for meal prep. Beyond four days, freeze it, and [freezer meal prep for beginners](/meal-prep-for-beginners-complete-system/#freezer-friendly-picks) covers the portioning.
 
 ## How do you keep leftovers from being the same meal four times?
 

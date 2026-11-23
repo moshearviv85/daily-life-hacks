@@ -84,7 +84,7 @@ Cook in batches while you're at it, because the marginal cost of a bigger pot is
 
 A monthly shop only saves money if the food survives the month. Dry goods are forgiving, but they aren't invincible, and a bag of flour that goes stale is a bag of flour you paid for twice.
 
-Airtight containers, cool cupboard, oldest bag at the front. That's it. Freeze what you cook in single or double portions so future-you has a reason not to order delivery. [Freezer meal prep for beginners](/freezer-meal-prep-ideas-for-beginners/) covers the containers-and-labels part, and a [simple freezer inventory](/freezer-inventory-simple-system/) stops the chest freezer becoming an archaeological dig.
+Airtight containers, cool cupboard, oldest bag at the front. That's it. Freeze what you cook in single or double portions so future-you has a reason not to order delivery. [Freezer meal prep for beginners](/meal-prep-for-beginners-complete-system/#freezer-friendly-picks) covers the containers-and-labels part, and a [simple freezer inventory](/freezer-inventory-simple-system/) stops the chest freezer becoming an archaeological dig.
 
 Buying a month at once feels like a big spend on the day and a small one across the month. $22.83 is the price of two sandwiches, and it's the difference between a kitchen that can feed you and a kitchen that can't. The full system around it lives in [the eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/).
 

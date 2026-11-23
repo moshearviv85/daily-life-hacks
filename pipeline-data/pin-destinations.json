@@ -1202,6 +1202,34 @@
           "title": "Summer Pasta Salad: Perfect for Your Next Potluck",
           "origin": "pin",
           "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "avoid-mushy-pasta-salad-choose",
+          "title": "Avoid Mushy Pasta Salad: Choose the Right Noodle",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "keep-pasta-salad-cold-creamy",
+          "title": "Keep Pasta Salad Cold and Creamy for Picnics",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "pack-pasta-salad-perfect-picnic",
+          "title": "Pack Pasta Salad for Perfect Picnic Freshness",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "secrets-non-gummy-pasta-salad",
+          "title": "Secrets to Non-Gummy Pasta Salad on the Go",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
         }
       ]
     },
@@ -1647,39 +1675,6 @@
           "title": "The 10-Minute Tuesday Night Habit That Saves Money",
           "origin": "pin",
           "created_at": "2026-07-04 14:38:25"
-        }
-      ]
-    },
-    "freezer-meal-prep-ideas-for-beginners": {
-      "canonical": "freezer-meal-prep-ideas-for-beginners",
-      "destinations": [
-        {
-          "id": "legacy-1",
-          "url_slug": "easy-meal-prep-ideas-to-freeze",
-          "title": "",
-          "origin": "legacy_orphan",
-          "created_at": null
-        },
-        {
-          "id": "legacy-2",
-          "url_slug": "freezer-meal-prep-ideas-for-beginners-guide",
-          "title": "",
-          "origin": "legacy_seo_variant",
-          "created_at": null
-        },
-        {
-          "id": "legacy-3",
-          "url_slug": "freezer-meal-prep-ideas-for-toddlers",
-          "title": "",
-          "origin": "legacy_orphan",
-          "created_at": null
-        },
-        {
-          "id": "legacy-4",
-          "url_slug": "freezer-meal-prep-ideas-kid-friendly",
-          "title": "",
-          "origin": "legacy_orphan",
-          "created_at": null
         }
       ]
     },
@@ -2753,39 +2748,6 @@
         }
       ]
     },
-    "high-protein-bagel-sandwich-ideas-lunch": {
-      "canonical": "high-protein-bagel-sandwich-ideas-lunch",
-      "destinations": [
-        {
-          "id": "v1",
-          "url_slug": "build-protein-packed-bagel-lunch",
-          "title": "Build a Protein Packed Bagel for Lunch",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:10"
-        },
-        {
-          "id": "v4",
-          "url_slug": "quick-protein-bagel-sandwiches-you",
-          "title": "Quick Protein Bagel Sandwiches You Need",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:10"
-        },
-        {
-          "id": "v3",
-          "url_slug": "transform-bagel-into-power-meal",
-          "title": "Transform Your Bagel into a Power Meal",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:10"
-        },
-        {
-          "id": "v2",
-          "url_slug": "upgrade-lunch-bagel-high-protein",
-          "title": "Upgrade Your Lunch Bagel: High Protein Ideas",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:10"
-        }
-      ]
-    },
     "high-protein-high-fiber-meals-for-weight-loss": {
       "canonical": "high-protein-high-fiber-meals-for-weight-loss",
       "destinations": [
@@ -2915,6 +2877,34 @@
           "title": "Stop Guessing: Protein in Your Bagel Revealed",
           "origin": "pin",
           "created_at": "2026-04-28 17:21:14"
+        },
+        {
+          "id": "v1",
+          "url_slug": "build-protein-packed-bagel-lunch",
+          "title": "Build a Protein Packed Bagel for Lunch",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "quick-protein-bagel-sandwiches-you",
+          "title": "Quick Protein Bagel Sandwiches You Need",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v3",
+          "url_slug": "transform-bagel-into-power-meal",
+          "title": "Transform Your Bagel into a Power Meal",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "upgrade-lunch-bagel-high-protein",
+          "title": "Upgrade Your Lunch Bagel: High Protein Ideas",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
         }
       ]
     },
@@ -3322,39 +3312,6 @@
           "title": "",
           "origin": "legacy_orphan",
           "created_at": null
-        }
-      ]
-    },
-    "how-to-pack-cold-pasta-salad-picnics": {
-      "canonical": "how-to-pack-cold-pasta-salad-picnics",
-      "destinations": [
-        {
-          "id": "v2",
-          "url_slug": "avoid-mushy-pasta-salad-choose",
-          "title": "Avoid Mushy Pasta Salad: Choose the Right Noodle",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:11"
-        },
-        {
-          "id": "v1",
-          "url_slug": "keep-pasta-salad-cold-creamy",
-          "title": "Keep Pasta Salad Cold and Creamy for Picnics",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:11"
-        },
-        {
-          "id": "v3",
-          "url_slug": "pack-pasta-salad-perfect-picnic",
-          "title": "Pack Pasta Salad for Perfect Picnic Freshness",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:11"
-        },
-        {
-          "id": "v4",
-          "url_slug": "secrets-non-gummy-pasta-salad",
-          "title": "Secrets to Non-Gummy Pasta Salad on the Go",
-          "origin": "pin",
-          "created_at": "2026-04-28 15:58:11"
         }
       ]
     },
@@ -3977,6 +3934,34 @@
           "title": "90 Minutes Sunday = 5 Different Dinners All Week",
           "origin": "pin",
           "created_at": "2026-07-07 13:58:02"
+        },
+        {
+          "id": "legacy-1",
+          "url_slug": "easy-meal-prep-ideas-to-freeze",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "freezer-meal-prep-ideas-for-beginners-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "freezer-meal-prep-ideas-for-toddlers",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "freezer-meal-prep-ideas-kid-friendly",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
         }
       ]
     },

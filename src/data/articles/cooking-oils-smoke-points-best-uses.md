@@ -123,11 +123,11 @@ Heat does change oil. A 2025 review in *Food Chemistry: X* describes how [therma
 
 **Deep frying.** FSIS recommends olive, peanut, canola, corn, grapeseed, safflower, sunflower and vegetable oil, and runs chicken pieces at 375°F, fish at 320°F.
 
-**Searing and stir-frying.** Refined soybean, canola, high-oleic sunflower, peanut or olive. Same oils that work for [seasoning a cast iron skillet](/how-to-season-cast-iron-skillet-properly/).
+**Searing and stir-frying.** Refined soybean, canola, high-oleic sunflower, peanut or olive. Same oils that work for seasoning a cast iron skillet.
 
 **Roasting at 375°F to 425°F.** Extra virgin olive oil, canola, vegetable oil.
 
-**Dressings and finishing.** Extra virgin olive oil, toasted sesame, walnut. Flavor is the whole job, and oil residue is why [cleaning a blender without scrubbing](/how-to-clean-blender-fast-no-scrub/) is worth learning.
+**Dressings and finishing.** Extra virgin olive oil, toasted sesame, walnut. Flavor is the whole job.
 
 **Baking.** Vegetable oil, canola, melted coconut oil or butter. Baking rarely pushes oil to its smoke point, so the number barely matters.
 

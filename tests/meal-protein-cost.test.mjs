@@ -220,7 +220,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   const mealPrep = read("src/data/articles/meal-prep-for-beginners-complete-system.md");
   const pintos = proteinRow("Pinto beans (dry)");
   const drums = proteinRow("Chicken drumsticks (bone-in)");
-  assert.match(mealPrep, /dateModified: 2026-09-06/);
+  assert.match(mealPrep, /dateModified: 2026-11-23/);
   assert.match(mealPrep, new RegExp(`\\$${Number(drums.package_price_usd).toFixed(2)}`));
   assert.match(
     mealPrep,

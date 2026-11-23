@@ -487,6 +487,26 @@
       "url_slug": "summer-pasta-salad-perfect-next",
       "title": "Summer Pasta Salad: Perfect for Your Next Potluck",
       "created_at": "2026-04-28 15:58:10"
+    },
+    "merged-v2": {
+      "url_slug": "avoid-mushy-pasta-salad-choose",
+      "title": "Avoid Mushy Pasta Salad: Choose the Right Noodle",
+      "created_at": "2026-04-28 15:58:11"
+    },
+    "merged-v1": {
+      "url_slug": "keep-pasta-salad-cold-creamy",
+      "title": "Keep Pasta Salad Cold and Creamy for Picnics",
+      "created_at": "2026-04-28 15:58:11"
+    },
+    "merged-v3": {
+      "url_slug": "pack-pasta-salad-perfect-picnic",
+      "title": "Pack Pasta Salad for Perfect Picnic Freshness",
+      "created_at": "2026-04-28 15:58:11"
+    },
+    "merged-v4": {
+      "url_slug": "secrets-non-gummy-pasta-salad",
+      "title": "Secrets to Non-Gummy Pasta Salad on the Go",
+      "created_at": "2026-04-28 15:58:11"
     }
   },
   "easy-sandwich-bread-recipe-beginners": {
@@ -1100,28 +1120,6 @@
       "created_at": "2026-07-04 14:42:13"
     }
   },
-  "high-protein-bagel-sandwich-ideas-lunch": {
-    "v1": {
-      "url_slug": "build-protein-packed-bagel-lunch",
-      "title": "Build a Protein Packed Bagel for Lunch",
-      "created_at": "2026-04-28 15:58:10"
-    },
-    "v4": {
-      "url_slug": "quick-protein-bagel-sandwiches-you",
-      "title": "Quick Protein Bagel Sandwiches You Need",
-      "created_at": "2026-04-28 15:58:10"
-    },
-    "v3": {
-      "url_slug": "transform-bagel-into-power-meal",
-      "title": "Transform Your Bagel into a Power Meal",
-      "created_at": "2026-04-28 15:58:10"
-    },
-    "v2": {
-      "url_slug": "upgrade-lunch-bagel-high-protein",
-      "title": "Upgrade Your Lunch Bagel: High Protein Ideas",
-      "created_at": "2026-04-28 15:58:10"
-    }
-  },
   "high-protein-on-a-budget-complete-guide": {
     "v2": {
       "url_slug": "beans-98g-protein-per-dollar",
@@ -1181,6 +1179,26 @@
       "url_slug": "stop-guessing-protein-bagel-revealed",
       "title": "Stop Guessing: Protein in Your Bagel Revealed",
       "created_at": "2026-04-28 17:21:14"
+    },
+    "merged-v1": {
+      "url_slug": "build-protein-packed-bagel-lunch",
+      "title": "Build a Protein Packed Bagel for Lunch",
+      "created_at": "2026-04-28 15:58:10"
+    },
+    "merged-v4": {
+      "url_slug": "quick-protein-bagel-sandwiches-you",
+      "title": "Quick Protein Bagel Sandwiches You Need",
+      "created_at": "2026-04-28 15:58:10"
+    },
+    "merged-v3": {
+      "url_slug": "transform-bagel-into-power-meal",
+      "title": "Transform Your Bagel into a Power Meal",
+      "created_at": "2026-04-28 15:58:10"
+    },
+    "merged-v2": {
+      "url_slug": "upgrade-lunch-bagel-high-protein",
+      "title": "Upgrade Your Lunch Bagel: High Protein Ideas",
+      "created_at": "2026-04-28 15:58:10"
     }
   },
   "how-to-choose-granola-not-dessert": {
@@ -1340,28 +1358,6 @@
       "url_slug": "stop-ruining-baked-goods-weigh",
       "title": "Stop Ruining Baked Goods: Weigh Sourdough Discard",
       "created_at": "2026-04-28 15:58:10"
-    }
-  },
-  "how-to-pack-cold-pasta-salad-picnics": {
-    "v2": {
-      "url_slug": "avoid-mushy-pasta-salad-choose",
-      "title": "Avoid Mushy Pasta Salad: Choose the Right Noodle",
-      "created_at": "2026-04-28 15:58:11"
-    },
-    "v1": {
-      "url_slug": "keep-pasta-salad-cold-creamy",
-      "title": "Keep Pasta Salad Cold and Creamy for Picnics",
-      "created_at": "2026-04-28 15:58:11"
-    },
-    "v3": {
-      "url_slug": "pack-pasta-salad-perfect-picnic",
-      "title": "Pack Pasta Salad for Perfect Picnic Freshness",
-      "created_at": "2026-04-28 15:58:11"
-    },
-    "v4": {
-      "url_slug": "secrets-non-gummy-pasta-salad",
-      "title": "Secrets to Non-Gummy Pasta Salad on the Go",
-      "created_at": "2026-04-28 15:58:11"
     }
   },
   "how-to-pack-salad-for-work-not-soggy": {
