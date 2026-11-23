@@ -10,7 +10,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -26,7 +30,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -53,7 +61,11 @@
    "protein_g_per_dollar",
    "fiber_g_per_dollar",
    "value_source",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -69,7 +81,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -83,7 +99,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -97,7 +117,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -111,7 +135,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -125,7 +153,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -140,7 +172,11 @@
    "source",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -155,7 +191,11 @@
    "cost_usd",
    "basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -181,7 +221,11 @@
    "nutrition_source_form",
    "nutrition_source_note",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -195,7 +239,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -209,7 +257,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -223,7 +275,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -237,7 +293,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -251,7 +311,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -265,7 +329,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -279,7 +347,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -293,7 +365,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -308,7 +384,11 @@
    "cost_usd",
    "basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -334,7 +414,11 @@
    "nutrition_source_form",
    "nutrition_source_note",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -350,7 +434,11 @@
    "adjusted_g_per_dollar",
    "notes",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -364,7 +452,11 @@
    "package_price_usd",
    "price_basis",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  },
  {
@@ -390,7 +482,11 @@
    "nutrition_source_url",
    "nutrition_source_description",
    "fdc_id",
-   "source_url"
+   "source_url",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  }
 ]

@@ -1,7 +1,7 @@
-food,category,value,package,package_price_usd,price_basis,fdc_id,source_url
-Eggs (large),Eggs & dairy,34.4,1 dozen (600 g edible),2.19,BLS US avg July 2026 (APU0000708111),171287,https://fdc.nal.usda.gov/food-details/171287/nutrients
-Mozzarella (low-moisture part-skim),Eggs & dairy,30.1,16 oz block,3.58,Walmart GV Jul 2026,171244,https://fdc.nal.usda.gov/food-details/171244/nutrients
-Whole milk,Eggs & dairy,28.5,1 gallon,4.31,BLS US avg July 2026 (APU0000709112),171265,https://fdc.nal.usda.gov/food-details/171265/nutrients
-"Greek yogurt (plain, nonfat)",Eggs & dairy,27.5,32 oz tub,3.36,Walmart GV Jul 2026,170894,https://fdc.nal.usda.gov/food-details/170894/nutrients
-Cottage cheese (4%),Eggs & dairy,26.3,24 oz tub,2.87,Walmart GV Jul 2026,172179,https://fdc.nal.usda.gov/food-details/172179/nutrients
-Cheddar cheese,Eggs & dairy,18.1,per lb,5.75,BLS US avg July 2026 (APU0000710212),173414,https://fdc.nal.usda.gov/food-details/173414/nutrients
+food,category,value,package,package_price_usd,price_basis,fdc_id,source_url,priced_month,retailer,price_location,audit_note
+Eggs (large),Eggs & dairy,34.4,1 dozen (600 g edible),2.19,BLS US avg July 2026 (APU0000708111),171287,https://fdc.nal.usda.gov/food-details/171287/nutrients,2026-07,BLS,US average,
+Mozzarella (low-moisture part-skim),Eggs & dairy,30.1,16 oz block,3.58,Walmart GV Jul 2026,171244,https://fdc.nal.usda.gov/food-details/171244/nutrients,2026-07,Walmart Great Value,,
+Whole milk,Eggs & dairy,28.5,1 gallon,4.31,BLS US avg July 2026 (APU0000709112),171265,https://fdc.nal.usda.gov/food-details/171265/nutrients,2026-07,BLS,US average,
+"Greek yogurt (plain, nonfat)",Eggs & dairy,27.5,32 oz tub,3.36,Walmart GV Jul 2026,170894,https://fdc.nal.usda.gov/food-details/170894/nutrients,2026-07,Walmart Great Value,,
+Cottage cheese (4%),Eggs & dairy,26.3,24 oz tub,2.87,Walmart GV Jul 2026,172179,https://fdc.nal.usda.gov/food-details/172179/nutrients,2026-07,Walmart Great Value,,
+Cheddar cheese,Eggs & dairy,18.1,per lb,5.75,BLS US avg July 2026 (APU0000710212),173414,https://fdc.nal.usda.gov/food-details/173414/nutrients,2026-07,BLS,US average,

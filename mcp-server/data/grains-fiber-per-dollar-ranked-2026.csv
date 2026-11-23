@@ -1,12 +1,12 @@
-food,category,value,package,package_price_usd,price_basis,fdc_id,source_url
-Whole wheat flour,Whole grains,77.8,5 lb bag,3.12,Walmart GV,168893,https://fdc.nal.usda.gov/food-details/168893/nutrients
-Pearled barley (dry),Whole grains,57.1,16 oz bag,1.24,Walmart GV,170284,https://fdc.nal.usda.gov/food-details/170284/nutrients
-Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV,,
-Old-fashioned rolled oats,Whole grains,35.8,42 oz canister,3.36,Walmart GV,173904,https://fdc.nal.usda.gov/food-details/173904/nutrients
-Whole wheat spaghetti,Whole grains,35.4,16 oz box,1.18,Walmart GV,169738,https://fdc.nal.usda.gov/food-details/169738/nutrients
-Bran flakes cereal,Whole grains,30.1,17.3 oz box,2.98,Walmart GV,173888,https://fdc.nal.usda.gov/food-details/173888/nutrients
-Bulgur wheat (dry),Whole grains,24.4,24 oz bag,3.49,Walmart,170688,https://fdc.nal.usda.gov/food-details/170688/nutrients
-Oat bran (dry),Whole grains,22.5,18 oz bag,3.49,Walmart,168872,https://fdc.nal.usda.gov/food-details/168872/nutrients
-Brown rice (dry),Whole grains,17.5,2 lb bag,1.87,Walmart GV,169703,https://fdc.nal.usda.gov/food-details/169703/nutrients
-Quinoa (dry),Whole grains,10.6,2 lb bag,5.97,Walmart GV,168874,https://fdc.nal.usda.gov/food-details/168874/nutrients
-100% whole wheat bread,Whole grains,9.7,20 oz loaf,3.52,BLS US avg May 2026 (APU0000702212),172688,https://fdc.nal.usda.gov/food-details/172688/nutrients
+food,category,value,package,package_price_usd,price_basis,fdc_id,source_url,priced_month,retailer,price_location,audit_note
+Whole wheat flour,Whole grains,77.8,5 lb bag,3.12,Walmart GV,168893,https://fdc.nal.usda.gov/food-details/168893/nutrients,,Walmart Great Value,,
+Pearled barley (dry),Whole grains,57.1,16 oz bag,1.24,Walmart GV,170284,https://fdc.nal.usda.gov/food-details/170284/nutrients,,Walmart Great Value,,
+Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV,,,,Walmart Great Value,,
+Old-fashioned rolled oats,Whole grains,35.8,42 oz canister,3.36,Walmart GV,173904,https://fdc.nal.usda.gov/food-details/173904/nutrients,,Walmart Great Value,,
+Whole wheat spaghetti,Whole grains,35.4,16 oz box,1.18,Walmart GV,169738,https://fdc.nal.usda.gov/food-details/169738/nutrients,,Walmart Great Value,,
+Bran flakes cereal,Whole grains,30.1,17.3 oz box,2.98,Walmart GV,173888,https://fdc.nal.usda.gov/food-details/173888/nutrients,,Walmart Great Value,,
+Bulgur wheat (dry),Whole grains,24.4,24 oz bag,3.49,Walmart,170688,https://fdc.nal.usda.gov/food-details/170688/nutrients,,Walmart,,
+Oat bran (dry),Whole grains,22.5,18 oz bag,3.49,Walmart,168872,https://fdc.nal.usda.gov/food-details/168872/nutrients,,Walmart,,
+Brown rice (dry),Whole grains,17.5,2 lb bag,1.87,Walmart GV,169703,https://fdc.nal.usda.gov/food-details/169703/nutrients,,Walmart Great Value,,
+Quinoa (dry),Whole grains,10.6,2 lb bag,5.97,Walmart GV,168874,https://fdc.nal.usda.gov/food-details/168874/nutrients,,Walmart Great Value,,
+100% whole wheat bread,Whole grains,9.7,20 oz loaf,3.52,BLS US avg May 2026 (APU0000702212),172688,https://fdc.nal.usda.gov/food-details/172688/nutrients,2026-05,BLS,US average,

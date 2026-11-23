@@ -59,8 +59,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 3453,
-      "hash": "sha256:5e2f42c4f6d003bc6c0bc7a50d7929937330db7b02b2da8044ecd14b0fca124f",
+      "bytes": 4169,
+      "hash": "sha256:a63e2b5290e46b7c544a4a5a3cbe58f175685228ba7a2f1a91e470fd695a7afc",
       "sources": [
         {
           "title": "Daily Life Hacks study: Animal Protein per Dollar, Ranked (2026)",
@@ -115,6 +115,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -132,8 +152,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1778,
-      "hash": "sha256:2e9a2a68654abbf76e8bcfebb30de8b0e3ef9aba9f2c930287b25f57050c2617",
+      "bytes": 2189,
+      "hash": "sha256:e0d79814e3eb66815732361b68be812f2a9f3b172b1072f5d9846595a451065f",
       "sources": [
         {
           "title": "Daily Life Hacks study: Beans Ranked by Fiber and Protein per Dollar (2026)",
@@ -198,6 +218,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -215,8 +255,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 30471,
-      "hash": "sha256:395e0fb129f6f3df06db0783b4fdeb5a1a22696aa89c77398d28cd25854377ec",
+      "bytes": 32586,
+      "hash": "sha256:5096443670ef846f8f41ae969b1da9369817592ad10d65cef508c09dcc34c048",
       "sources": [
         {
           "title": "Daily Life Hacks study: BLS Nutrition per Dollar, Latest Month by Region",
@@ -336,6 +376,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -353,8 +413,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1472,
-      "hash": "sha256:a6a3185cefa4229c4bd4ad286ae301d428fc6cd7f624a45f1847bc23a367cfde",
+      "bytes": 1798,
+      "hash": "sha256:e6308f3036b0dd3198f4e148a777b10c2ebc4f283293cf9023929f992a3bf599",
       "sources": [
         {
           "title": "Daily Life Hacks study: Breakfast Staples by Nutrition per Dollar (2026)",
@@ -419,6 +479,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -436,8 +516,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1635,
-      "hash": "sha256:4ab3237104aedf1e35404da96ded79ace154d4da7dba0e18716dac0d4ca93da4",
+      "bytes": 2046,
+      "hash": "sha256:38aa4db10d8f7f1d2181acbab007e54e95f945fec036940696b8e6f601875be1",
       "sources": [
         {
           "title": "Daily Life Hacks study: Canned vs Dry Beans, Cost Compared (2026)",
@@ -492,6 +572,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -509,8 +609,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 3004,
-      "hash": "sha256:fa0470d2e4df80454fb0ed554180ad0e5343938039d86b6939853cbf28d3bb0a",
+      "bytes": 3760,
+      "hash": "sha256:3c2f69e8276e91a3aaf71db9e31b4917a20135a309a3637cab73de8d43b133e3",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cheapest Complete-Protein Pairings (2026)",
@@ -565,6 +665,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -582,8 +702,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 954,
-      "hash": "sha256:1a26982aa4a52e8d5accd981e18e2f6a711c3b36fcd0faadc606983ab5a70724",
+      "bytes": 1164,
+      "hash": "sha256:902e8217d440f34da3a86832af0188d712b079eaad32e8f543aa2064ac0ecfc9",
       "sources": [
         {
           "title": "Daily Life Hacks study: Dairy and Egg Protein per Dollar, Ranked (2026)",
@@ -638,6 +758,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -655,8 +795,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 7762,
-      "hash": "sha256:bcdf2c51968cf0403772dc5baf5c51169566599b92cdf8fc7ae4fdfd424d6036",
+      "bytes": 9538,
+      "hash": "sha256:8da87aaaff44307860749fdc0e63b832353ea5980d9f5d5abfdb7c4a9faf2d23",
       "sources": [
         {
           "title": "Daily Life Hacks study: Eggs vs Every Other Protein Source (2026)",
@@ -711,6 +851,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -728,8 +888,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 5701,
-      "hash": "sha256:d439457543e9858a588d46ad1f8ae8d7658b95947e2d8ac5c83a73494276f4b6",
+      "bytes": 6729,
+      "hash": "sha256:a112561bc79e280758a1f78e97b4439f0f7a5b4b7f8b72e12980a63fe554a3cb",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fast Food Protein per Dollar (2026)",
@@ -789,6 +949,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -806,8 +986,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 4493,
-      "hash": "sha256:f65c5d0575746a9e078d38dc85a4fee1cee8926b5677edf9ede006c30065f2da",
+      "bytes": 5047,
+      "hash": "sha256:18b2865e43858bcc55f86ec1c4468c46f85bda2cb9d0c4ac5c0756a6ef0d09c8",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
@@ -867,6 +1047,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -884,8 +1084,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 22303,
-      "hash": "sha256:2737623b603509f77acb4b1350129b97fca7745dc486d22158aa415327ed363d",
+      "bytes": 23326,
+      "hash": "sha256:f54df108a029cfce2d72204c483c0dfd6388dc009dd553b9461b113b9e60a0ea",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fiber per Dollar: 53 Foods Ranked (2026)",
@@ -1000,6 +1200,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1017,8 +1237,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1413,
-      "hash": "sha256:04e6177cd4c8076fc8d581f28d593a45acead94982aca07100d42c5b8f75b16f",
+      "bytes": 1691,
+      "hash": "sha256:38d90f442f9570b1e57a174a63613fb48cda4a0f715d0682e8ed14a6e6060dda",
       "sources": [
         {
           "title": "Daily Life Hacks study: Grains Ranked by Fiber per Dollar (2026)",
@@ -1073,6 +1293,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1090,8 +1330,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1243,
-      "hash": "sha256:a082d85d4571372c6f9f8c3660efb1ca6fa9f816357858dfbdad5791e3804d52",
+      "bytes": 1474,
+      "hash": "sha256:f13c5c3e4975723a2726223ae92886392ab0d99958a16fbbb4ce02ebc612b6b0",
       "sources": [
         {
           "title": "Daily Life Hacks study: High-Fiber Snacks Ranked by Cost (2026)",
@@ -1146,6 +1386,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1163,8 +1423,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1928,
-      "hash": "sha256:6cceea431a6f84cb723b445baff4285cf506d11efc12df97b56d0fa97fde5100",
+      "bytes": 2374,
+      "hash": "sha256:efd1c42e77aff87f654b4778e21878483fdc9bbec59c2078b8c9ffc10a470117",
       "sources": [
         {
           "title": "Daily Life Hacks study: Meat per Dollar: 11 Cuts Ranked by Protein Value (2026)",
@@ -1219,6 +1479,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1236,8 +1516,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2420,
-      "hash": "sha256:2052abcec10290f7314024d5ee5e3c6e9f309ae5a5de399a082d02b0deec508f",
+      "bytes": 3040,
+      "hash": "sha256:1c92d961364baef7a5a40f77063be1ebca77cf6420ed6c72d72a1e5f29be9f3a",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cheapest Protein That Needs No Cooking (2026)",
@@ -1292,6 +1572,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1309,8 +1609,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1991,
-      "hash": "sha256:a9d667f34e2f35b1b23284c7ff31ae1c5871acf3037f109c1865a93e06e2e4ba",
+      "bytes": 2363,
+      "hash": "sha256:549df9b3b1aa759f8aec19673fb881c110fc17f3d4986b9190534277f8b11867",
       "sources": [
         {
           "title": "Daily Life Hacks study: What One Dollar of Fiber Buys (2026)",
@@ -1365,6 +1665,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1382,8 +1702,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2459,
-      "hash": "sha256:ba9c099a0c3e051c9a30ffbe2522c4ca4c381796292ea662a657e66ccd91e7a7",
+      "bytes": 3066,
+      "hash": "sha256:49b43f50043fe31bf178dd19943de0fd4bddcbb9fb2b8325925845f922db0d72",
       "sources": [
         {
           "title": "Daily Life Hacks study: What One Dollar of Protein Buys (2026)",
@@ -1438,6 +1758,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1455,8 +1795,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2823,
-      "hash": "sha256:b272b189ad0cc37887e500bcd4a590811130e16b088643432d023f4c7d8a8dbb",
+      "bytes": 3544,
+      "hash": "sha256:8c5d8c73717b30b81fba7b4f27b9038a708efcba5babf427e2ffdeb64bfe855d",
       "sources": [
         {
           "title": "Daily Life Hacks study: Plant Protein per Dollar: 18 Sources Ranked (2026)",
@@ -1511,6 +1851,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1528,8 +1888,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2786,
-      "hash": "sha256:225c06320782a1d701ccab24ff699cbf86b7d722f2e81b195285a3831d67d3d1",
+      "bytes": 3188,
+      "hash": "sha256:5a0e21d04c01c85fc766c9377a6d555dff8468d2da7e1e7e0c2e0989525d9491",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fruits and Vegetables Ranked by Fiber per Dollar (2026)",
@@ -1584,6 +1944,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1601,8 +1981,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 3923,
-      "hash": "sha256:1427d45d2454bbfaf6bae189ab7e1b984cc02654629c373e355f14d9436b2fb6",
+      "bytes": 4793,
+      "hash": "sha256:ac672271f9fa3bb6e2b5c8244bd7fefa7ba993dd85cbf350819d267c4d0ec718",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 50 Grams of Protein per Day, Five Menus (2026)",
@@ -1662,6 +2042,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1679,8 +2079,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 23804,
-      "hash": "sha256:1041acbdf4fa62584899cc62da516bed1d6237f288d73db01ad1590a49d43c29",
+      "bytes": 25537,
+      "hash": "sha256:7f7e2149acc13e39b0faf0630dae80006b8c9e59e47d5a3413e6b817760e8aff",
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar: 49 Sources Ranked (2026)",
@@ -1795,6 +2195,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1812,8 +2232,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 4685,
-      "hash": "sha256:5176311110a366056305ae0454b8c1dd5fb073723156a77732ddb0679310aa41",
+      "bytes": 5517,
+      "hash": "sha256:fd8c5b1a88cacef95dce004c28974e4d8b28d6b5c6de34703ed65c420cc0b21c",
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar Adjusted for Quality, DIAAS (2026)",
@@ -1878,6 +2298,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1895,8 +2335,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 4276,
-      "hash": "sha256:d17cd9f6baaebb9786fd98b4da6ed63da81f0d30db8f0182419a5b6e242a52fc",
+      "bytes": 5305,
+      "hash": "sha256:abbbbb0d431470e286f7095214615d8cc6c6b0ca0929f3a1e4a954ccf791b65d",
       "sources": [
         {
           "title": "Daily Life Hacks study: The Shelf-Stable Pantry, Ranked by Protein per Dollar (2026)",
@@ -1951,6 +2391,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [
@@ -1968,8 +2428,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 17960,
-      "hash": "sha256:e76fe00484e6d099d3618546555942b159b3e49ca74abc9c1c5bed571b82f0a6",
+      "bytes": 19135,
+      "hash": "sha256:e19cc11d7506fb9be457bdc6a2863825c57d74f676429f8f7238443d22a6d978",
       "sources": [
         {
           "title": "Daily Life Hacks study: The Sodium Index: 56 Budget Staples (2026)",
@@ -2084,6 +2544,26 @@
             "name": "source_url",
             "type": "string",
             "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [

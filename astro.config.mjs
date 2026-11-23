@@ -12,6 +12,7 @@ import rehypeAffiliateLinks from './scripts/rehype-affiliate-links.mjs';
 import { affiliateLinksEnabled } from './src/content/affiliate-policy.mjs';
 import { stampHeroDirectory } from './scripts/lib/ai-image-iptc.mjs';
 import rehypeEarlySignup from './scripts/rehype-early-signup.mjs';
+import remarkStudyLead from './scripts/remark-study-lead.mjs';
 import { INDEX_NOINDEX_TOOL_PATHS, INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
 import { publicModifiedDay } from './src/content/modified-date.mjs';
 
@@ -349,6 +350,7 @@ export default defineConfig({
   site: 'https://www.daily-life-hacks.com',
   trailingSlash: 'always',
   markdown: {
+    remarkPlugins: [remarkStudyLead],
     rehypePlugins: articleRehypePlugins,
   },
   integrations: [

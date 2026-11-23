@@ -1,19 +1,19 @@
-food,category,value,package,package_price_usd,price_basis,fdc_id,source_url
-Brown lentils (dry),Dried beans & lentils,77.7,16 oz bag,1.44,"Walmart GV (fiber study, audited)",172420,https://fdc.nal.usda.gov/food-details/172420/nutrients
-Green split peas (dry),Dried beans & lentils,73.9,16 oz bag,1.42,"Walmart GV (fiber study, audited)",172428,https://fdc.nal.usda.gov/food-details/172428/nutrients
-Navy beans (dry),Dried beans & lentils,59.9,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173745,https://fdc.nal.usda.gov/food-details/173745/nutrients
-Black beans (dry),Dried beans & lentils,58.0,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173734,https://fdc.nal.usda.gov/food-details/173734/nutrients
-Pinto beans (dry),Dried beans & lentils,57.6,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233),175199,https://fdc.nal.usda.gov/food-details/175199/nutrients
-Chickpeas (dry),Dried beans & lentils,56.7,16 oz bag,1.64,"Walmart (fiber study, audited)",173756,https://fdc.nal.usda.gov/food-details/173756/nutrients
-Red lentils (dry),Dried beans & lentils,56.0,16 oz bag,1.94,"Walmart (fiber study, audited)",174284,https://fdc.nal.usda.gov/food-details/174284/nutrients
-Peanut butter,Nuts & seeds,50.7,40 oz jar,4.97,"Walmart GV (fiber study, audited)",174266,https://fdc.nal.usda.gov/food-details/174266/nutrients
-Dry roasted peanuts,Nuts & seeds,39.8,16 oz jar,2.78,"Walmart GV (fiber study, audited)",174262,https://fdc.nal.usda.gov/food-details/174262/nutrients
-Sunflower seed kernels,Nuts & seeds,31.7,16 oz bag,2.98,"Walmart (fiber study, audited)",170562,https://fdc.nal.usda.gov/food-details/170562/nutrients
-Canned black beans,Canned beans,30.1,15.5 oz can,0.88,"Walmart GV (fiber study, audited)",175188,https://fdc.nal.usda.gov/food-details/175188/nutrients
-Canned kidney beans,Canned beans,23.4,15.5 oz can,0.98,"Walmart GV (fiber study, audited)",173741,https://fdc.nal.usda.gov/food-details/173741/nutrients
-TVP (textured vegetable protein),Soy & plant proteins,23.4,10 oz bag,6.3,Walmart/Bob's Red Mill Jul 2026; label value (USDA defatted soy flour: 51.5),,
-Canned chickpeas,Canned beans,22.0,15.5 oz can,0.98,"Walmart GV (fiber study, audited)",175206,https://fdc.nal.usda.gov/food-details/175206/nutrients
-Frozen shelled edamame,Soy & plant proteins,18.0,12 oz bag,2.12,"Walmart GV (fiber study, audited)",168410,https://fdc.nal.usda.gov/food-details/168410/nutrients
-Almonds,Nuts & seeds,14.8,16 oz bag,6.47,"Walmart GV (fiber study, audited)",170567,https://fdc.nal.usda.gov/food-details/170567/nutrients
-Tofu (extra firm),Soy & plant proteins,13.6,14 oz block,2.92,Walmart (Nasoya) Jul 2026,174290,https://fdc.nal.usda.gov/food-details/174290/nutrients
-Tempeh,Soy & plant proteins,13.2,8 oz pack,3.48,Walmart (Lightlife) Jul 2026,174272,https://fdc.nal.usda.gov/food-details/174272/nutrients
+food,category,value,package,package_price_usd,price_basis,fdc_id,source_url,priced_month,retailer,price_location,audit_note
+Brown lentils (dry),Dried beans & lentils,77.7,16 oz bag,1.44,"Walmart GV (fiber study, audited)",172420,https://fdc.nal.usda.gov/food-details/172420/nutrients,,Walmart Great Value,,"fiber study, audited"
+Green split peas (dry),Dried beans & lentils,73.9,16 oz bag,1.42,"Walmart GV (fiber study, audited)",172428,https://fdc.nal.usda.gov/food-details/172428/nutrients,,Walmart Great Value,,"fiber study, audited"
+Navy beans (dry),Dried beans & lentils,59.9,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173745,https://fdc.nal.usda.gov/food-details/173745/nutrients,2026-07,BLS,US average,
+Black beans (dry),Dried beans & lentils,58.0,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173734,https://fdc.nal.usda.gov/food-details/173734/nutrients,2026-07,BLS,US average,
+Pinto beans (dry),Dried beans & lentils,57.6,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233),175199,https://fdc.nal.usda.gov/food-details/175199/nutrients,2026-07,BLS,US average,
+Chickpeas (dry),Dried beans & lentils,56.7,16 oz bag,1.64,"Walmart (fiber study, audited)",173756,https://fdc.nal.usda.gov/food-details/173756/nutrients,,Walmart,,"fiber study, audited"
+Red lentils (dry),Dried beans & lentils,56.0,16 oz bag,1.94,"Walmart (fiber study, audited)",174284,https://fdc.nal.usda.gov/food-details/174284/nutrients,,Walmart,,"fiber study, audited"
+Peanut butter,Nuts & seeds,50.7,40 oz jar,4.97,"Walmart GV (fiber study, audited)",174266,https://fdc.nal.usda.gov/food-details/174266/nutrients,,Walmart Great Value,,"fiber study, audited"
+Dry roasted peanuts,Nuts & seeds,39.8,16 oz jar,2.78,"Walmart GV (fiber study, audited)",174262,https://fdc.nal.usda.gov/food-details/174262/nutrients,,Walmart Great Value,,"fiber study, audited"
+Sunflower seed kernels,Nuts & seeds,31.7,16 oz bag,2.98,"Walmart (fiber study, audited)",170562,https://fdc.nal.usda.gov/food-details/170562/nutrients,,Walmart,,"fiber study, audited"
+Canned black beans,Canned beans,30.1,15.5 oz can,0.88,"Walmart GV (fiber study, audited)",175188,https://fdc.nal.usda.gov/food-details/175188/nutrients,,Walmart Great Value,,"fiber study, audited"
+Canned kidney beans,Canned beans,23.4,15.5 oz can,0.98,"Walmart GV (fiber study, audited)",173741,https://fdc.nal.usda.gov/food-details/173741/nutrients,,Walmart Great Value,,"fiber study, audited"
+TVP (textured vegetable protein),Soy & plant proteins,23.4,10 oz bag,6.3,Walmart/Bob's Red Mill Jul 2026; label value (USDA defatted soy flour: 51.5),,,2026-07,Walmart,,label value (USDA defatted soy flour: 51.5)
+Canned chickpeas,Canned beans,22.0,15.5 oz can,0.98,"Walmart GV (fiber study, audited)",175206,https://fdc.nal.usda.gov/food-details/175206/nutrients,,Walmart Great Value,,"fiber study, audited"
+Frozen shelled edamame,Soy & plant proteins,18.0,12 oz bag,2.12,"Walmart GV (fiber study, audited)",168410,https://fdc.nal.usda.gov/food-details/168410/nutrients,,Walmart Great Value,,"fiber study, audited"
+Almonds,Nuts & seeds,14.8,16 oz bag,6.47,"Walmart GV (fiber study, audited)",170567,https://fdc.nal.usda.gov/food-details/170567/nutrients,,Walmart Great Value,,"fiber study, audited"
+Tofu (extra firm),Soy & plant proteins,13.6,14 oz block,2.92,Walmart (Nasoya) Jul 2026,174290,https://fdc.nal.usda.gov/food-details/174290/nutrients,2026-07,Walmart,,
+Tempeh,Soy & plant proteins,13.2,8 oz pack,3.48,Walmart (Lightlife) Jul 2026,174272,https://fdc.nal.usda.gov/food-details/174272/nutrients,2026-07,Walmart,,
