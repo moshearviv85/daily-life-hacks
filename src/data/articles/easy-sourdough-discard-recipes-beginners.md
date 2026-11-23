@@ -52,7 +52,9 @@ A jar of discard should come with dinner options, not another feeding schedule. 
 
 These easy sourdough discard recipes for beginners use **100% hydration discard from an established starter**, meaning equal weights of flour and water. Cold discard is fine. It doesn't need to double before you cook.
 
-## Choose a sourdough discard recipe for the amount you have
+## What can I make with sourdough discard? {#choose-a-sourdough-discard-recipe-for-the-amount-you-have}
+
+A half cup of discard makes one skillet flatbread in 10 to 15 minutes. A full cup covers pancakes in about 20 minutes, or no-roll crackers if you can leave the oven running for about an hour. That same full cup also makes one thin 12-inch pizza crust in about 40 minutes.
 
 | Recipe | Discard | Time to allow | Yield |
 |---|---|---|---|

@@ -878,6 +878,85 @@ function pruneSlugFromHref(href) {
   return INDEX_PRUNE_SLUGS.has(slug) ? slug : null;
 }
 
+function metaProperty(html, property) {
+  const escaped = property.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return (
+    html.match(
+      new RegExp(
+        `<meta[^>]+property=["']${escaped}["'][^>]+content=["']([^"']+)["']`,
+        "i",
+      ),
+    )?.[1] ??
+    html.match(
+      new RegExp(
+        `<meta[^>]+content=["']([^"']+)["'][^>]+property=["']${escaped}["']`,
+        "i",
+      ),
+    )?.[1]
+  );
+}
+
+function jsonLdDates(html, pageUrl) {
+  const dates = [];
+  for (const block of jsonLdBlocks(html, pageUrl)) {
+    visit(block, (node) => {
+      if (typeof node.datePublished === "string" && typeof node.dateModified === "string") {
+        dates.push(node);
+      }
+    });
+  }
+  return dates;
+}
+
+test("article OG times match JSON-LD dates on every sitemap article", () => {
+  let articles = 0;
+  for (const entry of sitemapEntries()) {
+    const html = readFileSync(distHtmlFor(entry.loc), "utf8");
+    const published = metaProperty(html, "article:published_time");
+    const modified = metaProperty(html, "article:modified_time");
+    const ogType = metaProperty(html, "og:type");
+    if (ogType !== "article") {
+      assert.equal(published, undefined, entry.loc);
+      assert.equal(modified, undefined, entry.loc);
+      continue;
+    }
+    articles += 1;
+    assert.ok(published, `missing article:published_time: ${entry.loc}`);
+    assert.ok(modified, `missing article:modified_time: ${entry.loc}`);
+    const dates = jsonLdDates(html, entry.loc);
+    assert.ok(dates.length > 0, `missing JSON-LD dates: ${entry.loc}`);
+    for (const node of dates) {
+      assert.equal(node.datePublished, published, entry.loc);
+      assert.equal(node.dateModified, modified, entry.loc);
+    }
+    if (entry.lastmod) assert.equal(modified, entry.lastmod, entry.loc);
+  }
+  assert.ok(articles >= 100, `expected the sitemap articles, found ${articles}`);
+});
+
+test("built article tables have a hidden caption and scoped header cells", () => {
+  let tables = 0;
+  for (const entry of sitemapEntries()) {
+    const html = readFileSync(distHtmlFor(entry.loc), "utf8");
+    if (metaProperty(html, "og:type") !== "article") continue;
+    const start = html.indexOf('class="article-content');
+    if (start === -1) continue;
+    const content = html.slice(start);
+    for (const match of content.matchAll(/<table\b[\s\S]*?<\/table>/g)) {
+      tables += 1;
+      const table = match[0];
+      assert.match(table, /<caption\b[^>]*class="sr-only"[^>]*>[^<]+<\/caption>/, entry.loc);
+      const thead = table.match(/<thead\b[\s\S]*?<\/thead>/)?.[0] ?? "";
+      const headers = [...thead.matchAll(/<th\b[^>]*>/g)];
+      assert.ok(headers.length > 0, `table without header cells: ${entry.loc}`);
+      for (const header of headers) {
+        assert.match(header[0], /\sscope="col"/, `${entry.loc} ${header[0]}`);
+      }
+    }
+  }
+  assert.ok(tables >= 50, `expected markdown tables in article HTML, found ${tables}`);
+});
+
 test("indexable sitemap pages do not link to pruned slugs", () => {
   const failures = [];
   for (const entry of sitemapEntries()) {
