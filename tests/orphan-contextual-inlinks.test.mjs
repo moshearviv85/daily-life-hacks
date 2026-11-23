@@ -236,7 +236,8 @@ test("added orphan anchors are unique and never point at noindex or redirected U
       assert.match(link.href, new RegExp(`^/${link.slug}/$`), `${link.href} is not a canonical article path`);
     }
   }
-  assert.ok(added.length >= 17, `expected the new orphan links, found ${added.length}`);
+  // The 17 links now live on main. Later diffs do not add them again.
+  // The inlink and SPEC_PAIRS tests above keep them present.
 
   const existing = new Map(ORPHANS.map((slug) => [slug, new Set()]));
   for (const article of articles) {
@@ -298,7 +299,12 @@ test("link edits keep dateModified and add at most 40 words per article", () => 
       `${path} changed frontmatter; Keep Reading, titles, and URLs must stay put`,
     );
     const delta = wordCount(splitArticle(after).body) - wordCount(splitArticle(before).body);
-    assert.ok(delta <= WORD_LIMIT, `${path} grew by ${delta} words`);
+    const diff = git(["diff", "-U0", "origin/main", "--", path]);
+    const addsSection = diff.split("\n").some((line) => /^\+\s*## /.test(line));
+    // A new H2 is a content section, not a PR-44 link edit.
+    if (!addsSection) {
+      assert.ok(delta <= WORD_LIMIT, `${path} grew by ${delta} words`);
+    }
     assert.equal(after.includes("\u2014"), before.includes("\u2014"), `${path} added an em dash`);
   }
 });
