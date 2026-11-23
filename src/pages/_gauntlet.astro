@@ -5,8 +5,12 @@
  * PRIVACY CONTRACT (all four must hold together):
  *   1. `<meta name="robots" content="noindex, nofollow" />` below — same literal
  *      pattern as src/pages/dashboard.astro and src/pages/deploy-proof.astro.
- *   2. `/gauntlet` is listed in `loadSitemapExclusions()` in astro.config.mjs, so
- *      the page never enters sitemap-index.xml.
+ *   2. This file is `src/pages/_gauntlet.astro`, so Astro does not route it.
+ *      astro.config.mjs injects `/gauntlet` only when
+ *      `process.env.DLH_INTERNAL_PAGES === '1'`. Production leaves that unset,
+ *      so the HTML is not emitted and the URL 404s. When the route is injected,
+ *      `/gauntlet` is still passed to `loadSitemapExclusions()`, so it never
+ *      enters sitemap-index.xml.
  *   3. Nothing links here. Not Header.astro, not Footer.astro, not any article.
  *      The URL is the only way in.
  *   4. public/robots.txt is deliberately NOT changed. `/dashboard` is not listed
