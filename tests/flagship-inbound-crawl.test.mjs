@@ -217,7 +217,7 @@ test("nutrition hub cites both flagships in the intro, not only article cards", 
   const headerEnd = source.indexOf("All nutrition articles");
   assert.ok(headerEnd > 0, "nutrition hub should keep the article-grid heading");
   const intro = source.slice(0, headerEnd);
-  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 2);
   assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 1);
   assert.equal(source.includes(retiredProteinSlug), false);
 });

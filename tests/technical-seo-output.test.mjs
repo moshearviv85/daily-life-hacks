@@ -213,10 +213,10 @@ test("AI hero images carry a visible caption and ImageObject credit", () => {
       dateModified: "2026-11-23T00:00:00.000Z",
     },
     {
-      slug: "protein-per-dollar-cheapest-protein-sources",
+      slug: "protein-per-dollar-adjusted-for-quality",
       type: "Article",
-      image: `${SITE}/images/protein-per-dollar-cheapest-protein-sources-main.jpg`,
-      dateModified: "2026-09-24T00:00:00.000Z",
+      image: `${SITE}/images/protein-per-dollar-adjusted-for-quality-main.jpg`,
+      dateModified: "2026-11-23T00:00:00.000Z",
     },
   ];
 
