@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import { INDEX_KEEP_PATHS, INDEX_PRUNE_SLUGS } from "../src/content/index-prune.js";
@@ -96,6 +96,37 @@ test("the calculator page is one indexable URL and does not emit FAQPage", () =>
   assert.match(source, /const noYeastLive = existsSync\(/);
   assert.match(source, /\{noYeastLive && \(/);
   assert.match(source, /sourdough-discard-recipes-no-yeast/);
+  assert.equal(
+    existsSync(join(process.cwd(), "src/data/articles/sourdough-discard-recipes-no-yeast.md")),
+    true,
+    "the no-yeast hub is on main, so the calculator link must be able to render",
+  );
+  const hub = readFileSync(
+    join(process.cwd(), "src/data/articles/sourdough-discard-recipes-no-yeast.md"),
+    "utf8",
+  );
+  const grams = readFileSync(
+    join(process.cwd(), "src/data/articles/how-to-measure-sourdough-discard-grams.md"),
+    "utf8",
+  );
+  assert.match(hub, /\]\(\/tools\/sourdough-discard-calculator\/\)/);
+  assert.match(grams, /\]\(\/tools\/sourdough-discard-calculator\/\)/);
+  const redirectSources = new Set(
+    readFileSync(join(process.cwd(), "public/_redirects"), "utf8")
+      .split(/\n/)
+      .map((line) => line.trim().split(/\s+/)[0])
+      .filter((source) => source && !source.startsWith("#"))
+      .map((source) => (source.endsWith("/") ? source : `${source}/`)),
+  );
+  for (const href of [
+    "/tools/sourdough-discard-calculator/",
+    "/sourdough-discard-recipes-no-yeast/",
+    "/how-to-measure-sourdough-discard-grams/",
+    "/easy-sourdough-discard-recipes-beginners/",
+    "/what-to-make-with-sourdough-discard-by-amount/",
+  ]) {
+    assert.equal(redirectSources.has(href), false, `${href} is a redirect source`);
+  }
   assert.doesNotMatch(source, /FAQPage/);
   assert.doesNotMatch(source, /\u2014/);
   assert.equal(INDEX_KEEP_PATHS.has("tools/sourdough-discard-calculator"), true);

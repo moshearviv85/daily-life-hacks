@@ -87,6 +87,6 @@ The [rolled crackers](/sourdough-discard-crackers/) are **227 grams** of discard
 
 ## Use the grams on the card, then cook it through
 
-A bubbly cup is full of air. The [discard conversion guide](/how-to-measure-sourdough-discard-grams/) is why these rows are in grams. Stir, tare the bowl, pour. A 100% hydration jar is half flour and half water by weight. Change the jar's thickness and every batter in the table moves.
+A bubbly cup is full of air. The [discard conversion guide](/how-to-measure-sourdough-discard-grams/) is why these rows are in grams. Stir, tare the bowl, pour. A 100% hydration jar is half flour and half water by weight. Change the jar's thickness and every batter in the table moves. When it isn't equal parts flour and water, the [sourdough discard calculator](/tools/sourdough-discard-calculator/) splits that weight into the flour and water already in the jar, so the rest of the card can move with it.
 
 Discard still contains raw flour. Cook the center through before you decide you like it. And if you won't bake this week, [freeze measured portions and thaw them overnight](/how-long-does-sourdough-discard-last/). A week in the fridge is the planning window. Three months is the freezer one. The jar doesn't get safer because a recipe was short.
