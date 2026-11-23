@@ -41,8 +41,8 @@ export const SITE_REDIRECT_SOURCE = `/free-meal-plan / 301
 /canned-vs-dry-beans-cost/ /canned-beans-vs-dried-beans-nutrition/ 301
 /popcorn-vs-almonds-fiber-cost /popcorn-vs-potato-chips-fiber-comparison/ 301
 /popcorn-vs-almonds-fiber-cost/ /popcorn-vs-potato-chips-fiber-comparison/ 301
-/frozen-vs-fresh-vegetables-fiber-cost /frozen-vs-fresh-produce-when-to-buy/ 301
-/frozen-vs-fresh-vegetables-fiber-cost/ /frozen-vs-fresh-produce-when-to-buy/ 301
+/frozen-vs-fresh-vegetables-fiber-cost /can-you-refreeze-frozen-vegetables-after-thawing/ 301
+/frozen-vs-fresh-vegetables-fiber-cost/ /can-you-refreeze-frozen-vegetables-after-thawing/ 301
 /whole-wheat-flour-vs-quinoa-fiber-cost /what-30-grams-of-fiber-costs-per-day/ 301
 /whole-wheat-flour-vs-quinoa-fiber-cost/ /what-30-grams-of-fiber-costs-per-day/ 301
 /grains-fiber-per-dollar-ranked /what-30-grams-of-fiber-costs-per-day/ 301
@@ -103,10 +103,10 @@ export const SITE_REDIRECT_SOURCE = `/free-meal-plan / 301
 /how-much-protein-in-lentils/ /foods-highest-in-protein-per-100-grams/ 301
 /how-much-protein-in-oatmeal /foods-highest-in-protein-per-100-grams/ 301
 /how-much-protein-in-oatmeal/ /foods-highest-in-protein-per-100-grams/ 301
-/how-to-cool-rice-for-fried-rice /how-to-use-leftover-rice-creative-ideas/ 301
-/how-to-cool-rice-for-fried-rice/ /how-to-use-leftover-rice-creative-ideas/ 301
-/cauliflower-fried-rice-with-eggs /how-to-use-leftover-rice-creative-ideas/ 301
-/cauliflower-fried-rice-with-eggs/ /how-to-use-leftover-rice-creative-ideas/ 301
+/how-to-cool-rice-for-fried-rice /can-you-eat-rice-and-beans-everyday/#how-long-can-cooked-rice-and-beans-sit-out 301
+/how-to-cool-rice-for-fried-rice/ /can-you-eat-rice-and-beans-everyday/#how-long-can-cooked-rice-and-beans-sit-out 301
+/cauliflower-fried-rice-with-eggs /high-fiber-stir-fry-vegetables/ 301
+/cauliflower-fried-rice-with-eggs/ /high-fiber-stir-fry-vegetables/ 301
 /do-you-have-to-cook-frozen-vegetables /can-you-refreeze-frozen-vegetables-after-thawing/ 301
 /do-you-have-to-cook-frozen-vegetables/ /can-you-refreeze-frozen-vegetables-after-thawing/ 301
 /how-long-do-frozen-vegetables-last-in-the-freezer /can-you-refreeze-frozen-vegetables-after-thawing/ 301
@@ -125,8 +125,8 @@ export const SITE_REDIRECT_SOURCE = `/free-meal-plan / 301
 /high-protein-bagel-sandwich-ideas-lunch/ /how-much-protein-in-bagel-sandwich/#high-protein-bagel-sandwich-ideas 301
 /how-to-pack-cold-pasta-salad-picnics /easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic 301
 /how-to-pack-cold-pasta-salad-picnics/ /easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic 301
-/freezer-meal-prep-ideas-for-beginners /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301
-/freezer-meal-prep-ideas-for-beginners/ /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301
+/freezer-meal-prep-ideas-for-beginners /freezer-organization-tips-large-family-meals/ 301
+/freezer-meal-prep-ideas-for-beginners/ /freezer-organization-tips-large-family-meals/ 301
 /research /data/ 301
 /research/ /data/ 301
 /guides /nutrition/ 301

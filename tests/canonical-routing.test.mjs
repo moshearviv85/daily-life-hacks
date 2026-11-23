@@ -287,7 +287,7 @@ test("merged demand pages 301 to the expanded article", async () => {
     ["how-much-dried-beans-per-person", "/canned-beans-vs-dried-beans-nutrition/"],
     ["how-long-do-dried-beans-last", "/how-to-cook-dried-beans-from-scratch/"],
     ["which-foods-are-complete-proteins", "/beans-and-rice-complete-protein-meal/"],
-    ["cauliflower-fried-rice-with-eggs", "/how-to-use-leftover-rice-creative-ideas/"],
+    ["cauliflower-fried-rice-with-eggs", "/high-fiber-stir-fry-vegetables/"],
     ["how-to-make-sourdough-pizza-dough-same-day", "/easy-sourdough-discard-pizza-dough-no-yeast/"],
     ["do-you-have-to-cook-frozen-vegetables", "/can-you-refreeze-frozen-vegetables-after-thawing/"],
   ];

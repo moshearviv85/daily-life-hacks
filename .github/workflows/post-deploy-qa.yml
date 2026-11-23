@@ -1,0 +1,89 @@
+# Read-only live QA after a production deploy. A failure here fails this job
+# only. Deploy Cloudflare Pages has already finished and stays green.
+#
+# Checks, with GETs only:
+#   - every sitemap URL is 200, indexable, and self-canonical
+#   - every public/_redirects destination is 200 (HTML destinations are indexable)
+#   - no internal link on a sitemap page returns 3xx or 4xx
+#   - /author/david-miller/ lists only indexable articles
+#   - pages whose public modified day changed since the previous production
+#     deploy, without substantiveUpdate on that day, stay within the cap
+#
+# Pinterest pin aliases are not part of this check.
+
+name: Post-deploy live QA
+
+on:
+  workflow_run:
+    workflows: ["Deploy Cloudflare Pages"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: post-deploy-live-qa
+  cancel-in-progress: false
+
+jobs:
+  qa:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout the commit that was deployed
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Resolve the previous production deploy
+        id: previous
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CURRENT_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+          CURRENT_RUN_ID: ${{ github.event.workflow_run.id || '' }}
+        run: |
+          set -euo pipefail
+          RUNS=$(gh run list \
+            --workflow deploy-cloudflare-pages.yml \
+            --branch main \
+            --status success \
+            --limit 20 \
+            --json databaseId,headSha,createdAt,url)
+          PREV=$(python3 -c '
+          import json, os, sys
+          runs = json.loads(sys.stdin.read() or "[]")
+          current_id = os.environ.get("CURRENT_RUN_ID", "").strip()
+          current_sha = os.environ.get("CURRENT_SHA", "").strip()
+          eligible = [run for run in runs if str(run.get("databaseId")) != current_id]
+          if not current_id and eligible and eligible[0].get("headSha") == current_sha:
+              eligible = eligible[1:]
+          sha = (eligible[0].get("headSha") if eligible else "") or ""
+          print(sha)
+          ' <<< "$RUNS")
+          echo "sha=$PREV" >> "$GITHUB_OUTPUT"
+          if [ -n "$PREV" ]; then
+            echo "Previous production deploy: $PREV"
+          else
+            echo "No previous successful production deploy. The dateModified cap is skipped."
+          fi
+
+      - name: Check the live site
+        env:
+          PREVIOUS_DEPLOY_SHA: ${{ steps.previous.outputs.sha }}
+        run: |
+          node scripts/post-deploy-qa.mjs \
+            --base https://www.daily-life-hacks.com \
+            --previous-sha "$PREVIOUS_DEPLOY_SHA"
