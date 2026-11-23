@@ -461,6 +461,22 @@ FIELD_DESCRIPTIONS: dict[str, str] = {
     "price_basis": (
         "Source and observation date for the price, plus any USDA refuse percentage applied."
     ),
+    "priced_month": (
+        "Price observation month as YYYY-MM when that row's own price text records one. "
+        "Blank when the file does not record a month for the row."
+    ),
+    "retailer": (
+        "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, "
+        "BLS, or a restaurant chain. Blank when the row does not name one."
+    ),
+    "price_location": (
+        "Geographic scope written on the row, such as a BLS area name, US average, or national. "
+        "Blank when the row records no place. No store or ZIP is filled in."
+    ),
+    "audit_note": (
+        "Short note already present in the row's price text, such as an audit cross-reference "
+        "or a USDA refuse adjustment. Blank when the row has no extra note."
+    ),
     "nutrition_source_status": (
         "Row-level nutrition provenance status: exact, proxy, or unresolved."
     ),

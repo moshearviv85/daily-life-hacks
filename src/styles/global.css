@@ -124,6 +124,35 @@ img {
   margin-top: 0;
 }
 
+.article-content .price-basis-box {
+  margin: 1.25rem 0 1.75rem;
+  padding: 0.85rem 1rem 0.95rem;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid #F29B30;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+}
+
+.article-content .price-basis-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F29B30;
+}
+
+.article-content .price-basis-box p {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.article-content .price-basis-links {
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+}
+
 .article-content h2 {
   font-size: clamp(1.35rem, 2.2vw, 1.6rem);
   font-weight: 700;

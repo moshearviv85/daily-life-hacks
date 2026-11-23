@@ -1,11 +1,11 @@
-food,category,value,package,package_price_usd,price_basis,fdc_id,source_url
-Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV,,
-"Carrots (whole, bagged)",Fresh vegetables,16.1,2 lb bag,1.58,Walmart,170393,https://fdc.nal.usda.gov/food-details/170393/nutrients
-Dry roasted peanuts,Nuts & seeds,13.7,16 oz jar,2.78,Walmart GV,174262,https://fdc.nal.usda.gov/food-details/174262/nutrients
-Sunflower seed kernels,Nuts & seeds,13.1,16 oz bag,2.98,Walmart,170562,https://fdc.nal.usda.gov/food-details/170562/nutrients
-Bananas,Fresh fruit,11.6,per lb,0.65,BLS US avg July 2026 (APU0000711211),173944,https://fdc.nal.usda.gov/food-details/173944/nutrients
-Peanut butter,Nuts & seeds,11.4,40 oz jar,4.97,Walmart GV,174266,https://fdc.nal.usda.gov/food-details/174266/nutrients
-Almonds,Nuts & seeds,8.8,16 oz bag,6.47,Walmart GV,170567,https://fdc.nal.usda.gov/food-details/170567/nutrients
-Prunes (dried plums),Dried fruit,8.1,16 oz bag,3.98,Walmart,168162,https://fdc.nal.usda.gov/food-details/168162/nutrients
-Apples (gala),Fresh fruit,7.3,per lb,1.28,Walmart,168204,https://fdc.nal.usda.gov/food-details/168204/nutrients
-Raisins,Dried fruit,6.3,20 oz canister,3.34,Walmart GV,2758980,https://fdc.nal.usda.gov/food-details/2758980/nutrients
+food,category,value,package,package_price_usd,price_basis,fdc_id,source_url,priced_month,retailer,price_location,audit_note
+Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV,,,,Walmart Great Value,,
+"Carrots (whole, bagged)",Fresh vegetables,16.1,2 lb bag,1.58,Walmart,170393,https://fdc.nal.usda.gov/food-details/170393/nutrients,,Walmart,,
+Dry roasted peanuts,Nuts & seeds,13.7,16 oz jar,2.78,Walmart GV,174262,https://fdc.nal.usda.gov/food-details/174262/nutrients,,Walmart Great Value,,
+Sunflower seed kernels,Nuts & seeds,13.1,16 oz bag,2.98,Walmart,170562,https://fdc.nal.usda.gov/food-details/170562/nutrients,,Walmart,,
+Bananas,Fresh fruit,11.6,per lb,0.65,BLS US avg July 2026 (APU0000711211),173944,https://fdc.nal.usda.gov/food-details/173944/nutrients,2026-07,BLS,US average,
+Peanut butter,Nuts & seeds,11.4,40 oz jar,4.97,Walmart GV,174266,https://fdc.nal.usda.gov/food-details/174266/nutrients,,Walmart Great Value,,
+Almonds,Nuts & seeds,8.8,16 oz bag,6.47,Walmart GV,170567,https://fdc.nal.usda.gov/food-details/170567/nutrients,,Walmart Great Value,,
+Prunes (dried plums),Dried fruit,8.1,16 oz bag,3.98,Walmart,168162,https://fdc.nal.usda.gov/food-details/168162/nutrients,,Walmart,,
+Apples (gala),Fresh fruit,7.3,per lb,1.28,Walmart,168204,https://fdc.nal.usda.gov/food-details/168204/nutrients,,Walmart,,
+Raisins,Dried fruit,6.3,20 oz canister,3.34,Walmart GV,2758980,https://fdc.nal.usda.gov/food-details/2758980/nutrients,,Walmart Great Value,,

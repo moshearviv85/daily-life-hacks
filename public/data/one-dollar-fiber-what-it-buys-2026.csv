@@ -1,16 +1,16 @@
-food,category,value,package,package_price_usd,price_basis,fdc_id,source_url
-Whole wheat flour,Whole grains,77.8,5 lb bag,3.12,Walmart GV,168893,https://fdc.nal.usda.gov/food-details/168893/nutrients
-Green split peas (dry),Dried beans & peas,71.0,16 oz bag,1.42,Walmart GV,172428,https://fdc.nal.usda.gov/food-details/172428/nutrients
-Pearled barley (dry),Whole grains,57.1,16 oz bag,1.24,Walmart GV,170284,https://fdc.nal.usda.gov/food-details/170284/nutrients
-Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV,,
-Pinto beans (dry),Dried beans & peas,41.7,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233),175199,https://fdc.nal.usda.gov/food-details/175199/nutrients
-Black beans (dry),Dried beans & peas,41.6,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173734,https://fdc.nal.usda.gov/food-details/173734/nutrients
-Navy beans (dry),Dried beans & peas,41.1,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173745,https://fdc.nal.usda.gov/food-details/173745/nutrients
-Old-fashioned rolled oats,Whole grains,35.8,42 oz canister,3.36,Walmart GV,173904,https://fdc.nal.usda.gov/food-details/173904/nutrients
-Whole wheat spaghetti,Whole grains,35.4,16 oz box,1.18,Walmart GV,169738,https://fdc.nal.usda.gov/food-details/169738/nutrients
-Canned black beans,Canned,34.4,15.5 oz can,0.88,Walmart GV,175188,https://fdc.nal.usda.gov/food-details/175188/nutrients
-Chickpeas (dry),Dried beans & peas,33.8,16 oz bag,1.64,Walmart,173756,https://fdc.nal.usda.gov/food-details/173756/nutrients
-Brown lentils (dry),Dried beans & peas,33.7,16 oz bag,1.44,Walmart GV,172420,https://fdc.nal.usda.gov/food-details/172420/nutrients
-Chia seeds,Nuts & seeds,33.1,32 oz bag,9.44,Walmart GV,170554,https://fdc.nal.usda.gov/food-details/170554/nutrients
-Bran flakes cereal,Whole grains,30.1,17.3 oz box,2.98,Walmart GV,173888,https://fdc.nal.usda.gov/food-details/173888/nutrients
-Whole flaxseed,Nuts & seeds,28.5,22 oz bag,5.98,Walmart,169414,https://fdc.nal.usda.gov/food-details/169414/nutrients
+food,category,value,package,package_price_usd,price_basis,fdc_id,source_url,priced_month,retailer,price_location,audit_note
+Whole wheat flour,Whole grains,77.8,5 lb bag,3.12,Walmart GV,168893,https://fdc.nal.usda.gov/food-details/168893/nutrients,,Walmart Great Value,,
+Green split peas (dry),Dried beans & peas,71.0,16 oz bag,1.42,Walmart GV,172428,https://fdc.nal.usda.gov/food-details/172428/nutrients,,Walmart Great Value,,
+Pearled barley (dry),Whole grains,57.1,16 oz bag,1.24,Walmart GV,170284,https://fdc.nal.usda.gov/food-details/170284/nutrients,,Walmart Great Value,,
+Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV,,,,Walmart Great Value,,
+Pinto beans (dry),Dried beans & peas,41.7,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233),175199,https://fdc.nal.usda.gov/food-details/175199/nutrients,2026-07,BLS,US average,
+Black beans (dry),Dried beans & peas,41.6,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173734,https://fdc.nal.usda.gov/food-details/173734/nutrients,2026-07,BLS,US average,
+Navy beans (dry),Dried beans & peas,41.1,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173745,https://fdc.nal.usda.gov/food-details/173745/nutrients,2026-07,BLS,US average,
+Old-fashioned rolled oats,Whole grains,35.8,42 oz canister,3.36,Walmart GV,173904,https://fdc.nal.usda.gov/food-details/173904/nutrients,,Walmart Great Value,,
+Whole wheat spaghetti,Whole grains,35.4,16 oz box,1.18,Walmart GV,169738,https://fdc.nal.usda.gov/food-details/169738/nutrients,,Walmart Great Value,,
+Canned black beans,Canned,34.4,15.5 oz can,0.88,Walmart GV,175188,https://fdc.nal.usda.gov/food-details/175188/nutrients,,Walmart Great Value,,
+Chickpeas (dry),Dried beans & peas,33.8,16 oz bag,1.64,Walmart,173756,https://fdc.nal.usda.gov/food-details/173756/nutrients,,Walmart,,
+Brown lentils (dry),Dried beans & peas,33.7,16 oz bag,1.44,Walmart GV,172420,https://fdc.nal.usda.gov/food-details/172420/nutrients,,Walmart Great Value,,
+Chia seeds,Nuts & seeds,33.1,32 oz bag,9.44,Walmart GV,170554,https://fdc.nal.usda.gov/food-details/170554/nutrients,,Walmart Great Value,,
+Bran flakes cereal,Whole grains,30.1,17.3 oz box,2.98,Walmart GV,173888,https://fdc.nal.usda.gov/food-details/173888/nutrients,,Walmart Great Value,,
+Whole flaxseed,Nuts & seeds,28.5,22 oz bag,5.98,Walmart,169414,https://fdc.nal.usda.gov/food-details/169414/nutrients,,Walmart,,

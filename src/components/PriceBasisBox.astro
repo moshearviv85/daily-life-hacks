@@ -1,0 +1,53 @@
+---
+import { priceBasisParts } from "../content/price-basis.mjs";
+
+interface RetailerCount {
+  name: string;
+  count: number;
+}
+
+interface MonthCount {
+  iso: string;
+  label: string;
+  count: number;
+}
+
+interface Summary {
+  csvHref: string;
+  itemCount: number;
+  itemNoun: string;
+  retailers: RetailerCount[];
+  retailerRows: number;
+  months: MonthCount[];
+  monthRows: number;
+  unitBasis: string;
+}
+
+interface Props {
+  summary: Summary;
+}
+
+const { summary } = Astro.props;
+const parts = priceBasisParts(summary);
+const monthKey = summary.months.map((month) => `${month.iso}:${month.count}`).join(",");
+---
+
+<aside
+  class="price-basis-box"
+  data-price-basis-box
+  data-item-count={summary.itemCount}
+  data-price-months={monthKey}
+  aria-label="How we priced this"
+>
+  <p class="price-basis-kicker">How we priced this</p>
+  <p>{parts.join(" ")}</p>
+  <p class="price-basis-links">
+    <a href={summary.csvHref}>CSV</a>
+    <span aria-hidden="true"> · </span>
+    <a href="/methodology/">Methodology</a>
+    <span aria-hidden="true"> · </span>
+    <a href="/editorial-policy/#corrections">Corrections</a>
+    <span aria-hidden="true"> · </span>
+    <a href="/data/">Dataset catalog</a>
+  </p>
+</aside>

@@ -54,7 +54,10 @@ test("word count ignores URLs, code fences, and HTML comments", () => {
 });
 
 test("article page uses Astro's rendered heading slugs and accessible navigation", () => {
-  assert.match(articlePage, /const \{ Content, headings \} = await render\(article\)/);
+  assert.match(
+    articlePage,
+    /const \{ Content, headings(?:, remarkPluginFrontmatter)? \} = await render\(article\)/,
+  );
   assert.match(articlePage, /buildArticleToc\(headings, article\.body \?\? ""\)/);
   assert.match(articlePage, /<ArticleTableOfContents items=\{tableOfContents\} \/>/);
 

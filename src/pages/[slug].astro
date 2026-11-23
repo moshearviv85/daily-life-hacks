@@ -48,6 +48,7 @@ import StudyLead from "../components/StudyLead.astro";
 import StudyEmailCapture from "../components/StudyEmailCapture.astro";
 import StudyNextStep from "../components/StudyNextStep.astro";
 import StudyCite from "../components/StudyCite.astro";
+import PriceBasisBox from "../components/PriceBasisBox.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
 import KitchenCalculator from "../components/KitchenCalculator.astro";
 import {
@@ -55,11 +56,28 @@ import {
   earlySignupPlan,
   newsletterSignupForArticle,
 } from "../content/newsletter-variant.mjs";
+import { summaryForStudy } from "../content/price-basis.mjs";
 import { contextualFlagshipLinkAllowed } from "../content/contextual-flagship-links.mjs";
 import { pickModifiedDate } from "../content/modified-date.mjs";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
+function renderStudyLead(markdown: string): string {
+  if (!markdown.trim()) return "";
+  return markdown
+    .split(/\n\n/)
+    .map((paragraph) => {
+      const html = paragraph
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+      return `<p>${html}</p>`;
+    })
+    .join("");
 }
 
 function durationToIso(value?: string): string | undefined {
@@ -90,7 +108,10 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { Content, headings } = await render(article);
+const { Content, headings, remarkPluginFrontmatter } = await render(article);
+const studyLeadMarkdown = String(remarkPluginFrontmatter.studyLeadMarkdown ?? "");
+const studyLeadHtml = renderStudyLead(studyLeadMarkdown);
+const priceBasis = summaryForStudy(article.id);
 const tableOfContents = buildArticleToc(headings, article.body ?? "");
 const releaseDate = article.data.publishAt ?? article.data.date;
 /** True once publishAt (or date) is in the past; drives index/noindex at build time. */
@@ -484,7 +505,7 @@ if (dataset) {
     dateModified: modifiedDate,
     keywords: article.data.tags?.join(", "),
     variableMeasured: dataset.variables,
-    temporalCoverage: dataset.temporal,
+    temporalCoverage: priceBasis?.temporalCoverage || dataset.temporal,
     spatialCoverage: "United States",
     measurementTechnique: `${siteUrl}/methodology/`,
     distribution: datasetDistributions(dataset, siteUrl),
@@ -1048,6 +1069,8 @@ const earlyPlan = flagship?.emailCapture
     {article.id === 'protein-per-serving-beans-chicken-tofu-compared' && <KitchenCalculator kind="protein" />}
     {!answerFirst && (
       <div class="article-content order-[20]">
+        {studyLeadHtml && <Fragment set:html={studyLeadHtml} />}
+        {priceBasis && <PriceBasisBox summary={priceBasis} />}
         <Content />
       </div>
     )}
