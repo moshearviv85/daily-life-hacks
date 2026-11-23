@@ -89,7 +89,7 @@ DIAAS above 1.0 is shown for reference. It was capped at 1.0 in the math, so egg
 
 **The cereal grains took a real haircut.** Whole wheat flour was first on raw protein per dollar. Adjusted, it slid to fourth. Whole wheat spaghetti dropped nine spots in this cut and peanut butter dropped ten, because both are limited by lysine. Whole wheat bread finishes last here, at 9.0 adjusted grams.
 
-**Eggs and dairy climbed without moving an inch.** They didn't get cheaper. Everything around them got discounted while they kept full value, so eggs rose from 13th to 7th in this cut. If you want quality without cooking, that corner of the fridge is where it lives.
+**Eggs and dairy climbed without moving an inch.** They didn't get cheaper. Everything around them got discounted while they kept full value, so eggs rose from 13th to 7th in this cut. If you want quality without cooking, that corner of the fridge is where it lives. The unadjusted grocery ranking, eggs against flour and beans, is [eggs ranked by protein value](/eggs-vs-everything-protein-value/).
 
 ## Do beans still win if they aren't complete protein?
 

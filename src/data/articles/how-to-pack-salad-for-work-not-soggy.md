@@ -91,3 +91,5 @@ Add protein, grains, beans, or a hearty fat. Chicken, eggs, tuna, tofu, chickpea
 If you're using saucy protein, pack it separately or bury it in the middle layer away from the greens. Cooked chicken leftovers are also a [3 to 4 day refrigerator food](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), same chart, same 40°F ceiling. Buffalo chicken directly on romaine at 8 AM is how lunch turns into a swamp.
 
 Pack salad for work with a little structure and it becomes a lunch you actually want to open. Dressing stays contained, greens stay crisp, and you get to skip the sad desk sandwich that costs $14 and somehow still leaves you hungry.
+
+The sandwich version of the same moisture problem is [bread versus wet fillings until noon](/how-to-keep-sandwiches-from-getting-soggy/).

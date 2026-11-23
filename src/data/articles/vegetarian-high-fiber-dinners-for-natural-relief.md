@@ -120,6 +120,8 @@ Frozen cauliflower works when fresh is expensive or tired-looking. Add it straig
 
 For a less rich pot, replace half the coconut milk with broth. For more crunch, finish each bowl with toasted pumpkin seeds or chopped peanuts rather than simmering them in the sauce. And if you want a different bean, cannellini beans stay creamy while black-eyed peas hold their shape. Lentils need a separate timing plan, so they are not a straight one-for-one swap here.
 
+For a grain pot, make [hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/). For a fast pan, make [a vegetable stir-fry with the fiber still in it](/high-fiber-stir-fry-vegetables/).
+
 ## Storage
 
 Divide leftovers into shallow containers and refrigerate them within two hours. [FoodSafety.gov advises using refrigerated leftovers within three to four days](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts). The sauce thickens as it sits, so add a splash of water or broth when you reheat it until steaming hot.

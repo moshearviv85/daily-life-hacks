@@ -111,7 +111,7 @@ If you order something that is heavy on beans and your stomach is sensitive that
 
 ## Stay with food
 
-This is a food plan. Beans, oats, fruit, and cooked vegetables are the fiber. A cup of cooked lentils already has [about 16 grams](https://fdc.nal.usda.gov/food-details/172421/nutrients), so you don't need a powder to make the ramp real. If a clinician has you on a separate fiber product, ask them how fast to increase it. I'm not going to give mixing instructions for one.
+This is a food plan. Beans, oats, fruit, and cooked vegetables are the fiber. A cup of cooked lentils already has [about 16 grams](https://fdc.nal.usda.gov/food-details/172421/nutrients), so you don't need a powder to make the ramp real. If a clinician has you on a separate fiber product, ask them how fast to increase it. I'm not going to give mixing instructions for one. If the glass you were about to pour is prune juice, use [kitchen food instead of prune juice](/prune-juice-alternatives-for-constipation/) and keep the ramp in the bowl.
 
 ## A Practical “Swap List” You Can Reuse
 

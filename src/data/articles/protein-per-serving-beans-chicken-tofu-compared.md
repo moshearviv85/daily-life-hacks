@@ -152,7 +152,7 @@ Compare a half cup of beans to a whole chicken breast and the beans look bad. Th
 
 **Soup plus something.** Soup runs sneaky low on protein. White bean soup plus toast and cheese. Lentil soup plus a hard boiled egg. Chicken soup plus yogurt and fruit.
 
-**Breakfast that doesn't collapse.** Two eggs plus toast is fine. Two eggs plus toast plus yogurt is better. Oatmeal with peanut butter and Greek yogurt is surprisingly solid.
+**Breakfast that doesn't collapse.** Two eggs plus toast is fine. Two eggs plus toast plus yogurt is better. Oatmeal with peanut butter and Greek yogurt is surprisingly solid. Where those two eggs land on price against beans and chicken is in [eggs ranked against the rest of the cart](/eggs-vs-everything-protein-value/).
 
 ## How to read a label without losing your mind
 

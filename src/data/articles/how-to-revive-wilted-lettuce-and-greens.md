@@ -94,7 +94,7 @@ The FDA's rule is short enough to memorize: cut away damaged or bruised areas, t
 
 ## How do you keep lettuce from wilting again?
 
-The second rescue is prevention. Dry the leaves well, store them in a container or bag with a paper towel to catch extra moisture, and keep them in the refrigerator's high-humidity drawer if yours has one. That drawer isn't a gimmick: UC Davis lists optimum relative humidity for crisphead lettuce at above 95%, and your open fridge shelf is nowhere near that. Too little moisture makes lettuce limp. Too much loose water encourages the exact slimy situation we're trying to avoid.
+The second rescue is prevention. Dry the leaves well, store them in a container or bag with a paper towel to catch extra moisture, and keep them in the refrigerator's high-humidity drawer if yours has one. A cut avocado isn't a wilt problem. [Keeping the cut face from browning](/best-way-to-store-avocados-to-stop-browning/) is the other crisper save. That drawer isn't a gimmick: UC Davis lists optimum relative humidity for crisphead lettuce at above 95%, and your open fridge shelf is nowhere near that. Too little moisture makes lettuce limp. Too much loose water encourages the exact slimy situation we're trying to avoid.
 
 Two numbers worth taping inside the fridge door. The FDA says keep perishable produce like lettuce at 40°F or below, checked with an actual thermometer rather than vibes. UC San Diego keeps salad greens up to 7 days in an airtight container with a damp cloth. Soaked leaves don't get those 7 days. They're wet and handled, so use them that day.
 

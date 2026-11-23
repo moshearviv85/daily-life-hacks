@@ -107,6 +107,8 @@ While this curry is hearty enough to eat completely on its own, adding a side ma
 * **Warm bread:** If you can find good naan bread, warm it up in the oven or blister it directly over a gas burner. Tearing off a piece of warm bread and dragging it through the curry is arguably the best part of the meal.
 * **A cooling contrast:** A quick cucumber salad with a splash of vinegar, or a dollop of plain dairy-free yogurt on top of the curry, provides a cool contrast to the warm, heavily spiced stew.
 
+On a night you don't want curry, [the twenty-minute high-fiber stir-fry](/high-fiber-stir-fry-vegetables/) uses the same vegetable drawer. The other spoon dinner in this rotation is [a cabbage soup that carries the fiber](/fiber-rich-soup-for-weight-loss-cabbage/).
+
 ## Small tweaks to make it yours
 
 * **Add more veggies:** Toss in some diced sweet potatoes, cauliflower florets, or chopped carrots when you add the broth. Just chop them small so they cook in the same time as the lentils. Root vegetables make this even heartier. If the cauliflower ends up being your favorite part, this [chickpea and cauliflower curry](/vegetarian-high-fiber-dinners-for-natural-relief/) is built around it instead.
