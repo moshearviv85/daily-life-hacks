@@ -52,7 +52,7 @@ faq:
     answer: "Tough pizza dough usually happens from over-kneading or adding too much flour. Since this recipe doesn't rely on yeast development, you only need to knead it until the ingredients are fully incorporated. If you work the dough too long, the gluten becomes too tight, which results in a chewy or hard crust once it hits the oven heat."
 ---
 
-Pizza at the end of the day is a reasonable request. Remembering to start dough that morning is a separate skill. This sourdough discard pizza dough uses baking powder and a short rest, so there's no yeast rise to schedule.
+Pizza at the end of the day is a reasonable request. Remembering to start dough that morning is a separate skill. This sourdough discard pizza dough uses baking powder and a short rest, so there's no yeast rise to schedule. The rest of that no-yeast list, from flatbread to banana bread, is the [sourdough discard recipes with no added yeast](/sourdough-discard-recipes-no-yeast/). The snack that uses this same 227 gram cup is [rolled sourdough discard crackers](/sourdough-discard-crackers/).
 
 It makes **one thin 12-inch crust, two meal servings**, in about 40 minutes including preheating. Expect a modest rim and a crisp base rather than an airy pizzeria crust. There's no added commercial yeast, though the starter itself contains wild yeast.
 

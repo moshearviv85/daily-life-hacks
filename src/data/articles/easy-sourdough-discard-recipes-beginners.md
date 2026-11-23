@@ -12,7 +12,7 @@ tags:
 image: "/images/easy-sourdough-discard-recipes-beginners-main.jpg"
 imageAlt: A close-up photograph shows a glass jar of sourdough starter in the background and a pile of sourdough discard crackers and pancakes in the foreground.
 date: 2026-04-28
-dateModified: 2026-09-14
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
@@ -46,7 +46,7 @@ faq:
     answer: "The starter is the portion you keep and feed to maintain your sourdough culture for bread baking. The discard is the portion you remove before feeding the starter to prevent it from growing too large. Discard is essentially just unfed starter that still has plenty of flavor but less leavening power."
 ---
 
-A jar of discard should come with dinner options, not another feeding schedule. Start with pancakes if you want something in 20 minutes, skillet flatbread if you have half a cup, or crackers if you can leave the oven running for about an hour.
+A jar of discard should come with dinner options, not another feeding schedule. Start with pancakes if you want something in 20 minutes, skillet flatbread if you have half a cup, or crackers if you can leave the oven running for about an hour. When the jar is bigger than one of those, the [sourdough discard recipes with no added yeast](/sourdough-discard-recipes-no-yeast/) put grams and a clock on twelve batches, including the [rolled crackers](/sourdough-discard-crackers/).
 
 These easy sourdough discard recipes for beginners use **100% hydration discard from an established starter**, meaning equal weights of flour and water. Cold discard is fine. It doesn't need to double before you cook.
 
@@ -89,7 +89,7 @@ This version follows [King Arthur Baking's no-roll cracker method](https://www.k
 
 Spread onto parchment in an even rectangle about 11 by 15 inches on a rimmed baking sheet. Bake at 325 degrees F for 15 minutes. Score into small squares, then continue baking for 35 to 45 minutes, rotating the sheet halfway through. The center needs to be golden and firm. Let the sheet cool completely before breaking it apart.
 
-The middle tells you whether they're done. Brown edges around a soft center mean the layer was uneven or needs longer. Move finished edge pieces off the sheet if necessary while the center crisps.
+The middle tells you whether they're done. Brown edges around a soft center mean the layer was uneven or needs longer. Move finished edge pieces off the sheet if necessary while the center crisps. If you'd rather roll a dough that includes flour, the [sourdough discard crackers](/sourdough-discard-crackers/) use this same 227 grams of discard with 120 grams of flour and 57 grams of butter.
 
 ## Fix the problem before adding more ingredients
 

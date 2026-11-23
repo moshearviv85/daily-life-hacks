@@ -93,14 +93,29 @@ Together the potato and Small Chili provide the table's 10 grams of fiber, 550 c
 
 Panera's current U.S. guide, effective June 17, 2026, lists the whole Mediterranean Veggie on Tomato Basil at **8 grams of fiber**, not 10, plus 520 calories and 1,260 milligrams of sodium. Its Steel Cut Oatmeal lists 7 grams for 330 calories. Same fiber neighborhood, wildly different meal.
 
+## Highest fiber item at each chain
+
+One published line per chain, a standard single order. Family packs and catering containers are out. A custom stack can beat the single line, which is why the Chipotle bowl above still sits at 25 grams.
+
+| Chain | Item | Fiber | Calories | Protein | Sodium | Source |
+|---|---|---:|---:|---:|---:|---|
+| Chipotle | Guacamole (large), 8 oz. Highest single line on the OCT-2024 paper chart. Pinto beans are 8 g per 4 oz | 12 g | 460 | 4 g | 740 mg | [Paper chart](https://www.chipotle.com/content/dam/chipotle/menu/nutrition/US-Nutrition-Facts-Paper-Menu-3-2025.pdf), read 2026-11-23 |
+| Taco Bell | Veggie Bowl. Ties Nachos BellGrande beef at 13 g, at fewer calories | 13 g | 510 | 13 g | 1,040 mg | [Nutrition info](https://www.tacobell.com/nutrition/info) embeds [this table](https://www.nutritionix.com/taco-bell/menu/premium), updated 2026-11-20 |
+| Subway | Veggie Patty Protein Bowl. Highest fixed item already read from the January 2026 tables. A fresh download of that PDF timed out on 2026-11-23 | 19 g | 540 | 22 g | 1,550 mg | [January 2026 tables](https://media.subway.com/dam/urn:aaid:aem:2278372c-147b-42f2-8edc-7d8d94d1f07e/original/as/us-nutrition-en.pdf) |
+| Panera | Green Goddess Chicken Wrap, Grab N Go. Ties the Chicken Caesar Wrap at 14 g and 32 g protein. The Caesar wrap is 480 calories and 1,510 mg sodium | 14 g | 460 | 32 g | 1,340 mg | [Guide effective 9/2/2026](https://www.panerabread.com/content/dam/panerabread/documents/c8-26-nutrition-guide.pdf) |
+| Wendy's | Chili & Cheese Baked Potato. Ties the Taco Salad at 8 g. The salad is 610 calories, 28 g protein, 1,510 mg sodium. The spicy nugget party pack also prints 8 g, at 2,340 calories, and it's a family item | 8 g | 490 | 21 g | 830 mg | [U.S. menu feed, site 0, 2026-11-23](https://api.app.prd.wendys.digital/web-client-gateway/menu/getSiteMenu?lang=en&cntry=US&sourceCode=ORDER.WENDYS.COM&version=23.1.0&siteNum=0) |
+| McDonald's | Fruit & Maple Oatmeal. The product page states 320 calories. Fiber, protein, and sodium below are the U.S. calculator figures copied by menu mirrors in October and November 2026. McDonald's returned 403 to a direct calculator read on 2026-11-23. A 20-piece Spicy Chicken McNuggets order is also listed at 4 g fiber in a September 23, 2026 pull of that calculator | 4 g | 320 | 6 g | 150 mg | [Product page](https://www.mcdonalds.com/us/en-us/product/fruit-maple-oatmeal.html), [archived 2026-11-10](https://web.archive.org/web/20261110190646/https://www.mcdonalds.com/us/en-us/product/fruit-maple-oatmeal.html) |
+
+Panera's September 2, 2026 guide doesn't list the black bean soup that the June guide put at 18 grams. On this later file the wraps are the high line. Wendy's plain baked potato is still 7 grams, 270 calories, 7 grams of protein, and 40 milligrams of sodium on that same feed, which is the potato half of the 10 gram pair above. Small chili on the feed is 3 grams and 280 calories.
+
 ## How to order fiber when this list goes stale
 
 Menus move. These rules don't.
 
 1. **Beans do the work.** Chipotle lists 7 grams of fiber per 4 ounces of black beans, 8 for pinto. Together they're 15 grams before anything else.
-2. **Read the sodium.** Every pick here except the two oatmeals clears 1,000 milligrams against a [2,300-milligram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels).
+2. **Read the sodium.** Every pick in the ten-order table except the two oatmeals clears 1,000 milligrams against a [2,300-milligram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels).
 3. **Check the calendar.** Soup is where the fiber hides at the chicken chains, and soup gets pulled in spring.
 
-Taco Bell is the honest gap: both of its nutrition URLs redirected to a corporate page on yum.com on July 30, 2026, with no per-item fiber table.
+Taco Bell was the gap on July 30, 2026, when both nutrition URLs redirected to a corporate page on yum.com. On November 23, 2026, the chain's nutrition info page loads the Nutritionix table used in the single-item section above.
 
 If price is the next question, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) and the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) keep the same exact-order discipline. At the grocery store, the [49-food protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) puts dry pinto beans at 57.6 grams per dollar, which is the bag you cook at home rather than the scoop on the line.

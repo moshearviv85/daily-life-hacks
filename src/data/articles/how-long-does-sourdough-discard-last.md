@@ -14,6 +14,7 @@ parentPillar: "meal-prep-for-beginners-complete-system"
 image: "/images/how-long-does-sourdough-discard-last-main.jpg"
 imageAlt: A glass jar of beige sourdough discard with a strip of tape on the side, on a refrigerator shelf next to a small lidded container of the same mixture.
 date: 2026-10-04
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
@@ -75,6 +76,14 @@ Hooch, the dark liquid on top, isn't that list. King Arthur says stir the black 
 Yes, if this week isn't when you'll bake. Freeze portions of **57 grams, 113 grams, or 227 grams**. Those are the quarter cup, half cup, and cup on this site's [conversion guide](/how-to-measure-sourdough-discard-grams/), so a frozen block matches the flatbread, the pancakes, the crackers, or the pizza crust instead of becoming a beige ice brick you have to chisel.
 
 Nordic Ware says to freeze it in measured amounts for up to 2 to 3 months, then thaw it in the refrigerator overnight or at room temperature. sourdoughstarter.com says up to 3 months, with headspace in the container because discard expands, and they mention ice-cube portions of about 2 tablespoons if you want smaller pieces. King Arthur's discard article doesn't publish a freezer duration, so this page doesn't invent one for them.
+
+## Freezing discard (3 months; thaw overnight)
+
+Three months is the planning cap, not a date King Arthur printed. Nordic Ware's freezer line is up to 2 to 3 months. sourdoughstarter.com says up to 3 months at 0F, and that texture starts to suffer if you push toward 6 months. Past that, this page doesn't invent a longer "still fine" date.
+
+Freeze **57, 113, or 227 gram** portions, with room in the container. A solid quart of unlabeled discard is how you chip ice instead of baking. Thaw overnight in the refrigerator. Don't microwave it, don't refreeze it, and use it within 3 days of that thaw. Stir before you weigh it. The liquid on top isn't the whole block.
+
+Those blocks are sized for the [no-yeast discard recipes](/sourdough-discard-recipes-no-yeast/) and the [rolled crackers](/sourdough-discard-crackers/), not for a vague "some starter" scoop.
 
 ## Thawing and using frozen discard
 
