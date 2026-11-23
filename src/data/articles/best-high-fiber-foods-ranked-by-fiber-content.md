@@ -107,7 +107,9 @@ Avocado led our fresh list at 6.7 grams per 100 grams. Raspberries came in at 6.
 
 None of this makes produce pointless. It makes it a different tool. Berries and vegetables come with water and volume, which is exactly what beans don't, and eating a lot of them is easy in a way that eating a lot of dry bran is not. The full fresh breakdown is in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce), and if you want the fruit-only version, the best high fiber fruits covers it. A cooked cup is a different scoreboard.
 
-## How much fiber is in a cup of cooked vegetables?
+## Which vegetable has the most fiber per cup?
+
+A cooked cup of artichoke hearts leads this table at 9.6 grams of fiber ([FDC 168386](https://fdc.nal.usda.gov/food-details/168386/nutrients)). Green peas follow at 8.8 grams ([FDC 170420](https://fdc.nal.usda.gov/food-details/170420/nutrients)), then chopped collard greens at 7.6 grams ([FDC 170407](https://fdc.nal.usda.gov/food-details/170407/nutrients)). The per 100 gram ranking and this per cup ranking don't match, since those cup weights aren't equal.
 
 Dry split peas pack 22.2 grams into 100 grams because they're dry. A cup is how these vegetables actually get eaten, and boiling lets you pack more of them into it. Every row below is boiled and drained without salt, except the sweet potato (baked, flesh only) and the acorn squash (boiled, then mashed). Fiber is that record's grams per 100 grams times USDA's cup weight, rounded to one decimal.
 

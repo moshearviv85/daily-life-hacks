@@ -329,6 +329,10 @@ for (const table of tables) {
       // This eaten-form list is a separate USDA table, not a 49-food study
       // leader. Its heading is specified without study scope on purpose.
       if (line === "## Highest-protein common foods per 100 g, as eaten") continue;
+      // The cooked-cup question is a separate USDA table, not the 53-food
+      // study leader. The heading is the query; the next paragraph scopes
+      // the answer to this table.
+      if (line === "## Which vegetable has the most fiber per cup?") continue;
       assert.match(
         line,
         new RegExp(
