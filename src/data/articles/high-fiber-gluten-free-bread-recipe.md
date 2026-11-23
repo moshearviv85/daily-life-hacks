@@ -75,7 +75,7 @@ Most gluten-free bread from the store is sad. There, I said it. It's usually ful
 
 But this one? This one actually works. It's a dense, hearty, seed-packed loaf that holds up to serious sandwich fillings and makes incredible toast. It doesn't rely on weird gums or fifteen different flours. It uses whole ingredients that happen to pack a massive fiber punch.
 
-For more ways to put oats, seeds, beans, and grains to work without wrecking the grocery budget, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) lays out the rest of the pantry.
+For more ways to put oats, seeds, beans, and grains to work without wrecking the grocery budget, the [complete budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) lays out the rest of the pantry.
 
 ## How this bread actually holds together
 

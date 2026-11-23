@@ -66,7 +66,7 @@ Risotto has a reputation. People act like making it requires a culinary degree a
 
 I love the idea of risotto, but I don't love the reality of standing over the stove when I could be doing literally anything else. That's where barley changes the math. Barley has enough starch to create a rich, creamy sauce, but it's sturdy enough that you can put a lid on the pot and walk away.
 
-For the bigger pantry plan, this [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) maps out how barley, beans, oats, and other inexpensive staples can share the weekly workload.
+For the bigger pantry plan, this [budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) maps out how barley, beans, oats, and other inexpensive staples can share the weekly workload.
 
 You get the cozy, savory bowl of comfort food, but you only actively cook for about ten minutes. The pot does the rest of the work.
 

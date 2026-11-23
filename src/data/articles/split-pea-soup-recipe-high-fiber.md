@@ -67,7 +67,7 @@ Yeah, I know. Peas. They sound plain. Then they cook down into a thick, savory s
 
 There's something deeply satisfying about turning dried peas, a few humble vegetables, and broth into a meal that tastes like it simmered all afternoon. You chop. You toss. You wait. That's most of the skill.
 
-If you want the broader shopping system behind cheap fiber staples, read the [how to eat more fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/). This recipe is one pot inside that bigger cart strategy.
+If you want the broader shopping system behind cheap fiber staples, read the [how to eat more fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/). This recipe is one pot inside that bigger cart strategy.
 
 I remember one winter with snow up to my knees when I made a huge batch. My roommate kept asking what smelled like "home," and she didn't mean her childhood kitchen. She meant the concept. That's the target. Kitchen smells good. Bowl is thick. Wallet stays calm.
 
@@ -159,7 +159,7 @@ Don't overcomplicate a dish whose whole personality is "peas got soft and delici
 
 One pot of split pea soup covers multiple lunches. Pair it with oatmeal breakfasts, bean chili later in the week, and fruit with the skin on, and your fiber average stops looking tragic without you turning into a person who talks about "macros" at parties. The cabbage pot in that same week is [cabbage soup beside the split peas](/fiber-rich-soup-for-weight-loss-cabbage/).
 
-The [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) maps the grocery pattern. This pot is the Tuesday execution.
+The [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) maps the grocery pattern. This pot is the Tuesday execution.
 
 Make it once when the weather turns mean. Freeze half. Eat the rest with bread and zero apologies. Thick, cheap, and quietly loaded with fiber. That's the whole pitch for this split pea soup recipe.
 

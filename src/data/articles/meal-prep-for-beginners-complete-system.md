@@ -84,7 +84,7 @@ The trick to finishing in 90 minutes isn't speed. It's parallelism. The oven, th
 2. **Minutes 10 to 25: chop and load the oven.** Cut vegetables for roasting, oil and season them, sheet pan in. If a protein bakes, like meatballs, shape those now and slide them onto a second rack. The oven is now cooking two things while you stand there doing nothing to either of them.
 3. **Minutes 25 to 50: second base and second protein.** Potatoes on the second oven rack after the vegetables come out, or a second grain on the stove. If a rotisserie chicken is your protein shortcut, this is when you shred it. This window is where beginners stall, so keep the batch cooking weekly guide open the first few Sundays until the rhythm sticks.
 4. **Minutes 50 to 70: sauces and small stuff.** Sauces are five-minute jobs: whisk a vinaigrette, blend a peanut sauce, stir yogurt into something. Wash and prep snack vegetables and fruit while the last tray finishes.
-5. **Minutes 70 to 90: cool, portion, label.** Spread hot food out so it cools fast instead of steaming itself in a sealed container. Rice especially needs this, and there's a right way to do it, covered in our guide to [cooling rice properly](/how-to-use-leftover-rice-creative-ideas/), which also happens to set you up for great fried rice later in the week. Then portion into containers, write the date on a piece of tape, and you're done.
+5. **Minutes 70 to 90: cool, portion, label.** Spread hot food out so it cools fast instead of steaming itself in a sealed container. Rice especially needs this, and there's a right way to do it, covered in our guide to cooling rice properly, which also happens to set you up for great fried rice later in the week. Then portion into containers, write the date on a piece of tape, and you're done.
 
 Write the date every time. Future-you, holding a mystery container on Thursday, will need it.
 
@@ -98,7 +98,7 @@ If you're cooking for one, keep the same structure and shrink the batches. The b
 
 Bases are the cheap, boring foundation that makes everything else work. Rice, quinoa, roasted potatoes, pasta, beans. Cook them plain so they stay flexible.
 
-* **Grains:** Rice is the workhorse. Cook a big batch, cool it right, and half of it becomes [fried rice](/how-to-use-leftover-rice-creative-ideas/) on Thursday, which is the single best trick for making day-four prep feel like a brand new meal.
+* **Grains:** Rice is the workhorse. Cook a big batch, cool it right, and half of it becomes fried rice on Thursday, which is the single best trick for making day-four prep feel like a brand new meal.
 * **Beans:** Canned works fine forever. But [dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) cost roughly a third as much per cooked cup and taste noticeably better, so it's worth learning once.
 * **The batching habit itself:** If the parallel-cooking workflow above feels chaotic, the batch cooking for beginners guide breaks it into an even gentler on-ramp.
 * **The weekend version:** Prefer to spread the work across Saturday and Sunday instead of one sprint? The weekend food prep playbook lays out that slower rhythm.
@@ -107,10 +107,10 @@ Bases are the cheap, boring foundation that makes everything else work. Rice, qu
 
 This is where the money goes, so pick proteins that are cheap, reheat well, and don't dry out by day three.
 
-* **Turkey meatballs** are my top recommendation for beginners. They bake hands-off while you do other things, they reheat like champs, and the [healthy turkey meatball meal prep recipe](/healthy-turkey-meatballs-meal-prep/) makes enough for the whole week.
+* **Turkey meatballs** are my top recommendation for beginners. They bake hands-off while you do other things, they reheat like champs, and the healthy turkey meatball meal prep recipe makes enough for the whole week.
 * **Rotisserie chicken** is the legal cheat code. One [Costco rotisserie chicken stretches into multiple dinners](/costco-rotisserie-chicken-meal-ideas-dinner/), and shredding it takes ten minutes of the workflow instead of forty.
 * **Work lunches** deserve their own strategy, because office lighting is where sad prep goes to die. The high-protein work lunch guide covers combinations that hold up until noon, while the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) gives you one complete batch to copy before you start improvising. Change the servings above its ingredient list and the amounts scale with you, whether you're feeding one person or the office refrigerator.
-* **Shopping by the numbers:** When you're deciding which protein to buy, we ran the actual math. The [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) compares 49 grocery foods on cost, and the winners will probably surprise you. Dried beans embarrassed almost everything with a face. Two decisions come up every single week, so we priced them separately: [chicken thighs against breast](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) and [ground beef against beans](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
+* **Shopping by the numbers:** When you're deciding which protein to buy, we ran the actual math. The [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) compares 49 grocery foods on cost, and the winners will probably surprise you. Dried beans embarrassed almost everything with a face. Two decisions come up every single week, so we priced them separately: [chicken thighs against breast](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) and [ground beef against beans](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
 
 ### Grab-and-go
 
@@ -159,7 +159,7 @@ A dump bag is raw chicken or beans, a sauce, and a vegetable, sealed flat. You d
 
 ### Cooked meals that freeze in useful pieces
 
-Chili, soup, and meatballs are the cooked picks. These [turkey meatballs for meal prep](/healthy-turkey-meatballs-meal-prep/) already live in the Sunday rotation, and they freeze as individual pieces you can move onto pasta, a sandwich, or a grain bowl. Cool cooked food in a shallow container, then refrigerate it before it goes in the freezer. Leave a little room for liquid to expand. Portion what you'll actually reheat, not an eight-person vat for a Tuesday.
+Chili, soup, and meatballs are the cooked picks. These turkey meatballs for meal prep already live in the Sunday rotation, and they freeze as individual pieces you can move onto pasta, a sandwich, or a grain bowl. Cool cooked food in a shallow container, then refrigerate it before it goes in the freezer. Leave a little room for liquid to expand. Portion what you'll actually reheat, not an eight-person vat for a Tuesday.
 
 ### Label the bag before you fill it
 
@@ -171,16 +171,16 @@ If the freezer is already a pile of anonymous packages, use the [simple freezer 
 
 ## Is meal prep actually cheaper?
 
-Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. Take two ingredients in this guide at the prices from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/): chicken drumsticks run $1.09 per pound in the 5 pound bag ($5.46) at [18.08 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/172373/nutrients), and dried pinto beans cost about 37 cents per 100 grams ($6.75 for the 4 lb bag at the July 2026 BLS dried-bean average) at [21.42 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients). Those two Sunday packages are $12.21. That doesn't prove every packed lunch is cheaper. Sauces, produce, cooking losses, and food you don't eat still count, which is why the complete cost per serving matters more than one exciting line on a receipt.
+Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. Take two ingredients in this guide at the prices from our [protein per dollar study](/protein-per-dollar-adjusted-for-quality/): chicken drumsticks run $1.09 per pound in the 5 pound bag ($5.46) at [18.08 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/172373/nutrients), and dried pinto beans cost about 37 cents per 100 grams ($6.75 for the 4 lb bag at the July 2026 BLS dried-bean average) at [21.42 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients). Those two Sunday packages are $12.21. That doesn't prove every packed lunch is cheaper. Sauces, produce, cooking losses, and food you don't eat still count, which is why the complete cost per serving matters more than one exciting line on a receipt.
 
 Those grocery figures use the source-and-price process documented on our [methodology page](/methodology/). Prices move, package sizes get weird, and the shelf label occasionally seems designed by a person who dislikes division. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that comparison with the price in front of you.
 
-The system compounds when you shop by cost-per-nutrient instead of vibes. We ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle ran away with it, which is convenient, because the dry goods aisle is also where the best prep bases live. If you want the full strategy, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the shopping side, and the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) goes deep on getting the most filling food for the fewest dollars. Meal prep is the execution layer for all of it: cheap ingredients only save money if they actually get cooked.
+The system compounds when you shop by cost-per-nutrient instead of vibes. We ranked 53 foods by [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/) and the dry goods aisle ran away with it, which is convenient, because the dry goods aisle is also where the best prep bases live. If you want the full strategy, the eat healthy on a budget playbook covers the shopping side, and the [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) goes deep on getting the most filling food for the fewest dollars. Meal prep is the execution layer for all of it: cheap ingredients only save money if they actually get cooked.
 
 Before you commit to a cart full of matching containers, build one normal week in the [weekly food-cost planner](/tools/grocery-budget-calculator/). It uses the ten audited fiber and protein menus, scales them for your household, and hands back the food quantities and tracked cost. Then open one reliable recipe and change the serving count in its ingredient card. That's a usable prep list, not the deeply scientific method of staring at a receipt and feeling vaguely betrayed.
 
 ## How small should your first meal-prep session be?
 
-Here's the advice I wish someone gave me before Sunday number one: don't prep the whole system your first week. Pick one base and one protein. A pot of rice and a tray of [turkey meatballs](/healthy-turkey-meatballs-meal-prep/). That's it. Forty-five minutes, three or four easy meals, zero overwhelm.
+Here's the advice I wish someone gave me before Sunday number one: don't prep the whole system your first week. Pick one base and one protein. A pot of rice and a tray of turkey meatballs. That's it. Forty-five minutes, three or four easy meals, zero overwhelm.
 
 Week two, add a sauce. Week three, a second base and the snack drawer. By week four you're running the full 90-minute session without checking the instructions, and your fridge looks like it belongs to someone organized. It doesn't matter that you know the truth. The meals are real, the Wednesday dread is gone, and lunch is already handled.

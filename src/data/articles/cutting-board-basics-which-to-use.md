@@ -59,12 +59,12 @@ One of the biggest frustrations with any cutting board is when it slides around 
 
 ## How to fix odors
 
-If your wooden board starts smelling like onions or garlic, a scrub with coarse salt and half a lemon can help deodorize it. Sprinkle the salt, use the lemon half like a sponge, then rinse and dry the board. This is an odor treatment, not a substitute for sanitizing after raw meat or poultry. Blenders pick up the same garlic and onion smell for the same reason, and there's [a way to clean one without scrubbing around the blades](/how-to-clean-blender-fast-no-scrub/).
+If your wooden board starts smelling like onions or garlic, a scrub with coarse salt and half a lemon can help deodorize it. Sprinkle the salt, use the lemon half like a sponge, then rinse and dry the board. This is an odor treatment, not a substitute for sanitizing after raw meat or poultry. Blenders pick up the same garlic and onion smell for the same reason, and there's a way to clean one without scrubbing around the blades.
 
 ## Clean and sanitize cutting boards correctly
 
 Wash every board with hot, soapy water after use, rinse it, and dry it thoroughly. After raw meat or poultry, USDA guidance recommends sanitizing with a solution of 1 tablespoon of unscented liquid chlorine bleach per gallon of water. Flood the clean surface, let it stand for several minutes, rinse with clean water, and air-dry or pat dry with clean paper towels. Never mix bleach with another cleaner.
 
-Deep grooves, cracks, and separated seams create areas that are hard to clean. Replace the board when those defects appear instead of trying to rescue a surface that is splitting. Apply the same clean-and-dry discipline to other kitchen workhorses; our guide to [seasoning a cast-iron skillet](/how-to-season-cast-iron-skillet-properly/) explains how to protect that surface without leaving excess oil behind.
+Deep grooves, cracks, and separated seams create areas that are hard to clean. Replace the board when those defects appear instead of trying to rescue a surface that is splitting. Apply the same clean-and-dry discipline to other kitchen workhorses; our guide to seasoning a cast-iron skillet explains how to protect that surface without leaving excess oil behind.
 
 If you want a minimalist setup, buy two boards. Get one large, heavy wooden board for vegetables and daily prep, and one medium plastic board strictly for raw meat. Keep them separate, keep them clean, and your cooking routine will immediately feel more organized.

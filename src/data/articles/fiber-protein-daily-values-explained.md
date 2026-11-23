@@ -44,7 +44,7 @@ A Daily Value is the reference behind the %DV column. If a serving lists 10% DV,
 
 It isn't personal. FDA uses one 2,000-calorie reference to keep packages consistent, even though people don't all eat the same amount. It's the same ruler on every box. That ruler can compare cereals. It doesn't know you ate dinner over the sink last night.
 
-The current [FDA Daily Value reference](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) lists 28g for fiber and 50g for protein. They anchor our [fiber budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) and [protein budget guide](/high-protein-on-a-budget-complete-guide/). Cost comparisons need one finish line. Otherwise, every product brings its own ruler and marketing wins.
+The current [FDA Daily Value reference](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) lists 28g for fiber and 50g for protein. They anchor our [fiber budget guide](/what-30-grams-of-fiber-costs-per-day/) and [protein budget guide](/protein-per-dollar-adjusted-for-quality/). Cost comparisons need one finish line. Otherwise, every product brings its own ruler and marketing wins.
 
 ## Where does 28 grams of fiber come from?
 
@@ -96,7 +96,7 @@ For the full fiber version, our guide to [what “good source of fiber” means]
 
 Our studies use FDA numbers as measuring sticks, not personal instructions. A spreadsheet loves a fixed target and knows nothing about you.
 
-The [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) asks how many grams of fiber one dollar buys across common foods. The [protein-per-dollar ranking](/protein-per-dollar-cheapest-protein-sources/) does the same for protein. Neither ranking says the cheapest food should become your entire menu. That would be spreadsheet cosplay, and nobody wants a dinner assembled by the lowest cell in column G.
+The [fiber-per-dollar ranking](/what-30-grams-of-fiber-costs-per-day/) asks how many grams of fiber one dollar buys across common foods. The [protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) does the same for protein. Neither ranking says the cheapest food should become your entire menu. That would be spreadsheet cosplay, and nobody wants a dinner assembled by the lowest cell in column G.
 
 The [30-gram fiber day study](/what-30-grams-of-fiber-costs-per-day/) uses a round target just above 28g. The [50-gram protein day study](/what-50-grams-of-protein-costs-per-day/) uses the FDA value directly. Our [methodology page](/methodology/) covers the unglamorous parts where receipts and serving sizes refuse to line up.
 

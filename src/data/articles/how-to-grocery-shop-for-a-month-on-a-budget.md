@@ -54,9 +54,9 @@ Monthly shopping is really just permission to buy the big bag. It also cuts the 
 
 ## What goes in the monthly haul?
 
-Dry goods that don't spoil, chosen by value rather than by vibe. Our [shelf-stable pantry ranking](/protein-per-dollar-cheapest-protein-sources/#shelf-stable) scored 27 of them, and the cart above is the top of that list plus rice for bulk.
+Dry goods that don't spoil, chosen by value rather than by vibe. Our [shelf-stable pantry ranking](/protein-per-dollar-adjusted-for-quality/#shelf-stable) scored 27 of them, and the cart above is the top of that list plus rice for bulk.
 
-The two anchors are dry pinto beans and whole wheat flour. Those two alone are $7.09 and carry about 688 grams of protein and 524 grams of fiber, which is a startling amount of nutrition for the price of a sandwich. Whole wheat flour is the sleeper: it tops the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) at 77.8 grams per dollar and still manages second place on [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) at 96.0.
+The two anchors are dry pinto beans and whole wheat flour. Those two alone are $7.09 and carry about 688 grams of protein and 524 grams of fiber, which is a startling amount of nutrition for the price of a sandwich. Whole wheat flour is the sleeper: it tops the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) at 77.8 grams per dollar and still manages second place on [protein per dollar](/protein-per-dollar-adjusted-for-quality/) at 96.0.
 
 Then you want variety, which is cheap. Lentils and split peas at $1.44 and $1.42 need no soaking, cook in half an hour, and turn into completely different meals from the beans. Oats handle breakfast. Peanut butter handles flavor and the 3 PM problem. Rice and pasta handle bulk. That's the whole backbone.
 
@@ -68,7 +68,7 @@ This is the part most "eat for a month on $25" posts skip, so let's not.
 
 Our numbers cover protein, fiber, and price. Nothing else. A haul that clears those two targets tells you exactly nothing about vitamin C, potassium, calcium, or anything else, and I'm not going to pretend it does. The pantry cart is a foundation. Fresh and frozen produce goes on top of it, and that part is not optional.
 
-The good news is the topping-up layer is cheap too. Frozen green peas ran $2.32 for a 32 ounce bag and delivered 17.6 grams of fiber per dollar, which beat every fresh fruit we priced. Frozen chopped spinach was $1.18 for 12 ounces. A two pound bag of carrots was $1.58 and lasts weeks in the fridge. We compared the fresh and frozen options in [frozen versus fresh vegetables](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) and ranked the whole produce aisle in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce).
+The good news is the topping-up layer is cheap too. Frozen green peas ran $2.32 for a 32 ounce bag and delivered 17.6 grams of fiber per dollar, which beat every fresh fruit we priced. Frozen chopped spinach was $1.18 for 12 ounces. A two pound bag of carrots was $1.58 and lasts weeks in the fridge. We compared the fresh and frozen options in frozen versus fresh vegetables and ranked the whole produce aisle in [the cheapest high-fiber vegetables and fruits](/what-30-grams-of-fiber-costs-per-day/#produce).
 
 Realistically, monthly shopping means one big haul plus short runs for milk, eggs, bread, and whatever's actually good that week. Anyone promising you a single trip covers everything has never run out of eggs on a Wednesday.
 
@@ -84,8 +84,8 @@ Cook in batches while you're at it, because the marginal cost of a bigger pot is
 
 A monthly shop only saves money if the food survives the month. Dry goods are forgiving, but they aren't invincible, and a bag of flour that goes stale is a bag of flour you paid for twice.
 
-Airtight containers, cool cupboard, oldest bag at the front. That's it. Freeze what you cook in single or double portions so future-you has a reason not to order delivery. [Freezer meal prep for beginners](/meal-prep-for-beginners-complete-system/#freezer-friendly-picks) covers the containers-and-labels part, and a [simple freezer inventory](/freezer-inventory-simple-system/) stops the chest freezer becoming an archaeological dig.
+Airtight containers, cool cupboard, oldest bag at the front. That's it. Freeze what you cook in single or double portions so future-you has a reason not to order delivery. Freezer meal prep for beginners covers the containers-and-labels part, and a [simple freezer inventory](/freezer-inventory-simple-system/) stops the chest freezer becoming an archaeological dig.
 
-Buying a month at once feels like a big spend on the day and a small one across the month. $22.83 is the price of two sandwiches, and it's the difference between a kitchen that can feed you and a kitchen that can't. The full system around it lives in [the eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/).
+Buying a month at once feels like a big spend on the day and a small one across the month. $22.83 is the price of two sandwiches, and it's the difference between a kitchen that can feed you and a kitchen that can't. The full system around it lives in the eat healthy on a budget playbook.
 
 <!-- numbers-source: public/data/shelf-stable-pantry-per-dollar-2026.csv, public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

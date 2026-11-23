@@ -109,7 +109,7 @@ For an office drawer, bags also win. Keep peppermint bags at work, bring a few f
 
 ## What this tea won't do
 
-Peppermint ginger tea won't replace a varied diet. If meals are low in fiber, the cup is a pleasant side habit, not the plan. Beans, oats, vegetables, fruit, and enough fluid do more of the everyday work. A bag of dry pintos returns 41.7 grams of fiber per dollar and old-fashioned oats 35.8 in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
+Peppermint ginger tea won't replace a varied diet. If meals are low in fiber, the cup is a pleasant side habit, not the plan. Beans, oats, vegetables, fruit, and enough fluid do more of the everyday work. A bag of dry pintos returns 41.7 grams of fiber per dollar and old-fashioned oats 35.8 in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/).
 
 It also won't erase a rough meal. Tea after loaded nachos is a peace treaty, not a pardon. The cup might feel comfortable. It doesn't make the portion smaller.
 

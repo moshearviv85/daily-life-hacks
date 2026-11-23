@@ -59,7 +59,7 @@ A lot of beginner bread fails because the recipe assumes you already know what "
 
 The melted butter is doing real work. Fat softens the crumb so the crust doesn't shatter like a cracker when you spread peanut butter. You want a loaf that bends a little, toasts evenly, and survives a packed lunch without turning into crumbs at the bottom of a bag.
 
-If you're building a wider Sunday routine around food that lasts the week, pair baking day with a simple [meal prep system for beginners](/meal-prep-for-beginners-complete-system/). Bread cools while chicken and rice finish. Future-you gets sandwiches instead of another sad desk salad negotiation.
+If you're building a wider Sunday routine around food that lasts the week, pair baking day with a simple meal prep system for beginners. Bread cools while chicken and rice finish. Future-you gets sandwiches instead of another sad desk salad negotiation.
 
 ## Ingredients, without the gatekeeping
 

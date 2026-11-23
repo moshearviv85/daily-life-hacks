@@ -74,9 +74,9 @@ The basket gives you ingredients. It doesn't chop the onion or stop somebody fro
 
 ## Where does the USDA plan match our price data?
 
-It agrees with the boring aisle, and I mean that as a compliment. Our [protein-per-dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) both put beans, peas, oats, and other plain staples near the top. USDA's basket also gives substantial room to legumes and whole-grain staples. Different methods, same shelf.
+It agrees with the boring aisle, and I mean that as a compliment. Our [protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) and [fiber-per-dollar ranking](/what-30-grams-of-fiber-costs-per-day/) both put beans, peas, oats, and other plain staples near the top. USDA's basket also gives substantial room to legumes and whole-grain staples. Different methods, same shelf.
 
-Our [eat-healthy-on-a-budget playbook](/eat-healthy-on-a-budget-complete-playbook/) lands there too: buy an inexpensive base, cook leftovers, and spend more where you care. You need dependable meals, not an optimization model beside the freezer case or an armful of unplanned extras.
+Our eat-healthy-on-a-budget playbook lands there too: buy an inexpensive base, cook leftovers, and spend more where you care. You need dependable meals, not an optimization model beside the freezer case or an armful of unplanned extras.
 
 ## Where does the model miss real grocery life?
 

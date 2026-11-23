@@ -26,7 +26,7 @@ You've meal prepped a big batch of rice on Sunday. By Wednesday, it's dry, stick
 
 Storing cooked grains well is one of those kitchen skills that sounds trivial until you're eating sad, crunchy rice with your Wednesday lunch. The good news: it takes about 30 seconds of extra effort upfront, and your grains will taste better for nearly a week.
 
-Storage is only one piece of the operation, so the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) connects it to shopping, batch cooking, portioning, and the rest of the week.
+Storage is only one piece of the operation, so the complete meal-prep system for beginners connects it to shopping, batch cooking, portioning, and the rest of the week.
 
 ## Why Storage Method Actually Matters
 
@@ -72,7 +72,7 @@ Numbers vary based on the grain, the storage conditions, and how well you sealed
 
 Set the outer limit first: [FoodSafety.gov gives cooked leftovers 3 to 4 days](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) in the fridge, and [USDA says the same](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety), 3 to 4 days refrigerated or 3 to 4 months frozen. Cooked grains sit under that rule like any other leftover. So read the per-grain differences below as texture, not as permission to stretch the window. White and jasmine rice hold their bite best right through day 4. Brown rice has more oils and starts to taste flat around day 4. Quinoa and millet are softer and dry out fastest, so eat those first. Farro and barley stay chewy and are the most forgiving. That's part of why this [farro lunch bowl with roasted vegetables and lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) works so well as prep; the grain is basically built for day three. Barley pulls the same trick in this [creamy mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/), which honestly tastes even better after a night in the fridge.
 
-If price is deciding which grain gets the permanent meal-prep slot, our [grain fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/#grains) puts the whole aisle on one receipt.
+If price is deciding which grain gets the permanent meal-prep slot, our [grain fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/#grains) puts the whole aisle on one receipt.
 
 If your grains smell different than when you cooked them-anything sour, musty, or just "not right"-trust your nose. Texture changes are normal; smell changes are a red flag. If it's slimy, toss it. That's mold, and it's not coming back.
 

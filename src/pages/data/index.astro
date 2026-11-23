@@ -41,10 +41,25 @@ const organization = DATASET_ORGANIZATION;
 const articles = await getCollection("articles");
 const titleBySlug = new Map(articles.map((entry) => [entry.id, entry.data.title]));
 
+const RANKING_WRITEUP: Record<string, string> = {
+  "fiber-per-dollar-cheapest-high-fiber-foods": "/what-30-grams-of-fiber-costs-per-day/",
+  "grains-fiber-per-dollar-ranked": "/what-30-grams-of-fiber-costs-per-day/",
+  "high-fiber-snacks-per-dollar": "/what-30-grams-of-fiber-costs-per-day/",
+  "one-dollar-fiber-what-it-buys": "/what-30-grams-of-fiber-costs-per-day/",
+  "produce-fiber-per-dollar-ranked": "/what-30-grams-of-fiber-costs-per-day/",
+  "protein-per-dollar-cheapest-protein-sources": "/protein-per-dollar-adjusted-for-quality/",
+  "dairy-protein-per-dollar-ranked": "/protein-per-dollar-adjusted-for-quality/",
+  "meat-per-dollar-protein-ranked": "/protein-per-dollar-adjusted-for-quality/",
+  "no-cook-protein-per-dollar": "/protein-per-dollar-adjusted-for-quality/",
+  "one-dollar-protein-what-it-buys": "/protein-per-dollar-adjusted-for-quality/",
+  "plant-protein-per-dollar-ranked": "/protein-per-dollar-adjusted-for-quality/",
+  "shelf-stable-pantry-per-dollar": "/protein-per-dollar-adjusted-for-quality/",
+};
+
 const datasets = STUDY_DATASETS.map((dataset) => ({
   ...dataset,
   provenance: getDatasetProvenance(dataset),
-  articleUrl: dataset.studyUrl ?? `/${dataset.id}/`,
+  articleUrl: RANKING_WRITEUP[dataset.id] ?? dataset.studyUrl ?? `/${dataset.id}/`,
   articleTitle: titleBySlug.get(dataset.id) ?? dataset.name,
   fileName: dataset.csv.split("/").pop() ?? dataset.csv,
   landingPath: datasetDistributionPath(dataset),
@@ -196,11 +211,11 @@ const linkStyle = "color: #F29B30;";
       <p>
         The two flagship rankings are named metrics, so you can point at them without describing them
         every time.{" "}
-        <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class={linkClass} style={linkStyle}>
+        <a href="/what-30-grams-of-fiber-costs-per-day/" class={linkClass} style={linkStyle}>
           <strong>The Fiber per Dollar Index</strong>
         </a>{" "}
         ranks 53 high-fiber foods by dietary fiber grams per dollar.{" "}
-        <a href="/protein-per-dollar-cheapest-protein-sources/" class={linkClass} style={linkStyle}>
+        <a href="/protein-per-dollar-adjusted-for-quality/" class={linkClass} style={linkStyle}>
           <strong>The Protein per Dollar Index</strong>
         </a>{" "}
         does the same for 49 protein sources. Both get a full price re-audit every quarter, so when

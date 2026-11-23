@@ -107,7 +107,7 @@ Use a dry measuring cup for the rice and a liquid cup for the broth if you have 
 
 Pan shape matters. A very wide skillet loses moisture faster than a Dutch oven. If the rice is still firm when the liquid is gone, add a quarter cup of hot broth or water, cover, and cook for another three to five minutes. If it is tender but slightly wet, rest it off the heat with the lid on.
 
-For leftover rice safety and texture, use the cooling method in this [fried-rice prep guide](/how-to-use-leftover-rice-creative-ideas/). The same shallow-container rule applies here.
+For leftover rice safety and texture, use the cooling method in this fried-rice prep guide. The same shallow-container rule applies here.
 
 ## When to add vegetables
 
@@ -123,4 +123,4 @@ The rice should be tender with no hard center, and the chicken pieces should rea
 
 After cooking, move the pot off the burner and let it stand covered for five minutes. That rest lets the rice absorb the last bit of moisture. Fluff gently with a fork, folding the chicken and peas through rather than stirring hard enough to make porridge.
 
-Serve it as-is, add lemon at the table, or spoon on plain yogurt mixed with a little garlic. If you deliberately make extra, turn the rice into one of these [leftover rice meals](/how-to-use-leftover-rice-creative-ideas/) the next day. One pot can earn two dinners if you don't let the leftovers disappear behind the mustard.
+Serve it as-is, add lemon at the table, or spoon on plain yogurt mixed with a little garlic. If you deliberately make extra, turn the rice into one of these leftover rice meals the next day. One pot can earn two dinners if you don't let the leftovers disappear behind the mustard.

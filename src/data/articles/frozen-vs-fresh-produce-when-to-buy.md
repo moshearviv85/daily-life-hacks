@@ -42,7 +42,7 @@ People assume fresh produce is more nutritious. It makes intuitive sense. But th
 
 [Bouzari, Holstege, and Barrett (2015)](https://pubmed.ncbi.nlm.nih.gov/25526594/) found frozen vitamins comparable to fresh in eight fruits and vegetables, sometimes higher, with a beta-carotene drop in a few frozen vegetables ([minerals and fiber, 2015](https://pubmed.ncbi.nlm.nih.gov/25525668/)). That isn't a reason to skip the freezer.
 
-For most home cooks, the practical takeaway is: don't avoid frozen produce for nutritional reasons. That concern doesn't hold up. Cost is the more useful axis, which is what the [fiber per dollar table](#fiber-per-dollar) measures. The wider staple ranking is our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), where dried beans and oats keep beating pretty produce. If a bag thawed on the counter, the refreeze rule is in [can you refreeze frozen vegetables after thawing](/can-you-refreeze-frozen-vegetables-after-thawing/).
+For most home cooks, the practical takeaway is: don't avoid frozen produce for nutritional reasons. That concern doesn't hold up. Cost is the more useful axis, which is what the [fiber per dollar table](#fiber-per-dollar) measures. The wider staple ranking is our [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), where dried beans and oats keep beating pretty produce. If a bag thawed on the counter, the refreeze rule is in [can you refreeze frozen vegetables after thawing](/can-you-refreeze-frozen-vegetables-after-thawing/).
 
 <h2 id="fiber-per-dollar">Fiber per dollar: frozen versus fresh</h2>
 

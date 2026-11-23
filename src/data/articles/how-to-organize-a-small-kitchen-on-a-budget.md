@@ -96,7 +96,7 @@ Motivation is weather. Systems are climate. A ten-minute reset after cooking sav
 
 ## Before you buy another gadget
 
-Most kitchen wins come from a sharp knife, [the right cutting board](/cutting-board-basics-which-to-use/), and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it. These [kitchen tools that save time and money](/kitchen-tools-that-save-time-and-money/) actually pass that test.
+Most kitchen wins come from a sharp knife, the right cutting board, and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it. These [kitchen tools that save time and money](/kitchen-tools-that-save-time-and-money/) actually pass that test.
 
 ## Declutter before buying containers
 

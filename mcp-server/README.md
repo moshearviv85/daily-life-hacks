@@ -133,7 +133,7 @@ returns, trimmed:
       {
         "file": "protein-per-dollar-2026.csv",
         "download_url": "https://www.daily-life-hacks.com/data/protein-per-dollar-2026.csv",
-        "study_url": "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/"
+        "study_url": "https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/"
       }
     ],
     "methodology_url": "https://www.daily-life-hacks.com/methodology/",

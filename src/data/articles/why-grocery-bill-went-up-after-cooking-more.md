@@ -78,7 +78,7 @@ For each period, record:
 4. Groceries still unused at the end.
 5. Food thrown away.
 
-The [weekly food-cost planner](/tools/grocery-budget-calculator/) can estimate a planned week for your household using our priced menus. The [healthy eating on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the shopping and cooking system around it.
+The [weekly food-cost planner](/tools/grocery-budget-calculator/) can estimate a planned week for your household using our priced menus. The healthy eating on a budget playbook covers the shopping and cooking system around it.
 
 Don't compare months that had completely different lives. December with guests, travel, and holiday food won't behave like a quiet four-week stretch in February. Budgets are numbers, but they still know when your brother stayed for nine days.
 

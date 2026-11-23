@@ -41,7 +41,7 @@ Per 100 grams, the two are nearly identical. You're paying 35 percent more for a
 
 ## Which lentils are the best for the money?
 
-Brown, and it isn't close. At $1.44 the bag holds about 112 grams of protein and 49 grams of fiber, which puts brown lentils fourth in our whole [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) of 49 foods. Only pinto beans, whole wheat flour, and dry black beans beat them.
+Brown, and it isn't close. At $1.44 the bag holds about 112 grams of protein and 49 grams of fiber, which puts brown lentils fourth in our whole [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) of 49 foods. Only pinto beans, whole wheat flour, and dry black beans beat them.
 
 Red lentils are the same food with the hulls removed and the seeds split, which costs money to do and shows up on the shelf. You're not buying more nutrition. You're buying a different texture, and sometimes that's exactly what you want.
 
@@ -61,7 +61,7 @@ So the honest advice is not "buy brown, red is a ripoff." It's that red lentils 
 
 Depends what you want the soup to be. Red for creamy and thick. Brown for brothy with texture.
 
-And then there are green split peas, which quietly beat both. At 22.2 grams of fiber per 100 grams they carry more fiber than anything else in this table by a distance, and at $1.42 a bag they returned 71.0 grams of fiber per dollar. That's second only to whole wheat flour in our [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), ahead of every bean we priced.
+And then there are green split peas, which quietly beat both. At 22.2 grams of fiber per 100 grams they carry more fiber than anything else in this table by a distance, and at $1.42 a bag they returned 71.0 grams of fiber per dollar. That's second only to whole wheat flour in our [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/), ahead of every bean we priced.
 
 A single $1.42 bag holds roughly 101 grams of fiber. The same size bag of brown lentils holds about 49 grams, so you're getting more than double the fiber for two cents less. It also becomes [split pea soup](/split-pea-soup-recipe-high-fiber/) with no soaking step at all, which makes it the least demanding pulse in the aisle.
 

@@ -89,8 +89,8 @@ test("the beans page keeps its title and answers with 1/2 cup, both tables, and 
   assert.match(page, /CUPS_DRY_PER_CAN_LABEL/);
   assert.doesNotMatch(page, /4 to 5/);
   assert.doesNotMatch(page, /FAQPage/);
-  assert.equal((page.match(/href="\/protein-per-dollar-cheapest-protein-sources\/"/g) ?? []).length, 1);
-  assert.equal((page.match(/href="\/fiber-per-dollar-cheapest-high-fiber-foods\/"/g) ?? []).length, 1);
+  assert.equal((page.match(/href="\/protein-per-dollar-adjusted-for-quality\/"/g) ?? []).length, 1);
+  assert.equal((page.match(/href="\/what-30-grams-of-fiber-costs-per-day\/"/g) ?? []).length, 1);
 });
 
 const CONVERTER = "/tools/dried-beans-to-canned-converter/";

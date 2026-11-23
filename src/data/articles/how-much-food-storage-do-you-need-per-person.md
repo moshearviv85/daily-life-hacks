@@ -66,7 +66,7 @@ Here's where our own price work is more useful than a generic list. These are th
 
 *Source: USDA FoodData Central nutrient values plus single-store US prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 
-One package of each comes to $22.09. That is not a two-week menu by itself, and I'm not going to pretend it is. It's the protein and calorie floor that the extension menus build on top of, and it costs less than one delivery order. The full ranking is in [cheap shelf-stable protein](/protein-per-dollar-cheapest-protein-sources/#shelf-stable).
+One package of each comes to $22.09. That is not a two-week menu by itself, and I'm not going to pretend it is. It's the protein and calorie floor that the extension menus build on top of, and it costs less than one delivery order. The full ranking is in [cheap shelf-stable protein](/protein-per-dollar-adjusted-for-quality/#shelf-stable).
 
 ## How long will it keep?
 

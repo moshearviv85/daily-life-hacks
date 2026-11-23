@@ -47,7 +47,7 @@ Let's be honest about the work lunch situation. You either spend twelve dollars 
 
 ## What are cheap lunch ideas that need no cooking?
 
-The middle of that table, mostly. Peanut butter returned 50.7 grams of protein per dollar and canned black beans 30.1, which is why a no cook lunch doesn't have to mean a sad handful of crackers. We ranked the whole category in [no cook protein per dollar](/protein-per-dollar-cheapest-protein-sources/#no-cook), and the winners are all things you already recognize.
+The middle of that table, mostly. Peanut butter returned 50.7 grams of protein per dollar and canned black beans 30.1, which is why a no cook lunch doesn't have to mean a sad handful of crackers. We ranked the whole category in [no cook protein per dollar](/protein-per-dollar-adjusted-for-quality/#no-cook), and the winners are all things you already recognize.
 
 The one that surprises people is the can of beans. Drain it, rinse it, add whatever acid you have, and it's lunch. Half a can gives 13.3 grams of protein and 15.2 grams of fiber for about $0.44. That's a better return than most things sold in a refrigerated grab and go case for six dollars.
 
@@ -81,6 +81,6 @@ If you want a repeatable system rather than a scramble, prepping high protein lu
 
 These are single store shelf prices from July 2026, plus US average prices for eggs, milk, bananas, and cheese. No calorie figures, because our datasets don't carry a calorie column. No oil, salt, or spices priced either.
 
-They also assume you eat what you packed. A container that comes home full costs the same as one you ate and buys you nothing, which is the quiet reason cheap lunches fail. Pack the one you want at 12:30, not the one that looks most virtuous at 8 a.m. For the shopping side of this, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the cart these lunches come out of.
+They also assume you eat what you packed. A container that comes home full costs the same as one you ate and buys you nothing, which is the quiet reason cheap lunches fail. Pack the one you want at 12:30, not the one that looks most virtuous at 8 a.m. For the shopping side of this, the eat healthy on a budget playbook covers the cart these lunches come out of.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/fastfood-protein-per-dollar-2026.csv -->

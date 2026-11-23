@@ -51,7 +51,7 @@ I had a can of black beans in the pantry that had outlasted three grocery lists 
 
 I know how that sounds. Beans in dessert is the kind of idea that makes people politely back away from the plate. Fine. Skepticism is earned. The first time I heard about black bean brownies, I assumed they'd taste like chocolate hummus with commitment issues. Then I made a batch, didn't tell anyone about the beans, and watched the pan empty. Someone asked for the recipe. Someone else asked if I'd bought them. Nobody asked if I'd lost my mind. That's the whole sales pitch.
 
-These are a real black bean brownies hidden fiber dessert situation: dense, chocolate-forward, and surprisingly hard to overthink once the blender is dirty. You get fiber and plant protein from a dollar-ish can of beans, and you don't need specialty flours or a weekend baking personality. For the bigger grocery math behind cheap fiber staples like beans, our [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is the pillar. Beans keep showing up there for a reason.
+These are a real black bean brownies hidden fiber dessert situation: dense, chocolate-forward, and surprisingly hard to overthink once the blender is dirty. You get fiber and plant protein from a dollar-ish can of beans, and you don't need specialty flours or a weekend baking personality. For the bigger grocery math behind cheap fiber staples like beans, our [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) is the pillar. Beans keep showing up there for a reason.
 
 ## Why beans belong in a brownie pan
 
@@ -99,11 +99,11 @@ If they fall apart when you cut them, wait. Warm black bean brownies cut like we
 
 ## How this fits a real fiber habit
 
-One brownie isn't a fiber strategy. A can of beans showing up in dessert *and* dinner is. When we priced staples for the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried and canned beans kept embarrassing almost everything with a pretty package. Using beans in a dessert you already wanted is just another way to stop treating fiber like a separate project.
+One brownie isn't a fiber strategy. A can of beans showing up in dessert *and* dinner is. When we priced staples for the [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), dried and canned beans kept embarrassing almost everything with a pretty package. Using beans in a dessert you already wanted is just another way to stop treating fiber like a separate project.
 
 That said, don't eat half the pan because "fiber." Calories still count. Chocolate chips still count. The win is that a square of this may keep you from hunting for a second dessert twenty minutes later, not that you've canceled dessert physics.
 
-If you're building a week of cheap fiber meals around beans, oats, cabbage, and other unglamorous winners, start with the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/). These brownies are the "I still want chocolate" chapter of that same idea.
+If you're building a week of cheap fiber meals around beans, oats, cabbage, and other unglamorous winners, start with the [complete guide to eating more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/). These brownies are the "I still want chocolate" chapter of that same idea.
 
 ## Storage, freezing, and the office brownie test
 

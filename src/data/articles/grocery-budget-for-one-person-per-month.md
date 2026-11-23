@@ -61,7 +61,7 @@ The good news is the penalty is dodgeable in specific places. Shelf-stable food 
 
 More than most people expect, if the money goes to the right shelves.
 
-Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) puts 50 grams of protein, the full FDA Daily Value, at about $0.51 when it comes from dry pinto beans. The [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) puts 28 grams of fiber at about $0.36 from whole wheat flour. Those two numbers are not a diet and I'm not suggesting anyone eat that way, but they set the floor. The nutrients themselves are almost free. Everything above the floor is variety, convenience, and the fact that you're a person and not a spreadsheet.
+Our [protein per dollar study](/protein-per-dollar-adjusted-for-quality/) puts 50 grams of protein, the full FDA Daily Value, at about $0.51 when it comes from dry pinto beans. The [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) puts 28 grams of fiber at about $0.36 from whole wheat flour. Those two numbers are not a diet and I'm not suggesting anyone eat that way, but they set the floor. The nutrients themselves are almost free. Everything above the floor is variety, convenience, and the fact that you're a person and not a spreadsheet.
 
 Between the floor and the benchmark there's a lot of room. [What a day of 50 grams of protein costs](/what-50-grams-of-protein-costs-per-day/) prices five realistic versions of the same day, from 82 cents to $13.23, and the expensive one is not more nourishing. It's just bought differently.
 
@@ -81,6 +81,6 @@ First, USDA's number is food at home. No restaurants, no delivery fees, no coffe
 
 Second, it isn't your zip code. USDA reports a national average, and our own prices come from one store in one month, July 2026. Both are useful as a shape. Neither is a quote. If a cheaper store is a drive away, we did the math on whether that drive pays.
 
-Use the $303 to $381 range the way you'd use a bathroom scale rather than a report card: a number to compare against yourself over time. The full system for pulling it down without eating badly is in [the eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/).
+Use the $303 to $381 range the way you'd use a bathroom scale rather than a report card: a number to compare against yourself over time. The full system for pulling it down without eating badly is in the eat healthy on a budget playbook.
 
 <!-- numbers-source: USDA FNS Thrifty Food Plan May 2026 (cited inline); public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

@@ -69,7 +69,7 @@ Protein math is the kind of thing people swear they do "in their head." Then the
 
 Every number below traces to a specific USDA FoodData Central record with the cooked state named, because raw versus cooked moves these figures more than most charts admit.
 
-If you're wondering what your daily target should even be, here's [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/). Once the serving math makes sense, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) turns it into a grocery plan.
+If you're wondering what your daily target should even be, here's [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/). Once the serving math makes sense, the [complete high-protein budget guide](/protein-per-dollar-adjusted-for-quality/) turns it into a grocery plan.
 
 ## How much protein is in a serving of beans, chicken and tofu?
 
@@ -97,7 +97,7 @@ Each row is that record's per-100-gram protein value scaled by USDA's own portio
 
 Most protein charts skip this, and it's the single biggest source of confusion. USDA lists raw boneless skinless chicken breast at [22.5 grams per 100 grams](https://fdc.nal.usda.gov/food-details/171077/nutrients) and the same breast cooked and roasted at 31.0. Nothing got added. Water left.
 
-So a number is only useful if you know which side of the stove it's standing on. The table above is cooked, because cooked is what lands on the plate. Our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) uses raw weights on purpose, since raw pounds are what you pay for at the register. Same chicken, two honest bases. Quietly mixing them is how anybody can "prove" whatever they wanted to prove.
+So a number is only useful if you know which side of the stove it's standing on. The table above is cooked, because cooked is what lands on the plate. Our [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) uses raw weights on purpose, since raw pounds are what you pay for at the register. Same chicken, two honest bases. Quietly mixing them is how anybody can "prove" whatever they wanted to prove.
 
 ## How much food gives you 25 grams of protein?
 
@@ -142,7 +142,7 @@ If you want exact grams, use a scale. If you don't, these rough portions still b
 
 ## Why beans look "low" until you count the whole meal
 
-Beans bring protein, but they also bring carbs and fiber. Dry pinto beans return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), fifth of 53 foods. They're a meal base, not a protein supplement. And the plate keeps adding: a cup of [cooked white rice](https://fdc.nal.usda.gov/food-details/168878/nutrients) is about 4 more grams on its own.
+Beans bring protein, but they also bring carbs and fiber. Dry pinto beans return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/), fifth of 53 foods. They're a meal base, not a protein supplement. And the plate keeps adding: a cup of [cooked white rice](https://fdc.nal.usda.gov/food-details/168878/nutrients) is about 4 more grams on its own.
 
 Compare a half cup of beans to a whole chicken breast and the beans look bad. That's not the right comparison. Compare a full bowl to a full bowl. On cost it isn't even close: [lentils versus chicken breast per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) puts a number on it, and our [quality-adjusted protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) weights 25 foods for digestibility, because the cheapest number on a label doesn't automatically do the most work.
 

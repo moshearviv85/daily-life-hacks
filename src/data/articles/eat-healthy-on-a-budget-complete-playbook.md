@@ -41,7 +41,7 @@ I learned all four by force, not virtue. Money got tight one spring, I gave myse
 This isn't a homework assignment. It's a hub, so start with the problem that's costing you money now:
 
 * **The cart total makes no sense:** use the [shopping system](#how-do-you-shop-for-healthy-food-on-a-budget).
-* **You want better value from one nutrient:** use the complete [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) or [budget protein guide](/high-protein-on-a-budget-complete-guide/).
+* **You want better value from one nutrient:** use the complete [budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) or [budget protein guide](/protein-per-dollar-adjusted-for-quality/).
 * **Cheap ingredients keep dying in the cabinet:** skip to the [cooking system](#how-do-you-cook-cheap-staples-so-they-get-eaten).
 * **Your fridge is where money goes to disappear:** start with [food-waste control](#how-do-you-stop-wasting-food-you-already-paid-for).
 * **You need a real-world benchmark:** compare the sample week below with [what the USDA Thrifty Food Plan says a low-cost week can cost](/usda-thrifty-food-plan-weekly-cost/).
@@ -52,7 +52,7 @@ If you want to inspect the source trail before taking shopping advice from a man
 
 The cheapest healthy foods in a US grocery store are dry beans, lentils and split peas. Dry brown lentils deliver 77.7 grams of protein per dollar, dry pinto beans 57.6, and dry green split peas 71.0 grams of fiber per dollar, based on USDA nutrition data and July 2026 prices ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients), [FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients), [FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)). Oats, rice, whole wheat pasta, eggs at 34.4 grams of protein per dollar and chicken drumsticks at 50.3 fill in behind them ([FDC 172373](https://fdc.nal.usda.gov/food-details/172373/nutrients), [FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients)).
 
-Most budget eating advice is somebody's opinion. We wanted receipts, so we built two datasets: 49 foods ranked by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and 53 foods ranked by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/). The current row-level audits found 42 exact USDA matches, 10 close USDA proxies, and 1 unresolved row in the fiber file; the protein file has 39 exact USDA matches and 10 close proxies, with no unresolved rows left. The TVP row is a proxy: USDA publishes no textured vegetable protein record at all, so the protein file now carries 52.17 grams per 100 grams straight from the manufacturer label. We matched the datasets to July 2026 prices, then published the spreadsheets so anyone can check the math and the open source gaps.
+Most budget eating advice is somebody's opinion. We wanted receipts, so we built two datasets: 49 foods ranked by [protein per dollar](/protein-per-dollar-adjusted-for-quality/) and 53 foods ranked by [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/). The current row-level audits found 42 exact USDA matches, 10 close USDA proxies, and 1 unresolved row in the fiber file; the protein file has 39 exact USDA matches and 10 close proxies, with no unresolved rows left. The TVP row is a proxy: USDA publishes no textured vegetable protein record at all, so the protein file now carries 52.17 grams per 100 grams straight from the manufacturer label. We matched the datasets to July 2026 prices, then published the spreadsheets so anyone can check the math and the open source gaps.
 
 Both tables told the same story. A dollar of dried pinto beans buys 57.6 grams of protein ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). A dollar of bacon buys 9.4 ([FDC 168277](https://fdc.nal.usda.gov/food-details/168277/nutrients)). Same nutrient, about six times the price. On the fiber side, dry split peas deliver about 71 grams of fiber per dollar while fresh blueberries deliver 2.5 ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). That's a 28x gap between two foods sitting in the same store.
 
@@ -77,7 +77,7 @@ A few more findings worth keeping in your back pocket. Brown lentils at 77.7 gra
 
 Meanwhile the stuff at the bottom is the stuff the ads sell hardest. Ground beef at 80/20 delivers 11.3 grams of protein per dollar, about a fifth of what pinto beans manage ([FDC 174036](https://fdc.nal.usda.gov/food-details/174036/nutrients)). Fresh berries anchor the bottom of the fiber table. None of those foods are bad. They're just terrible places to send a tight grocery dollar and pretend it's the nutrition budget.
 
-If you want to run your own comparisons, the [fiber per dollar calculator](/tools/fiber-per-dollar-calculator/) does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) settles the small-package-versus-big-package argument without making you divide decimals beside the cereal. And if fiber is your main gap, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) goes deep on that half of the equation.
+If you want to run your own comparisons, the [fiber per dollar calculator](/tools/fiber-per-dollar-calculator/) does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) settles the small-package-versus-big-package argument without making you divide decimals beside the cereal. And if fiber is your main gap, the [complete guide to eating more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/) goes deep on that half of the equation.
 
 ## How do you shop for healthy food on a budget?
 
@@ -97,8 +97,8 @@ And compare the whole food budget, not one louder receipt. Your grocery bill can
 
 Three more moves that pay for themselves:
 
-* **Pick the right store.** If there's an Aldi near you, our [Aldi shopping hacks](/aldi-shopping-hacks-large-family-meals/) breakdown shows how far a cart stretches there, and if it's a Walmart, the Great Value dry goods are where the per-dollar winners hide.
-* **Buy frozen on purpose.** In our data, frozen green peas delivered nearly three times the fiber per dollar of fresh broccoli. [Frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/) covers when each one wins, and [the frozen versus fresh fiber-per-dollar breakdown](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) shows how wide the gap gets.
+* **Pick the right store.** If there's an Aldi near you, our Aldi shopping hacks breakdown shows how far a cart stretches there, and if it's a Walmart, the Great Value dry goods are where the per-dollar winners hide.
+* **Buy frozen on purpose.** In our data, frozen green peas delivered nearly three times the fiber per dollar of fresh broccoli. Frozen vs fresh produce covers when each one wins, and the frozen versus fresh fiber-per-dollar breakdown shows how wide the gap gets.
 * **Read the label, not the front of the box.** The front is marketing. The back is math. How to read nutrition labels takes five minutes to learn and saves you from paying premium prices for oats with a mascot.
 
 ## How do you cook cheap staples so they get eaten?
@@ -107,7 +107,7 @@ Cook once and eat three times. One weekend session that produces a pot of beans,
 
 Here's the honest catch with budget staples: a bag of dried pintos is 37 cents per 100 grams and also completely inedible at 6 PM on a Tuesday. Cheap ingredients demand a system, because the whole reason takeout wins is that it's ready and your pintos aren't.
 
-The fix is cooking once and eating three times. Batch cooking for beginners is the full weekly method, and its big sibling, the [meal prep complete system](/meal-prep-for-beginners-complete-system/), turns it into a routine you can run on autopilot. The short version: one cooking session on the weekend produces a pot of beans, a batch of grains, and one big main, and suddenly weeknights are assembly instead of cooking. Open the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) or [turkey meatball meal prep](/healthy-turkey-meatballs-meal-prep/) and change the servings above the ingredient list before you shop. The amounts scale automatically, because multiplying eleven ingredients by 1.5 is not anyone's preferred Sunday hobby.
+The fix is cooking once and eating three times. Batch cooking for beginners is the full weekly method, and its big sibling, the meal prep complete system, turns it into a routine you can run on autopilot. The short version: one cooking session on the weekend produces a pot of beans, a batch of grains, and one big main, and suddenly weeknights are assembly instead of cooking. Open the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) or turkey meatball meal prep and change the servings above the ingredient list before you shop. The amounts scale automatically, because multiplying eleven ingredients by 1.5 is not anyone's preferred Sunday hobby.
 
 For the beans specifically, [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is easier than its reputation, and the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) kills the "I forgot to soak them" excuse. A slow cooker makes the whole thing hands-off; these [cheap crockpot meals](/cheap-crockpot-meals-large-families/) are built around exactly the ingredients that topped our rankings.
 
@@ -117,7 +117,7 @@ A few workhorse meals worth having on rotation:
 * **[One pot chicken and rice](/easy-one-pot-chicken-and-rice-dinner/):** drumstick-friendly, one pan to wash, and it reheats better than it has any right to.
 * **Low-cost protein meal hacks:** the tricks for making eggs, canned fish, and beans feel like dinner instead of a compromise.
 
-And when the pot looks a little small for the table, [how to stretch meals](/how-to-stretch-meals-large-families/) covers the honorable ways to make eight servings out of six.
+And when the pot looks a little small for the table, how to stretch meals covers the honorable ways to make eight servings out of six.
 
 ## How do you stop wasting food you already paid for?
 
@@ -127,7 +127,7 @@ The average American household throws out hundreds of dollars of food a year, wh
 
 The foundation is [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/): eat-first shelves, honest leftover habits, and actually seeing what you own before you shop. Storage does the boring heavy lifting; storing fruits and vegetables properly can add days to produce that would otherwise turn into compost with a receipt attached.
 
-Even the losses aren't always losses. [Wilted lettuce and greens can usually be revived](/how-to-revive-wilted-lettuce-and-greens/) with ice water and ten minutes, and [leftover rice](/how-to-use-leftover-rice-creative-ideas/) is arguably better the second day, when it fries properly instead of steaming into mush.
+Even the losses aren't always losses. [Wilted lettuce and greens can usually be revived](/how-to-revive-wilted-lettuce-and-greens/) with ice water and ten minutes, and leftover rice is arguably better the second day, when it fries properly instead of steaming into mush.
 
 The freezer is the endgame. A [simple freezer inventory](/freezer-inventory-simple-system/) turns it from the place food goes to be forgotten into an actual pantry, one where the batch-cooked beans and the half-price chicken wait for you instead of expiring at you.
 

@@ -28,7 +28,7 @@ I once watched a guy at a state park try to flip twelve individual pancakes on a
 
 Feeding a large family in the wild is mostly a logistics puzzle. You have limited surface area, a finite amount of ice, and a crowd of people who are suddenly twice as hungry because they spent the afternoon swimming. If you try to cook like you're in a suburban kitchen, you'll spend the whole trip washing dishes. These camping meal hacks for large families are about doing the work before you leave the driveway so you can actually sit by the fire.
 
-The same prep logic works before any chaotic week, and the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) covers batch order, storage, and portions when the destination doesn't happen to include a picnic table.
+The same prep logic works before any chaotic week, and the complete meal-prep system for beginners covers batch order, storage, and portions when the destination doesn't happen to include a picnic table.
 
 ## The cooler is your master, not your friend
 
@@ -40,7 +40,7 @@ Dump the cereal into zip-top bags. Crack your eggs into a plastic water bottle b
 
 The secret to successful camping meal hacks for large families is realizing that the campfire is for reheating, not for marathon cooking sessions. Browning three pounds of ground beef for tacos or sloppy joes at a campsite takes forever and creates a greasy mess you have to clean up with a lukewarm sponge. Stretching that beef with a couple of cans of beans cuts the cost per plate too, since [beans and ground beef aren't close on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
 
-Do the messy stuff in your kitchen three days before you leave. Freeze the cooked meat flat in freezer bags. When you're at the site, you just toss that block into a skillet with a splash of water. It thaws, heats up, and dinner is served in ten minutes. This works for pasta sauces, chili, and even grilled chicken strips, and it's the same batching habit that [stretches meals for a large family the rest of the year](/how-to-stretch-meals-large-families/). You're not "cheating," you're being efficient enough to avoid a meltdown.
+Do the messy stuff in your kitchen three days before you leave. Freeze the cooked meat flat in freezer bags. When you're at the site, you just toss that block into a skillet with a splash of water. It thaws, heats up, and dinner is served in ten minutes. This works for pasta sauces, chili, and even grilled chicken strips, and it's the same batching habit that stretches meals for a large family the rest of the year. You're not "cheating," you're being efficient enough to avoid a meltdown.
 
 ## Foil packets are the ultimate crowd-pleaser
 

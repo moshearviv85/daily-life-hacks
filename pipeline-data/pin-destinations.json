@@ -1534,39 +1534,6 @@
         }
       ]
     },
-    "fiber-per-dollar-cheapest-high-fiber-foods": {
-      "canonical": "fiber-per-dollar-cheapest-high-fiber-foods",
-      "destinations": [
-        {
-          "id": "v4",
-          "url_slug": "buy-beans-oats-skip-expensive",
-          "title": "Buy Beans and Oats, Skip the Expensive Berries",
-          "origin": "pin",
-          "created_at": "2026-07-04 14:37:56"
-        },
-        {
-          "id": "v2",
-          "url_slug": "get-grams-fiber-just",
-          "title": "71 Grams of Fiber for One Dollar. Here's the Food.",
-          "origin": "pin",
-          "created_at": "2026-07-04 14:37:56"
-        },
-        {
-          "id": "v3",
-          "url_slug": "grocery-store-s-biggest-fiber",
-          "title": "The Grocery Store's Biggest Fiber Rip-Off",
-          "origin": "pin",
-          "created_at": "2026-07-04 14:37:56"
-        },
-        {
-          "id": "v1",
-          "url_slug": "stop-wasting-34x-more-money",
-          "title": "Stop Paying 28x More for the Same Fiber",
-          "origin": "pin",
-          "created_at": "2026-07-04 14:37:56"
-        }
-      ]
-    },
     "fiber-protein-daily-values-explained": {
       "canonical": "fiber-protein-daily-values-explained",
       "destinations": [
@@ -2781,39 +2748,6 @@
         }
       ]
     },
-    "high-protein-on-a-budget-complete-guide": {
-      "canonical": "high-protein-on-a-budget-complete-guide",
-      "destinations": [
-        {
-          "id": "v2",
-          "url_slug": "beans-98g-protein-per-dollar",
-          "title": "Beans: 98g Protein Per Dollar. Chicken Legs: 50g. Eggs: 34g.",
-          "origin": "pin",
-          "created_at": "2026-07-12 13:48:50"
-        },
-        {
-          "id": "v3",
-          "url_slug": "only-foods-you-need-high",
-          "title": "The Only 3 Foods You Need for High Protein on a Budget",
-          "origin": "pin",
-          "created_at": "2026-07-12 13:48:50"
-        },
-        {
-          "id": "v1",
-          "url_slug": "protein-per-dollar-ranking-foods",
-          "title": "The Protein-per-Dollar Ranking: 49 Foods Tested",
-          "origin": "pin",
-          "created_at": "2026-07-12 13:48:50"
-        },
-        {
-          "id": "v1",
-          "url_slug": "you-re-overspending-protein-month",
-          "title": "You're Overspending on Protein by $30/Month",
-          "origin": "pin",
-          "created_at": "2026-07-12 13:48:50"
-        }
-      ]
-    },
     "high-protein-vs-high-fiber-satiety": {
       "canonical": "high-protein-vs-high-fiber-satiety",
       "destinations": [
@@ -3004,39 +2938,6 @@
           "title": "You Doubled the Recipe. Now Your Chili Is a Fire Hazard.",
           "origin": "pin",
           "created_at": "2026-07-04 14:25:00"
-        }
-      ]
-    },
-    "how-to-eat-more-fiber-on-a-budget-complete-guide": {
-      "canonical": "how-to-eat-more-fiber-on-a-budget-complete-guide",
-      "destinations": [
-        {
-          "id": "v3",
-          "url_slug": "bottom-shelf-foods-beat-expensive",
-          "title": "The Bottom-Shelf Foods That Solve Your Fiber Gap",
-          "origin": "pin",
-          "created_at": "2026-07-07 13:57:21"
-        },
-        {
-          "id": "v2",
-          "url_slug": "close-13g-fiber-gap-without",
-          "title": "How to Close the 13g Fiber Gap Without Spending More",
-          "origin": "pin",
-          "created_at": "2026-07-07 13:57:21"
-        },
-        {
-          "id": "v4",
-          "url_slug": "fiber-shopping-list-hits-grams",
-          "title": "The Cheap Fiber Shopping List That Hits 28 Grams a Day",
-          "origin": "pin",
-          "created_at": "2026-07-07 13:57:21"
-        },
-        {
-          "id": "v1",
-          "url_slug": "you-re-paying-triple-less",
-          "title": "You're Overpaying for Fiber. Here's the Spreadsheet Proof",
-          "origin": "pin",
-          "created_at": "2026-07-07 13:57:21"
         }
       ]
     },
@@ -4121,53 +4022,6 @@
         }
       ]
     },
-    "protein-per-dollar-cheapest-protein-sources": {
-      "canonical": "protein-per-dollar-cheapest-protein-sources",
-      "destinations": [
-        {
-          "id": "v4",
-          "url_slug": "grams-protein-dollar-here-s",
-          "title": "98 Grams of Protein for a Dollar. Here's What Actually Wins.",
-          "origin": "pin",
-          "created_at": "2026-07-06 14:59:58"
-        },
-        {
-          "id": "v2",
-          "url_slug": "one-division-problem-changes-you",
-          "title": "The One Division Problem That Changes How You Shop",
-          "origin": "pin",
-          "created_at": "2026-07-06 14:59:58"
-        },
-        {
-          "id": "v4",
-          "url_slug": "playful-bacon-last",
-          "title": "Bacon Finished Dead Last: 9g of Protein per Dollar (We Priced 49 Foods)",
-          "origin": "pin",
-          "created_at": "2026-07-16T03:35:58.646530+00:00"
-        },
-        {
-          "id": "v5",
-          "url_slug": "playful-flour-hero",
-          "title": "Flour Is Secretly a Protein Powerhouse: 96g per Dollar",
-          "origin": "pin",
-          "created_at": "2026-07-16T03:35:58.646530+00:00"
-        },
-        {
-          "id": "v3",
-          "url_slug": "protein-per-dollar-cheapest-protein",
-          "title": "Protein per Dollar: The Cheapest Protein Sources, Ranked",
-          "origin": "pin",
-          "created_at": "2026-07-06 14:59:58"
-        },
-        {
-          "id": "v1",
-          "url_slug": "steak-11x-more-expensive-than",
-          "title": "That Steak Is 11x More Expensive Than It Needs to Be",
-          "origin": "pin",
-          "created_at": "2026-07-06 14:59:58"
-        }
-      ]
-    },
     "protein-per-serving-beans-chicken-tofu-compared": {
       "canonical": "protein-per-serving-beans-chicken-tofu-compared",
       "destinations": [
@@ -4752,6 +4606,62 @@
           "title": "That Restaurant Fiber Meal Costs $14.42. The Same Fiber at Home Costs 62 Cents.",
           "origin": "pin",
           "created_at": "2026-07-12 13:47:24"
+        },
+        {
+          "id": "v4",
+          "url_slug": "buy-beans-oats-skip-expensive",
+          "title": "Buy Beans and Oats, Skip the Expensive Berries",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        },
+        {
+          "id": "v2",
+          "url_slug": "get-grams-fiber-just",
+          "title": "71 Grams of Fiber for One Dollar. Here's the Food.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        },
+        {
+          "id": "v3",
+          "url_slug": "grocery-store-s-biggest-fiber",
+          "title": "The Grocery Store's Biggest Fiber Rip-Off",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-wasting-34x-more-money",
+          "title": "Stop Paying 28x More for the Same Fiber",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        },
+        {
+          "id": "v3",
+          "url_slug": "bottom-shelf-foods-beat-expensive",
+          "title": "The Bottom-Shelf Foods That Solve Your Fiber Gap",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
+        },
+        {
+          "id": "v2",
+          "url_slug": "close-13g-fiber-gap-without",
+          "title": "How to Close the 13g Fiber Gap Without Spending More",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
+        },
+        {
+          "id": "v4",
+          "url_slug": "fiber-shopping-list-hits-grams",
+          "title": "The Cheap Fiber Shopping List That Hits 28 Grams a Day",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-re-paying-triple-less",
+          "title": "You're Overpaying for Fiber. Here's the Spreadsheet Proof",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
         }
       ]
     },
@@ -5195,6 +5105,81 @@
           "title": "The 30-Minute Hack for Takeout-Style Fried Rice",
           "origin": "pin",
           "created_at": "2026-07-04 14:49:26"
+        }
+      ]
+    },
+    "protein-per-dollar-adjusted-for-quality": {
+      "canonical": "protein-per-dollar-adjusted-for-quality",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "grams-protein-dollar-here-s",
+          "title": "98 Grams of Protein for a Dollar. Here's What Actually Wins.",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v2",
+          "url_slug": "one-division-problem-changes-you",
+          "title": "The One Division Problem That Changes How You Shop",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v4",
+          "url_slug": "playful-bacon-last",
+          "title": "Bacon Finished Dead Last: 9g of Protein per Dollar (We Priced 49 Foods)",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
+        {
+          "id": "v5",
+          "url_slug": "playful-flour-hero",
+          "title": "Flour Is Secretly a Protein Powerhouse: 96g per Dollar",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
+        {
+          "id": "v3",
+          "url_slug": "protein-per-dollar-cheapest-protein",
+          "title": "Protein per Dollar: The Cheapest Protein Sources, Ranked",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v1",
+          "url_slug": "steak-11x-more-expensive-than",
+          "title": "That Steak Is 11x More Expensive Than It Needs to Be",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v2",
+          "url_slug": "beans-98g-protein-per-dollar",
+          "title": "Beans: 98g Protein Per Dollar. Chicken Legs: 50g. Eggs: 34g.",
+          "origin": "pin",
+          "created_at": "2026-07-12 13:48:50"
+        },
+        {
+          "id": "v3",
+          "url_slug": "only-foods-you-need-high",
+          "title": "The Only 3 Foods You Need for High Protein on a Budget",
+          "origin": "pin",
+          "created_at": "2026-07-12 13:48:50"
+        },
+        {
+          "id": "v1",
+          "url_slug": "protein-per-dollar-ranking-foods",
+          "title": "The Protein-per-Dollar Ranking: 49 Foods Tested",
+          "origin": "pin",
+          "created_at": "2026-07-12 13:48:50"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-re-overspending-protein-month",
+          "title": "You're Overspending on Protein by $30/Month",
+          "origin": "pin",
+          "created_at": "2026-07-12 13:48:50"
         }
       ]
     }

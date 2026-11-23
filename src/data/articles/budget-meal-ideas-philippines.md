@@ -34,7 +34,7 @@ Let's be real. Feeding a household can feel like a math problem that keeps rewri
 
 I've cooked in enough tight kitchens to know good food doesn't require a fancy receipt. It needs rice, a few sharp seasonings, and a willingness to treat eggs, canned fish, and market vegetables like the main characters they are.
 
-For the broader system of building a cart that feeds people without draining the account, use the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/). This article is the Filipino-kitchen version of that same idea.
+For the broader system of building a cart that feeds people without draining the account, use the eat healthy on a budget playbook. This article is the Filipino-kitchen version of that same idea.
 
 ## Embrace the humble egg (and the canned aisle)
 
@@ -137,4 +137,4 @@ The goal isn't a perfect menu calendar. It's fewer delivery orders and more nigh
 
 Budget meal ideas in the Philippines aren't about eating sad. They're about rice, eggs, market vegetables, canned fish, and small amounts of meat used with intention. Shop the deal. Cook once for two meals. Season like you mean it.
 
-The [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) zooms out to the full cart strategy. Tonight you only need one pan of ginisa, enough rice, and a plan for tomorrow's lunch before the day runs you over.
+The eat healthy on a budget playbook zooms out to the full cart strategy. Tonight you only need one pan of ginisa, enough rice, and a plan for tomorrow's lunch before the day runs you over.

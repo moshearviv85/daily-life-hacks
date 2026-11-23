@@ -63,7 +63,7 @@ It's a stovetop situation. One pot. No immersion blender required unless you're 
 
 My neighbor once brought over a version of this after I helped her carry groceries up the stairs. Hers had way too much salt. I smiled and ate it anyway. This one is built around low sodium broth so you control the salinity at the end. Chef cosplay? No. Less regretful? Yes.
 
-For more meals where a cheap can of beans does the heavy lifting, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is your next stop.
+For more meals where a cheap can of beans does the heavy lifting, the [complete guide to eating more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/) is your next stop.
 
 ## Why this combo works
 

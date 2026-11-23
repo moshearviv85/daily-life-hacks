@@ -60,7 +60,7 @@ The 16 ounce bags. Split peas, lentils, chickpeas, and a box of pasta all land b
 
 The 2 pound and 4 pound bags are the ones that need a decision. A 4 pound bag of pintos at $3.97 is ten dinners for two, and the unit price is unbeatable at 97.9 grams of protein per dollar. Buy it anyway. Cook half, freeze the cooked beans in portions, and the bag becomes a convenience item instead of a commitment.
 
-Cooked beans freeze well and so does cooked rice if you cool it properly first, which is covered in storing cooked grains for meal prep. A two person freezer is the thing that makes bulk prices work at small scale, and [freezer meal prep for beginners](/meal-prep-for-beginners-complete-system/#freezer-friendly-picks) has the containers-and-labels version.
+Cooked beans freeze well and so does cooked rice if you cool it properly first, which is covered in storing cooked grains for meal prep. A two person freezer is the thing that makes bulk prices work at small scale, and freezer meal prep for beginners has the containers-and-labels version.
 
 ## What does a week of cheap meals for two cost?
 
@@ -82,6 +82,6 @@ Two person households actually have it easier than solo cooks here, because a po
 
 Single store shelf prices from July 2026, plus US average prices for eggs, milk, and a few commodity items. No oil, salt, or spices priced. No calorie figures either, because our datasets don't carry a calorie column, so nothing here says whether a serving is the right size for either of you.
 
-Serving sizes are our assumption, not a rule: 90 grams of dry legume, 60 grams of dry grain. Two adults with different appetites will land somewhere else, and the fix costs pennies because the anchors are cheap. For the benchmark to check your whole bill against, grocery budget for one person per month has the per person figures, and the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the full system.
+Serving sizes are our assumption, not a rule: 90 grams of dry legume, 60 grams of dry grain. Two adults with different appetites will land somewhere else, and the fix costs pennies because the anchors are cheap. For the benchmark to check your whole bill against, grocery budget for one person per month has the per person figures, and the eat healthy on a budget playbook covers the full system.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

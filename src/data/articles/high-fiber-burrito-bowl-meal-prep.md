@@ -61,7 +61,7 @@ Let's be real about the work lunch situation. You either spend fifteen dollars o
 
 This high fiber burrito bowl meal prep is the answer. It's stupidly easy to make on a Sunday, it survives the fridge without turning into mush, and it actually keeps you full until you clock out. No sad desk lunches here.
 
-For the Sunday-to-Friday plan behind this bowl, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) covers shopping, batch cooking, storage, and the part where lunch still has to taste decent on Thursday.
+For the Sunday-to-Friday plan behind this bowl, the complete meal-prep system for beginners covers shopping, batch cooking, storage, and the part where lunch still has to taste decent on Thursday.
 
 ## The foundation of a good bowl
 
@@ -89,7 +89,7 @@ If you're adding sour cream, yogurt, or guacamole, keep those separate. Nobody w
 
 ## Customizing your prep
 
-* **Add more protein:** If you have leftover grilled chicken, baked tofu, or shredded pork, toss it in. This bowl is basically a blank canvas for whatever protein you have sitting in your fridge. If tofu is the direction you're heading, the [five-day vegan prep built on crispy tofu and quinoa](/vegan-high-fiber-meal-prep-for-week/) uses the same containers and the same Sunday.
+* **Add more protein:** If you have leftover grilled chicken, baked tofu, or shredded pork, toss it in. This bowl is basically a blank canvas for whatever protein you have sitting in your fridge. If tofu is the direction you're heading, the five-day vegan prep built on crispy tofu and quinoa uses the same containers and the same Sunday.
 * **Go heavy on the greens:** Put a handful of sturdy greens like chopped kale or romaine at the bottom of the container. The heat from the beans and quinoa will slightly wilt them when you microwave it, which is actually a great texture.
 * **The cheese factor:** A sprinkle of cheddar or cotija cheese is great, but honestly, if you use a flavorful salsa, you might not even miss the dairy. A spoonful of nutritional yeast can also add a cheesy, savory flavor without the lactose.
 * **Crunchy toppings:** Bring a small baggie of crushed tortilla chips or roasted pumpkin seeds. Sprinkle them on right before you eat. A burrito bowl without some crunch feels a little incomplete.

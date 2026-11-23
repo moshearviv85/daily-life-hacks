@@ -69,7 +69,7 @@ If chickpeas aren't tonight's answer, the [crunchy chip alternatives guide](/hea
 
 The whole operation lives or dies on dryness. Wet chickpeas steam in the oven and come out sad. Dry chickpeas roast.
 
-If chickpeas are doing this much work in your snack bowl, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) shows where they fit with beans, oats, lentils, and the rest of the cheap pantry crew.
+If chickpeas are doing this much work in your snack bowl, the [complete guide to eating more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/) shows where they fit with beans, oats, lentils, and the rest of the cheap pantry crew.
 ## The Non Negotiable Steps
 
 Rinse, drain, then dry like you are preparing them for a photoshoot. Oil helps crisping, but too much oil makes them greasy.

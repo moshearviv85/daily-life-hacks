@@ -104,6 +104,26 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "which-lentils-are-the-best",
   "why-grocery-bill-went-up-after-cooking-more",
   "zinc-containing-foods-weekly-meals",
+  // PR-50: zero-impression bulk-era pages (noindex, follow; still live).
+  "add-flavor-without-more-sugar-tricks",
+  "aldi-shopping-hacks-large-family-meals",
+  "frozen-vs-fresh-produce-when-to-buy",
+  "healthy-egg-sandwich-add-ins-toppings",
+  "healthy-turkey-meatballs-meal-prep",
+  "hidden-sugars-popular-summer-salad-dressings",
+  "high-fiber-dinner-recipes-picky-kids",
+  "high-fiber-pasta-alternatives",
+  "high-fiber-raspberry-jam-recipe-chia",
+  "how-to-preheat-skillet-even-browning",
+  "how-to-stretch-meals-large-families",
+  "how-to-use-leftover-rice-creative-ideas",
+  "no-bake-high-fiber-energy-balls-recipe",
+  "sheet-pan-ginger-tofu-broccoli-sticky-glaze",
+  "stuffed-portobello-mushrooms-quinoa-spinach-feta",
+  "vegan-high-fiber-meal-prep-for-week",
+  // PR-52: hub playbooks stay live, but they are noindex, follow.
+  "eat-healthy-on-a-budget-complete-playbook",
+  "meal-prep-for-beginners-complete-system",
 ]);
 
 /** Pathnames (no leading slash) that must stay indexable and in the sitemap. */
@@ -111,15 +131,9 @@ export const INDEX_KEEP_PATHS = new Set([
   "api-docs",
   "cheapest-complete-protein-pairs",
   "data-reuse",
-  "eat-healthy-on-a-budget-complete-playbook",
   "editorial-policy",
-  "fiber-per-dollar-cheapest-high-fiber-foods",
-  "high-protein-on-a-budget-complete-guide",
-  "how-to-eat-more-fiber-on-a-budget-complete-guide",
-  "meal-prep-for-beginners-complete-system",
   "methodology",
   "plant-based-protein-sources-complete-guide",
-  "protein-per-dollar-cheapest-protein-sources",
   "statistics",
   "tools",
   "tools/dried-beans-to-canned-converter",
@@ -195,11 +209,11 @@ function assertPruneSafety() {
       `index-prune: KEEP/protected slug leaked into prune set: ${collisions.join(", ")}`,
     );
   }
-  if (INDEX_PRUNE_SLUGS.size !== 87) {
-    throw new Error(`index-prune: expected 87 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
+  if (INDEX_PRUNE_SLUGS.size !== 105) {
+    throw new Error(`index-prune: expected 105 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
-  if (INDEX_KEEP_PATHS.size !== 20) {
-    throw new Error(`index-prune: expected 20 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
+  if (INDEX_KEEP_PATHS.size !== 14) {
+    throw new Error(`index-prune: expected 14 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
   }
   if (INDEX_NOINDEX_TOOL_PATHS.size !== 3) {
     throw new Error(

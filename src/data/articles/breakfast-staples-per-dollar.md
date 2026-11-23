@@ -27,7 +27,7 @@ The per-dollar figure divides the FoodData Central protein or fiber per 100 gram
 
 Whole wheat flour is the best breakfast deal in the store, at 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined ([FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). Gala apples sit at the bottom of the fiber column, at 7.3 grams of fiber per dollar ([FDC 168204](https://fdc.nal.usda.gov/food-details/168204/nutrients)). Same cart, two different scores, and nobody blinks.
 
-This ranking crosses our two grocery studies, [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), and pulls out the 9 foods that actually show up at American breakfast tables. The combined score is plain addition: total grams of protein and fiber one dollar buys, added together.
+This ranking crosses our two grocery studies, [protein per dollar](/protein-per-dollar-adjusted-for-quality/) and [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/), and pulls out the 9 foods that actually show up at American breakfast tables. The combined score is plain addition: total grams of protein and fiber one dollar buys, added together.
 
 | Food | Protein per $1 | Fiber per $1 | Combined per $1 | Package |
 |---|---|---|---|---|
@@ -49,15 +49,15 @@ Quick fine print: eggs and dairy come from the protein study only, and the fruit
 
 ## Which breakfast staple gives you the most nutrition per dollar?
 
-Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in a loaf of sandwich bread you baked yourself, in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/protein-per-dollar-cheapest-protein-sources/#what-1-buys). If you don't, skip to the oats.
+Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in a loaf of sandwich bread you baked yourself, in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/protein-per-dollar-adjusted-for-quality/#what-1-buys). If you don't, skip to the oats.
 
-Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart ([FDC 174266](https://fdc.nal.usda.gov/food-details/174266/nutrients)). Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/protein-per-dollar-cheapest-protein-sources/#no-cook) outright, though [a realistic two tablespoon serving only lands 7.1 grams of protein](/foods-highest-in-protein-per-100-grams/), so the per-dollar win needs a spoon to collect it.
+Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart ([FDC 174266](https://fdc.nal.usda.gov/food-details/174266/nutrients)). Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/protein-per-dollar-adjusted-for-quality/#no-cook) outright, though [a realistic two tablespoon serving only lands 7.1 grams of protein](/foods-highest-in-protein-per-100-grams/), so the per-dollar win needs a spoon to collect it.
 
 ## Is oatmeal actually the cheapest healthy breakfast?
 
 For something you can pour into a pot and forget about, yes. Oats deliver 46.6 grams of protein and 35.8 grams of fiber per dollar ([FDC 173904](https://fdc.nal.usda.gov/food-details/173904/nutrients)). Nothing else on this list balances the two like that, and $3.36 buys you a canister that lasts weeks.
 
-The move that makes oats feel like food instead of penance is going savory. Savory oatmeal with eggs and avocado reads like a cafe order and costs like a pantry staple. And if morning-you refuses to cook at all, [no-bake oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/) let night-before-you turn the number two food on this table into something you grab on the way out.
+The move that makes oats feel like food instead of penance is going savory. Savory oatmeal with eggs and avocado reads like a cafe order and costs like a pantry staple. And if morning-you refuses to cook at all, no-bake oat and flax energy balls let night-before-you turn the number two food on this table into something you grab on the way out.
 
 ## Are eggs, milk, and yogurt still worth buying?
 
@@ -67,12 +67,12 @@ None of them bring fiber to the table, though. That's why the smart breakfast is
 
 ## Why did fruit land at the bottom?
 
-Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.3 at $1.28 a pound ([FDC 173944](https://fdc.nal.usda.gov/food-details/173944/nutrients), [FDC 168204](https://fdc.nal.usda.gov/food-details/168204/nutrients)). That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/fiber-per-dollar-cheapest-high-fiber-foods/#what-1-buys) is all dry goods, and no fruit makes it.
+Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.3 at $1.28 a pound ([FDC 173944](https://fdc.nal.usda.gov/food-details/173944/nutrients), [FDC 168204](https://fdc.nal.usda.gov/food-details/168204/nutrients)). That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/what-30-grams-of-fiber-costs-per-day/#what-1-buys) is all dry goods, and no fruit makes it.
 
 ## How did we run the numbers?
 
 Nutrient data comes from USDA FoodData Central. Prices are July 2026 US figures from audited Walmart national listings, with eggs and milk using May 2026 national average prices. The combined score adds protein grams per dollar to fiber grams per dollar, nothing fancier.
 
-For scale, the FDA's Daily Value for protein is 50 grams ([FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)). One dollar of oats buys nearly that in protein alone, before the fiber shows up. If you want to see the full-day version of this math, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs it meal by meal, and the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) turns it into an actual shopping list. Breakfast is the easy win. It's the one meal where the cheap option and the good option are the same food.
+For scale, the FDA's Daily Value for protein is 50 grams ([FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)). One dollar of oats buys nearly that in protein alone, before the fiber shows up. If you want to see the full-day version of this math, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs it meal by meal, and the [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/) turns it into an actual shopping list. Breakfast is the easy win. It's the one meal where the cheap option and the good option are the same food.
 
 <!-- numbers-source: pipeline-data/derived-studies/breakfast-staples-per-dollar.json -->

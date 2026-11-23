@@ -38,7 +38,7 @@ When the tubs come in different sizes and both are wearing sale stickers, the [g
 
 ## Which has more protein, cottage cheese or Greek yogurt?
 
-Cottage cheese, but barely. A half cup of cottage cheese carries about 12 to 14 grams of protein against 10 to 12 grams for plain nonfat Greek yogurt. Per dollar the order flips: Greek yogurt delivers 27.5 grams of [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and 4% cottage cheese 26.3, using USDA data and July 2026 prices. The real difference is sodium, not protein.
+Cottage cheese, but barely. A half cup of cottage cheese carries about 12 to 14 grams of protein against 10 to 12 grams for plain nonfat Greek yogurt. Per dollar the order flips: Greek yogurt delivers 27.5 grams of [protein per dollar](/protein-per-dollar-adjusted-for-quality/) and 4% cottage cheese 26.3, using USDA data and July 2026 prices. The real difference is sodium, not protein.
 
 | | Protein per 1/2 cup | Protein per $1 |
 |---|---|---|
@@ -81,7 +81,7 @@ Let's look at the numbers. They're surprisingly similar.
 
 A standard half cup serving of plain, nonfat Greek yogurt usually gives you around ten to twelve grams of protein. A standard half cup of cottage cheese gives you about twelve to fourteen grams. They're both absolute heavyweights in the protein department. 
 
-If the tubs are now arguing with eggs and milk for your grocery dollar, our [dairy protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/#dairy) settles that louder family dispute, and the narrower question of [whether eggs or Greek yogurt buy you protein for less](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is worth a look if that's the swap you're actually weighing.
+If the tubs are now arguing with eggs and milk for your grocery dollar, our [dairy protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/#dairy) settles that louder family dispute, and the narrower question of [whether eggs or Greek yogurt buy you protein for less](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is worth a look if that's the swap you're actually weighing.
 
 The main nutritional difference is the sodium. Cottage cheese is salty. It has a significantly higher sodium content than Greek yogurt, which is naturally lower in sodium and much more tart. Greek yogurt also contains active cultures, which may support gut health, while only some brands of cottage cheese include live cultures. 
 
@@ -97,7 +97,7 @@ Cottage cheese is lumpy. There's no getting around the curds. It's savory, salty
 
 Because of its tangy flavor profile, Greek yogurt is your best friend for anything sweet or bright. 
 
-Use it as the base for a parfait with berries and granola. Mix it into your overnight oats for creaminess. Those oats are the fiber in that bowl: old-fashioned rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Use it to tone down a spicy taco by dolloping it on top instead of sour cream. It also bakes incredibly well, keeping muffins and cakes moist without adding heavy oil. If a recipe needs a bright, acidic lift, grab the yogurt.
+Use it as the base for a parfait with berries and granola. Mix it into your overnight oats for creaminess. Those oats are the fiber in that bowl: old-fashioned rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/). Use it to tone down a spicy taco by dolloping it on top instead of sour cream. It also bakes incredibly well, keeping muffins and cakes moist without adding heavy oil. If a recipe needs a bright, acidic lift, grab the yogurt.
 
 ## When should you use cottage cheese?
 
@@ -119,7 +119,7 @@ Cottage cheese, especially blended, is a fantastic substitute for ricotta. Use i
 
 When you buy either of these, the label matters. 
 
-Avoid the ones with fruit on the bottom. They're usually hiding a staggering amount of added sugar. You're much better off buying plain yogurt or plain cottage cheese and adding your own honey, fruit, or jam at home. This way, you control the sweetness, and cinnamon, vanilla, citrus zest, and cocoa are [ways to add flavor without reaching for more sugar](/add-flavor-without-more-sugar-tricks/) at all. 
+Avoid the ones with fruit on the bottom. They're usually hiding a staggering amount of added sugar. You're much better off buying plain yogurt or plain cottage cheese and adding your own honey, fruit, or jam at home. This way, you control the sweetness, and cinnamon, vanilla, citrus zest, and cocoa are ways to add flavor without reaching for more sugar at all. 
 
 Also, don't fear the fat. Fat free versions are fine, but two percent or whole milk versions taste significantly better and often keep you full longer. The fat helps carry the flavor and improves the texture dramatically.
 

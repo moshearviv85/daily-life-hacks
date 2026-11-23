@@ -50,7 +50,7 @@ Every number in the ten-dinner table below comes from the USDA-backed rows of ou
 
 The ones with a dry legume doing the heavy lifting. That's the whole trick, and it's boring, and it works.
 
-Look at the top of the table and the bottom. Same shape of plate, same amount of protein, and the price moves by more than six times. It isn't the vegetables doing that. A 16 ounce bag of green split peas costs $1.42 and makes five dinners at $0.28 each. A pound of 80/20 ground beef costs $6.75 and gives you 11.5 grams of protein per dollar, which is the worst return in our whole [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
+Look at the top of the table and the bottom. Same shape of plate, same amount of protein, and the price moves by more than six times. It isn't the vegetables doing that. A 16 ounce bag of green split peas costs $1.42 and makes five dinners at $0.28 each. A pound of 80/20 ground beef costs $6.75 and gives you 11.5 grams of protein per dollar, which is the worst return in our whole [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/).
 
 So the shortlist writes itself. Split pea soup. Beans and rice. [Black bean tacos](/easy-black-bean-tacos-weeknight-dinner/). Lentil soup. A pot of navy beans with carrots. None of these need a recipe you'd bookmark, just the three slot plate rule, and all cost less than a drive-through side.
 
@@ -84,6 +84,6 @@ Fair warning on what these numbers are. They're single store shelf prices from J
 
 We don't price oil, salt, or spices, and we publish no calorie figures because our datasets carry no calorie column. Read the table as a comparison between dinners, not a nutrition label.
 
-What it does tell you is where the money goes. Pick your anchor first, and the rest of dinner is rounding. For the full week around these plates, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) puts the same numbers to work across a whole cart.
+What it does tell you is where the money goes. Pick your anchor first, and the rest of dinner is rounding. For the full week around these plates, the eat healthy on a budget playbook puts the same numbers to work across a whole cart.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/fastfood-protein-per-dollar-2026.csv -->

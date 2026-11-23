@@ -80,7 +80,7 @@ export const FLAGSHIP_ENGAGEMENT = {
       title: "The same aisle won the fiber ranking",
       text: "I ran the same grocery sample on fiber. Dry split peas bought 71.0 grams of fiber per dollar. Blueberries bought 2.5. If you want both nutrients in one searchable table, open the food value database.",
       primary: {
-        href: "/fiber-per-dollar-cheapest-high-fiber-foods/",
+        href: "/what-30-grams-of-fiber-costs-per-day/",
         label: "Read the fiber ranking",
       },
       secondary: {
@@ -167,7 +167,7 @@ export const FLAGSHIP_ENGAGEMENT = {
       title: "Protein did the same thing",
       text: "The follow-up spreadsheet ranked 49 foods by protein per dollar. Whole wheat flour bought 96.0 grams. Bacon bought 9.4. The food value database lets you search both rankings without opening two tabs.",
       primary: {
-        href: "/protein-per-dollar-cheapest-protein-sources/",
+        href: "/protein-per-dollar-adjusted-for-quality/",
         label: "Read the protein ranking",
       },
       secondary: {

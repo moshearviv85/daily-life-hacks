@@ -71,7 +71,7 @@ Quinoa salad is one of those recipes that sounds like it belongs on a wellness p
 
 If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge. Quinoa isn't the only grain that does that job.
 
-For the full plan around this one lunch, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) handles shopping, batch cooking, storage, and reheating without lining up twelve identical containers like a cafeteria display.
+For the full plan around this one lunch, the complete meal-prep system for beginners handles shopping, batch cooking, storage, and reheating without lining up twelve identical containers like a cafeteria display.
 ## Why This Combination Holds
 
 Chickpeas add fiber and chew. Tomatoes add acid. Cucumber adds crunch if you don't salt it to death. Lemon dressing cuts richness from olive oil and keeps the flavor bright.

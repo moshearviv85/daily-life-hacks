@@ -35,7 +35,7 @@ Honestly, sometimes I just stare into the fridge at 7 AM like it personally disa
 
 USDA lists one ounce of dried chia seeds at [9.8 grams of fiber](https://fdc.nal.usda.gov/food-details/170554/nutrients), about 35 percent of the FDA's [28-gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). That's a lot of fiber for something you make with a whisk. Harvard's Nutrition Source says the gel those seeds form can [slow digestion and promote a feeling of fullness](https://nutritionsource.hsph.harvard.edu/food-features/chia-seeds/), which may matter when your morning collapses into snack negotiations by 10 AM.
 
-The real trick is variety. Vanilla every day gets old fast. These chia pudding variations for breakfast are simple enough to batch on Sunday and different enough that Tuesday doesn't feel like a rerun. For the wider cheap-fiber grocery strategy, our [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is the pillar. Chia is one tool. Oats and beans are the rest of the week.
+The real trick is variety. Vanilla every day gets old fast. These chia pudding variations for breakfast are simple enough to batch on Sunday and different enough that Tuesday doesn't feel like a rerun. For the wider cheap-fiber grocery strategy, our [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) is the pillar. Chia is one tool. Oats and beans are the rest of the week.
 
 ## The basic chia pudding blueprint
 
@@ -120,7 +120,7 @@ Protein and cup weights come from [USDA FoodData Central](https://fdc.nal.usda.g
 
 The chia itself contributes about 8 grams of protein at the 1/4 cup measure, using that same tablespoon conversion. So the dairy or soy jar lands near 15 to 16 grams of protein. The identical-looking almond milk jar lands near 9. Same jar, same photo, different breakfast.
 
-If the lighter version leaves you hungry, stir in Greek yogurt, add nuts or nut butter, or eat leftover eggs with it. Food-first add-ons. Plain nonfat Greek yogurt returns 27.5 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and a dozen large eggs return 34.4. I learned this after proudly eating a tiny sweet chia cup and then demolishing crackers at 10:15. The pudding wasn't useless. It was incomplete.
+If the lighter version leaves you hungry, stir in Greek yogurt, add nuts or nut butter, or eat leftover eggs with it. Food-first add-ons. Plain nonfat Greek yogurt returns 27.5 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/), and a dozen large eggs return 34.4. I learned this after proudly eating a tiny sweet chia cup and then demolishing crackers at 10:15. The pudding wasn't useless. It was incomplete.
 
 ## Make-ahead without the Sunday meltdown
 
@@ -148,4 +148,4 @@ Scale matters more than type anyway. MedlinePlus puts the adult recommendation a
 
 Chia pudding variations for breakfast work when the ratio is right, the chill time is real, and you pick a milk that carries protein. Chocolate, berry, mango, and vanilla cover most cravings without turning 6:45 AM into a cooking show.
 
-Chia isn't the cheapest fiber in the store, and our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) says so plainly. It's the most convenient one that needs zero stove time. Keep a bag next to the oats. Your morning self only needs a cold jar, a spoon, and fewer decisions.
+Chia isn't the cheapest fiber in the store, and our [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/) says so plainly. It's the most convenient one that needs zero stove time. Keep a bag next to the oats. Your morning self only needs a cold jar, a spoon, and fewer decisions.

@@ -75,7 +75,7 @@ The pot doesn't save you money. The shopping list does. We ranked 49 foods by gr
 | Pork shoulder butt roast | $3.14 / lb | 25.2 g | 145°F, then rest 3 minutes |
 | Ground beef, 80/20 | $6.89 / lb | 11.3 g | 160°F |
 
-*Prices and protein-per-dollar figures come from our [49-food ranking](/protein-per-dollar-cheapest-protein-sources/) and its [downloadable CSV](/data/protein-per-dollar-2026.csv). Temperatures come from the [USDA FSIS safe minimum internal temperature chart](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart).*
+*Prices and protein-per-dollar figures come from our [49-food ranking](/protein-per-dollar-adjusted-for-quality/) and its [downloadable CSV](/data/protein-per-dollar-2026.csv). Temperatures come from the [USDA FSIS safe minimum internal temperature chart](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart).*
 
 Look at where pork shoulder lands. It's the internet's favorite cheap crockpot meat, and in our sample it delivered about half the protein per dollar of bone-in drumsticks. Buy it because it shreds and forgives a late dinner, not because it's the budget champion.
 
@@ -105,9 +105,9 @@ The other rule gets broken constantly in the name of convenience. USDA's [slow c
 
 The secret to feeding a crowd isn't more meat. It's what you put under the meat. If you have a gallon of chili but ten people to feed, you serve that chili over baked potatoes. It fills the stomach without emptying the wallet.
 
-The beans pull their weight in there, too. A cup of cooked pinto beans runs about 245 calories with roughly 15 grams of protein and 15 grams of fiber, according to [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/175200/nutrients). That's a filler doing a protein's job. Dry, before the pot, the same pintos return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
+The beans pull their weight in there, too. A cup of cooked pinto beans runs about 245 calories with roughly 15 grams of protein and 15 grams of fiber, according to [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/175200/nutrients). That's a filler doing a protein's job. Dry, before the pot, the same pintos return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/).
 
-Pasta is the other hero. A slow-cooked meat sauce made with the cheapest ground beef you can find becomes something special after six hours. Toss it with two boxes of penne and you can feed the neighborhood. Shift the ratio so the expensive stuff is the flavor, not the bulk, and there are [plenty of other ways to stretch a meal across a big household](/how-to-stretch-meals-large-families/) once you start thinking that way.
+Pasta is the other hero. A slow-cooked meat sauce made with the cheapest ground beef you can find becomes something special after six hours. Toss it with two boxes of penne and you can feed the neighborhood. Shift the ratio so the expensive stuff is the flavor, not the bulk, and there are plenty of other ways to stretch a meal across a big household once you start thinking that way.
 
 ## Keeping it simple without getting sloppy
 

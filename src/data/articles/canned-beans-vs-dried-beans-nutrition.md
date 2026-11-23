@@ -91,7 +91,7 @@ The one real trade with cans is sodium, since most are packed with salt added. W
 
 The bag, by about 1.9 times on protein for black beans. Dry black beans returned 58.0 grams per dollar and the can returned 30.1. Dry chickpeas returned 56.7 against 22.0 canned, about 2.6 times. On fiber the pattern holds inside this table: dry pinto beans returned 41.7 grams per dollar and canned black beans 34.4. Green split peas, at 71.0, lead the wider dry-legume fiber list.
 
-Dry pinto beans return 57.6 grams of protein and 41.7 grams of fiber per dollar. They're not the top of the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) or the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). We scored the combined number in [beans win twice](/beans-double-win-fiber-protein/). The [cost per serving](#cost-per-serving) prices those same packages for 15 grams of protein.
+Dry pinto beans return 57.6 grams of protein and 41.7 grams of fiber per dollar. They're not the top of the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) or the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). We scored the combined number in [beans win twice](/beans-double-win-fiber-protein/). The [cost per serving](#cost-per-serving) prices those same packages for 15 grams of protein.
 
 A note on what's missing from the table. We priced canned kidney beans but not dry kidney beans, and we priced dry pinto, navy, lentils, and split peas but not their canned versions. So the head to head pairs are black beans and chickpeas. Everything else in that table is a single form, and we're not filling the blanks by guessing.
 

@@ -67,7 +67,7 @@ We need to talk about dinner when you have zero energy and about four dollars to
 
 It's not flashy. It's not trying to be a trendy restaurant dish. It's just honest, hard-working food that I keep coming back to when dinner needs to cost very little and still feel like dinner. No thirty-dollar bag of specialty groceries required.
 
-If you want the rest of the cheap-protein playbook, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) covers the beans, eggs, chicken, dairy, and pantry backups that make this dinner less of a one-hit wonder.
+If you want the rest of the cheap-protein playbook, the [complete high-protein budget guide](/protein-per-dollar-adjusted-for-quality/) covers the beans, eggs, chicken, dairy, and pantry backups that make this dinner less of a one-hit wonder.
 
 ## Why this combination actually works
 
@@ -115,9 +115,9 @@ A quick tip for leftovers: sometimes rice gets a little dry in the fridge. When 
 
 ## The budget breakdown
 
-The two cans in this recipe were $0.88 each in the July 2026 grocery sample, $1.76 for the pot. Together they carried about 53 grams of protein on the whole-can basis the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) uses, which is 30.1 grams per dollar. White rice in that same sample returned 29.4 grams of protein per dollar. I'm not pricing the bell pepper or the lime, because they aren't in the spreadsheet.
+The two cans in this recipe were $0.88 each in the July 2026 grocery sample, $1.76 for the pot. Together they carried about 53 grams of protein on the whole-can basis the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) uses, which is 30.1 grams per dollar. White rice in that same sample returned 29.4 grams of protein per dollar. I'm not pricing the bell pepper or the lime, because they aren't in the spreadsheet.
 
-Those cans also bought 34.4 grams of fiber per dollar in the [fiber ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Same aisle, second nutrient, no extra trip.
+Those cans also bought 34.4 grams of fiber per dollar in the [fiber ranking](/what-30-grams-of-fiber-costs-per-day/). Same aisle, second nutrient, no extra trip.
 
 When groceries feel like a luxury, a dinner you can price from a public CSV is a useful thing to have in your back pocket. It frees up the rest of the cart for olive oil, or for finally replacing that skillet everything sticks to.
 
@@ -127,7 +127,7 @@ You don't need a massive grocery haul to make a substantial dinner. You need a f
 
 White rice fits the 35-minute recipe. Brown rice may take around 45 minutes, so start it earlier or use a batch you cooked ahead. Follow the package ratio because rice varieties are oddly committed to having different opinions about water.
 
-Cool extra rice promptly in a shallow container. The [leftover rice guide](/how-to-use-leftover-rice-creative-ideas/) covers safe cooling, reheating, and several ways to turn the second portion into a different meal.
+Cool extra rice promptly in a shallow container. The leftover rice guide covers safe cooling, reheating, and several ways to turn the second portion into a different meal.
 
 ## Canned beans or dried beans both work
 

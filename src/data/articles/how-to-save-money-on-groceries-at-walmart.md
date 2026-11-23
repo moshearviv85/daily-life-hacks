@@ -49,7 +49,7 @@ Almost every price on this site starts life as a Walmart Great Value shelf tag. 
 
 Shop the dry goods aisle before you shop anywhere else. It's the least interesting corner of the store and it's where the money is.
 
-Look at the spread in that table. The top of the list and the bottom of the list are in the same building, sold by the same company, under the same house brand. The difference is entirely what you put in the cart. Our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ranked 49 foods and the first seven places all went to dried legumes. The [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) did the same thing with whole wheat flour and split peas on top.
+Look at the spread in that table. The top of the list and the bottom of the list are in the same building, sold by the same company, under the same house brand. The difference is entirely what you put in the cart. Our full [protein per dollar study](/protein-per-dollar-adjusted-for-quality/) ranked 49 foods and the first seven places all went to dried legumes. The [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) did the same thing with whole wheat flour and split peas on top.
 
 The practical move is boring and it works: pick two or three anchors from the top of that table, then build the week around them. A four pound bag of pintos is roughly $4 and it becomes chili, [burrito bowls](/high-fiber-burrito-bowl-meal-prep/), and lunch for days. If dry beans feel like a project, they aren't. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is mostly waiting.
 
@@ -69,7 +69,7 @@ None of that makes those foods bad. It makes them garnish rather than foundation
 
 ## How do you save money on groceries but still eat healthy?
 
-Let the freezer case do the heavy lifting. Great Value frozen green peas ran $2.32 for a 32 ounce bag, which works out to 20.4 grams of protein and 17.6 grams of fiber per dollar. That beat every fresh fruit we priced on fiber per dollar, and it doesn't rot in the crisper drawer while you feel guilty about it. We ran the fresh comparison in [frozen versus fresh vegetables](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar), and the full produce list sits in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce).
+Let the freezer case do the heavy lifting. Great Value frozen green peas ran $2.32 for a 32 ounce bag, which works out to 20.4 grams of protein and 17.6 grams of fiber per dollar. That beat every fresh fruit we priced on fiber per dollar, and it doesn't rot in the crisper drawer while you feel guilty about it. We ran the fresh comparison in frozen versus fresh vegetables, and the full produce list sits in [the cheapest high-fiber vegetables and fruits](/what-30-grams-of-fiber-costs-per-day/#produce).
 
 Then spend your fresh-produce money on purpose instead of on hope. Buy the two or three things you'll genuinely eat this week, give each of them at least two planned meals, and let frozen cover the rest. Fiber that stays in the bag doesn't count.
 
@@ -79,6 +79,6 @@ Worth saying plainly, because a number with no caveat is a number you shouldn't 
 
 We also haven't priced a Walmart+ membership, delivery fees, or pickup slots, so this article can't tell you whether the subscription pays for itself. And a cheaper store somewhere else may still beat this cart, which is a math problem we worked through in is driving to a cheaper grocery store worth it.
 
-What the data does say is stable and useful: the order of the list barely moves when prices move, because the gap between 97.9 and 14.8 is far too wide for a sale to close. Anchor the cart at the top of that table, keep a few cans for emergencies, and the rest is just shopping. For the full system, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) puts these same numbers to work across a whole week.
+What the data does say is stable and useful: the order of the list barely moves when prices move, because the gap between 97.9 and 14.8 is far too wide for a sale to close. Anchor the cart at the top of that table, keep a few cans for emergencies, and the rest is just shopping. For the full system, the eat healthy on a budget playbook puts these same numbers to work across a whole week.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->
