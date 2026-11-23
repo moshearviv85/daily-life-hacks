@@ -43,6 +43,7 @@ const SUBSTANTIVE_SLUGS = new Set([
   "healthy-blue-collar-lunch-ideas-men",
   "healthy-homemade-dumpling-wrapper-recipe",
   "high-fiber-bran-muffins-that-taste-good",
+  "high-fiber-fast-food-options-guide",
   "high-fiber-gluten-free-bread-recipe",
   "high-fiber-yogurt-parfait-for-breakfast",
   "how-much-protein-in-bagel-sandwich",

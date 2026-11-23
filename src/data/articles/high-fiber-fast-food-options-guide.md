@@ -13,6 +13,7 @@ imageAlt: "Fast-casual grain bowl with black beans, greens, sweet potato, seeds,
 quickAnswer: "Across 29 orders checked against each chain's own U.S. nutrition data on November 23, 2026, the most fiber came from a custom Chipotle veggie bowl with brown rice, both beans, fajita vegetables, 4 ounces of guacamole, and 1 ounce of romaine: 25 grams, 89% of the FDA's 28-gram Daily Value, at 725 calories and 1,130 milligrams of sodium. Of the fixed menu items among those 29, Subway's Veggie Patty Protein Bowl carries the most fiber at 19 grams for 540 calories and 1,550 milligrams of sodium, at participating locations only."
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
