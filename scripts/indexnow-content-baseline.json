@@ -1,0 +1,760 @@
+{
+  "count": 157,
+  "generated_at": "2026-11-23T12:39:26.231538+00:00",
+  "note": "Content hashes of the last IndexNow-submitted build. scripts/indexnow-sitemap-diff.py uses this only when the Actions cache snapshot stores lastmod strings and no sha256. Later runs use the cache.",
+  "redirects": [
+    "/free-meal-plan / 301",
+    "/free-meal-plan/ / 301",
+    "/meal-plan/* / 301",
+    "/sitemap.xml /sitemap-index.xml 301",
+    "/sitemap.xml/ /sitemap-index.xml 301",
+    "/kfc-protein-per-dollar /fast-food-protein-per-dollar-ranked/ 301",
+    "/kfc-protein-per-dollar/ /fast-food-protein-per-dollar-ranked/ 301",
+    "/mcdonalds-protein-per-dollar /fast-food-protein-per-dollar-ranked/ 301",
+    "/mcdonalds-protein-per-dollar/ /fast-food-protein-per-dollar-ranked/ 301",
+    "/taco-bell-protein-per-dollar /fast-food-protein-per-dollar-ranked/ 301",
+    "/taco-bell-protein-per-dollar/ /fast-food-protein-per-dollar-ranked/ 301",
+    "/wendys-protein-per-dollar /fast-food-protein-per-dollar-ranked/ 301",
+    "/wendys-protein-per-dollar/ /fast-food-protein-per-dollar-ranked/ 301",
+    "/chipotle-protein-per-dollar /fast-food-protein-per-dollar-ranked/ 301",
+    "/chipotle-protein-per-dollar/ /fast-food-protein-per-dollar-ranked/ 301",
+    "/tofu-vs-chicken-protein-cost /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/tofu-vs-chicken-protein-cost/ /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/lentils-vs-chicken-breast-protein-cost /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/lentils-vs-chicken-breast-protein-cost/ /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/ground-beef-vs-beans-protein-cost /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/ground-beef-vs-beans-protein-cost/ /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/chicken-thighs-vs-breast-protein-cost /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/chicken-thighs-vs-breast-protein-cost/ /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/peanut-butter-vs-almonds-protein-cost /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/peanut-butter-vs-almonds-protein-cost/ /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/eggs-vs-greek-yogurt-protein-cost /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/eggs-vs-greek-yogurt-protein-cost/ /protein-per-serving-beans-chicken-tofu-compared/ 301",
+    "/canned-vs-dry-beans-cost /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/canned-vs-dry-beans-cost/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/popcorn-vs-almonds-fiber-cost /popcorn-vs-potato-chips-fiber-comparison/ 301",
+    "/popcorn-vs-almonds-fiber-cost/ /popcorn-vs-potato-chips-fiber-comparison/ 301",
+    "/frozen-vs-fresh-vegetables-fiber-cost /frozen-vs-fresh-produce-when-to-buy/ 301",
+    "/frozen-vs-fresh-vegetables-fiber-cost/ /frozen-vs-fresh-produce-when-to-buy/ 301",
+    "/whole-wheat-flour-vs-quinoa-fiber-cost /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/whole-wheat-flour-vs-quinoa-fiber-cost/ /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/grains-fiber-per-dollar-ranked /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/grains-fiber-per-dollar-ranked/ /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/produce-fiber-per-dollar-ranked /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/produce-fiber-per-dollar-ranked/ /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/high-fiber-snacks-per-dollar /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/high-fiber-snacks-per-dollar/ /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/one-dollar-fiber-what-it-buys /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/one-dollar-fiber-what-it-buys/ /fiber-per-dollar-cheapest-high-fiber-foods/ 301",
+    "/dairy-protein-per-dollar-ranked /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/dairy-protein-per-dollar-ranked/ /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/meat-per-dollar-protein-ranked /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/meat-per-dollar-protein-ranked/ /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/plant-protein-per-dollar-ranked /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/plant-protein-per-dollar-ranked/ /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/no-cook-protein-per-dollar /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/no-cook-protein-per-dollar/ /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/shelf-stable-pantry-per-dollar /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/shelf-stable-pantry-per-dollar/ /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/one-dollar-protein-what-it-buys /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/one-dollar-protein-what-it-buys/ /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/cheapest-protein-per-gram /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/cheapest-protein-per-gram/ /protein-per-dollar-cheapest-protein-sources/ 301",
+    "/how-much-dried-beans-per-person /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-much-dried-beans-per-person/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-much-is-a-can-of-beans /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-much-is-a-can-of-beans/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/do-you-have-to-cook-canned-beans /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/do-you-have-to-cook-canned-beans/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-long-do-opened-canned-beans-last /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-long-do-opened-canned-beans-last/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-much-protein-in-a-can-of-beans /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-much-protein-in-a-can-of-beans/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-long-do-canned-beans-last-after-the-best-by-date /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-long-do-canned-beans-last-after-the-best-by-date/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/nutritional-value-of-beans-compared /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/nutritional-value-of-beans-compared/ /canned-beans-vs-dried-beans-nutrition/ 301",
+    "/how-much-rice-and-beans-per-person-per-day /can-you-eat-rice-and-beans-everyday/ 301",
+    "/how-much-rice-and-beans-per-person-per-day/ /can-you-eat-rice-and-beans-everyday/ 301",
+    "/how-long-can-rice-and-beans-sit-out /can-you-eat-rice-and-beans-everyday/ 301",
+    "/how-long-can-rice-and-beans-sit-out/ /can-you-eat-rice-and-beans-everyday/ 301",
+    "/what-beans-for-red-beans-and-rice /can-you-eat-rice-and-beans-everyday/ 301",
+    "/what-beans-for-red-beans-and-rice/ /can-you-eat-rice-and-beans-everyday/ 301",
+    "/how-much-lentils-per-person-per-day /can-you-eat-rice-and-beans-everyday/ 301",
+    "/how-much-lentils-per-person-per-day/ /can-you-eat-rice-and-beans-everyday/ 301",
+    "/how-to-make-sourdough-pizza-dough-same-day /easy-sourdough-discard-pizza-dough-no-yeast/ 301",
+    "/how-to-make-sourdough-pizza-dough-same-day/ /easy-sourdough-discard-pizza-dough-no-yeast/ 301",
+    "/how-to-pack-lunch-crisp-sandwiches-salads /how-to-keep-sandwiches-from-getting-soggy/ 301",
+    "/how-to-pack-lunch-crisp-sandwiches-salads/ /how-to-keep-sandwiches-from-getting-soggy/ 301",
+    "/how-to-keep-bread-fresh-longer-without-mold /how-to-keep-sandwiches-from-getting-soggy/ 301",
+    "/how-to-keep-bread-fresh-longer-without-mold/ /how-to-keep-sandwiches-from-getting-soggy/ 301",
+    "/how-much-protein-in-two-eggs /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-much-protein-in-two-eggs/ /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-much-protein-in-peanut-butter /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-much-protein-in-peanut-butter/ /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-much-protein-in-lentils /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-much-protein-in-lentils/ /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-much-protein-in-oatmeal /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-much-protein-in-oatmeal/ /foods-highest-in-protein-per-100-grams/ 301",
+    "/how-to-cool-rice-for-fried-rice /how-to-use-leftover-rice-creative-ideas/ 301",
+    "/how-to-cool-rice-for-fried-rice/ /how-to-use-leftover-rice-creative-ideas/ 301",
+    "/cauliflower-fried-rice-with-eggs /how-to-use-leftover-rice-creative-ideas/ 301",
+    "/cauliflower-fried-rice-with-eggs/ /how-to-use-leftover-rice-creative-ideas/ 301",
+    "/do-you-have-to-cook-frozen-vegetables /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/do-you-have-to-cook-frozen-vegetables/ /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/how-long-do-frozen-vegetables-last-in-the-freezer /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/how-long-do-frozen-vegetables-last-in-the-freezer/ /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/how-to-cook-frozen-vegetables-without-the-mush /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/how-to-cook-frozen-vegetables-without-the-mush/ /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/how-to-freeze-fresh-vegetables-at-home /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/how-to-freeze-fresh-vegetables-at-home/ /can-you-refreeze-frozen-vegetables-after-thawing/ 301",
+    "/which-foods-are-complete-proteins /beans-and-rice-complete-protein-meal/ 301",
+    "/which-foods-are-complete-proteins/ /beans-and-rice-complete-protein-meal/ 301",
+    "/how-long-do-dried-beans-last /how-to-cook-dried-beans-from-scratch/ 301",
+    "/how-long-do-dried-beans-last/ /how-to-cook-dried-beans-from-scratch/ 301",
+    "/sourdough-discard-nutrition-facts-health-benefits /how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition 301",
+    "/sourdough-discard-nutrition-facts-health-benefits/ /how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition 301",
+    "/high-protein-bagel-sandwich-ideas-lunch /how-much-protein-in-bagel-sandwich/#high-protein-bagel-sandwich-ideas 301",
+    "/high-protein-bagel-sandwich-ideas-lunch/ /how-much-protein-in-bagel-sandwich/#high-protein-bagel-sandwich-ideas 301",
+    "/how-to-pack-cold-pasta-salad-picnics /easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic 301",
+    "/how-to-pack-cold-pasta-salad-picnics/ /easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic 301",
+    "/freezer-meal-prep-ideas-for-beginners /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301",
+    "/freezer-meal-prep-ideas-for-beginners/ /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301",
+    "/research /data/ 301",
+    "/research/ /data/ 301",
+    "/guides /nutrition/ 301",
+    "/guides/ /nutrition/ 301"
+  ],
+  "schema_version": 2,
+  "source_commit": "ca38418a5e8bd7e89c9181bb027b5a5ebaed9d93",
+  "urls": {
+    "https://www.daily-life-hacks.com/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "ec0632a51e61f0cbab497039e7ec5fcfd38f72ac61ff380e5b1823816dbb30cf"
+    },
+    "https://www.daily-life-hacks.com/30-day-high-fiber-challenge-meal-plan/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "75fe6f541f713ec40f127631c5620551a075be2edaa4168d3b463797f955d839"
+    },
+    "https://www.daily-life-hacks.com/about/": {
+      "lastmod": "",
+      "sha256": "15c11adda304d1d583a7918c067bf3b23523ef0584cab47620e89adc3182bddc"
+    },
+    "https://www.daily-life-hacks.com/add-flavor-without-more-sugar-tricks/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "94cc1ee7899ecbb98d948d24c9ad5c8db9e2abec9cee8a36180922edb085ab63"
+    },
+    "https://www.daily-life-hacks.com/air-fryer-salmon-bites-garlic-honey-glaze/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "52732471a6a188a7a048eb6010c1ecb2f4a81e477e93acf3d1aff903f0e6d1d4"
+    },
+    "https://www.daily-life-hacks.com/aldi-shopping-hacks-large-family-meals/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "218860c89f4555ae82cb8388f17074262327077a0a58e74e390f926143a88277"
+    },
+    "https://www.daily-life-hacks.com/animal-protein-per-dollar-ranked/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "716d59553dc387e9e968c03c8b87c1b918ffcc1762bce203ef10b82431ec98f8"
+    },
+    "https://www.daily-life-hacks.com/api-docs/": {
+      "lastmod": "",
+      "sha256": "a5763d78bb8167b48d8acebe893cc3161f1ba6a8ad1bcf6dea59f18ba6610309"
+    },
+    "https://www.daily-life-hacks.com/artichoke-recipes-for-gut-health/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "fbb3349ae80170a149aa3e85e4dbf229493ce139b6cb7ac13486b483fb2c3af7"
+    },
+    "https://www.daily-life-hacks.com/baked-cod-lemon-capers-green-beans/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "08e28930ba41632ae59b583fae7040cb1f8e8a58d7550492a03a52830d627a4f"
+    },
+    "https://www.daily-life-hacks.com/baking-sheet-liners-parchment-silicone-when-to-use/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "2e527039d9a9d6bd5502cb5dabe89c5c125f450233b7676e09b9b564ce2a56fd"
+    },
+    "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "0540c3941d1807722929f37ce57cb64ec25f5756e6edf4626955a8d7c19ade25"
+    },
+    "https://www.daily-life-hacks.com/beans-and-rice-complete-protein-meal/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "8e577ddee884f453c04049ca2316f3cc37391d2b63f5c473e78173a2b4b2ac58"
+    },
+    "https://www.daily-life-hacks.com/beans-double-win-fiber-protein/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "a073895a9efd6f7644cc02fba8150da293d6f2f3c3fd39443f85b95887f36899"
+    },
+    "https://www.daily-life-hacks.com/best-breakfast-foods-for-sustained-energy/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "f219c778a36ea37dcea6243d801665e55fdb3c92801d8cfee46658af3f0ec624"
+    },
+    "https://www.daily-life-hacks.com/best-high-fiber-foods-ranked-by-fiber-content/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "ba6b2556de2acdc83bc222892caa9153c32cf3c5e117504d0f0b6f979514e740"
+    },
+    "https://www.daily-life-hacks.com/best-high-protein-breads-healthy-sandwiches/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "6d2673f0ffb21e6515bb72b8dcae9957bfc4fc6fb2d7572de660a72a014f0ac7"
+    },
+    "https://www.daily-life-hacks.com/best-low-cost-protein-sources-large-families/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "7bafb14b44f215654e058d696025e6c8c8f7c2be2c66ec80ed1852453bbd17da"
+    },
+    "https://www.daily-life-hacks.com/best-way-to-cook-chicken/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "4c88482bbc6a203a9f2677f35814f62bdfc9b80bb776dd952956ad91224ea903"
+    },
+    "https://www.daily-life-hacks.com/best-way-to-store-avocados-to-stop-browning/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "833fa93d0b6bfc2da3d5903b7f1a92531c7c6c6b5e0342bec39e76caae8edaed"
+    },
+    "https://www.daily-life-hacks.com/big-flavor-less-salt-citrus-herbs-umami-swaps/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "6ef06a9b037c73fea1dd8bd92911a642ffe4d04f59052c9b775013ee7a1f24ab"
+    },
+    "https://www.daily-life-hacks.com/black-bean-brownies-hidden-fiber-dessert/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "5c318138f477900ca3c360dac1ee1246c86ef0046e4d27ad80bb10513d42414e"
+    },
+    "https://www.daily-life-hacks.com/breakfast-staples-per-dollar/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "6cbbbd61e1bc4a88cea821551cb9596a1775a7a88bc8fd5560d745a8c967f8ef"
+    },
+    "https://www.daily-life-hacks.com/can-you-eat-rice-and-beans-everyday/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "56cd6251ce5660855a776ef4b870717c149c7298815466246555b2f6381be1aa"
+    },
+    "https://www.daily-life-hacks.com/can-you-refreeze-frozen-vegetables-after-thawing/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "aa6496939c71292288ae7522444befa29b4f1a98b932e682f14d41d1d0ad2b29"
+    },
+    "https://www.daily-life-hacks.com/can-you-use-sourdough-discard-from-a-new-starter/": {
+      "lastmod": "2026-10-04T00:00:00.000Z",
+      "sha256": "f3c2217c32210b2c53f256eec33c2416ba3b06dcb216969fece4ae040184fa56"
+    },
+    "https://www.daily-life-hacks.com/canned-beans-vs-dried-beans-nutrition/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "d0dff7711cac112809f9bd96cfe7d92efe76c4805f40bffce6d2c1959b60c86d"
+    },
+    "https://www.daily-life-hacks.com/cheap-chicken-casserole-meals-large-families/": {
+      "lastmod": "2026-07-12T00:00:00.000Z",
+      "sha256": "deb92c9dd279db43ab8f2026298673c37ab5d45f8821f22d05b93e766901151c"
+    },
+    "https://www.daily-life-hacks.com/cheap-crockpot-meals-large-families/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "d3a1006aa0fc1a81a6a9c895316ce2ac28ea1472de438b17c01ce3738b0b529f"
+    },
+    "https://www.daily-life-hacks.com/cheapest-complete-protein-pairs/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "8bf794be2738094ce48e303d7c757422e98d29c1197cd11e44ba8884eaf09d9f"
+    },
+    "https://www.daily-life-hacks.com/chia-pudding-variations-for-breakfast/": {
+      "lastmod": "2026-10-01T00:00:00.000Z",
+      "sha256": "5cf722b509430828d1b774acbfc88c76ff809f7c4702833b8f7bf3c45a4090b5"
+    },
+    "https://www.daily-life-hacks.com/comparing-fiber-content-different-pizza-crusts/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "693fe1fa1d1a3955b1bbce4a7b500d98cfec8f25e843c7f101a7d10b519f43ab"
+    },
+    "https://www.daily-life-hacks.com/cooking-oils-smoke-points-best-uses/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "0bbfb6fab2bbc35e4f7162b41df4962df55c13be6b336da6e6f1ddf4c0db8b7d"
+    },
+    "https://www.daily-life-hacks.com/costco-rotisserie-chicken-meal-ideas-dinner/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "15ac0d13cf7231797cc199dde14060328e60f162b3b8326d2fdbd71b757bd5ca"
+    },
+    "https://www.daily-life-hacks.com/cottage-cheese-vs-greek-yogurt-protein-uses/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "bdeca3f669af89a447f845682998873b1c9f170454ea7654fa647955ca8d812d"
+    },
+    "https://www.daily-life-hacks.com/creamy-mushroom-barley-risotto-hands-off/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "aea1ee6922dc0e769570299efce2ce2ab41a52752236f39320971f16eccf8b1f"
+    },
+    "https://www.daily-life-hacks.com/creamy-tomato-orzo-white-beans-one-pot/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "d2f50acb81ad4e666ae5cb3cdb06e5e28e7ed2608e9dc0cccc6dffa39b7e1abf"
+    },
+    "https://www.daily-life-hacks.com/cucumber-edamame-salad-sesame/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "678005367c504bc23eddfa978a7b650b138c8c1ae65102b22d9d000001ef2b7d"
+    },
+    "https://www.daily-life-hacks.com/data-reuse/": {
+      "lastmod": "",
+      "sha256": "c78025b596465afbec2a608b6f1c49537f1c8dc22360658d3e26c30c12b17db9"
+    },
+    "https://www.daily-life-hacks.com/data/": {
+      "lastmod": "",
+      "sha256": "2e18fd3036108b27d1c926284dfc72b4126f55221eb2a39c1c8bfd614f603d14"
+    },
+    "https://www.daily-life-hacks.com/easy-black-bean-tacos-weeknight-dinner/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "305a1ccb580e45b5c6ade585e6474057cb8b92bc1bb6c3619cebb704f53bc56e"
+    },
+    "https://www.daily-life-hacks.com/easy-cold-summer-pasta-salad-potlucks/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "fb7ab9b917ad2c45bbbaae772d3ccabd2043f0962b8bc6b83393ea625845e345"
+    },
+    "https://www.daily-life-hacks.com/easy-high-fiber-breakfast-ideas-for-gut-health/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "25ab39f292a1b36388d19c4ae3081cd52723a0f93666dca49c0285811c8e5f33"
+    },
+    "https://www.daily-life-hacks.com/easy-one-pot-chicken-and-rice-dinner/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "5d991a3f9f363049b7e40f625d7e7fff8fc98242c826c35e9b6fec3ac5234221"
+    },
+    "https://www.daily-life-hacks.com/easy-sourdough-discard-pizza-dough-no-yeast/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "15656a48c80c2799e59c00596f89a050801ada36fffc2f10a695e0c661483415"
+    },
+    "https://www.daily-life-hacks.com/easy-sourdough-discard-recipes-beginners/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "e5cd1736aa4f8dddbab5d1e5b7c3d545ee5c6c7c38c6e69631aa40b72cada849"
+    },
+    "https://www.daily-life-hacks.com/eat-healthy-on-a-budget-complete-playbook/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "a357474d1c2fee943cff186bbace629def8a4d434fba9220b38216d7717cd342"
+    },
+    "https://www.daily-life-hacks.com/editorial-policy/": {
+      "lastmod": "",
+      "sha256": "673bf52378f0e3ec1f3815eec07ddfee675bcdac1df73b45e996abaedc38e0e8"
+    },
+    "https://www.daily-life-hacks.com/eggs-vs-everything-protein-value/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "84c0a413e6596053d356172d95ad47b82653adf840ac415a2335bfc217ae3c1c"
+    },
+    "https://www.daily-life-hacks.com/farro-lunch-bowl-roasted-vegetables-lemon-tahini/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "a81ba17b062e16d74c1bb618df6e3ece66f15cfbdc3c6659e493ef1e0df1650e"
+    },
+    "https://www.daily-life-hacks.com/fast-food-protein-per-dollar-ranked/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "5154340636dc566fd860efaefaac56cde94d453a57fee98e7b5416e9cec7aaa8"
+    },
+    "https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "e49fa592eb9d90867749533f074b3700043b9ef84bc2f6ec8ebf83b488e5f54e"
+    },
+    "https://www.daily-life-hacks.com/fiber-protein-daily-values-explained/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "93145439218c5ad185889542e1cad091fda7a3d78dbd663bf40ab85761d74e8f"
+    },
+    "https://www.daily-life-hacks.com/fiber-rich-soup-for-weight-loss-cabbage/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "68eeeee10b9014fc0d6365933708eb99f0fdcf607c9b67ba2f1308c3095ced30"
+    },
+    "https://www.daily-life-hacks.com/fix-oversalted-soup-sauce-rice/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "1cbd88c71107300f7537afb8b7ed93c3bc25307c2fbee1ad41a36c4146e3f40d"
+    },
+    "https://www.daily-life-hacks.com/food-value-database/": {
+      "lastmod": "",
+      "sha256": "ff7b221a4830c637370bd61e3860ad3fef146e5ffabccc06e052f4223653e4b5"
+    },
+    "https://www.daily-life-hacks.com/foods-highest-in-protein-per-100-grams/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "f158290311f1e8314373c7449d43dd5ba703a52d41688a10fc3dd40836796941"
+    },
+    "https://www.daily-life-hacks.com/freezer-inventory-simple-system/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "2cafe64067ded68a853c43b7b8484408b9b6b00857416157f270a52bde4368e7"
+    },
+    "https://www.daily-life-hacks.com/freezer-organization-tips-large-family-meals/": {
+      "lastmod": "2026-07-29T00:00:00.000Z",
+      "sha256": "61cf461ffe122d0dca427747f7f5cc324824a2964604b94e4aeb48bde8591ead"
+    },
+    "https://www.daily-life-hacks.com/frozen-vs-fresh-produce-when-to-buy/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "40f8f72dcd06811588a8d6ba47315e71ba6451d555f0b908b56f909205f53f55"
+    },
+    "https://www.daily-life-hacks.com/gluten-free-sourdough-discard-pizza-dough/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "ac10464d2f13ed0774a8973701bfb0cc74b6e9ebddb9f6677d190ea417ba4678"
+    },
+    "https://www.daily-life-hacks.com/good-source-of-fiber-label-meaning/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "46dec3eb5bd52f45aeac00c75620171cc9972b6e5bae271df0e37af4f85da11f"
+    },
+    "https://www.daily-life-hacks.com/gut-friendly-high-fiber-smoothies-for-daily-wellness/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "43261377537f013fedd464acb6c1f1efcd147ee79aab074317d298db778f802f"
+    },
+    "https://www.daily-life-hacks.com/gut-health-tea-peppermint-ginger/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "acd8fc0de140fe5d7245fb0078fba66e0640362f548659391985fad1a68a4ead"
+    },
+    "https://www.daily-life-hacks.com/healthy-alternatives-potato-chips-snacking/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "eb7132c76c1fb14be66b40b58cd76c1aff90132dcc1f07c0007c8ea5b7be2e86"
+    },
+    "https://www.daily-life-hacks.com/healthy-blue-collar-lunch-ideas-men/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "94be5bff90460fe6d622f8504664218d04d1f06a932fdb0c8f0e67ac7acf7590"
+    },
+    "https://www.daily-life-hacks.com/healthy-egg-sandwich-add-ins-toppings/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "8e7b76c3a232bfe958216961686f69339147023ff06d6c54f28fd02c154e53d8"
+    },
+    "https://www.daily-life-hacks.com/healthy-homemade-dumpling-wrapper-recipe/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "9781f685de0298e3bffa9ac72ad81e3c0d0a00dc7d463d7aac9eae48f039108c"
+    },
+    "https://www.daily-life-hacks.com/healthy-homemade-indian-salad-dressing-recipes/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "2180d5819028e2769c6718deb460b2683f155103c77845c6ae109151f7862044"
+    },
+    "https://www.daily-life-hacks.com/healthy-turkey-meatballs-meal-prep/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "cf70e990231c3530acd1c05ee76133d7043eab5fce34b3b05f07190ea0b43f6a"
+    },
+    "https://www.daily-life-hacks.com/hidden-sugars-popular-summer-salad-dressings/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "5cb2dce0d097373420610fe1be8796d7591345ba44365d1ddf9ccda1445cbc66"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-bran-muffins-that-taste-good/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "5b9a674ad7d8cc9db2e33bfece1069ebe4c18d4f4eb23d86bb19be7d8b4c0097"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-burrito-bowl-meal-prep/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "57c53af33b0af806ffa9da197e31c3686d1af46b9daeb0f3ff3cb123c50dbc91"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-dinner-recipes-picky-kids/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "02b333db23d0f5ccbd9fcab32af577561010c26d1b2dafecb669dcdd35e5f08d"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-fast-food-options-guide/": {
+      "lastmod": "2026-09-30T00:00:00.000Z",
+      "sha256": "0900aeb7c9b583dc3e9c2491895b38179b03f4cd0115dc29d4509cb6498cbd89"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-gluten-free-bread-recipe/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "3c43850cd86413384e576eb2ae9d2bf7611868b80b7cf396f8c10fa7ed74e37e"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-hummus-recipe-homemade/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "badc993e225f85391f6732cd7a16ca9dcc453159f7e6fae36a9cb68f05ec0c8e"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-meals-for-constipation-relief/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "6e80b5dea92f54fbdbbcbce2ca8d8f3fd0db2105e18aaba8f1d89ef80c43de54"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-pasta-alternatives/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "56200aab2eb74fc694d30bf98b993f37828a44658eb61e76571a1e61aba9b5d4"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-pizza-crust-cauliflower/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "4b2c312c7d2ced7ec55b50a4f1070ad6e776885ab63a6962c97407c4f0b5843f"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-popcorn-toppings-healthy/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "a9439ca98e8d6a56016f5b84fa7a8cfcf8727dcce35bbde04a9dfed7273dd6c5"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-quinoa-salad-for-lunch-prep/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "1093b47652a8662817f5d75fabf27ca730d886744c78b95526cc58cd5072b67e"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-raspberry-jam-recipe-chia/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "227a266e48cecbfb16424f7befbfc4e0c495cd90cce560bdc6913934c729dc37"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-salad-dressings-homemade/": {
+      "lastmod": "2026-07-12T00:00:00.000Z",
+      "sha256": "9be118338aa502556cd12a5ce851abdec2af60c7525f784ce568d4397f54a184"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-smoothies-for-kids-picky-eaters/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "11447e42b777595a8a85dc9961bfc81fb0ebca46b74f8dcee40d000563564d3f"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-stir-fry-vegetables/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "932331093dd4e3c2b1912db5fd5386a4659d86caa89ce96eb94bfd25bad31915"
+    },
+    "https://www.daily-life-hacks.com/high-fiber-yogurt-parfait-for-breakfast/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "0b533d81e829341b3a23dd4ad341d6ede5c8a6aed4719f092630887f6a6d663f"
+    },
+    "https://www.daily-life-hacks.com/high-protein-high-fiber-meals-for-weight-loss/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "f156f5330168026d31e551c1325f8cfd8d83157ec9bf3ff61470b61db5e5f93c"
+    },
+    "https://www.daily-life-hacks.com/high-protein-on-a-budget-complete-guide/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "94828002f7c2d41c80086c0bdeb4554cc0124fa0df26aad0f37ae99465beaaf4"
+    },
+    "https://www.daily-life-hacks.com/high-protein-vs-high-fiber-satiety/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "06c8c17a38be6007ee5ef18916625f90a8150741280656ff9b73cd11a9186153"
+    },
+    "https://www.daily-life-hacks.com/how-long-does-sourdough-discard-last/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "b9dec2b447edc62dc4bc622bc42fb91de033b1b112b0f13fa92fb16299fcb3cc"
+    },
+    "https://www.daily-life-hacks.com/how-much-protein-do-you-need-per-day/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "3093a0b35e661727c0698b45fff88ecad723a3ca31a97f1b23a726270dfee379"
+    },
+    "https://www.daily-life-hacks.com/how-much-protein-in-bagel-sandwich/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "a08948e6aaaa937a3a51fcf70b30fa8d0059e6f6bb37ff191132ba73a4cda78e"
+    },
+    "https://www.daily-life-hacks.com/how-to-cook-dried-beans-from-scratch/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "a9034819503612ee07acdd8cd277907db7bbf0a1f1c565672a9a2e46f3333ef3"
+    },
+    "https://www.daily-life-hacks.com/how-to-double-recipe-seasoning-without-guessing/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "cecde24d7d43cc717053c615bd9784f9f3413b5c493ecc173a7fcf0867ff4139"
+    },
+    "https://www.daily-life-hacks.com/how-to-eat-more-fiber-on-a-budget-complete-guide/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "0b8890458bcb3d5754761c6938c6e301519203bf176b0492331579dcd461c9c4"
+    },
+    "https://www.daily-life-hacks.com/how-to-increase-fiber-intake-without-gas/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "86f1cc1b8ff8052310a2a9912abd86604dd89472e35fd7aa1f020d8e52e7905f"
+    },
+    "https://www.daily-life-hacks.com/how-to-keep-sandwiches-from-getting-soggy/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "9878d64e6fac51c2faba30839a7c167bfcbbd9494b7b38869423d86a3ec69b5a"
+    },
+    "https://www.daily-life-hacks.com/how-to-make-grocery-shopping-cheaper/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "294d771bbbe7e551a61540342f89f2cb2f21554523201355b841c3d14b4e2ded"
+    },
+    "https://www.daily-life-hacks.com/how-to-measure-sourdough-discard-grams/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "c1dfaa98c1d723dff808fdbdc760228dc5a1c6512810d4ad88531767d8a8f722"
+    },
+    "https://www.daily-life-hacks.com/how-to-pack-salad-for-work-not-soggy/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "b027cc03d7483485e286d52019b1582c96e5f51633b2fe2e864cec2867ffcf76"
+    },
+    "https://www.daily-life-hacks.com/how-to-preheat-skillet-even-browning/": {
+      "lastmod": "2026-04-07T00:00:00.000Z",
+      "sha256": "9384a16e560ba70a3417b6c4bb59ad4dd6ff17d2c071ca2f7c1368fae748ffe7"
+    },
+    "https://www.daily-life-hacks.com/how-to-quick-soak-dried-beans-same-day/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "819567520c14679cc82e7fd29703096811a6bf0ffa6633a6856ad6c710b096b2"
+    },
+    "https://www.daily-life-hacks.com/how-to-reduce-food-waste-at-home-easy-tips/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "082d4ae135612f98b2cdf41a4e4d9df3839009977d5b64e9f5c8f46bafe21ca0"
+    },
+    "https://www.daily-life-hacks.com/how-to-revive-wilted-lettuce-and-greens/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "e9c3e0f26e5cf8fe5c1455acf236b23edb3fa6f58c2e532456d4202fda8a1043"
+    },
+    "https://www.daily-life-hacks.com/how-to-store-fresh-herbs-to-last-longer/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "dde8602dadedd49b88e2f9976428bffe03a321f20990d52e6e487f0d68389b74"
+    },
+    "https://www.daily-life-hacks.com/how-to-store-homemade-salad-dressing-safely/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "43a8b06adcda12accb516eb786b5a643f4a14c72c1e3ec31618b814fb87df537"
+    },
+    "https://www.daily-life-hacks.com/how-to-stretch-meals-large-families/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "101aa08a5fcfe411375c3efc65e17339ecdfea2ed2f940e0e46cf9eb5695f2c9"
+    },
+    "https://www.daily-life-hacks.com/how-to-use-leftover-rice-creative-ideas/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "6f4104934cd4db9b4f118e51bd6726f61fafc41600d66270ca1d297744f3b881"
+    },
+    "https://www.daily-life-hacks.com/keep-berries-fresh-longer-when-to-wash/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "68187c5ffb4508b4fb676ac51521d14edc5011aa4f99d3068c31daa632be0fde"
+    },
+    "https://www.daily-life-hacks.com/kitchen-tools-that-save-time-and-money/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "5e06086d44717072f27147b50f6f18d138e8ec3e0ee160a77ae4d9d845760973"
+    },
+    "https://www.daily-life-hacks.com/lentil-curry-high-fiber-vegan-dinner/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "5f176050e2e79e61681ae8d2a152c34b7598e180d03956fcb6b483ce5fb9cb5b"
+    },
+    "https://www.daily-life-hacks.com/low-sodium-budget-foods-ranked/": {
+      "lastmod": "2026-08-02T00:00:00.000Z",
+      "sha256": "e719286b6d192847813909843a22367ca61ea57ca9aafed2cb8d3c81103bd603"
+    },
+    "https://www.daily-life-hacks.com/meal-prep-for-beginners-complete-system/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "4226d8fe3c1abfc42f1221800736b008d277f7d5b6f2ef1afd5929dc4826aff4"
+    },
+    "https://www.daily-life-hacks.com/methodology/": {
+      "lastmod": "",
+      "sha256": "209fb2486ec0b5c4d8cbf7079e5e44a9284494a92c3461dc2cec50497c1dd4f8"
+    },
+    "https://www.daily-life-hacks.com/natto-japanese-fermented-soybeans-gut-health/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "30d82f4035bf046080a39be76b38f13e8b1769f8144c9afe72e88e931fc15e8a"
+    },
+    "https://www.daily-life-hacks.com/no-bake-high-fiber-energy-balls-recipe/": {
+      "lastmod": "2026-03-30T00:00:00.000Z",
+      "sha256": "20ee275162d38a7cedd3e642255e0994b1eb326f26851cfdd78a3025a4b0c07f"
+    },
+    "https://www.daily-life-hacks.com/nutrition/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "bb2ccae07d0faa13c30249d603b6c00a18b223b1ed4e1b1a5fd7b7ca0aa5a1fd"
+    },
+    "https://www.daily-life-hacks.com/oatmeal-vs-grits-fiber-content/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "e660398c2bb05a8a24d96bbc78e62c69203f47b18446d23c765a346532c00fb7"
+    },
+    "https://www.daily-life-hacks.com/pear-salad-with-walnuts-fiber-rich/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "89469a22c3a409a03c84d0ed38bd28c8f85dfe10159b0491d424b4429eab4303"
+    },
+    "https://www.daily-life-hacks.com/plan-week-of-dinners-fewer-grocery-runs/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "57adae695aaa507e56f3539a37f777ad7a451c6d44e8c80f256e02971457299a"
+    },
+    "https://www.daily-life-hacks.com/plant-based-protein-sources-complete-guide/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "535b9fb38a32edc7a110f468c61c350cf81b5b1faba93f896b05f250150365c7"
+    },
+    "https://www.daily-life-hacks.com/popcorn-vs-potato-chips-fiber-comparison/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "92a3a16b4759dda8e4f791379b0cc789321d59d753f9b777dd6b3a0265155087"
+    },
+    "https://www.daily-life-hacks.com/prebiotic-foods-beyond-the-buzzwords/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "792210695bfd44b29a197fd90072e7c32ad4e654c6a19ffede65f7cb0bcb04c8"
+    },
+    "https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "7c54ee45d4dc480f111c4efd80cd4fb6d332c697be98129634885fcb20e3a76b"
+    },
+    "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "3bc97a302eb62d65f2dc5223a4f83f1963c6bd9808f76bc39f9a647b5eaa2db4"
+    },
+    "https://www.daily-life-hacks.com/protein-per-serving-beans-chicken-tofu-compared/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "96fde7c4e191dda7f6347159c5a573228458c9d09ad6cc250d3157b5aa7d7e38"
+    },
+    "https://www.daily-life-hacks.com/prune-juice-alternatives-for-constipation/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "6b89ed78501b11e73acc0ec5efa2aabf441a53fe3f8e41bca61c56546402379b"
+    },
+    "https://www.daily-life-hacks.com/quick-20-minute-high-fiber-meals-for-busy-days/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "34c7e253ad21cf44fe578b013aac44e61512f076cfe7b190cef73c4de5239f4e"
+    },
+    "https://www.daily-life-hacks.com/recipes/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "4568a6fe9903d3cf3b133dfba094fba2b13bec56a0cc12198dd61314bb7bd354"
+    },
+    "https://www.daily-life-hacks.com/savory-chia-seed-recipes-breakfast/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "88db8550ec4cc7a588f4a256c9ddbd4ca9c7d5a03ec0c59fbce18173338feb11"
+    },
+    "https://www.daily-life-hacks.com/selenium-containing-foods-easy-ways/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "921a9634dd04627f16cba1e5a52fb066c2d329f15e37ac8125a4c64c6d12c196"
+    },
+    "https://www.daily-life-hacks.com/sheet-pan-ginger-tofu-broccoli-sticky-glaze/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "c6974ce6dc351a922553cb187217a98c1bf845d780944ad1eb43a582e9e1a180"
+    },
+    "https://www.daily-life-hacks.com/sheet-pan-salmon-and-vegetables-30-minutes/": {
+      "lastmod": "2026-07-31T00:00:00.000Z",
+      "sha256": "b0d4933150514a687a230681c57e06fcea3b2625e73bdcd05fc7cc712f95d095"
+    },
+    "https://www.daily-life-hacks.com/sourdough-discard-crackers/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "f5708a0009ec08b8956e1e5a9cbe50e825117e91edcf42c7e95e61cc670e0340"
+    },
+    "https://www.daily-life-hacks.com/sourdough-discard-recipes-no-yeast/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "bc209389dd5f23f488f667e9785cb8521735d72b503d6afb6bc61770824eba36"
+    },
+    "https://www.daily-life-hacks.com/sourdough-discard-vs-active-starter/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "e2cde5212d3a4bea62f0b1fc168b6b8f5e8fa7857dbe07883ca0a53f27c3acc1"
+    },
+    "https://www.daily-life-hacks.com/split-pea-soup-recipe-high-fiber/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "e1405bd9769f9e9276a9c5af700e725c13518ee2f4d165a577a9f99b89e416f2"
+    },
+    "https://www.daily-life-hacks.com/statistics/": {
+      "lastmod": "",
+      "sha256": "62c16edaed6e30957639ed5030b8e7e5e4c8f43d75b2931c4029658d3f03d995"
+    },
+    "https://www.daily-life-hacks.com/stuffed-portobello-mushrooms-quinoa-spinach-feta/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "bc9b4144da424df88ff529b9da8c0a57a907610cb79dcf6e1997b46c1d81ee2b"
+    },
+    "https://www.daily-life-hacks.com/tips/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "fccefd7881a20398ce3e399632f5787f370bf18c46efa593dbdcf67afe962f1f"
+    },
+    "https://www.daily-life-hacks.com/tools/": {
+      "lastmod": "",
+      "sha256": "032bba2c885a91c47e2841c3115a2b7cc69b2e18eb8ffb0ed1cbb17c2eee147f"
+    },
+    "https://www.daily-life-hacks.com/tools/dried-beans-to-canned-converter/": {
+      "lastmod": "",
+      "sha256": "99d6bc28433ef8b3bc739c14cac2a64e4ec0c0e0f8686841a3c8e274fadab52d"
+    },
+    "https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/": {
+      "lastmod": "",
+      "sha256": "2137a0d344c6f45c2fb0b36a50984fcf53929f2cbe3bf4313049a450f4114c11"
+    },
+    "https://www.daily-life-hacks.com/tools/grocery-budget-calculator/": {
+      "lastmod": "",
+      "sha256": "15c9199a40db15d0ef068ace3ef787407c9ad99af98dd89b0db3228b2a5e438b"
+    },
+    "https://www.daily-life-hacks.com/tools/grocery-unit-price-calculator/": {
+      "lastmod": "",
+      "sha256": "233e695f198519c84a53ce84a46ac596c1e8885ca05ba1b9cfcf1824596f7b10"
+    },
+    "https://www.daily-life-hacks.com/tools/recipe-cost-calculator/": {
+      "lastmod": "",
+      "sha256": "85d418f6826c1c2b6724d86da08ad899a39feb9a265917b0d2c984cfb3806ae7"
+    },
+    "https://www.daily-life-hacks.com/tools/sourdough-discard-calculator/": {
+      "lastmod": "",
+      "sha256": "88c2cbc190f64b8c02811c7043cbc92451597ddddf33651c5d054ff9e5c438a3"
+    },
+    "https://www.daily-life-hacks.com/usda-thrifty-food-plan-weekly-cost/": {
+      "lastmod": "2026-07-17T00:00:00.000Z",
+      "sha256": "d7d49bad921dead7b185c34c779170dc242a4f169bce826a3d7cf944c166eef2"
+    },
+    "https://www.daily-life-hacks.com/vegan-high-fiber-meal-prep-for-week/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "80bf8b23f33d8e72e0bdaf34fe696e82310fb716b336add8b604c9b1bbbf9ad6"
+    },
+    "https://www.daily-life-hacks.com/vegetarian-high-fiber-dinners-for-natural-relief/": {
+      "lastmod": "2026-07-20T00:00:00.000Z",
+      "sha256": "21e9248467443d9d7925b10cdfbf3dca09780624539c562eec69605a9fad83e7"
+    },
+    "https://www.daily-life-hacks.com/water-and-fiber-the-golden-rule/": {
+      "lastmod": "2026-09-23T00:00:00.000Z",
+      "sha256": "1bb5c44a19a83c5a3e76ab03a10e96582438fd1dbd9366d0b06ee8341321bb38"
+    },
+    "https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/": {
+      "lastmod": "2026-07-30T00:00:00.000Z",
+      "sha256": "650d12858c3a2d7321e2250707df57322048893b325df383e5e0eb0a6650d7f0"
+    },
+    "https://www.daily-life-hacks.com/what-50-grams-of-protein-costs-per-day/": {
+      "lastmod": "2026-09-24T00:00:00.000Z",
+      "sha256": "7ad700ad064e461959da58454d03cee77835a0c7c0d7b1ec44c4283d57e4db1f"
+    },
+    "https://www.daily-life-hacks.com/what-to-make-with-sourdough-discard-by-amount/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "a567de4ecec0290625f02d08fe02b4a533c16c73fcd3552d5555481d627ce321"
+    },
+    "https://www.daily-life-hacks.com/which-dried-beans-have-the-most-protein/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "1cc4177a9490200ffee75d45cf0e1cbbb2166fa4537dcb068d4722c88143374b"
+    },
+    "https://www.daily-life-hacks.com/whole-wheat-vs-white-pasta-fiber/": {
+      "lastmod": "2026-11-23T00:00:00.000Z",
+      "sha256": "5f280c94cee040997536c86c5da401b33d02802e88399feb7adc7244e27aee93"
+    }
+  }
+}

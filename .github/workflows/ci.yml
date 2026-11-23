@@ -54,7 +54,7 @@ jobs:
       - name: Pipeline workflow contract tests
         run: |
           pip install pytest
-          python -m pytest tests/pipeline_article_gate_test.py -q
+          python -m pytest tests/pipeline_article_gate_test.py tests/test_notify_indexnow.py tests/test_indexnow_sitemap_diff.py tests/test_indexnow_workflow_ownership.py -q
 
       - name: Traffic measurement and calculator regression tests
         run: |
