@@ -267,47 +267,10 @@ test("protein flagship keeps the per-gram section that replaced the standalone r
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
-test("guides hub cites both flagships above the fold, plus dataset landings", () => {
-  const source = pageSource("guides", "index.astro");
-  const headerEnd = source.indexOf("space-y-10");
-  assert.ok(headerEnd > 0, "guides hub should keep the cluster list");
-  const intro = source.slice(0, headerEnd);
-  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
-  assert.equal(
-    (intro.match(/href="\/protein-per-dollar-cheapest-protein-sources\/#per-gram"/g) ?? [])
-      .length,
-    1,
-  );
-  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 0);
-  assert.equal(
-    (intro.match(/href="\/data\/fiber-per-dollar-2026\/"/g) ?? []).length,
-    1,
-  );
-  assert.equal(
-    (intro.match(/href="\/data\/protein-per-dollar-2026\/"/g) ?? []).length,
-    1,
-  );
-  assert.equal(intro.includes("HUGGINGFACE_DATASET_URL"), true);
-  assert.equal(source.includes('../../content/datasets'), true);
-  assert.equal(htmlHrefMatches(intro, "one-dollar-fiber-what-it-buys").length, 0);
-  assert.equal(
-    (source.match(/href="\/fiber-per-dollar-cheapest-high-fiber-foods\/#what-1-buys"/g) ?? [])
-      .length,
-    1,
-  );
-  assert.equal(htmlHrefMatches(source, "cheapest-protein-per-gram").length, 0);
-  assert.equal(source.includes(retiredProteinSlug), false);
-  assert.match(source, /isGuideHubSpoke\(article\.id\)/);
-  assert.doesNotMatch(source, /\.slice\(0,\s*8\)/);
-});
-
 const chainAnchors = ["chipotle", "kfc", "mcdonalds", "taco-bell", "wendys"];
 
-test("research and statistics hubs link each chain section on the fast-food study once", () => {
-  for (const segments of [
-    ["research", "index.astro"],
-    ["statistics", "index.astro"],
-  ]) {
+test("statistics hub links each chain section on the fast-food study once", () => {
+  for (const segments of [["statistics", "index.astro"]]) {
     const source = pageSource(...segments);
     for (const anchor of chainAnchors) {
       assert.equal(
@@ -389,7 +352,7 @@ test("data hub names both flagship indexes with hrefs before the dataset table",
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
-test("homepage, guides, and research each link the beans double-win page once", () => {
+test("homepage links the beans double-win page once", () => {
   const doubleWin = "beans-double-win-fiber-protein";
   assert.equal(INDEX_PRUNE_SLUGS.has(doubleWin), false, doubleWin);
   const csv = readFileSync(
@@ -436,37 +399,6 @@ test("homepage, guides, and research each link the beans double-win page once", 
   assert.equal(htmlHrefMatches(lead, doubleWin).length, 1, "homepage lead");
   assert.equal(htmlHrefMatches(homepage, doubleWin).length, 1, "homepage");
   assert.match(lead, anchor);
-
-  for (const segments of [
-    ["guides", "index.astro"],
-    ["research", "index.astro"],
-  ]) {
-    const source = pageSource(...segments);
-    assert.equal(
-      htmlHrefMatches(source, doubleWin).length,
-      1,
-      `${segments.join("/")} should link /${doubleWin}/ once`,
-    );
-    assert.match(source, anchor);
-  }
-});
-
-test("research hub intro cites both flagships before the study cards", () => {
-  const source = pageSource("research", "index.astro");
-  const headerEnd = source.indexOf('id="study-heading"');
-  assert.ok(headerEnd > 0, "research hub should keep the study heading");
-  const intro = source.slice(0, headerEnd);
-  assert.equal(
-    htmlHrefMatches(intro, fiberFlagship).length,
-    1,
-    "research hub intro should link the fiber flagship once",
-  );
-  assert.equal(
-    htmlHrefMatches(intro, proteinFlagship).length,
-    1,
-    "research hub intro should link the protein flagship once",
-  );
-  assert.equal(source.includes(retiredProteinSlug), false);
 });
 
 test("data reuse page cites both flagship studies once", () => {

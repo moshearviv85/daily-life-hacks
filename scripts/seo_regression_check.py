@@ -491,7 +491,7 @@ def choose_sample(urls: list[str], size: int, seed: int | None) -> list[str]:
     must_have = [
         u
         for u in ordered
-        if path_of(u) in ("/", "/nutrition/", "/recipes/", "/tips/", "/guides/", "/research/")
+        if path_of(u) in ("/", "/nutrition/", "/recipes/", "/tips/", "/data/")
     ]
     picked = list(dict.fromkeys(must_have))[:size]
     rest = [u for u in ordered if u not in set(picked)]

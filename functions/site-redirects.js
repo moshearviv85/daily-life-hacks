@@ -127,6 +127,10 @@ export const SITE_REDIRECT_SOURCE = `/free-meal-plan / 301
 /how-to-pack-cold-pasta-salad-picnics/ /easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic 301
 /freezer-meal-prep-ideas-for-beginners /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301
 /freezer-meal-prep-ideas-for-beginners/ /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301
+/research /data/ 301
+/research/ /data/ 301
+/guides /nutrition/ 301
+/guides/ /nutrition/ 301
 `;
 
 export function parseRedirectRules(source) {

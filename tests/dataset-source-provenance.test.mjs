@@ -386,12 +386,8 @@ test("data catalog scopes USDA grocery provenance and discloses the manufacturer
   assert.doesNotMatch(catalog.description, unqualifiedGroceryUsda);
 });
 
-test("API, Guides, and Research expose all four source classes without USDA-only claims", () => {
-  const globalPages = [
-    ["API docs", read("dist/api-docs/index.html")],
-    ["Guides", read("dist/guides/index.html")],
-    ["Research", read("dist/research/index.html")],
-  ];
+test("API docs expose all four source classes without USDA-only claims", () => {
+  const globalPages = [["API docs", read("dist/api-docs/index.html")]];
   const universalUsdaOnly =
     /\b(?:all|each|every)\b[^.]{0,160}\b(?:nutrition|nutrient|row|food|number|dataset)s?\b[^.]{0,160}\bUSDA\b/i;
 
@@ -406,7 +402,7 @@ test("API, Guides, and Research expose all four source classes without USDA-only
     );
     // Same replacement as on /data/: the exception these pages have to disclose is
     // "USDA publishes no TVP record, so that row cites the manufacturer's label",
-    // not the retired 50.0-vs-52.2 mismatch. These three pages summarise rather
+    // not the retired 50.0-vs-52.2 mismatch. This page summarises rather
     // than quote the density, so 52.17 is asserted on /data/ only.
     assert.match(
       main,

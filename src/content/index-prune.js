@@ -2,7 +2,7 @@
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
  * These 87 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
- * the 25 KEEP money URLs (flagships + surviving studies + tools/hubs).
+ * the 23 KEEP money URLs (flagships + surviving studies + tools/hubs).
  *
  * Single source of truth for:
  *   - src/pages/[slug].astro robots meta + rich-result schema
@@ -108,14 +108,12 @@ export const INDEX_KEEP_PATHS = new Set([
   "eat-healthy-on-a-budget-complete-playbook",
   "editorial-policy",
   "fiber-per-dollar-cheapest-high-fiber-foods",
-  "guides",
   "high-protein-on-a-budget-complete-guide",
   "how-to-eat-more-fiber-on-a-budget-complete-guide",
   "meal-prep-for-beginners-complete-system",
   "methodology",
   "plant-based-protein-sources-complete-guide",
   "protein-per-dollar-cheapest-protein-sources",
-  "research",
   "statistics",
   "tools",
   "tools/dried-beans-to-canned-converter",
@@ -171,8 +169,8 @@ function assertPruneSafety() {
   if (INDEX_PRUNE_SLUGS.size !== 87) {
     throw new Error(`index-prune: expected 87 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
-  if (INDEX_KEEP_PATHS.size !== 25) {
-    throw new Error(`index-prune: expected 25 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
+  if (INDEX_KEEP_PATHS.size !== 23) {
+    throw new Error(`index-prune: expected 23 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
   }
 }
 

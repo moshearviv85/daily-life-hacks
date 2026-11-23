@@ -239,7 +239,7 @@ const articleImages = loadArticleImages();
 
 /**
  * The newest article dateModified in the build. Hub pages (home, category
- * indexes, /guides/, /research/) are generated *from* the article set, so this
+ * indexes) are generated *from* the article set, so this
  * is their real last-modified date — not the build timestamp.
  */
 const newestArticleLastModified = [...articleLastModifiedDates.values()].sort().at(-1);
@@ -250,8 +250,6 @@ const derivedHubPaths = new Set([
   '/nutrition/',
   '/recipes/',
   '/tips/',
-  '/guides/',
-  '/research/',
 ]);
 
 /**
