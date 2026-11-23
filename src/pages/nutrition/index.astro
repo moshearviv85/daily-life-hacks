@@ -2,227 +2,75 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
+import CategoryTopicHub from "../../components/CategoryTopicHub.astro";
 import { getCollection } from "astro:content";
-import { isReleased, getReleaseTimestamp } from "../../content/release";
-import { isIndexPruned } from "../../content/index-prune.js";
-import { CONTENT_CLUSTERS } from "../../content/clusters";
+import { isReleased } from "../../content/release";
+import {
+  CATEGORY_HUB_BY_CATEGORY,
+  assembleHub,
+  itemListSchema,
+} from "../../content/category-hubs";
 
-const clusterHref: Record<string, string> = {
-    "budget-fiber": "/what-30-grams-of-fiber-costs-per-day/",
-    "budget-protein": "/protein-per-dollar-adjusted-for-quality/",
-    "weekly-budget-shopping": "/usda-thrifty-food-plan-weekly-cost/",
-    "meal-prep-food-storage": "/plan-week-of-dinners-fewer-grocery-runs/",
-};
-
+const hub = CATEGORY_HUB_BY_CATEGORY.get("nutrition")!;
 const allArticles = await getCollection("articles");
-const articles = allArticles
-    .filter((article: any) => isReleased(article))
-    .filter((article: any) => !isIndexPruned(article.id))
-    .filter((article: any) => article.data.category === "nutrition")
-    .sort((a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
+const records = allArticles
+  .filter((article) => isReleased(article))
+  .map((article) => ({
+    slug: article.id,
+    title: article.data.title,
+    category: article.data.category,
+  }));
+const { topics, alphabetical } = assembleHub(hub, records);
 
-const BATCH_SIZE = 12;
 const title = "Nutrition Tips & Science-Backed Advice | Daily Life Hacks";
-const description =
-    "Explore our latest nutrition tips, science-backed advice, and healthy eating guides to fuel your body and mind.";
+const description = hub.intro;
 const categoryUrl = "https://www.daily-life-hacks.com/nutrition/";
-const itemListSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "@id": `${categoryUrl}#item-list`,
-    name: "Nutrition Tips and Science-Backed Advice",
-    numberOfItems: articles.length,
-    itemListOrder: "https://schema.org/ItemListOrderDescending",
-    itemListElement: articles.map((article: any, index: number) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: article.data.title,
-        url: `https://www.daily-life-hacks.com/${article.id}/`,
-    })),
-};
+const listName = "Nutrition Tips and Science-Backed Advice";
+const itemList = itemListSchema(`${categoryUrl}#item-list`, listName, alphabetical);
+const topicLists = topics.map((topic) =>
+  itemListSchema(`${categoryUrl}#${topic.id}`, topic.title, topic.articles),
+);
 const collectionPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${categoryUrl}#webpage`,
-    name: "Nutrition Tips and Science-Backed Advice",
-    url: categoryUrl,
-    description,
-    inLanguage: "en-US",
-    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
-    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
-    breadcrumb: { "@id": `${categoryUrl}#breadcrumb` },
-    mainEntity: { "@id": `${categoryUrl}#item-list` },
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${categoryUrl}#webpage`,
+  name: listName,
+  url: categoryUrl,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+  publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+  breadcrumb: { "@id": `${categoryUrl}#breadcrumb` },
+  mainEntity: { "@id": `${categoryUrl}#item-list` },
 };
 const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "@id": `${categoryUrl}#breadcrumb`,
-    itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
-        { "@type": "ListItem", position: 2, name: "Nutrition", item: categoryUrl },
-    ],
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${categoryUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Nutrition", item: categoryUrl },
+  ],
 };
 ---
 
 <BaseLayout
-    title={title}
-    description={description}
-    jsonLd={[collectionPageSchema, itemListSchema, breadcrumbSchema]}
+  title={title}
+  description={description}
+  jsonLd={[collectionPageSchema, itemList, ...topicLists, breadcrumbSchema]}
 >
-    <Header />
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <header class="mb-12 text-center">
-            <h1
-                class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]"
-            >
-                Nutrition
-            </h1>
-            <p
-                class="text-xl max-w-2xl mx-auto"
-                style="color: var(--muted-color);"
-            >
-                {description}
-            </p>
-            <p
-                class="mt-5 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
-                style="color: var(--text-color);"
-            >
-                Two priced grocery studies sit underneath a lot of these pages:
-                {" "}
-                <a
-                    href="/what-30-grams-of-fiber-costs-per-day/"
-                    class="font-bold underline underline-offset-4 decoration-[#F29B30]"
-                    style="color:#F29B30;"
-                >
-                    53 foods ranked by fiber per dollar
-                </a>
-                {" "}and{" "}
-                <a
-                    href="/protein-per-dollar-adjusted-for-quality/"
-                    class="font-bold underline underline-offset-4 decoration-[#F29B30]"
-                    style="color:#F29B30;"
-                >49 foods ranked by protein per dollar</a>. Beans, split peas, and oats keep winning both lists.
-            </p>
-            <p
-                class="mt-4 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
-                style="color: var(--text-color);"
-            >
-                The protein pages below the first row of cards are the ones I still use at the store:
-                {" "}
-                <a href="/eggs-vs-everything-protein-value/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">eggs versus the rest of the cart</a>,
-                {" "}
-                <a href="/cheapest-complete-protein-pairs/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">lentils and wheat as a complete pair</a>,
-                {" "}
-                <a href="/high-protein-high-fiber-meals-for-weight-loss/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">plates that pair protein with fiber</a>,
-                and{" "}
-                <a href="/selenium-containing-foods-easy-ways/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">easy selenium foods</a>.
-                On fiber,{" "}
-                <a href="/what-30-grams-of-fiber-costs-per-day/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">what 30 grams costs in a day</a>
-                {" "}prices the target, and{" "}
-                <a href="/water-and-fiber-the-golden-rule/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">water with the extra fiber</a>
-                {" "}is the part a label never prints.{" "}
-                <a href="/balanced-breakfast-that-keeps-you-full/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">A breakfast that keeps you full</a>
-                {" "}is the morning version.{" "}
-                <a href="/prune-juice-alternatives-for-constipation/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">Kiwifruit and oats instead of prune juice</a>,
-                {" "}
-                <a href="/gut-health-tea-peppermint-ginger/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">a ten-cent peppermint and ginger mug</a>,
-                and{" "}
-                <a href="/natto-japanese-fermented-soybeans-gut-health/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">fermented soybeans called natto</a>
-                {" "}stay in the same food-first pile.
-            </p>
-        </header>
+  <Header />
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]">
+        Nutrition
+      </h1>
+      <p class="text-xl max-w-2xl mx-auto" style="color: var(--muted-color);">
+        {description}
+      </p>
+    </header>
 
-        <section aria-labelledby="start-here" class="mb-12">
-            <h2
-                id="start-here"
-                class="text-2xl font-bold mb-6 text-[var(--heading-color)]"
-            >
-                Start here
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {
-                    CONTENT_CLUSTERS.map((cluster) => (
-                        <a
-                            href={clusterHref[cluster.id]}
-                            class="rounded-xl p-5 flex flex-col transition-all hover:-translate-y-0.5"
-                            style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
-                        >
-                            <p
-                                class="text-xs font-bold uppercase tracking-[0.18em] mb-2"
-                                style="color: #F29B30;"
-                            >
-                                {cluster.label}
-                            </p>
-                            <h3
-                                class="text-lg font-bold mb-2"
-                                style="color: var(--heading-color);"
-                            >
-                                {cluster.title}
-                            </h3>
-                            <p class="text-sm mb-4 flex-1" style="color: var(--muted-color);">
-                                {cluster.blurb}
-                            </p>
-                            <span class="font-bold text-sm" style="color: #F29B30;">
-                                Read the full guide
-                            </span>
-                        </a>
-                    ))
-                }
-            </div>
-        </section>
-
-        <!-- ArticleCard renders an h3. Without this h2 the outline jumps h1 -> h3. -->
-        <h2 class="text-2xl font-bold mb-6 text-[var(--heading-color)]">
-            All nutrition articles ({articles.length})
-        </h2>
-
-        <div
-            id="articles-grid"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-        >
-            {
-                articles.map((article: any, i: number) => (
-                    <div
-                        class="article-item"
-                        data-index={i}
-                        style={i >= BATCH_SIZE ? "display:none" : ""}
-                    >
-                        <ArticleCard
-                            title={article.data.title}
-                            excerpt={article.data.excerpt}
-                            image={article.data.image}
-                            imageAlt={article.data.imageAlt}
-                            category={article.data.category}
-                            slug={article.id}
-                            date={article.data.date}
-                            fillHeight={true}
-                        />
-                    </div>
-                ))
-            }
-        </div>
-
-        {
-            articles.length === 0 && (
-                <div class="text-center py-12">
-                    <p class="text-lg" style="color: var(--label-color);">
-                        No nutrition articles found yet. Check back soon!
-                    </p>
-                </div>
-            )
-        }
-
-        <div id="load-sentinel" class="h-4"></div>
-        <div
-            id="loading-spinner"
-            class="hidden text-center py-6 text-sm"
-            style="color: var(--muted-color);"
-        >
-            Loading more...
-        </div>
-    </div>
-    <Footer />
+    <CategoryTopicHub topics={topics} articles={alphabetical} />
+  </div>
+  <Footer />
 </BaseLayout>
-
-<!-- Infinite scroll handled by shared script in BaseLayout -->

@@ -4,7 +4,6 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 
-import { isIndexPruned } from "../src/content/index-prune.js";
 import {
   SHARED_DATEMODIFIED_LIMIT,
   extractFrontmatterField,
@@ -213,6 +212,8 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
     }),
   );
   assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
+  // Measured against 84702a37, not origin/main. #252 is already on main, so
+  // a comparison with origin/main is 0 and cannot see a later re-bump.
   assert.equal(restored.length, 62, "pages restored off 2026-11-23");
 });
 
@@ -229,11 +230,11 @@ test("restored and substantive pages render the honest Updated day", () => {
   if (!built) return;
   for (const [slug, day] of cases) {
     const html = readFileSync(join(ROOT, "dist", slug, "index.html"), "utf8");
-    // #250 drops article JSON-LD on pruned pages. The visible Updated day stays.
-    if (!isIndexPruned(slug)) {
+    assert.match(html, new RegExp(`<time datetime="${day}"`), slug);
+    // Pruned pages stay noindex and omit rich-result JSON-LD.
+    if (!html.includes("noindex")) {
       assert.match(html, new RegExp(`"dateModified":"${day}T00:00:00.000Z"`), slug);
     }
-    assert.match(html, new RegExp(`<time datetime="${day}"`), slug);
     if (day !== TODAY) {
       assert.equal(html.includes('"dateModified":"2026-11-23T'), false, slug);
     }

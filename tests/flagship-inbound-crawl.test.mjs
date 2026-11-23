@@ -210,16 +210,28 @@ test("edited articles do not reintroduce the retired protein flagship slug", () 
   }
 });
 
-test("nutrition hub cites both flagships in the intro, not only article cards", () => {
+test("nutrition hub topic-links the surviving flagships and skips the redirected URLs", () => {
   const hubPath = join(process.cwd(), "src", "pages", "nutrition", "index.astro");
   assert.equal(existsSync(hubPath), true, "missing nutrition hub");
   const source = readFileSync(hubPath, "utf8");
-  const headerEnd = source.indexOf("All nutrition articles");
-  assert.ok(headerEnd > 0, "nutrition hub should keep the article-grid heading");
-  const intro = source.slice(0, headerEnd);
-  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 2);
-  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 1);
+  assert.match(source, /assembleHub/);
+  assert.match(source, /CategoryTopicHub/);
+  const component = readFileSync(
+    join(process.cwd(), "src", "components", "CategoryTopicHub.astro"),
+    "utf8",
+  );
+  assert.match(component, /id="all-articles"/);
   assert.equal(source.includes(retiredProteinSlug), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(fiberFlagship), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(proteinFlagship), false);
+  const hubs = readFileSync(join(process.cwd(), "src", "content", "category-hubs.ts"), "utf8");
+  const nutritionHub = hubs.slice(hubs.indexOf('category: "nutrition"'), hubs.indexOf('category: "recipes"'));
+  assert.match(nutritionHub, new RegExp(`"${fiberFlagship}"`));
+  assert.match(nutritionHub, new RegExp(`"${proteinFlagship}"`));
+  for (const slug of redirectedArticles.keys()) {
+    assert.equal(nutritionHub.includes(`"${slug}"`), false, slug);
+    assert.equal(source.includes(slug), false, slug);
+  }
 });
 
 test("recipes hub does not inject flagship links", () => {
@@ -234,16 +246,16 @@ test("recipes hub does not inject flagship links", () => {
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
-test("tips hub cites both flagships in the intro, not only article cards", () => {
+test("tips hub leaves both flagships on the nutrition hub", () => {
   const source = pageSource("tips", "index.astro");
-  const headerEnd = source.indexOf("All kitchen and money-saving tips");
-  assert.ok(headerEnd > 0, "tips hub should keep the article-grid heading");
-  const intro = source.slice(0, headerEnd);
-  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
-  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 1);
-  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
-  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
+  assert.match(source, /assembleHub/);
+  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 0);
+  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 0);
   assert.equal(source.includes(retiredProteinSlug), false);
+  const hubs = readFileSync(join(process.cwd(), "src", "content", "category-hubs.ts"), "utf8");
+  const tipsHub = hubs.slice(hubs.indexOf('category: "tips"'));
+  assert.equal(tipsHub.includes(`"${fiberFlagship}"`), false);
+  assert.equal(tipsHub.includes(`"${proteinFlagship}"`), false);
 });
 
 function pageSource(...segments) {
