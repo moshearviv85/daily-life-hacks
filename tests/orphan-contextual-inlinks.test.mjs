@@ -275,14 +275,35 @@ test("added orphan anchors are unique and never point at noindex or redirected U
   }
 });
 
-test("category hubs text-link each orphan above the article grid", () => {
+test("category hubs text-link each orphan from a topic section above the A-Z list", () => {
+  const hubSource = readFileSync("src/content/category-hubs.ts", "utf8");
+  const component = readFileSync("src/components/CategoryTopicHub.astro", "utf8");
+  const topicsAt = component.indexOf('id="topic-sections"');
+  const azAt = component.indexOf('id="all-articles"');
+  assert.ok(topicsAt >= 0 && azAt > topicsAt, "topic links should render above the A-Z list");
+
+  const slices = {
+    "src/pages/nutrition/index.astro": [
+      hubSource.indexOf('category: "nutrition"'),
+      hubSource.indexOf('category: "recipes"'),
+    ],
+    "src/pages/recipes/index.astro": [
+      hubSource.indexOf('category: "recipes"'),
+      hubSource.indexOf('category: "tips"'),
+    ],
+    "src/pages/tips/index.astro": [
+      hubSource.indexOf('category: "tips"'),
+      hubSource.length,
+    ],
+  };
+
   for (const [path, slugs] of Object.entries(HUBS)) {
-    const source = readFileSync(path, "utf8");
-    const gridAt = source.search(/All (nutrition articles|kitchen and money-saving tips)|id="articles-grid"/);
-    assert.ok(gridAt > 0, `${path} should keep its article grid`);
-    const intro = source.slice(0, gridAt);
+    const [start, end] = slices[path];
+    const section = hubSource.slice(start, end);
+    const page = readFileSync(path, "utf8");
+    assert.match(page, /CategoryTopicHub/, `${path} should render the topic hub`);
     for (const slug of slugs) {
-      assert.match(intro, new RegExp(`href="/${slug}/"`), `${path} missing above-grid link to ${slug}`);
+      assert.match(section, new RegExp(`"${slug}"`), `${path} missing topic link to ${slug}`);
     }
   }
 });

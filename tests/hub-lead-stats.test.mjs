@@ -167,38 +167,31 @@ test("header drops Guides and footer sends readers to nutrition and data", () =>
   assert.match(footer, />Data</);
 });
 
-test("nutrition hub Start here cards link the four indexable studies", () => {
+test("nutrition hub opens with a specific sentence and topic sections", () => {
   const source = readFileSync(join(root, "src/pages/nutrition/index.astro"), "utf8");
-  const startHere = [
-    ["budget-fiber", "/what-30-grams-of-fiber-costs-per-day/"],
-    ["budget-protein", "/protein-per-dollar-adjusted-for-quality/"],
-    ["weekly-budget-shopping", "/usda-thrifty-food-plan-weekly-cost/"],
-    ["meal-prep-food-storage", "/plan-week-of-dinners-fewer-grocery-runs/"],
-  ];
 
   assert.match(
     source,
     /const title = "Nutrition Tips & Science-Backed Advice \| Daily Life Hacks";/,
   );
+  const hubs = readFileSync(join(root, "src/content/category-hubs.ts"), "utf8");
   assert.match(
-    source,
-    /Explore our latest nutrition tips, science-backed advice, and healthy eating guides to fuel your body and mind\./,
+    hubs,
+    /These pages put a gram weight or a grocery price on fiber, beans, protein, and breakfast\./,
   );
-  assert.match(source, /id="start-here"/);
-  assert.match(source, />\s*Start here\s*</);
-  assert.match(source, /CONTENT_CLUSTERS\.map\(\(cluster\)/);
-  assert.match(source, /href=\{clusterHref\[cluster\.id\]\}/);
-  assert.doesNotMatch(source, /href=\{`\/\$\{cluster\.parentPillar\}\/`\}/);
-  for (const [id, href] of startHere) {
-    assert.match(source, new RegExp(`"${id}": "${href.replaceAll("/", "\\/")}"`));
-  }
+  assert.match(source, /const description = hub\.intro;/);
+  assert.equal(source.includes("CONTENT_CLUSTERS"), false);
+  assert.match(source, /CategoryTopicHub/);
+  assert.match(source, /assembleHub/);
   for (const slug of [
     "how-to-eat-more-fiber-on-a-budget-complete-guide",
     "high-protein-on-a-budget-complete-guide",
     "eat-healthy-on-a-budget-complete-playbook",
     "meal-prep-for-beginners-complete-system",
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "protein-per-dollar-cheapest-protein-sources",
   ]) {
-    assert.equal(source.includes(`href="/${slug}/"`), false, slug);
-    assert.equal(source.includes(`"${slug}"`), false, slug);
+    assert.equal(source.includes(slug), false, slug);
+    assert.equal(hubs.includes(`"${slug}"`), false, slug);
   }
 });

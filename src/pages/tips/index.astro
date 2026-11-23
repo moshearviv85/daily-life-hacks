@@ -2,165 +2,75 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
+import CategoryTopicHub from "../../components/CategoryTopicHub.astro";
 import { getCollection } from "astro:content";
-import { isReleased, getReleaseTimestamp } from "../../content/release";
-import { isIndexPruned } from "../../content/index-prune.js";
+import { isReleased } from "../../content/release";
+import {
+  CATEGORY_HUB_BY_CATEGORY,
+  assembleHub,
+  itemListSchema,
+} from "../../content/category-hubs";
 
+const hub = CATEGORY_HUB_BY_CATEGORY.get("tips")!;
 const allArticles = await getCollection("articles");
-const articles = allArticles
-    .filter((article: any) => isReleased(article))
-    .filter((article: any) => !isIndexPruned(article.id))
-    .filter((article: any) => article.data.category === "tips")
-    .sort((a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
+const records = allArticles
+  .filter((article) => isReleased(article))
+  .map((article) => ({
+    slug: article.id,
+    title: article.data.title,
+    category: article.data.category,
+  }));
+const { topics, alphabetical } = assembleHub(hub, records);
 
-const BATCH_SIZE = 12;
 const title = "Kitchen Tips, Storage Hacks & Money Savers | Daily Life Hacks";
-const description =
-    "Practical kitchen tips, food storage hacks, and budget-friendly tricks to make your daily life easier and more efficient.";
+const description = hub.intro;
 const categoryUrl = "https://www.daily-life-hacks.com/tips/";
-const itemListSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "@id": `${categoryUrl}#item-list`,
-    name: "Kitchen Tips, Storage Hacks, and Money Savers",
-    numberOfItems: articles.length,
-    itemListOrder: "https://schema.org/ItemListOrderDescending",
-    itemListElement: articles.map((article: any, index: number) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: article.data.title,
-        url: `https://www.daily-life-hacks.com/${article.id}/`,
-    })),
-};
+const listName = "Kitchen Tips, Storage Hacks, and Money Savers";
+const itemList = itemListSchema(`${categoryUrl}#item-list`, listName, alphabetical);
+const topicLists = topics.map((topic) =>
+  itemListSchema(`${categoryUrl}#${topic.id}`, topic.title, topic.articles),
+);
 const collectionPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${categoryUrl}#webpage`,
-    name: "Kitchen Tips, Storage Hacks, and Money Savers",
-    url: categoryUrl,
-    description,
-    inLanguage: "en-US",
-    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
-    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
-    breadcrumb: { "@id": `${categoryUrl}#breadcrumb` },
-    mainEntity: { "@id": `${categoryUrl}#item-list` },
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${categoryUrl}#webpage`,
+  name: listName,
+  url: categoryUrl,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+  publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+  breadcrumb: { "@id": `${categoryUrl}#breadcrumb` },
+  mainEntity: { "@id": `${categoryUrl}#item-list` },
 };
 const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "@id": `${categoryUrl}#breadcrumb`,
-    itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
-        { "@type": "ListItem", position: 2, name: "Tips", item: categoryUrl },
-    ],
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${categoryUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Tips", item: categoryUrl },
+  ],
 };
 ---
 
 <BaseLayout
-    title={title}
-    description={description}
-    jsonLd={[collectionPageSchema, itemListSchema, breadcrumbSchema]}
+  title={title}
+  description={description}
+  jsonLd={[collectionPageSchema, itemList, ...topicLists, breadcrumbSchema]}
 >
-    <Header />
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <header class="mb-12 text-center">
-            <h1
-                class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]"
-            >
-                Tips
-            </h1>
-            <p
-                class="text-xl max-w-2xl mx-auto"
-                style="color: var(--muted-color);"
-            >
-                {description}
-            </p>
-            <p
-                class="mt-5 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
-                style="color: var(--text-color);"
-            >
-                When a kitchen tip is really a money tip, it usually lands on the same two grocery rankings:
-                {" "}
-                <a
-                    href="/what-30-grams-of-fiber-costs-per-day/"
-                    class="font-bold underline underline-offset-4 decoration-[#F29B30]"
-                    style="color:#F29B30;"
-                >
-                    53 foods ranked by fiber per dollar
-                </a>
-                {" "}and{" "}
-                <a
-                    href="/protein-per-dollar-adjusted-for-quality/"
-                    class="font-bold underline underline-offset-4 decoration-[#F29B30]"
-                    style="color:#F29B30;"
-                >49 foods ranked by protein per dollar</a>. The cheap high-fiber and cheap high-protein answers are mostly sitting in the dry-goods aisle.
-            </p>
-            <p
-                class="mt-4 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
-                style="color: var(--text-color);"
-            >
-                Three kitchen saves sit below the first screen:
-                {" "}
-                <a href="/how-to-keep-sandwiches-from-getting-soggy/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">a sandwich that stays dry until noon</a>,
-                {" "}
-                <a href="/fix-oversalted-soup-sauce-rice/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">an oversalted pot you can still serve</a>,
-                and{" "}
-                <a href="/best-way-to-store-avocados-to-stop-browning/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">a cut avocado that doesn't go brown</a>.
-            </p>
-        </header>
+  <Header />
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]">
+        Tips
+      </h1>
+      <p class="text-xl max-w-2xl mx-auto" style="color: var(--muted-color);">
+        {description}
+      </p>
+    </header>
 
-        <!-- ArticleCard renders an h3. Without this h2 the outline jumps h1 -> h3. -->
-        <h2 class="text-2xl font-bold mb-6 text-[var(--heading-color)]">
-            All kitchen and money-saving tips ({articles.length})
-        </h2>
-
-        <div
-            id="articles-grid"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-        >
-            {
-                articles.map((article: any, i: number) => (
-                    <div
-                        class="article-item"
-                        data-index={i}
-                        style={i >= BATCH_SIZE ? "display:none" : ""}
-                    >
-                        <ArticleCard
-                            title={article.data.title}
-                            excerpt={article.data.excerpt}
-                            image={article.data.image}
-                            imageAlt={article.data.imageAlt}
-                            category={article.data.category}
-                            slug={article.id}
-                            date={article.data.date}
-                            fillHeight={true}
-                        />
-                    </div>
-                ))
-            }
-        </div>
-
-        {
-            articles.length === 0 && (
-                <div class="text-center py-12">
-                    <p class="text-lg" style="color: var(--label-color);">
-                        No tips found yet. Check back soon!
-                    </p>
-                </div>
-            )
-        }
-
-        <div id="load-sentinel" class="h-4"></div>
-        <div
-            id="loading-spinner"
-            class="hidden text-center py-6 text-sm"
-            style="color: var(--muted-color);"
-        >
-            Loading more...
-        </div>
-    </div>
-    <Footer />
+    <CategoryTopicHub topics={topics} articles={alphabetical} />
+  </div>
+  <Footer />
 </BaseLayout>
-
-<!-- Infinite scroll handled by shared script in BaseLayout -->
