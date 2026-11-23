@@ -1,0 +1,36 @@
+---
+/**
+ * Sponsored link. Renders nothing commercial unless AFFILIATE_LINKS_ENABLED
+ * is true. The disclosure line sits above the link and points at /disclaimer/.
+ *
+ * Do not place this in a health-claim page, a recipe nutrition block, or a
+ * study data table. Those contexts throw while the flag is on.
+ */
+import {
+  affiliateContextBlock,
+  affiliateLinksEnabled,
+  renderAffiliateLink,
+} from "../content/affiliate-policy.mjs";
+
+interface Props {
+  href: string;
+  context?: string;
+  disclose?: boolean;
+}
+
+const { href, context = "page", disclose = true } = Astro.props;
+const enabled = affiliateLinksEnabled();
+const block = affiliateContextBlock(context);
+if (enabled && block) {
+  throw new Error(`Affiliate link blocked: ${block}`);
+}
+const inner = await Astro.slots.render("default");
+const html = renderAffiliateLink({
+  enabled: enabled && !block,
+  href,
+  html: String(inner ?? "").trim(),
+  disclose,
+});
+---
+
+<Fragment set:html={html} />

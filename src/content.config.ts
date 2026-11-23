@@ -35,6 +35,9 @@ const articles = defineCollection({
     editorsPick: z.boolean().default(false),
     whatsHot: z.boolean().default(false),
     mustRead: z.boolean().default(false),
+    // Stays false until a later edit opts a non-excluded page in. Combined
+    // with AFFILIATE_LINKS_ENABLED (also default off) this renders nothing.
+    affiliateEligible: z.boolean().default(false),
     // Recipe fields
     prepTime: z.string().optional(),
     cookTime: z.string().optional(),

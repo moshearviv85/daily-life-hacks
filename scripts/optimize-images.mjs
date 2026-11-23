@@ -24,14 +24,26 @@
  * astro.config.mjs emits `img` entries inline in the existing sitemap-index,
  * which is strictly better than a second sitemap file.
  *
+ * AI hero JPEGs (`*-main.jpg`) also get an XMP DigitalSourceType of
+ * trainedAlgorithmicMedia on the WebP written here. The JPEG `img src` is
+ * stamped after Astro copies `public/` into `dist/` (see astro.config.mjs),
+ * because that is the file Google fetches. Charts, support images, and the
+ * logo are not labeled.
+ *
  * Usage:
  *   node scripts/optimize-images.mjs
  *   node scripts/optimize-images.mjs --force   (regenerate all)
  */
-import { readdirSync, statSync, mkdirSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, statSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import {
+  hasAiImageCredit,
+  hasDigitalSourceType,
+  isAiHeroFilename,
+  webpWithDigitalSourceType,
+} from "./lib/ai-image-iptc.mjs";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const REPO_ROOT = join(__dirname, "..");
@@ -58,7 +70,20 @@ function variantName(name, width) {
 /**
  * @returns {Promise<{width:number,height:number,variants:{w:number,file:string}[]}>}
  */
+async function writeVariant(srcPath, outPath, targetWidth, hero) {
+  if (hero) {
+    const webp = await webpWithDigitalSourceType(srcPath, {
+      width: targetWidth,
+      quality: QUALITY,
+    });
+    writeFileSync(outPath, webp);
+    return;
+  }
+  await sharp(srcPath).resize(targetWidth).webp({ quality: QUALITY }).toFile(outPath);
+}
+
 async function optimizeImage(srcPath, name) {
+  const hero = isAiHeroFilename(name);
   const meta = await sharp(srcPath).metadata();
   const variants = [];
   const seen = new Set();
@@ -75,10 +100,12 @@ async function optimizeImage(srcPath, name) {
     const outPath = join(OUT_DIR, outName);
 
     if (force || !isNewer(srcPath, outPath)) {
-      await sharp(srcPath)
-        .resize(targetWidth)
-        .webp({ quality: QUALITY })
-        .toFile(outPath);
+      await writeVariant(srcPath, outPath, targetWidth, hero);
+    } else if (hero) {
+      const existing = readFileSync(outPath);
+      if (!hasDigitalSourceType(existing) || !hasAiImageCredit(existing)) {
+        await writeVariant(srcPath, outPath, targetWidth, true);
+      }
     }
 
     variants.push({ w: targetWidth, file: `/images/opt/${outName}` });
