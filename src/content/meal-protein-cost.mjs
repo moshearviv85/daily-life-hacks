@@ -316,7 +316,7 @@ function buildLentilsVsChicken() {
   const ratio = (Number(lentils.protein_g_per_dollar) / Number(breast.protein_g_per_dollar)).toFixed(1);
 
   return {
-    slug: "lentils-vs-chicken-breast-protein-cost",
+    slug: "protein-per-serving-beans-chicken-tofu-compared",
     kicker: "Protein cost for these ingredients",
     highlight: {
       value: `${lentils.protein_g_per_dollar} g vs ${breast.protein_g_per_dollar} g`,
@@ -352,7 +352,7 @@ function buildCannedVsDry() {
   const cannedFiber = fiberRow("Canned black beans");
 
   return {
-    slug: "canned-vs-dry-beans-cost",
+    slug: "canned-beans-vs-dried-beans-nutrition",
     kicker: "Protein cost for these ingredients",
     highlight: {
       value: `${pintos.protein_g_per_dollar} g vs ${canned.protein_g_per_dollar} g`,

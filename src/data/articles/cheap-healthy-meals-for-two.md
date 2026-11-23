@@ -50,7 +50,7 @@ That's the real problem with cooking for two, and nobody writes about it. You se
 
 The same short list that works for everyone, just doubled. Split pea soup is $0.56 for two. Pinto beans with brown rice, $0.64. Black bean tacos with a cabbage slaw, $0.82. Pasta with a can of black beans, $1.40 and about twelve minutes.
 
-The one that suits two people best is the can of beans, oddly. Half a can is a serving, so one can is exactly one dinner for two with nothing left rattling around the fridge. Canned beans cost about 2.7 times more per gram of protein than dry, a gap we measured in [canned versus dry beans](/canned-vs-dry-beans-cost/), but at $0.88 for a dinner that needs no planning, that premium is defensible on a Tuesday.
+The one that suits two people best is the can of beans, oddly. Half a can is a serving, so one can is exactly one dinner for two with nothing left rattling around the fridge. Canned beans cost about 2.7 times more per gram of protein than dry, a gap we measured in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), but at $0.88 for a dinner that needs no planning, that premium is defensible on a Tuesday.
 
 Save the dry beans for the weekend, when you can start a pot and forget about it. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is four minutes of work and a lot of ignoring a stove, and the full costed list is over in cheap dinner ideas.
 

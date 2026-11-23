@@ -74,7 +74,7 @@ Here's what one dollar buys, pulled straight from the ranking:
 
 ![Horizontal bar chart showing how many grams of protein one dollar buys across eight grocery foods](/images/protein-on-a-budget-value-chart.jpg)
 
-Two things jump out of that table. First, the top is a dry goods landslide, just like the fiber ranking. Second, the foods people instinctively reach for when they decide to "eat more protein" (chicken breast, ground beef) sit in the bottom half. Not bad foods. Just expensive ways to buy the nutrient. Even inside the chicken case the spread is real, which is why [thighs versus breast on protein cost](/chicken-thighs-vs-breast-protein-cost/) is worth two minutes before you shop.
+Two things jump out of that table. First, the top is a dry goods landslide, just like the fiber ranking. Second, the foods people instinctively reach for when they decide to "eat more protein" (chicken breast, ground beef) sit in the bottom half. Not bad foods. Just expensive ways to buy the nutrient. Even inside the chicken case the spread is real, which is why [thighs versus breast on protein cost](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is worth two minutes before you shop.
 
 One benchmark worth keeping in your head while you read the rest: the [FDA's Daily Value for protein](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), the reference number on US nutrition labels, is 50 grams a day for a 2,000-calorie diet. That's a labeling fact, not personal advice, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) is its own conversation. As a price yardstick, it means a dollar of brown lentils in this dataset carries 77.7 grams, about one and a half times that labeling benchmark.
 
@@ -90,7 +90,7 @@ The practical objection is always the same: dried beans take forever. Fair, but 
 
 Canned beans are the honest middle ground. They score lower per dollar because you're paying for water and a can, but they're still miles ahead of most meat, and a shelf of them is what stands between you and ordering pizza on a Wednesday. Our roundup of low-cost protein meal hacks for families leans on them heavily, and if you're feeding a crowd, the guide to [low-cost protein for large families](/best-low-cost-protein-sources-large-families/) does the portion math.
 
-And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outscores every meat in this sample. The jar in your pantry has been a protein bargain this whole time, and against the nut everyone treats as the premium option, [peanut butter versus almonds on protein cost](/peanut-butter-vs-almonds-protein-cost/) is a rout.
+And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outscores every meat in this sample. The jar in your pantry has been a protein bargain this whole time, and against the nut everyone treats as the premium option, [peanut butter versus almonds on protein cost](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is a rout.
 
 ## Are eggs and dairy good value for protein?
 
@@ -98,11 +98,11 @@ Yes, second only to chicken drumsticks among animal foods here. Eggs deliver 34.
 
 Eggs are the food I'd defend in court. At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, they deliver about 34 grams of protein per dollar, second among the animal foods in this sample. A dozen holds roughly 75 grams of protein, cooks a dozen different ways, and never asks you to plan ahead. Scrambled at 7 AM, boiled on a salad at noon, folded into freezer breakfast burritos on Sunday. The workhorse label is earned.
 
-Dairy clusters tightly behind: whole milk at 28.5 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. If your breakfast decision is really yogurt or eggs, [we priced that one head to head](/eggs-vs-greek-yogurt-protein-cost/) too. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
+Dairy clusters tightly behind: whole milk at 28.5 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. If your breakfast decision is really yogurt or eggs, [we priced that one head to head](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) too. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
 
 This category is also where lunch gets solved. A [high protein bagel sandwich](/high-protein-bagel-sandwich-ideas-lunch/) built on eggs and cheese costs a fraction of the deli version, and if you're curious what the numbers actually look like, we [counted the protein in a bagel sandwich](/how-much-protein-in-bagel-sandwich/) layer by layer.
 
-The close-up rankings settle two arguments the big table can't: [eggs versus the other 48 foods](/eggs-vs-everything-protein-value/) shows exactly where convenience overtakes raw value, and the [dairy protein ranking](/dairy-protein-per-dollar-ranked/) reveals why the plain gallon can beat a tub with louder packaging.
+The close-up rankings settle two arguments the big table can't: [eggs versus the other 48 foods](/eggs-vs-everything-protein-value/) shows exactly where convenience overtakes raw value, and the [dairy protein ranking](/protein-per-dollar-cheapest-protein-sources/#dairy) reveals why the plain gallon can beat a tub with louder packaging.
 
 ## Which chicken gives you the most protein per dollar?
 
@@ -114,7 +114,7 @@ The rotisserie chicken deserves its own paragraph, because the math surprised us
 
 Ground turkey sits further down the list at 15.6 grams per dollar, but it earns its spot on versatility. A batch of [turkey meatballs](/healthy-turkey-meatballs-meal-prep/) made on Sunday covers three lunches, and meatballs freeze better than almost any other cooked protein.
 
-If the drumstick-versus-breast result still feels suspicious, the [animal protein ranking](/animal-protein-per-dollar-ranked/) compares eggs, dairy, fish, and poultry together, while the [meat counter ranking](/meat-per-dollar-protein-ranked/) keeps the contest strictly to cuts you'd bring home raw. Chicken breast doesn't get a ceremonial head start in either one.
+If the drumstick-versus-breast result still feels suspicious, the [animal protein ranking](/animal-protein-per-dollar-ranked/) compares eggs, dairy, fish, and poultry together, while the [meat counter ranking](/protein-per-dollar-cheapest-protein-sources/#meat) keeps the contest strictly to cuts you'd bring home raw. Chicken breast doesn't get a ceremonial head start in either one.
 
 ## Is canned fish a cheap source of protein?
 
@@ -128,11 +128,11 @@ Canned pink salmon scores 21.6 and sardines 20.2, so the whole canned fish shelf
 
 No. Extra firm tofu delivered 13.6 grams of protein per dollar in this price sample and tempeh 13.2, which puts both below chicken breast at 24.6, canned tuna at 22.4 and whole milk at 28.5. The genuinely cheap plant proteins are dried legumes, TVP at 23.4 and frozen edamame at 18.0.
 
-Here's the take that gets me in trouble: tofu was not a budget winner in this price sample. Extra firm tofu scored 13.6 grams of protein per dollar in our analysis, below chicken breast, canned tuna, and milk at the prices used. If you want that argument on its own, [tofu against chicken on protein cost](/tofu-vs-chicken-protein-cost/) is the whole fight in one table. A $2.92 block holds about 40 grams of protein. Tempeh scores 13.2. These are fine foods with real uses; this one metric just did not put them near the top.
+Here's the take that gets me in trouble: tofu was not a budget winner in this price sample. Extra firm tofu scored 13.6 grams of protein per dollar in our analysis, below chicken breast, canned tuna, and milk at the prices used. If you want that argument on its own, [tofu against chicken on protein cost](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is the whole fight in one table. A $2.92 block holds about 40 grams of protein. Tempeh scores 13.2. These are fine foods with real uses; this one metric just did not put them near the top.
 
 The actual budget plant proteins are the boring ones: the dried legumes at the top of the table, frozen edamame at 18 grams per dollar, and TVP at 23.4, which is just defatted soy flour and costs less than it sounds like it should. If you're eating mostly or fully plant-based, our [plant-based protein guide](/plant-based-protein-sources-complete-guide/) maps the whole aisle, and the [beans vs chicken vs tofu comparison](/protein-per-serving-beans-chicken-tofu-compared/) puts the per-serving numbers side by side.
 
-For the price-only view, the [plant protein ranking](/plant-protein-per-dollar-ranked/) compares the aisle without pretending tofu and lentils are interchangeable. They're not. One is a weeknight block you can sear; the other is a bag of tiny brown pebbles that becomes dinner after half an hour.
+For the price-only view, the [plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant) compares the aisle without pretending tofu and lentils are interchangeable. They're not. One is a weeknight block you can sear; the other is a bag of tiny brown pebbles that becomes dinner after half an hour.
 
 ## Do you need to pair proteins at the same meal?
 
@@ -162,7 +162,7 @@ Call it twenty-three bucks. That's about 1,047 grams of protein in the basket, o
 
 This basket is a skeleton, not a meal plan. Turning it into actual dinners is a batch-cooking problem, and our [meal prep for beginners system](/meal-prep-for-beginners-complete-system/) walks through that routine without turning your Sunday into a second job. Once you've picked the meals, the [recipe cost calculator](/tools/recipe-cost-calculator/) shows cost per serving, which is far more useful than congratulating yourself for buying a cheap bag of beans and then burying it under pricey toppings.
 
-The basket can flex around the week you actually have. The [one-dollar protein breakdown](/one-dollar-protein-what-it-buys/) finds the raw buying power, the [no-cook protein ranking](/no-cook-protein-per-dollar/) handles weeks when the stove is decorative, and the [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) covers the groceries that won't punish you for changing plans.
+The basket can flex around the week you actually have. The [one-dollar protein breakdown](/protein-per-dollar-cheapest-protein-sources/#what-1-buys) finds the raw buying power, the [no-cook protein ranking](/protein-per-dollar-cheapest-protein-sources/#no-cook) handles weeks when the stove is decorative, and the [shelf-stable pantry ranking](/protein-per-dollar-cheapest-protein-sources/#shelf-stable) covers the groceries that won't punish you for changing plans.
 
 If this protein backbone is only one slice of the household cart, compare it with the [weekly food-cost planner](/tools/grocery-budget-calculator/). It scales the five audited 50-gram days by people and days, then tells you exactly which food quantities produced the tracked subtotal. Produce, breakfast, snacks, and the four things somebody remembered after you finished the list still count.
 

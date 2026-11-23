@@ -58,7 +58,7 @@ So the practical shortlist for a family week looks like this. One bean pot, one 
 
 Drumsticks, and it isn't close. Bone-in drumsticks returned 50.3 grams of protein per dollar, which is more than double chicken breast, so a $3.76 pot lands at 37.8 grams a serving.
 
-People assume the cheap cut is the compromise. It's the opposite. We ranked eleven cuts in [the cheapest meat for protein](/meat-per-dollar-protein-ranked/) and boneless skinless breast finished sixth. Drumsticks won by a mile, and a family that likes drumsticks is a family with a much easier grocery bill.
+People assume the cheap cut is the compromise. It's the opposite. We ranked eleven cuts in [the cheapest meat for protein](/protein-per-dollar-cheapest-protein-sources/#meat) and boneless skinless breast finished sixth. Drumsticks won by a mile, and a family that likes drumsticks is a family with a much easier grocery bill.
 
 Pasta with two cans of black beans is the runner up at 29.0 grams a serving for $2.94. Canned beans cost about 2.7 times more per gram than the same bean dry, but a can is $0.88 and needs no planning, which on a Wednesday is worth something.
 

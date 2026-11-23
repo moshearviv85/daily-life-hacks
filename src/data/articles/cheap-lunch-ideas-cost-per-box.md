@@ -47,7 +47,7 @@ Let's be honest about the work lunch situation. You either spend twelve dollars 
 
 ## What are cheap lunch ideas that need no cooking?
 
-The middle of that table, mostly. Peanut butter returned 50.7 grams of protein per dollar and canned black beans 30.1, which is why a no cook lunch doesn't have to mean a sad handful of crackers. We ranked the whole category in [no cook protein per dollar](/no-cook-protein-per-dollar/), and the winners are all things you already recognize.
+The middle of that table, mostly. Peanut butter returned 50.7 grams of protein per dollar and canned black beans 30.1, which is why a no cook lunch doesn't have to mean a sad handful of crackers. We ranked the whole category in [no cook protein per dollar](/protein-per-dollar-cheapest-protein-sources/#no-cook), and the winners are all things you already recognize.
 
 The one that surprises people is the can of beans. Drain it, rinse it, add whatever acid you have, and it's lunch. Half a can gives 13.3 grams of protein and 15.2 grams of fiber for about $0.44. That's a better return than most things sold in a refrigerated grab and go case for six dollars.
 

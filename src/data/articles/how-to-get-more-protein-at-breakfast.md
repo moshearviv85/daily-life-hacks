@@ -65,7 +65,7 @@ If you'd rather go savory, two eggs on top of the same bowl takes it to 20.5 gra
 
 Then dairy and beans are doing the work, and both do it well.
 
-A 170 gram single-serve tub of plain nonfat Greek yogurt is 17.3 grams for 63 cents, which is the biggest single-item protein hit in our breakfast dataset. Cottage cheese at 113 grams gives 12.6 grams for 48 cents and behaves better in savory directions than people expect. Whole milk returns 29.1 grams of protein per dollar, which beats both yogurt and cottage cheese on value even though nobody thinks of milk as a protein food. The dairy aisle ranked properly is [the cheapest dairy protein](/dairy-protein-per-dollar-ranked/).
+A 170 gram single-serve tub of plain nonfat Greek yogurt is 17.3 grams for 63 cents, which is the biggest single-item protein hit in our breakfast dataset. Cottage cheese at 113 grams gives 12.6 grams for 48 cents and behaves better in savory directions than people expect. Whole milk returns 29.1 grams of protein per dollar, which beats both yogurt and cottage cheese on value even though nobody thinks of milk as a protein food. The dairy aisle ranked properly is [the cheapest dairy protein](/protein-per-dollar-cheapest-protein-sources/#dairy).
 
 Beans are the other route. Half a can of black beans is 13.3 grams for 44 cents and it's the only item on this page bringing serious fiber with it. That's the basis of a sheet pan breakfast hash, and the whole no-eggs playbook is in make-ahead breakfast ideas without eggs.
 

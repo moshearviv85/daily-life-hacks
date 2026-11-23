@@ -32,6 +32,18 @@ faq:
     answer: "No. It can help to include some protein most times you eat because it tends to be satisfying, but daily patterns matter more than one meal being perfect."
   - question: "What is an easy high protein pantry meal?"
     answer: "Try a bean and rice bowl with salsa and cheese, or a tuna and white bean salad, or a tofu stir fry with frozen vegetables. Simple food wins."
+  - question: "Is tofu cheaper than chicken for protein?"
+    answer: "No. Extra firm tofu cost about $1.84 for 25 grams of protein and boneless chicken breast about $1.02 in our July 2026 pricing. Chicken delivered 24.6 grams per dollar and tofu 13.6."
+  - question: "Are lentils cheaper than chicken breast for protein?"
+    answer: "Yes. Dry brown lentils cost about $0.32 for 25 grams of protein and boneless chicken breast about $1.02. That is 77.7 grams per dollar against 24.6, about 3.2 times more protein for the same money."
+  - question: "Are beans cheaper than ground beef for protein?"
+    answer: "Yes. Dry pinto beans cost about $0.43 for 25 grams of protein and 80/20 ground beef about $2.21. Beans delivered 57.6 grams per dollar and the beef 11.3, about 5.1 times the protein for the same money."
+  - question: "Are chicken thighs cheaper than chicken breast for protein?"
+    answer: "Barely, when the thighs are boneless. Boneless skinless thighs cost about $0.90 for 25 grams of protein and breast about $1.02, or 27.7 grams per dollar versus 24.6. Bone-in drumsticks are the cheap cut, at about $0.50 for 25 grams, which is 50.3 grams per dollar after the bone is subtracted."
+  - question: "Is peanut butter cheaper than almonds for protein?"
+    answer: "Yes. Peanut butter cost about $0.49 for 25 grams of protein and almonds about $1.69. The jar delivered 50.7 grams per dollar and the almonds 14.8, about 3.4 times more."
+  - question: "Are eggs cheaper than Greek yogurt for protein?"
+    answer: "Slightly. Eggs cost about $0.73 for 25 grams of protein and plain nonfat Greek yogurt about $0.91. That is 34.4 grams per dollar against 27.5, about 1.3 times, close enough that a sale flips the result."
 ---
 
 Cooked USDA servings put chicken breast at 26 to 35 grams of protein for 3 to 4 ounces, a cup of black beans at about 15 grams, and tofu at 8 to 20 grams for the same 3 to 4 ounces. That's the comparison. The rest is the named records, the raw-versus-cooked trap, and why tofu swings so hard.
@@ -86,6 +98,19 @@ Don't infer the protein amount from firmness or the coagulant alone. The two USD
 
 For mixed meals, count each ingredient once. If beans already contribute 15 grams, you need another 10 grams to reach that example 25-gram total, not another full 25. The [rotisserie chicken dinner portions](/costco-rotisserie-chicken-meal-ideas-dinner/) give you quantities to use this with.
 
+<h2 id="cost-per-25-g">Cost per 25 g of protein: 6 head-to-heads</h2>
+
+The serving table above is grams on the plate. These six are the grocery-bill version of the same question: what 25 grams of protein costs, using the July 2026 protein-per-dollar figures. Cost for 25 grams is 25 divided by grams per dollar.
+
+| Pair | Winner | $ for 25 g | Verdict |
+|---|---|---|---|
+| Tofu vs chicken breast | Chicken breast | Tofu $1.84, chicken $1.02 | Chicken buys about 1.8 times more protein per dollar, 24.6 g against 13.6 g. |
+| Lentils vs chicken breast | Dry brown lentils | Lentils $0.32, chicken $1.02 | Lentils win by about 3.2 times, 77.7 g against 24.6 g per dollar. |
+| Beans vs ground beef | Dry pinto beans | Beans $0.43, 80/20 beef $2.21 | Beans win by about 5.1 times, 57.6 g against 11.3 g per dollar. |
+| Chicken thighs vs breast | Boneless thighs, barely | Thighs $0.90, breast $1.02 | Boneless thighs are 27.7 g per dollar against 24.6 g for breast. Bone-in drumsticks are the real win, at 50.3 g per dollar, about $0.50 for 25 g. |
+| Peanut butter vs almonds | Peanut butter | Peanut butter $0.49, almonds $1.69 | Peanut butter wins by about 3.4 times, 50.7 g against 14.8 g per dollar. |
+| Eggs vs Greek yogurt | Eggs | Eggs $0.73, yogurt $0.91 | Eggs win by about 1.3 times, 34.4 g against 27.5 g per dollar. A sale flips it. |
+
 ## What "per serving" means in real life
 
 Servings that match how people actually scoop food onto plates:
@@ -102,7 +127,7 @@ If you want exact grams, use a scale. If you don't, these rough portions still b
 
 Beans bring protein, but they also bring carbs and fiber. Dry pinto beans return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), fifth of 53 foods. They're a meal base, not a protein supplement. And the plate keeps adding: a cup of [cooked white rice](https://fdc.nal.usda.gov/food-details/168878/nutrients) is about 4 more grams on its own.
 
-Compare a half cup of beans to a whole chicken breast and the beans look bad. That's not the right comparison. Compare a full bowl to a full bowl. On cost it isn't even close: [lentils versus chicken breast per dollar](/lentils-vs-chicken-breast-protein-cost/) puts a number on it, and our [quality-adjusted protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) weights 25 foods for digestibility, because the cheapest number on a label doesn't automatically do the most work.
+Compare a half cup of beans to a whole chicken breast and the beans look bad. That's not the right comparison. Compare a full bowl to a full bowl. On cost it isn't even close: [lentils versus chicken breast per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) puts a number on it, and our [quality-adjusted protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) weights 25 foods for digestibility, because the cheapest number on a label doesn't automatically do the most work.
 
 ## Easy meal templates that make protein less annoying
 

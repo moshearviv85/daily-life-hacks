@@ -69,7 +69,7 @@ Two years of a garage summer will age a can faster than five years in a hall clo
 
 For convenience, cans are excellent. For value, dry beans win by a distance that surprises people every time.
 
-In our July 2026 price sample, canned black beans delivered 30.1 grams of protein per dollar, canned kidney beans 23.4, and canned chickpeas 22.0. Dry pinto beans delivered 97.9. That's about three times more protein per dollar for the bag, which is the whole argument in [canned vs dry beans on cost](/canned-vs-dry-beans-cost/), and the same reason dried beans anchor a cheap pantry.
+In our July 2026 price sample, canned black beans delivered 30.1 grams of protein per dollar, canned kidney beans 23.4, and canned chickpeas 22.0. Dry pinto beans delivered 97.9. That's about three times more protein per dollar for the bag, which is the whole argument in [canned vs dry beans on cost](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), and the same reason dried beans anchor a cheap pantry.
 
 *Cost figures: USDA FoodData Central nutrient values plus single-store US prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

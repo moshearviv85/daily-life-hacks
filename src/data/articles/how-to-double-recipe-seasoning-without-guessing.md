@@ -80,7 +80,7 @@ Solids begin at 2x. One pound of chicken becomes two. Liquid needs a checkpoint 
 
 The equipment ceiling is a safety question, not a flavor one. Colorado State University Extension says to [fill a slow cooker no less than half full and no more than two-thirds full](https://extension.colostate.edu/resource/crockpot-and-slow-cooker-food-safety/) for safe and even heat distribution. For electric pressure cookers, CSU Extension says to [stay below the two-thirds "MAX FILL" line, and half full for expanding ingredients like beans or pasta](https://extension.colostate.edu/resource/how-to-convert-slow-cooker-recipes-for-electric-pressure-cooking/). A double batch that doesn't fit is two batches.
 
-Same on the stove: crowd a skillet and you steam food meant to brown. If cost is why you're batching, [beans can stretch ground beef](/ground-beef-vs-beans-protein-cost/). Leave headroom. Dinner shouldn't become a lava experiment.
+Same on the stove: crowd a skillet and you steam food meant to brown. If cost is why you're batching, [beans can stretch ground beef](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). Leave headroom. Dinner shouldn't become a lava experiment.
 
 ## How much salt when you double a recipe?
 

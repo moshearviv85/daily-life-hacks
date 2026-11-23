@@ -48,13 +48,13 @@ It is also, very deliberately, not a complete diet. More on that below. First, t
 
 Because the cheapest unit price is almost always attached to the biggest package, and the biggest package is exactly what a weekly shopper avoids buying.
 
-Look at what happens to the same bean. Dry pinto beans in a four pound bag returned 97.9 grams of protein per dollar. The canned version of a comparable bean returned 30.1. That's about 2.7 times the value for the exact same food, and the only reason people don't take it is that a four pound bag is a commitment. We laid the whole comparison out in [canned versus dry beans](/canned-vs-dry-beans-cost/).
+Look at what happens to the same bean. Dry pinto beans in a four pound bag returned 97.9 grams of protein per dollar. The canned version of a comparable bean returned 30.1. That's about 2.7 times the value for the exact same food, and the only reason people don't take it is that a four pound bag is a commitment. We laid the whole comparison out in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving).
 
 Monthly shopping is really just permission to buy the big bag. It also cuts the number of trips, and every trip is another chance to walk past something you didn't plan on. The habits that keep that in check are in [how to make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/).
 
 ## What goes in the monthly haul?
 
-Dry goods that don't spoil, chosen by value rather than by vibe. Our [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) scored 27 of them, and the cart above is the top of that list plus rice for bulk.
+Dry goods that don't spoil, chosen by value rather than by vibe. Our [shelf-stable pantry ranking](/protein-per-dollar-cheapest-protein-sources/#shelf-stable) scored 27 of them, and the cart above is the top of that list plus rice for bulk.
 
 The two anchors are dry pinto beans and whole wheat flour. Those two alone are $7.09 and carry about 688 grams of protein and 524 grams of fiber, which is a startling amount of nutrition for the price of a sandwich. Whole wheat flour is the sleeper: it tops the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) at 77.8 grams per dollar and still manages second place on [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) at 96.0.
 
@@ -68,7 +68,7 @@ This is the part most "eat for a month on $25" posts skip, so let's not.
 
 Our numbers cover protein, fiber, and price. Nothing else. A haul that clears those two targets tells you exactly nothing about vitamin C, potassium, calcium, or anything else, and I'm not going to pretend it does. The pantry cart is a foundation. Fresh and frozen produce goes on top of it, and that part is not optional.
 
-The good news is the topping-up layer is cheap too. Frozen green peas ran $2.32 for a 32 ounce bag and delivered 17.6 grams of fiber per dollar, which beat every fresh fruit we priced. Frozen chopped spinach was $1.18 for 12 ounces. A two pound bag of carrots was $1.58 and lasts weeks in the fridge. We compared the fresh and frozen options in [frozen versus fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/) and ranked the whole produce aisle in [the cheapest high-fiber vegetables and fruits](/produce-fiber-per-dollar-ranked/).
+The good news is the topping-up layer is cheap too. Frozen green peas ran $2.32 for a 32 ounce bag and delivered 17.6 grams of fiber per dollar, which beat every fresh fruit we priced. Frozen chopped spinach was $1.18 for 12 ounces. A two pound bag of carrots was $1.58 and lasts weeks in the fridge. We compared the fresh and frozen options in [frozen versus fresh vegetables](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) and ranked the whole produce aisle in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce).
 
 Realistically, monthly shopping means one big haul plus short runs for milk, eggs, bread, and whatever's actually good that week. Anyone promising you a single trip covers everything has never run out of eggs on a Wednesday.
 

@@ -47,9 +47,9 @@ Quick fine print: eggs and dairy come from the protein study only, and the fruit
 
 ## Which breakfast staple gives you the most nutrition per dollar?
 
-Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in a loaf of sandwich bread you baked yourself, in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/one-dollar-protein-what-it-buys/). If you don't, skip to the oats.
+Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in a loaf of sandwich bread you baked yourself, in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/protein-per-dollar-cheapest-protein-sources/#what-1-buys). If you don't, skip to the oats.
 
-Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart. Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/) outright, though [a realistic two tablespoon serving only lands 7.1 grams of protein](/foods-highest-in-protein-per-100-grams/), so the per-dollar win needs a spoon to collect it.
+Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart. Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/protein-per-dollar-cheapest-protein-sources/#no-cook) outright, though [a realistic two tablespoon serving only lands 7.1 grams of protein](/foods-highest-in-protein-per-100-grams/), so the per-dollar win needs a spoon to collect it.
 
 ## Is oatmeal actually the cheapest healthy breakfast?
 
@@ -65,7 +65,7 @@ None of them bring fiber to the table, though. That's why the smart breakfast is
 
 ## Why did fruit land at the bottom?
 
-Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.3 at $1.28 a pound. That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/one-dollar-fiber-what-it-buys/) is all dry goods, and no fruit makes it.
+Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.3 at $1.28 a pound. That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/fiber-per-dollar-cheapest-high-fiber-foods/#what-1-buys) is all dry goods, and no fruit makes it.
 
 ## How did we run the numbers?
 

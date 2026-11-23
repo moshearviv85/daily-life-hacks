@@ -48,7 +48,7 @@ Ingredient lists go in descending order by weight. For how to choose granola tha
 
 **First ingredient: whole oats.** Rolled oats, whole grain oats, or oat groats. If the first ingredient is sugar, honey, or a syrup, that's a sweetened oat product, not granola.
 
-**Next: nuts and seeds.** Almonds, pecans, walnuts, sunflower seeds, pumpkin seeds. These add protein, fat, and crunch. They're the reason granola is more filling than plain cereal, and also the reason the bag costs what it does, which is worth remembering when you look at [which nuts actually give you protein per dollar](/peanut-butter-vs-almonds-protein-cost/).
+**Next: nuts and seeds.** Almonds, pecans, walnuts, sunflower seeds, pumpkin seeds. These add protein, fat, and crunch. They're the reason granola is more filling than plain cereal, and also the reason the bag costs what it does, which is worth remembering when you look at [which nuts actually give you protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
 
 **Then: a fat.** Olive oil, coconut oil, or a nut butter. Oil is what makes granola cluster and crisp up in the oven. A little is normal. A lot means the calories climb fast.
 

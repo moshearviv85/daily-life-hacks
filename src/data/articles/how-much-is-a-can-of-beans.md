@@ -54,7 +54,7 @@ For what it's worth, the drained yield question comes up constantly and we don't
 
 ## Is a can of beans cheaper than dry beans?
 
-No, and it is not close. Dry black beans returned 81.0 grams of protein per dollar. Canned black beans returned 30.1. That is roughly 2.7 times more protein for the same money if you're willing to soak and simmer, and the gap held across every bean we checked both ways in [canned versus dry beans](/canned-vs-dry-beans-cost/).
+No, and it is not close. Dry black beans returned 81.0 grams of protein per dollar. Canned black beans returned 30.1. That is roughly 2.7 times more protein for the same money if you're willing to soak and simmer, and the gap held across every bean we checked both ways in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving).
 
 A 2 pound bag of dry black beans cost $2.42. That is not quite three cans of money, and it holds about 196 grams of protein against the 26.5 grams in one can. The math is brutal and it favors the bag every time.
 

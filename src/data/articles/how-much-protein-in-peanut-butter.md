@@ -51,7 +51,7 @@ By the spoon, it's fine but unremarkable. Nobody eats 100 grams of peanut butter
 
 About 252 grams, in the 40 ounce jar we priced at $4.97. That's five times the FDA's Daily Value for protein sitting in your pantry for less than a fast food combo.
 
-It's also shelf-stable, which is the quiet part of the value. Nothing in the jar spoils on you, so unlike the sad half-bag of spinach, the protein you bought is the protein you eat. That's why it made our [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) near the top of the non-legume entries.
+It's also shelf-stable, which is the quiet part of the value. Nothing in the jar spoils on you, so unlike the sad half-bag of spinach, the protein you bought is the protein you eat. That's why it made our [shelf-stable pantry ranking](/protein-per-dollar-cheapest-protein-sources/#shelf-stable) near the top of the non-legume entries.
 
 The one real caveat is calories. Peanut butter is dense, and 100 grams of it is a lot of food energy for 22 grams of protein. If your goal is grams of protein per calorie rather than grams per dollar, this is not the winner, and nothing about the price changes that.
 
@@ -61,7 +61,7 @@ This one goes against instinct. Whole peanuts should be cheaper, because grindin
 
 They weren't. Dry roasted peanuts came in at 24.35 grams of protein per 100 grams, which does beat peanut butter's 22.21 on the nutrition label. But the 16 ounce jar of peanuts ran $2.78, which works out to $0.612 per 100 grams against $0.438 for the peanut butter. The result: peanuts at 39.8 grams of protein per dollar, peanut butter at 50.7.
 
-Almonds do worse still, at 14.8 grams per dollar. We put those two head to head in [peanut butter versus almonds](/peanut-butter-vs-almonds-protein-cost/), and it isn't close. If you want nut protein without the price, the big jar of peanut butter is the answer and it isn't a compromise.
+Almonds do worse still, at 14.8 grams per dollar. We put those two head to head in [peanut butter versus almonds](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g), and it isn't close. If you want nut protein without the price, the big jar of peanut butter is the answer and it isn't a compromise.
 
 ## Does peanut butter have fiber?
 

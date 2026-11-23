@@ -64,7 +64,7 @@ Pair it with chunky sauces so the slightly firmer bite feels intentional.
 
 Sometimes the pasta stays white and fiber shows up elsewhere. White beans blended into tomato sauce, extra vegetables in the skillet, or a side salad with seeds can move the needle without a texture fight.
 
-That approach is also cheaper than buying specialty pasta every week, and the beans pull double duty as protein, which is the point of [the ground beef versus beans cost comparison](/ground-beef-vs-beans-protein-cost/).
+That approach is also cheaper than buying specialty pasta every week, and the beans pull double duty as protein, which is the point of [the ground beef versus beans cost comparison](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
 ## Label Reading Without Losing Your Mind
 
 Look for whole grain as the first ingredient when you buy whole wheat pasta. For legume pastas, scan fiber and protein per serving and compare to your usual brand.

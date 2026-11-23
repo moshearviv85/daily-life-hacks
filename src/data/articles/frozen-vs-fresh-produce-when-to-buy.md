@@ -41,7 +41,25 @@ People assume fresh produce is more nutritious. It makes intuitive sense. But th
 
 A 2017 study in the *Journal of Food Composition and Analysis* compared nutrient levels in fresh and frozen produce over time. They found that frozen was comparable to or sometimes higher in certain vitamins, especially after fresh produce had been stored in a home refrigerator for five days. The difference wasn't massive either way.
 
-For most home cooks, the practical takeaway is: don't avoid frozen produce for nutritional reasons. That concern doesn't hold up. Cost is the more useful axis, which is what the breakdown of [fiber per dollar for frozen versus fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/) actually measures. The wider staple ranking is our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), where dried beans and oats keep beating pretty produce.
+For most home cooks, the practical takeaway is: don't avoid frozen produce for nutritional reasons. That concern doesn't hold up. Cost is the more useful axis, which is what the [fiber per dollar table](#fiber-per-dollar) measures. The wider staple ranking is our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), where dried beans and oats keep beating pretty produce.
+
+<h2 id="fiber-per-dollar">Fiber per dollar: frozen versus fresh</h2>
+
+Frozen green peas delivered 17.6 grams of fiber per dollar. Fresh broccoli crowns delivered 6.1. The same vegetable both ways is closer: frozen broccoli florets are 9.5 against 6.1 for the fresh crowns. Bagged carrots, at 16.1, beat most of the freezer. These figures are the produce rows from the July 2026 fiber pricing.
+
+| Vegetable | Fiber per $1 |
+|---|---|
+| Frozen green peas | 17.6 g |
+| Carrots (whole, bagged) | 16.1 g |
+| Green cabbage | 14.6 g |
+| Sweet potatoes | 13.9 g |
+| Frozen green beans | 10.8 g |
+| Frozen broccoli florets | 9.5 g |
+| Frozen chopped spinach | 8.4 g |
+| Frozen shelled edamame | 8.3 g |
+| Chopped kale (bagged) | 7.5 g |
+| Fresh broccoli crowns | 6.1 g |
+
 
 ## When is fresh produce the better buy?
 

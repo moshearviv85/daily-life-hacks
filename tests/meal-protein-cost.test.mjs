@@ -163,7 +163,7 @@ test("derived meal totals recompute from study package prices", () => {
     usd(packageCostUsd(drums) + packageCostUsd(pintos)),
   );
 
-  const lentils = MEAL_PROTEIN_COST["lentils-vs-chicken-breast-protein-cost"];
+  const lentils = MEAL_PROTEIN_COST["protein-per-serving-beans-chicken-tofu-compared"];
   const lentilRow = proteinRow("Brown lentils (dry)");
   const breast = proteinRow("Chicken breast (boneless, skinless)");
   assert.equal(
@@ -234,17 +234,15 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.match(playbook, /9\.4/);
   assert.doesNotMatch(playbook, /97\.9/);
 
-  const lentils = read("src/data/articles/lentils-vs-chicken-breast-protein-cost.md");
-  const lentilFiber = fiberRow("Brown lentils (dry)");
-  assert.match(lentils, /dateModified: 2026-09-24/);
-  assert.match(lentils, new RegExp(`${lentilFiber.fiber_g_per_dollar} grams of fiber per dollar`));
+  const lentils = read("src/data/articles/protein-per-serving-beans-chicken-tofu-compared.md");
+  assert.match(lentils, /id="cost-per-25-g"/);
   assert.equal(
     (lentils.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
     1,
   );
 
-  const cannedVsDry = read("src/data/articles/canned-vs-dry-beans-cost.md");
-  assert.match(cannedVsDry, /dateModified: 2026-09-24/);
+  const cannedVsDry = read("src/data/articles/canned-beans-vs-dried-beans-nutrition.md");
+  assert.match(cannedVsDry, /id="cost-per-serving"/);
   assert.equal(
     (cannedVsDry.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
     1,

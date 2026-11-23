@@ -54,7 +54,7 @@ Middling. This is the finding that annoys people the most, so let's be specific.
 
 In our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) across 49 foods, eggs landed 19th at 34.4 grams of protein per dollar. Every single dried legume beat them. Dry pinto beans returned 97.9, brown lentils 77.7, chickpeas 56.7. Whole wheat flour beat them at 96.0. Peanut butter beat them at 50.7, and so did chicken drumsticks at 50.3.
 
-What eggs did beat is most of the rest of the store. Chicken breast came in at 24.5, ground beef 80/20 at 11.5, cheddar at 18.2, almonds at 14.8. Greek yogurt at 27.5 is the closest thing to a fair fight, and we ran that one properly in [eggs versus Greek yogurt](/eggs-vs-greek-yogurt-protein-cost/). The full picture of where eggs sit in the whole ranking is [are eggs the cheapest protein](/eggs-vs-everything-protein-value/).
+What eggs did beat is most of the rest of the store. Chicken breast came in at 24.5, ground beef 80/20 at 11.5, cheddar at 18.2, almonds at 14.8. Greek yogurt at 27.5 is the closest thing to a fair fight, and we ran that one properly in [eggs versus Greek yogurt](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). The full picture of where eggs sit in the whole ranking is [are eggs the cheapest protein](/eggs-vs-everything-protein-value/).
 
 So eggs are neither the bargain of the century nor a rip-off. They're a good middle-of-the-table option that happens to cook faster than anything else on the list, which is worth something no spreadsheet captures.
 

@@ -53,7 +53,7 @@ Because our dataset measures every food the way you buy it. Lentils are dry, mea
 
 Cook the lentils and they soak up water, so the protein per 100 grams of the finished pot drops well below 24.63. Cook a chicken breast and it loses water and climbs above 22.5. We don't have cooked yields in our data, so I'm not going to hand you a converted figure and pretend it's measured.
 
-What that means practically: the dry number is a shopping number. It tells you what's in the bag you're paying for, which is exactly what you want when you're standing in the aisle. If you want the meat comparison run out properly, that's which lentils are the best and [lentils vs chicken breast](/lentils-vs-chicken-breast-protein-cost/).
+What that means practically: the dry number is a shopping number. It tells you what's in the bag you're paying for, which is exactly what you want when you're standing in the aisle. If you want the meat comparison run out properly, that's which lentils are the best and [lentils vs chicken breast](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
 
 ## Are lentils high in fiber too?
 

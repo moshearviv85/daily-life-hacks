@@ -67,7 +67,7 @@ Before we get to the recipes, a few pro-tips from someone who has battled many a
 
 ### Choose Your Weapon (Ingredients, I Mean)
 
-**Frozen Fruit's Your Bestie:** Seriously. It makes the smoothie thick, cold, and eliminates the need for ice (which can water down the flavor). Berries, especially strawberries and raspberries, have a strong flavor that masks greens really well. Bananas are excellent for creaminess and sweetness. Frozen spinach and cauliflower blend in the same way, and they're usually the cheaper buy, which you can see in this comparison of [what frozen and fresh vegetables cost per gram of fiber](/frozen-vs-fresh-vegetables-fiber-cost/).
+**Frozen Fruit's Your Bestie:** Seriously. It makes the smoothie thick, cold, and eliminates the need for ice (which can water down the flavor). Berries, especially strawberries and raspberries, have a strong flavor that masks greens really well. Bananas are excellent for creaminess and sweetness. Frozen spinach and cauliflower blend in the same way, and they're usually the cheaper buy, which you can see in this comparison of [what frozen and fresh vegetables cost per gram of fiber](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar).
 
 **A Liquid Base That Works:** Almond milk, oat milk, or even regular dairy milk if that's your jam. Sometimes a little fruit juice (100%, no added sugar) can help, but don't overdo it. Water works too, but it's less creamy.
 

@@ -102,6 +102,6 @@ This also solves the picky-eater issue without a negotiation session. One person
 
 Ricotta and berry toast doesn't have to be breakfast. Cut the toast into smaller pieces and it becomes an afternoon snack plate or a low-effort brunch board.
 
-Add sliced cucumbers, a few nuts, and maybe some hard-boiled eggs on the side if you want it to feel more filling. Nuts are the expensive way to get crunch onto a snack plate, which is the point of the [popcorn versus almonds comparison on fiber per dollar](/popcorn-vs-almonds-fiber-cost/). Or keep it simple and let the toast do the job.
+Add sliced cucumbers, a few nuts, and maybe some hard-boiled eggs on the side if you want it to feel more filling. Nuts are the expensive way to get crunch onto a snack plate, which is the point of the [popcorn versus almonds comparison on fiber per dollar](/popcorn-vs-potato-chips-fiber-comparison/#popcorn-vs-almonds). Or keep it simple and let the toast do the job.
 
 The best part is that nothing here asks much from you. Toast the bread, spread the ricotta, add fruit, finish with crunch and salt. It feels fresh and a little fancy without requiring you to wake up earlier, which is exactly the kind of breakfast math I support.

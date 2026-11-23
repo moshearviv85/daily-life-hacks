@@ -4,6 +4,9 @@
  * Frontmatter uses the controlled `id` and `parentPillar` values. Older
  * articles can still be classified by the deterministic keyword fallback,
  * but explicit metadata always wins.
+ *
+ * Per-dollar category cuts are sections on the fiber and protein flagships,
+ * not separate spokes in this registry.
  */
 export const CONTENT_CLUSTER_IDS = [
   "budget-fiber",

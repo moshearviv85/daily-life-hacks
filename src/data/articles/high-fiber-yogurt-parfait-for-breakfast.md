@@ -60,7 +60,7 @@ One more line from that FDA page worth keeping: 20 percent of the Daily Value or
 
 USDA lists plain whole-milk Greek yogurt at 0.0 grams of fiber per 100 grams and plain nonfat at 0.0 as well (records 171304 and 170894). Zero. Not "a little." The container can say Greek yogurt in heroic lettering and the fiber line still reads nothing.
 
-What it does bring is 9.0 grams of protein per 100 grams for the whole-milk version and 10.2 for nonfat, which is why [the comparison between eggs and Greek yogurt per dollar](/eggs-vs-greek-yogurt-protein-cost/) gets interesting. Where that tub lands against beans, eggs, and chicken is the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Yogurt is the protein layer. Stop asking it to be the fiber layer. Berries and seeds have to buy that fiber, and they don't cost the same per gram. Chia seeds land at 33.1 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Raspberries land at 4.5.
+What it does bring is 9.0 grams of protein per 100 grams for the whole-milk version and 10.2 for nonfat, which is why [the comparison between eggs and Greek yogurt per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) gets interesting. Where that tub lands against beans, eggs, and chicken is the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Yogurt is the protein layer. Stop asking it to be the fiber layer. Berries and seeds have to buy that fiber, and they don't cost the same per gram. Chia seeds land at 33.1 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Raspberries land at 4.5.
 
 ## Your granola decides the total
 
@@ -98,4 +98,4 @@ So batch a couple of jars, not a week of them, and let the date printed on the y
 
 Diced pear beats diced apple here: USDA puts raw pear at 3.1 grams of fiber per 100 grams against 2.4 for apple with the skin on (records 169118 and 171688). Keep the peel either way, since that's where a good share of it lives. Sliced banana adds sweetness but softens fast, so that one goes in at breakfast rather than the night before.
 
-The formula doesn't need to become a lifestyle. Creamy base, fruit, one crunchy fiber layer, maybe seeds. Five minutes, one spoon, and no 10 AM excavation of the snack drawer required, though if the drawer wins anyway, [popcorn and almonds aren't equally cheap ways to buy fiber](/popcorn-vs-almonds-fiber-cost/).
+The formula doesn't need to become a lifestyle. Creamy base, fruit, one crunchy fiber layer, maybe seeds. Five minutes, one spoon, and no 10 AM excavation of the snack drawer required, though if the drawer wins anyway, [popcorn and almonds aren't equally cheap ways to buy fiber](/popcorn-vs-potato-chips-fiber-comparison/#popcorn-vs-almonds).

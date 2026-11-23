@@ -53,7 +53,7 @@ Yes, and for a weeknight it's the obvious call. Canned beans arrive already cook
 
 The trade is texture. Canned beans are soft going in and softer coming out, so the pot never develops the body you get from beans simmered from dry. In a dish where the sauce is basically dissolved beans, that's more of a loss than usual. My workaround is to mash about a third of the can against the side of the pot before the rest goes in, which fakes the gravy well enough.
 
-Cost wise the can is the expensive route, at 23.4 grams of protein per dollar against 97.9 for a bag of dry pinto beans. That gap is the same one we measured across every bean in [canned versus dry beans](/canned-vs-dry-beans-cost/). Still cheap food. Just not the cheapest.
+Cost wise the can is the expensive route, at 23.4 grams of protein per dollar against 97.9 for a bag of dry pinto beans. That gap is the same one we measured across every bean in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving). Still cheap food. Just not the cheapest.
 
 ## Why dry kidney beans need a hard boil
 

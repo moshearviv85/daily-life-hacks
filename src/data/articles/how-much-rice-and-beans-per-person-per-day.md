@@ -74,7 +74,7 @@ What we can't tell you is the fiber cost of that swap, because our fiber dataset
 
 Protein, fiber, and price. That's the whole scope of our data, and it's worth being blunt about the edges.
 
-We have no vitamin or mineral numbers, so nothing here says anything about whether beans and rice alone is a sensible long-term diet. It isn't a complete plan, and vegetables aren't optional decoration. Cheap fiber from [frozen green peas at 17.6 grams per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) or a bag of carrots slots in for pennies, and it makes the bowl better anyway.
+We have no vitamin or mineral numbers, so nothing here says anything about whether beans and rice alone is a sensible long-term diet. It isn't a complete plan, and vegetables aren't optional decoration. Cheap fiber from [frozen green peas at 17.6 grams per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) or a bag of carrots slots in for pennies, and it makes the bowl better anyway.
 
 If you want to see how this portion compares against every other way of hitting the same targets, [what a day of 50 grams of protein costs](/what-50-grams-of-protein-costs-per-day/) prices five different versions of the same day, from 82 cents to $13.23. Rice and beans is the cheap end of that spread, and it's cheap by a distance that no coupon can match. The wider system, including how to keep it interesting, lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
 

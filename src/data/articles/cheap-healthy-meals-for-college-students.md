@@ -48,7 +48,7 @@ College food advice usually assumes you have a kitchen, a car, and forty minutes
 
 Everything in that table except the pasta, and even that works in a mug bowl if you're patient. The trick is buying foods that don't need technique.
 
-Oats need hot water. Canned beans need a rinse. Peanut butter, yogurt, cottage cheese, and tuna need nothing at all. That's five anchors and none of them require a stove, which is why they dominate our [no cook protein per dollar](/no-cook-protein-per-dollar/) ranking. Peanut butter alone returns 50.7 grams of protein per dollar, and a $4.97 jar holds about 35 portions.
+Oats need hot water. Canned beans need a rinse. Peanut butter, yogurt, cottage cheese, and tuna need nothing at all. That's five anchors and none of them require a stove, which is why they dominate our [no cook protein per dollar](/protein-per-dollar-cheapest-protein-sources/#no-cook) ranking. Peanut butter alone returns 50.7 grams of protein per dollar, and a $4.97 jar holds about 35 portions.
 
 Dry beans are the one thing I'd skip in a dorm. They're the best value in the whole store at 97.9 grams of protein per dollar, but they need an hour of simmering and a pot nobody will steal. If you've got a real kitchen in a shared apartment, [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is where the money actually is.
 

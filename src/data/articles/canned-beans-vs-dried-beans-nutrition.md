@@ -70,9 +70,26 @@ The one real trade with cans is sodium, since most are packed with salt added. W
 
 The bag, by about 1.9 times on protein for black beans. Dry black beans returned 58.0 grams per dollar and the can returned 30.1. Dry chickpeas returned 56.7 against 22.0 canned, about 2.6 times. On fiber the pattern holds inside this table: dry pinto beans returned 41.7 grams per dollar and canned black beans 34.4. Green split peas, at 71.0, lead the wider dry-legume fiber list.
 
-Dry pinto beans return 57.6 grams of protein and 41.7 grams of fiber per dollar. They're not the top of the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) or the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). We scored the combined number in [beans win twice](/beans-double-win-fiber-protein/), and the cost side alone is in [canned versus dry beans](/canned-vs-dry-beans-cost/).
+Dry pinto beans return 57.6 grams of protein and 41.7 grams of fiber per dollar. They're not the top of the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) or the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). We scored the combined number in [beans win twice](/beans-double-win-fiber-protein/). The [cost per serving](#cost-per-serving) prices those same packages for 15 grams of protein.
 
 A note on what's missing from the table. We priced canned kidney beans but not dry kidney beans, and we priced dry pinto, navy, lentils, and split peas but not their canned versions. So the head to head pairs are black beans and chickpeas. Everything else in that table is a single form, and we're not filling the blanks by guessing.
+
+<h2 id="cost-per-serving">Cost per serving</h2>
+
+A serving here is 15 grams of protein, so the can and the bag are buying the same amount of protein. The price is 15 divided by the July 2026 grams-per-dollar figure. Every dry row in this set still beats every canned row.
+
+| Food | Form | Package price | Cost for 15 g protein |
+|---|---|---|---|
+| Brown lentils | Dry, 16 oz bag | $1.44 | $0.19 |
+| Green split peas | Dry, 16 oz bag | $1.42 | $0.20 |
+| Navy beans | Dry, 2 lb bag | $3.38 | $0.25 |
+| Black beans | Dry, 2 lb bag | $3.38 | $0.26 |
+| Pinto beans | Dry, 4 lb bag | $6.75 | $0.26 |
+| Chickpeas | Dry, 16 oz bag | $1.64 | $0.26 |
+| Red lentils | Dry, 16 oz bag | $1.94 | $0.27 |
+| Black beans | Canned, 15.5 oz | $0.88 | $0.50 |
+| Kidney beans | Canned, 15.5 oz | $0.98 | $0.64 |
+| Chickpeas | Canned, 15.5 oz | $0.98 | $0.68 |
 
 ## Which should you actually buy?
 

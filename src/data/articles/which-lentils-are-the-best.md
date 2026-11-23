@@ -69,7 +69,7 @@ If your fiber intake is currently low, don't celebrate by eating a whole pot. Ra
 
 ## Do lentils have more protein than meat?
 
-Per dollar, yes, by a lot. Brown lentils returned 77.7 grams of protein per dollar against 24.5 for boneless skinless chicken breast. That's about 3.2 times more protein for the same money, and we ran the full comparison in [lentils versus chicken breast](/lentils-vs-chicken-breast-protein-cost/).
+Per dollar, yes, by a lot. Brown lentils returned 77.7 grams of protein per dollar against 24.5 for boneless skinless chicken breast. That's about 3.2 times more protein for the same money, and we ran the full comparison in [lentils versus chicken breast](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
 
 Per 100 grams the two foods sit much closer together, and animal proteins carry a better amino acid profile. Legumes and grains complement each other on that front, which is the argument for eating lentils alongside rice or bread rather than by themselves. The cheapest versions of that pairing are in [complete protein pairs](/cheapest-complete-protein-pairs/).
 

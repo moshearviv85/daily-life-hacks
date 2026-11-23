@@ -58,9 +58,9 @@ If you're currently nowhere near 28 grams a day, dropping a whole can into dinne
 
 For your wallet, no. For your Tuesday, absolutely.
 
-Dry black beans returned 81.0 grams of protein per dollar. The canned version returned 30.1. That's about 2.7 times more protein for the same money if you do the soaking and simmering yourself, and the gap holds across every bean we checked both ways in [canned versus dry beans](/canned-vs-dry-beans-cost/). You're paying somebody to cook the beans and then paying to ship the water they cooked in.
+Dry black beans returned 81.0 grams of protein per dollar. The canned version returned 30.1. That's about 2.7 times more protein for the same money if you do the soaking and simmering yourself, and the gap holds across every bean we checked both ways in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving). You're paying somebody to cook the beans and then paying to ship the water they cooked in.
 
-Here's the thing though. At $0.88 a can, canned beans are still one of the cheapest sources of protein in the entire store in absolute terms. They only look expensive because they're standing next to the single best value in the building. In our [no-cook protein ranking](/no-cook-protein-per-dollar/), an 88 cent can of black beans is the cheapest item on the list, and that ranking exists precisely because sometimes the stove is not happening.
+Here's the thing though. At $0.88 a can, canned beans are still one of the cheapest sources of protein in the entire store in absolute terms. They only look expensive because they're standing next to the single best value in the building. In our [no-cook protein ranking](/protein-per-dollar-cheapest-protein-sources/#no-cook), an 88 cent can of black beans is the cheapest item on the list, and that ranking exists precisely because sometimes the stove is not happening.
 
 My setup is both. Bags of dry beans for the cooking I plan, four or five cans for the cooking I don't. If you want to close the gap without the overnight soak, [the same-day quick soak method](/how-to-quick-soak-dried-beans-same-day/) gets dry beans on the table in an afternoon.
 

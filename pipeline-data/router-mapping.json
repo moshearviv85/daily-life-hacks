@@ -152,13 +152,6 @@
       "created_at": "2026-04-28 15:58:11"
     }
   },
-  "canned-vs-dry-beans-cost": {
-    "v1": {
-      "url_slug": "txt-canned-vs-dry-beans-cost-b",
-      "title": "Dry black beans: 81g of protein per dollar. The same beans canned: 30.1.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
   "cauliflower-fried-rice-with-eggs": {
     "v1": {
       "url_slug": "cauliflower-fried-rice-doesn-t",
@@ -496,18 +489,6 @@
       "created_at": "2026-07-04 14:36:29"
     }
   },
-  "dairy-protein-per-dollar-ranked": {
-    "v2": {
-      "url_slug": "playful-milk-wins",
-      "title": "Milk Beats Greek Yogurt on Protein per Dollar: 29 vs 28",
-      "created_at": "2026-07-16T03:35:58.646530+00:00"
-    },
-    "v1": {
-      "url_slug": "txt-dairy-protein-per-dollar-ranked-b",
-      "title": "Cottage cheese delivers 26.3g of protein per dollar. More than chicken breast.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
   "easy-cold-summer-pasta-salad-potlucks": {
     "v4": {
       "url_slug": "avoid-mushy-pasta-secret-perfect",
@@ -835,13 +816,6 @@
       "created_at": "2026-07-04 14:41:17"
     }
   },
-  "grains-fiber-per-dollar-ranked": {
-    "v1": {
-      "url_slug": "txt-grains-fiber-per-dollar-ranked-b",
-      "title": "Pearled barley is the sleeper of the grain aisle: 57.1g of fiber per dollar.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
   "health-benefits-eating-soup-in-spring": {
     "v2": {
       "url_slug": "boost-hydration-surprising-spring-soup",
@@ -1126,18 +1100,6 @@
       "url_slug": "most-store-bought-jam-just",
       "title": "Most Store-Bought Jam Is Just Candy in a Jar",
       "created_at": "2026-07-04 14:42:13"
-    }
-  },
-  "high-fiber-snacks-per-dollar": {
-    "v2": {
-      "url_slug": "playful-popcorn-crown",
-      "title": "The Cheapest High-Fiber Snack Is Popcorn: 58g per Dollar",
-      "created_at": "2026-07-16T03:35:58.646530+00:00"
-    },
-    "v1": {
-      "url_slug": "txt-high-fiber-snacks-per-dollar-b",
-      "title": "Sunflower seeds pack 13g of fiber per dollar. Most snack bars do not come close.",
-      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "high-protein-bagel-sandwich-ideas-lunch": {
@@ -1721,34 +1683,6 @@
       "created_at": "2026-07-07 13:58:02"
     }
   },
-  "meat-per-dollar-protein-ranked": {
-    "v1": {
-      "url_slug": "txt-meat-per-dollar-protein-ranked-b",
-      "title": "Ground beef is one of the worst protein deals in the meat aisle: 11.5g per dollar.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
-  "no-cook-protein-per-dollar": {
-    "v1": {
-      "url_slug": "txt-no-cook-protein-per-dollar-b",
-      "title": "No stove, no problem: canned beans still deliver 30g of protein per dollar.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
-  "one-dollar-fiber-what-it-buys": {
-    "v1": {
-      "url_slug": "txt-one-dollar-fiber-what-it-buys-b",
-      "title": "A dollar of split peas: 71g of fiber. Two and a half days of the target.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
-  "one-dollar-protein-what-it-buys": {
-    "v1": {
-      "url_slug": "txt-one-dollar-protein-what-it-buys-b",
-      "title": "A dollar of whole wheat flour buys 96g of protein. A dollar of oats: 47g.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
   "one-theme-five-dinners-one-grocery-list": {
     "v1": {
       "url_slug": "one-grocery-list-five-dinners",
@@ -1778,18 +1712,6 @@
       "created_at": "2026-07-04 14:51:34"
     }
   },
-  "plant-protein-per-dollar-ranked": {
-    "v2": {
-      "url_slug": "playful-tofu-fancy",
-      "title": "Tofu Is the Fancy One: 14g of Protein per Dollar vs Lentils at 78",
-      "created_at": "2026-07-16T03:35:58.646530+00:00"
-    },
-    "v1": {
-      "url_slug": "txt-plant-protein-per-dollar-ranked-b",
-      "title": "Tofu is one of the priciest plant proteins: 13.6g per dollar vs 78 for lentils.",
-      "created_at": "2026-07-15T03:55:09.852794"
-    }
-  },
   "prebiotic-foods-beyond-the-buzzwords": {
     "v4": {
       "url_slug": "foods-count-prebiotics-without-wellness",
@@ -1810,18 +1732,6 @@
       "url_slug": "you-re-overcomplicating-prebiotics-they",
       "title": "You're Overcomplicating Prebiotics When They're Already in Your Kitchen",
       "created_at": "2026-07-04 14:51:38"
-    }
-  },
-  "produce-fiber-per-dollar-ranked": {
-    "v2": {
-      "url_slug": "playful-frozen-peas",
-      "title": "Frozen Beats Fresh: Peas Deliver 18g of Fiber per Dollar",
-      "created_at": "2026-07-16T03:35:58.646530+00:00"
-    },
-    "v1": {
-      "url_slug": "txt-produce-fiber-per-dollar-ranked-b",
-      "title": "The freezer aisle quietly beats the fresh section on fiber per dollar. We have the receipts.",
-      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "protein-per-dollar-cheapest-protein-sources": {
@@ -2003,13 +1913,6 @@
       "url_slug": "stop-ruining-tofu-soggy-sad",
       "title": "Stop Ruining Tofu With Soggy, Sad Texture",
       "created_at": "2026-07-04 14:56:57"
-    }
-  },
-  "shelf-stable-pantry-per-dollar": {
-    "v1": {
-      "url_slug": "txt-shelf-stable-pantry-per-dollar-b",
-      "title": "Canned tuna vs dry lentils: 22.4 vs 78g of protein per dollar.",
-      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "simple-lunch-recipes-indian-veg": {

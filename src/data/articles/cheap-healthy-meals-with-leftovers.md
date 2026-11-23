@@ -61,7 +61,7 @@ The obvious one is packaging. A 4 pound bag of dry pinto beans works out to $0.2
 
 The less obvious one is that a pot of beans takes the same attention whether it holds two servings or six. You soak once, you simmer once, you wash one pot. Time isn't in our price data, but it's the reason people abandon cheap cooking, so it belongs in the decision. Batch cooking for beginners has the scheduling side, and how to meal plan on a budget has the pricing side.
 
-Canned beans break the pattern in the other direction. Three cans of beans for a chili came to $3.72 against under two dollars for the dry version, because cans cost roughly 2.7 times more per gram of protein. We measured that gap in [canned versus dry beans](/canned-vs-dry-beans-cost/). Cans are for rescue nights, not for batch nights.
+Canned beans break the pattern in the other direction. Three cans of beans for a chili came to $3.72 against under two dollars for the dry version, because cans cost roughly 2.7 times more per gram of protein. We measured that gap in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving). Cans are for rescue nights, not for batch nights.
 
 ## How long do these leftovers actually last?
 

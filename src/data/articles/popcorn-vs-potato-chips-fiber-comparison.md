@@ -143,4 +143,8 @@ Finally, ignore front-of-package language until you've read the panel. "Whole gr
 
 And if the craving hits when you're out of the house, the same label-reading habit is the whole game. Our [high fiber fast food guide](/high-fiber-fast-food-options-guide/) covers what to grab when the pantry isn't an option.
 
+<h2 id="popcorn-vs-almonds">Popcorn vs almonds: fiber per dollar</h2>
+
+Kernels return 51.3 grams of fiber per dollar. Almonds return 8.8. That is about 5.8 times more fiber for the same dollar, from the same July 2026 grocery pricing. The popcorn row is still the unresolved kernel-basis figure, not a USDA record for unpopped corn.
+
 Chips aren't the enemy. Sometimes only a chip will do, and that's a normal way to live. But if the crunch is what you're actually after, air-popped popcorn gives you about 4.7 times the fiber ounce for ounce, at fewer calories and a fraction of the sodium, and lets you eat an actual bowl instead of rationing chips like they're contraband.
