@@ -319,7 +319,7 @@ test("beans double-win title puts the combined grams leader in the SERP", () => 
   );
   assert.equal(titleLower.includes("97.9"), false);
   assert.equal(titleLower.includes("70.8"), false);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-24$/m);
   assert.match(page.excerpt, /144\.9 combined grams per dollar/);
   assert.match(page.excerpt, /57\.6g of protein/);
   assert.match(page.excerpt, /41\.7g of fiber/);
@@ -759,7 +759,7 @@ test("high-protein high-fiber meals title leads with the 30–40g protein templa
     false,
     "title should not lead with diet instead of meals",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /^High protein high fiber meals for weight loss/i);
   assert.ok(
@@ -1204,7 +1204,7 @@ test("artichoke recipe title leads with the steam-until-leaves method", () => {
     false,
     "artichoke title should not be the old gut-health SERP",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(artichoke.excerpt, /[Mm]acrobiotic artichoke recipe/);
   assert.match(artichoke.excerpt, /steam/i);
@@ -1498,7 +1498,7 @@ test("pizza crust fiber title leads with which crust has more fiber", () => {
     false,
     "pizza crust title should not lead with Comparing Fiber in Different",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /[Cc]omparing [Ff]iber/);
   assert.match(page.excerpt, /2\.7g/);
@@ -1590,7 +1590,7 @@ test("cauliflower pizza crust title leads with is it high in fiber", () => {
     false,
     "cauliflower crust title should not spend the SERP on that actually gets crispy",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /about 5\.8g fiber per quarter-crust/i);
   assert.match(page.excerpt, /1-2g per serving/);
@@ -1795,7 +1795,7 @@ test("selenium foods title leads with how much you need", () => {
     false,
     "selenium foods title should not be the old three-clause comma stack",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /Brazil nuts/);
   assert.match(page.excerpt, /400 mcg/);
@@ -1890,7 +1890,7 @@ test("indian salad dressing title leads with 5-minute yogurt-mint and tamarind",
     "indian salad dressing title should not be the old healthy homemade stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
   assert.match(
     raw,
     /^excerpt: "Indian-inspired salad dressings you whisk in 5 minutes flat\. Yogurt-mint, tamarind and chaat masala, all cheaper and brighter than bottled ranch\."$/m,
@@ -1935,7 +1935,7 @@ test("high fiber breakfast title leads with breakfast ideas for gut health", () 
     "high fiber breakfast title should not be the old easy high fiber stack",
   );
   assert.match(raw, /^date: 2026-02-15$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("egg sandwich add-ins title leads with add-ins and toppings", () => {
@@ -1982,7 +1982,7 @@ test("egg sandwich add-ins title leads with add-ins and toppings", () => {
     "egg sandwich add-ins title should not be the old healthy taste-good SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("high fiber smoothies title leads with high fiber smoothies for picky kids", () => {
@@ -2024,7 +2024,7 @@ test("high fiber smoothies title leads with high fiber smoothies for picky kids"
     "high fiber smoothies title should not be the old kids picky eaters stack",
   );
   assert.match(raw, /^date: 2026-02-16$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("high fiber fast food title leads with the fast-food query", () => {
@@ -2141,7 +2141,7 @@ test("high protein breads title leads with 5-7g protein per slice", () => {
     "high protein breads title should not be the old best healthy sandwiches stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-10-01$/m);
 
   assert.match(page.excerpt, /^5 to 7 grams of protein per slice/);
   assert.match(page.excerpt, /sometimes/);
@@ -2409,7 +2409,7 @@ test("breakfast energy title drops the leading Best superlative", () => {
     "breakfast energy title should not be the old Best breakfast foods SERP",
   );
   assert.match(raw, /^date: 2026-03-15$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("low cost protein families title drops the leading Best superlative", () => {

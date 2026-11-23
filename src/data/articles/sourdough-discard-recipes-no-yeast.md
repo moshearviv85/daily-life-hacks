@@ -13,6 +13,7 @@ image: "/images/sourdough-discard-recipes-no-yeast-main.jpg"
 imageAlt: "A glass jar of bubbly sourdough discard beside a thin golden cracker sheet and a small skillet flatbread on a wooden board."
 date: 2026-11-23
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

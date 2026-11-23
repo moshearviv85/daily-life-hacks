@@ -9,6 +9,7 @@ import rehypeArticleImages from './scripts/rehype-article-images.mjs';
 import rehypeRankingTables from './scripts/rehype-ranking-tables.mjs';
 import rehypeContextualFlagshipLinks from './scripts/rehype-contextual-flagship-links.mjs';
 import { INDEX_NOINDEX_TOOL_PATHS, INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
+import { publicModifiedDay } from './src/content/modified-date.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -112,11 +113,9 @@ function loadArticleLastModifiedDates() {
     if (!file.endsWith('.md')) continue;
     const slug = file.replace(/\.md$/, '');
     const content = readFileSync(join(articlesDir, file), 'utf8');
-    const frontmatter = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-    if (!frontmatter) continue;
-    const modified = frontmatter[1].match(/^dateModified:\s*(.+)$/m);
-    const published = frontmatter[1].match(/^date:\s*(.+)$/m);
-    const rawDate = (modified?.[1] || published?.[1] || '').trim().replace(/^['"]|['"]$/g, '');
+    // Same order as the article page: substantiveUpdate, then legacy
+    // dateModified, then the publication date.
+    const rawDate = publicModifiedDay(content);
     if (!rawDate) continue;
     const parsed = new Date(rawDate);
     if (Number.isNaN(parsed.getTime())) continue;

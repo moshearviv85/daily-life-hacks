@@ -10,7 +10,6 @@ tags:
 image: "/images/frozen-vs-fresh-produce-when-to-buy-main.jpg"
 imageAlt: "Split image of fresh vegetables on one side and frozen vegetables in bags on the other"
 date: 2026-04-25
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

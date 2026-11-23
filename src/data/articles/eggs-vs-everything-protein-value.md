@@ -6,7 +6,7 @@ tags: ["are eggs cheap protein", "eggs protein per dollar", "egg prices 2026", "
 image: "/images/eggs-vs-everything-protein-value-main.jpg"
 imageAlt: "A carton of brown eggs surrounded by bowls of beans, canned tuna, peanut butter, and chicken drumsticks"
 date: 2026-07-13
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "Are eggs the cheapest protein?"

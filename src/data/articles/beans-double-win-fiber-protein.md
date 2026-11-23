@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/beans-double-win-fiber-protein-main.jpg"
 imageAlt: "A steaming bowl of simmered pinto beans surrounded by small bowls of black beans, lentils, and chickpeas"
 date: 2026-07-13
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "Which bean has the most protein and fiber per dollar?"

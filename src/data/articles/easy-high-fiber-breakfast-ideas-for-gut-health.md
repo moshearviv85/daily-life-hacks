@@ -11,7 +11,7 @@ tags:
 image: /images/easy-high-fiber-breakfast-ideas-for-gut-health-main.jpg
 imageAlt: Mason jar of overnight oats topped with berries and chia seeds on a kitchen counter
 date: 2026-02-15
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false

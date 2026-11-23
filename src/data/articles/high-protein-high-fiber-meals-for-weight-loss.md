@@ -11,7 +11,7 @@ tags:
 image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: Bowl of lentil stew with grilled chicken, roasted vegetables, and brown rice on a wooden table
 date: 2026-02-25
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false

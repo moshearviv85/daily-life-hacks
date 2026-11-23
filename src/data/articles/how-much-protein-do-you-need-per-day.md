@@ -11,7 +11,7 @@ tags:
 image: /images/how-much-protein-do-you-need-per-day-main.jpg
 imageAlt: Eggs, Greek yogurt, canned beans, and cooked chicken thighs arranged on a kitchen counter
 date: 2026-03-15
-dateModified: 2026-11-23
+dateModified: 2026-07-12
 author: "David Miller"
 featured: false
 editorsPick: false

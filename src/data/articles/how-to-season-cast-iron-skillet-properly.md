@@ -10,7 +10,7 @@ tags:
 image: /images/how-to-season-cast-iron-skillet-properly-main.jpg
 imageAlt: Cast iron skillet with a dark, seasoned surface
 date: 2026-03-15
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 quickAnswer: "Wash and dry the skillet, warm it briefly, then rub about a teaspoon of neutral high-heat oil over every surface. Wipe until the pan looks almost dry. Bake it upside down at 450°F for one hour with ventilation, then let it cool in the oven. Repeat only if the coating looks patchy, sticky, or incomplete."
 author: "David Miller"
 featured: false

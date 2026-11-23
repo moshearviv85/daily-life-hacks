@@ -12,7 +12,7 @@ tags:
 image: "/images/best-way-to-cook-chicken-main.jpg"
 imageAlt: Sliced golden-brown chicken breast on a wooden cutting board with fresh herbs and steam rising.
 date: 2026-05-19
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"

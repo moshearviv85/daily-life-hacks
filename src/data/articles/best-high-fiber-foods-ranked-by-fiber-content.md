@@ -9,6 +9,7 @@ image: "/images/best-high-fiber-foods-ranked-by-fiber-content-main.jpg"
 imageAlt: "Bowls of chia seeds, flaxseed, dry split peas, bran flakes, and dry black beans arranged in order on a wooden board"
 date: 2026-07-27
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

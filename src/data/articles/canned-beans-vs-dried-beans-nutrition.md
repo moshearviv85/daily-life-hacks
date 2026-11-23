@@ -9,6 +9,7 @@ image: "/images/canned-beans-vs-dried-beans-nutrition-main.jpg"
 imageAlt: "A measuring bowl of dry black beans beside an opened can of black beans on a kitchen scale"
 date: 2026-07-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 quickAnswer: "One 15-oz can is about 1 1/2 cups drained, about 1/2 cup+ dried. One pound of dried beans cooks to about 6 cups, which is roughly 3½ to 4 cans. Our protein match for a priced 15.5 oz can of black beans is 123 g dry, a little over 1/2 cup."
 featured: false

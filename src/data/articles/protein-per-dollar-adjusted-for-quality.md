@@ -9,6 +9,7 @@ image: "/images/protein-per-dollar-adjusted-for-quality-main.jpg"
 imageAlt: "Overhead spread of budget high-quality proteins on a wooden table: pinto beans, lentils, rice and black beans, eggs, cheese, chickpeas, milk, and peanut butter"
 date: 2026-07-16
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 faq:
   - question: "What is the best protein per dollar after adjusting for quality?"

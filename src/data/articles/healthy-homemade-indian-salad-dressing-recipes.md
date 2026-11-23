@@ -10,7 +10,7 @@ tags:
 image: "/images/healthy-homemade-indian-salad-dressing-recipes-main.jpg"
 imageAlt: A close-up, overhead shot of a golden Indian-inspired salad dressing beautifully drizzled over a bowl of fresh mixed green salad.
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"

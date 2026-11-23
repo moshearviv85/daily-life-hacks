@@ -12,6 +12,7 @@ image: /images/high-fiber-bran-muffins-that-taste-good-main.jpg
 imageAlt: Golden bran muffins with raisins cooling on a wire rack beside a jar of honey
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

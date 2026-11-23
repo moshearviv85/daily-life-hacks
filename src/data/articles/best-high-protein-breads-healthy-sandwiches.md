@@ -10,7 +10,7 @@ tags:
 image: "/images/best-high-protein-breads-healthy-sandwiches-main.jpg"
 imageAlt: A thick, diagonal slice of sprouted grain bread rests on a linen napkin next to a small wooden cutting board, with loose grains scattered nearby.
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-10-01
 author: "David Miller"
 featured: false
 faq:

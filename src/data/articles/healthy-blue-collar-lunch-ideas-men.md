@@ -9,6 +9,7 @@ image: "/images/healthy-blue-collar-lunch-ideas-men-main.jpg"
 imageAlt: A thick turkey and avocado sandwich in a lunchbox with an apple and a thermos.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "20 minutes"

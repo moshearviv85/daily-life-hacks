@@ -10,7 +10,7 @@ tags:
 image: "/images/freezer-inventory-simple-system-main.jpg"
 imageAlt: "A well organized freezer with labeled containers and a simple whiteboard list on the fridge door"
 date: 2026-04-24
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 quickAnswer: "Keep masking tape and a marker beside the freezer. Label every package with the food name and freeze date, then add it to a whiteboard list grouped by raw ingredients and cooked meals. Erase items when used, place newer packages behind older ones, and check the freezer monthly while confirming it stays at 0°F or below."
 author: "David Miller"
 featured: false

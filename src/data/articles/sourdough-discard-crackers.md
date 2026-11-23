@@ -12,7 +12,6 @@ tags:
 image: "/images/sourdough-discard-crackers-main.jpg"
 imageAlt: "Thin golden-brown sourdough discard crackers broken into small squares on parchment, with a glass jar of discard behind them."
 date: 2026-11-23
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

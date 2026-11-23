@@ -11,7 +11,7 @@ tags:
 image: /images/how-to-make-grocery-shopping-cheaper-main.jpg
 imageAlt: Shopper checking a grocery total on a phone while sitting in a cart aisle
 date: 2026-01-25
-dateModified: 2026-11-23
+dateModified: 2026-07-12
 author: "David Miller"
 featured: false
 editorsPick: false

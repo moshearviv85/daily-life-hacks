@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/which-dried-beans-have-the-most-protein-main.jpg"
 imageAlt: "Small bowls of dry navy, black, pinto, and chickpea beans lined up on a wooden board"
 date: 2026-07-28
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 featured: false
 editorsPick: false

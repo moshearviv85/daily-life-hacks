@@ -11,7 +11,7 @@ tags:
 image: "/images/farro-lunch-bowl-roasted-vegetables-lemon-tahini-main.jpg"
 imageAlt: "Farro lunch bowl with roasted vegetables and lemon tahini sauce in a shallow bowl"
 date: 2026-04-23
-dateModified: 2026-11-23
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false

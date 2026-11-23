@@ -9,7 +9,6 @@ tags:
 image: "/images/healthy-sweet-tooth-snack-ideas-night-main.jpg"
 imageAlt: A glass bowl of plain Greek yogurt swirled with berry compote and topped with a sprinkle of nuts.
 date: 2026-04-28
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"

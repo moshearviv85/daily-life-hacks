@@ -16,7 +16,7 @@ tags:
 image: /images/easy-black-bean-tacos-weeknight-dinner-main.jpg
 imageAlt: Black bean tacos on corn tortillas with toppings
 date: 2026-03-15
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false

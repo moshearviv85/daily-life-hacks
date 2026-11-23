@@ -13,6 +13,7 @@ imageAlt: "Garlic onions bananas oats and beans arranged on a kitchen counter"
 quickAnswer: "Prebiotic foods are plant foods carrying fibers that gut bacteria selectively use. The two most-investigated classes are inulin-type fructans, found in garlic, onions, leeks, asparagus, wheat, and slightly green bananas, and galactooligosaccharides. Trials testing isolated inulin-type fructans have dosed 1.3 to 30 grams a day, averaging about 12, more than a normal day of these foods delivers, and the clearest bowel-frequency effects came from the shorter-chain fructans rather than long-chain inulin."
 date: 2026-05-02
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

@@ -11,7 +11,7 @@ tags:
 image: /images/how-to-increase-fiber-intake-without-gas-main.jpg
 imageAlt: Bowl of oats with fruit and nuts on a kitchen counter
 date: 2026-03-30
-dateModified: 2026-11-23
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false

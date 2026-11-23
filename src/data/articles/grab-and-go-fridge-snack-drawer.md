@@ -10,7 +10,7 @@ tags:
 image: "/images/grab-and-go-fridge-snack-drawer-main.jpg"
 imageAlt: "A well organized refrigerator drawer filled with pre-portioned healthy snacks"
 date: 2026-04-26
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 quickAnswer: "Place a clear snack bin at eye level and fill it with fully ready-to-eat options such as hard-boiled eggs, cheese sticks, snap peas, grapes, and small portions of hummus. Keep the refrigerator at 40°F or below, date cooked eggs, dry washed produce well, and restock only 3 to 4 days at a time so food stays appealing."
 author: "David Miller"
 featured: false

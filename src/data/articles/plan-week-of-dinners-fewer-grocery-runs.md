@@ -6,7 +6,7 @@ tags: ["MealPlanning", "GroceryHacks", "DinnerIdeas", "TimeSaving", "FoodWaste"]
 image: "/images/plan-week-of-dinners-fewer-grocery-runs-main.jpg"
 imageAlt: "A kitchen counter with a simple grocery list next to fresh vegetables and pantry staples"
 date: 2026-04-08
-dateModified: 2026-11-23
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false

@@ -12,7 +12,6 @@ tags:
 image: "/images/what-to-make-with-sourdough-discard-by-amount-main.jpg"
 imageAlt: A jar of bubbly beige sourdough discard on a digital kitchen scale, with three glass bowls holding small, medium, and larger pools of the same batter.
 date: 2026-10-04
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:

@@ -11,6 +11,7 @@ image: "/images/how-to-keep-sandwiches-from-getting-soggy-main.jpg"
 imageAlt: A cross-section of a deli sandwich, showing a layer of spread protecting the bread from moist fillings like tomato and lettuce.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 quickAnswer: >-
   Spread fat edge to edge first, butter, mayo, pesto, even peanut butter. That thin

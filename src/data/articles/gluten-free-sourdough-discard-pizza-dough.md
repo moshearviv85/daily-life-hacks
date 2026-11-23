@@ -12,7 +12,7 @@ tags:
 image: "/images/gluten-free-sourdough-discard-pizza-dough-main.jpg"
 imageAlt: A slice of gluten-free sourdough pizza with tomato sauce, mozzarella, and basil is being lifted from the whole pizza.
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-07-18
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"

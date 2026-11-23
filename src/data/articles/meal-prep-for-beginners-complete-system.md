@@ -7,6 +7,7 @@ image: "/images/meal-prep-for-beginners-complete-system-main.jpg"
 imageAlt: "Glass meal prep containers filled with colorful prepped meals on a counter next to a rice pot and a sheet pan of roasted vegetables"
 date: 2026-07-07
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
