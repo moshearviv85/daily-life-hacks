@@ -3083,32 +3083,6 @@
         }
       ]
     },
-    "how-to-keep-bread-fresh-longer-without-mold": {
-      "canonical": "how-to-keep-bread-fresh-longer-without-mold",
-      "destinations": [
-        {
-          "id": "legacy-1",
-          "url_slug": "best-how-to-keep-bread-fresh-longer-without-mold",
-          "title": "",
-          "origin": "legacy_seo_variant",
-          "created_at": null
-        },
-        {
-          "id": "legacy-2",
-          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-guide",
-          "title": "",
-          "origin": "legacy_seo_variant",
-          "created_at": null
-        },
-        {
-          "id": "legacy-3",
-          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-tips",
-          "title": "",
-          "origin": "legacy_seo_variant",
-          "created_at": null
-        }
-      ]
-    },
     "how-to-keep-sandwiches-from-getting-soggy": {
       "canonical": "how-to-keep-sandwiches-from-getting-soggy",
       "destinations": [
@@ -3167,6 +3141,27 @@
           "title": "Why Your Sandwich Is Soggy by Noon (And How to Fix It)",
           "origin": "pin",
           "created_at": "2026-07-04 14:49:31"
+        },
+        {
+          "id": "legacy-1",
+          "url_slug": "best-how-to-keep-bread-fresh-longer-without-mold",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
         }
       ]
     },
