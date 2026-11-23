@@ -4,22 +4,42 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import DataProvenance from "../../../components/DataProvenance.astro";
 import { parseCsv, num, usd, round, breadcrumb, webAppSchema, toolPageSchema, SOURCE_LINE } from "../_lib/data";
+import {
+  CANS_PER_DRY_POUND,
+  CROWD_HEADCOUNTS,
+  CUPS_COOKED_PER_CAN,
+  CUPS_DRY_PER_CAN,
+  DISH_DEFAULTS,
+  DRY_CUPS_PER_POUND,
+  GRAMS_DRY_PER_CAN_HIGH,
+  GRAMS_DRY_PER_CAN_LOW,
+  GRAMS_DRY_PER_CAN_MID,
+  GRAMS_PER_POUND,
+  MILK_STREET_YIELDS,
+  crowdCost,
+  crowdPlan,
+  formatCups,
+  formatGramRange,
+  formatLbRange,
+  testedYield,
+} from "../../../lib/bean-crowd-math.js";
 
 const PATH = "/tools/dried-beans-to-canned-converter/";
 
 /**
- * The conversion is derived, not folklore.
+ * Two answers, on purpose.
  *
- * Every competitor cites a ratio ("1/2 cup dry = 1 can") with no source. We
- * can do better: protein survives soaking, cooking and canning, so it works as
- * a tracer. Grams of dry bean needed to match one can =
- *   (can weight x canned protein per 100 g) / (dry protein per 100 g)
- * Both nutrition figures and both prices come from the audited CSVs, so when
- * the price study is re-run these numbers move on their own.
+ * The headline yield is the tested kitchen measure: 1 can (15.5 oz) is about
+ * 1/2 cup dry, 90-100 g, and 1 1/2 cups cooked and drained. Milk Street tested
+ * 11 varieties. That is what you scoop when a recipe says "one can."
  *
- * Fiber gives a second, slightly higher estimate because USDA measures fiber
- * in canned and dry legumes by different methods. We show both rather than
- * pretending to a precision we don't have.
+ * The nutrition-matched grams are a second figure. Protein survives soaking,
+ * cooking, and canning, so grams of dry bean that carry the same protein as
+ * one can are (can weight x canned protein per 100 g) / (dry protein per 100 g).
+ * Both nutrition figures and both prices come from the audited CSVs.
+ *
+ * Fiber gives a second, slightly higher nutrition estimate because USDA
+ * measures fiber in canned and dry legumes by different methods.
  */
 const proteinRows = parseCsv("/data/protein-per-dollar-2026.csv");
 const fiberRows = parseCsv("/data/fiber-per-dollar-2026.csv");
@@ -95,6 +115,21 @@ const matrix = cannedBeans.map((can) => ({
   rows: dryBeans.map((dry) => ({ dry, ...convert(can, dry, 1) })),
 }));
 
+const oneCanYield = testedYield(1);
+if (!oneCanYield) throw new Error("tested yield for one can failed");
+const crowdRows = CROWD_HEADCOUNTS.map((people) => {
+  const plan = crowdPlan({ people, cupsPerPerson: DISH_DEFAULTS.chili });
+  if (!plan) throw new Error(`crowd plan failed for ${people}`);
+  return plan;
+});
+const defaultCrowd = crowdPlan({ people: 50, cupsPerPerson: DISH_DEFAULTS.chili });
+if (!defaultCrowd) throw new Error("default crowd plan failed");
+const defaultCrowdPrice = crowdCost(defaultCrowd.cans, {
+  canPrice: defCan.pkgPrice,
+  dryPricePer100g: defDry.pricePer100g,
+});
+if (!defaultCrowdPrice) throw new Error("default crowd cost failed");
+
 const title = "How Many Dried Beans Equal a 15.5 oz Can?";
 const description =
   "Convert dried beans to canned and back. See exactly how many grams or cups of dry beans replace a 15.5 oz can, and what each one costs at real July 2026 US prices.";
@@ -106,9 +141,10 @@ const schemas = [
     name: "Dried Beans to Canned Beans Converter",
     description,
     featureList: [
-      "Convert cans of beans to grams and cups of dried beans",
+      "Convert a 15.5 oz can to about 1/2 cup of dried beans",
+      "Count cans and dry pounds for a crowd",
       "Compare the cost of dried beans against canned at real US grocery prices",
-      "Covers black beans, kidney beans and chickpeas against 7 dry legumes",
+      "Show a nutrition-matched gram figure beside the tested kitchen yield",
       "Shareable result links",
     ],
   }),
@@ -124,14 +160,12 @@ const schemas = [
     </h1>
 
     <p class="text-lg mb-8" style="color: var(--text-color);">
-      Your recipe says two cans of black beans. You've got a four pound bag in the pantry
-      and no idea how much to scoop. This converter answers that, and then tells you the
-      part nobody mentions: what each version actually costs. Every price below is from our
-      July 2026
+      1 can (15.5 oz) ≈ ½ cup dry ≈ 90 to 100 g dry ≈ 1½ cups cooked, drained.
+      The calculator below scales that for a crowd and prices the swap from our July 2026
       {" "}<a href="/protein-per-dollar-cheapest-protein-sources/" class="underline" style="color:#F29B30;">protein per dollar</a>
       {" "}and{" "}
       <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class="underline" style="color:#F29B30;">fiber per dollar</a>
-      {" "}grocery studies, not a guess.
+      {" "}grocery studies.
     </p>
 
     <!--
@@ -144,6 +178,12 @@ const schemas = [
       class="rounded-xl p-5 md:p-6 mb-8"
       style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
     >
+      <div class="flex flex-wrap gap-2 mb-5" role="tablist" aria-label="Converter mode">
+        <button type="button" class="bean-tab" id="bean-tab-swap" role="tab" aria-selected="true" aria-controls="bean-panel-swap">One can, or a few</button>
+        <button type="button" class="bean-tab" id="bean-tab-crowd" role="tab" aria-selected="false" aria-controls="bean-panel-crowd">Beans for a crowd</button>
+      </div>
+
+      <div id="bean-panel-swap" role="tabpanel" aria-labelledby="bean-tab-swap">
       <h2 class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
         Swap the cans for the bag
       </h2>
@@ -176,13 +216,18 @@ const schemas = [
       <div id="bean-result" class="rounded-xl p-5" style="background: var(--page-bg); border: 1px solid var(--border-color);">
         <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">The answer</p>
         <p class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
-          <span id="bean-cans-out">1</span> can of <span id="bean-canned-out">{defCan.short}</span>
-          = <span id="bean-grams-out">{round(def.grams, 0)}</span> g of dry
-          <span id="bean-dry-out">{defDry.short.toLowerCase()}</span>
+          <span id="bean-cans-out">1</span> can (15.5 oz) ≈ <span id="bean-yield-cups">{formatCups(oneCanYield.cupsDry)}</span> cup dry ≈ <span id="bean-yield-grams">{formatGramRange(oneCanYield.gramsLow, oneCanYield.gramsHigh)}</span> g dry ≈ <span id="bean-yield-cooked">{formatCups(oneCanYield.cupsCooked)}</span> cups cooked, drained
         </p>
         <p class="mb-4" style="color: var(--text-color);">
-          That's about <strong><span id="bean-cups-out">{round(def.cups, 2)}</span> US cups</strong> measured dry,
-          and it carries the same <span id="bean-protein-out">{round(def.proteinTotal, 0)}</span> g of protein the can does.
+          That's the tested kitchen yield:
+          {" "}<a href="https://www.177milkstreet.com/stories/bean-counting-dried-vs-canned" class="underline" style="color:#F29B30;">Milk Street</a>
+          {" "}weighed 11 varieties and landed on about ½ cup dry per 15.5 oz can.
+          Nutrition-matched, this can of <span id="bean-canned-out">{defCan.short}</span>
+          equals <span id="bean-grams-out">{round(def.grams, 0)}</span> g of dry
+          <span id="bean-dry-out">{defDry.short.toLowerCase()}</span>,
+          about <strong><span id="bean-cups-out">{round(def.cups, 2)}</span> US cups</strong>,
+          with the same <span id="bean-protein-out">{round(def.proteinTotal, 0)}</span> g of protein.
+          Use the ½ cup when you're cooking. Use the nutrition-matched grams when you want the protein to line up.
         </p>
         <dl class="grid sm:grid-cols-3 gap-3 text-sm">
           <div class="bean-stat">
@@ -205,8 +250,151 @@ const schemas = [
       </div>
 
       <p class="mt-4 text-sm" style="color: var(--muted-color);">
-        Cups are figured at 200 g of dry beans per US cup, which holds across these varieties.
-        Weigh them if you want to be exact, because bean size moves the volume around more than you'd think.
+        The nutrition-matched cups use 200 g of dry beans per US cup. The ½ cup headline is the tested volume, about 90 to 100 g, which is a little lighter than that 200 g cup.
+      </p>
+      </div>
+
+      <div id="bean-panel-crowd" role="tabpanel" aria-labelledby="bean-tab-crowd">
+        <h2 class="text-2xl font-bold mb-2" style="color: var(--heading-color);">Beans for a crowd</h2>
+        <p class="mb-4 text-sm" style="color: var(--muted-color);">
+          Chili defaults to ½ cup of cooked beans per person, a side to ⅓ cup, and a mixed soup to ¼ cup.
+          One can stands in for 1½ cups cooked and drained. Cans round up so the pot doesn't come up short.
+        </p>
+        <form id="crowd-form" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">People</span>
+            <input class="bean-input" id="crowd-people" name="people" type="number" min="1" max="500" step="1" inputmode="numeric" value="50" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Dish</span>
+            <select class="bean-input" id="crowd-dish" name="dish">
+              <option value="chili" selected>Chili</option>
+              <option value="side">Side</option>
+              <option value="soup">Soup</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Cooked beans per person (cups)</span>
+            <input class="bean-input" id="crowd-serving" name="serving" type="number" min="0.05" max="3" step="0.01" inputmode="decimal" value={DISH_DEFAULTS.chili} />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Price the cans as</span>
+            <select class="bean-input" id="crowd-canned" name="crowdCanned">
+              {cannedBeans.map((b) => (
+                <option value={b.food} selected={b.food === defCan.food}>{b.short}</option>
+              ))}
+            </select>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Price the dry beans as</span>
+            <select class="bean-input" id="crowd-dry" name="crowdDry">
+              {dryBeans.map((b) => (
+                <option value={b.food} selected={b.food === defDry.food}>{b.short}</option>
+              ))}
+            </select>
+          </label>
+        </form>
+        <div id="bean-crowd-result" class="rounded-xl p-5" style="background: var(--page-bg); border: 1px solid var(--border-color);" aria-live="polite">
+          <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">For the pot</p>
+          <p class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+            <span id="crowd-cans-out">{defaultCrowd.cans}</span> cans
+            (<span id="crowd-exact-out">{round(defaultCrowd.exactCans, 1)}</span> before rounding up)
+          </p>
+          <p class="mb-4" style="color: var(--text-color);">
+            <span id="crowd-people-out">{defaultCrowd.people}</span> people at
+            <span id="crowd-serving-out">{formatCups(defaultCrowd.cupsPerPerson)}</span> cup cooked beans each is
+            <span id="crowd-cooked-out">{formatCups(defaultCrowd.cookedCups)}</span> cups cooked.
+            That's <span id="crowd-lb-out">{formatLbRange(defaultCrowd.dryLbLow, defaultCrowd.dryLbHigh)}</span> dry,
+            using 90 to 100 g per can.
+          </p>
+          <dl class="grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="bean-stat">
+              <dt>Canned cost</dt>
+              <dd id="crowd-cancost-out">{usd(defaultCrowdPrice.canCost ?? 0)}</dd>
+            </div>
+            <div class="bean-stat" style="border-color:#F29B30;">
+              <dt>Dry cost at 95 g per can</dt>
+              <dd id="crowd-drycost-out">{usd(defaultCrowdPrice.dryCost ?? 0)}</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="crowd-table" class="mt-14">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        Cans and dry pounds for a crowd
+      </h2>
+      <p class="mb-4" style="color: var(--text-color);">
+        Bean-heavy chili, at ½ cup of cooked beans per person. Each can covers 1½ cups cooked, and the can count rounds up.
+        Dry weight is 90 to 100 g for each of those cans, which is about {formatLbRange(crowdRows[0].dryLbLow, crowdRows[0].dryLbHigh)} at the small end of this table and {formatLbRange(crowdRows[crowdRows.length - 1].dryLbLow, crowdRows[crowdRows.length - 1].dryLbHigh)} at 100 people.
+      </p>
+      <div class="overflow-x-auto rounded-xl mb-12" style="border: 1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width: 520px; border-collapse: collapse;">
+          <caption class="sr-only">
+            15.5 oz cans and dry bean weight for 10 to 100 people at one half cup of cooked beans each.
+          </caption>
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+              <th scope="col" class="bean-th">People</th>
+              <th scope="col" class="bean-th bean-num">Cooked beans</th>
+              <th scope="col" class="bean-th bean-num">15.5 oz cans</th>
+              <th scope="col" class="bean-th bean-num">Dry weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            {crowdRows.map((row) => (
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <th scope="row" class="bean-td">{row.people}</th>
+                <td class="bean-td bean-num">{formatCups(row.cookedCups)} cups</td>
+                <td class="bean-td bean-num" style="font-weight:700;">{row.cans}</td>
+                <td class="bean-td bean-num">{formatLbRange(row.dryLbLow, row.dryLbHigh)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="cans-per-pound" class="mt-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        How many cans are in 1 lb dry
+      </h2>
+      <p class="mb-4" style="color: var(--text-color);">
+        1 lb dry is about {DRY_CUPS_PER_POUND} cups dry, and at ½ cup dry per can that's about {CANS_PER_DRY_POUND} cans.
+        Milk Street's cooked yield changes by variety. The dry measure per can stays about ½ cup across the ones they tested, so the can count in a pound doesn't.
+      </p>
+      <div class="overflow-x-auto rounded-xl mb-4" style="border: 1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width: 560px; border-collapse: collapse;">
+          <caption class="sr-only">
+            Milk Street cooked yield per cup of dry beans, and about how many 15.5 oz cans are in one dry pound.
+          </caption>
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+              <th scope="col" class="bean-th">Variety</th>
+              <th scope="col" class="bean-th bean-num">Cups cooked per cup dry</th>
+              <th scope="col" class="bean-th bean-num">Dry per 15.5 oz can</th>
+              <th scope="col" class="bean-th bean-num">Cans in 1 lb dry</th>
+            </tr>
+          </thead>
+          <tbody>
+            {MILK_STREET_YIELDS.map((row) => (
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <th scope="row" class="bean-td">{row.variety}</th>
+                <td class="bean-td bean-num">{row.cookedCupsPerCupDry}</td>
+                <td class="bean-td bean-num">½ cup (90 to 100 g)</td>
+                <td class="bean-td bean-num">{CANS_PER_DRY_POUND}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm mb-8" style="color: var(--muted-color);">
+        Cooked cups per cup dry: Milk Street,
+        {" "}<a href="https://www.177milkstreet.com/stories/bean-counting-dried-vs-canned" class="underline" style="color:#F29B30;">bean counting, dried vs canned</a>.
+        Chickpeas 2¾, black 2½, pinto 2¾, kidney 3, navy 2¾, cannellini 3¼.
+        A second check against USDA portions is at
+        {" "}<a href="https://earthtoveg.com/calc/beans/" class="underline" style="color:#F29B30;">earthtoveg</a>.
       </p>
     </section>
 
@@ -275,8 +463,7 @@ const schemas = [
 
       <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Why we match on protein instead of guessing a ratio</h3>
       <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
-        Most bean conversion charts hand you a number with no explanation. Half a cup dry
-        equals a can, roughly, probably. We went a different way. Protein doesn't disappear
+        The headline answer is the tested yield, about ½ cup dry per can. The number in this section is a second figure, the nutrition-matched grams. Most charts stop at the half cup and never say where it came from. Protein doesn't disappear
         when you soak, boil or can a bean, so it works as a tracer. One {defCan.pkg} of
         {" "}{defCan.short.toLowerCase()} carries {round(def.proteinTotal, 0)} g of protein.
         Dry {defDry.short.toLowerCase()} run {defDry.proteinPer100} g of protein per 100 g.
@@ -289,7 +476,8 @@ const schemas = [
         Run the same math on fiber instead of protein and you'd get
         {" "}{round(fiberGramsPerCan(defCan, defDry), 0)} g rather than {round(def.grams, 0)} g.
         That gap isn't a mistake, it's USDA measuring fiber in canned and dry legumes with
-        different methods. So treat the answer as a solid working figure, not a lab result.
+        different methods. So treat the nutrition-matched grams as a working figure, not a lab result.
+        The cooking measure stays the ½ cup.
         For cooking it makes no difference. A pot of chili has never once cared about
         fifteen grams of dry bean.
       </p>
@@ -373,8 +561,23 @@ const schemas = [
       padding: 0.5rem 0.75rem;
       vertical-align: top;
     }
+    .bean-tab {
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: var(--page-bg);
+      color: var(--heading-color);
+      border: 1px solid var(--border-color);
+    }
+    .bean-tab[aria-selected="true"] {
+      background: #F29B30;
+      color: #fff;
+      border-color: #F29B30;
+    }
     #bean-share:focus-visible,
-    .bean-input:focus-visible {
+    .bean-input:focus-visible,
+    .bean-tab:focus-visible {
       outline: 3px solid #f29b30;
       outline-offset: 2px;
     }
@@ -388,16 +591,43 @@ const schemas = [
     }
   </style>
 
-  <script is:inline define:vars={{ CANNED: cannedBeans, DRY: dryBeans, PATH }}>
+  <script
+    is:inline
+    data-astro-rerun
+    define:vars={{
+      CANNED: cannedBeans,
+      DRY: dryBeans,
+      PATH,
+      DISH_DEFAULTS,
+      CUPS_COOKED_PER_CAN,
+      CUPS_DRY_PER_CAN,
+      GRAMS_DRY_PER_CAN_LOW,
+      GRAMS_DRY_PER_CAN_HIGH,
+      GRAMS_DRY_PER_CAN_MID,
+      GRAMS_PER_POUND,
+    }}
+  >
     (function () {
       "use strict";
+      var root = document.getElementById("bean-tool");
+      if (!root || root.dataset.booted) return;
+      root.dataset.booted = "1";
+
       var cansEl = document.getElementById("bean-cans");
       var cannedEl = document.getElementById("bean-canned");
       var dryEl = document.getElementById("bean-dry");
-      if (!cansEl || !cannedEl || !dryEl) return;
+      var peopleEl = document.getElementById("crowd-people");
+      var dishEl = document.getElementById("crowd-dish");
+      var servingEl = document.getElementById("crowd-serving");
+      var crowdCannedEl = document.getElementById("crowd-canned");
+      var crowdDryEl = document.getElementById("crowd-dry");
+      if (!cansEl || !cannedEl || !dryEl || !peopleEl || !dishEl || !servingEl || !crowdCannedEl || !crowdDryEl) return;
 
       var out = {
         cans: document.getElementById("bean-cans-out"),
+        yieldCups: document.getElementById("bean-yield-cups"),
+        yieldGrams: document.getElementById("bean-yield-grams"),
+        yieldCooked: document.getElementById("bean-yield-cooked"),
         canned: document.getElementById("bean-canned-out"),
         dry: document.getElementById("bean-dry-out"),
         grams: document.getElementById("bean-grams-out"),
@@ -407,7 +637,16 @@ const schemas = [
         drycost: document.getElementById("bean-drycost-out"),
         saving: document.getElementById("bean-saving-out"),
         share: document.getElementById("bean-share"),
+        crowdCans: document.getElementById("crowd-cans-out"),
+        crowdExact: document.getElementById("crowd-exact-out"),
+        crowdPeople: document.getElementById("crowd-people-out"),
+        crowdServing: document.getElementById("crowd-serving-out"),
+        crowdCooked: document.getElementById("crowd-cooked-out"),
+        crowdLb: document.getElementById("crowd-lb-out"),
+        crowdCanCost: document.getElementById("crowd-cancost-out"),
+        crowdDryCost: document.getElementById("crowd-drycost-out"),
       };
+      var mode = "swap";
 
       function find(list, food) {
         for (var i = 0; i < list.length; i++) if (list[i].food === food) return list[i];
@@ -420,8 +659,40 @@ const schemas = [
         var f = Math.pow(10, p);
         return Math.round(n * f) / f;
       }
+      function formatCups(n) {
+        var fractions = [[0, ""], [0.25, "¼"], [1 / 3, "⅓"], [0.5, "½"], [2 / 3, "⅔"], [0.75, "¾"]];
+        var abs = Math.abs(n);
+        var whole = Math.floor(abs + 1e-9);
+        var frac = abs - whole;
+        var best = null;
+        for (var i = 0; i < fractions.length; i++) {
+          var diff = Math.abs(frac - fractions[i][0]);
+          if (diff < 0.02 && (best === null || diff < best.diff)) best = { label: fractions[i][1], diff: diff };
+        }
+        if (!best) return String(round(abs, 2));
+        if (whole === 0) return best.label || "0";
+        if (!best.label) return String(whole);
+        return String(whole) + best.label;
+      }
+      function formatLb(low, high) {
+        var lo = (Math.round(low * 10) / 10).toFixed(1);
+        var hi = (Math.round(high * 10) / 10).toFixed(1);
+        return lo === hi ? lo + " lb" : lo + " to " + hi + " lb";
+      }
+      function showMode(next) {
+        mode = next === "crowd" ? "crowd" : "swap";
+        var swapPanel = document.getElementById("bean-panel-swap");
+        var crowdPanel = document.getElementById("bean-panel-crowd");
+        if (swapPanel) swapPanel.hidden = mode !== "swap";
+        if (crowdPanel) crowdPanel.hidden = mode !== "crowd";
+        var swapTab = document.getElementById("bean-tab-swap");
+        var crowdTab = document.getElementById("bean-tab-crowd");
+        if (swapTab) swapTab.setAttribute("aria-selected", mode === "swap" ? "true" : "false");
+        if (crowdTab) crowdTab.setAttribute("aria-selected", mode === "crowd" ? "true" : "false");
+      }
 
       function render() {
+        showMode(mode);
         var cans = parseFloat(cansEl.value);
         if (!isFinite(cans) || cans <= 0) cans = 1;
         var can = find(CANNED, cannedEl.value);
@@ -433,8 +704,13 @@ const schemas = [
         var canCost = can.pkgPrice * cans;
         var saving = canCost - dryCost;
         var pct = canCost > 0 ? (saving / canCost) * 100 : 0;
+        var gramsLow = cans * GRAMS_DRY_PER_CAN_LOW;
+        var gramsHigh = cans * GRAMS_DRY_PER_CAN_HIGH;
 
         out.cans.textContent = String(cans);
+        out.yieldCups.textContent = formatCups(cans * CUPS_DRY_PER_CAN);
+        out.yieldGrams.textContent = Math.round(gramsLow) + " to " + Math.round(gramsHigh);
+        out.yieldCooked.textContent = formatCups(cans * CUPS_COOKED_PER_CAN);
         out.canned.textContent = can.short;
         out.dry.textContent = dry.short.toLowerCase();
         out.grams.textContent = String(round(grams, 0));
@@ -444,25 +720,81 @@ const schemas = [
         out.drycost.textContent = usd(dryCost);
         out.saving.textContent = usd(saving) + " (" + round(pct, 0) + "%)";
 
-        // Encode the result so a link reopens exactly this answer.
-        var qs = new URLSearchParams({ cans: String(cans), canned: can.food, dry: dry.food });
+        var people = parseFloat(peopleEl.value);
+        if (!isFinite(people) || people <= 0) people = 1;
+        var serving = parseFloat(servingEl.value);
+        if (!isFinite(serving) || serving <= 0) serving = DISH_DEFAULTS.chili;
+        var cookedCups = people * serving;
+        var exactCans = cookedCups / CUPS_COOKED_PER_CAN;
+        var crowdCans = Math.ceil(exactCans - 1e-9);
+        var crowdCan = find(CANNED, crowdCannedEl.value);
+        var crowdDry = find(DRY, crowdDryEl.value);
+        var crowdGramsMid = crowdCans * GRAMS_DRY_PER_CAN_MID;
+        out.crowdCans.textContent = String(crowdCans);
+        out.crowdExact.textContent = String(round(exactCans, 1));
+        out.crowdPeople.textContent = String(people);
+        out.crowdServing.textContent = formatCups(serving);
+        out.crowdCooked.textContent = formatCups(cookedCups);
+        out.crowdLb.textContent = formatLb(
+          (crowdCans * GRAMS_DRY_PER_CAN_LOW) / GRAMS_PER_POUND,
+          (crowdCans * GRAMS_DRY_PER_CAN_HIGH) / GRAMS_PER_POUND,
+        );
+        out.crowdCanCost.textContent = usd(crowdCan.pkgPrice * crowdCans);
+        out.crowdDryCost.textContent = usd((crowdGramsMid / 100) * crowdDry.pricePer100g);
+
+        var qs = new URLSearchParams({
+          mode: mode,
+          cans: String(cans),
+          canned: can.food,
+          dry: dry.food,
+          people: peopleEl.value,
+          dish: dishEl.value,
+          serving: servingEl.value,
+          crowdCanned: crowdCan.food,
+          crowdDry: crowdDry.food,
+        });
         var url = PATH + "?" + qs.toString();
         out.share.setAttribute("href", url);
         history.replaceState(null, "", url);
       }
 
-      // Restore a shared result.
       var params = new URLSearchParams(location.search);
+      if (params.get("mode") === "crowd" || params.get("mode") === "swap") mode = params.get("mode");
       if (params.get("cans")) cansEl.value = params.get("cans");
       if (params.get("canned")) cannedEl.value = params.get("canned");
       if (params.get("dry")) dryEl.value = params.get("dry");
+      if (params.get("people")) peopleEl.value = params.get("people");
+      if (params.get("dish") && DISH_DEFAULTS[params.get("dish")] !== undefined) dishEl.value = params.get("dish");
+      if (params.get("serving")) servingEl.value = params.get("serving");
+      if (params.get("crowdCanned")) crowdCannedEl.value = params.get("crowdCanned");
+      if (params.get("crowdDry")) crowdDryEl.value = params.get("crowdDry");
 
       ["input", "change"].forEach(function (evt) {
         cansEl.addEventListener(evt, render);
         cannedEl.addEventListener(evt, render);
         dryEl.addEventListener(evt, render);
+        peopleEl.addEventListener(evt, render);
+        servingEl.addEventListener(evt, render);
+        crowdCannedEl.addEventListener(evt, render);
+        crowdDryEl.addEventListener(evt, render);
+      });
+      dishEl.addEventListener("change", function () {
+        var next = DISH_DEFAULTS[dishEl.value];
+        if (typeof next === "number") servingEl.value = String(next);
+        render();
+      });
+      document.getElementById("bean-tab-swap").addEventListener("click", function () {
+        mode = "swap";
+        render();
+      });
+      document.getElementById("bean-tab-crowd").addEventListener("click", function () {
+        mode = "crowd";
+        render();
       });
       document.getElementById("bean-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+      });
+      document.getElementById("crowd-form").addEventListener("submit", function (e) {
         e.preventDefault();
       });
       render();

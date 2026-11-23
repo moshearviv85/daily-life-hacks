@@ -41,7 +41,7 @@ Put the bowl on a scale, press tare, and pour. Cups lie when the starter is full
 | 1/2 cup | 113 g |
 | 1 cup | 227 g |
 
-Those three lines come from this site's [discard conversion guide](/how-to-measure-sourdough-discard-grams/), which starts from [King Arthur Baking's 227 gram cup](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe). For 100% hydration discard, half the weight is flour and half is water. So 100 grams is 50 grams of each.
+Those three lines come from this site's [discard conversion guide](/how-to-measure-sourdough-discard-grams/), which starts from [King Arthur Baking's 227 gram cup](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe). For 100% hydration discard, half the weight is flour and half is water. So 100 grams is 50 grams of each. When the recipe's flour and liquid have to shrink by that amount, the [sourdough discard calculator](/tools/sourdough-discard-calculator/) does the subtraction and stops you before either one goes negative.
 
 Other writers print cup labels that don't match that chart. Kneaded That calls 100 grams a third of a cup. This site's third of a cup is about 76 grams. Breadtopia calls 200 grams three quarters of a cup. This site's three quarters of a cup is about 170 grams. Living Bread Baker calls 500 grams one and three quarters cups, which would be about 397 grams on our chart. Use their grams. Leave their cups on their pages.
 

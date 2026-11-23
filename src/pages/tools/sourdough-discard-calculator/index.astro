@@ -1,0 +1,627 @@
+---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { breadcrumb, webAppSchema, toolPageSchema } from "../_lib/data";
+import {
+  CUP_GRAMS,
+  FEED_PRESETS,
+  addDiscard,
+  feedStarter,
+} from "../../../lib/sourdough-discard-math.js";
+
+const PATH = "/tools/sourdough-discard-calculator/";
+const noYeastSlug = "sourdough-discard-recipes-no-yeast";
+const noYeastLive = existsSync(
+  join(process.cwd(), "src/data/articles", `${noYeastSlug}.md`),
+);
+
+const title = "Sourdough Discard Calculator for Recipes and Feeding";
+const description =
+  "Split discard into the flour and water already in it, feed a starter by ratio, or convert cups to grams. The formula is on the page.";
+
+const gramsText = (n: number) => {
+  const rounded = Math.round(n * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+};
+
+const worked = addDiscard({ flour: 300, liquid: 210, discard: 100, hydrationPercent: 100 });
+const stiff = addDiscard({ flour: 250, liquid: 120, discard: 150, hydrationPercent: 50 });
+const over = addDiscard({ flour: 150, liquid: 100, discard: 400, hydrationPercent: 100 });
+
+const feedRows = (["1:1:1", "1:2:2", "1:5:5", "1:10:10"] as const).map((label) => {
+  const preset = FEED_PRESETS[label];
+  return { label, peak: preset.peak, ...feedStarter(50, preset.flourParts, preset.waterParts)! };
+});
+
+const cupRows = [0.25, 0.5, 0.75, 1, 1.5].map((cups) => ({
+  cups,
+  grams: Math.round(cups * CUP_GRAMS * 10) / 10,
+}));
+
+const schemas = [
+  toolPageSchema({ path: PATH, name: title, description }),
+  webAppSchema({
+    path: PATH,
+    name: "Sourdough Discard Calculator",
+    description,
+    featureList: [
+      "Split discard into the flour and water already in it",
+      "Cap how much discard a recipe can take before flour or liquid goes negative",
+      "Feeding ratios 1:1:1, 1:2:2, 1:5:5, and 1:10:10 with approximate peak windows",
+      "Convert discard cups and grams at 227 grams per cup",
+    ],
+  }),
+  breadcrumb(PATH, "Sourdough Discard Calculator"),
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Sourdough discard</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Sourdough Discard Calculator
+    </h1>
+    <p class="text-lg mb-8" style="color: var(--text-color);">
+      The recipe wants flour and water. The jar in your hand is already both, plus a sour streak the recipe didn't budget for.
+      This page splits the discard into those grams, feeds a starter by ratio, and turns cups into the {CUP_GRAMS} gram King Arthur cup.
+    </p>
+
+    <section
+      id="sourdough-tool"
+      class="rounded-xl p-5 md:p-6 mb-10"
+      style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+    >
+      <div class="flex flex-wrap gap-2 mb-5" role="tablist" aria-label="Calculator mode">
+        <button type="button" class="sd-tab" id="sd-tab-add" role="tab" aria-selected="true" aria-controls="sd-panel-add">Add discard to a recipe</button>
+        <button type="button" class="sd-tab" id="sd-tab-feed" role="tab" aria-selected="false" aria-controls="sd-panel-feed">Feeding ratio</button>
+        <button type="button" class="sd-tab" id="sd-tab-cups" role="tab" aria-selected="false" aria-controls="sd-panel-cups">Cups and grams</button>
+      </div>
+
+      <div id="sd-panel-add" role="tabpanel" aria-labelledby="sd-tab-add">
+        <h2 class="text-2xl font-bold mb-2" style="color: var(--heading-color);">Add discard to any recipe</h2>
+        <p class="mb-4 text-sm" style="color: var(--muted-color);">
+          Put in the flour, the liquid you're willing to replace, and the discard. Hydration defaults to 100%, which is equal weights of flour and water.
+        </p>
+        <form id="sd-add-form" class="grid sm:grid-cols-2 gap-3 mb-5">
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Recipe flour (g)</span>
+            <input class="sd-input" id="sd-flour" name="flour" type="number" min="0" step="any" inputmode="decimal" value="300" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Replaceable liquid (g)</span>
+            <input class="sd-input" id="sd-liquid" name="liquid" type="number" min="0" step="any" inputmode="decimal" value="210" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Discard (g)</span>
+            <input class="sd-input" id="sd-discard" name="discard" type="number" min="0" step="any" inputmode="decimal" value="100" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Discard hydration (%)</span>
+            <input class="sd-input" id="sd-hydration" name="hydration" type="number" min="0" max="500" step="any" inputmode="decimal" value="100" />
+          </label>
+        </form>
+        <div id="sd-add-result" class="sd-result" aria-live="polite">
+          <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">Still goes in the bowl</p>
+          <p class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+            <span id="sd-flour-add">{gramsText(worked.flourToAdd)}</span> g flour and
+            <span id="sd-liquid-add">{gramsText(worked.liquidToAdd)}</span> g liquid
+          </p>
+          <p class="mb-2" style="color: var(--text-color);">
+            That discard already holds <strong id="sd-flour-in">{gramsText(worked.flour)}</strong> g flour and
+            <strong id="sd-water-in">{gramsText(worked.water)}</strong> g water.
+            The recipe can take at most <strong id="sd-max">{gramsText(worked.maxDiscard)}</strong> g of discard at this hydration.
+          </p>
+          <p id="sd-warning" class="sd-warning" hidden></p>
+        </div>
+      </div>
+
+      <div id="sd-panel-feed" role="tabpanel" aria-labelledby="sd-tab-feed">
+        <h2 class="text-2xl font-bold mb-2" style="color: var(--heading-color);">Feeding ratio</h2>
+        <p class="mb-4 text-sm" style="color: var(--muted-color);">
+          A 1:5:5 feed means 1 part starter, 5 parts flour, 5 parts water. The peak windows are approximate, at about 24 °C.
+        </p>
+        <form id="sd-feed-form" class="grid sm:grid-cols-2 gap-3 mb-5">
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Starter (g)</span>
+            <input class="sd-input" id="sd-starter" name="starter" type="number" min="0" step="any" inputmode="decimal" value="50" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Ratio</span>
+            <select class="sd-input" id="sd-preset" name="preset">
+              <option value="1:1:1">1:1:1</option>
+              <option value="1:2:2">1:2:2</option>
+              <option value="1:5:5" selected>1:5:5</option>
+              <option value="1:10:10">1:10:10</option>
+              <option value="custom">Custom</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1" id="sd-flour-parts-label">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Flour parts</span>
+            <input class="sd-input" id="sd-flour-parts" name="flourParts" type="number" min="0" step="any" inputmode="decimal" value="5" />
+          </label>
+          <label class="flex flex-col gap-1" id="sd-water-parts-label">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Water parts</span>
+            <input class="sd-input" id="sd-water-parts" name="waterParts" type="number" min="0" step="any" inputmode="decimal" value="5" />
+          </label>
+        </form>
+        <div id="sd-feed-result" class="sd-result" aria-live="polite">
+          <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">What to stir in</p>
+          <p class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+            <span id="sd-feed-flour">250</span> g flour,
+            <span id="sd-feed-water">250</span> g water,
+            <span id="sd-feed-total">550</span> g total
+          </p>
+          <p style="color: var(--text-color);">
+            This feed is <strong id="sd-feed-hydration">100%</strong> hydration
+            (water divided by flour). Typical peak at about 24 °C:
+            <strong id="sd-feed-peak">8-12 hours</strong>.
+            A custom ratio doesn't get a published window.
+          </p>
+        </div>
+      </div>
+
+      <div id="sd-panel-cups" role="tabpanel" aria-labelledby="sd-tab-cups">
+        <h2 class="text-2xl font-bold mb-2" style="color: var(--heading-color);">Cups and grams</h2>
+        <p class="mb-4 text-sm" style="color: var(--muted-color);">
+          1 cup is about {CUP_GRAMS} g at 100% hydration. A stiff starter packs heavier, and a bubbly one fools the cup.
+        </p>
+        <form id="sd-cups-form" class="grid sm:grid-cols-2 gap-3 mb-5">
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Amount</span>
+            <input class="sd-input" id="sd-cup-amount" name="amount" type="number" min="0" step="any" inputmode="decimal" value="1" />
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="text-sm font-semibold" style="color: var(--heading-color);">Convert</span>
+            <select class="sd-input" id="sd-cup-direction" name="direction">
+              <option value="cups-to-grams" selected>Cups to grams</option>
+              <option value="grams-to-cups">Grams to cups</option>
+            </select>
+          </label>
+        </form>
+        <div id="sd-cups-result" class="sd-result" aria-live="polite">
+          <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">The scale's opinion</p>
+          <p id="sd-cup-line" class="text-2xl md:text-3xl font-bold" style="color: var(--heading-color);">
+            1 cup is about {CUP_GRAMS} g
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-4 text-sm" style="color: var(--muted-color);">
+        <a id="sd-share" href={PATH} data-result-share="link" class="underline font-semibold" style="color:#F29B30;">Link to this result</a>
+        . The numbers travel in the URL. The canonical address stays this page.
+      </p>
+    </section>
+
+    <section id="worked-example" class="mt-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        A worked example, no button required
+      </h2>
+      <p class="mb-4" style="color: var(--text-color);">
+        Recipe flour is 300 g and the replaceable liquid is 210 g. You pour in 100 g of 100% hydration discard.
+        Half of that discard is flour and half is water, so the bowl still needs {gramsText(worked.flourToAdd)} g flour and {gramsText(worked.liquidToAdd)} g liquid.
+        The same recipe can absorb {gramsText(worked.maxDiscard)} g before one of those additions hits zero.
+      </p>
+      <div class="overflow-x-auto rounded-xl mb-8" style="border: 1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width: 640px; border-collapse: collapse;">
+          <caption class="sr-only">
+            Worked discard swaps: flour and water already in the discard, what to add, and the maximum the recipe can take.
+          </caption>
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+              <th scope="col" class="sd-th">Case</th>
+              <th scope="col" class="sd-th sd-num">Flour in discard</th>
+              <th scope="col" class="sd-th sd-num">Water in discard</th>
+              <th scope="col" class="sd-th sd-num">Flour to add</th>
+              <th scope="col" class="sd-th sd-num">Liquid to add</th>
+              <th scope="col" class="sd-th sd-num">Max discard</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <th scope="row" class="sd-td">100 g at 100% into 300 g flour and 210 g liquid</th>
+              <td class="sd-td sd-num">{gramsText(worked.flour)} g</td>
+              <td class="sd-td sd-num">{gramsText(worked.water)} g</td>
+              <td class="sd-td sd-num">{gramsText(worked.flourToAdd)} g</td>
+              <td class="sd-td sd-num">{gramsText(worked.liquidToAdd)} g</td>
+              <td class="sd-td sd-num">{gramsText(worked.maxDiscard)} g</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <th scope="row" class="sd-td">150 g at 50% into 250 g flour and 120 g liquid</th>
+              <td class="sd-td sd-num">{gramsText(stiff.flour)} g</td>
+              <td class="sd-td sd-num">{gramsText(stiff.water)} g</td>
+              <td class="sd-td sd-num">{gramsText(stiff.flourToAdd)} g</td>
+              <td class="sd-td sd-num">{gramsText(stiff.liquidToAdd)} g</td>
+              <td class="sd-td sd-num">{gramsText(stiff.maxDiscard)} g</td>
+            </tr>
+            <tr>
+              <th scope="row" class="sd-td">400 g at 100% into 150 g flour and 100 g liquid</th>
+              <td class="sd-td sd-num">{gramsText(over.flour)} g</td>
+              <td class="sd-td sd-num">{gramsText(over.water)} g</td>
+              <td class="sd-td sd-num">{gramsText(over.flourToAdd)} g</td>
+              <td class="sd-td sd-num">{gramsText(over.liquidToAdd)} g</td>
+              <td class="sd-td sd-num">{gramsText(over.maxDiscard)} g</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mb-8" style="color: var(--text-color);">
+        The last row goes negative. That discard already holds more flour and more water than the recipe has room for.
+        Stop at {gramsText(over.maxDiscard)} g, or you're no longer making that recipe.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">The formula</h2>
+      <p class="mb-3" style="color: var(--text-color);">
+        Hydration percent becomes a ratio first. 100% is h = 1. 50% is h = 0.5. Discard weight is D, recipe flour is F, replaceable liquid is W.
+      </p>
+      <ul class="sd-formula mb-8">
+        <li>Flour in the discard = D / (1 + h)</li>
+        <li>Water in the discard = D × h / (1 + h)</li>
+        <li>Flour to add = F minus the flour in the discard</li>
+        <li>Liquid to add = W minus the water in the discard</li>
+        <li>Max discard = the smaller of F × (1 + h) and W × (1 + h) / h</li>
+      </ul>
+      <p class="mb-8" style="color: var(--text-color);">
+        At 0% hydration the discard is all flour, so the liquid cap drops out and the max is just the recipe flour.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        Feeding 50 g of starter
+      </h2>
+      <p class="mb-4" style="color: var(--text-color);">
+        These peak windows are approximate, at about 24 °C (75 °F). A warmer kitchen is faster and a cold one is not.
+        King Arthur's 2025 feeding-ratio trial is the reference for why a bigger flour-and-water feed pushes the peak later:
+        {" "}
+        <a class="sd-link" href="https://www.kingarthurbaking.com/blog/2025/03/13/sourdough-feeding-ratios">sourdough feeding ratios</a>.
+        The hours below are kitchen timing for the four presets, not a promise that your jar peaks on their clock.
+      </p>
+      <div class="overflow-x-auto rounded-xl mb-8" style="border: 1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width: 520px; border-collapse: collapse;">
+          <caption class="sr-only">Flour, water, total weight, and approximate peak for a 50 gram starter at four feeding ratios.</caption>
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+              <th scope="col" class="sd-th">Ratio</th>
+              <th scope="col" class="sd-th sd-num">Flour</th>
+              <th scope="col" class="sd-th sd-num">Water</th>
+              <th scope="col" class="sd-th sd-num">Total</th>
+              <th scope="col" class="sd-th">Peak at about 24 °C</th>
+            </tr>
+          </thead>
+          <tbody>
+            {feedRows.map((row) => (
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <th scope="row" class="sd-td">{row.label}</th>
+                <td class="sd-td sd-num">{gramsText(row.flour)} g</td>
+                <td class="sd-td sd-num">{gramsText(row.water)} g</td>
+                <td class="sd-td sd-num">{gramsText(row.total)} g</td>
+                <td class="sd-td">{row.peak}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mb-8" style="color: var(--text-color);">
+        A 1:5:5 feed of 50 g starter is 250 g flour, 250 g water, and 550 g in the jar when you're done.
+        Water divided by flour on that feed is 100% hydration. A custom ratio such as 1:2:1 would be 50% and doesn't get one of the peak windows above.
+      </p>
+
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        Cups to grams at 100% hydration
+      </h2>
+      <p class="mb-4" style="color: var(--text-color);">
+        One cup is about {CUP_GRAMS} g. That's
+        {" "}
+        <a class="sd-link" href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe">King Arthur's starter conversion</a>,
+        the same figure on our
+        {" "}
+        <a class="sd-link" href="/how-to-measure-sourdough-discard-grams/">discard measuring guide</a>.
+        Stir first if you're using a cup. A stiff starter packs heavier than this, and a jar full of bubbles fills the cup with air.
+      </p>
+      <div class="overflow-x-auto rounded-xl mb-10" style="border: 1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width: 320px; border-collapse: collapse;">
+          <caption class="sr-only">Approximate grams in common US cup measures of 100% hydration sourdough discard.</caption>
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+              <th scope="col" class="sd-th">US cups</th>
+              <th scope="col" class="sd-th sd-num">Grams</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cupRows.map((row) => (
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <th scope="row" class="sd-td">{row.cups}</th>
+                <td class="sd-td sd-num">{gramsText(row.grams)} g</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        What this doesn't preserve
+      </h2>
+      <p class="mb-4" style="color: var(--text-color);">
+        Subtracting flour and water keeps the written ratio. It doesn't keep the acidity, and it doesn't keep the rise.
+        Unfed discard is a flavor scoop. If the loaf was counting on a ripe starter to lift it, this math will not grow you one.
+        Use a recipe that brings its own leavening, or feed the jar and wait for it to actually rise.
+      </p>
+      <p class="mb-4" style="color: var(--text-color);">
+        The measured batches on this site are the
+        {" "}
+        <a class="sd-link" href="/easy-sourdough-discard-recipes-beginners/">easy sourdough discard recipes</a>
+        and the
+        {" "}
+        <a class="sd-link" href="/what-to-make-with-sourdough-discard-by-amount/">planner that matches a jar to a gram weight</a>.
+        {noYeastLive && (
+          <>
+            {" "}Recipes that skip added yeast are collected on the
+            {" "}
+            <a class="sd-link" href={`/${noYeastSlug}/`}>sourdough discard recipes with no added yeast</a>.
+          </>
+        )}
+      </p>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .sd-input {
+      width: 100%;
+      border-radius: 0.75rem;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.95rem;
+      background: var(--page-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+    .sd-tab {
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: var(--page-bg);
+      color: var(--heading-color);
+      border: 1px solid var(--border-color);
+    }
+    .sd-tab[aria-selected="true"] {
+      background: #F29B30;
+      color: #fff;
+      border-color: #F29B30;
+    }
+    .sd-input:focus-visible,
+    .sd-tab:focus-visible,
+    #sd-share:focus-visible,
+    .sd-link:focus-visible {
+      outline: 3px solid #f29b30;
+      outline-offset: 2px;
+    }
+    .sd-result {
+      border-radius: 0.9rem;
+      padding: 1.1rem 1.2rem;
+      background: var(--page-bg);
+      border: 1px solid var(--border-color);
+    }
+    .sd-warning {
+      margin-top: 0.8rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.75rem;
+      background: #fff4e5;
+      color: #7a4300;
+      border: 1px solid #F29B30;
+      font-weight: 600;
+    }
+    .sd-formula {
+      margin: 0;
+      padding: 1rem 1rem 1rem 1.4rem;
+      border-radius: 0.9rem;
+      background: var(--card-bg);
+      border-left: 4px solid #F29B30;
+      color: var(--heading-color);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+    .sd-link { color: #F29B30; text-decoration: underline; font-weight: 600; }
+    .sd-th, .sd-td { padding: 0.55rem 0.75rem; vertical-align: top; }
+    .sd-th { text-align: left; font-weight: 600; }
+    .sd-num { text-align: right; white-space: nowrap; }
+    caption.sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  </style>
+
+  <script>
+    import {
+      FEED_PRESETS,
+      addDiscard,
+      cupsToGrams,
+      feedStarter,
+      gramsToCups,
+    } from "../../../lib/sourdough-discard-math.js";
+
+    const PATH = "/tools/sourdough-discard-calculator/";
+    const MODES = ["add", "feed", "cups"];
+
+    function gramsText(n: number) {
+      const rounded = Math.round(n * 10) / 10;
+      return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+    }
+
+    function num(value: string, fallback: number) {
+      const parsed = Number.parseFloat(value);
+      return Number.isFinite(parsed) ? parsed : fallback;
+    }
+
+    function boot() {
+      const root = document.getElementById("sourdough-tool");
+      if (!root || root.dataset.booted) return;
+      root.dataset.booted = "1";
+
+      const panels: Record<string, HTMLElement | null> = {
+        add: document.getElementById("sd-panel-add"),
+        feed: document.getElementById("sd-panel-feed"),
+        cups: document.getElementById("sd-panel-cups"),
+      };
+      const tabs: Record<string, HTMLButtonElement | null> = {
+        add: document.getElementById("sd-tab-add") as HTMLButtonElement | null,
+        feed: document.getElementById("sd-tab-feed") as HTMLButtonElement | null,
+        cups: document.getElementById("sd-tab-cups") as HTMLButtonElement | null,
+      };
+      const share = document.getElementById("sd-share");
+      const warning = document.getElementById("sd-warning");
+      const flourEl = document.getElementById("sd-flour") as HTMLInputElement | null;
+      const liquidEl = document.getElementById("sd-liquid") as HTMLInputElement | null;
+      const discardEl = document.getElementById("sd-discard") as HTMLInputElement | null;
+      const hydrationEl = document.getElementById("sd-hydration") as HTMLInputElement | null;
+      const starterEl = document.getElementById("sd-starter") as HTMLInputElement | null;
+      const presetEl = document.getElementById("sd-preset") as HTMLSelectElement | null;
+      const flourPartsEl = document.getElementById("sd-flour-parts") as HTMLInputElement | null;
+      const waterPartsEl = document.getElementById("sd-water-parts") as HTMLInputElement | null;
+      const amountEl = document.getElementById("sd-cup-amount") as HTMLInputElement | null;
+      const directionEl = document.getElementById("sd-cup-direction") as HTMLSelectElement | null;
+      if (!flourEl || !liquidEl || !discardEl || !hydrationEl || !starterEl || !presetEl || !flourPartsEl || !waterPartsEl || !amountEl || !directionEl || !share || !warning) return;
+
+      let mode = "add";
+
+      function showMode(next: string) {
+        mode = MODES.includes(next) ? next : "add";
+        for (const name of MODES) {
+          const panel = panels[name];
+          const tab = tabs[name];
+          const on = name === mode;
+          if (panel) panel.hidden = !on;
+          if (tab) tab.setAttribute("aria-selected", on ? "true" : "false");
+        }
+        const custom = presetEl!.value === "custom";
+        document.getElementById("sd-flour-parts-label")!.hidden = mode === "feed" ? !custom : false;
+        document.getElementById("sd-water-parts-label")!.hidden = mode === "feed" ? !custom : false;
+      }
+
+      function parts() {
+        if (presetEl!.value !== "custom" && FEED_PRESETS[presetEl!.value as keyof typeof FEED_PRESETS]) {
+          const preset = FEED_PRESETS[presetEl!.value as keyof typeof FEED_PRESETS];
+          flourPartsEl!.value = String(preset.flourParts);
+          waterPartsEl!.value = String(preset.waterParts);
+          return preset;
+        }
+        return {
+          flourParts: num(flourPartsEl!.value, 1),
+          waterParts: num(waterPartsEl!.value, 1),
+          peak: "",
+        };
+      }
+
+      function render() {
+        showMode(mode);
+        const added = addDiscard({
+          flour: num(flourEl!.value, 0),
+          liquid: num(liquidEl!.value, 0),
+          discard: num(discardEl!.value, 0),
+          hydrationPercent: num(hydrationEl!.value, 100),
+        });
+        if (added) {
+          document.getElementById("sd-flour-add")!.textContent = gramsText(added.flourToAdd);
+          document.getElementById("sd-liquid-add")!.textContent = gramsText(added.liquidToAdd);
+          document.getElementById("sd-flour-in")!.textContent = gramsText(added.flour);
+          document.getElementById("sd-water-in")!.textContent = gramsText(added.water);
+          document.getElementById("sd-max")!.textContent = gramsText(added.maxDiscard ?? 0);
+          const notes = [];
+          if (added.flourShort) notes.push("the flour to add went negative");
+          if (added.liquidShort) notes.push("the liquid to add went negative");
+          if (notes.length) {
+            warning.hidden = false;
+            warning.textContent = `That discard is too much for this recipe: ${notes.join(" and ")}. Use at most ${gramsText(added.maxDiscard ?? 0)} g, or the bowl isn't the recipe anymore.`;
+          } else {
+            warning.hidden = true;
+            warning.textContent = "";
+          }
+        }
+
+        const ratio = parts();
+        const fed = feedStarter(num(starterEl!.value, 0), ratio.flourParts, ratio.waterParts);
+        if (fed) {
+          document.getElementById("sd-feed-flour")!.textContent = gramsText(fed.flour);
+          document.getElementById("sd-feed-water")!.textContent = gramsText(fed.water);
+          document.getElementById("sd-feed-total")!.textContent = gramsText(fed.total);
+          document.getElementById("sd-feed-hydration")!.textContent =
+            fed.hydration === null ? "n/a" : `${gramsText(fed.hydration)}%`;
+          document.getElementById("sd-feed-peak")!.textContent = ratio.peak || "no published window for a custom ratio";
+        }
+
+        const amount = num(amountEl!.value, 0);
+        const line = document.getElementById("sd-cup-line")!;
+        if (directionEl!.value === "grams-to-cups") {
+          const cups = gramsToCups(amount);
+          line.textContent = cups === null ? "Enter a weight of 0 g or more." : `${gramsText(amount)} g is about ${gramsText(cups)} cups`;
+        } else {
+          const grams = cupsToGrams(amount);
+          line.textContent = grams === null ? "Enter 0 cups or more." : `${gramsText(amount)} cups is about ${gramsText(grams)} g`;
+        }
+
+        const params = new URLSearchParams({
+          mode,
+          flour: flourEl!.value,
+          liquid: liquidEl!.value,
+          discard: discardEl!.value,
+          hydration: hydrationEl!.value,
+          starter: starterEl!.value,
+          preset: presetEl!.value,
+          flourParts: flourPartsEl!.value,
+          waterParts: waterPartsEl!.value,
+          amount: amountEl!.value,
+          direction: directionEl!.value,
+        });
+        const url = `${PATH}?${params.toString()}`;
+        share.setAttribute("href", url);
+        history.replaceState(null, "", url);
+      }
+
+      const params = new URLSearchParams(location.search);
+      const incoming = params.get("mode");
+      if (incoming && MODES.includes(incoming)) mode = incoming;
+      const fields: Array<[string, HTMLInputElement | HTMLSelectElement]> = [
+        ["flour", flourEl],
+        ["liquid", liquidEl],
+        ["discard", discardEl],
+        ["hydration", hydrationEl],
+        ["starter", starterEl],
+        ["preset", presetEl],
+        ["flourParts", flourPartsEl],
+        ["waterParts", waterPartsEl],
+        ["amount", amountEl],
+        ["direction", directionEl],
+      ];
+      for (const [key, el] of fields) {
+        const value = params.get(key);
+        if (value !== null && value !== "") el.value = value;
+      }
+
+      root.addEventListener("input", render);
+      root.addEventListener("change", render);
+      for (const name of MODES) {
+        tabs[name]?.addEventListener("click", () => {
+          mode = name;
+          render();
+        });
+      }
+      for (const id of ["sd-add-form", "sd-feed-form", "sd-cups-form"]) {
+        document.getElementById(id)?.addEventListener("submit", (event) => event.preventDefault());
+      }
+      render();
+    }
+
+    boot();
+    document.addEventListener("astro:page-load", boot);
+  </script>
+</BaseLayout>

@@ -71,7 +71,7 @@ You'll also need 1 teaspoon baking powder and 1/2 teaspoon fine salt. Garlic pow
 
 **The added water matters.** At 100% hydration, 227 grams of discard contains about 113.5 grams each of flour and water. Once you add another 180 grams of flour, discard alone doesn't supply enough water for this dough. The extra 75 grams brings the flour-and-water ratio to about 64% hydration.
 
-That's the useful math behind a soft dough. The [discard weight guide](/how-to-measure-sourdough-discard-grams/) explains the conversion if your starter is unusually thick or bubbly.
+That's the useful math behind a soft dough. The [discard weight guide](/how-to-measure-sourdough-discard-grams/) explains the conversion if your starter is unusually thick or bubbly. If the jar isn't at 100% hydration, or you want to use something other than 227 grams, the [sourdough discard calculator](/tools/sourdough-discard-calculator/) tells you the flour and water still left to add.
 
 ## Start the oven before the mixing bowl
 

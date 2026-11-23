@@ -88,7 +88,7 @@ For **100% hydration discard**, divide its weight by two.
 
 For example, adding 100 grams of this discard to a recipe contributes 50 grams of flour and 50 grams of water. Subtracting those from the recipe preserves the ingredient balance on paper, but acidity and fermentation still affect the result. It isn't a promise that any cake or cookie recipe will behave the same.
 
-A starter at another hydration needs different math: **flour = discard weight ÷ (1 + hydration ÷ 100)**. Water is the remaining weight. A 150-gram starter at 50% hydration contains 100 grams flour and 50 grams water. The calculator above stays at 100% hydration deliberately.
+A starter at another hydration needs different math: **flour = discard weight ÷ (1 + hydration ÷ 100)**. Water is the remaining weight. A 150-gram starter at 50% hydration contains 100 grams flour and 50 grams water. The calculator above stays at 100% hydration deliberately. For any other hydration, a feeding ratio, or the cup conversion in one place, use the [sourdough discard calculator](/tools/sourdough-discard-calculator/).
 
 ## Scale a recipe to the jar you have
 

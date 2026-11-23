@@ -2,7 +2,7 @@
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
  * These 80 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
- * the 25 KEEP money URLs (flagships + surviving studies + tools/hubs).
+ * the 26 KEEP money URLs (flagships + surviving studies + tools/hubs).
  *
  * Single source of truth for:
  *   - src/pages/[slug].astro robots meta + rich-result schema
@@ -119,6 +119,7 @@ export const INDEX_KEEP_PATHS = new Set([
   "tools/recipe-cost-calculator",
   "tools/recipe-finder",
   "tools/shopping-list-builder",
+  "tools/sourdough-discard-calculator",
   "usda-thrifty-food-plan-weekly-cost",
 ]);
 
@@ -164,8 +165,8 @@ function assertPruneSafety() {
   if (INDEX_PRUNE_SLUGS.size !== 80) {
     throw new Error(`index-prune: expected 80 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
-  if (INDEX_KEEP_PATHS.size !== 25) {
-    throw new Error(`index-prune: expected 25 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
+  if (INDEX_KEEP_PATHS.size !== 26) {
+    throw new Error(`index-prune: expected 26 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
   }
 }
 

@@ -16,6 +16,7 @@ test("every interactive tool root is covered by the shared funnel tracker", () =
     "recipe-cost-app",
     "recipe-finder-app",
     "shopping-list-builder-app",
+    "sourdough-tool",
   ]) {
     assert.match(layout, new RegExp(`'#${root}'`), root);
   }
