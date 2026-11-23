@@ -47,9 +47,9 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const popcorn = articleFrontmatter("popcorn-vs-potato-chips-fiber-comparison");
   assert.equal(
     popcorn.title,
-    "Chips vs Popcorn: 4.1g vs 0.9g Fiber (108 vs 149 Cal)",
+    "Chips vs Popcorn: Which Has More Fiber?",
   );
-  assert.equal(popcorn.title.length, 53);
+  assert.equal(popcorn.title.length, 39);
   assert.ok(
     popcorn.title.length <= 60,
     `popcorn title too long for SERP: ${popcorn.title.length}`,
@@ -59,21 +59,15 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     titleLower.startsWith("chips vs popcorn"),
     "popcorn title should lead with chips vs popcorn",
   );
-  assert.match(popcorn.title, /4\.1g/);
-  assert.match(popcorn.title, /0\.9g/);
-  assert.ok(
-    titleLower.indexOf("4.1g") < titleLower.indexOf("0.9g"),
-    "popcorn title should put popcorn fiber (4.1g) before chips fiber (0.9g)",
+  assert.equal(
+    /^\d/.test(popcorn.title),
+    false,
+    "popcorn title should not lead with a raw gram figure",
   );
-  assert.ok(
-    titleLower.indexOf("fiber") < titleLower.indexOf("108"),
-    "popcorn title should surface fiber before the calorie figures",
-  );
-  assert.match(popcorn.title, /149/);
-  assert.match(popcorn.title, /108/);
-  assert.ok(
-    titleLower.indexOf("108") < titleLower.indexOf("149"),
-    "popcorn title should put popcorn calories (108) before chips (149)",
+  assert.equal(
+    /^chips vs popcorn: 4\.1g vs 0\.9g fiber \(108 vs 149 cal\)$/.test(titleLower),
+    false,
+    "popcorn title should not be the raw gram-pair SERP",
   );
   assert.equal(
     /^chips vs popcorn: which has fewer calories\? 149 vs 108$/.test(titleLower),
@@ -228,9 +222,9 @@ test("canned beans vs dried beans nutrition title puts protein grams per 100g in
 
   assert.equal(
     beans.title,
-    "Dried vs Canned Beans: 21.6g vs 6.0g Protein per 100g",
+    "Dried vs Canned Beans: Which Has More Protein?",
   );
-  assert.equal(beans.title.length, 53);
+  assert.equal(beans.title.length, 46);
   assert.ok(
     beans.title.length <= 60,
     `nutrition beans title too long for SERP: ${beans.title.length}`,
@@ -239,13 +233,12 @@ test("canned beans vs dried beans nutrition title puts protein grams per 100g in
     titleLower.startsWith("dried vs canned beans"),
     "nutrition beans title should lead with dried vs canned beans",
   );
-  assert.ok(
-    titleLower.indexOf("21.6g") < titleLower.indexOf("6.0g"),
-    "nutrition beans title should put dry protein (21.6g) before canned (6.0g)",
+  assert.match(beans.title, /Which Has More Protein/);
+  assert.equal(
+    /\d+\.\d+g vs \d+\.\d+g/.test(titleLower),
+    false,
+    "nutrition beans title should not be a raw gram-pair SERP",
   );
-  assert.match(beans.title, /21\.6g/);
-  assert.match(beans.title, /6\.0g/);
-  assert.match(beans.title, /Protein per 100g/);
   assert.equal(
     /^are dried beans better than canned\?$/.test(titleLower),
     false,
@@ -297,27 +290,23 @@ test("beans double-win title puts the combined grams leader in the SERP", () => 
 
   assert.equal(
     page.title,
-    "Beans Protein and Fiber per $: Split Peas 144.9g Combined",
+    "Most Protein and Fiber per Dollar? Split Peas",
   );
-  assert.equal(page.title.length, 57);
+  assert.equal(page.title.length, 45);
   assert.ok(
     page.title.length <= 60,
     `beans double-win title too long for SERP: ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("beans protein and fiber per $"),
-    "beans double-win title should lead with beans protein and fiber per $",
-  );
-  assert.ok(
-    titleLower.indexOf("beans protein and fiber") < titleLower.indexOf("144.9g"),
-    "beans double-win title should put the query before the combined leader",
-  );
-  assert.match(
-    page.title,
-    /144\.9g Combined$/,
-    "144.9g is protein plus fiber, so the SERP title must say Combined next to the number",
+    titleLower.startsWith("most protein and fiber per dollar"),
+    "beans double-win title should lead with most protein and fiber per dollar",
   );
   assert.match(page.title, /Split Peas/);
+  assert.equal(
+    /144\.9g/.test(page.title),
+    false,
+    "beans double-win title should keep the combined-gram figure in the page, not the SERP title",
+  );
   assert.equal(
     titleLower.includes("77.8"),
     false,
@@ -396,20 +385,20 @@ test("quality-adjusted protein title puts the CSV leader in the SERP", () => {
 
   assert.equal(
     page.title,
-    "Cheap Protein, Adjusted: Drumsticks 50.3g vs Lentils 49.0g",
+    "Cheap Protein, Adjusted for Quality: Drumsticks",
   );
-  assert.equal(page.title.length, 58);
+  assert.equal(page.title.length, 47);
   assert.ok(page.title.length <= 60, `quality-adjusted title too long: ${page.title.length}`);
   assert.ok(
     titleLower.startsWith("cheap protein"),
     "quality-adjusted title should lead with cheap protein",
   );
-  assert.ok(
-    titleLower.indexOf("50.3g") < titleLower.indexOf("49.0g"),
-    "quality-adjusted title should put drumsticks (50.3g) before lentils (49.0g)",
+  assert.match(page.title, /Drumsticks/);
+  assert.equal(
+    /50\.3g vs /.test(page.title),
+    false,
+    "quality-adjusted title should not be a raw gram-pair SERP",
   );
-  assert.match(page.title, /50\.3g/);
-  assert.match(page.title, /49\.0g/);
   assert.equal(
     /^cheap protein ranked after adjusting for quality$/.test(titleLower),
     false,
@@ -557,19 +546,21 @@ test("breakfast staples title leads with combined grams from the flagship CSVs",
   assert.equal(pinto.protein_g_per_dollar, "57.6");
   assert.equal(pintoFiber.fiber_g_per_dollar, "41.7");
 
-  const expected = `Cheapest Breakfast: Flour ${flourCombined}g vs Oats ${oatsCombined}g Combined`;
+  const expected = "Cheapest Breakfast per Dollar: Flour, Then Oats";
   assert.equal(page.title, expected);
-  assert.equal(page.title.length, 55);
+  assert.equal(page.title.length, 47);
   assert.ok(page.title.length <= 60, `breakfast title too long: ${page.title.length}`);
   assert.ok(
     page.title.toLowerCase().startsWith("cheapest breakfast"),
     "breakfast title should lead with cheapest breakfast",
   );
-  assert.ok(
-    page.title.indexOf("173.8g") < page.title.indexOf("82.4g"),
-    "breakfast title should put flour combined grams before oats",
+  assert.match(page.title, /Flour/);
+  assert.match(page.title, /Oats/);
+  assert.equal(
+    /\d+\.\d+g vs /.test(page.title),
+    false,
+    "breakfast title should not be a raw gram-pair SERP",
   );
-  assert.match(page.title, /Combined/);
   assert.equal(page.title.includes(flourProtein), false);
   assert.equal(page.title.includes(flourFiber), false);
   assert.equal(
@@ -665,17 +656,19 @@ test("eggs vs everything title leads with protein-per-dollar grams from the flag
   assert.equal(eggs, "34.4");
   assert.equal(pinto, "57.6");
 
-  const expected = `Are Eggs the Cheapest Protein? Flour ${flour}g vs Eggs ${eggs}g`;
+  const expected = "Are Eggs the Cheapest Protein? Flour Leads";
   assert.equal(page.title, expected);
-  assert.equal(page.title.length, 56);
+  assert.equal(page.title.length, 42);
   assert.ok(page.title.length <= 60, `eggs title too long: ${page.title.length}`);
   assert.ok(
     page.title.toLowerCase().startsWith("are eggs the cheapest protein"),
     "eggs title should lead with are eggs the cheapest protein",
   );
-  assert.ok(
-    page.title.indexOf(`${flour}g`) < page.title.indexOf(`${eggs}g`),
-    "eggs title should put the flour leader before the egg figure",
+  assert.match(page.title, /Flour Leads/);
+  assert.equal(
+    /\d+\.\d+g vs /.test(page.title),
+    false,
+    "eggs title should not be a raw gram-pair SERP",
   );
   assert.equal(
     page.title.toLowerCase().includes("combined"),
@@ -785,23 +778,23 @@ test("costco rotisserie chicken title leads with the study protein cost", () => 
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
   const beforeTitle = "Rotisserie Chicken Meals: 5 Quick Costco Meal Ideas";
-  const afterTitle = "$5.97 Costco Rotisserie Chicken: ~160g Protein";
+  const afterTitle = "Costco Rotisserie Chicken: $5.97 and ~160g Protein";
 
   assert.equal(beforeTitle.length, 51);
   assert.equal(page.title, afterTitle);
   assert.notEqual(page.title, beforeTitle);
-  assert.equal(page.title.length, 46);
+  assert.equal(page.title.length, 50);
   assert.ok(
     page.title.length <= 60,
     `costco rotisserie title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    page.title.startsWith("$5.97"),
-    "title should lead with the $5.97 study price",
+    titleLower.startsWith("costco rotisserie chicken"),
+    "title should lead with costco rotisserie chicken",
   );
   assert.ok(
-    titleLower.indexOf("$5.97") < titleLower.indexOf("costco"),
-    "title should put $5.97 before Costco",
+    titleLower.indexOf("costco") < titleLower.indexOf("$5.97"),
+    "title should put Costco before the $5.97 study price",
   );
   assert.ok(
     titleLower.indexOf("costco") < titleLower.indexOf("rotisserie"),
@@ -861,16 +854,20 @@ test("homemade salad dressing title puts the fridge windows in the title", () =>
 
   assert.equal(
     dressing.title,
-    "Homemade Salad Dressing Fridge Life: 2 Weeks, 1 Week, or 3–4 Days",
+    "Homemade Dressing Fridge Life: 2 Weeks, 1 Week, 3-4 Days",
   );
-  assert.equal(dressing.title.length, 65);
+  assert.equal(dressing.title.length, 56);
   assert.ok(
-    titleLower.startsWith("homemade salad dressing fridge life"),
-    "dressing title should lead with homemade salad dressing fridge life",
+    dressing.title.length <= 60,
+    `dressing title should be ≤60 chars, got ${dressing.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("homemade dressing fridge life"),
+    "dressing title should lead with homemade dressing fridge life",
   );
   assert.match(dressing.title, /2 Weeks/);
   assert.match(dressing.title, /1 Week/);
-  assert.match(dressing.title, /3\u20134 Days/);
+  assert.match(dressing.title, /3-4 Days/);
   assert.match(dressing.title, /fridge/i);
   assert.equal(
     /oil\s*(?:and|&)\s*vinegar/.test(titleLower),
@@ -1166,7 +1163,7 @@ test("food value database title leads with food value and grocery cost", () => {
   assert.match(description, /Not USDA-endorsed/);
 });
 
-test("artichoke recipe title leads with the macrobiotic steam method", () => {
+test("artichoke recipe title leads with the steam-until-leaves method", () => {
   const artichoke = articleFrontmatter("artichoke-recipes-for-gut-health");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/artichoke-recipes-for-gut-health.md"),
@@ -1177,20 +1174,25 @@ test("artichoke recipe title leads with the macrobiotic steam method", () => {
 
   assert.equal(
     artichoke.title,
-    "Macrobiotic Artichoke Recipe: Steam Until Leaves Pull Free",
+    "How to Steam Artichokes Until Leaves Pull Free",
   );
-  assert.equal(artichoke.title.length, 58);
+  assert.equal(artichoke.title.length, 46);
   assert.ok(
     artichoke.title.length <= 60,
     `artichoke title should be ≤60 chars, got ${artichoke.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("macrobiotic artichoke recipe"),
-    "artichoke title should lead with the macrobiotic artichoke recipe query",
+    titleLower.startsWith("how to steam artichokes"),
+    "artichoke title should lead with how to steam artichokes",
   );
   assert.ok(
-    titleLower.includes("steam until leaves pull free"),
-    "artichoke title should name the steam-until-leaves-pull-free method",
+    titleLower.includes("leaves pull free"),
+    "artichoke title should name the leaves-pull-free cue",
+  );
+  assert.equal(
+    titleLower.includes("macrobiotic"),
+    false,
+    "artichoke title should not stuff macrobiotic onto a steam method",
   );
   assert.equal(
     titleLower.startsWith("artichoke recipes for gut health"),
@@ -1392,7 +1394,7 @@ test("yogurt title leads with the 13g parfait fiber win", () => {
   const titleLower = title.toLowerCase();
   const excerptLower = excerpt.toLowerCase();
   const beforeTitle = "High Fiber Yogurt: How to Add Fiber (Plain Greek Is 0g)";
-  const afterTitle = "13g High Fiber Yogurt Parfait (Plain Greek Is 0g)";
+  const afterTitle = "High Fiber Yogurt Parfait: 13g, Plain Greek Is 0g";
 
   assert.equal(beforeTitle, "High Fiber Yogurt: How to Add Fiber (Plain Greek Is 0g)");
   assert.equal(beforeTitle.length, 55);
@@ -1404,12 +1406,12 @@ test("yogurt title leads with the 13g parfait fiber win", () => {
   );
   assert.equal(title.length, 49);
   assert.ok(
-    titleLower.startsWith("13g"),
-    "yogurt title should lead with the 13g parfait fiber win",
+    titleLower.startsWith("high fiber yogurt parfait"),
+    "yogurt title should lead with high fiber yogurt parfait",
   );
   assert.ok(
-    titleLower.indexOf("13g") < titleLower.indexOf("high fiber yogurt"),
-    "yogurt title should put 13g before the high fiber yogurt query",
+    titleLower.indexOf("high fiber yogurt") < titleLower.indexOf("13g"),
+    "yogurt title should put the parfait query before the 13g figure",
   );
   assert.ok(
     titleLower.includes("high fiber yogurt parfait"),
@@ -1475,22 +1477,22 @@ test("pizza crust fiber title leads with which crust has more fiber", () => {
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.equal(page.title, "Pizza Crust Fiber: Which Has More? 2.7g vs 4.2-5.1g");
-  assert.equal(page.title.length, 51);
+  assert.equal(page.title, "Which Pizza Crust Has More Fiber? Whole Wheat");
+  assert.equal(page.title.length, 45);
   assert.ok(
     page.title.length <= 60,
     `pizza crust title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("pizza crust fiber"),
-    "pizza crust title should lead with pizza crust fiber",
+    titleLower.startsWith("which pizza crust has more fiber"),
+    "pizza crust title should lead with which pizza crust has more fiber",
   );
-  assert.ok(
-    titleLower.indexOf("which has more") < titleLower.indexOf("2.7g"),
-    "pizza crust title should put which-has-more before the USDA grams",
+  assert.match(page.title, /Whole Wheat/);
+  assert.equal(
+    /\d+\.\d+g vs /.test(page.title),
+    false,
+    "pizza crust title should not be a raw gram-pair SERP",
   );
-  assert.match(page.title, /2\.7g/);
-  assert.match(page.title, /4\.2-5\.1g/);
   assert.equal(
     titleLower.includes("comparing fiber in different"),
     false,
@@ -1716,40 +1718,29 @@ test("oatmeal vs grits title leads with cooked-cup fiber grams", () => {
   );
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
-  const beforeTitle = "Oatmeal vs Grits: Which Has More Fiber?";
-  const afterTitle = "Oatmeal 4.0g vs Grits 1.6\u20132.4g Fiber per Cooked Cup";
+  const rejectedGramLead = "Oatmeal 4.0g vs Grits 1.6\u20132.4g Fiber per Cooked Cup";
+  const afterTitle = "Oatmeal vs Grits: Which Has More Fiber?";
 
-  assert.equal(beforeTitle, "Oatmeal vs Grits: Which Has More Fiber?");
-  assert.equal(beforeTitle.length, 39);
+  assert.equal(rejectedGramLead.length, 51);
   assert.equal(page.title, afterTitle);
-  assert.notEqual(page.title, beforeTitle);
-  assert.equal(page.title.length, 51);
+  assert.notEqual(page.title, rejectedGramLead);
+  assert.equal(page.title.length, 39);
   assert.ok(
     page.title.length <= 60,
     `oatmeal vs grits title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("oatmeal 4.0g vs grits"),
-    "oatmeal vs grits title should lead with oatmeal 4.0g vs grits",
+    titleLower.startsWith("oatmeal vs grits"),
+    "oatmeal vs grits title should lead with oatmeal vs grits",
   );
-  assert.ok(
-    titleLower.indexOf("4.0g") < titleLower.indexOf("1.6"),
-    "oatmeal vs grits title should put oatmeal 4.0g before the grits range",
-  );
-  assert.match(page.title, /1\.6\u20132\.4g/);
   assert.equal(
-    page.title.includes("1.6-2.4g"),
+    titleLower.startsWith("oatmeal 4.0g vs grits"),
     false,
-    "oatmeal vs grits title should use the en dash for the grits range, not a hyphen",
-  );
-  assert.ok(
-    titleLower.indexOf("fiber") < titleLower.indexOf("cooked cup"),
-    "oatmeal vs grits title should put fiber before cooked cup",
+    "oatmeal vs grits title should not lead with the raw gram pair",
   );
   assert.equal(
     /^oatmeal vs grits: which has more fiber\?$/.test(titleLower),
-    false,
-    "oatmeal vs grits title should not be the old which-has-more question SERP",
+    true,
   );
   assert.equal(
     titleLower.includes("the actual numbers"),
@@ -2036,7 +2027,7 @@ test("high fiber smoothies title leads with high fiber smoothies for picky kids"
   assert.match(raw, /^dateModified: 2026-11-23$/m);
 });
 
-test("high fiber fast food title leads with Chipotle 25g and Subway 19g", () => {
+test("high fiber fast food title leads with the fast-food query", () => {
   const page = articleFrontmatter("high-fiber-fast-food-options-guide");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/high-fiber-fast-food-options-guide.md"),
@@ -2045,30 +2036,26 @@ test("high fiber fast food title leads with Chipotle 25g and Subway 19g", () => 
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
   const beforeTitle = "High-Fiber Fast Food: What to Order at 6 Chains";
-  const afterTitle = "Chipotle 25g, Subway 19g: High-Fiber Fast Food";
+  const afterTitle = "High-Fiber Fast Food: Chipotle Leads at 25g";
 
   assert.equal(beforeTitle.length, 47);
   assert.equal(page.title, afterTitle);
   assert.notEqual(page.title, beforeTitle);
-  assert.equal(page.title.length, 46);
+  assert.equal(page.title.length, 43);
   assert.ok(
     page.title.length <= 60,
     `high fiber fast food title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    page.title.startsWith("Chipotle 25g"),
-    "high fiber fast food title should lead with Chipotle 25g",
+    titleLower.startsWith("high-fiber fast food"),
+    "high fiber fast food title should lead with high-fiber fast food",
   );
   assert.ok(
-    titleLower.indexOf("chipotle 25g") < titleLower.indexOf("subway 19g"),
-    "high fiber fast food title should put Chipotle 25g before Subway 19g",
-  );
-  assert.ok(
-    titleLower.indexOf("subway 19g") < titleLower.indexOf("high-fiber fast food"),
-    "high fiber fast food title should put the gram figures before the query",
+    titleLower.indexOf("high-fiber fast food") < titleLower.indexOf("chipotle"),
+    "high fiber fast food title should put the query before Chipotle",
   );
   assert.match(page.title, /25g/);
-  assert.match(page.title, /19g/);
+  assert.match(page.title, /Chipotle/);
   assert.equal(
     titleLower.includes("6 chains"),
     false,
@@ -2117,20 +2104,20 @@ test("high protein breads title leads with 5-7g protein per slice", () => {
 
   assert.equal(
     page.title,
-    "5-7g Protein per Slice: High Protein Breads for Sandwiches",
+    "High-Protein Bread for Sandwiches: 5-7g a Slice",
   );
-  assert.equal(page.title.length, 58);
+  assert.equal(page.title.length, 47);
   assert.ok(
     page.title.length <= 60,
     `high protein breads title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("5-7g protein per slice"),
-    "high protein breads title should lead with 5-7g protein per slice",
+    titleLower.startsWith("high-protein bread for sandwiches"),
+    "high protein breads title should lead with high-protein bread for sandwiches",
   );
   assert.ok(
-    titleLower.indexOf("5-7g") < titleLower.indexOf("high protein breads"),
-    "high protein breads title should put 5-7g before high protein breads",
+    titleLower.indexOf("high-protein bread") < titleLower.indexOf("5-7g"),
+    "high protein breads title should put the bread query before 5-7g",
   );
   assert.match(page.title, /5-7g/);
   assert.equal(
@@ -2185,7 +2172,7 @@ test("chia pudding breakfast title leads with the on-page jar fiber", () => {
 
   assert.equal(
     page.title,
-    "16-17g Fiber: Chia Pudding Enough for Breakfast",
+    "Is Chia Pudding Enough for Breakfast? 16g Fiber",
   );
   assert.equal(page.title.length, 47);
   assert.ok(
@@ -2193,22 +2180,18 @@ test("chia pudding breakfast title leads with the on-page jar fiber", () => {
     `chia pudding title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("16-17g fiber"),
-    "chia pudding title should lead with 16-17g fiber",
+    titleLower.startsWith("is chia pudding enough for breakfast"),
+    "chia pudding title should lead with is chia pudding enough for breakfast",
   );
   assert.ok(
-    titleLower.indexOf("16-17g") < titleLower.indexOf("chia pudding"),
-    "chia pudding title should put 16-17g before chia pudding",
+    titleLower.indexOf("chia pudding") < titleLower.indexOf("16g"),
+    "chia pudding title should put chia pudding before the 16g figure",
   );
   assert.ok(
     titleLower.includes("enough for breakfast"),
     "chia pudding title should keep enough for breakfast",
   );
-  assert.equal(
-    titleLower.includes("?"),
-    false,
-    "chia pudding title should not stay in question form",
-  );
+  assert.match(page.title, /16g Fiber/);
   assert.equal(
     titleLower.includes("best"),
     false,
@@ -2238,24 +2221,21 @@ test("cottage cheese vs Greek yogurt title leads with half-cup protein grams", (
 
   assert.equal(
     page.title,
-    "12-14g vs 10-12g Protein: Cottage Cheese vs Greek Yogurt",
+    "Cottage Cheese vs Greek Yogurt: Which Has More Protein?",
   );
-  assert.equal(page.title.length, 56);
+  assert.equal(page.title.length, 55);
   assert.ok(
     page.title.length <= 60,
     `cottage vs Greek yogurt title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
+    titleLower.startsWith("cottage cheese vs greek yogurt"),
+    "cottage vs Greek yogurt title should lead with cottage cheese vs greek yogurt",
+  );
+  assert.equal(
     titleLower.startsWith("12-14g vs 10-12g protein"),
-    "cottage vs Greek yogurt title should lead with 12-14g vs 10-12g protein",
-  );
-  assert.ok(
-    titleLower.indexOf("12-14g") < titleLower.indexOf("10-12g"),
-    "cottage vs Greek yogurt title should put cottage cheese 12-14g before Greek yogurt 10-12g",
-  );
-  assert.ok(
-    titleLower.indexOf("10-12g") < titleLower.indexOf("cottage cheese"),
-    "cottage vs Greek yogurt title should put the gram comparison before the food names",
+    false,
+    "cottage vs Greek yogurt title should not lead with the raw gram pair",
   );
   assert.match(page.title, /Cottage Cheese vs Greek Yogurt/);
   assert.equal(
@@ -2349,27 +2329,24 @@ test("beans and rice title leads with 30.1g protein per dollar", () => {
   assert.equal(twoCanUsd, "1.76");
   assert.equal(rice.protein_g_per_dollar, "29.4");
   assert.equal(cannedFiber.fiber_g_per_dollar, "34.4");
-  assert.equal(
-    page.title,
-    `${canned.protein_g_per_dollar}g Protein per $: Beans and Rice Complete Meal`,
-  );
-  assert.equal(page.title, "30.1g Protein per $: Beans and Rice Complete Meal");
-  assert.equal(page.title.length, 49);
+  assert.equal(page.title, "Are Beans and Rice a Complete Protein Meal?");
+  assert.equal(page.title.length, 43);
   assert.ok(
     page.title.length <= 60,
     `beans and rice title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("30.1g protein per $"),
-    "beans and rice title should lead with 30.1g protein per $",
+    titleLower.startsWith("are beans and rice a complete protein meal"),
+    "beans and rice title should lead with are beans and rice a complete protein meal",
+  );
+  assert.equal(
+    titleLower.startsWith("30.1g"),
+    false,
+    "beans and rice title should not lead with the raw protein-per-dollar figure",
   );
   assert.ok(
-    titleLower.indexOf("30.1g protein") < titleLower.indexOf("beans and rice"),
-    "beans and rice title should put the protein rate before the meal name",
-  );
-  assert.ok(
-    titleLower.includes("complete meal"),
-    "beans and rice title should keep the complete meal query",
+    titleLower.includes("complete protein meal"),
+    "beans and rice title should keep the complete protein meal query",
   );
   assert.equal(
     /^beans and rice: a complete protein meal on a budget$/.test(titleLower),
@@ -2548,9 +2525,9 @@ test("animal protein ranking title and table match the protein-per-dollar CSV", 
 
   assert.equal(
     page.title,
-    "Cheapest Animal Protein: Drumsticks 50.3g vs Eggs 34.4g",
+    "Cheapest Animal Protein: Drumsticks, Then Eggs",
   );
-  assert.equal(page.title.length, 55);
+  assert.equal(page.title.length, 46);
   assert.ok(
     page.title.length <= 60,
     `animal protein ranking title should be ≤60 chars, got ${page.title.length}`,
@@ -2559,9 +2536,12 @@ test("animal protein ranking title and table match the protein-per-dollar CSV", 
     titleLower.startsWith("cheapest animal protein"),
     "animal protein ranking title should lead with cheapest animal protein",
   );
-  assert.ok(
-    titleLower.indexOf("50.3g") < titleLower.indexOf("34.4g"),
-    "animal protein ranking title should put drumsticks (50.3g) before eggs (34.4g)",
+  assert.match(page.title, /Drumsticks/);
+  assert.match(page.title, /Eggs/);
+  assert.equal(
+    /50\.3g vs /.test(page.title),
+    false,
+    "animal protein ranking title should not be a raw gram-pair SERP",
   );
   assert.equal(
     /^the cheapest animal protein: 21 foods ranked by cost$/.test(titleLower),
@@ -2639,9 +2619,9 @@ test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", (
 
   assert.equal(
     page.title,
-    "Fiber per Dollar: Whole Wheat Flour 77.8g, Split Peas 71.0g",
+    "Fiber per Dollar: Flour, Then Split Peas",
   );
-  assert.equal(page.title.length, 59);
+  assert.equal(page.title.length, 40);
   assert.ok(
     page.title.length <= 60,
     `fiber per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
@@ -2650,14 +2630,13 @@ test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", (
     titleLower.startsWith("fiber per dollar"),
     "fiber per dollar ranking title should lead with fiber per dollar",
   );
-  assert.ok(
-    titleLower.indexOf("77.8g") < titleLower.indexOf("71.0g"),
-    "fiber per dollar ranking title should put whole wheat flour (77.8g) before green split peas (71.0g)",
-  );
-  assert.match(page.title, /77\.8g/);
-  assert.match(page.title, /71\.0g/);
-  assert.match(page.title, /Whole Wheat Flour/);
+  assert.match(page.title, /Flour/);
   assert.match(page.title, /Split Peas/);
+  assert.equal(
+    /77\.8g/.test(page.title),
+    false,
+    "fiber per dollar ranking title should not stuff the raw gram pair",
+  );
   assert.equal(
     /^fiber per dollar: the cheapest high-fiber foods, ranked$/.test(titleLower),
     false,
@@ -2671,25 +2650,24 @@ test("protein per dollar ranking title puts protein grams per dollar in the SERP
 
   assert.equal(
     page.title,
-    "Protein per $: Whole Wheat Flour 96.0g vs Lentils 77.7g",
+    "Protein per Dollar: Flour, Then Lentils",
   );
-  assert.equal(page.title.length, 55);
+  assert.equal(page.title.length, 39);
   assert.ok(
     page.title.length <= 60,
     `protein per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("protein per $"),
-    "protein per dollar ranking title should lead with protein per $",
+    titleLower.startsWith("protein per dollar"),
+    "protein per dollar ranking title should lead with protein per dollar",
   );
-  assert.ok(
-    titleLower.indexOf("96.0g") < titleLower.indexOf("77.7g"),
-    "protein per dollar ranking title should put whole wheat flour (96.0g) before brown lentils (77.7g)",
-  );
-  assert.match(page.title, /96\.0g/);
-  assert.match(page.title, /77\.7g/);
-  assert.match(page.title, /Whole Wheat Flour/);
+  assert.match(page.title, /Flour/);
   assert.match(page.title, /Lentils/);
+  assert.equal(
+    /96\.0g vs /.test(page.title),
+    false,
+    "protein per dollar ranking title should not be a raw gram-pair SERP",
+  );
   assert.equal(
     /^protein per dollar: the cheapest protein sources, ranked$/.test(titleLower),
     false,
@@ -2703,9 +2681,9 @@ test("high protein on a budget title puts protein-per-dollar grams in the SERP",
 
   assert.equal(
     page.title,
-    "High Protein on a Budget: Pinto 57.6g vs Bacon 9.4g",
+    "High Protein on a Budget: Pinto Beans Beat Bacon",
   );
-  assert.equal(page.title.length, 51);
+  assert.equal(page.title.length, 48);
   assert.ok(
     page.title.length <= 60,
     `high protein on a budget title should be ≤60 chars, got ${page.title.length}`,
@@ -2714,14 +2692,13 @@ test("high protein on a budget title puts protein-per-dollar grams in the SERP",
     titleLower.startsWith("high protein on a budget"),
     "high protein on a budget title should lead with high protein on a budget",
   );
-  assert.ok(
-    titleLower.indexOf("57.6g") < titleLower.indexOf("9.4g"),
-    "high protein on a budget title should put dry pinto beans (57.6g per $) before bacon (9.4g per $)",
-  );
-  assert.match(page.title, /57\.6g/);
-  assert.match(page.title, /9\.4g/);
   assert.match(page.title, /Pinto/);
   assert.match(page.title, /Bacon/);
+  assert.equal(
+    /57\.6g vs /.test(page.title),
+    false,
+    "high protein on a budget title should not be a raw gram-pair SERP",
+  );
   assert.equal(
     /^high protein on a budget: the complete guide$/.test(titleLower),
     false,
@@ -2737,25 +2714,22 @@ test("fiber on a budget title puts fiber-per-dollar grams in the SERP", () => {
 
   assert.equal(
     page.title,
-    "Fiber on a Budget: Flour 77.8g vs Split Peas 71.0g",
+    "How to Eat More Fiber on a Budget",
   );
-  assert.equal(page.title.length, 50);
+  assert.equal(page.title.length, 33);
   assert.ok(
     page.title.length <= 60,
     `fiber on a budget title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("fiber on a budget"),
-    "fiber on a budget title should lead with fiber on a budget",
+    titleLower.startsWith("how to eat more fiber on a budget"),
+    "fiber on a budget title should lead with how to eat more fiber on a budget",
   );
-  assert.ok(
-    titleLower.indexOf("77.8g") < titleLower.indexOf("71.0g"),
-    "fiber on a budget title should put whole wheat flour (77.8g per $) before dry green split peas (71.0g per $)",
+  assert.equal(
+    /77\.8g vs /.test(page.title),
+    false,
+    "fiber on a budget title should not copy the fiber-per-dollar gram pair",
   );
-  assert.match(page.title, /77\.8g/);
-  assert.match(page.title, /71\.0g/);
-  assert.match(page.title, /Flour/);
-  assert.match(page.title, /Split Peas/);
   assert.equal(
     /^how to eat more fiber on a budget: the complete guide$/.test(titleLower),
     false,
@@ -2776,9 +2750,9 @@ test("plant-based protein sources title puts protein-per-dollar grams in the SER
 
   assert.equal(
     title,
-    "Plant-Based Protein: Lentils 77.7g vs Tempeh 13.2g",
+    "Plant-Based Protein per Dollar: Lentils, Then Tempeh",
   );
-  assert.equal(title.length, 50);
+  assert.equal(title.length, 52);
   assert.ok(
     title.length <= 60,
     `plant-based protein title should be ≤60 chars, got ${title.length}`,
@@ -2787,14 +2761,13 @@ test("plant-based protein sources title puts protein-per-dollar grams in the SER
     titleLower.startsWith("plant-based protein"),
     "plant-based protein title should lead with plant-based protein",
   );
-  assert.ok(
-    titleLower.indexOf("77.7g") < titleLower.indexOf("13.2g"),
-    "plant-based protein title should put dry brown lentils (77.7g per $) before tempeh (13.2g per $)",
-  );
-  assert.match(title, /77\.7g/);
-  assert.match(title, /13\.2g/);
   assert.match(title, /Lentils/);
   assert.match(title, /Tempeh/);
+  assert.equal(
+    /77\.7g vs /.test(title),
+    false,
+    "plant-based protein title should not be a raw gram-pair SERP",
+  );
   assert.equal(
     /^plant-based protein sources: a complete guide$/.test(titleLower),
     false,
@@ -2810,9 +2783,9 @@ test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", 
 
   assert.equal(
     page.title,
-    "Eat Healthy on a Budget: Pinto 57.6g vs Bacon 9.4g",
+    "Eat Healthy on a Budget for About $60 a Week",
   );
-  assert.equal(page.title.length, 50);
+  assert.equal(page.title.length, 44);
   assert.ok(
     page.title.length <= 60,
     `eat healthy on a budget title should be ≤60 chars, got ${page.title.length}`,
@@ -2821,14 +2794,12 @@ test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", 
     titleLower.startsWith("eat healthy on a budget"),
     "eat healthy on a budget title should lead with eat healthy on a budget",
   );
-  assert.ok(
-    titleLower.indexOf("57.6g") < titleLower.indexOf("9.4g"),
-    "eat healthy on a budget title should put dry pinto beans (57.6g per $) before bacon (9.4g per $)",
+  assert.match(page.title, /\$60 a Week/);
+  assert.equal(
+    /57\.6g vs /.test(page.title),
+    false,
+    "eat healthy on a budget title should not copy the pinto-vs-bacon gram pair",
   );
-  assert.match(page.title, /57\.6g/);
-  assert.match(page.title, /9\.4g/);
-  assert.match(page.title, /Pinto/);
-  assert.match(page.title, /Bacon/);
   assert.equal(
     /^how to eat healthy on a budget: the complete playbook$/.test(titleLower),
     false,

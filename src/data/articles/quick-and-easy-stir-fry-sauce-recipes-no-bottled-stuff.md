@@ -1,5 +1,5 @@
 ---
-title: Quick and Easy Stir-Fry Sauce Recipes (No Bottled Stuff!)
+title: "Five Stir-Fry Sauces From the Pantry"
 excerpt: Skip the bottled sauces. These five homemade stir-fry sauce recipes come together in minutes with stuff you already have in the pantry.
 category: recipes
 tags:

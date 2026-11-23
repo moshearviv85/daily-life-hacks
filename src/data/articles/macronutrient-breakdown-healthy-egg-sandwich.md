@@ -1,5 +1,5 @@
 ---
-title: The Macronutrient Breakdown of a Healthy Egg Sandwich
+title: "Egg Sandwich Macros: Protein, Carbs, and Fat"
 excerpt: Stop guessing your breakfast stats. We break down the protein, carbs, and fats in a balanced egg sandwich that actually keeps you full until lunch.
 category: nutrition
 tags:

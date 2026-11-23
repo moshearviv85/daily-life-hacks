@@ -1,5 +1,5 @@
 ---
-title: Keep Your Kitchen Sink from Becoming a Disaster Zone
+title: "How to Keep the Kitchen Sink From Piling Up"
 excerpt: Tired of a perpetually messy kitchen sink? Learn simple, practical hacks to keep it clean, clear, and functional without extra effort.
 category: tips
 tags: ["kitchen organization", "cleaning hacks", "daily routine", "sink management", "home tips"]

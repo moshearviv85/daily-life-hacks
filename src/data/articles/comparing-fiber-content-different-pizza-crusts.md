@@ -1,5 +1,5 @@
 ---
-title: "Pizza Crust Fiber: Which Has More? 2.7g vs 4.2-5.1g"
+title: "Which Pizza Crust Has More Fiber? Whole Wheat"
 excerpt: "Comparing fiber in different pizza crusts: 2.7g in a regular slice, 4.2-5.1g whole wheat in USDA data. Whole slice, not crust alone. Thin crust: 2.0g."
 category: nutrition
 tags:

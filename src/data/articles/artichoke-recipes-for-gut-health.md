@@ -1,5 +1,5 @@
 ---
-title: "Macrobiotic Artichoke Recipe: Steam Until Leaves Pull Free"
+title: "How to Steam Artichokes Until Leaves Pull Free"
 excerpt: "Macrobiotic artichoke recipe: steam whole artichokes until the leaves pull free, then serve them with a sharp lemon-garlic dip and none of the usual guesswork."
 category: recipes
 tags:

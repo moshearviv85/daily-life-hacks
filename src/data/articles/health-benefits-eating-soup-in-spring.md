@@ -1,5 +1,5 @@
 ---
-title: Why You Should Keep Making Soup Well Into Spring
+title: "Why Spring Soups Are Still Worth Making"
 excerpt: Don't pack away the stockpot just because the sun is out. Spring soups offer a lighter way to stay hydrated and get your greens without the winter bloat.
 category: nutrition
 tags:

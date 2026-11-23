@@ -1,5 +1,5 @@
 ---
-title: 6 Healthy Alternatives to White Rice for Quick Dinners
+title: "What to Serve Instead of White Rice"
 excerpt: Tired of the same old white rice? These fiber-rich swaps cook fast and won't make your kids stage a dinner table protest.
 category: nutrition
 tags:

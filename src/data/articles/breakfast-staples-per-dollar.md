@@ -1,5 +1,5 @@
 ---
-title: "Cheapest Breakfast: Flour 173.8g vs Oats 82.4g Combined"
+title: "Cheapest Breakfast per Dollar: Flour, Then Oats"
 excerpt: "Whole wheat flour leads at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4 combined, eggs 34.4 protein g/$, apples 7.3 fiber g/$."
 category: "nutrition"
 tags: ["cheap breakfast foods", "breakfast protein per dollar", "budget breakfast ideas", "oatmeal vs eggs cost", "grocery data"]

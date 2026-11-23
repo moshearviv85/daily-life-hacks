@@ -1,5 +1,5 @@
 ---
-title: "Can You Use Discard From a New Starter? Not Yet, and Here's When"
+title: "Can You Use Discard From a New Starter? Not Yet"
 excerpt: 'Can you use sourdough discard from a new starter? Not until it reliably doubles within 6 to 8 hours of feeding. King Arthur says watch the rise, not the day count.'
 quickAnswer: 'No, not yet. King Arthur says not to save or bake with discard until the starter is established. Their ready test is a starter that reliably doubles, bubbly, within 6 to 8 hours of feeding. That can happen in 7 days or less, or it can take a couple of weeks. A calendar day is not the green light.'
 category: tips

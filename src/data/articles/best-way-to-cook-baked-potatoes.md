@@ -1,5 +1,5 @@
 ---
-title: The Only Way You Should Be Cooking Baked Potatoes
+title: "How to Bake Potatoes With Crispy Skin"
 excerpt: Forget dry, sad baked potatoes. This method gets you fluffy insides and crispy skin every single time, with minimal fuss.
 category: recipes
 tags:

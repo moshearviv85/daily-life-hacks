@@ -1,5 +1,5 @@
 ---
-title: "$5.97 Costco Rotisserie Chicken: ~160g Protein"
+title: "Costco Rotisserie Chicken: $5.97 and ~160g Protein"
 excerpt: "One study rotisserie bird cost $5.97 and carried about 160 grams of edible protein after bone and skin. That's about $1.49 and 40 grams split four ways."
 category: recipes
 tags:
