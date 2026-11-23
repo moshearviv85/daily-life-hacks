@@ -13,15 +13,16 @@ tags:
 image: "/images/how-to-stretch-meals-large-families-main.jpg"
 imageAlt: An overhead shot of a large, rustic wooden table filled with a colorful, abundant family-style meal, including a central casserole dish and various side dishes.
 date: 2026-04-28
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
   - question: "What are the cheapest foods to bulk up family meals?"
-    answer: "Grains and legumes are usually the most cost-effective options for adding volume. Brown rice, lentils, oats, and pearl barley are inexpensive staples that can double the size of a dish. These ingredients are high in fiber, which might help everyone feel full for longer without significantly increasing the cost per serving of the meal."
+    answer: "Grains and legumes usually add the most volume for the money. Dry brown lentils have 24.63 grams of protein and 10.7 grams of fiber per 100 grams ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)), and pearled barley has 15.6 grams of fiber per 100 grams ([FDC 170284](https://fdc.nal.usda.gov/food-details/170284/nutrients)). Fiber can help a meal feel more filling ([Eswaran et al., 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)), which is the practical reason to bulk the pot with them."
   - question: "How can I make meat go further in a recipe?"
     answer: "You can stretch meat by using a technique called blending, where you replace half the ground meat with finely chopped mushrooms or cooked lentils. This works especially well in tacos, meatloaf, and pasta sauces. The texture remains similar, but you effectively get two meals out of the meat required for one, saving money on your weekly grocery bill."
   - question: "Are frozen vegetables a good way to stretch meals?"
-    answer: "Frozen vegetables are often more affordable than fresh ones and are just as nutritious since they are flash-frozen at peak ripeness. Adding a bag of frozen peas, carrots, or corn to stews and casseroles is a fast way to increase the portion size. This method adds volume and essential nutrients to the plate while keeping the prep work to a minimum."
+    answer: "Frozen vegetables are often the bag you'll actually use. A vitamin comparison of eight fruits and vegetables found frozen samples comparable to fresh, and sometimes higher ([Bouzari et al., 2015](https://pubmed.ncbi.nlm.nih.gov/25526594/)). Adding frozen peas, carrots, or corn to a stew is a fast way to increase the portion. Cook them through."
   - question: "How do you plan cheap meals for large families?"
     answer: "Effective meal planning for large groups involves building recipes around a few versatile, low-cost base ingredients like potatoes or pasta. Buying these items in bulk and using them across different cuisines, such as baked potato bar one night and potato hash the next, keeps costs down. Focusing on one-pot meals also reduces waste and makes it easier to manage portions."
 ---
@@ -37,7 +38,7 @@ This works best in dishes with heavy sauces, like bolognese or taco meat. When y
 
 ## Turn every soup into a hearty stew
 
-Liquid doesn't keep people full, but fiber does. If you're serving a standard chicken noodle soup, it's basically flavored water with a few bits of floating debris. To make it a meal that actually lasts until bedtime, you need to bulk it up with heavy hitters like potatoes, beans, or cabbage.
+A thin soup doesn't keep people full the way a higher-fiber bowl can ([Eswaran, Muir, and Chey, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)). If you're serving a standard chicken noodle soup, it's basically flavored water with a few bits of floating debris. To make it a meal that actually lasts until bedtime, you need to bulk it up with heavy hitters like potatoes, beans, or cabbage.
 
 Adding a can of white beans to a soup adds creaminess and bulk without changing the flavor profile. Potatoes are another secret weapon because they're cheap and essentially flavor sponges. If you find yourself with a pot that looks a bit thin, throw in a handful of quick-cooking oats. They disappear into the broth and thicken it up beautifully while adding a little extra substance to every bowl. A slow cooker does all of this unattended, which is why [cheap crockpot meals for large families](/cheap-crockpot-meals-large-families/) lean on the same bulk staples: beans, potatoes, and cuts that need time more than attention.
 
@@ -45,7 +46,7 @@ Adding a can of white beans to a soup adds creaminess and bulk without changing 
 
 In many American households, the side dish is an afterthought: a pile of steamed broccoli or a bag of salad. If you want to stretch a main course, the side dish needs to do some heavy lifting. Instead of plain veggies, think about starches that can be made in massive quantities for pennies.
 
-**Rice and Grains:** A massive pot of seasoned yellow rice or buttered noodles can be the base that saves the night, and if you're scaling by head count instead of guessing, [a cup of dry beans and two thirds of a cup of dry rice covers one adult for a day](/can-you-eat-rice-and-beans-everyday/).
+**Rice and Grains:** A massive pot of seasoned yellow rice or buttered noodles can be the base that saves the night. A cup of dry pinto beans is about 41 grams of protein at [21.42 grams per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients) if the cup is 193 grams, and two thirds of a cup of dry white rice adds more starch than protein at [7.13 grams per 100 grams](https://fdc.nal.usda.gov/food-details/168877/nutrients). Together they can clear a [50 gram protein Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). They don't cover a whole day's calories. The fuller plate is in [rice and beans every day](/can-you-eat-rice-and-beans-everyday/).
 **Bread:** There is a reason restaurants give you bread before the meal. A cheap loaf of French bread from the grocery store bakery, sliced and toasted with a little garlic butter, can fill the gaps that a small portion of lasagna leaves behind.
 **Roasted Root Veggies:** Carrots and onions are some of the cheapest items in the produce aisle. Roasting them in large batches makes them sweet and satisfying enough to take up half the plate.
 

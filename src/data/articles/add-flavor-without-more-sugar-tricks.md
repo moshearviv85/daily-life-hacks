@@ -9,6 +9,7 @@ tags:
 image: "/images/add-flavor-without-more-sugar-tricks-main.jpg"
 imageAlt: "Cinnamon sticks, vanilla beans, lemon zest, and cocoa powder arranged on a light countertop"
 date: 2026-04-16
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -34,7 +35,7 @@ This isn't a "quit sugar forever" lecture. I'm not here for that. It's about bui
 
 ## Cinnamon plays mind games (in a good way)
 
-Cinnamon doesn't contain sugar. It's ground tree bark. But your brain has spent years connecting that warm, spicy smell to cinnamon rolls, apple pie, and French toast. So when you shake it onto plain oatmeal or black coffee, your brain fills in the gap. It assumes sweetness is coming, even though it isn't.
+Cinnamon isn't a spoon of sugar. [Ground cinnamon has 2.17 grams of total sugars per 100 grams](https://fdc.nal.usda.gov/food-details/171320/nutrients), so a 2.6 gram teaspoon carries well under a tenth of a gram. It's ground tree bark. Your brain has still spent years connecting that warm, spicy smell to cinnamon rolls, apple pie, and French toast. So when you shake it onto plain oatmeal or black coffee, your brain fills in the gap. It assumes sweetness is coming, even though it isn't.
 
 That mental shortcut is genuinely useful. I dumped a heavy coat of cinnamon on my morning yogurt one day out of desperation and couldn't believe how much less I missed the honey drizzle. The same trick rescues plain granola, which matters because half the boxes at the store are candy in disguise. Here's how to choose a granola that isn't secretly dessert if you want to check yours. It also works on roasted sweet potatoes, sliced apples, and even butternut squash soup.
 
@@ -58,7 +59,7 @@ Orange zest in a vinaigrette is another easy win, and making your own matters mo
 
 ## Cocoa powder for when you want chocolate, not candy
 
-Cutting back on sugar doesn't mean giving up chocolate flavor. Unsweetened cocoa powder is bitter on its own. Intensely bitter. But folded into the right context, it's incredible.
+Cutting back on sugar doesn't mean giving up chocolate flavor. [Unsweetened cocoa powder has 1.75 grams of total sugars and 37 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/169593/nutrients), and it's bitter on its own. Intensely bitter. But folded into the right context, it's incredible.
 
 A tablespoon in a banana smoothie gives you a chocolate shake vibe with zero added sweetener. A teaspoon in a pot of chili or black bean soup adds a dark, roasted depth that makes the whole dish feel more complex. My friend Sarah throws cocoa powder into her overnight oats with some peanut butter and swears it tastes like a dessert.
 
@@ -66,6 +67,6 @@ The key is pairing it with something that has its own natural sweetness. Bananas
 
 ## Give your taste buds a few days
 
-If you're used to a lot of sugar, everything will taste a bit flat for the first week. That's normal. Your palate adjusts. It doesn't take months. Most people notice a shift within a week or two.
+If you're used to a lot of sugar, and the [added-sugar Daily Value is 50 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), everything will taste a bit flat for the first week. That's normal. Your palate adjusts. It doesn't take months. Most people notice a shift within a week or two.
 
 Start with one swap. Cinnamon in your coffee instead of sugar. Lemon zest on your vegetables instead of a sweet glaze. You don't have to overhaul breakfast, lunch, and dinner on the same day. One small change at a time, and suddenly you're tasting the actual food again.

@@ -330,7 +330,7 @@ test("beans double-win title puts the combined grams leader in the SERP", () => 
   );
   assert.equal(titleLower.includes("97.9"), false);
   assert.equal(titleLower.includes("70.8"), false);
-  assert.match(raw, /^dateModified: 2026-09-24$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
   assert.match(page.excerpt, /144\.9 combined grams per dollar/);
   assert.match(page.excerpt, /57\.6g of protein/);
   assert.match(page.excerpt, /41\.7g of fiber/);

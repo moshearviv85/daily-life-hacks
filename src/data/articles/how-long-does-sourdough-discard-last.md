@@ -30,7 +30,7 @@ faq:
     answer: "Yes. Nordic Ware and sourdoughstarter.com both describe freezing it, for up to 2 to 3 months and up to 3 months. Portion 57 grams, 113 grams, or 227 grams first. Those are this site's quarter cup, half cup, and cup. Thaw overnight in the refrigerator. sourdoughstarter.com also says to use thawed discard within 3 days and not to refreeze it or microwave it. Nordic Ware allows a room-temperature thaw as well. The overnight fridge thaw is the step both of them name."
 ---
 
-How long does sourdough discard last in the fridge? Plan on one week from the oldest date on the jar, then bake it or freeze it. That week is the planning window already used on the [beginner discard recipes](/easy-sourdough-discard-recipes-beginners/). It isn't a safety limit, and it isn't a date until which every jar is fine.
+How long does sourdough discard last in the fridge? Plan on one week from the oldest date on the jar, then bake it or freeze it. That week is the planning window already used on the [beginner discard recipes](/easy-sourdough-discard-recipes-beginners/). It isn't a safety limit. [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) doesn't publish a sourdough-discard row, and the [cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) doesn't either. Keep the jar at 40°F or below. Mold, pink or orange, or a rotten smell ends it whatever the tape says.
 
 A jar without a date is just a beige mystery.
 
@@ -79,7 +79,7 @@ Nordic Ware says to freeze it in measured amounts for up to 2 to 3 months, then 
 
 ## Freezing discard (3 months; thaw overnight)
 
-Three months is the planning cap, not a date King Arthur printed. Nordic Ware's freezer line is up to 2 to 3 months. sourdoughstarter.com says up to 3 months at 0F, and that texture starts to suffer if you push toward 6 months. Past that, this page doesn't invent a longer "still fine" date.
+Three months is a baker-site quality guess, not a date [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) prints for discard. [Food held continuously at 0°F can be kept indefinitely](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), and the month counts on that chart are quality. Nordic Ware's freezer line is up to 2 to 3 months. sourdoughstarter.com says up to 3 months at 0°F, and that texture starts to suffer if you push toward 6 months. This page won't turn either number into a federal safety date.
 
 Freeze **57, 113, or 227 gram** portions, with room in the container. A solid quart of unlabeled discard is how you chip ice instead of baking. Thaw overnight in the refrigerator. Don't microwave it, don't refreeze it, and use it within 3 days of that thaw. Stir before you weigh it. The liquid on top isn't the whole block.
 

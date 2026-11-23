@@ -12,6 +12,7 @@ tags:
 image: "/images/sourdough-discard-recipes-no-yeast-main.jpg"
 imageAlt: "A glass jar of bubbly sourdough discard beside a thin golden cracker sheet and a small skillet flatbread on a wooden board."
 date: 2026-11-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -38,7 +39,7 @@ I'd rather put a number on the discard and a number on the clock than tell you t
 
 Unfed discard is sour and tired. King Arthur's point, and it's the useful one, is that discard brings flavor and doesn't do much leavening on its own. You still have three ways to get a bake out of it.
 
-**Baking soda plus the acid in the jar.** Pancakes and the big waffle batch foam as soon as the soda lands. Cook them. This isn't batter to park while you hunt for a spatula.
+**Baking soda plus the acid in the jar.** Unfed sourdough often sits around pH 4.0 to 4.8 ([Lau et al., 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC8306212/)). That acidity is a baking tool, not a proven health treatment ([D'Amico et al., 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC10399781/)). Pancakes and the big waffle batch foam as soon as the soda lands. Cook them. This isn't batter to park while you hunt for a spatula.
 
 **Baking powder, which brings its own acid.** Pizza, tortillas, biscuits, brownies, and the quick cinnamon rolls. Lift without a rise you have to schedule, and a denser crumb than a dough that sat all afternoon. That's the trade.
 
@@ -111,4 +112,4 @@ The [rolled crackers](/sourdough-discard-crackers/) are **227 grams** of discard
 
 A bubbly cup is full of air. The [discard conversion guide](/how-to-measure-sourdough-discard-grams/) is why these rows are in grams. Stir, tare the bowl, pour. A 100% hydration jar is half flour and half water by weight. Change the jar's thickness and every batter in the table moves. When it isn't equal parts flour and water, the [sourdough discard calculator](/tools/sourdough-discard-calculator/) splits that weight into the flour and water already in the jar, so the rest of the card can move with it.
 
-Discard still contains raw flour. Cook the center through before you decide you like it. And if you won't bake this week, [freeze measured portions and thaw them overnight](/how-long-does-sourdough-discard-last/). A week in the fridge is the planning window. Three months is the freezer one. The jar doesn't get safer because a recipe was short.
+Discard still contains raw flour. Cook the center through before you decide you like it. And if you won't bake this week, [freeze measured portions and thaw them overnight](/how-long-does-sourdough-discard-last/). A week in the fridge is a planning window, not a [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) row. Three months in the freezer is a baker's quality guess. [Food at a steady 0°F can be kept indefinitely](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), and the jar doesn't get safer because a recipe was short.
