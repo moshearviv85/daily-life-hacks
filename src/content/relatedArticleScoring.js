@@ -2,13 +2,26 @@
  * Sitewide "Keep Reading" selection.
  *
  * Scores are per candidate, then one deterministic pass assigns cards for
- * every built article page. Build order is slug ascending, which does not
- * depend on page-render parallelism. A global counter caps each target.
+ * every built article page. Sources are ordered by scarcity (fewest
+ * qualifying candidates first, slug ascending on ties), which does not
+ * depend on page-render parallelism.
+ *
+ * A target may appear at most MAX_RELATED_APPEARANCES times on pages outside
+ * its topic cluster. A topic cluster is a specific tag shared by a small
+ * band of indexable articles (at least TOPIC_CLUSTER_MIN, and at most
+ * TOPIC_CLUSTER_RATE of that set). Sourdough discard is the example: those
+ * cards do not consume the sitewide cap. Same-topic candidates are also
+ * ranked TOPIC_CLUSTER_RANK_BOOST points higher, one step past a single
+ * specific tag, so a sibling stays ahead of a merely similar card. A pillar
+ * boost of 40 can still keep one slot.
  */
 
 export const GENERIC_TAG_RATE = 0.25;
 export const MAX_RELATED_APPEARANCES = 8;
 export const RELATED_ARTICLE_COUNT = 4;
+export const TOPIC_CLUSTER_MIN = 8;
+export const TOPIC_CLUSTER_RATE = 0.075;
+export const TOPIC_CLUSTER_RANK_BOOST = 11;
 
 export function normalizeTag(tag) {
   return String(tag ?? "").trim().toLowerCase();
@@ -24,10 +37,9 @@ function asTagList(tags) {
  * articles. Frequency is exact and case-insensitive. "fiber" is generic
  * only when the tag itself crosses that line.
  */
-export function genericTagSet(articles) {
-  const list = articles || [];
+export function tagCounts(articles) {
   const counts = new Map();
-  for (const article of list) {
+  for (const article of articles || []) {
     const seen = new Set();
     for (const tag of asTagList(article.tags)) {
       const normalized = normalizeTag(tag);
@@ -36,13 +48,67 @@ export function genericTagSet(articles) {
       counts.set(normalized, (counts.get(normalized) || 0) + 1);
     }
   }
+  return counts;
+}
 
+export function genericTagSet(articles, rate = GENERIC_TAG_RATE) {
+  const list = articles || [];
   const generic = new Set();
   if (!list.length) return generic;
-  for (const [tag, count] of counts) {
-    if (count / list.length > GENERIC_TAG_RATE) generic.add(tag);
+  for (const [tag, count] of tagCounts(list)) {
+    if (count / list.length > rate) generic.add(tag);
   }
   return generic;
+}
+
+function topicClusterSettings(options = {}) {
+  return {
+    rate: options.topicClusterRate ?? options.rate ?? TOPIC_CLUSTER_RATE,
+    min: options.topicClusterMin ?? options.min ?? TOPIC_CLUSTER_MIN,
+  };
+}
+
+/**
+ * Tags that name a topic cluster for this population. The rate sits under
+ * the generic-tag cutoff, so a tag cannot be both.
+ */
+export function topicTagUniverse(articles, options = {}) {
+  const list = articles || [];
+  const { rate, min } = topicClusterSettings(options);
+  const universe = new Set();
+  if (!list.length) return universe;
+  for (const [tag, count] of tagCounts(list)) {
+    if (count < min) continue;
+    if (count / list.length <= rate) universe.add(tag);
+  }
+  return universe;
+}
+
+export function articleTopicTags(tags, universe) {
+  const found = new Set();
+  const allowed = universe || new Set();
+  for (const tag of asTagList(tags)) {
+    const normalized = normalizeTag(tag);
+    if (allowed.has(normalized)) found.add(normalized);
+  }
+  return found;
+}
+
+export function sharesTopicCluster(left, right) {
+  if (!left || !right) return false;
+  for (const tag of left) {
+    if (right.has(tag)) return true;
+  }
+  return false;
+}
+
+export function buildTopicTagIndex(articles, options = {}) {
+  const list = articles || [];
+  const population = list.filter((article) => article.eligibleTarget !== false);
+  const universe = topicTagUniverse(population, options);
+  return new Map(
+    list.map((article) => [article.id, articleTopicTags(article.tags, universe)]),
+  );
 }
 
 export function specificSharedTagCount(currentTags, candidateTags, genericTags) {
@@ -190,24 +256,6 @@ function byId(a, b) {
   return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
 }
 
-function compareScored(a, b) {
-  if (b.score !== a.score) return b.score - a.score;
-  if (b.releaseTimestamp !== a.releaseTimestamp) {
-    return b.releaseTimestamp - a.releaseTimestamp;
-  }
-  return byId(a, b);
-}
-
-function compareFill(a, b, appearances, neverShown) {
-  const aNever = neverShown.has(a.id) ? 0 : 1;
-  const bNever = neverShown.has(b.id) ? 0 : 1;
-  if (aNever !== bNever) return aNever - bNever;
-  const aCount = appearances.get(a.id) || 0;
-  const bCount = appearances.get(b.id) || 0;
-  if (aCount !== bCount) return aCount - bCount;
-  return compareScored(a, b);
-}
-
 let cachedKey = "";
 let cachedAssignments = null;
 
@@ -219,14 +267,18 @@ let cachedAssignments = null;
  * Ineligible targets (unreleased or noindex) never appear as cards, but
  * their pages still receive cards and those cards count toward the cap.
  *
- * Pass 1 walks sources in slug order and greedily takes the highest score
- * whose sitewide count is still under the cap. Pass 2 fills any open slot
- * from the same category, preferring articles that had zero appearances
- * after pass 1.
+ * Pass 1 walks sources by scarcity and greedily takes the highest rank
+ * whose non-cluster count is still under the cap. Same-topic-cluster
+ * cards skip that counter. Pass 2 fills open slots from the same topic
+ * cluster, then the same category with at least two specific shared tags,
+ * then never-shown same-category articles, then any remaining same-category
+ * article under the cap.
  */
 export function assignRelatedArticles(articles, options = {}) {
   const count = options.count ?? RELATED_ARTICLE_COUNT;
   const maxAppearances = options.maxAppearances ?? MAX_RELATED_APPEARANCES;
+  const genericRate = options.genericTagRate ?? GENERIC_TAG_RATE;
+  const { rate: topicClusterRate, min: topicClusterMin } = topicClusterSettings(options);
   const pillarSlugs = options.pillarSlugs ?? new Set();
   const pillarByCluster = options.pillarByCluster ?? new Map();
 
@@ -245,6 +297,10 @@ export function assignRelatedArticles(articles, options = {}) {
   const key = [
     count,
     maxAppearances,
+    genericRate,
+    topicClusterRate,
+    topicClusterMin,
+    TOPIC_CLUSTER_RANK_BOOST,
     [...pillarSlugs].sort().join(","),
     [...pillarByCluster.entries()]
       .map(([clusterId, pillar]) => `${clusterId}=${pillar}`)
@@ -264,12 +320,45 @@ export function assignRelatedArticles(articles, options = {}) {
   }
 
   const targets = records.filter((article) => article.eligibleTarget);
-  const genericTags = genericTagSet(targets);
-  const order = [...records].sort(byId);
+  const genericTags = genericTagSet(targets, genericRate);
+  const topicUniverse = topicTagUniverse(targets, {
+    rate: topicClusterRate,
+    min: topicClusterMin,
+  });
+  for (const record of records) {
+    record.topicTags = articleTopicTags(record.tags, topicUniverse);
+  }
 
   function preferredPillarFor(source) {
     if (!source.clusterId || pillarSlugs.has(source.id)) return null;
     return pillarByCluster.get(source.clusterId) ?? null;
+  }
+
+  function selectionRank(candidate) {
+    return candidate.score + (candidate.sameTopic ? TOPIC_CLUSTER_RANK_BOOST : 0);
+  }
+
+  function compareSelection(a, b) {
+    const rankDiff = selectionRank(b) - selectionRank(a);
+    if (rankDiff !== 0) return rankDiff;
+    if (b.releaseTimestamp !== a.releaseTimestamp) {
+      return b.releaseTimestamp - a.releaseTimestamp;
+    }
+    return byId(a, b);
+  }
+
+  function allowedTarget(source, candidate) {
+    const preferredPillar = preferredPillarFor(source);
+    if (pillarSlugs.has(candidate.id) && candidate.id !== preferredPillar) return false;
+    return budgetStudyAllowed({
+      candidateId: candidate.id,
+      candidateTags: candidate.tags,
+      candidateTitle: candidate.title,
+      currentCategory: source.category,
+      currentTags: source.tags,
+      currentCluster: source.clusterId,
+      currentId: source.id,
+    });
   }
 
   function scoredCandidates(source) {
@@ -296,69 +385,102 @@ export function assignRelatedArticles(articles, options = {}) {
       ranked.push({
         id: candidate.id,
         score,
+        sameTopic: sharesTopicCluster(source.topicTags, candidate.topicTags),
         releaseTimestamp: candidate.releaseTimestamp,
         category: candidate.category,
         clusterId: candidate.clusterId,
+        specificShared: specificSharedTagCount(currentTags, candidate.tags, genericTags),
       });
     }
-    ranked.sort(compareScored);
+    ranked.sort(compareSelection);
     return ranked;
   }
 
-  const rankedBySource = new Map(order.map((source) => [source.id, scoredCandidates(source)]));
-  const appearances = new Map();
+  const rankedBySource = new Map(
+    records.map((source) => [source.id, scoredCandidates(source)]),
+  );
+  const order = [...records].sort((a, b) => {
+    const scarcity = rankedBySource.get(a.id).length - rankedBySource.get(b.id).length;
+    if (scarcity !== 0) return scarcity;
+    return byId(a, b);
+  });
+  const cappedAppearances = new Map();
+  const shown = new Set();
   const selected = new Map(order.map((source) => [source.id, []]));
+
+  function take(source, candidate) {
+    const chosen = selected.get(source.id);
+    chosen.push(candidate.id);
+    shown.add(candidate.id);
+    if (!candidate.sameTopic) {
+      cappedAppearances.set(
+        candidate.id,
+        (cappedAppearances.get(candidate.id) || 0) + 1,
+      );
+    }
+  }
+
+  function cappedOut(candidate) {
+    return (cappedAppearances.get(candidate.id) || 0) >= maxAppearances;
+  }
 
   for (const source of order) {
     const chosen = selected.get(source.id);
     for (const candidate of rankedBySource.get(source.id)) {
       if (chosen.length >= count) break;
-      if ((appearances.get(candidate.id) || 0) >= maxAppearances) continue;
-      chosen.push(candidate.id);
-      appearances.set(candidate.id, (appearances.get(candidate.id) || 0) + 1);
+      if (!candidate.sameTopic && cappedOut(candidate)) continue;
+      take(source, candidate);
     }
   }
 
   const neverShown = new Set(
-    targets.filter((article) => !(appearances.get(article.id) > 0)).map((article) => article.id),
+    targets.filter((article) => !shown.has(article.id)).map((article) => article.id),
   );
 
   for (const source of order) {
     const chosen = selected.get(source.id);
     if (chosen.length >= count) continue;
     const chosenIds = new Set(chosen);
-    const preferredPillar = preferredPillarFor(source);
+    const currentTags = new Set(source.tags.map(normalizeTag));
     const pool = [];
     for (const candidate of targets) {
       if (candidate.id === source.id || chosenIds.has(candidate.id)) continue;
-      if (candidate.category !== source.category) continue;
-      if ((appearances.get(candidate.id) || 0) >= maxAppearances) continue;
-      if (pillarSlugs.has(candidate.id) && candidate.id !== preferredPillar) continue;
-      if (
-        !budgetStudyAllowed({
-          candidateId: candidate.id,
-          candidateTags: candidate.tags,
-          candidateTitle: candidate.title,
-          currentCategory: source.category,
-          currentTags: source.tags,
-          currentCluster: source.clusterId,
-          currentId: source.id,
-        })
-      ) {
-        continue;
-      }
+      if (!allowedTarget(source, candidate)) continue;
+      const sameTopic = sharesTopicCluster(source.topicTags, candidate.topicTags);
+      const sameCategory = candidate.category === source.category;
+      if (!sameTopic && !sameCategory) continue;
+      if (!sameTopic && cappedOut(candidate)) continue;
+      const specificShared = specificSharedTagCount(
+        currentTags,
+        candidate.tags,
+        genericTags,
+      );
       pool.push({
         id: candidate.id,
-        score: 0,
+        score: specificShared * 10 + (sameCategory ? 3 : 0),
+        sameTopic,
+        sameCategory,
+        specificShared,
         releaseTimestamp: candidate.releaseTimestamp,
       });
     }
-    pool.sort((a, b) => compareFill(a, b, appearances, neverShown));
+    pool.sort((a, b) => {
+      if (a.sameTopic !== b.sameTopic) return a.sameTopic ? -1 : 1;
+      const aTagged = a.sameCategory && a.specificShared >= 2 ? 0 : 1;
+      const bTagged = b.sameCategory && b.specificShared >= 2 ? 0 : 1;
+      if (aTagged !== bTagged) return aTagged - bTagged;
+      const aFresh = neverShown.has(a.id) ? 0 : 1;
+      const bFresh = neverShown.has(b.id) ? 0 : 1;
+      if (aFresh !== bFresh) return aFresh - bFresh;
+      const aCount = cappedAppearances.get(a.id) || 0;
+      const bCount = cappedAppearances.get(b.id) || 0;
+      if (aCount !== bCount) return aCount - bCount;
+      return compareSelection(a, b);
+    });
     for (const candidate of pool) {
       if (chosen.length >= count) break;
-      if ((appearances.get(candidate.id) || 0) >= maxAppearances) continue;
-      chosen.push(candidate.id);
-      appearances.set(candidate.id, (appearances.get(candidate.id) || 0) + 1);
+      if (!candidate.sameTopic && cappedOut(candidate)) continue;
+      take(source, candidate);
     }
   }
 

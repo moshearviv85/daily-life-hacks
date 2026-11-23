@@ -24,7 +24,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
 
       - name: Reject mass dateModified edits
@@ -41,6 +41,9 @@ jobs:
 
       - name: Build and verify routing
         run: npm run build:checked
+
+      - name: Unit tests
+        run: node --test tests/*.test.mjs
 
       - name: Canonical routing unit tests
         run: node --test tests/canonical-routing.test.mjs tests/index-prune-policy.test.mjs tests/article-technical-seo-schema.test.mjs tests/flagship-inbound-crawl.test.mjs tests/flagship-engagement.test.mjs tests/article-content-ux.test.mjs tests/keep-protein-csv-drift.test.mjs tests/stale-pinto-fiber-snapshot.test.mjs tests/gauntlet-internal-page.test.mjs
