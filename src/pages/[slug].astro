@@ -361,13 +361,13 @@ const jsonLd = isRecipe
         : undefined,
       recipeCategory,
       recipeCuisine,
-      nutrition: recipeNutrition
-        ? schemaNutrition(recipeNutrition.rounded)
-        : article.data.calories
-          ? {
-              "@type": "NutritionInformation",
-              calories: `${article.data.calories} calories`,
-            }
+      nutrition: article.data.calories && !recipeNutrition
+        ? {
+            "@type": "NutritionInformation",
+            calories: `${article.data.calories} calories`,
+          }
+        : recipeNutrition
+          ? schemaNutrition(recipeNutrition.rounded)
           : undefined,
       estimatedCost: recipeCost?.complete
         ? {
