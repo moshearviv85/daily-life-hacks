@@ -9,11 +9,13 @@ import { isIndexPruned } from "../src/content/index-prune.js";
 import {
   assignRelatedArticles,
   budgetStudyAllowed,
+  buildTopicTagIndex,
   genericTagSet,
   isPerDollarOrBudgetStudy,
   isRecipeStorageOrTipsArticle,
   resolveArticleCluster,
   scoreRelatedCandidate,
+  sharesTopicCluster,
 } from "../src/content/relatedArticleScoring.js";
 
 const pillars = new Set(CONTENT_CLUSTERS.map((cluster) => cluster.parentPillar));
@@ -36,7 +38,7 @@ test("a tag used on more than a quarter of articles is generic", () => {
   assert.equal(generic.has("lentils"), false);
 });
 
-test("the appearance cap is a deterministic slug-order greedy pass", () => {
+test("the appearance cap is a deterministic scarcity-order pass", () => {
   const shared = ["lentils", "oats"];
   const articles = [
     {
@@ -87,6 +89,102 @@ test("the appearance cap is a deterministic slug-order greedy pass", () => {
   assert.equal(appearances.get("quiet"), 2);
 });
 
+test("pages with fewer qualifying candidates pick before later slugs", () => {
+  const articles = [
+    {
+      id: "aaa",
+      tags: ["common", "extra", "wide"],
+      category: "recipes",
+      releaseTimestamp: 50,
+      eligibleTarget: true,
+    },
+    {
+      id: "backup",
+      tags: ["wide", "spare"],
+      category: "recipes",
+      releaseTimestamp: 40,
+      eligibleTarget: true,
+    },
+    {
+      id: "only-match",
+      tags: ["rare", "marker", "common", "extra"],
+      category: "nutrition",
+      releaseTimestamp: 100,
+      eligibleTarget: true,
+    },
+    {
+      id: "zzz-scarce",
+      tags: ["rare", "marker"],
+      category: "tips",
+      releaseTimestamp: 10,
+      eligibleTarget: true,
+    },
+  ];
+  const assigned = assignRelatedArticles(articles, {
+    count: 1,
+    maxAppearances: 1,
+    genericTagRate: 1,
+    topicClusterRate: 0,
+    pillarSlugs: new Set(),
+    pillarByCluster: new Map(),
+  });
+
+  assert.deepEqual(assigned.get("zzz-scarce"), ["only-match"]);
+  assert.deepEqual(assigned.get("aaa"), ["backup"]);
+});
+
+test("same-topic-cluster cards do not consume the sitewide cap", () => {
+  const articles = [];
+  for (let index = 0; index < 4; index += 1) {
+    articles.push({
+      id: `dough-${index}`,
+      tags: ["sourdough"],
+      category: "tips",
+      releaseTimestamp: 40 - index,
+      eligibleTarget: true,
+    });
+  }
+  articles.push(
+    {
+      id: "guide",
+      tags: ["beans", "lentils"],
+      category: "nutrition",
+      releaseTimestamp: 100,
+      eligibleTarget: true,
+    },
+    {
+      id: "first",
+      tags: ["beans", "lentils"],
+      category: "recipes",
+      releaseTimestamp: 10,
+      eligibleTarget: true,
+    },
+    {
+      id: "second",
+      tags: ["beans", "lentils"],
+      category: "tips",
+      releaseTimestamp: 9,
+      eligibleTarget: true,
+    },
+  );
+
+  const assigned = assignRelatedArticles(articles, {
+    count: 1,
+    maxAppearances: 1,
+    genericTagRate: 1,
+    topicClusterRate: 1,
+    topicClusterMin: 4,
+    pillarSlugs: new Set(),
+    pillarByCluster: new Map(),
+  });
+
+  assert.deepEqual(assigned.get("dough-1"), ["dough-0"]);
+  assert.deepEqual(assigned.get("dough-2"), ["dough-0"]);
+  assert.deepEqual(assigned.get("dough-3"), ["dough-0"]);
+  assert.deepEqual(assigned.get("first"), ["guide"]);
+  assert.notEqual(assigned.get("second")?.[0], "guide");
+});
+
 test("indexable keep-reading cards follow the sitewide rules", () => {
   const articles = loadArticles();
   const assignments = assignRelatedArticles(articles, {
@@ -104,6 +202,7 @@ test("indexable keep-reading cards follow the sitewide rules", () => {
 
   const byId = new Map(articles.map((article) => [article.id, article]));
   const indexable = articles.filter((article) => article.eligibleTarget);
+  const topicByArticle = buildTopicTagIndex(articles);
   const generic = genericTagSet(indexable);
   const counts = new Map();
   for (const article of indexable) {
@@ -117,13 +216,13 @@ test("indexable keep-reading cards follow the sitewide rules", () => {
   assert.equal(generic.has("fiber"), false);
   assert.equal(generic.has("high fiber"), false);
 
-  const appearances = new Map();
+  const nonClusterAppearances = new Map();
   let cards = 0;
   let crossCategory = 0;
   let budgetOnUnrelated = 0;
   for (const source of articles) {
     const chosen = assignments.get(source.id) ?? [];
-    assert.ok(chosen.length <= 4, source.id);
+    assert.equal(chosen.length, 4, source.id);
     assert.equal(new Set(chosen).size, chosen.length, source.id);
     assert.equal(chosen.includes(source.id), false, source.id);
     for (const targetId of chosen) {
@@ -147,7 +246,14 @@ test("indexable keep-reading cards follow the sitewide rules", () => {
             : null,
       });
       const sameCategoryFill = target.category === source.category;
-      assert.ok(score !== null || sameCategoryFill, `${source.id} -> ${target.id}`);
+      const sameTopic = sharesTopicCluster(
+        topicByArticle.get(source.id),
+        topicByArticle.get(targetId),
+      );
+      assert.ok(
+        score !== null || sameCategoryFill || sameTopic,
+        `${source.id} -> ${targetId}`,
+      );
       assert.equal(
         budgetStudyAllowed({
           candidateId: target.id,
@@ -161,7 +267,9 @@ test("indexable keep-reading cards follow the sitewide rules", () => {
         true,
         `${source.id} -> ${target.id}`,
       );
-      appearances.set(targetId, (appearances.get(targetId) || 0) + 1);
+      if (!sameTopic) {
+        nonClusterAppearances.set(targetId, (nonClusterAppearances.get(targetId) || 0) + 1);
+      }
       if (!source.eligibleTarget) continue;
       cards += 1;
       if (target.category !== source.category) crossCategory += 1;
@@ -183,16 +291,34 @@ test("indexable keep-reading cards follow the sitewide rules", () => {
     }
   }
 
-  const maxAppearances = Math.max(0, ...appearances.values());
+  const maxNonCluster = Math.max(0, ...nonClusterAppearances.values());
   const shownOnIndexable = new Set();
   for (const source of indexable) {
     for (const targetId of assignments.get(source.id) ?? []) shownOnIndexable.add(targetId);
   }
   const neverShown = indexable.filter((article) => !shownOnIndexable.has(article.id)).length;
+  const sourdoughPages = articles.filter((article) => article.id.includes("sourdough"));
 
-  assert.equal(maxAppearances <= 8, true, `max appearances ${maxAppearances}`);
+  assert.ok(sourdoughPages.length >= 10, `sourdough pages ${sourdoughPages.length}`);
+  for (const source of sourdoughPages) {
+    const chosen = assignments.get(source.id) ?? [];
+    const clusterCards = chosen.filter((id) => id.includes("sourdough"));
+    assert.ok(
+      clusterCards.length >= 3,
+      `${source.id} has ${clusterCards.length} sourdough cards: ${chosen.join(", ")}`,
+    );
+  }
+
+  assert.equal(
+    maxNonCluster <= 8,
+    true,
+    `non-cluster appearances ${maxNonCluster}`,
+  );
   assert.equal(budgetOnUnrelated, 0);
-  assert.equal(cards, indexable.length * 4);
+  // 4 cards on every current indexable page. Do not pin a historical total:
+  // later prune/merge commits change the page count.
+  const expectedCards = indexable.length * 4;
+  assert.equal(cards, expectedCards, `expected ${expectedCards} cards`);
   // Previous indexable graph: 592 cards, 86 cross-category, max 21, 31 never shown.
   assert.ok(crossCategory < 86, `cross-category rose to ${crossCategory}`);
   assert.ok(neverShown < 31, `never-shown rose to ${neverShown}`);
