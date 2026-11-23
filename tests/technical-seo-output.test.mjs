@@ -203,6 +203,79 @@ test("indexable output never advertises a missing local image", () => {
   }
 });
 
+test("AI hero images carry a visible caption and ImageObject credit", () => {
+  const credit = "Illustration generated with AI";
+  const cases = [
+    {
+      slug: "easy-sourdough-discard-recipes-beginners",
+      type: "Recipe",
+      image: `${SITE}/images/easy-sourdough-discard-recipes-beginners-main.jpg`,
+      dateModified: "2026-11-23T00:00:00.000Z",
+    },
+    {
+      slug: "protein-per-dollar-cheapest-protein-sources",
+      type: "Article",
+      image: `${SITE}/images/protein-per-dollar-cheapest-protein-sources-main.jpg`,
+      dateModified: "2026-09-24T00:00:00.000Z",
+    },
+  ];
+
+  for (const sample of cases) {
+    const url = `${SITE}/${sample.slug}/`;
+    const html = readFileSync(distHtmlFor(url), "utf8");
+    assert.match(
+      html,
+      /<figcaption[^>]*class="[^"]*\btext-xs\b[^"]*"[^>]*>\s*Illustration generated with AI\s*<\/figcaption>/,
+      `${sample.slug} missing the visible AI caption`,
+    );
+    assert.equal(
+      [...html.matchAll(/Illustration generated with AI/g)].length >= 2,
+      true,
+      `${sample.slug} should disclose the hero in both the caption and JSON-LD`,
+    );
+
+    const entities = [];
+    const credited = [];
+    for (const block of jsonLdBlocks(html, url)) {
+      visit(block, (node) => {
+        if (node["@type"] === sample.type) entities.push(node);
+        if (node["@type"] === "ImageObject" && node.creditText) credited.push(node);
+      });
+    }
+
+    assert.equal(entities.length, 1, sample.slug);
+    const entity = entities[0];
+    assert.equal(entity.dateModified, sample.dateModified, sample.slug);
+    assert.equal(entity.image[0]["@type"], "ImageObject", sample.slug);
+    assert.equal(entity.image[0].url, sample.image, sample.slug);
+    assert.equal(entity.image[0].contentUrl, sample.image, sample.slug);
+    assert.equal(entity.image[0].creditText, credit, sample.slug);
+    assert.equal(entity.image[0].caption, credit, sample.slug);
+    assert.equal(entity.image[0].description, `${credit}.`, sample.slug);
+    assert.equal(entity.image[0].digitalSourceType, undefined, sample.slug);
+    assert.ok(
+      credited.some((node) => node["@id"]?.endsWith("#primary-image")),
+      `${sample.slug} primary image is missing the AI credit`,
+    );
+  }
+
+  const chartUrl = `${SITE}/low-sodium-budget-foods-ranked/`;
+  const chartHtml = readFileSync(distHtmlFor(chartUrl), "utf8");
+  assert.doesNotMatch(chartHtml, /Illustration generated with AI/);
+  for (const block of jsonLdBlocks(chartHtml, chartUrl)) {
+    visit(block, (node) => {
+      if (node["@type"] === "Article") {
+        assert.ok(
+          Array.isArray(node.image) && node.image.every((item) => typeof item === "string"),
+          "the data-chart hero stays a plain image URL",
+        );
+      }
+      assert.equal(node.creditText, undefined);
+      assert.equal(node.digitalSourceType, undefined);
+    });
+  }
+});
+
 test("Dataset and Recipe nodes retain current rich-result requirements", () => {
   let datasets = 0;
   let recipes = 0;

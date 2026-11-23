@@ -286,6 +286,9 @@ test("link edits keep dateModified and add at most 40 words per article", () => 
     .map((line) => line.trim())
     .filter((line) => line.endsWith(".md"));
 
+  // The orphan links, title rewrite, and author fix are already on main. A
+  // later template-only diff has no article files to measure. When articles
+  // do change, dateModified stays put and the body grows by at most 40 words.
   if (names.length === 0) return;
   for (const path of names) {
     const after = readFileSync(path, "utf8");

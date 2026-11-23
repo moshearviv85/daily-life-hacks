@@ -11,6 +11,13 @@ function assert(condition, message) {
   }
 }
 
+function recipeImageUrl(image) {
+  const first = Array.isArray(image) ? image[0] : image;
+  if (typeof first === "string") return first;
+  if (first && typeof first === "object") return first.url || first.contentUrl;
+  return undefined;
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -61,7 +68,10 @@ function verify(html, status) {
     twitterImage?.startsWith("https://www.daily-life-hacks.com/images/"),
     `Expected absolute twitter:image, got ${twitterImage}`,
   );
-  assert(recipe.image?.[0] === ogImage, "Expected Recipe image to match og:image");
+  assert(
+    recipeImageUrl(recipe.image) === ogImage,
+    "Expected Recipe image to match og:image",
+  );
   assert(
     recipe.thumbnailUrl === ogImage,
     "Expected Recipe thumbnailUrl to match og:image",

@@ -19,6 +19,13 @@ function assert(condition, message) {
   }
 }
 
+function recipeImageUrl(image) {
+  const first = Array.isArray(image) ? image[0] : image;
+  if (typeof first === "string") return first;
+  if (first && typeof first === "object") return first.url || first.contentUrl;
+  return undefined;
+}
+
 const ogImage = metaContent(/<meta property="og:image" content="([^"]+)"/);
 const twitterImage = metaContent(/<meta name="twitter:image" content="([^"]+)"/);
 
@@ -38,11 +45,12 @@ const jsonLdBlocks = [
 ].map((match) => JSON.parse(match[1]));
 
 const recipe = jsonLdBlocks.find((node) => node["@type"] === "Recipe");
+const recipeImage = recipeImageUrl(recipe?.image);
 
 assert(recipe, "Expected Recipe JSON-LD block");
 assert(recipe.url === "https://www.daily-life-hacks.com/best-way-to-cook-baked-potatoes/", "Expected canonical recipe URL");
 assert(recipe.mainEntityOfPage?.["@id"] === recipe.url, "Expected mainEntityOfPage to point at recipe URL");
-assert(recipe.image?.[0] === ogImage, "Expected Recipe image to match og:image");
+assert(recipeImage === ogImage, "Expected Recipe image to match og:image");
 assert(recipe.thumbnailUrl === ogImage, "Expected Recipe thumbnailUrl to match og:image");
 assert(recipe.prepTime === "PT5M", `Expected prepTime PT5M, got ${recipe.prepTime}`);
 assert(recipe.cookTime === "PT75M", `Expected cookTime PT75M, got ${recipe.cookTime}`);
