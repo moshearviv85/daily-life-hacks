@@ -223,8 +223,9 @@ const ingredientsImageUrl = `${siteUrl}${ingredientsImagePath}`;
  * `{slug}-main.jpg` heroes come from the Imagen pipeline
  * (scripts/generate-site-media.py). A data chart used as a hero, and any
  * future owner photograph on a different path, is not labeled as AI.
- * IPTC DigitalSourceType lives in the image file. This HTML build does not
- * write it, so it is not invented here.
+ * IPTC DigitalSourceType is written into the hero file by
+ * scripts/optimize-images.mjs and the build stamp. This template only
+ * exposes the visible caption.
  */
 const AI_HERO_CREDIT = "Illustration generated with AI";
 const aiGeneratedHero =

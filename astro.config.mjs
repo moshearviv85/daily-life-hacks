@@ -8,6 +8,9 @@ import { fileURLToPath } from 'node:url';
 import rehypeArticleImages from './scripts/rehype-article-images.mjs';
 import rehypeRankingTables from './scripts/rehype-ranking-tables.mjs';
 import rehypeContextualFlagshipLinks from './scripts/rehype-contextual-flagship-links.mjs';
+import rehypeAffiliateLinks from './scripts/rehype-affiliate-links.mjs';
+import { affiliateLinksEnabled } from './src/content/affiliate-policy.mjs';
+import { stampHeroDirectory } from './scripts/lib/ai-image-iptc.mjs';
 import { INDEX_NOINDEX_TOOL_PATHS, INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
 import { publicModifiedDay } from './src/content/modified-date.mjs';
 
@@ -314,14 +317,39 @@ function internalPages() {
   };
 }
 
+const articleRehypePlugins = [
+  rehypeArticleImages,
+  rehypeRankingTables,
+  rehypeContextualFlagshipLinks,
+];
+// Off unless AFFILIATE_LINKS_ENABLED is explicitly true. An empty addition
+// keeps the markdown pipeline identical to a build without affiliate links.
+if (affiliateLinksEnabled()) articleRehypePlugins.push(rehypeAffiliateLinks);
+
+function stampAiHeroIptc() {
+  return {
+    name: 'stamp-ai-hero-iptc',
+    hooks: {
+      'astro:build:done': async ({ dir }) => {
+        const imagesDir = join(fileURLToPath(dir), 'images');
+        const stamped = stampHeroDirectory(imagesDir);
+        console.error(
+          `Stamped IPTC DigitalSourceType on ${stamped.heroes} AI heroes and ${stamped.webps} WebP variants.`,
+        );
+      },
+    },
+  };
+}
+
 export default defineConfig({
   site: 'https://www.daily-life-hacks.com',
   trailingSlash: 'always',
   markdown: {
-    rehypePlugins: [rehypeArticleImages, rehypeRankingTables, rehypeContextualFlagshipLinks],
+    rehypePlugins: articleRehypePlugins,
   },
   integrations: [
     internalPages(),
+    stampAiHeroIptc(),
     sitemap({
       serialize(item) {
         if (shouldExcludeFromSitemap(item.url)) return undefined;
