@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import {
+  CANS_PER_DRY_POUND,
+  CUPS_COOKED_PER_CAN,
+  CUPS_COOKED_PER_POUND,
+  CUPS_DRY_PER_CAN_LABEL,
+  DRY_CUPS_PER_POUND,
+  GRAMS_DRY_PER_CAN_HIGH,
+  GRAMS_DRY_PER_CAN_LOW,
+  MILK_STREET_YIELDS,
+  formatCups,
+} from "../../../lib/bean-crowd-math.js";
+
+const title = "Bean Conversion Card";
+const description =
+  "1 pound dried beans cooks to about 6 cups, or 3½ to 4 cans. One 15-oz can is about 1½ cups drained.";
+const pageUrl = "https://www.daily-life-hacks.com/printables/bean-conversion-card/";
+const cookedPerCan = formatCups(CUPS_COOKED_PER_CAN);
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    name: title,
+    description,
+    url: pageUrl,
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+      { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+      { "@type": "ListItem", position: 3, name: title, item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="sheet-wrap">
+    <article class="sheet">
+      <p class="kicker">Printable. One page.</p>
+      <h1>Bean Conversion Card</h1>
+      <p class="lede">
+        The same kitchen figures as the
+        <a href="/tools/dried-beans-to-canned-converter/">dried-beans converter</a>.
+        America's Test Kitchen counts 1 lb dried as 3 or 4 cans. Minnesota WIC counts 1 lb dried as about 2 cups dry or about 6 cups cooked.
+        This card uses one set from those two.
+      </p>
+
+      <div class="hero-grid">
+        <div>
+          <p class="figure">1 lb dried</p>
+          <p>{DRY_CUPS_PER_POUND} cups dry</p>
+          <p>about {CUPS_COOKED_PER_POUND} cups cooked</p>
+          <p>{CANS_PER_DRY_POUND} (15-oz) cans</p>
+        </div>
+        <div>
+          <p class="figure">1 can, 15 oz</p>
+          <p>{CUPS_DRY_PER_CAN_LABEL} dried</p>
+          <p>about {cookedPerCan} cups cooked, drained</p>
+          <p>{GRAMS_DRY_PER_CAN_LOW} to {GRAMS_DRY_PER_CAN_HIGH} g dry</p>
+        </div>
+      </div>
+      <p class="note">
+        6 cups cooked divided by {cookedPerCan} cups per can is 4 cans, the top of the 3½ to 4 range.
+        The {GRAMS_DRY_PER_CAN_LOW} to {GRAMS_DRY_PER_CAN_HIGH} g band is Milk Street's weighed half cup across 11 varieties.
+        The scoop on the converter says "{CUPS_DRY_PER_CAN_LABEL}" so a pound stays {CANS_PER_DRY_POUND} cans.
+      </p>
+
+      <h2>Cooked cups from 1 cup dry</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Variety</th>
+            <th scope="col">Cups cooked</th>
+          </tr>
+        </thead>
+        <tbody>
+          {MILK_STREET_YIELDS.map((row) => (
+            <tr>
+              <th scope="row">{row.variety}</th>
+              <td>{row.cookedCupsPerCupDry}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">
+        Milk Street's cooked yield still moves by variety. The dry measure stays near half a cup.
+        Bigger pots, including the crowd table, live on the
+        <a href="/tools/dried-beans-to-canned-converter/">converter</a>.
+        Cooking steps are in <a href="/how-to-cook-dried-beans-from-scratch/">how to cook dried beans</a>.
+      </p>
+
+      <p class="print-row no-print">
+        <button type="button" onclick="window.print()">Print this page</button>
+      </p>
+    </article>
+  </main>
+  <Footer signup="none" />
+
+  <style>
+    .sheet-wrap { background: #f4f1ea; padding: 2rem 1rem 3rem; }
+    .sheet { max-width: 720px; margin: 0 auto; background: #fff; color: #1c1915; border: 1px solid #e4d8c4; border-radius: 12px; padding: 1.75rem 1.5rem 1.25rem; box-shadow: 0 12px 32px rgba(28, 25, 21, 0.06); }
+    .kicker { margin: 0 0 0.35rem; color: #a85e00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    h1 { margin: 0 0 0.6rem; font-size: 1.85rem; line-height: 1.1; letter-spacing: -0.03em; }
+    h2 { margin: 1.1rem 0 0.4rem; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a85e00; }
+    .lede, .note { margin: 0.35rem 0 0.6rem; font-size: 0.92rem; line-height: 1.45; }
+    a { color: #a85e00; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 0.8rem 0; }
+    .hero-grid div { border: 2px solid #F29B30; border-radius: 12px; padding: 0.8rem 0.9rem; }
+    .figure { margin: 0 0 0.25rem; font-size: 1.15rem; font-weight: 800; }
+    .hero-grid p { margin: 0.1rem 0; font-size: 0.95rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; padding: 0.28rem 0.4rem; border-bottom: 1px solid #eadfce; }
+    thead th { font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: #6b5b45; }
+    .print-row { margin: 1rem 0 0; }
+    button { background: #F29B30; color: #fff; border: 0; border-radius: 999px; padding: 0.7rem 1.1rem; font-weight: 800; cursor: pointer; }
+    @media (max-width: 520px) { .hero-grid { grid-template-columns: 1fr; } }
+    @media print {
+      .sheet-wrap { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+      .no-print, header, footer { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      @page { size: letter; margin: 0.5in; }
+    }
+  </style>
+</BaseLayout>

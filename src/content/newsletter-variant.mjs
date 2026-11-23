@@ -1,9 +1,14 @@
 /**
- * Which email offer a page may show.
+ * Which email offer an article may show.
  *
- * The 7-day high-fiber meal plan is the offer on fiber articles and the
- * homepage. Sourdough, other topics, and tools use the generic newsletter.
- * Callers that promise "no signup" pass "none" themselves.
+ * fiber: the 7-day high-fiber meal plan (the file already in /downloads).
+ * sourdough: the discard grams cheat sheet.
+ * beans: the dried-to-canned conversion card.
+ * generic: the weekly newsletter, with no extra printable promised.
+ *
+ * Sourdough and bean slugs win over a fiber mention. A green-bean side or a
+ * natto page is not the dried-bean card. Callers that promise "no signup"
+ * pass "none" themselves.
  */
 
 const FIBER_PILLAR = "how-to-eat-more-fiber-on-a-budget-complete-guide";
@@ -12,8 +17,15 @@ function mentionsFiber(value) {
   return /\bfib(?:er|re)\b/i.test(String(value ?? ""));
 }
 
+/** Dried or canned bean topic. Green beans and soybeans/natto stay out. */
+export function isBeanConversionSlug(slug) {
+  const id = String(slug ?? "").toLowerCase();
+  if (/green-beans?|soybeans?|natto/.test(id)) return false;
+  return /(?:^|-)beans?(?:-|$)/.test(id);
+}
+
 /**
- * @returns {"fiber" | "generic"}
+ * @returns {"fiber" | "sourdough" | "beans" | "generic"}
  */
 export function newsletterSignupForArticle({
   slug = "",
@@ -23,7 +35,8 @@ export function newsletterSignupForArticle({
   parentPillar = "",
 } = {}) {
   const id = String(slug).toLowerCase();
-  if (id.includes("sourdough")) return "generic";
+  if (id.includes("sourdough")) return "sourdough";
+  if (isBeanConversionSlug(id)) return "beans";
 
   const topic = [id, title, cluster, parentPillar, ...tags].join("\n");
   if (

@@ -5,49 +5,95 @@ interface Props {
   articleBaseSlug?: string;
   /**
    * fiber: 7-day high-fiber meal plan.
-   * generic: weekly newsletter, no meal-plan promise.
+   * sourdough: discard grams cheat sheet.
+   * beans: dried-to-canned conversion card.
+   * generic: weekly newsletter, no extra printable promised.
    */
-  variant?: "fiber" | "generic";
+  variant?: "fiber" | "sourdough" | "beans" | "generic";
+  /** inline: end of an article. footer: the single sitewide band. */
+  placement?: "inline" | "footer";
 }
 
 const {
   articleCategory = "",
   articleBaseSlug = "",
   variant = "generic",
+  placement = "footer",
 } = Astro.props;
 
-const fiberOffer = variant === "fiber";
-const badge = fiberOffer ? "Free Meal Plan" : "Free Newsletter";
-const heading = fiberOffer
-  ? "Get the Free 7-Day High-Fiber Meal Plan"
-  : "Get Weekly Nutrition, Recipes & Life Hacks";
-const pitch = fiberOffer
-  ? "A printable week of meals that keep you full, with a grocery list included. Subscribe and it's yours, plus our best recipes and kitchen tips every week."
-  : "Get our best healthy recipes, nutrition advice, and practical life hacks delivered to your inbox every week.";
-const buttonLabel = fiberOffer ? "Send Me the Meal Plan" : "Subscribe Free";
-const successText = fiberOffer
-  ? "Hang on one second, your meal plan is on the next page."
-  : "You're in. One second.";
+const offers = {
+  fiber: {
+    badge: "Free Meal Plan",
+    heading: "Get the Free 7-Day High-Fiber Meal Plan",
+    pitch:
+      "A printable week of meals that keep you full, with a grocery list included. Subscribe and it's yours, plus our best recipes and kitchen tips every week.",
+    buttonLabel: "Send Me the Meal Plan",
+    successText: "Hang on one second, your meal plan is on the next page.",
+  },
+  sourdough: {
+    badge: "Free Cheat Sheet",
+    heading: "Get the Sourdough Discard Grams Cheat Sheet",
+    pitch:
+      "One printable page for the sticky cup. A stirred cup of 100% hydration discard is 227 grams, and half a cup is 113. The sheet also splits that weight into the flour and water already in the jar. Subscribe and it's yours, plus one email a week.",
+    buttonLabel: "Send Me the Cheat Sheet",
+    successText: "Hang on one second. The gram cheat sheet is on the next page.",
+  },
+  beans: {
+    badge: "Free Card",
+    heading: "Get the Bean Conversion Card",
+    pitch:
+      "One printable page for the swap you actually make. One pound dried cooks to about 6 cups, which is 3½ to 4 cans. A 15-ounce can is about 1½ cups drained. Subscribe and it's yours, plus one email a week.",
+    buttonLabel: "Send Me the Card",
+    successText: "Hang on one second. The conversion card is on the next page.",
+  },
+  generic: {
+    badge: "Free Newsletter",
+    heading: "Get Weekly Nutrition, Recipes & Life Hacks",
+    pitch:
+      "Get our best healthy recipes, nutrition advice, and practical life hacks delivered to your inbox every week.",
+    buttonLabel: "Subscribe Free",
+    successText: "You're in. One second.",
+  },
+} as const;
+
+const offerCopy = offers[variant] ?? offers.generic;
+const inline = placement === "inline";
+const signupSource = inline ? "inline" : "footer";
 ---
 
 <section
   id="newsletter"
-  class="py-8 mt-4 mb-0 transition-colors duration-300"
-  style="background-color: var(--newsletter-bg); border-top: 1px solid var(--newsletter-border);"
+  data-signup-offer={variant}
+  data-signup-placement={placement}
+  class:list={[
+    "transition-colors duration-300",
+    inline ? "mt-12 mb-2 rounded-2xl px-4 py-8 sm:px-8" : "py-8 mt-4 mb-0",
+  ]}
+  style={
+    inline
+      ? "background-color: var(--newsletter-bg); border: 1px solid var(--newsletter-border);"
+      : "background-color: var(--newsletter-bg); border-top: 1px solid var(--newsletter-border);"
+  }
 >
   <div class="max-w-2xl mx-auto px-4 text-center">
     <div
       class="inline-block mb-4 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest text-white"
       style="background-color: #F29B30;"
     >
-      {badge}
+      {offerCopy.badge}
     </div>
 
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" style="color: var(--heading-color);">
-      {heading}
+    <h2
+      class:list={[
+        "font-bold mb-3",
+        inline ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl md:text-5xl",
+      ]}
+      style="color: var(--heading-color);"
+    >
+      {offerCopy.heading}
     </h2>
     <p class="text-lg mb-5" style="color: var(--muted-color);">
-      {pitch}<br />No spam, only interesting things. Unsubscribe anytime.
+      {offerCopy.pitch}<br />No spam, only interesting things. Unsubscribe anytime.
     </p>
 
     <!-- Subscribe Form -->
@@ -84,7 +130,7 @@ const successText = fiberOffer
         class="w-full py-3.5 px-6 font-bold text-white rounded-xl transition-transform hover:scale-[1.02] shadow-md text-base"
         style="background-color: #F29B30;"
       >
-        {buttonLabel}
+        {offerCopy.buttonLabel}
       </button>
     </form>
 
@@ -110,13 +156,13 @@ const successText = fiberOffer
         You're in!
       </p>
       <p class="text-sm" style="color: var(--muted-color);">
-        {successText}
+        {offerCopy.successText}
       </p>
     </div>
   </div>
 </section>
 
-<script define:vars={{ articleCategory, articleBaseSlug }}>
+<script define:vars={{ articleCategory, articleBaseSlug, offer: variant, signupSource }}>
   function getStoredSignupContext() {
     try {
       const raw = sessionStorage.getItem("newsletter_signup_context");
@@ -142,6 +188,7 @@ const successText = fiberOffer
     const params = new URLSearchParams({ source });
     if (context.category) params.set("category", context.category);
     if (context.email_segment) params.set("segment", context.email_segment);
+    if (offer) params.set("offer", offer);
 
     try {
       sessionStorage.removeItem("newsletter_signup_context");
@@ -177,10 +224,11 @@ const successText = fiberOffer
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             event_type: "signup_started",
-            source: "footer",
+            source: signupSource,
             page: window.location.pathname,
             metadata: {
-              location: "footer-newsletter",
+              location: signupSource === "inline" ? "article-end" : "footer-newsletter",
+              offer,
             },
           }),
         }).catch(() => {});
@@ -193,7 +241,7 @@ const successText = fiberOffer
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email: emailInput.value,
-            source: "footer",
+            source: signupSource,
             page: window.location.pathname,
             ...signupContext,
             category: mergedCategory,
@@ -214,7 +262,7 @@ const successText = fiberOffer
             category: mergedCategory,
             base_slug: mergedBaseSlug,
           };
-          setTimeout(() => redirectToThankYou("footer", thankYouContext), 250);
+          setTimeout(() => redirectToThankYou(signupSource, thankYouContext), 250);
         } else {
           submitBtn.innerText = "Try Again";
           submitBtn.disabled = false;
