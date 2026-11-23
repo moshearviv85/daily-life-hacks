@@ -50,6 +50,11 @@ function loadSitemapExclusions() {
   }
 
   // Exclude utility pages that should not compete with article content in Search.
+  // /dashboard and /deploy-proof stay in every production build (noindex).
+  // /gauntlet is not a production route: src/pages/_gauntlet.astro is injected
+  // only when DLH_INTERNAL_PAGES=1 (unset on Cloudflare Pages, so the URL 404s).
+  // The path stays in this list either way. An internal build must not publish
+  // it, and scripts/seo_regression_check.py asserts the exclusion unconditionally.
   for (const path of [
     '/dashboard',
     '/gauntlet',
@@ -284,6 +289,29 @@ function shouldExcludeFromSitemap(url) {
   }
 }
 
+/**
+ * /gauntlet is a private SEO tracker. The source lives at
+ * src/pages/_gauntlet.astro, which Astro will not route. Publish that URL only
+ * when DLH_INTERNAL_PAGES=1. Cloudflare Pages production does not set the
+ * variable, so the build has no file and the request 404s.
+ */
+function internalPages() {
+  return {
+    name: 'dlh-internal-pages',
+    hooks: {
+      'astro:config:setup'({ injectRoute }) {
+        if (process.env.DLH_INTERNAL_PAGES === '1') {
+          injectRoute({
+            pattern: '/gauntlet',
+            entrypoint: new URL('./src/pages/_gauntlet.astro', import.meta.url),
+            prerender: true,
+          });
+        }
+      },
+    },
+  };
+}
+
 export default defineConfig({
   site: 'https://www.daily-life-hacks.com',
   trailingSlash: 'always',
@@ -291,6 +319,7 @@ export default defineConfig({
     rehypePlugins: [rehypeArticleImages, rehypeRankingTables, rehypeContextualFlagshipLinks],
   },
   integrations: [
+    internalPages(),
     sitemap({
       serialize(item) {
         if (shouldExcludeFromSitemap(item.url)) return undefined;
