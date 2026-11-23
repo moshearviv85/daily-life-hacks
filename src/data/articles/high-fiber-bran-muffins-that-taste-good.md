@@ -23,6 +23,8 @@ totalTime: 45 minutes
 servings: 12
 calories: 293
 difficulty: Easy
+recipeCuisine: "American"
+recipeName: "High-Fiber Bran Muffins"
 ingredients:
 - 1 ½ cups wheat bran
 - ½ cup oat bran

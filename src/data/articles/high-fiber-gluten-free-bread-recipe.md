@@ -24,6 +24,7 @@ totalTime: "1 hour 15 minutes"
 servings: 12
 calories: 185
 difficulty: "Medium"
+recipeCuisine: "American"
 ingredients:
   - "1 cup sunflower seeds"
   - "1/2 cup flax seeds"

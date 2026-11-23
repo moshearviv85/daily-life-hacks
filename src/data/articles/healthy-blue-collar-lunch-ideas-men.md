@@ -17,6 +17,8 @@ totalTime: "50 minutes"
 servings: 4
 calories: 580
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Sheet Pan Flank Steak with Sweet Potatoes and Green Beans"
 ingredients:
   - 1.5 lbs flank steak or chicken thighs, sliced into strips
   - 2 large sweet potatoes, cubed

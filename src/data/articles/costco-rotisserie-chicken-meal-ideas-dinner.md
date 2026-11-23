@@ -21,6 +21,8 @@ totalTime: "25 minutes"
 servings: 4
 calories: 420
 difficulty: "Easy"
+recipeCuisine: "Asian"
+recipeName: "Rotisserie Chicken Stir-Fry with Rice"
 ingredients:
   - 3 cups shredded cooked rotisserie chicken, skin and bones removed
   - 16 oz frozen stir-fry vegetables

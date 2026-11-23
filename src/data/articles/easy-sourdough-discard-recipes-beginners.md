@@ -21,6 +21,8 @@ totalTime: "20 minutes"
 servings: 2
 calories: 370
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Sourdough Discard Pancakes"
 ingredients:
   - 1 cup sourdough starter discard, stirred, 100% hydration
   - 1 large egg

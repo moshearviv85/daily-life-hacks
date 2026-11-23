@@ -23,6 +23,7 @@ totalTime: 10 minutes
 servings: 4
 calories: 380
 difficulty: Easy
+recipeCuisine: "Middle Eastern"
 ingredients:
 - 2 (15-ounce) cans chickpeas, rinsed and drained, plus 1/4 cup reserved liquid
 - 1/2 cup good quality tahini, stirred well

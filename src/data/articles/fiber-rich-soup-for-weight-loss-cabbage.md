@@ -23,6 +23,7 @@ totalTime: 35 minutes
 servings: 4
 calories: 380
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 1 tbsp olive oil
 - 1 large onion, chopped

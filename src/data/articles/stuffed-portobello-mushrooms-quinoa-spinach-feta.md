@@ -28,6 +28,7 @@ totalTime: "45 minutes"
 servings: 4
 calories: 410
 difficulty: "Easy"
+recipeCuisine: "Mediterranean"
 ingredients:
   - "4 large portobello mushroom caps"
   - "2 tbsp olive oil, divided"

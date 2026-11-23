@@ -23,6 +23,8 @@ totalTime: "50 minutes"
 servings: 8
 calories: 410
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Chicken and Rice Casserole"
 ingredients:
   - "3 cups cooked chicken, shredded or diced"
   - "4 cups cooked white rice"

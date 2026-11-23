@@ -22,6 +22,8 @@ servings: 1
 calories: 480
 difficulty: "Easy"
 recipeCategory: "Lunch"
+recipeCuisine: "American"
+recipeName: "Rotisserie Chicken and Avocado Bagel Sandwich"
 ingredients:
   - 1 whole wheat or protein bagel, sliced and toasted
   - 4 oz rotisserie chicken breast, shredded

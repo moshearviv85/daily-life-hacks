@@ -26,6 +26,7 @@ totalTime: 35 minutes
 servings: 4
 calories: 450
 difficulty: Easy
+recipeCuisine: "Mediterranean"
 ingredients:
 - 1 cup dry quinoa, rinsed
 - 2 cups water

@@ -24,6 +24,7 @@ totalTime: "30 minutes"
 servings: 4
 calories: 160
 difficulty: "Medium"
+recipeCuisine: "Chinese"
 ingredients:
   - "2 cups whole wheat pastry flour (or a 50/50 white and whole wheat mix)"
   - "3/4 cup warm water (roughly 110 degrees)"

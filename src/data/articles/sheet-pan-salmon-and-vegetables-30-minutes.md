@@ -28,6 +28,7 @@ totalTime: 30 minutes
 servings: 4
 calories: 445
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 4 (5 to 6 oz) skin-on salmon fillets
 - 1 lb broccoli florets

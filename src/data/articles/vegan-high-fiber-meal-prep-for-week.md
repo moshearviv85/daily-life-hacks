@@ -28,6 +28,7 @@ totalTime: 35 minutes
 servings: 5
 calories: 380
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 2 blocks (14 oz each) extra-firm tofu, pressed
 - 2 cups dry quinoa

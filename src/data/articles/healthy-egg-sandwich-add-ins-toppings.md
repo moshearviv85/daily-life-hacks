@@ -23,6 +23,8 @@ totalTime: "10 minutes"
 servings: 1
 calories: 380
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Egg and Avocado Toast"
 ingredients:
   - 2 large eggs
   - 1 slice whole grain bread or sourdough

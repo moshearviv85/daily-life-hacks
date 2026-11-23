@@ -25,6 +25,8 @@ totalTime: 20 minutes
 servings: 4
 calories: 340
 difficulty: Easy
+recipeCuisine: "American"
+recipeName: "Skillet Black Beans and Brown Rice"
 ingredients:
 - 1 tbsp olive oil
 - 1 small onion, diced

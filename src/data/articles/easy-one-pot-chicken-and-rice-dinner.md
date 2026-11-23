@@ -28,6 +28,7 @@ totalTime: 45 minutes
 servings: 4
 calories: 420
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 1 tbsp olive oil
 - 1 lb boneless, skinless chicken thighs, cut into bite-size pieces

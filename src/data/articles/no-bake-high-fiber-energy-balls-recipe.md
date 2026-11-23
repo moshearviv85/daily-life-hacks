@@ -22,6 +22,7 @@ totalTime: 15 minutes
 servings: 16
 calories: 120
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 2 cups rolled oats
 - 1/2 cup natural peanut butter or almond butter

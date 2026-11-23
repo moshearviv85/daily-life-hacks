@@ -23,6 +23,8 @@ totalTime: 55 minutes
 servings: 4
 calories: 250
 difficulty: Easy
+recipeCuisine: "American"
+recipeName: "Green Split Pea Soup"
 ingredients:
 - 1 tbsp olive oil
 - 1 large yellow onion, chopped

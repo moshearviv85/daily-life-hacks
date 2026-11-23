@@ -22,6 +22,7 @@ totalTime: "40 minutes"
 servings: 4
 calories: 410
 difficulty: "Easy"
+recipeCuisine: "Mexican"
 ingredients:
   - "1 cup uncooked quinoa (or brown rice)"
   - "2 cups vegetable broth"

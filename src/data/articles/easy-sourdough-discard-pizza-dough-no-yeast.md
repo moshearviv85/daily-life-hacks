@@ -25,6 +25,7 @@ totalTime: "40 minutes"
 servings: 2
 calories: 595
 difficulty: "Easy"
+recipeCuisine: "Italian"
 ingredients:
   - 227 g sourdough discard, 100% hydration
   - 180 g all-purpose flour, plus a little for dusting

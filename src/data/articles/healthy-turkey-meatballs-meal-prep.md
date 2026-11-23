@@ -28,6 +28,7 @@ totalTime: 35 minutes
 servings: 4
 calories: 280
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 1 lb ground turkey (93% lean)
 - 1/2 cup breadcrumbs

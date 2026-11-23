@@ -22,6 +22,8 @@ totalTime: "8 hours 40 minutes"
 servings: 12
 calories: 395
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Slow Cooker Pinto Beans and Smoked Sausage"
 ingredients:
   - "2 lbs dried pinto beans, rinsed and picked over"
   - "Water for soaking and boiling the beans"

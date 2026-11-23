@@ -27,6 +27,7 @@ totalTime: "55 minutes"
 servings: 4
 calories: 320
 difficulty: "Easy"
+recipeCuisine: "Italian"
 ingredients:
   - "2 tbsp olive oil, divided"
   - "1 small yellow onion, finely diced"

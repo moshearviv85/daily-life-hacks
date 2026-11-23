@@ -24,6 +24,7 @@ servings: 8
 calories: 157
 difficulty: "Easy"
 recipeCategory: "Snack"
+recipeCuisine: "American"
 ingredients:
   - "227 g sourdough discard, 100% hydration, unfed, from an established starter"
   - "120 g all-purpose flour, plus a little for the pin"

@@ -289,7 +289,7 @@ const jsonLd = isRecipe
       mainEntityOfPage: { "@id": webPageId },
       isPartOf: { "@id": webPageId },
       url: articleUrl,
-      name: article.data.title,
+      name: article.data.recipeName ?? article.data.title,
       headline: article.data.title,
       description: article.data.excerpt,
       image: structuredImageUrls.length ? structuredImageUrls : undefined,
