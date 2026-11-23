@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Newsletter from "../components/Newsletter.astro";
 import RecipeMetaBar from "../components/RecipeMetaBar.astro";
 import RecipeServingScaler from "../components/RecipeServingScaler.astro";
 import RelatedArticles from "../components/RelatedArticles.astro";
@@ -40,6 +39,7 @@ import StudyNextStep from "../components/StudyNextStep.astro";
 import StudyCite from "../components/StudyCite.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
 import KitchenCalculator from "../components/KitchenCalculator.astro";
+import { newsletterSignupForArticle } from "../content/newsletter-variant.mjs";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -572,6 +572,13 @@ const ANSWER_FIRST_SLUGS = new Set([
   "selenium-containing-foods-easy-ways",
 ]);
 const answerFirst = ANSWER_FIRST_SLUGS.has(article.id);
+const newsletterSignup = newsletterSignupForArticle({
+  slug: article.id,
+  title: article.data.title,
+  tags: article.data.tags,
+  cluster: article.data.cluster,
+  parentPillar: article.data.parentPillar,
+});
 ---
 
 <BaseLayout
@@ -874,7 +881,6 @@ const answerFirst = ANSWER_FIRST_SLUGS.has(article.id);
     <!-- Quick Answer Block -->
     {article.data.quickAnswer && !flagship && !answerFirst && (
       <div class="mb-8 rounded-xl border-l-4 border-[#F29B30] p-5" style="background-color: var(--input-bg);">
-        <h2 class="text-lg font-bold mb-2" style="color: var(--heading-color);">Here's the Deal</h2>
         <p class="leading-relaxed" style="color: var(--text-color);">{article.data.quickAnswer}</p>
       </div>
     )}
@@ -1277,10 +1283,6 @@ const answerFirst = ANSWER_FIRST_SLUGS.has(article.id);
       <RelatedArticles article={article} />
     </div>
 
-    <div class="order-[50]">
-      <Newsletter articleCategory={article.data.category} articleBaseSlug={article.id} />
-    </div>
-
     <!-- Disclaimer -->
     <div
       class="order-[60] mt-10 p-5 rounded-xl text-sm leading-relaxed"
@@ -1293,7 +1295,11 @@ const answerFirst = ANSWER_FIRST_SLUGS.has(article.id);
     </div>
     </div>
   </main>
-  <Footer />
+  <Footer
+    signup={newsletterSignup}
+    articleCategory={article.data.category}
+    articleBaseSlug={article.id}
+  />
 
   {showRatingWidget && (
   <script is:inline>
