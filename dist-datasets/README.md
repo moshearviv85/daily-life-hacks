@@ -144,7 +144,7 @@ The per-file field schemas below are generated from `datapackage.json`, which is
 - **File:** [`data/canned-vs-dry-beans-cost-2026.csv`](data/canned-vs-dry-beans-cost-2026.csv)
 - **Rows:** 10 (header excluded) &nbsp;|&nbsp; **Size:** 1,005 bytes
 - **Chart:** [`charts/canned-vs-dry-beans-cost-chart.jpg`](charts/canned-vs-dry-beans-cost-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/canned-vs-dry-beans-cost/>
+- **Study:** <https://www.daily-life-hacks.com/canned-beans-vs-dried-beans-nutrition/>
 
 | Field | Type | Description |
 |---|---|---|

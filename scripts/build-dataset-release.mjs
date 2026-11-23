@@ -28,6 +28,7 @@ const REDIRECTED = [
   "/no-cook-protein-per-dollar",
   "/shelf-stable-pantry-per-dollar",
   "/one-dollar-protein-what-it-buys",
+  "/canned-vs-dry-beans-cost",
 ];
 
 const MONTHS = {

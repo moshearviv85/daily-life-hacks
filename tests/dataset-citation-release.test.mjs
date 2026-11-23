@@ -51,6 +51,12 @@ test("llms.txt key facts are 10-15 CSV-backed lines on live study URLs", () => {
   for (const slug of REDIRECTED_SLUGS) {
     assert.equal(text.includes(slug), false, slug);
   }
+  const pagePaths = [...text.matchAll(/https:\/\/www\.daily-life-hacks\.com([^)\s]*)/g)].map((match) => match[1]);
+  for (const path of pagePaths) {
+    assert.notEqual(path.replace(/\/$/, ""), "/contact", path);
+    assert.notEqual(path.replace(/\/$/, ""), "/data/fiber-per-dollar-2026", path);
+    assert.notEqual(path.replace(/\/$/, ""), "/data/protein-per-dollar-2026", path);
+  }
   for (const line of facts) {
     const file = line.match(/\/data\/([a-z0-9.-]+\.csv)/i)?.[1];
     assert.ok(file, line);
@@ -144,4 +150,79 @@ test("dataset release bundle is generated outside dist and build", () => {
   assert.equal("doi" in zenodo, false);
   assert.equal(dir.includes(`${join("dist", "data")}`), false);
   assert.equal(statSync(dir).isDirectory(), true);
+});
+
+const FOLDED_STUDY_TARGETS = {
+  "/canned-vs-dry-beans-cost/": "/canned-beans-vs-dried-beans-nutrition/",
+  "/dairy-protein-per-dollar-ranked/": "/protein-per-dollar-adjusted-for-quality/",
+  "/grains-fiber-per-dollar-ranked/": "/what-30-grams-of-fiber-costs-per-day/",
+  "/high-fiber-snacks-per-dollar/": "/what-30-grams-of-fiber-costs-per-day/",
+  "/meat-per-dollar-protein-ranked/": "/protein-per-dollar-adjusted-for-quality/",
+  "/no-cook-protein-per-dollar/": "/protein-per-dollar-adjusted-for-quality/",
+  "/one-dollar-fiber-what-it-buys/": "/what-30-grams-of-fiber-costs-per-day/",
+  "/one-dollar-protein-what-it-buys/": "/protein-per-dollar-adjusted-for-quality/",
+  "/plant-protein-per-dollar-ranked/": "/protein-per-dollar-adjusted-for-quality/",
+  "/produce-fiber-per-dollar-ranked/": "/what-30-grams-of-fiber-costs-per-day/",
+  "/shelf-stable-pantry-per-dollar/": "/protein-per-dollar-adjusted-for-quality/",
+};
+
+function redirectSources() {
+  const sources = new Set();
+  for (const line of read("public/_redirects").split("\n")) {
+    const [source] = line.trim().split(/\s+/);
+    if (!source?.startsWith("/")) continue;
+    sources.add(source.endsWith("/") ? source : `${source}/`);
+  }
+  return sources;
+}
+
+function sitePaths(text) {
+  return [...text.matchAll(/https:\/\/www\.daily-life-hacks\.com([^"'\\\s<]*)/g)].map((match) => {
+    const path = match[1].split(/[?#]/)[0] || "/";
+    return path.endsWith("/") || path.includes(".") ? path : `${path}/`;
+  });
+}
+
+test("folded study sources cite the final 200 pages, and api-docs omits the old fiber slug", () => {
+  const pack = JSON.parse(read("public/data/datapackage.json"));
+  const byFile = new Map(pack.resources.map((resource) => [resource.path, resource.sources?.[0]?.path]));
+  for (const [source, target] of Object.entries(FOLDED_STUDY_TARGETS)) {
+    const file = `${source.slice(1, -1)}-2026.csv`;
+    assert.equal(byFile.get(file), `https://www.daily-life-hacks.com${target}`, file);
+  }
+  const docs = read("src/pages/api-docs.astro");
+  assert.equal(docs.includes("fiber-per-dollar-cheapest-high-fiber-foods"), false);
+  assert.equal(docs.includes("protein-per-dollar-cheapest-protein-sources"), false);
+});
+
+test("llms.txt, citation JSON, and rss cite built indexable pages, not redirect sources", () => {
+  if (!existsSync(join(ROOT, "dist/llms.txt"))) return;
+  const files = [
+    "dist/llms.txt",
+    "dist/rss.xml",
+    "dist/data/datapackage.json",
+    "dist/data/api-index-v1.json",
+    "dist/data/dataset-provenance.json",
+  ].filter((file) => existsSync(join(ROOT, file)));
+  const sources = redirectSources();
+  const checked = new Set();
+  for (const file of files) {
+    for (const path of sitePaths(read(file))) {
+      if (checked.has(path)) continue;
+      checked.add(path);
+      const normalized = path.endsWith("/") ? path : `${path}/`;
+      assert.equal(sources.has(normalized) || sources.has(path), false, `${file} cites redirect source ${path}`);
+      if (path.startsWith("/api/")) continue;
+      if (/\.(csv|json|cff|txt|xml|jpg|png|webp)$/i.test(path)) {
+        const asset = join(ROOT, "dist", path.replace(/^\//, ""));
+        assert.equal(existsSync(asset), true, `${path} is not a built file`);
+        continue;
+      }
+      const htmlPath = path === "/" ? "dist/index.html" : join("dist", path.replace(/^\//, ""), "index.html");
+      const htmlFile = join(ROOT, htmlPath);
+      assert.equal(existsSync(htmlFile), true, `${path} from ${file} is not a built page`);
+      const robots = readFileSync(htmlFile, "utf8").match(/<meta[^>]*name=["']robots["'][^>]*>/i)?.[0] ?? "";
+      assert.equal(robots.includes("noindex"), false, `${path} is noindex`);
+    }
+  }
 });

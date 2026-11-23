@@ -98,7 +98,7 @@ const STUDY_SLUG: Record<string, string> = {
   "animal-protein-per-dollar-ranked-2026.csv": "animal-protein-per-dollar-ranked",
   "beans-double-win-fiber-protein-2026.csv": "beans-double-win-fiber-protein",
   "breakfast-staples-per-dollar-2026.csv": "breakfast-staples-per-dollar",
-  "canned-vs-dry-beans-cost-2026.csv": "canned-vs-dry-beans-cost",
+  "canned-vs-dry-beans-cost-2026.csv": "canned-beans-vs-dried-beans-nutrition",
   "cheapest-complete-protein-pairs-2026.csv": "cheapest-complete-protein-pairs",
   "dairy-protein-per-dollar-ranked-2026.csv": "protein-per-dollar-adjusted-for-quality",
   "eggs-vs-everything-protein-value-2026.csv": "eggs-vs-everything-protein-value",

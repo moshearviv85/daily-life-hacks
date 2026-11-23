@@ -195,6 +195,7 @@ DATASETS: dict[str, dict] = {
     },
     "canned-vs-dry-beans-cost-2026.csv": {
         "title": "Canned vs Dry Beans, Cost Compared (2026)",
+        "study_path": "canned-beans-vs-dried-beans-nutrition",
         "study": "canned-vs-dry-beans-cost",
         "description": (
             "10 rows pairing dry beans and lentils against the canned version of the same "
