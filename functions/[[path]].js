@@ -258,7 +258,7 @@ export async function onRequest(context) {
   // --- 1. GUARD: Skip static assets and API routes ---
   const skipPatterns = [
     /^\/(api|_astro|_image)\//,
-    /\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|avif|woff2?|ttf|eot|xml|json|txt|webmanifest|pdf|csv|zip|mp4|webm)$/,
+    /\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|avif|woff2?|ttf|eot|xml|json|txt|cff|webmanifest|pdf|csv|zip|mp4|webm)$/,
   ];
   const shouldSkipRouting = skipPatterns.some((pattern) => pattern.test(path));
 

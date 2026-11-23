@@ -573,6 +573,21 @@ test("newsletter subscribe GET and HEAD are crawl cleanup but POST handler remai
   assert.deepEqual(await postResponse.json(), { error: "Valid email required" });
 });
 
+test("CITATION.cff is served from the static file and not folded into a trailing-slash page", async () => {
+  const assets = makeAssets(new Set(["/CITATION.cff"]));
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/CITATION.cff", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 200);
+  assert.match(await response.text(), /\/CITATION\.cff/);
+  assert.deepEqual(assets.calls, [
+    { url: "https://www.daily-life-hacks.com/CITATION.cff", method: "GET" },
+  ]);
+});
+
 test("static assets on non-www only redirect host and do not append a slash", async () => {
   const assets = makeAssets(new Set());
 

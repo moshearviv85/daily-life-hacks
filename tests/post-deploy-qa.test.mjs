@@ -73,6 +73,7 @@ test("internal links keep same-host HTML paths and drop assets, hashes, and othe
     <a href="https://example.com/elsewhere/">external</a>
     <a href="/images/hero.jpg">image</a>
     <a href="https://daily-life-hacks.com/beans/?utm_source=qa">apex</a>
+    <a href="/cdn-cgi/l/email-protection#abc">obfuscated email</a>
   `;
   const links = internalLinkTargets(html, "https://www.daily-life-hacks.com/start/");
   assert.deepEqual(links, [
