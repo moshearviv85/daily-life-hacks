@@ -89,6 +89,8 @@ This is the ranking by fiber content, not by price. We have [a separate ranking 
 
 *Provenance checked July 30, 2026: 42 rows have an exact USDA FoodData Central food-and-form match, 10 use a linked FDC proxy with the mismatch disclosed, and 1 remains unresolved. The [53-row raw CSV](/data/fiber-per-dollar-2026.csv) contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
 
+Dry pearled barley is 15.6 grams per 100 grams, and [mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) is how that row becomes dinner.
+
 ## Why do seeds and dry beans dominate this list?
 
 Because they're dry. That's most of it, and any list that doesn't say so is selling you something.
@@ -134,6 +136,8 @@ Here's where the content ranking and the cost ranking part ways, and it matters.
 In this 53-food study, chia seeds lead on fiber content and then land 13th on fiber per dollar, because a 32 ounce bag ran $9.44. Almonds have 12.5 grams per 100 grams and finish 36th on cost, at 8.8 grams of fiber per dollar. Within the same study, whole wheat flour ranks first on cost at 77.8 grams of fiber per dollar from a $3.12 five pound bag, despite sitting mid-pack on content at 10.7 grams per 100 grams.
 
 Dry green split peas place near the top of both rankings in this study: 22.2 grams per 100 grams and 71.0 grams per dollar, from a $1.42 bag. That's the closest thing to a free lunch on the shelf, and it becomes [split pea soup](/split-pea-soup-recipe-high-fiber/) with almost no technique required. The same bag is third in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), at 73.9 grams of protein per dollar. One pound, two spreadsheets. The popcorn row is unresolved rather than an exact match: USDA's 14.5 figure describes air-popped popcorn while the price came from unpopped kernels, so we converted it to a kernel basis and the row now reads 12.9 grams per 100 grams. That is honest arithmetic, not a published record, and we label it that way rather than quietly treating the two forms as interchangeable.
+
+The bill for a full day of it is [the grocery bill for about 30 grams](/what-30-grams-of-fiber-costs-per-day/).
 
 ## How do you actually eat these?
 

@@ -60,7 +60,7 @@ There is no official breakfast quota. The FDA's fiber Daily Value is [28 grams](
 
 A cup of cooked oatmeal is [4 grams of fiber](https://fdc.nal.usda.gov/food-details/173905/nutrients) (234 grams at 1.7 grams per 100 grams). Dried chia is [34.4 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/170554/nutrients), so a 12-gram spoon is about 4 grams, not 5. A cup of raspberries is [8 grams](https://fdc.nal.usda.gov/food-details/167755/nutrients) (123 grams at 6.5 grams per 100 grams). Stack oatmeal with the berries and you're at 12.
 
-Go slow if breakfast is mostly white toast. Twenty grams is most of that 25-gram Adequate Intake, and gut bacteria ferment the extra fiber, which can mean gas ([Eswaran et al., 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)). Add a little more each week. Drink water with it. Tea counts.
+Go slow if breakfast is mostly white toast. Twenty grams is most of that 25-gram Adequate Intake, and gut bacteria ferment the extra fiber, which can mean gas ([Eswaran et al., 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)). Add a little more each week. Drink water with it. Tea counts. A plain [peppermint and ginger cup](/gut-health-tea-peppermint-ginger/) is the one I actually finish with breakfast.
 
 ## Overnight oats that don't taste like desk paste
 
@@ -112,7 +112,7 @@ Portion it into jars so grab-and-go is literal. If the texture freaks you out, b
 
 Savory breakfasts are allowed. Scramble two eggs with a handful of spinach, warm half a cup of black beans, and wrap it in a whole wheat tortilla with salsa. The beans are the fiber. A cup of cooked black beans weighs 172 grams, so a half cup is about 7.5 grams of fiber at [8.7 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173735/nutrients). The tortilla has to earn anything beyond that on its own label. Calling the whole wrap 8 to 10 grams was the tortilla doing unpaid work.
 
-Beans at breakfast sound weird until you try them once. Then they just taste like a burrito you made at home for a fraction of the cafe price. Keep a can of black beans in the pantry for exactly this purpose.
+Beans at breakfast sound weird until you try them once. Then they just taste like a burrito you made at home for a fraction of the cafe price. Keep a can of black beans in the pantry for exactly this purpose. The savory soybean breakfast that isn't a burrito is [natto, sticky fermented soybeans](/natto-japanese-fermented-soybeans-gut-health/).
 
 Freeze a few assembled burritos wrapped in foil if your mornings are consistently rude. Reheat, eat, leave. No ceremony required.
 

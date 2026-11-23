@@ -81,7 +81,7 @@ The "good source of fiber" claim mostly appears on packaged foods competing for 
 
 ## A quick reality check on the daily math
 
-A product with 3 grams gives you roughly 11 percent of the 28 gram Daily Value. Enough for "good source," sure, but it leaves 25 grams for the rest of the day. Beans, fruit, and grains close that gap fast, and [the foods carrying the most fiber per 100 grams](/best-high-fiber-foods-ranked-by-fiber-content/) are mostly in that unlabeled category.
+A product with 3 grams gives you roughly 11 percent of the 28 gram Daily Value. Enough for "good source," sure, but it leaves 25 grams for the rest of the day. Beans, fruit, and grains close that gap fast, and [the foods carrying the most fiber per 100 grams](/best-high-fiber-foods-ranked-by-fiber-content/) are mostly in that unlabeled category. Closing the rest of that Daily Value goes better when you [drink water with the extra fiber](/water-and-fiber-the-golden-rule/). The grocery bill for the full day is [the price of a 30-gram fiber day](/what-30-grams-of-fiber-costs-per-day/).
 
 The label is a tool. A small one. Read it, use it, but don't let it do your thinking for you.
 
