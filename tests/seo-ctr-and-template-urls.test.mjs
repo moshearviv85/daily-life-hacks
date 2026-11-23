@@ -1505,7 +1505,7 @@ test("pizza crust fiber title leads with which crust has more fiber", () => {
     false,
     "pizza crust title should not lead with Comparing Fiber in Different",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /[Cc]omparing [Ff]iber/);
   assert.match(page.excerpt, /2\.7g/);

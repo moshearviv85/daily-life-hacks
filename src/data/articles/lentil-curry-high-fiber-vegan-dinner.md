@@ -11,7 +11,7 @@ tags:
 image: "/images/lentil-curry-high-fiber-vegan-dinner-main.jpg"
 imageAlt: "A bowl of creamy coconut lentil curry served with fresh cilantro and naan bread"
 date: 2026-04-08
-dateModified: 2026-07-16
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -48,7 +48,7 @@ steps:
   - "Squeeze a little fresh lime juice over the pot. Taste and add more salt if needed. Serve hot."
 faq:
   - question: "Can I use brown or green lentils instead of red?"
-    answer: "You can, but the texture and cooking time will change completely. Red lentils break down and make the curry creamy. Brown or green lentils stay firm and take about 20 minutes longer to cook."
+    answer: "You can, but the texture and the clock both change. Red lentils break down and make the curry creamy in 15 to 20 minutes. Brown lentils stay in separate pieces and take about 20 to 30 minutes. Green lentils are firmer still, closer to 35 to 45 minutes. Either swap needs a splash of broth, because the longer simmer cooks the liquid down."
   - question: "What should I serve with this lentil curry?"
     answer: "It is fantastic over basmati rice, quinoa, or with a piece of warm naan bread to scoop up the sauce. You can also just eat it like a thick stew."
   - question: "Is this lentil curry high fiber vegan dinner spicy?"
@@ -63,6 +63,22 @@ You know those nights when you want takeout, but you also want to feel like a re
 It's entirely made in one pot, which means fewer dishes. And because we are using red lentils, it's ready in about half an hour. No soaking, no planning ahead, no fuss. It also reheats like a champ, which is exactly why it earns a spot in this [vegan high fiber meal prep for the week](/vegan-high-fiber-meal-prep-for-week/).
 
 For the broader plan behind this pot, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) shows how lentils, beans, oats, and other cheap staples can cover a lot of meals without getting weird about it.
+
+## Only have red lentils?
+
+Yes. This pot is written for the bag you already have. No soak, and you aren't waiting an hour.
+
+Red lentils are split, and the hull is already gone, so they cook in 15 to 20 minutes and then give up. They melt into the coconut broth. You won't see whole lentils in the bowl. That's the texture. Brown lentils stay in separate pieces and want about 20 to 30 minutes. Green lentils are the firm ones, closer to 35 to 45 minutes, and they make more sense in a salad than in a sauce you want to drag bread through.
+
+The liquid is the part that goes wrong. Red lentils drink the broth and then disappear into it, so the pot goes from soupy to thick in the last few minutes. If it looks like paste before they're soft, splash in 1/4 to 1/2 cup of water or broth and keep stirring. This recipe starts with 2 cups of broth, a can of coconut milk, and the juice from the tomatoes, which is enough for 1 cup of dry red lentils if you stay nearby. If the card in your hand was written for brown lentils, stop at 15 to 20 minutes and plan on that extra splash. The longer simmer those cards expect will glue this one to the pot.
+
+| Lentil | Cook time | Texture | Best use | Fiber per cooked cup |
+|---|---|---|---|---|
+| Red, split and hulled | 15 to 20 minutes | Melts into the sauce | Curry and dal | 15.6 g |
+| Brown | 20 to 30 minutes | Soft, still holds its shape | Soups and salads | 15.6 g |
+| Green, whole | 35 to 45 minutes | Firmest of the three | Salads and sides | 15.6 g |
+
+USDA publishes one cooked lentil cup, not three. [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) is lentils, mature seeds, cooked, boiled, without salt: 7.9 grams of fiber per 100 grams, and the cup weighs 198 grams, which is 15.6 grams. Red and green don't have their own cooked records. Dry red is 10.8 grams per 100 grams ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)) and dry brown is 10.7 ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)), so the cooked cup doesn't split them. Cook times above are kitchen times for a normal simmer. They aren't on the USDA record.
 
 ## Why red lentils are the best shortcut
 

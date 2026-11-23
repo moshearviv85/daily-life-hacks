@@ -12,7 +12,7 @@ tags:
 image: "/images/how-to-pack-cold-pasta-salad-picnics-main.jpg"
 imageAlt: A close-up overhead shot of a colorful rotini pasta salad packed in a clear container for a picnic.
 date: 2026-04-28
-dateModified: 2026-07-29
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
@@ -25,6 +25,15 @@ faq:
   - question: "What is the best container for transporting pasta salad?"
     answer: "Glass or heavy-duty BPA-free plastic containers with airtight, locking lids are ideal for preventing leaks during transport. If you are serving a large group, a wide, shallow container is better than a deep bowl because it allows for more even cooling when placed on top of ice packs inside your picnic cooler."
 ---
+Keep cold pasta salad at 40°F or below. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping) says it shouldn't sit out more than 2 hours, or 1 hour when the air is above 90°F. Pack the container with several inches of ice or frozen gel packs, and keep the cooler closed and shaded.
+
+| Rule | Number | Source |
+|---|---|---|
+| Cold holding | 40°F or below | USDA FSIS |
+| Time above 40°F | 2 hours | USDA FSIS |
+| Time when the air is above 90°F | 1 hour | USDA FSIS |
+| In the cooler | Several inches of ice or frozen gel packs | USDA FSIS |
+
 I once watched a perfectly good bowl of tortellini salad turn into a lukewarm, gummy disaster because it sat in the bed of a truck for forty minutes. By the time we reached the park, the vinaigrette had vanished into the pasta and the cheese cubes were sweating. It wasn't exactly the Pinterest-worthy lunch my wife had envisioned.
 
 Packing cold pasta salad for picnics seems like a no-brainer until you're actually standing in a field with a fork and a bowl of room-temperature mush. If you want to avoid the soggy-noodle blues, you have to handle the packing process as part of the recipe. It's about managing moisture and temperature without turning your cooler into a science experiment.

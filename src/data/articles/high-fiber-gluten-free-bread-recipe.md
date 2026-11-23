@@ -12,7 +12,7 @@ tags:
 image: "/images/high-fiber-gluten-free-bread-recipe-main.jpg"
 imageAlt: "Slices of hearty high fiber gluten free bread on a wooden cutting board"
 date: 2026-04-08
-dateModified: 2026-07-16
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -57,6 +57,19 @@ faq:
   - question: "Why do I bake it out of the pan for the second half?"
     answer: "Baking it directly on the rack for the final stretch ensures the crust gets crispy all the way around, instead of getting soggy in the pan."
 ---
+One slice of this 12-slice loaf has about 6.7 grams of fiber before the chia, from USDA cup weights on the oats, flax, sunflower seeds, and almonds, plus a NOW Foods psyllium label. The chia doesn't have a USDA tablespoon. One ounce of dried chia is 9.8 grams of fiber.
+
+| In one slice | Fiber | Where it comes from |
+|---|---:|---|
+| Rolled oats, 1 1/2 cups in the loaf | 1.0 g | [FDC 173904](https://fdc.nal.usda.gov/food-details/173904/nutrients), 10.1 g per 100 g, 81 g per cup |
+| Whole flaxseed, 1/2 cup in the loaf | 1.9 g | [FDC 169414](https://fdc.nal.usda.gov/food-details/169414/nutrients), 27.3 g per 100 g, 168 g per cup |
+| Sunflower kernels, 1 cup in the loaf | 1.0 g | [FDC 170562](https://fdc.nal.usda.gov/food-details/170562/nutrients), 8.6 g per 100 g, 140 g per cup |
+| Almonds, 1/2 of the sliced cup | 0.5 g | [FDC 170567](https://fdc.nal.usda.gov/food-details/170567/nutrients), 12.5 g per 100 g, 92 g per sliced cup |
+| Psyllium husk powder, 4 level tbsp in the loaf | 2.3 g | NOW Foods label, [FDC 2367897](https://fdc.nal.usda.gov/food-details/2367897/nutrients), 7 g per tbsp |
+| Slice before the chia | 6.7 g | Those five rows |
+
+The almond row uses half of USDA's sliced cup, 46 grams, because that record doesn't publish a chopped cup. Walnuts would change it. Chia is left out of the 6.7 grams: [FDC 170554](https://fdc.nal.usda.gov/food-details/170554/nutrients) publishes 9.8 grams of fiber per ounce (28.35 grams), and the recipe's 2 tablespoons aren't that portion. This is ingredient math on those records, not a lab test of the baked slice. Oil, salt, sweetener, and water add no fiber.
+
 Most gluten-free bread from the store is sad. There, I said it. It's usually full of refined starches, it falls apart if you look at it wrong, and it has the nutritional profile of a paper napkin. Finding a good high fiber gluten free bread recipe feels like trying to find a parking spot on a Saturday afternoon.
 
 But this one? This one actually works. It's a dense, hearty, seed-packed loaf that holds up to serious sandwich fillings and makes incredible toast. It doesn't rely on weird gums or fifteen different flours. It uses whole ingredients that happen to pack a massive fiber punch.
