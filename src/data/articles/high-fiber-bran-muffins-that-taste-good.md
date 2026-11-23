@@ -107,6 +107,10 @@ A bran muffin can have plenty of fiber and still be something you want with coff
 
 This whole wheat version makes **12 large muffins**, estimated at **5.9 grams of fiber and 293 calories each**. The recipe card below gives the ingredients and steps. Use the jump link if the oven is already warming.
 
+## How much fiber is in a bran muffin?
+
+USDA's oat bran muffin is 4.6 g fiber per 100 g, or 6.4 g per large 139 g muffin ([FDC 172769](https://fdc.nal.usda.gov/food-details/172769/nutrients), checked 2026-11-23). A wheat bran muffin is 2.2 g per 100 g, or 4.0 g per large 180 g muffin ([FDC 2707837](https://fdc.nal.usda.gov/food-details/2707837/nutrients)). This recipe estimates 5.9 g, above the [5.6 g high-fiber cut](/good-source-of-fiber-label-meaning/).
+
 ## The 10-minute soak makes these bran muffins softer
 
 Mix the wheat bran and oat bran with the buttermilk before starting the other ingredients. Leave it for 10 minutes. That gives the bran a chance to absorb liquid before the batter reaches the oven.

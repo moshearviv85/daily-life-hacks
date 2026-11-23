@@ -1428,7 +1428,7 @@ test("yogurt title leads with the 13g parfait fiber win", () => {
     false,
     "yogurt title should not use the old layer-by-layer SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
   assert.match(excerpt, /13 grams/);
   assert.match(excerptLower, /zero fiber/);
   assert.equal(

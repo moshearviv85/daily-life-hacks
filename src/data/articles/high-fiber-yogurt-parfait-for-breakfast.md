@@ -11,7 +11,7 @@ tags:
 image: /images/high-fiber-yogurt-parfait-for-breakfast-main.jpg
 imageAlt: Greek yogurt parfait layered with berries, granola, and seeds
 date: 2026-04-28
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -61,6 +61,10 @@ One more line from that FDA page worth keeping: 20 percent of the Daily Value or
 USDA lists plain whole-milk Greek yogurt at 0.0 grams of fiber per 100 grams and plain nonfat at 0.0 as well (records 171304 and 170894). Zero. Not "a little." The container can say Greek yogurt in heroic lettering and the fiber line still reads nothing.
 
 What it does bring is 9.0 grams of protein per 100 grams for the whole-milk version and 10.2 for nonfat, which is why [the comparison between eggs and Greek yogurt per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) gets interesting. Where that tub lands against beans, eggs, and chicken is the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). Yogurt is the protein layer. Stop asking it to be the fiber layer. Berries and seeds have to buy that fiber, and they don't cost the same per gram. Chia seeds land at 33.1 grams of fiber per dollar in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/). Raspberries land at 4.5.
+
+## Which yogurts have fiber?
+
+Plain Greek yogurt is the 0 g layer. These cups show fiber on the brand page, checked 2026-11-23. [Chobani High Protein Vanilla](https://chobani.com/products/high-protein-greek-yogurt-cups-vanilla-20g) is 2 g per 6.7 oz cup, [Chobani High Protein Raspberry Lemon](https://chobani.com/products/high-protein-greek-yogurt-cups-raspberry-lemon-20g) is 1 g per 6.7 oz cup, and [Chobani Flip Almond Coconut Chocolate](https://chobani.com/products/high-protein-greek-yogurt-flip-almond-coconut-chocolate) is 3 g per 6 oz cup.
 
 ## Your granola decides the total
 
