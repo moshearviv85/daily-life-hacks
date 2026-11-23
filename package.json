@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-"prebuild": "node scripts/check-affiliate-policy.mjs && node scripts/check-recipe-nutrition.mjs && node scripts/optimize-images.mjs && node scripts/build-api-index.mjs && node scripts/verify-data-foundation.mjs",
+    "prebuild": "node scripts/check-affiliate-policy.mjs && node scripts/check-recipe-nutrition.mjs && node scripts/optimize-images.mjs && node scripts/build-api-index.mjs && node scripts/verify-data-foundation.mjs",
     "build:api-index": "node scripts/build-api-index.mjs",
     "build:dataset-release": "node scripts/build-dataset-release.mjs",
     "verify:data-foundation": "node scripts/verify-data-foundation.mjs",
