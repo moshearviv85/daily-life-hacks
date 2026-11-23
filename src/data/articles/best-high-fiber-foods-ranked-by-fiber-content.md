@@ -88,6 +88,8 @@ This is the ranking by fiber content, not by price. We have [a separate ranking 
 | Yellow onions | 1.7 g | Raw | Fresh vegetables | [FDC 170000](https://api.nal.usda.gov/fdc/v1/food/170000?api_key=DEMO_KEY) · proxy |
 | Russet potatoes (with skin) | 1.3 g | Flesh and skin, raw | Fresh vegetables | [FDC 170027](https://api.nal.usda.gov/fdc/v1/food/170027?api_key=DEMO_KEY) |
 
+In our July 2026 study of 53 foods, chia seeds had the most fiber per 100 g at 34.4 g, whole flaxseed followed at 27.3 g, and dry green split peas at 22.2 g. They're [USDA FoodData Central](https://fdc.nal.usda.gov/) figures for the dry forms, not a cooked serving. The July 2026 prices are in the [53-row CSV](/data/fiber-per-dollar-2026.csv).
+
 *Provenance checked July 30, 2026: 42 rows have an exact USDA FoodData Central food-and-form match, 10 use a linked FDC proxy with the mismatch disclosed, and 1 remains unresolved. The [53-row raw CSV](/data/fiber-per-dollar-2026.csv) contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
 
 Dry pearled barley is 15.6 grams per 100 grams, and [mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) is how that row becomes dinner.

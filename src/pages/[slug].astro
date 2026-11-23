@@ -23,6 +23,7 @@ import {
   DATA_VERSION,
   HUGGINGFACE_DATASET_URL,
   datasetDistributions,
+  datasetSchemaId,
   describeDatasetProvenance,
   flagshipBibtexKey,
   getDatasetProvenance,
@@ -362,6 +363,32 @@ const recipeCost = recipeNutrition
   : null;
 const recipeCostLine = recipeCost ? formatCostLine(recipeCost) : "";
 
+/**
+ * The 49-food and 53-food index pages print the full tables. Dataset records
+ * stay on the #258 keys. These articles point at that @id and do not emit a
+ * second Dataset node.
+ */
+const LINKED_DATASET_IDS: Record<string, string> = {
+  "foods-highest-in-protein-per-100-grams":
+    "protein-per-dollar-cheapest-protein-sources",
+  "best-high-fiber-foods-ranked-by-fiber-content":
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+};
+const linkedDatasetId = LINKED_DATASET_IDS[article.id];
+const linkedDatasetMeta = linkedDatasetId
+  ? DATASETS[linkedDatasetId]
+  : undefined;
+if (linkedDatasetId && !linkedDatasetMeta) {
+  throw new Error(`Missing dataset record for ${article.id}`);
+}
+if (linkedDatasetId && DATASETS[article.id]) {
+  throw new Error(`${article.id} cannot both own and link a Dataset`);
+}
+const linkedDataset =
+  linkedDatasetId && linkedDatasetMeta
+    ? { id: linkedDatasetId, ...linkedDatasetMeta }
+    : null;
+
 const jsonLd = isRecipe
   ? {
       "@context": "https://schema.org",
@@ -439,6 +466,9 @@ const jsonLd = isRecipe
       author: articleAuthor,
       publisher: publisherSchema,
       publishingPrinciples: `${siteUrl}/editorial-policy/`,
+      ...(linkedDataset
+        ? { isBasedOn: { "@id": datasetSchemaId(linkedDataset, siteUrl) } }
+        : {}),
     };
 
 
@@ -534,9 +564,12 @@ const flagshipCitation =
         bibtexKey: flagshipBibtexKey(article.id, citationYear),
       })
     : null;
+const citeDataset = dataset
+  ? { id: article.id, ...dataset }
+  : linkedDataset;
 const citationText =
-  dataset && !flagshipCitation
-    ? `Daily Life Hacks. "${dataset.name}." ${citationYear}. ${articleUrl}. Licensed under CC BY 4.0.`
+  citeDataset && !flagshipCitation
+    ? `Daily Life Hacks. "${citeDataset.name}." ${citationYear}. ${articleUrl}. Licensed under CC BY 4.0.`
     : null;
 
 const citationCopyScript = `(function(){
@@ -1105,7 +1138,7 @@ const earlyPlan = flagship?.emailCapture
       )
     }
     {
-      dataset && citationText && (
+      citeDataset && citationText && (
         <aside
           class="order-[21] mt-8 rounded-xl border p-4"
           style="border-color: var(--border-color); background-color: var(--card-bg);"
@@ -1120,7 +1153,7 @@ const earlyPlan = flagship?.emailCapture
               Cite this dataset
             </h2>
             <span class="text-xs" style="color: var(--muted-color);">
-              {dataset.rows} rows &middot; free to reuse with credit
+              {citeDataset.rows} rows &middot; free to reuse with credit
             </span>
           </div>
           <p class="mt-1 text-xs" style="color: var(--muted-color);">
@@ -1150,17 +1183,17 @@ const earlyPlan = flagship?.emailCapture
               Copy citation
             </button>
             <a
-              href={dataset.csv}
+              href={citeDataset.csv}
               download
               data-dataset-download
-              data-dataset-id={article.id}
+              data-dataset-id={citeDataset.id}
               class="text-xs underline"
               style="color: var(--muted-color);"
             >
               Download the CSV
             </a>
             {
-              dataset.huggingfaceMirror && (
+              citeDataset.huggingfaceMirror && (
                 <a
                   href={HUGGINGFACE_DATASET_URL}
                   class="text-xs underline"

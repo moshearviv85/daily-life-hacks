@@ -1,6 +1,6 @@
 ---
 title: "High Protein High Fiber Meals: 30–40g Protein Template"
-excerpt: "High protein high fiber meals for weight loss keep you full without the spreadsheet drama. Starving an hour after a diet salad is not a willpower problem"
+excerpt: "Build each plate on 30-40 g protein and a cup of beans, lentils, or whole grains. A cup of cooked lentils alone gives about 16 g fiber and 18 g protein."
 category: nutrition
 tags:
 - high protein high fiber

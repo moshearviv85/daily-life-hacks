@@ -1,6 +1,6 @@
 ---
 title: "What 30 Grams of Fiber Costs: $0.62 vs $14.42"
-excerpt: "We priced five real ways to hit 30 grams of fiber in one day, from 62 cents to $14.42. Same fiber, 23 times the price. Every grocery fiber figure traces to USDA data."
+excerpt: "Five real ways to hit 30 grams of fiber in a day cost 62 cents to $14.42. Same fiber, 23 times the price. Every grocery figure traces to USDA data."
 category: "nutrition"
 tags: ["cost of fiber per day", "30 grams of fiber a day", "fiber on a budget", "cheap high fiber meals", "grocery data"]
 cluster: "budget-fiber"
