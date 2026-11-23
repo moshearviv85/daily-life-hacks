@@ -33,7 +33,6 @@ test("dataset downloads emit a privacy-safe GA4 event from every primary surface
   const surfaces = [
     read("src/pages/data/index.astro"),
     read("src/pages/data/[stem]/index.astro"),
-    read("src/pages/research/index.astro"),
     read("src/pages/statistics/index.astro"),
     read("src/pages/[slug].astro"),
     read("src/pages/food-value-database/index.astro"),

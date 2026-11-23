@@ -48,9 +48,11 @@ test("every consolidation source 301s to its plain target", () => {
     ["/shelf-stable-pantry-per-dollar/", "/protein-per-dollar-cheapest-protein-sources/"],
     ["/one-dollar-protein-what-it-buys/", "/protein-per-dollar-cheapest-protein-sources/"],
     ["/cheapest-protein-per-gram/", "/protein-per-dollar-cheapest-protein-sources/"],
+    ["/research/", "/data/"],
+    ["/guides/", "/nutrition/"],
   ]);
 
-  assert.equal(expected.size, 26);
+  assert.equal(expected.size, 28);
   for (const [source, destination] of expected) {
     for (const pathname of [source, source.replace(/\/$/, "")]) {
       const match = matchSiteRedirect(pathname);

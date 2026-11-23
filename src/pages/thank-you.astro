@@ -17,7 +17,7 @@ const nextLink =
       ? "/nutrition/"
       : category === "tips"
         ? "/tips/"
-        : "/guides/";
+        : "/nutrition/";
 
 const nextLabel =
   category === "recipes"
@@ -26,7 +26,7 @@ const nextLabel =
       ? "Browse Nutrition Guides"
       : category === "tips"
         ? "Browse Kitchen Tips"
-        : "Browse Complete Guides";
+        : "Browse Nutrition";
 
 const interestLabel = segment ? segment.replace(/-/g, " ") : "";
 

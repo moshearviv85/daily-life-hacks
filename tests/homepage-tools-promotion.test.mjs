@@ -75,7 +75,8 @@ test("homepage leads with a visible grocery-dollar H1 and flagship study links",
     "protein flagship href should appear above Latest Article / HeroSection",
   );
   assert.match(source, /href="\/tools\/grocery-budget-calculator\/"/);
-  assert.match(source, /href="\/research\/"/);
+  assert.match(source, /href="\/data\/"/);
+  assert.doesNotMatch(source, /href="\/research\/"/);
 });
 
 test("homepage does not cite the pre-BLS 97.9 protein-per-dollar snapshot", async () => {

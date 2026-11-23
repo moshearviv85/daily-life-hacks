@@ -6,6 +6,7 @@ import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
 import { isReleased, getReleaseTimestamp } from "../../content/release";
 import { isIndexPruned } from "../../content/index-prune.js";
+import { CONTENT_CLUSTERS } from "../../content/clusters";
 
 const allArticles = await getCollection("articles");
 const articles = allArticles
@@ -97,6 +98,45 @@ const breadcrumbSchema = {
                 >49 foods ranked by protein per dollar</a>. Beans, split peas, and oats keep winning both lists.
             </p>
         </header>
+
+        <section aria-labelledby="start-here" class="mb-12">
+            <h2
+                id="start-here"
+                class="text-2xl font-bold mb-6 text-[var(--heading-color)]"
+            >
+                Start here
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {
+                    CONTENT_CLUSTERS.map((cluster) => (
+                        <a
+                            href={`/${cluster.parentPillar}/`}
+                            class="rounded-xl p-5 flex flex-col transition-all hover:-translate-y-0.5"
+                            style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+                        >
+                            <p
+                                class="text-xs font-bold uppercase tracking-[0.18em] mb-2"
+                                style="color: #F29B30;"
+                            >
+                                {cluster.label}
+                            </p>
+                            <h3
+                                class="text-lg font-bold mb-2"
+                                style="color: var(--heading-color);"
+                            >
+                                {cluster.title}
+                            </h3>
+                            <p class="text-sm mb-4 flex-1" style="color: var(--muted-color);">
+                                {cluster.blurb}
+                            </p>
+                            <span class="font-bold text-sm" style="color: #F29B30;">
+                                Read the full guide
+                            </span>
+                        </a>
+                    ))
+                }
+            </div>
+        </section>
 
         <!-- ArticleCard renders an h3. Without this h2 the outline jumps h1 -> h3. -->
         <h2 class="text-2xl font-bold mb-6 text-[var(--heading-color)]">

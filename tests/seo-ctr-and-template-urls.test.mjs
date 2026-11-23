@@ -692,15 +692,6 @@ test("eggs vs everything title leads with protein-per-dollar grams from the flag
   assert.equal(INDEX_PRUNE_SLUGS.has(slug), false);
 });
 
-test("research hub quality card shows the adjusted-grams CSV leader", () => {
-  const source = readFileSync(join(ROOT, "src/pages/research/index.astro"), "utf8");
-  assert.match(source, /protein-quality-per-dollar-2026/);
-  assert.match(source, /quality_adjusted_protein_g_per_dollar/);
-  assert.match(source, /number: `\$\{qualityGrams\}g`/);
-  assert.doesNotMatch(source, /number:\s*"DIAAS"/);
-  assert.match(source, /DIAAS adjustments cite/);
-});
-
 test("high-protein high-fiber meals title leads with the 30–40g protein template", () => {
   const page = articleFrontmatter("high-protein-high-fiber-meals-for-weight-loss");
   const raw = readFileSync(

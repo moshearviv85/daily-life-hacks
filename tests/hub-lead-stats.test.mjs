@@ -54,13 +54,9 @@ function anchorTexts(source, href) {
   );
 }
 
-const hubs = [
-  "src/pages/index.astro",
-  "src/pages/guides/index.astro",
-  "src/pages/research/index.astro",
-];
+const hubs = ["src/pages/index.astro"];
 
-test("homepage, guides, and research link animal and fiber-day leads from the CSVs", () => {
+test("homepage links animal and fiber-day leads from the CSVs", () => {
   const protein = parseCsv(
     readFileSync(join(root, "public/data/protein-per-dollar-2026.csv"), "utf8"),
   );
@@ -99,7 +95,7 @@ test("homepage, guides, and research link animal and fiber-day leads from the CS
   }
 });
 
-test("homepage, guides, and research link breakfast combined and eggs protein leads", () => {
+test("homepage links breakfast combined and eggs protein leads", () => {
   const breakfast = parseCsv(
     readFileSync(join(root, "public/data/breakfast-staples-per-dollar-2026.csv"), "utf8"),
   );
@@ -155,21 +151,42 @@ test("homepage, guides, and research link breakfast combined and eggs protein le
   }
 });
 
-test("research fiber-day card title uses the same CSV day range", () => {
-  const source = readFileSync(
-    join(root, "src/pages/research/index.astro"),
-    "utf8",
+test("header drops Guides and footer sends readers to nutrition and data", () => {
+  const header = readFileSync(join(root, "src/components/Header.astro"), "utf8");
+  const footer = readFileSync(join(root, "src/components/Footer.astro"), "utf8");
+
+  assert.equal(header.includes("/guides/"), false);
+  assert.equal(header.includes('label: "Guides"'), false);
+  assert.equal(footer.includes("/guides/"), false);
+  assert.equal(footer.includes("/research/"), false);
+  assert.match(footer, /href="\/nutrition\/"/);
+  assert.match(footer, /href="\/data\/"/);
+  assert.match(footer, />Data</);
+});
+
+test("nutrition hub shows the four playbooks in a Start here row", () => {
+  const source = readFileSync(join(root, "src/pages/nutrition/index.astro"), "utf8");
+  const playbooks = [
+    "how-to-eat-more-fiber-on-a-budget-complete-guide",
+    "high-protein-on-a-budget-complete-guide",
+    "eat-healthy-on-a-budget-complete-playbook",
+    "meal-prep-for-beginners-complete-system",
+  ];
+
+  assert.match(
+    source,
+    /const title = "Nutrition Tips & Science-Backed Advice \| Daily Life Hacks";/,
   );
   assert.match(
     source,
-    /const cheapestFiberDay = fiberDays\[0\]\.cost\.toFixed\(2\);/,
+    /Explore our latest nutrition tips, science-backed advice, and healthy eating guides to fuel your body and mind\./,
   );
-  assert.match(
-    source,
-    /const priciestFiberDay = fiberDays\.at\(-1\)\.cost\.toFixed\(2\);/,
-  );
-  assert.match(
-    source,
-    /title: `What 30 Grams of Fiber Costs: \$\$\{cheapestFiberDay\} vs \$\$\{priciestFiberDay\}`/,
-  );
+  assert.match(source, /id="start-here"/);
+  assert.match(source, />\s*Start here\s*</);
+  assert.match(source, /CONTENT_CLUSTERS\.map\(\(cluster\)/);
+  assert.match(source, /href=\{`\/\$\{cluster\.parentPillar\}\/`\}/);
+  const clusters = readFileSync(join(root, "src/content/clusters.ts"), "utf8");
+  for (const slug of playbooks) {
+    assert.match(clusters, new RegExp(`parentPillar: "${slug}"`));
+  }
 });
