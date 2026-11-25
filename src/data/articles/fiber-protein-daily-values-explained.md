@@ -90,6 +90,8 @@ Protein labels have an extra wrinkle. When a company puts a protein %DV on the p
 
 For the full fiber version, our guide to [what “good source of fiber” means](/good-source-of-fiber-label-meaning/) walks through the cereal-aisle numbers without asking you to become a regulatory attorney before breakfast.
 
+The package words are one ruler. The scoop is the other. [Which everyday foods clear 2.8 g and 5.6 g](/good-source-of-fiber-label-meaning/) puts beans, oats, bread, and an apple on it.
+
 ![Bar chart showing the FDA percent Daily Value thresholds used for low, good source, and high label language](/images/fiber-protein-daily-values-thresholds-chart.jpg)
 
 ## How do our four cost studies use these targets?

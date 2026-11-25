@@ -18,7 +18,8 @@ quickAnswer: >-
   is not low fat, 21 CFR 101.54(d) makes the label disclose total fat next to the
   fiber claim.
 date: 2026-04-25
-dateModified: 2026-11-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -55,6 +56,26 @@ Once you've decoded the box, the [complete budget fiber guide](/what-30-grams-of
 
 The gram cuts are in the table under the title. These aren't opinion numbers. Section 101.54 sets the thresholds, and the 28 gram Daily Value is written into [FDA's labeling regulations](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9). Two footnotes. If a guide quotes 2.5 grams for "good source" and 5 grams for "high," it's using the old 25 gram Daily Value from before the 2016 label overhaul. And meat and poultry answer to USDA, not FDA, though [USDA's parallel rule](https://www.ecfr.gov/current/title-9/chapter-III/subchapter-A/part-317/subpart-B/section-317.354) uses the same 10 to 19 percent and 20 percent cutoffs. [FDA's whole-grain guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements) handles those statements separately, so "made with whole grains" isn't a secret fiber claim wearing a wheat-colored jacket. Our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the rest of the federal paperwork so you don't have to.
 
+## Which everyday foods clear the 2.8 g good-source and 5.6 g high-fiber FDA cutoffs?
+
+Beans, lentils, barley, and raspberries clear high fiber in the portions below. Oats, two slices of whole wheat bread, and a medium apple with skin stop at good source. [21 CFR 101.54](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54) puts those lines at 10 and 20 percent of the 28 gram Daily Value in [21 CFR 101.9](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9), or 2.8 and 5.6 grams.
+
+Two slices of whole wheat bread clear good source and miss high fiber. The brown color doesn't tell you that. A cereal sleeve can say good source at 3 grams and still be a cookie wearing a badge.
+
+Table: Everyday portions against the 2.8 g and 5.6 g fiber lines
+
+| Food | Portion | Fiber | % of 28 g | FDA tier | Record |
+|---|---|---:|---:|---|---|
+| Cooked black beans | 1/2 cup (86 g) | 7.5 g | 26.7% | High fiber | [FDC 173735](https://fdc.nal.usda.gov/food-details/173735/nutrients) |
+| Cooked lentils | 1/2 cup (99 g) | 7.8 g | 27.9% | High fiber | [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) |
+| Cooked pearled barley | 1 cup (157 g) | 6.0 g | 21.3% | High fiber | [FDC 170285](https://fdc.nal.usda.gov/food-details/170285/nutrients) |
+| Dry rolled oats | 1/2 cup (40.5 g) | 4.1 g | 14.6% | Good source | [FDC 173904](https://fdc.nal.usda.gov/food-details/173904/nutrients) |
+| Raw raspberries | 1 cup (123 g) | 8.0 g | 28.6% | High fiber | [FDC 167755](https://fdc.nal.usda.gov/food-details/167755/nutrients) |
+| Whole wheat bread | 2 slices (64 g) | 3.8 g | 13.7% | Good source | [FDC 172688](https://fdc.nal.usda.gov/food-details/172688/nutrients) |
+| Apple with skin | 1 medium (182 g) | 4.4 g | 15.6% | Good source | [FDC 171688](https://fdc.nal.usda.gov/food-details/171688/nutrients) |
+
+Half a cup is half of the USDA cup: 172 grams for the beans, 198 grams for the lentils. The oat scoop is half of the 81 gram dry cup. Two slices are two of the 32 gram slices. The apple is the medium with skin, 182 grams. Fiber is that weight times the per-100-gram figure, and the percent is that fiber divided by 28. A package claim is still scored on the reference amount, not on this scoop. The table tells you whether the portion you eat clears the gram line.
+
 ## What the label leaves out
 
 **Serving size.** A serving of crackers might be listed as 6 crackers. If you normally eat 12 (no judgment, we've all been there), you're getting double the printed fiber and double everything else. One thing brands can't do is shrink their way into a claim: FDA scores these thresholds against a reference amount customarily consumed, a standard portion it sets by food category, and a smaller portion would only mean fewer grams.
@@ -85,4 +106,4 @@ A product with 3 grams gives you roughly 11 percent of the 28 gram Daily Value. 
 
 The label is a tool. A small one. Read it, use it, but don't let it do your thinking for you.
 
-<!-- sources: 21 CFR 101.54, https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54; 21 CFR 101.9 (DRV table, dietary fiber 28 g), https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9; 9 CFR 317.354 (USDA meat/poultry parallel rule), https://www.ecfr.gov/current/title-9/chapter-III/subchapter-A/part-317/subpart-B/section-317.354; FDA Daily Values, https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels; FDA Dietary Fiber Q&A, https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber; FDA Whole Grain Label Statements, https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements; USDA FoodData Central: pears raw 169118, black turtle beans canned 175188, lentils cooked 172421 -->
+<!-- sources: 21 CFR 101.54, https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54; 21 CFR 101.9 (DRV table, dietary fiber 28 g), https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9; 9 CFR 317.354 (USDA meat/poultry parallel rule), https://www.ecfr.gov/current/title-9/chapter-III/subchapter-A/part-317/subpart-B/section-317.354; FDA Daily Values, https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels; FDA Dietary Fiber Q&A, https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber; FDA Whole Grain Label Statements, https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements; USDA FoodData Central: pears raw 169118, black turtle beans canned 175188, lentils cooked 172421, black beans cooked 173735, pearled barley cooked 170285, rolled oats dry 173904, raspberries raw 167755, whole wheat bread 172688, apples raw with skin 171688 -->
