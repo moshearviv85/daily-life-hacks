@@ -96,7 +96,7 @@ Cottage cheese is lumpy. There's no getting around the curds. It's savory, salty
 
 ## When should you use Greek yogurt?
 
-Because of its tangy flavor profile, Greek yogurt is your best friend for anything sweet or bright. 
+Because of its tangy flavor profile, Greek yogurt is your best friend for anything sweet or bright, including [a yogurt parfait with the fiber counted](/high-fiber-yogurt-parfait-for-breakfast/). 
 
 Use it as the base for a parfait with berries and granola. Mix it into your overnight oats for creaminess. Those oats are the fiber in that bowl: old-fashioned rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/). Use it to tone down a spicy taco by dolloping it on top instead of sour cream. It also bakes incredibly well, keeping muffins and cakes moist without adding heavy oil. If a recipe needs a bright, acidic lift, grab the yogurt.
 

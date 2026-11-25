@@ -31,7 +31,7 @@ faq:
 - question: Which fruit works best in a high-fiber parfait?
   answer: "Raspberries, by a wide margin. USDA lists them at 6.5 grams of fiber per 100 grams, so a 1/2 cup is about 4.0 grams, with blackberries close behind at 3.8. Blueberries land at 1.8 and strawberries at 1.5 for the same 1/2 cup. Frozen unsweetened raspberries test lower than fresh, 4.3 grams per 100 grams, which works out to about 3.0 grams per 1/2 cup."
 ---
-A high-fiber yogurt parfait is a bookkeeping problem more than a recipe problem. Plain Greek yogurt carries no fiber at all, so every gram comes from the berries, the seeds, and the granola. Build it one way and you're at 13 grams before you sit down. Build it another way, in a bowl that photographs identically, and you're at 5.
+A high-fiber yogurt parfait is a bookkeeping problem more than a recipe problem. Plain Greek yogurt carries no fiber at all, so every gram comes from the berries, the seeds, and the granola. Those seeds don't have to stay sweet. [Savory chia when the sweet parfait isn't the move](/savory-chia-seed-recipes-breakfast/) puts the same spoon on eggs and vegetables. Build it one way and you're at 13 grams before you sit down. Build it another way, in a bowl that photographs identically, and you're at 5.
 
 That gap is the whole article. Most parfait recipes quote a single fiber number and then hand you a granola whose label serving is 1/4 cup, which is not the amount anyone pours.
 

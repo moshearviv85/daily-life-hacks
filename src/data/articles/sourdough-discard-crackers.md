@@ -75,7 +75,7 @@ Heat the oven to **350 degrees F** while the second piece waits in the fridge. F
 
 **1/16 inch** is the snap, the Wheat Thin end of the scale. King Arthur's cracker post says **1/8 inch** still crunches, more like a sturdy wheat cracker, and those thicker squares need about **30 to 35 minutes** so the center dries. I roll to the thin one. A thick middle with brown edges is the failure mode, and it's annoying because the pan looks done from the doorway.
 
-Ragged edges are fine. Cut squares about 1 1/4 inch and leave them touching. They separate as they bake. Dock each one with a fork if you want them flat. Skip the fork and a few will puff. That's not ruined. It's just a tiny pita you didn't order.
+Ragged edges are fine. Cut squares about 1 1/4 inch and leave them touching. They separate as they bake. Dock each one with a fork if you want them flat. Skip the fork and a few will puff. That's not ruined. It's just a tiny pita you didn't order. If the cracker tin loses to a chip bag, [crunchy swaps for the potato chip bag](/healthy-alternatives-potato-chips-snacking/) are the salty options with fiber attached.
 
 Rotate the sheets halfway, front to back and top to bottom. Pull them when the edges are browning and the center piece breaks clean. Cool on a rack. They crisp as they cool. Judging them hot is how you box a soft cracker and blame the recipe tomorrow.
 

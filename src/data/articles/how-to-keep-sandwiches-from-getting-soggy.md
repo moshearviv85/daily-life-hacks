@@ -84,7 +84,7 @@ A salad jar is the same moisture problem, stacked instead of spread. Five lines.
 4. Cheese, quinoa, or rice makes a dry shelf, so the top never meets the dressing.
 5. Spun-dry leaves go in last. The lid closes on greens, not on sauce.
 
-Turn the jar over a bowl at your desk. The sauce that started on the bottom finishes on the leaves. The longer version for a work salad is [packing salad so it isn't soggy](/how-to-pack-salad-for-work-not-soggy/).
+Turn the jar over a bowl at your desk. The sauce that started on the bottom finishes on the leaves. The longer version for a work salad is [packing salad so it isn't soggy](/how-to-pack-salad-for-work-not-soggy/). The jar itself still has a clock. [Storing the dressing jar you pack beside the sandwich](/how-to-store-homemade-salad-dressing-safely/) depends on vinaigrette versus dairy.
 
 Bread that won't mold is a different problem from bread that won't go soggy. Don't refrigerate the loaf you still want to eat soft. Cold speeds staling. For two to four days, keep it on the counter in a bread box, paper, or a bag with the extra air pressed out, away from the stove and the dishwasher steam. Cool homemade bread completely before you wrap it, or the bag fogs and the crust goes damp. Anything you won't finish this week gets sliced and frozen.
 

@@ -75,7 +75,7 @@ Learning which high fiber meals for constipation relief feel soothing versus agg
 
 ## Breakfast, lunch, and dinner that quietly raise the number
 
-**Breakfast:** Oatmeal with chia and berries. Or whole-grain toast with peanut butter and an apple. Or yogurt with pear and a spoon of ground flax if you already like it. Keep it simple enough that you'll repeat it.
+**Breakfast:** Oatmeal with chia and berries. Or whole-grain toast with peanut butter and an apple. Or yogurt with pear and a spoon of ground flax if you already like it. Keep it simple enough that you'll repeat it. If yogurt is the bowl, [a yogurt parfait that isn't just flavored yogurt](/high-fiber-yogurt-parfait-for-breakfast/) is plain yogurt plus the fruit and seeds that bring the fiber.
 
 **Lunch:** Lentil soup, leftover chili, a chickpea wrap with lots of vegetables, or a rice-and-bean bowl. Canned beans are fine. Rinse them if the liquid bothers you. The cabbage version of that soup is the [fiber-rich cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/).
 

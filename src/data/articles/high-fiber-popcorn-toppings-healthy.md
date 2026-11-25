@@ -30,7 +30,7 @@ faq:
 - question: "Can I make seasoned popcorn ahead?"
   answer: "Dry seasoning blends can be mixed ahead, but popcorn is best dressed shortly before eating. Moist toppings such as lime juice soften it if they sit too long."
 ---
-Plain popcorn is a blank canvas, which sounds elegant until you eat three handfuls and realize the canvas tastes like warm cardboard. Butter fixes that, obviously. It also isn't the only option.
+Plain popcorn is a blank canvas, which sounds elegant until you eat three handfuls and realize the canvas tastes like warm cardboard. Butter fixes that, obviously. It also isn't the only option. When the bowl has to stand in for chips, the rest of the salty lineup is in [ranked alternatives when popcorn isn't the chip swap](/healthy-alternatives-potato-chips-snacking/).
 
 The best popcorn toppings bring salt, acidity, heat, or a little sweetness without requiring a caramel thermometer and a sink full of hardened sugar. Pop the corn, add just enough oil to make the seasoning stick, and choose a direction.
 

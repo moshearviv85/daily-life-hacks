@@ -49,7 +49,7 @@ Other writers print cup labels that don't match that chart. Kneaded That calls 1
 
 Fifty grams and 60 grams are real questions, and this site doesn't have a cooked recipe at either weight. Sixty grams is only a few grams over the 57 gram quarter cup. That's still a small spoonful next to the 113 gram flatbread, not a second recipe.
 
-At 100 grams you're close. Audrey Grubb's [sourdough lemon muffins](https://kneadedthat.com/sourdough-lemon-muffins/) print **100 grams** of discard, with a total time of about 35 minutes on her card. She also lists that 100 grams as a third of a cup. Weigh it.
+At 100 grams you're close. Audrey Grubb's [sourdough lemon muffins](https://kneadedthat.com/sourdough-lemon-muffins/) print **100 grams** of discard, with a total time of about 35 minutes on her card. She also lists that 100 grams as a third of a cup. Weigh it. If you want fiber instead of a lemon batter, these [high-fiber bran muffins that soak the bran first](/high-fiber-bran-muffins-that-taste-good/) use wheat bran and oat bran, not discard.
 
 If you want to stay with a recipe from this site, 100 grams is a little under the 113 gram flatbread. The measuring guide's scaling idea is the amount you have divided by the amount the recipe wants. Here that's about 0.88. The flatbread has no egg to divide, which is the usual headache. It still isn't a tested 100 gram card, so don't expect the 6 inch round to come out identical.
 

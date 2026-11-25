@@ -60,7 +60,7 @@ Corn isn't naturally a low-fiber grain. Whole corn carries bran, which is exactl
 
 Standard grits are degerminated. The germ and much of the bran get milled away for shelf life, smoother texture and faster cooking. USDA shows what that costs in plain numbers: [whole-grain cornmeal](https://fdc.nal.usda.gov/food-details/169697/nutrients) carries 7.3 grams of fiber per 100 grams, while [degermed cornmeal](https://fdc.nal.usda.gov/food-details/168867/nutrients) carries 3.9. Almost half the fiber, removed at the mill. The bowl can't keep what the mill already took.
 
-Oats go through nothing equivalent. Steel-cut oats are chopped groats, rolled oats are steamed and flattened, instant oats are cut smaller and rolled thinner. The shape and cook time change. The bran stays.
+Oats go through nothing equivalent. Steel-cut oats are chopped groats, rolled oats are steamed and flattened, instant oats are cut smaller and rolled thinner. The shape and cook time change. The bran stays. Baked, that same bran is [muffins that keep the oat bran and wheat bran](/high-fiber-bran-muffins-that-taste-good/).
 
 The same lesson shows up across the grain aisle, including in our look at [fiber in different pizza crusts](/comparing-fiber-content-different-pizza-crusts/): the more bran that survives milling, the more fiber reaches the plate. "Whole grain" is doing actual work on a label. "Homestyle" is just wearing an apron.
 

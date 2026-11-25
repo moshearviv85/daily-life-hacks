@@ -146,7 +146,7 @@ The bill for a full day of it is [the grocery bill for about 30 grams](/what-30-
 
 ## How do you actually eat these?
 
-Nobody eats bran by the spoonful twice, so the trick is hiding the heavyweights inside food you already like.
+Nobody eats bran by the spoonful twice, so the trick is hiding the heavyweights inside food you already like. Wheat bran and oat bran disappear into [bran muffins that hide the wheat bran](/high-fiber-bran-muffins-that-taste-good/).
 
 The bran-flakes row at 18.3 grams per 100 grams needs no cooking, but it is a proxy: that exact value comes from a POST Bran Flakes USDA record while the price came from Great Value. Chia seeds work best as a texture ingredient: stirred into [savory breakfast bowls](/savory-chia-seed-recipes-breakfast/) or thickened into a chia raspberry jam that quietly stacks two of the top foods on this list into one spoonful. Dry beans go where dry beans always go, which is [a pot on Sunday](/how-to-cook-dried-beans-from-scratch/) and then everywhere else all week.
 

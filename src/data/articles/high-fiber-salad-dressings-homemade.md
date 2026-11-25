@@ -147,13 +147,13 @@ If you're building these lunches on a budget, beans again do the heavy lifting. 
 
 A good starting point is two to three tablespoons per big personal salad. That sounds small if you're used to pouring until the greens look shiny and defeated. Taste after tossing. Add another spoon if needed. The goal is coated leaves, not a soup course underneath.
 
-Calorie-wise, tahini is dense. That is not a moral failure. It is sesame paste doing sesame paste things. A creamy homemade dressing can help a bean-heavy salad feel like a meal, which may keep you from hunting chips an hour later. Portion with a spoon anyway. "Homemade" is not a free pass to drink dressing from the jar, though I understand the temptation when the lemon-garlic balance lands.
+Calorie-wise, tahini is dense. That is not a moral failure. It is sesame paste doing sesame paste things. A creamy homemade dressing can help a bean-heavy salad feel like a meal, which may keep you from hunting chips an hour later. If the chip hunt still wins, [fiber snacks that beat a chip hunt](/healthy-alternatives-potato-chips-snacking/) are built for that hour. Portion with a spoon anyway. "Homemade" is not a free pass to drink dressing from the jar, though I understand the temptation when the lemon-garlic balance lands.
 
 If you're meal-prepping four lunches, mix a double batch and keep it separate. Dress each bowl when you eat. Your future romaine will stay crunchier, and you won't end up with four identical containers of wilted ambition.
 
 ## Storage, separation, and the whisk reality check
 
-Jar it. Fridge it. Most tahini dressings last five to seven days. It will separate. That means you made food, not a science experiment with emulsifiers. Shake hard or whisk for ten seconds. If it's too thick from the cold, loosen with a splash of warm water.
+Jar it. Fridge it. Most tahini dressings last five to seven days. Those five to seven days are a tahini window. [The real fridge windows for homemade dressing](/how-to-store-homemade-salad-dressing-safely/) split vinaigrette, dairy, and garlic-in-oil. It will separate. That means you made food, not a science experiment with emulsifiers. Shake hard or whisk for ten seconds. If it's too thick from the cold, loosen with a splash of warm water.
 
 Garlic gets stronger overnight. If you're sensitive to that, use less garlic in the batch and grate a tiny bit fresh onto the salad instead.
 

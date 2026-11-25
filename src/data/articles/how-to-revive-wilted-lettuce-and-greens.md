@@ -98,7 +98,7 @@ The second rescue is prevention. Dry the leaves well, store them in a container 
 
 Two numbers worth taping inside the fridge door. The FDA says keep perishable produce like lettuce at 40°F or below, checked with an actual thermometer rather than vibes. UC San Diego keeps salad greens up to 7 days in an airtight container with a damp cloth. Soaked leaves don't get those 7 days. They're wet and handled, so use them that day.
 
-Packing lunch? Keep dressing away from the leaves until you eat. The full system is in this guide to [packing salad for work without making it soggy](/how-to-pack-salad-for-work-not-soggy/), and it costs you one extra container instead of $14 for a desk salad that tastes like its own plastic lid.
+Packing lunch? Keep dressing away from the leaves until you eat. The full system is in this guide to [packing salad for work without making it soggy](/how-to-pack-salad-for-work-not-soggy/), and it costs you one extra container instead of $14 for a desk salad that tastes like its own plastic lid. The jar in that second container still expires. [How long a homemade dressing lasts in the fridge](/how-to-store-homemade-salad-dressing-safely/) is the part the ice bath doesn't fix.
 
 And if your produce drawer keeps turning into a small food-waste museum, use the eat-healthy-on-a-budget playbook to plan what gets eaten first. The ice bath is a rescue tool. A visible plan is how you stop needing it every Thursday.
 

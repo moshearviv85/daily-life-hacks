@@ -56,7 +56,7 @@ This fiber challenge takes a calmer route. You're not restricting calories or ba
 
 ## The Rules of the Challenge
 
-Before you start wildly eating six bowls of bran cereal a day, two rules make the change more reasonable. [NIDDK recommends adding fiber a little at a time](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition) and drinking liquids to help it work better.
+Before you start wildly eating six bowls of bran cereal a day, two rules make the change more reasonable. Skip the sixth bowl and bake [a bran muffin instead of a cereal marathon](/high-fiber-bran-muffins-that-taste-good/). [NIDDK recommends adding fiber a little at a time](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition) and drinking liquids to help it work better.
 
 1. **Hydrate:** Fiber absorbs water. Drinking enough fluids as you add more fiber may help keep things comfortable. A sudden increase without enough fluid can leave some people constipated.
 2. **Go Slowly:** Don't jump from a low-fiber routine to forty grams overnight. Your digestive system may need time to adjust. Week One is about gentle additions.

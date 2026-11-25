@@ -95,7 +95,7 @@ The secret to getting a good crust in the air fryer is moisture control. If your
 
 Cutting the salmon into uniform, one-inch cubes ensures they all finish cooking at the same time. If you have some giant chunks and some tiny slivers, the small ones will dry out before the big ones are done. Try to keep them roughly the same size.
 
-Once they're cubed, toss them with a little olive oil, paprika, garlic powder, salt, and pepper. The paprika gives them a beautiful color as they cook, while the oil helps the hot air crisp up the outside.
+Once they're cubed, toss them with a little olive oil, paprika, garlic powder, salt, and pepper. The paprika gives them a beautiful color as they cook, while the oil helps the hot air crisp up the outside. If that oil smokes, switch bottles using [oils that stay calm in a ripping-hot air fryer](/cooking-oils-smoke-points-best-uses/).
 
 ## Using the air fryer
 
