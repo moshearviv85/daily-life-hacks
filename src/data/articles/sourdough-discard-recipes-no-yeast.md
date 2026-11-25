@@ -1,6 +1,6 @@
 ---
 title: "Sourdough Discard Recipes With No Added Yeast"
-excerpt: "Sourdough discard recipes with no added yeast. Soda, baking powder, or a flat skillet, and twelve batches with grams and a real clock."
+excerpt: "Sourdough discard recipes with no added yeast. Soda, baking powder, or a flat skillet, and thirteen batches with grams and a real clock."
 quickAnswer: "Unfed discard doesn't lift dough the way a ripe starter does. These sourdough discard recipes add no commercial yeast. Baking soda uses the jar's acid, baking powder brings its own, and flatbreads, crackers, and tortillas just cook through. Each row below names the discard in grams and the time the published card actually allows."
 category: tips
 tags:
@@ -42,7 +42,7 @@ Unfed discard is sour and tired. King Arthur's point, and it's the useful one, i
 
 **Baking soda plus the acid in the jar.** Unfed sourdough often sits around pH 4.0 to 4.8 ([Lau et al., 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC8306212/)). That acidity is a baking tool, not a proven health treatment ([D'Amico et al., 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC10399781/)). Pancakes and the big waffle batch foam as soon as the soda lands. Cook them. This isn't batter to park while you hunt for a spatula.
 
-**Baking powder, which brings its own acid.** Pizza, tortillas, biscuits, brownies, and the quick cinnamon rolls. Lift without a rise you have to schedule, and a denser crumb than a dough that sat all afternoon. That's the trade.
+**Baking powder, which brings its own acid.** Pizza, tortillas, biscuits, brownies, the quick cinnamon rolls, and the sandwich loaf. Lift without a rise you have to schedule, and a denser crumb than a dough that sat all afternoon. That's the trade.
 
 **Heat and a thin shape.** Flatbread, crackers, and tortillas don't need to puff like bread. A lid can blister the surface with steam. It doesn't turn discard into a ripe starter.
 
@@ -50,27 +50,11 @@ None of this makes the jar yeast-free. The culture still has wild yeast in it. "
 
 ## Sourdough discard sandwich loaf without yeast
 
-You wanted a sandwich loaf and the yeast packet is empty. What comes out of a 9-by-5-inch pan in about an hour is a quick loaf. JenniBee's [savory sourdough discard quick bread](https://breadbythehour.com/savory-sourdough-discard-quick-bread/) is the card with grams: baking powder and baking soda together, 350F, one hour. She keeps the starter at 100% hydration. Fed discard and unfed discard both work, because the powder and the soda lift the batter in the oven. Nothing has to double first.
-
-| Ingredient | Weight |
-|---|---:|
-| All-purpose flour | 240 g |
-| Granulated sugar | 12.5 g |
-| Baking powder | 5 g (1 teaspoon) |
-| Baking soda | 1.5 g (1/4 teaspoon) |
-| Salt | 9 g (1 1/2 teaspoons) |
-| Sourdough discard | 226 g |
-| Butter, melted | 120 g |
-| Milk | 180 g |
-| Large egg | 1 |
-
-Heat the oven to 350F. Line a 9-by-5-inch pan with parchment and grease it lightly. Whisk the flour, sugar, baking powder, baking soda, and salt. Stir the discard, melted butter, milk, and egg in a second bowl, then mix that into the flour until no dry pockets remain. Stop once the flour disappears. Extra stirring can sink the middle. Spoon the batter in, smooth the top, and bake for 1 hour. The center should read 195 to 200F. A toothpick should come out without wet batter. Cool 10 minutes, then slice.
-
-The crumb tastes like a biscuit. It can fall apart under a stacked turkey sandwich, so toast a slice or set it next to soup. Warm, with butter, is the version worth making.
+You wanted a sandwich loaf and the yeast packet is empty. The [no-yeast sourdough discard sandwich bread](/sourdough-discard-sandwich-bread-no-yeast/) is a 9-by-5-inch quick loaf: 227 grams of 100% hydration discard, baking powder and baking soda, 350F, pulled at 195 to 200F. Nothing has to double first. The gram list is on that page.
 
 Cinnamon rolls without yeast are the same kind of shortcut. These [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/) use 240 grams of 100% hydration discard, baking powder, and baking soda, and they go in the oven as soon as the dough is wet. Lisa Bass's [quick cinnamon rolls](https://www.farmhouseonboone.com/quick-sourdough-discard-cinnamon-rolls/) use 250 grams of discard, 2 teaspoons baking powder, 1 teaspoon baking soda, and 375F for 25 to 35 minutes.
 
-## Twelve sourdough discard recipes, with grams and a clock
+## Thirteen sourdough discard recipes, with grams and a clock
 
 These sourdough discard recipes with no added yeast are a published card, or a batch this site already writes down. If a cup on someone else's page doesn't match ours, use their grams.
 
@@ -83,6 +67,7 @@ These sourdough discard recipes with no added yeast are a published card, or a b
 | [Waffles](https://thatsourdoughgal.com/fast-easy-sourdough-discard-waffles/) | 1,000 g | Baking soda | 10 minutes prep, about 20 minutes cooking |
 | [1-2-3-4 biscuits](https://www.kingarthurbaking.com/blog/2021/08/23/how-to-make-sourdough-biscuits-without-a-recipe) | 90 g | 12 g baking powder | About 15 minutes at 450F, after mixing |
 | [No-yeast cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/) | 240 g | Baking powder and baking soda | Mix and bake right away, 22 to 26 minutes at 350F |
+| [Sandwich loaf](/sourdough-discard-sandwich-bread-no-yeast/) | 227 g | Baking powder and baking soda | About 50 to 60 minutes at 350F, pull at 195 to 200F |
 | [Banana bread](https://www.kingarthurbaking.com/recipes/sourdough-banana-bread-recipe) | 113 g | Baking soda and baking powder | 1 hour 40 minutes total |
 | [Flour tortillas](https://www.kingarthurbaking.com/recipes/sourdough-tortillas-recipe) | 227 to 241 g | Baking powder | About 1 hour total |
 | [Thin pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/) | 227 g | Baking powder | About 40 minutes |
