@@ -2029,7 +2029,8 @@ test("high fiber smoothies title leads with high fiber smoothies for picky kids"
     "high fiber smoothies title should not be the old kids picky eaters stack",
   );
   assert.match(raw, /^date: 2026-02-16$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 });
 
 test("high fiber fast food title leads with the fast-food query", () => {
@@ -2414,7 +2415,8 @@ test("breakfast energy title drops the leading Best superlative", () => {
     "breakfast energy title should not be the old Best breakfast foods SERP",
   );
   assert.match(raw, /^date: 2026-03-15$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 });
 
 test("low cost protein families title drops the leading Best superlative", () => {

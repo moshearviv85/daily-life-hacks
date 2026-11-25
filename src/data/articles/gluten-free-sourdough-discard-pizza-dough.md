@@ -1,6 +1,6 @@
 ---
 title: Gluten Free Sourdough Discard Pizza Dough
-excerpt: Stop throwing away your GF starter. This gluten free sourdough discard pizza dough recipe makes a crispy, chewy crust without the long wait.
+excerpt: "Gluten-free sourdough discard pizza dough with no long ferment: gram-weighted crust, a 5-minute par-bake, then 7-10 minutes more until the edges brown."
 category: recipes
 tags:
 - gluten free
@@ -12,7 +12,8 @@ tags:
 image: "/images/gluten-free-sourdough-discard-pizza-dough-main.jpg"
 imageAlt: A slice of gluten-free sourdough pizza with tomato sauce, mozzarella, and basil is being lifted from the whole pizza.
 date: 2026-04-28
-dateModified: 2026-07-18
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -23,13 +24,13 @@ calories: 310
 difficulty: "Medium"
 recipeCuisine: "Italian"
 ingredients:
-  - "1 cup (approx 200g) gluten free sourdough discard, unfed"
-  - "1/2 cup warm water (110°F)"
-  - "1 tsp honey or sugar"
-  - "2 tsp instant yeast"
-  - "1 1/2 cups gluten free all-purpose flour blend (with xanthan gum)"
-  - "1 tsp sea salt"
-  - "2 tbsp olive oil"
+  - "200 g gluten-free sourdough discard, unfed (about 1 cup; no USDA record for gluten-free discard)"
+  - "118.5 g warm water, about 110F (1/2 cup)"
+  - "1 tsp sugar (4.2 g) or honey (7 g)"
+  - "8 g instant yeast (2 tsp, weighed on the active-dry teaspoon)"
+  - "1 1/2 cups gluten-free all-purpose flour blend with xanthan gum (180 to 204 g)"
+  - "6 g salt (1 tsp table salt; a flaky sea salt spoon can weigh less)"
+  - "27 g olive oil (2 tbsp)"
 steps:
   - "Whisk the warm water, honey, and yeast in a large bowl and let it sit for 5 minutes until foamy."
   - "Stir in the sourdough discard and olive oil until mostly combined."
@@ -52,6 +53,34 @@ faq:
 I used to feel a strange, low-grade guilt every time I poured half my gluten free starter down the drain. It felt like throwing away a science project I had actually managed to keep alive. If you're like me, you started a GF sourdough starter because you wanted better bread, but now you just have a jar in the fridge that demands to be fed like a very needy, very beige pet.
 
 This gluten free sourdough discard pizza dough is the best way to stop the waste. It doesn't require a 12-hour ferment or a degree in chemistry. You get that distinct sourdough tang and a crust that actually bends without snapping in half. Measure carefully, though. The [sourdough discard grams conversion](/how-to-measure-sourdough-discard-grams/) keeps an extra splash of starter from turning the crust into paste. And if gluten isn't your problem, the regular [no-yeast sourdough discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/) works the same magic.
+
+## How do you make gluten-free sourdough discard pizza dough without a long ferment?
+
+Whisk one teaspoon of sugar into 118.5 grams of warm water with 8 grams of instant yeast. Stir in 200 grams of gluten-free discard and 27 grams of olive oil, then 180 to 204 grams of xanthan-containing gluten-free flour and 6 grams of salt. Rise 60 to 90 minutes. Par-bake 5 minutes, then 7 to 10 minutes with toppings.
+
+Table: Gram weights for gluten-free sourdough discard pizza dough.
+
+| Ingredient | Amount in the recipe | Grams | Source |
+|---|---|---:|---|
+| Gluten-free sourdough discard | about 1 cup | 200 g | Recipe amount. No FoodData Central food for gluten-free discard. |
+| Warm water | 1/2 cup | 118.5 g | Half of the 237 g (8 fl oz) serving, [FDC 173647](https://fdc.nal.usda.gov/food-details/173647/nutrients) |
+| Sugar, or honey | 1 tsp | 4.2 g, or 7 g | Sugar teaspoon, [FDC 169655](https://fdc.nal.usda.gov/food-details/169655/nutrients). Honey is one third of the 21 g tablespoon, [FDC 169640](https://fdc.nal.usda.gov/food-details/169640/nutrients), because that record has no teaspoon. |
+| Instant yeast | 2 tsp | 8 g | Active-dry teaspoon is 4 g, [FDC 175043](https://fdc.nal.usda.gov/food-details/175043/nutrients). SR Legacy doesn't publish a separate instant-yeast teaspoon. |
+| Gluten-free all-purpose flour blend with xanthan gum | 1 1/2 cups | 180 to 204 g | Branded quarter-cups differ. See below. |
+| Salt | 1 tsp | 6 g | Table salt teaspoon, [FDC 173468](https://fdc.nal.usda.gov/food-details/173468/nutrients). Flaky sea salt can weigh less per spoon. |
+| Olive oil | 2 tbsp | 27 g | 13.5 g per tablespoon, [FDC 171413](https://fdc.nal.usda.gov/food-details/171413/nutrients) |
+| Xanthan gum, only if the blend omits it | 1 tsp | 2 g | Lorann label, [FDC 2396335](https://fdc.nal.usda.gov/food-details/2396335/nutrients). Skip it when the blend already includes xanthan. |
+
+The flour range is six quarter-cups. Hy-Vee's gluten-free all-purpose flour lists [34 grams per 1/4 cup](https://fdc.nal.usda.gov/food-details/2482931/nutrients), which is 204 grams for 1 1/2 cups. Continental Mills lists [30 grams per 1/4 cup](https://fdc.nal.usda.gov/food-details/2596456/nutrients), which is 180 grams. Use the quarter-cup weight printed on your bag if it isn't 30 or 34 grams. White rice flour is a different food, [158 grams per cup](https://fdc.nal.usda.gov/food-details/169714/nutrients), and it isn't this blend. The 200 gram discard figure is the amount this recipe already printed. There's no USDA record to swap in for a gluten-free starter.
+
+Table: Par-bake, then topping bake, for this gluten-free discard crust.
+
+| Stage | Time | What you're doing |
+|---|---|---|
+| Par-bake, crust only | 5 minutes | Parchment on a 450F stone or hot sheet. No sauce yet. |
+| With toppings | 7 to 10 minutes | Until the edges are golden brown. |
+
+That's the clock already in the recipe steps. A thicker crust can take the extra two minutes on the par-bake, and you still don't walk away.
 
 ## Why use discard in gluten free pizza?
 

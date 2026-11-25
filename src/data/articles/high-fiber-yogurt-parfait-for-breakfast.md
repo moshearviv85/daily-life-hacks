@@ -91,7 +91,7 @@ Fresh berries can sit right in the yogurt. Frozen fruit goes on top so the juice
 * **1 tablespoon chia seeds or ground flax:** 4.1 grams or 1.9 grams respectively.
 * **A small drizzle of maple syrup or honey:** Optional. Taste it first, ripe fruit may be enough.
 
-Spoon in half the yogurt, half the berries, the seeds, then the rest. Granola goes on at the last second. You can make stripes in a clear jar if that brings you joy, but it tastes the same in the chipped cereal bowl. That jar is one piece of [a breakfast plate built to last past 10 AM](/balanced-breakfast-that-keeps-you-full/).
+Spoon in half the yogurt, half the berries, the seeds, then the rest. Granola goes on at the last second. You can make stripes in a clear jar if that brings you joy, but it tastes the same in the chipped cereal bowl. That jar is one piece of [a breakfast plate built to last past 10 AM](/balanced-breakfast-that-keeps-you-full/). If you want eggs, oatmeal, and yogurt on one protein-and-fiber table, that's [the sustained-energy breakfast comparison](/best-breakfast-foods-for-sustained-energy/).
 
 ## How far ahead can you make a yogurt parfait?
 

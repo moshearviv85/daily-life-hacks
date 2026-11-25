@@ -1,7 +1,6 @@
 ---
 title: "High Fiber Smoothies for Picky Kids"
-excerpt: Make three high-fiber smoothies for picky kids using familiar banana,
-  strawberry, and cocoa flavors with simple texture adjustments.
+excerpt: "Three kids smoothies with USDA fiber grams in each glass. Start with banana and berries, add spinach or chia slowly, and raise the fiber gradually."
 category: nutrition
 tags:
 - high fiber
@@ -15,7 +14,8 @@ image: /images/high-fiber-smoothies-for-kids-picky-eaters-main.jpg
 imageAlt: High Fiber Smoothies for Kids Picky Eaters - colorful smoothie with berries
   and greens with spinach, fresh vegetables for natural nutrition
 date: 2026-02-16
-dateModified: 2026-09-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -81,6 +81,24 @@ A good blender is key. You want no flecks of green. None. Zip. If you see green 
 
 Use fun cups, maybe a silly straw. If it looks exciting, they might be more inclined to try it. But don't make a big deal about what's *in* it. Just present it like it's the most normal, delicious thing ever. "Here's your pink drink!"
 
+## How much fiber is in these kids' smoothies?
+
+The strawberry-banana glass is about 7.1 grams of fiber, the berry glass about 8.1 grams before the optional chia, and the cocoa glass about 12.8 grams. Those totals use USDA cup and spoon weights on the ingredients as written. Add the fiber gradually and offer water. This is food, not a treatment.
+
+Table: Fiber per kids smoothie from USDA FoodData Central ingredient weights.
+
+| Recipe | Main add-in | Fiber per glass | FDC sources |
+|---|---|---:|---|
+| Strawberry-banana spinach | Frozen strawberries | 7.1 g | [168462](https://fdc.nal.usda.gov/food-details/168462/nutrients), [173944](https://fdc.nal.usda.gov/food-details/173944/nutrients), [168173](https://fdc.nal.usda.gov/food-details/168173/nutrients), [171265](https://fdc.nal.usda.gov/food-details/171265/nutrients) |
+| Berry blast | Frozen raspberries and blueberries | 8.1 g | [168462](https://fdc.nal.usda.gov/food-details/168462/nutrients), [173944](https://fdc.nal.usda.gov/food-details/173944/nutrients), [168173](https://fdc.nal.usda.gov/food-details/168173/nutrients), [168209](https://fdc.nal.usda.gov/food-details/168209/nutrients), [173950](https://fdc.nal.usda.gov/food-details/173950/nutrients) |
+| Cocoa banana | Cocoa and chia | 12.8 g | [173944](https://fdc.nal.usda.gov/food-details/173944/nutrients), [169593](https://fdc.nal.usda.gov/food-details/169593/nutrients), [170554](https://fdc.nal.usda.gov/food-details/170554/nutrients), [171705](https://fdc.nal.usda.gov/food-details/171705/nutrients), [171265](https://fdc.nal.usda.gov/food-details/171265/nutrients) |
+
+The strawberry glass is one USDA cup of raw spinach (30 grams, [2.2 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/168462/nutrients)), the 126 gram banana serving ([2.6 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173944/nutrients)), and one unthawed cup of frozen unsweetened strawberries (149 grams, [2.1 grams per 100 grams](https://fdc.nal.usda.gov/food-details/168173/nutrients)). That's 0.66 + 3.276 + 3.129. The raw halves cup later on this page is a different record, 152 grams at [2.0 grams per 100 grams](https://fdc.nal.usda.gov/food-details/167762/nutrients). Half a cup of whole milk adds nothing ([0 grams of fiber](https://fdc.nal.usda.gov/food-details/171265/nutrients)). A packed spinach cup can weigh more than 30 grams, so this row uses the USDA cup, not a stuffed one. The optional yogurt isn't in the 7.1 grams. Plain low-fat Greek yogurt is [0 grams of fiber](https://fdc.nal.usda.gov/food-details/170903/nutrients), so a spoon of that doesn't move it.
+
+The berry glass keeps the spinach and banana, uses half that frozen strawberry cup (74.5 grams, 1.56 grams of fiber), then splits the mixed-berry cup into a quarter cup of frozen unsweetened raspberries (35 grams, [4.3 grams per 100 grams](https://fdc.nal.usda.gov/food-details/168209/nutrients)) and a quarter cup of frozen unsweetened blueberries (38.75 grams, [2.7 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173950/nutrients)). Sum 8.05, shown as 8.1. The recipe says "whatever you have," so a different berry changes the glass. The optional 12 gram spoon of chia is [34.4 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/170554/nutrients), about 4.1 grams, and it takes that glass to 12.2. Leave it out the first week.
+
+The cocoa glass is the measured version of the chocolate blend in the FAQ: the same 126 gram banana (3.276 grams of fiber), 1 tablespoon unsweetened cocoa (5.4 grams, [37 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/169593/nutrients), 2.0 grams of fiber), the 12 gram chia spoon (4.1 grams), and 50 grams of avocado, the NLEA serving rather than a whole fruit ([6.7 grams per 100 grams](https://fdc.nal.usda.gov/food-details/171705/nutrients), 3.35 grams). Sum 12.75, shown as 12.8. Milk is the same half cup of whole milk, still 0 fiber. Almond or oat milk isn't in any of these totals. Read that carton if that's what you pour.
+
 ## Recipe 1: The OG Strawberry-Banana Spinach Smash
 
 This is where it all began for us. A true classic. It's sweet, it's pink, and it's packed with fiber.
@@ -118,3 +136,20 @@ So, they liked the first one? Great! Let's add a little more berry goodness. Thi
 4. Serve it up. They'll be none the wiser. My kid calls this the "purple potion."
 
 That spoon of chia is doing more work than another handful of berries. Dried chia has [34.4 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/170554/nutrients), about 4 grams in a 12-gram spoon. A cup of strawberry halves is [about 3 grams](https://fdc.nal.usda.gov/food-details/167762/nutrients) (152 grams at 2.0 grams per 100 grams). Where those foods land on price is the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/).
+
+## Recipe 3: Cocoa Banana with a Spoon of Chia
+
+This is the chocolate one from the questions above, with the portions the fiber number actually uses. No spinach. If you want it pink, you're in the wrong glass.
+
+**Ingredients:**
+* 1 ripe banana (126 grams, the USDA serving this page already uses)
+* 1 tablespoon unsweetened cocoa powder (5.4 grams)
+* 1 tablespoon chia seeds (12 grams)
+* 50 grams avocado (the USDA NLEA serving, not the whole fruit)
+* 1/2 cup milk (whole milk in the fiber math; almond or oat if that's the carton you own)
+
+**Instructions:**
+1. Blend the milk, cocoa, and chia first so the powder doesn't sit on the lid.
+2. Add the banana and avocado. Blend until the spoon can't find a chia clump.
+3. Taste it. Ripe banana is the sweetener. If it's still stern, add another slice of banana, not a pour of syrup, and know the fiber number moves with it.
+4. Pour it and hand it over. Water on the side if this is a bigger fiber jump than yesterday's glass.
