@@ -131,7 +131,7 @@ Six items from that same raw dataset, priced as purchased:
 | Cottage cheese, 24 oz tub | $2.87 | ~76 g |
 | **Total** | **$22.86** | **~1,047 g** |
 
-Call it $23. Split across seven days, one person gets about 150 grams of protein a day from the basket. That is capacity, not a target. The same prices are in the [protein CSV](/data/protein-per-dollar-2026.csv), checked the way the [methodology page](/methodology/) describes.
+Call it $23. Split across seven days, one person gets about 150 grams of protein a day from the basket. That is capacity, not a target. The same prices are in the [protein CSV](/data/protein-per-dollar-2026.csv), checked the way the [methodology page](/methodology/) describes. If 150 grams a day is more pantry than you meant to eat, the [7-day high-protein grocery list](/high-protein-grocery-list-50-grams/) is the week that lands near 52.5 grams for $10.27.
 
 ## How to actually shop this
 
