@@ -7,6 +7,8 @@ image: "/images/keep-berries-fresh-longer-when-to-wash-main.jpg"
 imageAlt: "Fresh berries stored in lined glass containers in a refrigerator"
 date: 2026-04-07
 publishAt: 2026-04-07T00:00:00.000Z
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -29,6 +31,21 @@ faq:
 Buying fresh berries feels like a small luxury. You stand in the grocery store looking at those vibrant red strawberries and deep blue blueberries, and you picture yourself eating them all week. Then you put them in the fridge. Two days later you open the door and half of them are wearing a fuzzy sweater of mold. It's frustrating. You spent good money, and now you're throwing it in the trash.
 
 Most berry advice online blames moisture and stops there. Moisture matters, but it isn't the whole story, and the single most-repeated berry hack on the internet is a lot thinner than it looks once you check it. So here's what the food safety agencies and the postharvest researchers actually say.
+
+## How long do berries last in the fridge by type?
+
+At 32°F (0°C), [UC Davis Postharvest](https://postharvest.ucdavis.edu/produce-facts-sheets/bushberry) gives raspberries and blackberries 2 to 5 days and blueberries 1 to 2 weeks from harvest. No strawberry day count, just 32°F ([fact sheet](https://postharvest.ucdavis.edu/produce-facts-sheets/strawberry)). Raspberries respire at 12 ml CO2 per kg per hour, blueberries at 3. Keep a home fridge at [40°F or below](https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely) and [wash right before eating](https://extension.umn.edu/food-safety-basics/washing-fresh-fruits-and-vegetables).
+
+Table: UC Davis Postharvest storage life for four berries at 32°F, plus the home fridge and wash rules
+
+| Berry | Life at 32°F (0°C), from harvest | Respiration at 32°F | Home fridge | When to wash |
+| --- | --- | --- | --- | --- |
+| Strawberries | 32°F (0°C), 90 to 95% RH. No day count on the [fact sheet](https://postharvest.ucdavis.edu/produce-facts-sheets/strawberry) | 6 to 10 ml CO2/kg/hr | [40°F or below](https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely) | Right before eating |
+| Raspberries | 2 to 5 days ([bushberries](https://postharvest.ucdavis.edu/produce-facts-sheets/bushberry)) | 12 ml CO2/kg/hr | 40°F or below | Right before eating |
+| Blackberries | 2 to 5 days ([bushberries](https://postharvest.ucdavis.edu/produce-facts-sheets/bushberry)) | 11 ml CO2/kg/hr | 40°F or below | Right before eating |
+| Blueberries | 1 to 2 weeks ([bushberries](https://postharvest.ucdavis.edu/produce-facts-sheets/bushberry)) | 3 ml CO2/kg/hr | 40°F or below | Right before eating |
+
+That clock starts at harvest, not when you unpack the clamshell. A home fridge is warmer than 32°F, so those day counts are ceilings, and raspberries hit the ceiling first. Keep them in the back, not the door. The leafy stuff beside them is a different project: [how long fresh herbs last in the fridge](/how-to-store-fresh-herbs-to-last-longer/).
 
 ## When to wash berries
 

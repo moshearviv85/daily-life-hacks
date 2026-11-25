@@ -16,7 +16,8 @@ image: /images/how-to-store-fresh-herbs-to-last-longer-main.jpg
 imageAlt: How to Store Fresh Herbs to Last Longer - fresh cilantro standing upright
   in a glass jar of water
 date: 2026-02-18
-dateModified: 2026-07-20
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -53,6 +54,23 @@ faq:
 I used to just buy a bunch of cilantro, toss it directly into the crisper drawer in its little plastic produce bag, and then act shocked when it turned into a puddle of green slime three days later. Honestly, I must have thrown away hundreds of dollars in ruined herbs before I finally figured out the right way to handle them. The broader [food-waste guide](/how-to-reduce-food-waste-at-home-easy-tips/) uses the same unglamorous rule: make the food last long enough to actually eat it. A cut avocado fails a different way. [Stopping a halved avocado from browning](/best-way-to-store-avocados-to-stop-browning/) is the matching save.
 
 The biggest mistake we make with herbs is storing them all exactly the same. But here's the secret: herbs fall into two different categories, and if you want to know how to store fresh herbs to last longer, you have to handle them according to their type.
+
+## How long do fresh herbs last in the fridge?
+
+[UC Davis Postharvest](https://postharvest.ucdavis.edu/produce-facts-sheets/herbs-fresh-culinary) expects about 3 weeks at 0°C (32°F) and about 2 weeks at 5°C (41°F) for most fresh herbs. Basil is chilling-sensitive, so keep it above 10°C (50°F), where 1 to 2 weeks is the window if the leaves don't dry out.
+
+Table: Home setup and UC Davis Postharvest shelf life for parsley, cilantro, dill, mint, basil, rosemary, thyme, oregano, and sage
+
+| Herb | Class | Home setup | Target temperature | Expected shelf life |
+| --- | --- | --- | --- | --- |
+| Parsley | Tender | Stems in a jar with an inch of water, loose cover, in the fridge | 32°F (0°C). Home fridge at [40°F or below](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) | About 3 weeks at 32°F, about 2 weeks at 41°F ([UC Davis Postharvest](https://postharvest.ucdavis.edu/produce-facts-sheets/herbs-fresh-culinary)) |
+| Cilantro | Tender | Same jar of water in the fridge | 32°F (0°C). Home fridge at 40°F or below | Aroma drops after about 10 days. It can still look marketable for 21 days ([UC Davis Postharvest](https://postharvest.ucdavis.edu/produce-facts-sheets/herbs-fresh-culinary)) |
+| Dill and mint | Tender | Same jar of water in the fridge | 32°F (0°C). Home fridge at 40°F or below | About 3 weeks at 32°F, about 2 weeks at 41°F |
+| Basil | Tender, chilling-sensitive | Jar of water on the counter, not in the fridge | Above 50°F (10°C) | 1 to 2 weeks if the leaves don't dry out ([UC Davis Postharvest](https://postharvest.ucdavis.edu/produce-facts-sheets/herbs-fresh-culinary)) |
+| Rosemary | Woody | Barely damp towel, then a container, in the crisper | 32°F (0°C). Home fridge at 40°F or below | About 3 weeks at 32°F, about 2 weeks at 41°F |
+| Thyme, oregano, and sage | Woody | Same barely damp towel in the crisper | 32°F (0°C). Home fridge at 40°F or below | About 3 weeks at 32°F, about 2 weeks at 41°F |
+
+Three weeks is a lab result. The bunch was just cut, the room was 32°F, and the air was wetter than your crisper will ever be. [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) still gives fresh herbs 7 to 10 days in a home refrigerator, counted from the day you buy them. Eat the cilantro before it starts smelling like a lawn. Berries on the same shelf have a shorter fuse: [how long berries last, and when to wash them](/keep-berries-fresh-longer-when-to-wash/).
 
 ## The Soft Herbs (The Bouquet Method)
 
