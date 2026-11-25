@@ -100,7 +100,7 @@ This batch is 8 rolls from 240 grams of 100% hydration discard. The calorie line
 
 ## Why the baking soda won't wait
 
-Unfed discard is sour. That acid is what the baking soda uses. The same thing happens with the [discard pancakes](/easy-sourdough-discard-recipes-beginners/#recipe): the batter foams the second the soda hits it. These rolls are that reaction in a log of dough.
+Unfed discard is sour. That acid is what the baking soda uses. The same thing happens with the [discard pancakes](/easy-sourdough-discard-recipes-beginners/): the batter foams the second the soda hits it. These rolls are that reaction in a log of dough.
 
 Bake them right away, because the soda starts working as soon as the dough is wet. A 20-minute rest, the kind you'd give a yeast dough so it relaxes, spends the lift on the counter. You get a dense spiral and a pan that never really rose. I learned that the slow way, with a tray that looked like cinnamon cookies wearing a sugar coat.
 
@@ -128,7 +128,7 @@ At 100% hydration, those 240 grams of discard are about 120 grams of flour and 1
 
 The extra 260 grams of all-purpose flour sits on top of the flour already in the jar. Whole milk at 120 grams, plus 45 grams of melted butter in the dough, keeps it soft enough to roll. If the dough fights you and cracks, it was probably too dry, not too weak. Wet your hands. Don't dump in another handful of flour or the centers bake up tough.
 
-If the jar isn't 100% hydration, stop and use the [sourdough discard calculator](/tools/sourdough-discard-calculator/). A thicker starter is more flour than water, and this dough doesn't have spare liquid to hide that.
+If the jar isn't 100% hydration, stop and use the [discard gram guide](/how-to-measure-sourdough-discard-grams/). A thicker starter is more flour than water, and this dough doesn't have spare liquid to hide that.
 
 ## Filling, the pan, and 350 degrees F
 
@@ -148,4 +148,4 @@ Toppings you invent later, extra butter for the pan, and a glaze aren't in that 
 
 Cool the pan 10 minutes, then pull the rolls apart. Refrigerate leftovers within two hours, or one hour if the kitchen is above 90 degrees F. Use them within three to four days and reheat to 165 degrees F, following [USDA leftover guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety). A few minutes in a toaster oven brings the edges back. The microwave makes them steamy and then tough. I wouldn't.
 
-Use discard from an established starter. Mold, pink or orange patches, or a rotten smell means the jar is done. Weighing it carefully doesn't fix that. If you only have about 113 grams, make the [skillet flatbread](/easy-sourdough-discard-recipes-beginners/#skillet-flatbread-with-half-a-cup) instead of pretending this pan will shrink itself. Half a batch is a smaller pan and a shorter bake, and only if you weigh half of everything.
+Use discard from an established starter. Mold, pink or orange patches, or a rotten smell means the jar is done. Weighing it carefully doesn't fix that. If you only have about 113 grams, make the skillet flatbread on the [beginner discard recipes](/easy-sourdough-discard-recipes-beginners/) instead of pretending this pan will shrink itself. Half a batch is a smaller pan and a shorter bake, and only if you weigh half of everything.
