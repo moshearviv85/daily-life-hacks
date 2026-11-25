@@ -7,6 +7,8 @@ image: "/images/how-to-quick-soak-dried-beans-same-day-main.jpg"
 imageAlt: "Pot of dried beans soaking in water on a stovetop"
 date: 2026-04-07
 publishAt: 2026-04-07T00:00:00.000Z
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -50,6 +52,25 @@ When you come back an hour later, the beans should look like they absorbed a goo
 Drain them in a colander and rinse them thoroughly with cold water. You do not want to cook the beans in their soaking liquid. Rinsing them off is a simple step that makes everyone at the dinner table much happier.
 
 Now your beans are officially soaked. You just saved yourself eleven hours.
+
+## Can you soak dried beans for 24 hours or 2 days?
+
+The hot quick soak is one hour. Overnight is 8 to 12 hours. If dinner slips, refrigerate the beans in fresh water and cook within about 24 to 48 hours. Change the water, and throw the pot out if it turns foamy or sour. WSU Extension and NC State Extension set those clocks.
+
+[WSU Extension](https://wpcdn.web.wsu.edu/extension/uploads/sites/68/2020/05/PNW172.pdf) is the one-hour clock: cover the beans with boiling water, boil two minutes, turn off the heat, soak one hour, then drain. That same bulletin soaks 12 to 18 hours when you actually planned ahead. [NC State Extension](https://beaufort.ces.ncsu.edu/news/using-beans-peas-and-lentils-instead-of-meat/) is the long end. Soak 24 to 48 hours, pour that water off, and cook in fresh water. A two-day soak is a fridge project. The counter is how a pot turns foamy.
+
+Table: Four soak methods for dried beans
+
+| Method | Time | What to do |
+| --- | --- | --- |
+| Same-day quick soak | 1 hour | Boil 2 minutes, cover, and leave the pot off the heat |
+| Overnight soak | 8 to 12 hours | Counter or fridge, then drain |
+| Extended refrigerated soak | 24 to 48 hours max | Fridge only, change the water, cook in fresh water |
+| Lentils and split peas | No soak | Rinse and cook. They don't need a bath |
+
+Kidney beans still don't get a one-hour pass. The FDA soak later on this page is at least 5 hours, then a real boil.
+
+Once they're soaked, they can go straight into a [beans and rice complete protein meal](/beans-and-rice-complete-protein-meal/). If the recipe is written in cans, the [dried beans to canned converter](/tools/dried-beans-to-canned-converter/) turns that can count into the dry measure before the pot goes on.
 
 ## Cooking your quick-soaked beans
 

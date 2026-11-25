@@ -16,7 +16,8 @@ tags:
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
-dateModified: 2026-11-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -26,22 +27,53 @@ prepTime: "10 minutes"
 cookTime: "25 minutes"
 totalTime: "35 minutes"
 servings: 4
-calories: 320
+calories: 407
+ingredientsGrams:
+  - item: "1 cup dry brown rice or white rice (185 g)"
+    grams: 185
+    fdcId: 169703
+  - item: "1 tbsp olive oil (13.5 g)"
+    grams: 13.5
+    fdcId: 171413
+  - item: "1 medium yellow onion, diced (110 g)"
+    grams: 110
+    fdcId: 170000
+  - item: "1 medium bell pepper (any color), diced (119 g)"
+    grams: 119
+    fdcId: 170108
+  - item: "3 cloves garlic, minced (9 g)"
+    grams: 9
+    fdcId: 169230
+  - item: "1 tsp smoked paprika (2.3 g)"
+    grams: 2.3
+    fdcId: 171329
+  - item: "1/2 tsp dried oregano (0.9 g)"
+    grams: 0.9
+    fdcId: 171328
+  - item: "3 cups canned black beans, rinsed and drained (540 g), about 2 drained 15 oz cans"
+    grams: 540
+    fdcId: 2707363
+  - item: "1/2 cup vegetable broth or water (110.5 g)"
+    grams: 110.5
+    fdcId: 171583
+  - item: "1 tbsp apple cider vinegar or lime juice (14.9 g)"
+    grams: 14.9
+    fdcId: 173469
 difficulty: "Easy"
 recipeCuisine: "American"
 recipeName: "Black Beans and Rice"
 ingredients:
-  - "1 cup uncooked brown rice or white rice"
-  - "1 tbsp olive oil"
-  - "1 medium yellow onion, diced"
-  - "1 bell pepper (any color), diced"
-  - "3 cloves garlic, minced"
+  - "1 cup dry brown rice or white rice (185 g)"
+  - "1 tbsp olive oil (13.5 g)"
+  - "1 medium yellow onion, diced (110 g)"
+  - "1 medium bell pepper (any color), diced (119 g)"
+  - "3 cloves garlic, minced (9 g)"
   - "1 tbsp ground cumin"
-  - "1 tsp smoked paprika"
-  - "1/2 tsp dried oregano"
-  - "2 (15 oz) cans black beans, rinsed and drained"
-  - "1/2 cup vegetable broth or water"
-  - "1 tbsp apple cider vinegar or lime juice"
+  - "1 tsp smoked paprika (2.3 g)"
+  - "1/2 tsp dried oregano (0.9 g)"
+  - "3 cups canned black beans, rinsed and drained (540 g), about 2 drained 15 oz cans"
+  - "1/2 cup vegetable broth or water (110.5 g)"
+  - "1 tbsp apple cider vinegar or lime juice (14.9 g)"
   - "Salt and black pepper to taste"
   - "Fresh cilantro and hot sauce for serving (optional)"
 steps:
@@ -112,6 +144,16 @@ This is aggressively good for meal prep. Make a double batch on Sunday and porti
 If you are packing this for work, let it cool completely before snapping the lids on your containers. Condensation is the enemy of good rice, turning it from pleasantly chewy to sad and waterlogged. 
 
 A quick tip for leftovers: sometimes rice gets a little dry in the fridge. When you pop it in the microwave, sprinkle a tiny bit of water over the rice, and cover the bowl with a damp paper towel. It steams the rice right back to life, making it taste like you just pulled it off the stove.
+
+## What one serving actually weighs
+
+Each serving is 407 kcal, 16.4 g protein, and 16.7 g fiber. That's the USDA total for the brown-rice version, divided by four. Dry brown rice alone is 185 g ([FDC 169703](https://fdc.nal.usda.gov/food-details/169703/nutrients)). The card used to say 320 kcal. I'm using 407, because that's what these gram weights add up to. Salt, pepper, cilantro, and hot sauce aren't in it. The ground cumin isn't either.
+
+Dry white rice is the same 185 g cup ([FDC 168877](https://fdc.nal.usda.gov/food-details/168877/nutrients)), so swapping it in doesn't move the scale. The total counts the brown rice. It's the first food on the line. The olive oil tablespoon is 13.5 g ([FDC 171413](https://fdc.nal.usda.gov/food-details/171413/nutrients)). The onion is USDA's medium, 110 g ([FDC 170000](https://fdc.nal.usda.gov/food-details/170000/nutrients)). The bell pepper is the medium red pepper, 119 g ([FDC 170108](https://fdc.nal.usda.gov/food-details/170108/nutrients)). Grab a yellow one if you want. The record stays red. Three garlic cloves are 9 g ([FDC 169230](https://fdc.nal.usda.gov/food-details/169230/nutrients)). Smoked paprika borrows the regular paprika teaspoon, 2.3 g ([FDC 171329](https://fdc.nal.usda.gov/food-details/171329/nutrients)). Half a teaspoon of dried oregano is 0.9 g, half of the 1.8 g ground teaspoon ([FDC 171328](https://fdc.nal.usda.gov/food-details/171328/nutrients)).
+
+The cumin spoon stays off the 407. USDA's cumin record is whole seed, and a tablespoon of that is 6 g ([FDC 170923](https://fdc.nal.usda.gov/food-details/170923/nutrients)). Ground cumin doesn't have its own weight on that record.
+
+Black beans are the line SR Legacy won't weigh. FNDDS weighs 1 cup of black beans from a can, no added fat, at 180 g ([FDC 2707363](https://fdc.nal.usda.gov/food-details/2707363/nutrients)). Two drained 15 oz cans are about 3 cups, so the card counts 540 g. Half a cup of vegetable broth is 110.5 g ([FDC 171583](https://fdc.nal.usda.gov/food-details/171583/nutrients)). Water on that same line isn't counted. The tablespoon of cider vinegar is 14.9 g ([FDC 173469](https://fdc.nal.usda.gov/food-details/173469/nutrients)). Lime juice is the other option, and it isn't a second food in the total.
 
 ## The budget breakdown
 

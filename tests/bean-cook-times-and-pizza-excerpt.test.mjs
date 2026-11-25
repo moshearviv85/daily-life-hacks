@@ -18,7 +18,7 @@ const INLINKS = [
   ["what-50-grams-of-protein-costs-per-day", "2026-09-24", undefined],
   ["protein-per-dollar-adjusted-for-quality", "2026-11-23", "2026-11-23"],
   ["beans-double-win-fiber-protein", "2026-09-24", undefined],
-  ["how-to-quick-soak-dried-beans-same-day", undefined, undefined],
+  ["how-to-quick-soak-dried-beans-same-day", "2026-11-25", "2026-11-25"],
 ];
 
 const TIME_SOURCES = [
