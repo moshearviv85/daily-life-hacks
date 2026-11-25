@@ -30,7 +30,7 @@ That's 367.5 grams across seven days, about 52.5 grams a day, for one person. Th
 
 ## What goes on a 7-day high-protein grocery list?
 
-Buy this once. Cook the dry goods on two days, eat the mixed plate three times, and keep the no-cook day for the nights the pot stays in the cabinet. Every protein gram and every cent below is a published row in [protein-day-cost-2026.csv](/data/protein-day-cost-2026.csv), which points at [protein-per-dollar-2026.csv](/data/protein-per-dollar-2026.csv) and a USDA FoodData Central record. Cup language is the day menu's own label, multiplied. I didn't invent a new scoop.
+Buy this once. Cook the dry goods on two days, eat the mixed plate three times, and keep the no-cook day for the nights the pot stays in the cabinet. Every protein gram and every cent below is a published row in protein-day-cost-2026.csv, which points at protein-per-dollar-2026.csv and a USDA FoodData Central record. Both files are on the [50-gram cost study](/what-50-grams-of-protein-costs-per-day/). Cup language is the day menu's own label, multiplied. I didn't invent a new scoop.
 
 | Food | Week amount | Protein | Unit price | Line cost | FDC |
 |---|---|---:|---|---:|---|
@@ -49,7 +49,7 @@ Buy this once. Cook the dry goods on two days, eat the mixed plate three times, 
 
 Split peas and pinto beans are doing quiet work. $0.78 for 66.4 grams of protein between them, which is more than the two tuna cans and a lot less money. The tuna still costs $1.96. Buy it for the nights you won't cook. Don't ask it to be the cheap line.
 
-Two rows say proxy because the parent file says so. Peanut butter and canned black beans have a FoodData Central record, and the priced jar or can isn't an exact form match. The note is in [protein-per-dollar-2026.csv](/data/protein-per-dollar-2026.csv). On both of those foods the parent note says the salt or sodium variant shares the same protein grams, so the ambiguity doesn't move this cart.
+Two rows say proxy because the parent file says so. Peanut butter and canned black beans have a FoodData Central record, and the priced jar or can isn't an exact form match. The note is in protein-per-dollar-2026.csv, the parent file behind the [50-gram cost study](/what-50-grams-of-protein-costs-per-day/). On both of those foods the parent note says the salt or sodium variant shares the same protein grams, so the ambiguity doesn't move this cart.
 
 Pinto beans, eggs, and milk use the July 2026 BLS US average already written on the day file. Whole wheat bread uses the May 2026 BLS average on that same file. I didn't relabel it as July. Greek yogurt and tuna are Walmart listings dated July 2026. Oats, split peas, brown rice, peanut butter, and canned black beans keep a blank month cell and the audit note "fiber study, audited." Add the visible cents and you get $10.27. The [methodology page](/methodology/) is where the price basis and the edible fraction are spelled out.
 
@@ -79,7 +79,7 @@ Same file, different weeks. I left both off the shopping list on purpose.
 
 Seven meat-cook days are 7 times the $2.78 day. Each of those days is 2 large eggs (100 g, 12.6 g protein, $0.37, [FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients)), 100 g raw chicken breast (22.5 g, $0.92, [FDC 171077](https://fdc.nal.usda.gov/food-details/171077/nutrients)), and 100 g of 80/20 ground beef (17.2 g, $1.49, [FDC 174036](https://fdc.nal.usda.gov/food-details/174036/nutrients)). That's 52.3 grams and $2.78, all BLS US average, July 2026. The week is 366.1 grams and $19.46. Home-cooked meat isn't the expensive version of this problem.
 
-Seven restaurant days are 7 times the $13.23 day. [Egg McMuffin](https://www.mcdonalds.com/us/en-us/product/egg-mcmuffin.html) is 17.0 grams at $5.35, [McDouble](https://www.mcdonalds.com/us/en-us/product/mcdouble.html) is 22.0 grams at $3.99, and [McChicken](https://www.mcdonalds.com/us/en-us/product/mcchicken.html) is 14.0 grams at $3.89. McDonald's published the grams. The prices are the PriceListo national average from the July 6, 2026 snapshot recorded in the [day-cost CSV](/data/protein-day-cost-2026.csv), a la carte, not a grocery price and not a promise about your local app. The week is 371.0 grams and $92.61.
+Seven restaurant days are 7 times the $13.23 day. [Egg McMuffin](https://www.mcdonalds.com/us/en-us/product/egg-mcmuffin.html) is 17.0 grams at $5.35, [McDouble](https://www.mcdonalds.com/us/en-us/product/mcdouble.html) is 22.0 grams at $3.99, and [McChicken](https://www.mcdonalds.com/us/en-us/product/mcchicken.html) is 14.0 grams at $3.89. McDonald's published the grams. The prices are the PriceListo national average from the July 6, 2026 snapshot recorded in protein-day-cost-2026.csv on the [50-gram cost study](/what-50-grams-of-protein-costs-per-day/), a la carte, not a grocery price and not a promise about your local app. The week is 371.0 grams and $92.61.
 
 Same job, different receipt. $10.27, $19.46, or $92.61. The drive-thru can be a night you chose. It doesn't have to be the plan.
 
