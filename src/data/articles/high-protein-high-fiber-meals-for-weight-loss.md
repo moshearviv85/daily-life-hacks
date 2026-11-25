@@ -41,7 +41,7 @@ Anything built on a legume base plus a lean protein plus a whole grain. Lentil c
 
 ## Which foods give you both protein and fiber per 100 g and per dollar?
 
-Dry green split peas lead this overlap, with 23.12 g protein and 22.2 g fiber per 100 g. That's 73.9 g of protein and 71.0 g of fiber per dollar in the July 2026 [protein](/protein-per-dollar-adjusted-for-quality/) and [fiber](/what-30-grams-of-fiber-costs-per-day/) datasets. Brown lentils, black beans, pintos, chickpeas, rolled oats, peanut butter, and almonds clear both lists too.
+Dry green split peas lead this overlap, with 23.12 g protein and 22.2 g fiber per 100 g. That's 73.9 g of protein and 71.0 g of fiber per dollar in the July 2026 [split pea overlap](/beans-double-win-fiber-protein/). Brown lentils, black beans, pintos, chickpeas, rolled oats, peanut butter, and almonds clear both lists too.
 
 Table: Protein and fiber per 100 g, plus July 2026 grams per dollar, for eight dry foods.
 
