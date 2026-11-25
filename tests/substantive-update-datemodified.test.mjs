@@ -27,6 +27,10 @@ const BEFORE_DATE_RESTORE = "84702a37";
  * cards whose published calorie figure was replaced by the USDA total, plus
  * the yogurt fiber answer added the same day.
  */
+const LATER_UPDATES = {
+  "how-to-cook-dried-beans-from-scratch": "2026-11-25",
+};
+
 const SUBSTANTIVE_SLUGS = new Set([
   "air-fryer-salmon-bites-garlic-honey-glaze",
   "best-high-fiber-foods-ranked-by-fiber-content",
@@ -173,6 +177,12 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       today.push(article.slug);
       continue;
     }
+    if (Object.hasOwn(LATER_UPDATES, article.slug)) {
+      const day = LATER_UPDATES[article.slug];
+      assert.equal(article.dateModified, day, article.slug);
+      assert.equal(article.substantiveUpdate, day, `${article.slug} substantiveUpdate`);
+      continue;
+    }
     assert.equal(
       article.substantiveUpdate,
       null,
@@ -195,7 +205,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   );
   assert.deepEqual(
     bumpedSinceBaseline.map((article) => article.slug).sort(),
-    [...SUBSTANTIVE_SLUGS].filter((slug) => {
+    [...SUBSTANTIVE_SLUGS, ...Object.keys(LATER_UPDATES)].filter((slug) => {
       const article = articles.find((item) => item.slug === slug);
       return article.dateModified !== article.baselineModified;
     }).sort(),
@@ -222,10 +232,11 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 42, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 41, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
+  // how-to-cook-dried-beans-from-scratch left this day for 2026-11-25.
   assert.equal(restored.length, 62, "pages restored off 2026-11-23");
 });
 

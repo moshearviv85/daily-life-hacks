@@ -68,7 +68,7 @@ I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams of prot
 
 Buy the split peas for the math, but cook whatever you'll actually eat, because a bag that sits in the pantry scores zero.
 
-Brown lentils are the gateway. No soaking, quick cooking, and at 111.4 combined grams per dollar they're second on this list and still well ahead of anything canned. Red lentils dissolve into sauces, which is why [a red lentil curry](/lentil-curry-high-fiber-vegan-dinner/) tastes rich without you doing anything fancy, and at 81.3 combined grams per dollar the indulgence is imaginary ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)).
+Brown lentils are the gateway. No soaking, quick cooking, and at 111.4 combined grams per dollar they're second on this list and still well ahead of anything canned. The timed version of that gateway, lentils included, is [how long pintos and lentils take to cook](/how-to-cook-dried-beans-from-scratch/). Red lentils dissolve into sauces, which is why [a red lentil curry](/lentil-curry-high-fiber-vegan-dinner/) tastes rich without you doing anything fancy, and at 81.3 combined grams per dollar the indulgence is imaginary ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)).
 
 Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag, roasted chickpeas are what I hand people who say they hate beans. Crunchy, salty, gone by Wednesday.
 

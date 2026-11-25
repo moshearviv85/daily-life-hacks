@@ -122,7 +122,7 @@ Nobody eats like Day 1 forever, and nobody should eat like Day 4 forever unless 
 | Drink | Whole milk, 1 cup (244g) | 7.7 g | $0.26 |
 | **Total** | | **51.7 g** | **$1.51** |
 
-A buck fifty. That's a recognizable day of food, no split-pea heroics required, and the beans, bread, and peanut butter bring more than one nutrient to the table. Swapping that half can for dry beans would shave the total further, since [dry black beans return 58.0 grams of protein per dollar against 30.1 for the can](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), about 1.9 times the protein for the money, but then you're back to planning ahead by an evening.
+A buck fifty. That's a recognizable day of food, no split-pea heroics required, and the beans, bread, and peanut butter bring more than one nutrient to the table. Swapping that half can for dry beans would shave the total further, since [dry black beans return 58.0 grams of protein per dollar against 30.1 for the can](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), about 1.9 times the protein for the money, but then you're back to planning ahead by an evening. The soak and simmer times for that bag are in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
 
 ## What the five days actually say
 

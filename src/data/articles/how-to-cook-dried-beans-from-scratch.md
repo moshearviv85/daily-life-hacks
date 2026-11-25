@@ -1,6 +1,6 @@
 ---
 title: How to Cook Dried Beans From Scratch
-excerpt: 'How to cook dried beans from scratch: soak, simmer, season. One method that works for most beans, plus what to do the night you forgot to soak.'
+excerpt: 'Soak dried beans 8-12 hours, then simmer: black or pinto 1 to 1.5 hours, chickpeas 1.5 to 2 hours. No soak? Plan an extra hour, or use the quick-soak method.'
 quickAnswer: >-
   Sort and rinse dried beans, soak them overnight if convenient, then cover with
   fresh water and simmer gently until creamy inside. Start checking after 45
@@ -16,7 +16,8 @@ tags:
 image: /images/how-to-cook-dried-beans-from-scratch-main.jpg
 imageAlt: Pot of cooked beans with herbs
 date: 2026-03-15
-dateModified: 2026-11-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -59,11 +60,38 @@ Soaking them is highly recommended because it cuts your active cooking time down
 
 Take your soaked, drained beans, put them back into a clean pot, and cover them with fresh water (again, going a few inches above the top of the beans). Bring the whole pot to a boil over medium-high heat, and then immediately drop the heat down to a very gentle simmer. 
 
-If you see a bunch of white foam rise to the top, just skim it off with a spoon and throw it away. Leave the pot partially covered so steam can slowly escape. Now, you just let them cook until they are tender. Black beans and pinto beans usually take about 1 to 1.5 hours. Heartier chickpeas can easily take 1.5 to 2 hours. 
+If you see a bunch of white foam rise to the top, just skim it off with a spoon and throw it away. Leave the pot partially covered so steam can slowly escape. Now, you just let them cook until they're tender. Soaked black beans usually take 60 to 90 minutes. Pinto, kidney, and navy take 90 to 120. Chickpeas land in that same 90 to 120 window. The chart below is the one to trust when the bag and the clock disagree. 
 
 Start checking them around the 45-minute mark. Scoop one out, let it cool for a second, and taste it. If the water level in the pot gets too low while they cook, just pour in a little more hot water. 
 
 *Crucial rule:* Wait to add acidic ingredients such as canned tomatoes, vinegar, or citrus until the beans are tender. Salt can go into the soaking or cooking water and helps season the beans from within.
+
+## How long do dried beans take to cook?
+
+Soaked black beans simmer 60 to 90 minutes. Pinto, kidney, and navy take 90 to 120, chickpeas about 90 to 120. No soak means a longer pot, or a pressure cooker. For a two-day soak, refrigerate, change the water, and cook within about 48 hours. If the soak smells off, throw it out.
+
+Those ranges are published, not guessed. [UNL Extension](https://food.unl.edu/article/how-cook-dry-beans-scratch/) times the soaked stovetop pots, and the [U.S. Dry Bean Council](https://usdrybeans.com/bean-varieties/) lists the same windows for black, pinto, dark red kidney, and navy. Light red kidney is the odd one on that page, at 1 to 1.5 hours. Chickpeas aren't on either chart. [NDSU Extension](https://www.ndsu.edu/agriculture/extension/publications/pocket-guide-preparing-pulse-foods) puts them at 1.5 to 2 hours after a soak. [USA Pulses](https://usapulseseu.org/wp-content/uploads/2025/04/simple-guide-cooking-pulses.pdf) is the unsoaked rule: add 1 to 2 hours of simmering for beans and chickpeas. Lentils and split peas skip the soak. [UMaine Extension](https://extension.umaine.edu/publications/4183e/) simmers plain lentils 15 to 20 minutes, and NDSU simmers split peas 35 to 40. A UMaine split-pea soup with vegetables runs 60 to 90, so don't treat the soup clock as the plain pea clock.
+
+Pressure times are a different appliance. UNL's unsoaked electric-cooker times, taken from NDSU testing, are in the last column for black, pinto, kidney, and navy. NDSU lists chickpeas at 15 to 25 minutes on that same chart. Their steps drain a soak first, and their notes say a presoak was often skipped, so check the cooker manual before you bet dinner on a single number. [MSU Extension](https://www.montana.edu/extension/nutrition/nutrition-cooking-culture/documents/mim_montguide_with_recipes.pdf) is the chart with a plain pressure time for lentils and split peas, and it adds 10 minutes of natural release. That chart doesn't say soaked or dry. Those two don't need a soak anyway.
+
+A two-day soak is a fridge project, not a counter project. [NC State Extension](https://beaufort.ces.ncsu.edu/news/using-beans-peas-and-lentils-instead-of-meat/) says you can soak 24 to 48 hours, then pour off the water and cook in fresh water. [NDSU](https://www.ndsu.edu/agriculture/extension/publications/field-fork-pressure-cook-dry-beans-save-money-and-time) says refrigerate any soak longer than four hours and change the water. Sour, yeasty, or slimy means the batch is done. Don't try to boil the smell out of it.
+
+Kidney beans have one extra rule. The [FDA](https://www.fda.gov/food/chemical-contaminants-pesticides/natural-toxins-food) says soak them at least 5 hours and boil them in fresh water for at least 30 minutes. A slow cooker on low doesn't get that job done.
+
+If dinner is tonight, use the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/). The bag-versus-can nutrition is in [canned beans versus dried beans](/canned-beans-vs-dried-beans-nutrition/). The can-to-dry measure is the converter linked in the next section.
+
+Table: Soaked, unsoaked, and pressure-cooker times for dried beans
+
+| Bean | Soaked stovetop | Unsoaked stovetop | Pressure cooker |
+| --- | --- | --- | --- |
+| Black | 60 to 90 min ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) | Add 1 to 2 hours ([USA Pulses](https://usapulseseu.org/wp-content/uploads/2025/04/simple-guide-cooking-pulses.pdf)) | 20 to 30 min, unsoaked ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) |
+| Pinto | 90 to 120 min ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) | Add 1 to 2 hours ([USA Pulses](https://usapulseseu.org/wp-content/uploads/2025/04/simple-guide-cooking-pulses.pdf)) | 15 to 20 min, unsoaked ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) |
+| Kidney | 90 to 120 min ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) | Add 1 to 2 hours ([USA Pulses](https://usapulseseu.org/wp-content/uploads/2025/04/simple-guide-cooking-pulses.pdf)) | 20 to 30 min, unsoaked ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) |
+| Navy | 90 to 120 min ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) | Add 1 to 2 hours ([USA Pulses](https://usapulseseu.org/wp-content/uploads/2025/04/simple-guide-cooking-pulses.pdf)) | 25 to 35 min, unsoaked ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/)) |
+| Chickpeas | 90 to 120 min ([NDSU](https://www.ndsu.edu/agriculture/extension/publications/pocket-guide-preparing-pulse-foods)) | Add 1 to 2 hours ([USA Pulses](https://usapulseseu.org/wp-content/uploads/2025/04/simple-guide-cooking-pulses.pdf)) | 15 to 25 min ([NDSU](https://www.ndsu.edu/agriculture/extension/publications/field-fork-pressure-cook-dry-beans-save-money-and-time)) |
+| Lentils (no soak) | No soak ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/), [UMaine](https://extension.umaine.edu/publications/4183e/)) | 15 to 20 min ([UMaine](https://extension.umaine.edu/publications/4183e/)) | 8 min, then 10 min natural release ([MSU Extension](https://www.montana.edu/extension/nutrition/nutrition-cooking-culture/documents/mim_montguide_with_recipes.pdf)) |
+| Split peas (no soak) | No soak ([UNL](https://food.unl.edu/article/how-cook-dry-beans-scratch/), [UMaine](https://extension.umaine.edu/publications/4183e/)) | 35 to 40 min ([NDSU](https://www.ndsu.edu/agriculture/extension/publications/pocket-guide-preparing-pulse-foods)) | 6 min, then 10 min natural release ([MSU Extension](https://www.montana.edu/extension/nutrition/nutrition-cooking-culture/documents/mim_montguide_with_recipes.pdf)) |
+
 ## Step Three: Season and Store
 
 Once the beans are perfectly soft to your liking, add a generous amount of salt and stir it in. If you want, you can also toss in a smashed clove of garlic, half an onion, or a bay leaf while they simmer to build up the flavor of the broth. If that generous salt turns the pot into seawater, use [what to do when the bean pot is too salty](/fix-oversalted-soup-sauce-rice/). 
@@ -74,7 +102,7 @@ You will get significantly more food out of a $2 bag of dried beans than you eve
 
 ## Can you cook dried beans without soaking?
 
-Yes. Rinse the beans, cover them with several inches of water, and simmer until tender. The tradeoff is time: unsoaked beans can take an extra hour or more, and the oldest beans in the bag may still lag behind. Keep the pot at a lazy simmer rather than a hard boil so the skins do not split while the centers catch up.
+Yes. Rinse the beans, cover them with several inches of water, and simmer until tender. The tradeoff is time: unsoaked beans can take an extra 1 to 2 hours, and the oldest beans in the bag may still lag behind. Keep the pot at a lazy simmer rather than a hard boil so the skins do not split while the centers catch up.
 
 Soaking is a scheduling tool, not a moral achievement. If you remember the night before, great. If you do not, use the quick-soak method or cook them longer. This [same-day quick-soak guide](/how-to-quick-soak-dried-beans-same-day/) gives exact timing when dinner cannot wait for tomorrow's better planning.
 
