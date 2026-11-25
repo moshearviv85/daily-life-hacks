@@ -1,6 +1,6 @@
 ---
 title: "Costco Rotisserie Chicken: $5.97 and ~160g Protein"
-excerpt: "One study rotisserie bird cost $5.97 and carried about 160 grams of edible protein after bone and skin. That's about $1.49 and 40 grams split four ways."
+excerpt: "One study rotisserie bird: $5.97, about 160 grams of protein, $1.49 and 40 grams split four ways. Label 460 mg sodium per 3 oz vs 263 mg USDA meat-only."
 category: recipes
 tags:
 - quick meals
@@ -12,8 +12,8 @@ tags:
 image: "/images/costco-rotisserie-chicken-meal-ideas-dinner-main.jpg"
 imageAlt: Pulled rotisserie chicken and fresh vegetables are arranged on a light wooden cutting board.
 date: 2026-04-28
-dateModified: 2026-11-23
-substantiveUpdate: 2026-11-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -58,7 +58,7 @@ Choose one dinner. These aren't five four-person meals from one bird, and a whol
 
 The Kirkland Signature seasoned rotisserie label, copied at [MyFoodData](https://tools.myfooddata.com/nutrition-facts/100297025/wt1), is for 3 oz (84 g): 140 kcal, 19 g protein, 7 g fat, and 460 mg sodium. A [foodie.com roundup](https://www.foodie.com/1888411/costco-rotisserie-chicken-red-flag-high-sodium/) calls that 460 mg 20% of a 2,300 mg daily max. The label doesn't say which piece the 3 oz came from. Read it as an average of that bird, then look at the piece you actually put on the plate.
 
-The "~160g protein" in the title is a different measurement. It's the study bird: 36 oz cooked, which is 1,021 g, with 54% left after the study's USDA refuse factors (33% bone and 13% skin). That edible meat is about 551 g. At 28.93 g protein per 100 g from roasted chicken, meat only ([FDC 171054](https://fdc.nal.usda.gov/food-details/171054/nutrients)), the bird carries 159.5 g of protein. That's the title's about 160 g. Half the edible meat is about 80 g. A 3 oz breast is not a quarter of the bird.
+The "~160g protein" in the title is a different measurement. It's the study bird: 36 oz cooked, which is 1,021 g, with 54% left after the study's USDA refuse factors (33% bone and 13% skin). That edible meat is about 551 g. At 28.93 g protein per 100 g from roasted chicken, meat only ([FDC 171054](https://fdc.nal.usda.gov/food-details/171054/nutrients)), the bird carries 159.5 g of protein. That's about 160 grams of edible protein after bone and skin. Half the edible meat is about 80 g. A 3 oz breast is not a quarter of the bird.
 
 | Portion | Protein |
 |---|---:|
@@ -82,9 +82,19 @@ A 2025 foodie.com comparison of listed sodium per 3 oz, same report as the 460 m
 
 The chicken in the container can wear a newer sticker. If the label in your hand disagrees, believe the label.
 
-### Does removing the skin cut sodium?
+## Does removing the skin cut sodium on rotisserie chicken?
 
-Partly. The brine is already in the meat. USDA's original-seasoning rotisserie breast is 347 mg sodium per 100 g with the skin ([FDC 171123](https://fdc.nal.usda.gov/food-details/171123/nutrients)) and 313 mg with the skin off (FDC 171518). The skin on its own is 381 mg per 100 g ([FDC 171520](https://fdc.nal.usda.gov/food-details/171520/nutrients)), which is the same neighborhood as the meat, not a salt crust you can peel off. On the BBQ thigh, meat only and meat with skin are both 335 mg per 100 g (FDC 171118 and [FDC 171127](https://fdc.nal.usda.gov/food-details/171127/nutrients)). Fat is what actually drops. That original-seasoning breast goes from 8.18 g fat per 100 g with skin to 2.79 g without it. Kirkland's ingredient list on the MyFoodData page includes salt and sodium phosphate in the chicken. That's an injection, not a sprinkle on the skin.
+A little. The [Kirkland label](https://tools.myfooddata.com/nutrition-facts/100297025/wt1) is 460 mg of sodium per 3 oz. [USDA's meat-only breast](https://fdc.nal.usda.gov/food-details/171518/nutrients) is 263 mg for that same 3 oz, and the [skin-on breast](https://fdc.nal.usda.gov/food-details/171123/nutrients) is 291 mg. The brine is already in the meat. Peeling the skin doesn't make this a low-sodium chicken.
+
+Table: Sodium in 3 ounces of rotisserie chicken, label versus USDA skin-off and skin-on breast
+
+| Piece | Sodium per 3 oz (84 g) | Source |
+| --- | ---: | --- |
+| Kirkland Signature label | 460 mg | [MyFoodData label copy](https://tools.myfooddata.com/nutrition-facts/100297025/wt1) |
+| USDA breast, meat only | 263 mg | [FDC 171518](https://fdc.nal.usda.gov/food-details/171518/nutrients), 313 mg per 100 g |
+| USDA breast, meat and skin | 291 mg | [FDC 171123](https://fdc.nal.usda.gov/food-details/171123/nutrients), 347 mg per 100 g |
+
+The skin by itself is 381 mg per 100 g ([FDC 171520](https://fdc.nal.usda.gov/food-details/171520/nutrients)), the same neighborhood as the meat, not a salt crust you can peel off. On a BBQ thigh, meat only and meat with skin are both 335 mg per 100 g ([FDC 171118](https://fdc.nal.usda.gov/food-details/171118/nutrients) and [FDC 171127](https://fdc.nal.usda.gov/food-details/171127/nutrients)). Fat is what actually drops. That original-seasoning breast goes from 8.18 g fat per 100 g with the skin to 2.79 g without it. Kirkland's ingredient list on the MyFoodData page includes salt and sodium phosphate in the chicken. That's an injection, not a sprinkle on the skin.
 
 * **Leave the sides unsalted.** Three ounces of this chicken already brought 460 mg of sodium. Plain rice, dry beans, and the other quiet staples in the [low-sodium budget ranking](/low-sodium-budget-foods-ranked/) don't need the shaker to become dinner.
 * **Skip the second salty sauce.** The skillet below uses low-sodium soy sauce, and you can still use less of it. Lemon, the taco cabbage, or a measured spoon of salsa beats pouring on something that tastes like the brine's cousin.
