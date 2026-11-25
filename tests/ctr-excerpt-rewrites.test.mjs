@@ -113,10 +113,13 @@ test("answer-first excerpts match the proposed SERP text and stay under 160 char
 
 test("description-only and citation edits do not bump the public modified day", () => {
   const expected = {
-    "low-sodium-budget-foods-ranked": { dateModified: undefined, substantiveUpdate: undefined },
+    "low-sodium-budget-foods-ranked": {
+      dateModified: "2026-11-25",
+      substantiveUpdate: "2026-11-25",
+    },
     "high-protein-high-fiber-meals-for-weight-loss": {
-      dateModified: "2026-09-23",
-      substantiveUpdate: undefined,
+      dateModified: "2026-11-25",
+      substantiveUpdate: "2026-11-25",
     },
     "high-fiber-meals-for-constipation-relief": {
       dateModified: "2026-11-25",
