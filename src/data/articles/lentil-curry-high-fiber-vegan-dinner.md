@@ -24,59 +24,59 @@ totalTime: "35 minutes"
 servings: 4
 calories: 475
 ingredientsGrams:
-  - item: "1 tbsp coconut oil or olive oil"
+  - item: "1 tbsp coconut oil or olive oil (13.6 g)"
     grams: 13.6
     fdcId: 171412
-  - item: "1 large yellow onion, diced"
+  - item: "1 large yellow onion, diced (150 g)"
     grams: 150
     fdcId: 170000
-  - item: "3 cloves garlic, minced"
+  - item: "3 cloves garlic, minced (9 g)"
     grams: 9
     fdcId: 169230
-  - item: "1 tbsp fresh ginger, grated"
+  - item: "1 tbsp fresh ginger, grated (6 g)"
     grams: 6
     fdcId: 169231
-  - item: "1 tbsp yellow curry powder"
+  - item: "1 tbsp yellow curry powder (6.3 g)"
     grams: 6.3
     fdcId: 170924
-  - item: "1 tsp ground turmeric"
+  - item: "1 tsp ground turmeric (3 g)"
     grams: 3
     fdcId: 172231
-  - item: "1 cup dry red lentils, rinsed well"
+  - item: "1 cup dry red lentils, rinsed well (192 g)"
     grams: 192
     fdcId: 174284
-  - item: "1 (14.5 oz) can diced tomatoes, with juices"
+  - item: "1 (14.5 oz) can diced tomatoes, with juices (411.07 g)"
     grams: 411.07
     fdcId: 170051
-  - item: "1 (13.5 oz) can full-fat coconut milk"
+  - item: "1 (13.5 oz) can full-fat coconut milk (382.72 g)"
     grams: 382.72
     fdcId: 170172
-  - item: "2 cups vegetable broth"
+  - item: "2 cups vegetable broth (442 g)"
     grams: 442
     fdcId: 171583
-  - item: "1/2 tsp salt, plus more to taste"
+  - item: "1/2 tsp salt, plus more to taste (3 g)"
     grams: 3
     fdcId: 173468
-  - item: "2 cups fresh baby spinach"
+  - item: "2 cups fresh baby spinach (60 g)"
     grams: 60
     fdcId: 168462
 difficulty: "Easy"
 recipeCuisine: "Indian"
 ingredients:
-  - "1 tbsp coconut oil or olive oil"
-  - "1 large yellow onion, diced"
-  - "3 cloves garlic, minced"
-  - "1 tbsp fresh ginger, grated"
-  - "1 tbsp yellow curry powder"
-  - "1 tsp ground turmeric"
-  - "1/2 tsp ground cumin"
-  - "1 cup dry red lentils, rinsed well"
-  - "1 (14.5 oz) can diced tomatoes, with juices"
-  - "1 (13.5 oz) can full-fat coconut milk"
-  - "2 cups vegetable broth"
-  - "1/2 tsp salt, plus more to taste"
-  - "2 cups fresh baby spinach"
-  - "Fresh lime juice for serving"
+  - "1 tbsp coconut oil or olive oil (13.6 g)"
+  - "1 large yellow onion, diced (150 g)"
+  - "3 cloves garlic, minced (9 g)"
+  - "1 tbsp fresh ginger, grated (6 g)"
+  - "1 tbsp yellow curry powder (6.3 g)"
+  - "1 tsp ground turmeric (3 g)"
+  - "1/2 tsp ground cumin (1.05 g)"
+  - "1 cup dry red lentils, rinsed well (192 g)"
+  - "1 (14.5 oz) can diced tomatoes, with juices (411.07 g)"
+  - "1 (13.5 oz) can full-fat coconut milk (382.72 g)"
+  - "2 cups vegetable broth (442 g)"
+  - "1/2 tsp salt, plus more to taste (3 g)"
+  - "2 cups fresh baby spinach (60 g)"
+  - "Fresh lime juice for serving (about 44 g, the juice of 1 lime)"
 steps:
   - "Heat the oil in a large pot or Dutch oven over medium heat. Add the diced onion and cook for 5 to 6 minutes until soft and translucent."
   - "Add the garlic and grated ginger. Cook for 1 minute, stirring constantly so the garlic doesn't burn."
@@ -100,6 +100,12 @@ faq:
 You know those nights when you want takeout, but you also want to feel like a responsible adult who eats vegetables? This is the meal for those nights. This lentil curry high fiber vegan dinner hits all the comfort food buttons while casually delivering a massive dose of plant-based nutrition.
 
 It's entirely made in one pot, which means fewer dishes. And because we are using red lentils, it's ready in about half an hour. No soaking, no planning ahead, no fuss. It also reheats like a champ, which is exactly why it earns a spot in this vegan high fiber meal prep for the week.
+
+## What one bowl actually contains
+
+This pot serves 4. One bowl is 475 calories, 16.1 g protein, 11.3 g fiber, 769 mg sodium, and 8.2 g sugar. That's the raw grocery list split four ways. The pot doesn't get a cooking-loss discount.
+
+The cup of dry red lentils is 192 g ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)). The can of full-fat coconut milk is the 13.5 oz on the label, 382.72 g ([FDC 170172](https://fdc.nal.usda.gov/food-details/170172/nutrients)). Half a teaspoon of ground cumin is 1.05 g, half of the 2.1 g whole-seed teaspoon on [FDC 170923](https://fdc.nal.usda.gov/food-details/170923/nutrients). That record is the seed, not ground cumin, so the 1.05 g stays off the calorie line. The lime at the end is the 44 g of juice USDA lists for one lime ([FDC 168156](https://fdc.nal.usda.gov/food-details/168156/nutrients)). Squeeze it on the bowl. It isn't inside the 475.
 
 For the broader plan behind this pot, the [complete budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) shows how lentils, beans, oats, and other cheap staples can cover a lot of meals without getting weird about it.
 

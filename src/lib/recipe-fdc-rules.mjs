@@ -71,6 +71,10 @@ export const FOOD_RULES = [
   { description: "Vinegar, cider", match: /apple cider vinegar|cider vinegar/i },
   { description: "Vinegar, balsamic", match: /balsamic/i },
   { description: "Vinegar, red wine", match: /red wine vinegar/i },
+  // Not in SR Legacy. The branded label is in src/data/fdc-branded-overlay.json.
+  // Only a line that already states grams uses it, so other rice-vinegar
+  // recipes stay unmapped until someone weighs them.
+  { description: "RICE VINEGAR", match: /rice vinegar/i, require: /\(\s*(?:about\s+)?\d+(?:\.\d+)?\s*g\b/i },
   { description: "Vinegar, distilled", match: /white vinegar|distilled vinegar|\bvinegar\b/i, reject: /cider|balsamic|rice|wine/i },
 
   { description: "Soy sauce made from soy and wheat (shoyu), low sodium", match: /low-sodium soy|low sodium soy/i },

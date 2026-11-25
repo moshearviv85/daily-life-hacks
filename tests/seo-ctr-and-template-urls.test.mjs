@@ -2212,7 +2212,8 @@ test("chia pudding breakfast title leads with the on-page jar fiber", () => {
   assert.match(raw, /somewhere around 16 to 17 grams of fiber/);
   assert.match(raw, /9\.8 grams of fiber/);
   assert.match(raw, /^date: 2026-02-23$/m);
-  assert.match(raw, /^dateModified: 2026-10-01$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 });
 
 test("cottage cheese vs Greek yogurt title leads with half-cup protein grams", () => {

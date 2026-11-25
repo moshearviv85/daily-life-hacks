@@ -7,7 +7,7 @@
  * Descriptions come from src/lib/recipe-fdc-rules.mjs. A description that
  * is missing or duplicated fails the script. Ids are read from the CSV.
  */
-import { createReadStream } from "node:fs";
+import { createReadStream, existsSync } from "node:fs";
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { createInterface } from "node:readline";
@@ -74,7 +74,14 @@ async function loadCsv(filename, onRow) {
   }
 }
 
-const wanted = [...new Set(FOOD_RULES.map((rule) => rule.description))];
+const overlayPath = join(root, "src/data/fdc-branded-overlay.json");
+const overlayFoods = existsSync(overlayPath)
+  ? JSON.parse(readFileSync(overlayPath, "utf8"))
+  : [];
+const overlayDescriptions = new Set(overlayFoods.map((food) => food.description));
+const wanted = [...new Set(FOOD_RULES.map((rule) => rule.description))].filter(
+  (description) => !overlayDescriptions.has(description),
+);
 const idByDescription = new Map();
 const descriptionById = new Map();
 
@@ -146,6 +153,13 @@ for (const [description, fdcId] of idByDescription) {
     nutrientIds,
     portions: (portions.get(fdcId) || []).filter((portion) => portion.grams > 0 && portion.amount > 0),
   };
+}
+
+for (const food of overlayFoods) {
+  if (!food?.fdcId || !food.description) {
+    throw new Error("Branded overlay entry is missing fdcId or description");
+  }
+  foods[String(food.fdcId)] = food;
 }
 
 const cache = {

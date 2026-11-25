@@ -41,6 +41,16 @@ test("serving scaler changes leading quantities but protects package sizes and t
   assert.equal(scale("1 cup warm water (110°F)", 2), "2 cups warm water (110°F)");
   assert.equal(scale("Salt and pepper to taste", 2), "Salt and pepper to taste");
   assert.equal(scale("2-3 cloves garlic", 2), "4-6 cloves garlic");
+  assert.equal(scale("1 cup rice (185 g)", 2), "2 cups rice (370 g)");
+  assert.equal(scale("2 large English cucumbers (301 g each)", 2), "4 large English cucumbers (301 g each)");
+  assert.equal(
+    scale("1 (14.5 oz) can diced tomatoes, with juices (411.07 g)", 2),
+    "2 (14.5 oz) cans diced tomatoes, with juices (822.14 g)",
+  );
+  assert.equal(
+    scale("Fresh lime juice for serving (about 44 g, the juice of 1 lime)", 2),
+    "Fresh lime juice for serving (about 88 g, the juice of 1 lime)",
+  );
 });
 
 test("serving changes update visible recipe yield and emit no entered value", async () => {
