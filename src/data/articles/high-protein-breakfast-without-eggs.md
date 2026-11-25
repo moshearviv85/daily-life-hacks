@@ -92,7 +92,7 @@ The full ranking those rates come from is the [protein per dollar study](/protei
 
 ## What this chart won't buy
 
-Salt, fruit, the banana you were going to slice on the oats, and whatever oil hits the tofu. The costs above are the protein-carrying foods, the same rule as the day studies. Thirty grams here is a breakfast-sized slice of the day, not a prescription with your name on it. If 30 grams isn't even your number, [how much protein you need per day](/how-much-protein-do-you-need-per-day/) is the page that sorts the daily total. If the bowl wants seeds instead of oats, [savory chia when you want the jar instead of the bowl](/savory-chia-seed-recipes-breakfast/) is that version.
+Salt, fruit, the banana you were going to slice on the oats, and whatever oil hits the tofu. The costs above are the protein-carrying foods, the same rule as the day studies. Thirty grams here is a breakfast-sized slice of the day, not a prescription with your name on it. If 30 grams isn't even your number, [how much protein you need per day](/how-much-protein-do-you-need-per-day/) is the page that sorts the daily total.
 
 That's the morning. No carton required, four plates between $0.72 and $1.69, and the peanut butter jar doing more work than the egg marketing ever did.
 
