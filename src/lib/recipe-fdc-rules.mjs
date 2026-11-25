@@ -120,6 +120,11 @@ export const FOOD_RULES = [
   { description: "Lentils, pink or red, raw", match: /red lentils|pink lentils/i },
   { description: "Lentils, raw", match: /\blentils?\b/i, reject: /red lentil|pink lentil|cooked lentil/i },
   { description: "Peas, green, split, mature seeds, raw", match: /split peas/i },
+  // FNDDS, not SR Legacy. The record is in src/data/fdc-branded-overlay.json.
+  // SR Legacy never publishes a drained-can gram weight for black beans.
+  // A stated gram weight is required so a bare "15 oz can, drained" stays
+  // on the low-sodium rule and stays unmapped.
+  { description: "Black beans, from canned, no added fat", match: /black beans/i, require: /\(\s*(?:about\s+)?\d+(?:\.\d+)?\s*g\b/i },
   { description: "Beans, black, mature seeds, canned, low sodium", match: /black beans/i, require: /\b(cans?|canned)\b/i },
   { description: "Beans, black, mature seeds, raw", match: /black beans/i, require: /\b(dried|dry|uncooked)\b/i },
   { description: "Beans, pinto, mature seeds, canned, drained solids, rinsed in tap water", match: /pinto beans/i, require: /\b(cans?|canned)\b/i },
@@ -145,8 +150,8 @@ export const FOOD_RULES = [
   { description: "Tomatoes, red, ripe, canned, packed in tomato juice", match: /diced tomatoes|canned tomatoes/i },
   { description: "Tomatoes, red, ripe, raw, year round average", match: /\btomatoes?\b/i, reject: /sun-dried|tomato paste|tomato sauce|diced tomatoes|crushed|canned tomatoes/i },
 
-  { description: "Quinoa, cooked", match: /cooked quinoa/i },
-  { description: "Quinoa, uncooked", match: /\bquinoa\b/i, reject: /cooked quinoa/i },
+  { description: "Quinoa, cooked", match: /\bcooked quinoa\b/i },
+  { description: "Quinoa, uncooked", match: /\bquinoa\b/i, reject: /\bcooked quinoa\b/i },
   { description: "Rice, brown, long-grain, cooked (Includes foods for USDA's Food Distribution Program)", match: /brown rice/i, require: /cooked/i },
   { description: "Rice, white, long-grain, regular, enriched, cooked", match: /cooked white|cooked rice/i },
   { description: "Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)", match: /brown rice/i, reject: /cooked/i },

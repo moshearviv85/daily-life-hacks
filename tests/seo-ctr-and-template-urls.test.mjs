@@ -1259,7 +1259,8 @@ test("rice and beans everyday title puts cost and protein grams in the SERP", ()
     false,
     "rice and beans title should not lead with the old Is It Healthy SERP",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 
   assert.match(rice.excerpt, /is it healthy to eat rice and beans every day/i);
   assert.match(rice.excerpt, /protein and fiber/i);

@@ -14,7 +14,7 @@ const PIZZA_EXCERPT =
   "Sourdough discard pizza dough without added yeast, ready in about 40 minutes. Mix discard, flour, baking powder, salt, and oil; roll thin and bake hot.";
 
 const INLINKS = [
-  ["can-you-eat-rice-and-beans-everyday", "2026-11-23", undefined],
+  ["can-you-eat-rice-and-beans-everyday", "2026-11-25", "2026-11-25"],
   ["what-50-grams-of-protein-costs-per-day", "2026-09-24", undefined],
   ["protein-per-dollar-adjusted-for-quality", "2026-11-23", "2026-11-23"],
   ["beans-double-win-fiber-protein", "2026-09-24", undefined],
