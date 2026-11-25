@@ -44,11 +44,41 @@
       "sodium": 1093,
       "sugar": 2000
     },
-    "portions": [
+      "portions": [
       {
         "amount": 1,
         "modifier": "cup",
         "grams": 180
+      }
+    ]
+  },
+  {
+    "fdcId": 2597124,
+    "description": "GREY POUPON DIJON MUSTARD, 10 OZ",
+    "dataType": "Branded",
+    "brandOwner": "Kraft Heinz Foods Company",
+    "brandName": "GREY POUPON",
+    "gtinUpc": "0054400015034",
+    "labelServing": "1 tsp (5g)",
+    "publicationDate": "2023-07-13",
+    "nutrientsPer100g": {
+      "kcal": 100,
+      "protein": 0,
+      "fiber": 0,
+      "sodium": 2300,
+      "sugar": 0
+    },
+    "nutrientIds": {
+      "kcal": 1008,
+      "protein": 1003,
+      "sodium": 1093,
+      "sugar": 2000
+    },
+    "portions": [
+      {
+        "amount": 1,
+        "modifier": "tsp",
+        "grams": 5
       }
     ]
   }

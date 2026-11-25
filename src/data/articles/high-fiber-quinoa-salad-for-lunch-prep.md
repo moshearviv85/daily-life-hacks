@@ -1,7 +1,6 @@
 ---
 title: High Fiber Quinoa Salad for Lunch Prep
-excerpt: This quinoa salad holds up in the fridge, travels well, and doesn't turn
-  into a sad mush by Wednesday. Lemon, chickpeas, and crunch do the work.
+excerpt: "399 kcal, 11.9 g protein, and 8.7 g fiber in one serving. Quinoa, chickpeas, and lemon still hold up through Wednesday."
 category: recipes
 tags:
 - high fiber
@@ -13,7 +12,8 @@ tags:
 image: /images/high-fiber-quinoa-salad-for-lunch-prep-main.jpg
 imageAlt: Quinoa salad with vegetables in a meal prep container
 date: 2026-03-30
-dateModified: 2026-07-20
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 quickAnswer: "For quinoa salad that stays useful through lunch prep, cool the cooked quinoa before mixing, dry the vegetables well, and pack the lemon dressing separately. Put quinoa and chickpeas at the bottom, tomatoes in the middle, and cucumber on top. Refrigerate within two hours and use prepared leftovers within three to four days, following federal food-safety guidance."
 featured: false
@@ -24,23 +24,57 @@ prepTime: 20 minutes
 cookTime: 15 minutes
 totalTime: 35 minutes
 servings: 4
-calories: 450
+calories: 399
+ingredientsGrams:
+  - item: "1 cup dry quinoa, rinsed (170 g)"
+    grams: 170
+    fdcId: 168874
+  - item: "1 (15 oz) can chickpeas, drained and rinsed (254 g)"
+    grams: 254
+    fdcId: 173801
+  - item: "1 cucumber, diced (301 g)"
+    grams: 301
+    fdcId: 168409
+  - item: "1 pint cherry tomatoes, halved (298 g)"
+    grams: 298
+    fdcId: 170457
+  - item: "1/2 red onion, finely diced (55 g)"
+    grams: 55
+    fdcId: 170000
+  - item: "1/4 cup olive oil (54 g)"
+    grams: 54
+    fdcId: 171413
+  - item: "3 tbsp lemon juice (45.75 g)"
+    grams: 45.75
+    fdcId: 167747
+  - item: "1 tsp Dijon mustard (5 g)"
+    grams: 5
+    fdcId: 2597124
+  - item: "1/2 tsp salt (3 g)"
+    grams: 3
+    fdcId: 173468
+  - item: "1/4 tsp black pepper (0.57 g)"
+    grams: 0.57
+    fdcId: 170931
+  - item: "1/4 cup fresh parsley, chopped (15 g)"
+    grams: 15
+    fdcId: 170416
 difficulty: Easy
 recipeCuisine: "Mediterranean"
 ingredients:
-- 1 cup dry quinoa, rinsed
+- 1 cup dry quinoa, rinsed (170 g)
 - 2 cups water
-- 1 (15 oz) can chickpeas, drained and rinsed
-- 1 cucumber, diced
-- 1 pint cherry tomatoes, halved
-- 1/2 red onion, finely diced
+- 1 (15 oz) can chickpeas, drained and rinsed (254 g)
+- 1 cucumber, diced (301 g)
+- 1 pint cherry tomatoes, halved (298 g)
+- 1/2 red onion, finely diced (55 g)
 - 1/2 cup feta cheese, crumbled (optional)
-- 1/4 cup olive oil
-- 3 tbsp lemon juice
-- 1 tsp Dijon mustard
-- 1/2 tsp salt
-- 1/4 tsp black pepper
-- 1/4 cup fresh parsley, chopped
+- 1/4 cup olive oil (54 g)
+- 3 tbsp lemon juice (45.75 g)
+- 1 tsp Dijon mustard (5 g)
+- 1/2 tsp salt (3 g)
+- 1/4 tsp black pepper (0.57 g)
+- 1/4 cup fresh parsley, chopped (15 g)
 steps:
 - Bring quinoa and water to a boil, reduce heat, cover, and simmer 15 minutes until
   fluffy. Cool.
@@ -72,6 +106,17 @@ Quinoa salad is one of those recipes that sounds like it belongs on a wellness p
 If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge. Quinoa isn't the only grain that does that job.
 
 For the full plan around this one lunch, the complete meal-prep system for beginners handles shopping, batch cooking, storage, and reheating without lining up twelve identical containers like a cafeteria display.
+
+## What one serving actually weighs
+
+One serving is 399 kcal, 11.9 g protein, and 8.7 g fiber. That's the USDA total for the weighed ingredients, divided by four. The dry quinoa in that total is 170 g ([FDC 168874](https://fdc.nal.usda.gov/food-details/168874/nutrients)). The card used to say 450 kcal. I'm using 399, because 450 didn't match these gram weights. The 2 cups of cooking water aren't in it. Neither is the optional feta.
+
+You cook that quinoa in water, and the water doesn't add calories. The bowl on the scale is heavier than this math once the quinoa has soaked up that water. The dry cup is what the calorie line weighs, not the fluffy grain after it cooks.
+
+One drained, rinsed 15 oz can of chickpeas is 254 g ([FDC 173801](https://fdc.nal.usda.gov/food-details/173801/nutrients)). The cucumber is USDA's 8-1/4 inch cucumber, 301 g ([FDC 168409](https://fdc.nal.usda.gov/food-details/168409/nutrients)). A pint of cherry tomatoes is two cups, and the cherry-tomato cup is 149 g, so the pint is 298 g ([FDC 170457](https://fdc.nal.usda.gov/food-details/170457/nutrients)). The onion doesn't name a size, so the card uses half of the medium onion, 55 g of the 110 g onion ([FDC 170000](https://fdc.nal.usda.gov/food-details/170000/nutrients)).
+
+The dressing is where the calories hide. A quarter cup of olive oil is 54 g ([FDC 171413](https://fdc.nal.usda.gov/food-details/171413/nutrients)). Three tablespoons of lemon juice are 45.75 g, scaled from the 30.5 g fluid ounce ([FDC 167747](https://fdc.nal.usda.gov/food-details/167747/nutrients)). The Dijon is 5 g, which is the 1 teaspoon on the Grey Poupon label ([FDC 2597124](https://fdc.nal.usda.gov/food-details/2597124/nutrients)). That label is 5 kcal per teaspoon. An unweighed spoon of Dijon stays off the other recipes, because this record only counts a line that already states the grams. Half a teaspoon of table salt is 3 g ([FDC 173468](https://fdc.nal.usda.gov/food-details/173468/nutrients)). A quarter teaspoon of black pepper is 0.57 g, from the 2.3 g ground teaspoon ([FDC 170931](https://fdc.nal.usda.gov/food-details/170931/nutrients)). A quarter cup of chopped parsley is 15 g ([FDC 170416](https://fdc.nal.usda.gov/food-details/170416/nutrients)). Skip the feta and the total stays 399. Add it, and the 399 no longer describes your container. Counted ingredients come to about 300 g per serving before the cooking water and before that cheese.
+
 ## Why This Combination Holds
 
 Chickpeas add fiber and chew. Tomatoes add acid. Cucumber adds crunch if you don't salt it to death. Lemon dressing cuts richness from olive oil and keeps the flavor bright.

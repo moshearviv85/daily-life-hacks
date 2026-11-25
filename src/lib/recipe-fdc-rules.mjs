@@ -59,6 +59,9 @@ export const FOOD_RULES = [
   { description: "Cheese, cream", match: /cream cheese/i },
 
   { description: "Salad dressing, mayonnaise, regular", match: /mayonnaise|\bmayo\b/i },
+  // Not in SR Legacy. Grey Poupon's label is in src/data/fdc-branded-overlay.json.
+  // A stated gram weight is required so unweighed Dijon lines stay unmapped.
+  { description: "GREY POUPON DIJON MUSTARD, 10 OZ", match: /dijon/i, require: /\(\s*(?:about\s+)?\d+(?:\.\d+)?\s*g\b/i },
   { description: "Mustard, prepared, yellow", match: /yellow mustard|prepared mustard|\bmustard\b/i, reject: /dijon|mustard seed|mustard greens|dry mustard/i },
   { description: "Catsup", match: /ketchup|catsup/i },
   { description: "Sauce, worcestershire", match: /worcestershire/i },
@@ -86,6 +89,10 @@ export const FOOD_RULES = [
 
   { description: "Spices, paprika", match: /paprika/i },
   { description: "Spices, chili powder", match: /chili powder|chilli powder/i },
+  // Whole-seed teaspoon is 2.1 g. Ground cumin has no separate household
+  // weight. The line has to name that whole-seed teaspoon. Lentil curry
+  // already prints "(1.05 g)" and leaves the spoon off its card.
+  { description: "Spices, cumin seed", match: /ground cumin|cumin powder/i, require: /\(\s*(?:about\s+)?\d+(?:\.\d+)?\s*g,\s*whole-seed teaspoon\b/i },
   { description: "Spices, cumin seed", match: /cumin seeds?/i, reject: /ground cumin|cumin powder/i },
   { description: "Spices, cinnamon, ground", match: /cinnamon/i },
   { description: "Spices, oregano, dried", match: /dried oregano|oregano/i, reject: /fresh oregano/i },

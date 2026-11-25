@@ -1,6 +1,6 @@
 ---
 title: Easy Black Bean Tacos for a Weeknight Dinner
-excerpt: "These 15-minute black bean tacos use two cans, one skillet, and whatever crunchy toppings are already in your fridge."
+excerpt: "316 kcal, 15.6 g protein, and 17.6 g fiber in one serving. Two cans of black beans, one skillet, about 15 minutes."
 quickAnswer: >-
   Drain and rinse two cans of black beans, warm them with cumin, chili powder,
   garlic powder, and a splash of water, then mash about half until the filling
@@ -16,7 +16,8 @@ tags:
 image: /images/easy-black-bean-tacos-weeknight-dinner-main.jpg
 imageAlt: Black bean tacos on corn tortillas with toppings
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -26,21 +27,40 @@ prepTime: 5 minutes
 cookTime: 10 minutes
 totalTime: 15 minutes
 servings: 4
-calories: 320
+calories: 316
+ingredientsGrams:
+  - item: "3 cups canned black beans, rinsed and drained (540 g), about 2 drained 15 oz cans"
+    grams: 540
+    fdcId: 2707363
+  - item: "1/2 tsp ground cumin (1.05 g, whole-seed teaspoon)"
+    grams: 1.05
+    fdcId: 170923
+  - item: "1/2 tsp chili powder (1.35 g)"
+    grams: 1.35
+    fdcId: 171319
+  - item: "1/4 tsp garlic powder (0.78 g)"
+    grams: 0.78
+    fdcId: 171325
+  - item: "2 tbsp lime juice or water (30.8 g)"
+    grams: 30.8
+    fdcId: 168156
+  - item: "8-12 corn tortillas or flour tortillas, warmed (240 g)"
+    grams: 240
+    fdcId: 175036
 difficulty: Easy
 recipeCuisine: "Mexican"
 ingredients:
-- 2 (15 oz) cans black beans, drained and rinsed
-- 1/2 tsp ground cumin
-- 1/2 tsp chili powder
-- 1/4 tsp garlic powder
-- 2 tbsp water or lime juice
-- 8–12 corn or flour tortillas, warmed
+- 3 cups canned black beans, rinsed and drained (540 g), about 2 drained 15 oz cans
+- 1/2 tsp ground cumin (1.05 g, whole-seed teaspoon)
+- 1/2 tsp chili powder (1.35 g)
+- 1/4 tsp garlic powder (0.78 g)
+- 2 tbsp lime juice or water (30.8 g)
+- 8-12 corn tortillas or flour tortillas, warmed (240 g)
 - 'Toppings: shredded cabbage or lettuce, salsa, lime wedges, cilantro, avocado or
   crema (optional)'
 steps:
 - In a medium skillet over medium heat, add the black beans, cumin, chili powder,
-  garlic powder, and water or lime juice. Mash about half the beans with the back
+  garlic powder, and lime juice or water. Mash about half the beans with the back
   of a fork and stir. Cook 5–7 minutes until heated through and slightly thickened.
 - Warm tortillas in a dry skillet or wrapped in a damp towel in the microwave.
 - Spoon bean mixture into tortillas and add toppings as you like. Serve with lime
@@ -67,6 +87,19 @@ faq:
 Tacos don't have to automatically mean browning ground beef or chopping a mountain of ingredients. Sometimes you just need food to be ready immediately. These easy black bean tacos are explicitly built for those tired weeknights. 
 
 You open a couple of cans, warm the beans with a few standard pantry spices, and set out some tortillas. The entire operation goes from the cupboard to the table in about 15 minutes. It's not fussy, it's not complicated, and it gets the job done perfectly.
+
+## What one serving actually weighs
+
+One serving is 316 kcal, 15.6 g protein, and 17.6 g fiber. That's the USDA total for these gram weights, divided by four. The beans in that total are 540 g ([FDC 2707363](https://fdc.nal.usda.gov/food-details/2707363/nutrients)). The card used to say 320 kcal. I'm using 316, because that's what the pan and the tortillas add up to. Cabbage, salsa, lime wedges, cilantro, avocado, and crema aren't in it.
+
+The beans are the heavy part. FNDDS weighs 1 cup of black beans from a can, no added fat, at 180 g ([FDC 2707363](https://fdc.nal.usda.gov/food-details/2707363/nutrients)). Two drained 15 oz cans are about 3 cups, so the card counts 540 g. Your quarter of that is 135 g.
+
+Half a teaspoon of ground cumin is 1.05 g, half of USDA's 2.1 g whole-seed teaspoon ([FDC 170923](https://fdc.nal.usda.gov/food-details/170923/nutrients)). Ground cumin doesn't have its own household weight on that record, so the line states the grams. An unweighed spoon of it stays off the other cards. Half a teaspoon of chili powder is 1.35 g, half of the 2.7 g teaspoon ([FDC 171319](https://fdc.nal.usda.gov/food-details/171319/nutrients)). A quarter teaspoon of garlic powder is 0.78 g, from the 3.1 g teaspoon ([FDC 171325](https://fdc.nal.usda.gov/food-details/171325/nutrients)).
+
+The splash is lime juice, 30.8 g for 2 tablespoons, scaled from the 30.8 g fluid ounce ([FDC 168156](https://fdc.nal.usda.gov/food-details/168156/nutrients)). Water is the other option on that line, and it isn't a second food in the total.
+
+The tortillas are corn. USDA's corn tortilla is 24 g ([FDC 175036](https://fdc.nal.usda.gov/food-details/175036/nutrients)). The recipe says 8 to 12, and the card uses the middle, 10 tortillas, 240 g. That's 60 g on each plate, two and a half tortillas. A flour tortilla is a different record, 49 g ([FDC 167535](https://fdc.nal.usda.gov/food-details/167535/nutrients)), and it isn't in the 316. Counted ingredients come to about 203.5 g per serving before you add anything wet or creamy on top. If the toppings are the point of taco night, the 316 is the floor, not the whole dinner.
+
 ## Why Black Beans Belong in Tacos
 
 Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table: [a single 15.5 ounce can runs about 26.5 grams of protein](/canned-beans-vs-dried-beans-nutrition/), so two cans feed a table without anyone missing the beef. The dry bag is cheaper still. 
@@ -87,7 +120,7 @@ The seasoned bean mixture also keeps wonderfully in the fridge for a few days. Y
 
 Rinsed canned beans are convenient, but straight from the can they taste like exactly what they are: beans that spent a long time sitting in lightly salted water. Give them a minute in the skillet before adding the liquid. The dry heat wakes up the cumin and chili powder and lets a few beans pick up browned edges.
 
-Then add two tablespoons of water or lime juice and mash roughly half the beans. Don't turn the whole pan into paste. You want a thick base that grips the tortilla, with enough whole beans left to keep the filling from feeling like baby food.
+Then add two tablespoons of lime juice or water and mash roughly half the beans. Don't turn the whole pan into paste. You want a thick base that grips the tortilla, with enough whole beans left to keep the filling from feeling like baby food.
 
 Taste before serving. Canned beans vary wildly in salt, so the recipe doesn't need a heroic pinch at the beginning. If the filling tastes flat, salt usually fixes it. If it tastes heavy, lime does. Hot sauce is for heat, not for rescuing underseasoned beans.
 
