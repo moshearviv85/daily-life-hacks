@@ -8,8 +8,8 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/canned-beans-vs-dried-beans-nutrition-main.jpg"
 imageAlt: "A measuring bowl of dry black beans beside an opened can of black beans on a kitchen scale"
 date: 2026-07-28
-dateModified: 2026-11-23
-substantiveUpdate: 2026-11-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 quickAnswer: "One 15-oz can is about 1 1/2 cups drained, about 1/2 cup+ dried. One pound of dried beans cooks to about 6 cups, which is roughly 3½ to 4 cans. Our protein match for a priced 15.5 oz can of black beans is 123 g dry, a little over 1/2 cup."
 featured: false
@@ -112,6 +112,22 @@ A serving here is 15 grams of protein, so the can and the bag are buying the sam
 | Black beans | Canned, 15.5 oz | $0.88 | $0.50 |
 | Kidney beans | Canned, 15.5 oz | $0.98 | $0.64 |
 | Chickpeas | Canned, 15.5 oz | $0.98 | $0.68 |
+
+## What does a week of bean dinners cost?
+
+Four people, seven dinners, a 1/2 cup of cooked beans each. That's 14 cups cooked. [The Bean Institute](https://beaninstitute.com/resources/cook-with-beans/dry-vs-canned/) and [Nebraska Extension](https://food.unl.edu/article/how-cook-dry-beans-scratch/) both count a pound of dry beans as about 6 cups cooked, so this week is 14 divided by 6, about 2⅓ lb, or about 4⅔ cups dry.
+
+The can count depends on the cup inside the can. Our converter uses 1 1/2 cups drained per 15.5 oz can, so 14 cups is 9⅓ cans and you buy 10. The Bean Institute chart counts that can as 1¾ cups, which lands on 8 cans exactly. Same family. Different drain.
+
+| Item | Dry pinto | Dry black | Canned black |
+|---|---|---|---|
+| Amount for the week | 2⅓ lb | 2⅓ lb | 8 cans, or 10 at 1 1/2 cups |
+| Package in the study | 4 lb bag, $6.75 | 2 lb bag, $3.38 | 15.5 oz can, $0.88 |
+| Week cost | $3.94 | $3.94 | $7.04 at 8 cans, $8.80 at 10 |
+
+Pinto and black are the BLS US average for July 2026. We didn't price a can of pintos, so the can column is the black bean can we did price, $0.88. Eight cans cost $7.04. Ten cost $8.80. Brown lentils, if you want the cheaper dry bag, are $1.44 for 16 ounces in the same file and this week is $3.36. That lentil row is an audited Walmart bag, not the July BLS average.
+
+Change the headcount on [how many pounds of dried beans for a week](/how-many-pounds-of-dried-beans-for-a-week/). The one-can swap is the converter linked above.
 
 ## Which should you actually buy?
 

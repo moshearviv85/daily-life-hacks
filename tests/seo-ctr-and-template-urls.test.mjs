@@ -259,7 +259,8 @@ test("canned beans vs dried beans nutrition title puts protein grams per 100g in
     false,
     "nutrition beans title should not lead with canned beans or dry beans",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 
   assert.match(beans.excerpt, /[Dd]ried beans vs canned beans/);
   assert.match(beans.excerpt, /21\.6 g/);

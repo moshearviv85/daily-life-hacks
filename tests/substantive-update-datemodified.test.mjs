@@ -35,6 +35,7 @@ const LATER_UPDATES = {
   "easy-one-pot-chicken-and-rice-dinner": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
+  "canned-beans-vs-dried-beans-nutrition": "2026-11-25",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
   "how-to-pack-salad-for-work-not-soggy": "2026-11-25",
 };
@@ -44,7 +45,6 @@ const SUBSTANTIVE_SLUGS = new Set([
   "best-high-fiber-foods-ranked-by-fiber-content",
   "best-way-to-cook-a-pork-tenderloin",
   "best-way-to-cook-baked-potatoes",
-  "canned-beans-vs-dried-beans-nutrition",
   "cheap-chicken-casserole-meals-large-families",
   "crispy-roasted-chickpeas-high-fiber-snack",
   "cottage-cheese-vs-greek-yogurt-protein-uses",
@@ -239,13 +239,15 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 40, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 39, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
-  // how-to-cook-dried-beans-from-scratch and the Costco rotisserie page
-  // left this day for 2026-11-25. Costco's baseline was not 2026-11-23, so
-  // leaving that day also counts here.
+  // how-to-cook-dried-beans-from-scratch, the Costco rotisserie page, and
+  // the canned-versus-dried week-cost table left this day for 2026-11-25.
+  // Costco's baseline was not 2026-11-23, so leaving that day also counts here.
+  // The canned page's baseline was 2026-11-23, so it drops out of stillToday
+  // and stays out of the restored count.
   assert.equal(restored.length, 63, "pages restored off 2026-11-23");
 });
 
