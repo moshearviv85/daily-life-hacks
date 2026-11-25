@@ -10,7 +10,8 @@ tags:
 image: "/images/best-high-protein-breads-healthy-sandwiches-main.jpg"
 imageAlt: A thick, diagonal slice of sprouted grain bread rests on a linen napkin next to a small wooden cutting board, with loose grains scattered nearby.
 date: 2026-04-28
-dateModified: 2026-10-01
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 faq:
@@ -27,6 +28,25 @@ I used to think bread was just a delivery vehicle for ham and mustard. It was th
 
 Finding the best high protein breads for healthy sandwiches doesn't mean you have to shop at a specialty health store or spend ten dollars on a loaf of frozen birdseed. You just need to know what to look for in the bread aisle while everyone else is fighting over the last bag of brioche buns.
 
+## How much protein is in white, whole wheat, multigrain, and sprouted bread per slice?
+
+A USDA white slice is [2.6 grams of protein](https://fdc.nal.usda.gov/food-details/174924/nutrients), whole wheat is 4.0, multigrain is 3.5, and sprouted wheat is [5.0](https://fdc.nal.usda.gov/food-details/171850/nutrients). Two sprouted slices are about 10 grams before you open the fridge. Anything that prints 6 or 7 grams is a brand panel, not this SR Legacy record.
+
+Table: Protein, fiber, and sodium in standard sandwich breads per slice and per 100 grams
+
+| Bread | Slice | Protein / slice | Protein / 100 g | Fiber / slice | Fiber / 100 g | Sodium / slice | Sodium / 100 g | USDA record |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| White, commercially prepared | 29 g | 2.6 g | 8.85 g | 0.8 g | 2.7 g | 142 mg | 490 mg | [174924](https://fdc.nal.usda.gov/food-details/174924/nutrients) |
+| Whole-wheat, commercially prepared | 32 g | 4.0 g | 12.45 g | 1.9 g | 6.0 g | 146 mg | 455 mg | [172688](https://fdc.nal.usda.gov/food-details/172688/nutrients) |
+| Multi-grain, includes whole-grain | 26 g | 3.5 g | 13.36 g | 1.9 g | 7.4 g | 99 mg | 381 mg | [168013](https://fdc.nal.usda.gov/food-details/168013/nutrients) |
+| Oatmeal | 27 g | 2.3 g | 8.4 g | 1.1 g | 4.0 g | 121 mg | 447 mg | [172678](https://fdc.nal.usda.gov/food-details/172678/nutrients) |
+| Rye, regular slice | 32 g | 2.7 g | 8.5 g | 1.9 g | 5.8 g | 193 mg | 603 mg | [172684](https://fdc.nal.usda.gov/food-details/172684/nutrients) |
+| Wheat, sprouted | 38 g | 5.0 g | 13.16 g | 2.0 g | 5.3 g | 180 mg | 474 mg | [171850](https://fdc.nal.usda.gov/food-details/171850/nutrients) |
+
+Slice protein, fiber, and sodium are the per-100-gram figures times the USDA slice weight, divided by 100. Protein and fiber round to one decimal. Sodium rounds to the nearest milligram. White bread's 29 gram slice is the one already used on this page for the 2.6 gram line, not the thinner 25 gram slice on the same [FDC 174924](https://fdc.nal.usda.gov/food-details/174924/nutrients) record. Multigrain uses the regular 26 gram slice, not the 41 gram large slice on [FDC 168013](https://fdc.nal.usda.gov/food-details/168013/nutrients). Rye uses the regular 32 gram slice on [FDC 172684](https://fdc.nal.usda.gov/food-details/172684/nutrients).
+
+Whole wheat wins the plain sandwich aisle at 4.0 grams, and it's still short of a 5 gram label. Sprouted wheat is the SR Legacy slice that actually hits 5.0 grams. Two slices, about 10 grams, before the turkey even lands. Oatmeal bread is 2.3 grams and rye is 2.7, so a brown crust isn't a protein category. Sodium is the quiet column. Rye is 193 milligrams a slice and multigrain is 99. Same sandwich job, different salt bill. The wheat-bread slice further down is a different record, [FDC 172686](https://fdc.nal.usda.gov/food-details/172686/nutrients), about 3 grams in 29 grams. A seeded loaf that prints 6 or 7 grams isn't in SR Legacy. That's the brand panel. Read the slice weight. A 50 gram slab and this 38 gram sprouted slice are not the same piece of bread.
+
 ## Look for sprouted grains first
 
 Sprouted grain bread is usually the gold standard in the bread aisle if you want more protein without a bunch of weird additives. Because the grains are allowed to sprout before being milled into flour, the nutrient profile changes. It's often denser and has a nuttier flavor that actually stands up to a heavy pile of turkey and swiss.
@@ -41,7 +61,7 @@ When you're scanning labels, check fiber next to protein. A USDA wheat-bread sli
 
 ## Don't ignore the humble whole wheat
 
-If your family staged a mutiny the last time you brought home a loaf with visible seeds, you can still find decent protein in 100% whole wheat bread. The key is the word "whole." If the first ingredient is enriched wheat flour, you're basically eating a sugar-dusted cloud. If it says whole wheat flour, you're getting the entire grain. Whole-grain wheat flour has [13.21 grams of protein and 10.7 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/168893/nutrients). Enriched white flour has [10.33 grams of protein and 2.7 grams of fiber](https://fdc.nal.usda.gov/food-details/168894/nutrients). That flour is also one of the cheaper places to buy fiber, which you can see if you [compare whole wheat flour against quinoa on fiber per dollar](/what-30-grams-of-fiber-costs-per-day/#grains). On protein, the same flour sits at the top of the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/), and only if you bake with it.
+If your family staged a mutiny the last time you brought home a loaf with visible seeds, you can still find decent protein in 100% whole wheat bread. The key is the word "whole." If the first ingredient is enriched wheat flour, you're basically eating a sugar-dusted cloud. If it says whole wheat flour, you're getting the entire grain. Whole-grain wheat flour has [13.21 grams of protein and 10.7 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/168893/nutrients). Enriched white flour has [10.33 grams of protein and 2.7 grams of fiber](https://fdc.nal.usda.gov/food-details/168894/nutrients). That flour is also one of the cheaper places to buy fiber, which you can see if you [compare whole wheat flour against quinoa on fiber per dollar](/what-30-grams-of-fiber-costs-per-day/). On protein, the same flour sits at the top of the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/), and only if you bake with it.
 
 A finished wheat-bread slice is about 3 grams of protein, not 3 to 4, on the [29-gram USDA slice](https://fdc.nal.usda.gov/food-details/172686/nutrients). White bread is about 2.6 grams on its [29-gram slice](https://fdc.nal.usda.gov/food-details/174924/nutrients). It's not the heavy hitter that a 5-gram label is, but it's a real step up from white bread. It's the "safe" middle ground for picky eaters who think anything brown is a health food conspiracy. I usually toast it a little longer than usual to give it some structural integrity for tuna melts, which is also the first step in [keeping a packed sandwich from turning soggy by noon](/how-to-keep-sandwiches-from-getting-soggy/).
 
