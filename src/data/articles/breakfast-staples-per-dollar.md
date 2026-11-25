@@ -63,7 +63,7 @@ The move that makes oats feel like food instead of penance is going savory. Savo
 
 Yes, just know what they're for. Eggs at $2.19 a dozen score 34.4 grams of protein per dollar, the best animal number at the breakfast table and second only to bone-in drumsticks once you widen the frame to [every animal protein ranked by cost](/animal-protein-per-dollar-ranked/) ([FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients)). Whole milk rides behind at 28.5, and a $4.31 gallon is still one of the most casually underrated things in the store ([FDC 171265](https://fdc.nal.usda.gov/food-details/171265/nutrients)). Greek yogurt at 27.5 and cottage cheese at 26.3 round out the dairy case, close enough to each other that you should just buy the one you like ([FDC 170894](https://fdc.nal.usda.gov/food-details/170894/nutrients), [FDC 172179](https://fdc.nal.usda.gov/food-details/172179/nutrients)).
 
-None of them bring fiber to the table, though. That's why the smart breakfast isn't eggs or oats, it's eggs and something from the top of the list. A sheet pan breakfast hash with eggs is that idea in one pan.
+None of them bring fiber to the table, though. That's why the smart breakfast isn't eggs or oats, it's eggs and something from the top of the list. The gram-by-gram version of that plate is [breakfast foods compared for protein and fiber](/best-breakfast-foods-for-sustained-energy/). A sheet pan breakfast hash with eggs is that idea in one pan.
 
 ## Why did fruit land at the bottom?
 

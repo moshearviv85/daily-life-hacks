@@ -1,6 +1,6 @@
 ---
 title: "Breakfast Foods for Sustained Energy"
-excerpt: "Build breakfast with protein, fiber-rich carbohydrates, and some fat for a more substantial morning meal without powders or complicated rules."
+excerpt: "Two eggs have about 13 g protein, a cup of cooked oatmeal has 4 g fiber, and 7 oz plain Greek yogurt has about 20 g protein. Pair them so breakfast lasts."
 quickAnswer: >-
   Choose one protein such as eggs, plain Greek yogurt, cottage cheese, or beans;
   add a fiber-rich carbohydrate such as oats, fruit, or whole-grain toast; then
@@ -15,7 +15,8 @@ tags:
 image: /images/best-breakfast-foods-for-sustained-energy-main.jpg
 imageAlt: Breakfast plate with eggs, whole grain toast, and fruit
 date: 2026-03-15
-dateModified: 2026-09-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -50,6 +51,22 @@ The fundamental idea behind eating for "sustained energy" is simple: include som
 ## What are the best breakfast foods for sustained energy?
 
 Pick one protein, one fiber-rich carbohydrate, and a little fat. Eggs, plain Greek yogurt, cottage cheese or beans for the protein; oats, fruit or whole-grain toast for the carbohydrate; nuts, seeds or avocado for the fat. It's the combination that carries you to lunch, not any single hero food.
+
+The useful comparison is the serving you actually eat. Single-food protein figures below are the rounded ones already linked in this article. Fiber that those sentences skipped, and the two plates, use the unrounded USDA math.
+
+Table: Protein, fiber, and FoodData Central IDs for breakfast servings and two mixed plates.
+
+| Food | Typical serving | Protein | Fiber | FDC |
+|---|---|---:|---:|---|
+| Hard-boiled eggs | 2 large (50 g each) | 13 g | 0 g | [173424](https://fdc.nal.usda.gov/food-details/173424/nutrients) |
+| Plain low-fat Greek yogurt | 7 oz container (200 g) | 20 g | 0 g | [170903](https://fdc.nal.usda.gov/food-details/170903/nutrients) |
+| Cottage cheese, 2% | 1 cup, not packed (226 g) | 24 g | 0 g | [172182](https://fdc.nal.usda.gov/food-details/172182/nutrients) |
+| Cooked oatmeal | 1 cup (234 g) | 6 g | 4 g | [173905](https://fdc.nal.usda.gov/food-details/173905/nutrients) |
+| Peanut butter, smooth, no salt | 2 tbsp (32 g) | 7 g | 1.6 g | [172470](https://fdc.nal.usda.gov/food-details/172470/nutrients) |
+| Eggs and whole-wheat toast | 2 large eggs + 1 slice (32 g) | 16.6 g | 1.9 g | [173424](https://fdc.nal.usda.gov/food-details/173424/nutrients), [172688](https://fdc.nal.usda.gov/food-details/172688/nutrients) |
+| Yogurt, oatmeal, and strawberries | 7 oz yogurt + 1 cup oatmeal + 1/2 cup strawberry halves (76 g) | 26.4 g | 5.5 g | [170903](https://fdc.nal.usda.gov/food-details/170903/nutrients), [173905](https://fdc.nal.usda.gov/food-details/173905/nutrients), [167762](https://fdc.nal.usda.gov/food-details/167762/nutrients) |
+
+Two large eggs are 12.58 grams of protein and 0 grams of fiber at [12.58 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/173424/nutrients). That's the "about 13" below. The 7-ounce yogurt is 19.9 grams of protein and 0 fiber ([9.95 grams per 100 grams](https://fdc.nal.usda.gov/food-details/170903/nutrients)), the cottage cheese cup is 23.6 grams of protein and 0 fiber ([10.45 grams per 100 grams](https://fdc.nal.usda.gov/food-details/172182/nutrients) on a [226 gram cup](https://fdc.nal.usda.gov/food-details/172182/nutrients)), and the oatmeal cup is 5.9 grams of protein and 4.0 grams of fiber. Peanut butter's 32 gram spoon-pair is 7.1 grams of protein and 1.6 grams of fiber at [5 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/172470/nutrients). One commercially prepared whole-wheat slice is 32 grams, 4.0 grams of protein and 1.9 grams of fiber ([FDC 172688](https://fdc.nal.usda.gov/food-details/172688/nutrients)). Half a cup of raw strawberry halves is 76 grams, 0.5 grams of protein and 1.5 grams of fiber ([FDC 167762](https://fdc.nal.usda.gov/food-details/167762/nutrients)). Add the unrounded pieces and the plates are 16.6 grams of protein with 1.9 grams of fiber, and 26.4 grams of protein with 5.5 grams of fiber.
 
 ## Eggs: The Reliable Classic
 
