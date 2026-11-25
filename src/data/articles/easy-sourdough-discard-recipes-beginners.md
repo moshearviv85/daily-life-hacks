@@ -107,7 +107,7 @@ The middle tells you whether they're done. Brown edges around a soft center mean
 | Crackers bend after cooling | Bake them longer; next time spread the batter more evenly |
 | Everything tastes sharply sour | Start with more recently collected discard from a maintained starter |
 
-A starter with a different flour-to-water ratio changes the batter. Don't keep adding flour because a recipe on another website assumes a thicker jar.
+A starter with a different flour-to-water ratio changes the batter. Don't keep adding flour because a recipe on another website assumes a thicker jar. If the card wanted buttermilk, the [sourdough discard buttermilk substitute](/sourdough-discard-buttermilk-substitute/) weighs the flour and the thinning liquid before you pour.
 
 ## Keep the discard jar usable
 

@@ -11,6 +11,8 @@ tags:
 image: "/images/baking-sheet-liners-parchment-silicone-when-to-use-main.jpg"
 imageAlt: "Baking sheet half lined with parchment paper and half with a silicone baking mat"
 date: 2026-04-08
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 quickAnswer: "Parchment is the default. It releases cleanly, browns bottoms well, and you throw it away. Reach for a silicone mat for sticky work like caramel and macarons. For cookies, King Arthur's side-by-side test found mats gave the least spread and foil the most. Neither liner has a universal heat limit. Reynolds rates its parchment to 425 degrees Fahrenheit and says never use it under a broiler or in a toaster oven. Published silicone ceilings run from 375 degrees on Wilton's bakeware chart to 500 degrees for King Arthur's mat, so check your brand. For broiling, line the pan with foil, never the oven floor."
 featured: false
@@ -32,6 +34,19 @@ faq:
 A bare metal sheet pan is a recipe for scrubbing baked-on mess for twenty minutes, so we use liners. Then you open the drawer and there are three options and no obvious rule.
 
 I bought my first silicone baking mat thinking it would replace parchment paper forever. It did not. Then I went back to parchment for everything, which felt wasteful. They both have specific jobs, and most of what gets repeated online about them is somebody's brand spec quoted as if it were physics.
+
+## Parchment paper vs. silicone mat vs. foil: which liner fits the job?
+
+Reynolds rates parchment to 425°F and keeps it off the broiler and the toaster oven. Silicone ceilings are the stamp, 375°F for Wilton or 500°F for King Arthur. Foil is broiler-safe on the pan, never the oven floor. King Arthur's cookie test: silicone spread least, foil spread most, and parchment sat in the middle.
+
+| Job | Parchment paper | Silicone baking mat | Aluminum foil |
+|---|---|---|---|
+| Oven ceiling | 425°F. No broiler or toaster oven. | 375°F or 500°F. Read the stamp. | Broiler on the pan, not the floor. |
+| Cookie spread | Balanced. Domed center. | Least spread. Thick and chewy. | Most spread. Flatter cookies. |
+| Sticky or acidic | Glazes and cake release. | Caramel, candy, macarons. | Not nonstick. Oil it. |
+| Reuse and cleanup | Toss the sheet. | Soapy water. Don't cut it. | One use, then the trash. |
+
+Same sources as the rest of this page: [Reynolds parchment](https://www.reynoldsbrands.com/tips-and-how-tos/wax-paper-vs-parchment-paper), [King Arthur's cookie test](https://www.kingarthurbaking.com/blog/2022/12/01/keep-cookies-from-spreading), [Reynolds foil](https://www.reynoldsbrands.com/tips-and-how-tos/aluminum-foil-guide), and [Nordic Ware's mat](https://www.nordicware.com/products/deluxe-silicone-baking-mat/).
 
 ## The case for parchment paper
 

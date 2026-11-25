@@ -203,13 +203,14 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "discard-handling",
         title: "Sourdough discard, before you bake",
         intro:
-          "A cup of discard is not a measuring cup until you weigh it, so start there. The next pages cover how long the jar keeps, discard versus a starter that can still raise bread, and when a brand-new starter's discard is still a no. Then it's what to cook at 100, 227, or 500 grams, plus the no-yeast recipe list.",
+          "A cup of discard is not a measuring cup until you weigh it, so start there. The next pages cover how long the jar keeps, discard versus a starter that can still raise bread, and when a brand-new starter's discard is still a no. Then it's what to cook at 100, 227, or 500 grams, how to swap it for buttermilk, plus the no-yeast recipe list.",
         slugs: [
           "how-to-measure-sourdough-discard-grams",
           "how-long-does-sourdough-discard-last",
           "sourdough-discard-vs-active-starter",
           "can-you-use-sourdough-discard-from-a-new-starter",
           "what-to-make-with-sourdough-discard-by-amount",
+          "sourdough-discard-buttermilk-substitute",
           "sourdough-discard-recipes-no-yeast",
         ],
       },
