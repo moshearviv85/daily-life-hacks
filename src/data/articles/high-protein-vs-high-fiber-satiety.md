@@ -48,6 +48,8 @@ Fiber isn't one substance with one predictable effect. Different fibers add bulk
 
 Food form can change the result. In a [randomized crossover trial with 58 adults](https://pubmed.ncbi.nlm.nih.gov/19110020/), eating whole apple before lunch produced greater satiety and lower total meal energy intake than applesauce or apple juice. That's useful evidence for that apple-and-meal setup. It doesn't prove every fiber-rich food automatically reduces appetite.
 
+The same pairing works when the meal is a snack. [Popcorn toppings that bring fiber and protein](/high-fiber-popcorn-toppings-healthy/) change the bowl more than another pour of butter.
+
 ## Should you choose protein or fiber?
 
 If you go all-in on protein and ignore plants, the meal may be low in fiber and variety. If you pile on fiber too quickly, you may end up uncomfortable. Neither outcome proves a clean split between "brain hunger" and "stomach hunger." Appetite is more complicated than two nutrients dividing the office.

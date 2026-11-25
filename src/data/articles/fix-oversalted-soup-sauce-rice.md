@@ -9,6 +9,8 @@ tags:
 image: "/images/fix-oversalted-soup-sauce-rice-main.jpg"
 imageAlt: "A cook adjusting seasoning in a large pot of soup on a modern stove"
 date: 2026-04-24
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -32,7 +34,21 @@ The panic sets in. You stir it, hoping it will somehow magically disperse into n
 
 Before you dump the whole pot down the sink and order takeout in defeat, take a breath. Cooking is largely about balancing flavors, and a heavy hand with the salt is a fixable problem. You just have to know which rescue method to use for the food you're making.
 
-## The truth about the raw potato trick
+## Does adding a raw potato actually remove salt from oversalted soup?
+
+No. Two large Idaho potatoes simmered 30 minutes in 16 cups of 2% brine removed about 4% of the salt, roughly half a teaspoon of the 15 teaspoons in the pot, in [Greg Blonder's Genuine Ideas test](https://genuineideas.com/ArticlesIndex/potatosponge.html). [The Kitchn's chicken broth test](https://www.thekitchn.com/can-a-potato-really-fix-a-toosalty-soup-putting-tips-to-the-test-in-the-kitchn-214650) came out the same way: the potato took up salty broth, and the pot stayed salty.
+
+That's a potato cooked in soup, not a salt magnet. These five rescues are the ones that actually change the bowl.
+
+| Rescue | What changes | Sodium figure | Record |
+| --- | --- | --- | --- |
+| Dilute with water or unsalted broth | More liquid, so each spoon holds less salt. Ready-to-serve broth is not the unsalted option. | 654 mg in 1 cup (221 g) | [FDC 171583](https://fdc.nal.usda.gov/food-details/171583/nutrients) |
+| Add unsalted bulk | More food around the same salt | 1 mg per 100 g, 1.7 mg in a 172 g cup | [FDC 173735](https://fdc.nal.usda.gov/food-details/173735/nutrients) |
+| Add lemon or vinegar | Acid distracts your palate. It doesn't remove sodium. | 0.7 mg in 1 tbsp cider vinegar (14.9 g) | [FDC 173469](https://fdc.nal.usda.gov/food-details/173469/nutrients) |
+| Add unsalted dairy or fat | Fat blunts the sharp edge. The salted stick puts sodium back. | 1.6 mg in 1 tbsp unsalted butter (14.2 g); 91 mg if that tablespoon is salted | [FDC 173430](https://fdc.nal.usda.gov/food-details/173430/nutrients), [FDC 173410](https://fdc.nal.usda.gov/food-details/173410/nutrients) |
+| Simmer a raw potato | The brine test above. You also pull out starch. | 2,325 mg in 1 tsp table salt (6 g). A 6.7 g serving of dry beef gravy mix is 349 mg. | [FDC 173468](https://fdc.nal.usda.gov/food-details/173468/nutrients), [FDC 171589](https://fdc.nal.usda.gov/food-details/171589/nutrients) |
+
+The spoon and cup weights are USDA's own portions. Vegetable broth ([FDC 171583](https://fdc.nal.usda.gov/food-details/171583/nutrients)) is 296 mg of sodium per 100 grams, times a 221 gram cup. Table salt ([FDC 173468](https://fdc.nal.usda.gov/food-details/173468/nutrients)) is 38,758 mg per 100 grams, times a 6 gram teaspoon, which clears the [2,300 mg sodium Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) in one spoon. Instant beef gravy mix ([FDC 171589](https://fdc.nal.usda.gov/food-details/171589/nutrients)) is 5,203 mg per 100 grams, times USDA's 6.7 gram serving. Unsalted butter ([FDC 173430](https://fdc.nal.usda.gov/food-details/173430/nutrients)) is 11 mg per 100 grams on a 14.2 gram tablespoon. Salted butter ([FDC 173410](https://fdc.nal.usda.gov/food-details/173410/nutrients)) is 643 mg per 100 grams on that same spoon. Cider vinegar ([FDC 173469](https://fdc.nal.usda.gov/food-details/173469/nutrients)) is 5 mg per 100 grams on a 14.9 gram tablespoon. Cooked black beans without salt stay at [1 mg per 100 grams](https://fdc.nal.usda.gov/food-details/173735/nutrients). Sodium under 10 mg is rounded to one decimal, and anything larger is rounded to the nearest milligram.
 
 Let's clear the air about the most famous kitchen hack on the internet. Someone, somewhere, probably your grandmother, told you that dropping a raw, peeled potato into oversalted soup will draw the salt out like a sponge.
 
