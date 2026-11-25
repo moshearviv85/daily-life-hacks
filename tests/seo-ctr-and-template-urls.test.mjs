@@ -818,11 +818,12 @@ test("costco rotisserie chicken title leads with the study protein cost", () => 
     false,
     "title should not be the old soft 5 Quick Costco meal ideas SERP",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 
-  assert.match(
+  assert.equal(
     page.excerpt,
-    /^One study rotisserie bird cost \$5\.97 and carried about 160 grams of edible protein after bone and skin\./,
+    "One study rotisserie bird: $5.97, about 160 grams of protein, $1.49 and 40 grams split four ways. Label 460 mg sodium per 3 oz vs 263 mg USDA meat-only.",
   );
   assert.match(page.excerpt, /\$1\.49/);
   assert.match(page.excerpt, /40 grams/);

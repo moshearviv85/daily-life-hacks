@@ -29,9 +29,11 @@ const BEFORE_DATE_RESTORE = "84702a37";
  */
 const LATER_UPDATES = {
   "best-breakfast-foods-for-sustained-energy": "2026-11-25",
+  "costco-rotisserie-chicken-meal-ideas-dinner": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
+  "how-to-pack-salad-for-work-not-soggy": "2026-11-25",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
@@ -41,7 +43,6 @@ const SUBSTANTIVE_SLUGS = new Set([
   "best-way-to-cook-baked-potatoes",
   "canned-beans-vs-dried-beans-nutrition",
   "cheap-chicken-casserole-meals-large-families",
-  "costco-rotisserie-chicken-meal-ideas-dinner",
   "crispy-roasted-chickpeas-high-fiber-snack",
   "cottage-cheese-vs-greek-yogurt-protein-uses",
   "easy-cold-summer-pasta-salad-potlucks",
@@ -235,12 +236,14 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 41, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 40, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
-  // how-to-cook-dried-beans-from-scratch left this day for 2026-11-25.
-  assert.equal(restored.length, 62, "pages restored off 2026-11-23");
+  // how-to-cook-dried-beans-from-scratch and the Costco rotisserie page
+  // left this day for 2026-11-25. Costco's baseline was not 2026-11-23, so
+  // leaving that day also counts here.
+  assert.equal(restored.length, 63, "pages restored off 2026-11-23");
 });
 
 test("restored and substantive pages render the honest Updated day", () => {
