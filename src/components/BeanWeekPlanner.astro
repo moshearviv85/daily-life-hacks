@@ -1,0 +1,181 @@
+---
+import {
+  BEAN_INSTITUTE_YIELD_URL,
+  DEFAULT_CUPS,
+  DEFAULT_DAYS,
+  DEFAULT_PEOPLE,
+  DEFAULT_PLAN_INPUT,
+  UNL_YIELD_URL,
+  describeWeek,
+  formatMoney,
+  householdWeeks,
+  priceWeek,
+  weekPlan,
+} from "../lib/bean-week-math.js";
+import { loadBeanWeekPrices } from "../lib/bean-week-prices.js";
+
+const prices = loadBeanWeekPrices();
+const initialPlan = priceWeek(weekPlan(DEFAULT_PLAN_INPUT), prices);
+const initial = describeWeek(initialPlan, prices);
+const households = householdWeeks(prices);
+const redCosts = households.map((row) => formatMoney(row.dry.redLentils)).join(", ");
+const priceJson = JSON.stringify(prices).replace(/</g, "\\u003c");
+const chartAlt =
+  "Bar chart of July 2026 dry-bean cost for 2, 4, and 6 people over 7 days at a half cup cooked each. Dry weight is 1.17 lb, 2⅓ lb, and 3½ lb.";
+---
+
+<section class="bean-week" data-bean-week-planner aria-labelledby="bean-week-heading">
+  <p class="eyebrow">Family week planner</p>
+  <h2 id="bean-week-heading">Set the people, the days, and the bowl</h2>
+  <p>
+    The default is {DEFAULT_PEOPLE} people, {DEFAULT_DAYS} days, and a half cup cooked each day.
+    Pounds use the
+    <a href={BEAN_INSTITUTE_YIELD_URL}>Bean Institute</a>
+    and
+    <a href={UNL_YIELD_URL}>Nebraska Extension</a>
+    yield: 1 pound dry cooks to about 6 cups, and that pound is about 2 cups dry.
+    The can count is shown two ways, because the charts don't agree.
+  </p>
+  <form class="fields">
+    <label>
+      People
+      <input data-input="people" type="number" min="1" max="12" step="1" value={DEFAULT_PEOPLE} inputmode="numeric" />
+    </label>
+    <label>
+      Days
+      <input data-input="days" type="number" min="1" max="14" step="1" value={DEFAULT_DAYS} inputmode="numeric" />
+    </label>
+    <label>
+      Cooked cups per person per day
+      <input data-input="cups" type="number" min="0.25" max="2" step="0.05" value={DEFAULT_CUPS} inputmode="decimal" />
+    </label>
+  </form>
+  <output aria-live="polite">
+    <p data-field="summary">{initial.summary}</p>
+    <dl>
+      <div><dt>Dry pounds</dt><dd data-field="pounds">{initial.pounds}</dd></div>
+      <div><dt>Dry cups</dt><dd data-field="dryCups">{initial.dryCups}</dd></div>
+      <div><dt>Cans at 1 1/2 cups, rounded up</dt><dd data-field="cansKitchen">{initial.cansKitchen}</dd></div>
+      <div><dt>Cans at 1 3/4 cups</dt><dd data-field="cansInstitute">{initial.cansInstitute}</dd></div>
+    </dl>
+    <p data-field="cost">{initial.cost}</p>
+    <p data-field="canned">{initial.canned}</p>
+  </output>
+  <p class="note">
+    Pinto and black beans are the BLS US average for July 2026. Brown lentils and red lentils are audited Walmart bags in the same study, and those rows don't carry a July date. The one-can swap, including a crowd pot, stays on the
+    <a href="/tools/dried-beans-to-canned-converter/">dried beans to canned converter</a>.
+    Simmer times for the bag are in
+    <a href="/how-to-cook-dried-beans-from-scratch/">how to cook dried beans from scratch</a>.
+  </p>
+  <noscript>
+    <p>The figures above are the default household. They stay on the page if JavaScript is off.</p>
+  </noscript>
+
+  <figure class="chart">
+    <img
+      src="/images/how-many-pounds-of-dried-beans-for-a-week-chart.jpg"
+      alt={chartAlt}
+      width="1200"
+      height="720"
+    />
+    <figcaption>
+      Dry pounds and study cost for 2, 4, and 6 people. Same half cup, same seven days. The table under the chart is the same math, including the penny where black beans and pintos split at six people.
+    </figcaption>
+  </figure>
+
+  <div class="table-wrap">
+    <table>
+      <caption class="sr-only">Seven days at a half cup cooked per person, priced from the July 2026 study packages.</caption>
+      <thead>
+        <tr>
+          <th scope="col">People</th>
+          <th scope="col">Cooked</th>
+          <th scope="col">Dry weight</th>
+          <th scope="col">Pinto</th>
+          <th scope="col">Black beans</th>
+          <th scope="col">Brown lentils</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          households.map((row) => (
+            <tr>
+              <th scope="row">{row.people}</th>
+              <td>{row.cookedLabel}</td>
+              <td>{row.poundsLabel}</td>
+              <td>{formatMoney(row.dry.pinto)}</td>
+              <td>{formatMoney(row.dry.black)}</td>
+              <td>{formatMoney(row.dry.brownLentils)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="note">
+    Red lentils in that same file cost {redCosts} for those three households. The bag is $1.94 for 16 ounces at Walmart, not the July BLS average. Package prices and weights are in the
+    <a href="/data/protein-per-dollar-2026.csv">protein per dollar CSV</a>,
+    and the same package prices are in the
+    <a href="/data/canned-vs-dry-beans-cost-2026.csv">canned versus dry beans CSV</a>.
+    The method is on the
+    <a href="/methodology/">methodology page</a>.
+  </p>
+</section>
+<script type="application/json" id="bean-week-prices" set:html={priceJson}></script>
+<style>
+  .bean-week{margin:0 0 2rem;padding:clamp(1.1rem,3vw,1.75rem);border:1px solid var(--border-color);border-top:4px solid #F29B30;border-radius:1rem;background:var(--card-bg);color:var(--text-color)}
+  .eyebrow{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted-color);margin:0}
+  .bean-week h2{font-size:1.5rem;font-weight:750;line-height:1.25;color:var(--heading-color);margin:.5rem 0 .75rem}
+  .bean-week p,.bean-week li{line-height:1.6}
+  .fields{display:flex;flex-wrap:wrap;gap:1rem;margin:1.25rem 0}
+  .bean-week label{flex:1 1 160px;display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;font-weight:600;color:var(--heading-color)}
+  .bean-week input{width:100%;min-height:46px;padding:.7rem;border:1px solid var(--border-color);border-radius:.5rem;background:var(--input-bg);color:var(--heading-color);font:inherit;font-size:1rem}
+  .bean-week input:focus-visible,.bean-week a:focus-visible{outline:3px solid #F29B30;outline-offset:3px}
+  .bean-week output{display:block}
+  .bean-week output p:first-child{font-size:1.2rem;font-weight:700;line-height:1.45;color:var(--heading-color);margin:.25rem 0 1rem}
+  .bean-week dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem;margin:0 0 1rem}
+  .bean-week dl div{border:1px solid var(--border-color);border-radius:.75rem;padding:.75rem}
+  .bean-week dt{font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-color)}
+  .bean-week dd{margin:.25rem 0 0;font-size:1.15rem;font-weight:750;color:var(--heading-color)}
+  .note{font-size:.95rem;color:var(--muted-color)}
+  .bean-week a{color:#F29B30;font-weight:650;text-underline-offset:3px}
+  .chart{margin:1.5rem 0 1rem}
+  .chart img{width:100%;height:auto;border-radius:.75rem;border:1px solid var(--border-color)}
+  .chart figcaption{font-size:.875rem;color:var(--muted-color);margin-top:.5rem}
+  .table-wrap{overflow-x:auto;margin:1rem 0}
+  .bean-week table{width:100%;border-collapse:collapse;font-size:.95rem}
+  .bean-week caption{caption-side:bottom;text-align:left;font-size:.8rem;color:var(--muted-color);padding-top:.5rem}
+  .bean-week th,.bean-week td{text-align:left;padding:.55rem .4rem;border-bottom:1px solid var(--border-color);white-space:nowrap}
+  .bean-week thead th{font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-color)}
+</style>
+<script>
+  import { describeWeek, priceWeek, weekPlan } from "../lib/bean-week-math.js";
+
+  function bootPlanner() {
+    const root = document.querySelector("[data-bean-week-planner]");
+    if (!root || root.dataset.ready) return;
+    root.dataset.ready = "true";
+    const prices = JSON.parse(document.getElementById("bean-week-prices").textContent);
+    const fields = ["summary", "pounds", "dryCups", "cansKitchen", "cansInstitute", "cost", "canned"];
+    const nodes = Object.fromEntries(fields.map((key) => [key, root.querySelector(`[data-field="${key}"]`)]));
+
+    function render() {
+      const plan = weekPlan({
+        people: Number(root.querySelector("[data-input=people]").value),
+        days: Number(root.querySelector("[data-input=days]").value),
+        cupsPerPersonPerDay: Number(root.querySelector("[data-input=cups]").value),
+      });
+      const text = describeWeek(priceWeek(plan, prices), prices);
+      if (!text) {
+        nodes.summary.textContent = "Enter a headcount, a number of days, and a cooked amount above zero.";
+        return;
+      }
+      for (const key of fields) nodes[key].textContent = text[key];
+    }
+
+    root.addEventListener("input", render);
+  }
+
+  bootPlanner();
+  document.addEventListener("astro:page-load", bootPlanner);
+</script>

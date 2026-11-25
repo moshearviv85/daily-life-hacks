@@ -52,6 +52,7 @@ import StudyCite from "../components/StudyCite.astro";
 import PriceBasisBox from "../components/PriceBasisBox.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
 import KitchenCalculator from "../components/KitchenCalculator.astro";
+import BeanWeekPlanner from "../components/BeanWeekPlanner.astro";
 import {
   ANSWER_FIRST_SLUGS,
   earlySignupPlan,
@@ -822,6 +823,7 @@ const earlyPlan = flagship?.emailCapture
             </h1>
           </header>
           <div class="article-content order-[20]">
+            {article.id === "how-many-pounds-of-dried-beans-for-a-week" && <BeanWeekPlanner />}
             <Content />
           </div>
           {
@@ -1106,6 +1108,7 @@ const earlyPlan = flagship?.emailCapture
       <div class="article-content order-[20]">
         {studyLeadHtml && <Fragment set:html={studyLeadHtml} />}
         {priceBasis && <PriceBasisBox summary={priceBasis} />}
+        {article.id === "how-many-pounds-of-dried-beans-for-a-week" && <BeanWeekPlanner />}
         <Content />
       </div>
     )}

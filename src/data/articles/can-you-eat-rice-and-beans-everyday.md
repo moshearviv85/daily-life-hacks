@@ -61,7 +61,7 @@ When rice and beans are the day's calories, the planning basket used by the [Wor
 | 2 | 800 g / 400 g | 5.6 kg / 2.8 kg | 24 kg / 12 kg |
 | 4 | 1.6 kg / 800 g | 11.2 kg / 5.6 kg | 48 kg / 24 kg |
 
-That table is the 2:1 dry ratio. If you want the thinner WFP pulse line instead, keep the rice and cut the beans to 60 to 100 grams per person per day. Lentils are the no-soak version of the same job: 100 grams of dry brown lentils is a main-dish portion and about 24.6 grams of protein from our brown lentil row.
+That table is the 2:1 dry ratio. If you want the thinner WFP pulse line instead, keep the rice and cut the beans to 60 to 100 grams per person per day. A half-cup cooked side, not this full basket, is the [dried bean week planner](/how-many-pounds-of-dried-beans-for-a-week/). Lentils are the no-soak version of the same job: 100 grams of dry brown lentils is a main-dish portion and about 24.6 grams of protein from our brown lentil row.
 
 Small red beans are the traditional bean for red beans and rice. Red kidney beans are what most stores actually sell. A canned kidney bean is already cooked, so it skips the raw-bean rule. Dry red kidney beans do not. [FDA's Bad Bug Book](https://www.fda.gov/food/foodborne-pathogens/bad-bug-book-second-edition) says raw or undercooked kidney beans contain phytohaemagglutinin, and as few as four or five raw beans can make you sick. Soak at least 5 hours, discard the soak water, and boil in fresh water for at least 30 minutes. A slow cooker does not get hot enough to do that job. Pinto, black, or navy beans skip that lectin problem and take a normal simmer. The minute chart for that simmer, including a pressure cooker, is in [how long dried beans take to cook](/how-to-cook-dried-beans-from-scratch/).
 
