@@ -57,7 +57,9 @@ Where I still reach for parchment is crisp bottoms, since a mat is thicker than 
 
 For roasting vegetables, silicone is rarely my choice. Vegetables release water as they cook, and frozen ones release even more. That water tends to pool on the mat instead of hitting hot metal, and pooled water means steaming instead of caramelizing.
 
-## What the heat ratings actually say
+## How hot can parchment paper and silicone mats go? {#what-the-heat-ratings-actually-say}
+
+Reynolds rates its parchment to 425°F and says keep it out of the broiler and the toaster oven. Silicone mats don't share one ceiling: Wilton's bakeware chart stops at 375°F, and King Arthur's mat goes to 500°F. If your sleeve is gone, don't guess a number and don't broil on it.
 
 There is no universal number for either liner, which is why "silicone is good to 450" is such a stubborn piece of bad advice. It's one company's spec wearing a lab coat. [FDA's rule for repeated-use rubber articles](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-177/section-177.2600), the category that covers silicone food-contact rubber, does not list a home-oven ceiling for a baking mat. Neither does the [paper rule](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-176/section-176.170).
 

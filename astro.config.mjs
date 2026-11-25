@@ -6,6 +6,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import rehypeArticleImages from './scripts/rehype-article-images.mjs';
+import rehypeArticleSemantics from './scripts/rehype-article-semantics.mjs';
 import rehypeRankingTables from './scripts/rehype-ranking-tables.mjs';
 import rehypeContextualFlagshipLinks from './scripts/rehype-contextual-flagship-links.mjs';
 import rehypeAffiliateLinks from './scripts/rehype-affiliate-links.mjs';
@@ -323,6 +324,9 @@ function internalPages() {
 
 const articleRehypePlugins = [
   rehypeArticleImages,
+  // Before ranking tables so a `Table:` line is still the table's previous
+  // sibling, and before Astro's heading slugger so `{#id}` wins.
+  rehypeArticleSemantics,
   rehypeRankingTables,
   rehypeContextualFlagshipLinks,
   rehypeEarlySignup,

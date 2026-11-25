@@ -18,6 +18,14 @@ interface Props {
   robots?: string;
   /** Open Graph type — articles only; everything else defaults to website. */
   ogType?: "article" | "website";
+  /**
+   * ISO timestamps for `article:published_time` and `article:modified_time`.
+   * Article pages pass the same strings as JSON-LD `datePublished` and
+   * `dateModified`. The modified value comes from `pickModifiedDate` in
+   * src/content/modified-date.mjs, so a template edit does not move it.
+   */
+  publishedTime?: string;
+  modifiedTime?: string;
   /** Visible byline. Emits `<meta name="author">` when set. */
   author?: string;
   /** Canonical profile URL for `<link rel="author">` and `article:author`. */
@@ -103,6 +111,8 @@ const {
   jsonLd,
   robots = DEFAULT_ROBOTS,
   ogType = "website",
+  publishedTime,
+  modifiedTime,
   siteGraph = true,
   author,
   authorUrl,
@@ -299,6 +309,14 @@ const metaDescription =
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
+    {
+      ogType === "article" && publishedTime && modifiedTime && (
+        <>
+          <meta property="article:published_time" content={publishedTime} />
+          <meta property="article:modified_time" content={modifiedTime} />
+        </>
+      )
+    }
     <meta property="og:title" content={title} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content={absoluteImage} />

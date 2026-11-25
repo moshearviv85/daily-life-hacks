@@ -145,7 +145,9 @@ For firmer vegetables such as diced carrots or bell peppers, cook them with the 
 
 Avoid adding a large amount of watery vegetables. A whole chopped zucchini or a pile of mushrooms changes the liquid ratio and can leave the rice soft. Cook those separately or reduce the broth only if you have tested the change before. Dinner is a poor time for rice-based improvisational theater.
 
-## How to tell when the chicken and rice are done
+## How do you know one-pot chicken and rice is done? {#how-to-tell-when-the-chicken-and-rice-are-done}
+
+Chicken is done at 165°F in the thickest piece, not when the outside looks browned. Rice is done when it's tender and the liquid is gone, after the covered simmer runs the full 18 to 20 minutes. Peeking early lets the steam out, and the rice needs that steam more than you need a progress report.
 
 The rice should be tender with no hard center, and the chicken pieces should reach 165 degrees F in the thickest piece. Check two or three pieces, especially if your cuts were uneven. A thermometer is faster and more reliable than cutting every piece open.
 

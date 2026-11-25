@@ -316,6 +316,7 @@ img {
 
 /* Tables — readable on small screens via horizontal scroll, not page overflow */
 .article-content table {
+  position: relative;
   width: 100%;
   max-width: 100%;
   margin: 1.75rem 0;
@@ -327,6 +328,19 @@ img {
   color: var(--text-color);
   background: var(--card-bg);
   font-size: 0.95rem;
+}
+
+/* Markdown captions are injected for parsers and screen readers. Keep them out of the layout. */
+.article-content table caption.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .article-content thead {
