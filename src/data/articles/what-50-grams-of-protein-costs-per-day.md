@@ -146,6 +146,7 @@ Don't pick one day and marry it. Steal the structure instead:
 
 * **Let one bean or lentil anchor each day.** A can of beans at dinner or a scoop of dry lentils in a soup drops any day's cost by more, per gram, than any other single swap. It's also the swap that pays twice, because dry legumes still sit near the top of [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/). When the plate has to carry both, [high-protein, high-fiber meals](/high-protein-high-fiber-meals-for-weight-loss/) keep the fiber next to the protein.
 * **Keep the no-cook day in your back pocket.** $2.05 and zero dishes is the honest answer for the weeks when cooking isn't happening.
+* **Shop the week as one list.** Two rock-bottom days, three mixed days, and two no-cook days, bought once, are the [7-day high-protein grocery list](/high-protein-grocery-list-50-grams/).
 * **Compare the local app before ordering.** The McDouble worked in this recorded scenario, but restaurant prices vary. The grocery benchmarks move a lot less, and they survive even when you [re-rank every food for protein quality](/protein-per-dollar-adjusted-for-quality/) instead of raw grams.
 * **Want the full system?** The [complete guide to high protein on a budget](/protein-per-dollar-adjusted-for-quality/) turns these numbers into shopping lists, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) sorts out whether 50 grams is even your number.
 

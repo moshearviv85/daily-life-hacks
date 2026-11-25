@@ -26,11 +26,20 @@ const heroes = readdirSync(heroesDir).filter(isAiHeroFilename).sort();
 function sampleNames() {
   assert.ok(heroes.length >= 5, `expected the AI hero set, found ${heroes.length}`);
   const indexes = [0, 74, 148, 222, heroes.length - 1];
-  return indexes.map((index) => heroes[Math.min(index, heroes.length - 1)]);
+  // A few heroes are PNG bytes in a .jpg name. The JPEG stamp below can't
+  // open those, and adding a hero shifts which file lands on a fixed index.
+  return indexes.map((start) => {
+    for (let index = Math.min(start, heroes.length - 1); index < heroes.length; index += 1) {
+      const name = heroes[index];
+      const bytes = readFileSync(join(heroesDir, name));
+      if (bytes[0] === 0xff && bytes[1] === 0xd8) return name;
+    }
+    throw new Error(`no JPEG hero at or after index ${start}`);
+  });
 }
 
 test("hero filenames are the AI set and charts and the logo are not", () => {
-  assert.equal(heroes.length, 301);
+  assert.equal(heroes.length, 303);
   assert.equal(isAiHeroFilename("logo.png"), false);
   assert.equal(isAiHeroFilename("fiber-per-dollar-five-dollars.jpg"), false);
   assert.equal(isAiHeroFilename("sheet-pan-ginger-tofu-broccoli-sticky-glaze-ingredients.jpg"), false);

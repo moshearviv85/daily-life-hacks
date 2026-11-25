@@ -54,7 +54,7 @@ The pancakes in the beginner recipes use **baking soda**. King Arthur's point is
 
 The [thin pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/) uses **227 grams** of discard and **baking powder**, with about 40 minutes including the preheat. No yeast rise. Expect a thin crust, not a puffy rim. The no-roll crackers are the oven's job. They're spread thin and baked until the center is firm. Nothing in that card needs a ripe starter.
 
-Those are also the weights on the [amount planner](/what-to-make-with-sourdough-discard-by-amount/). Match the grams first. Then check that the recipe wanted discard, not a starter at peak.
+Those are also the weights on the [amount planner](/what-to-make-with-sourdough-discard-by-amount/). Match the grams first. Then check that the recipe wanted discard, not a starter at peak. A stiff scoop isn't the pourable 100% jar those cards assume. The [sourdough discard hydration conversion chart](/sourdough-discard-hydration-conversion-chart/) is the flour and water already in 100%, 80%, and 50% discard.
 
 ## Recipes that need an active starter
 
