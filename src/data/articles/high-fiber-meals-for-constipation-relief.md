@@ -11,7 +11,8 @@ tags:
 image: /images/high-fiber-meals-for-constipation-relief-main.jpg
 imageAlt: Breakfast bowl of chia pudding topped with raspberries, blueberries, and sliced pear
 date: 2026-04-28
-dateModified: 2026-07-20
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 quickAnswer: "For occasional constipation, build meals around oats, beans, lentils, whole grains, fruit, vegetables, and enough liquids for your needs. NIDDK recommends increasing fiber gradually, not rebuilding your diet overnight. Food changes aren't a guaranteed quick fix. If symptoms persist or come with bleeding, constant pain, vomiting, fever, or unplanned weight loss, seek medical care."
 featured: false
@@ -36,6 +37,23 @@ Nobody wants to talk about it, and then suddenly everyone has opinions. You eat 
 The panic move is the pharmacy aisle: something chalky, dramatic, and designed to make you plan your afternoon around a bathroom. Sometimes people need that kind of help. For occasional constipation, food and fluids are a reasonable place to start. [NIDDK recommends fiber-containing foods and liquids](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition), with the amount adjusted to the person rather than copied from a stranger's meal plan.
 
 This is the kitchen version of the problem: add fiber gradually, keep liquids in the day, and use foods you tolerate. It isn't a diagnosis or a substitute for medical care when symptoms persist or warning signs appear.
+
+## How many grams of fiber are in constipation-friendly meals?
+
+A cup of dry rolled oats is 8.2 grams of fiber, an ounce of chia is 9.8, and a cup of raw raspberries is 8.0, all on the USDA records below. Dry lentil and bean cups run higher because they're dry, not a cooked bowl. [NIDDK says to add fiber gradually and keep fluids in the day](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition).
+
+| Food | Fiber per 100 g | USDA measure | Fiber in that measure | Record |
+|---|---:|---|---:|---|
+| Rolled oats, dry | 10.1 g | 1 cup (81 g) | 8.2 g | [173904](https://fdc.nal.usda.gov/food-details/173904/nutrients) |
+| Chia seeds, dried | 34.4 g | 1 oz (28.35 g) | 9.8 g | [170554](https://fdc.nal.usda.gov/food-details/170554/nutrients) |
+| Lentils, raw | 10.7 g | 1 cup, dry (192 g) | 20.5 g | [172420](https://fdc.nal.usda.gov/food-details/172420/nutrients) |
+| Black beans, raw | 15.5 g | 1 cup, dry (194 g) | 30.1 g | [173734](https://fdc.nal.usda.gov/food-details/173734/nutrients) |
+| Green split peas, raw | 22.2 g | 1 cup, dry (196 g) | 43.5 g | [172428](https://fdc.nal.usda.gov/food-details/172428/nutrients) |
+| Prunes, uncooked | 7.1 g | 1 prune, pitted (9.5 g) | 0.7 g | [168162](https://fdc.nal.usda.gov/food-details/168162/nutrients) |
+| Raspberries, raw | 6.5 g | 1 cup (123 g) | 8.0 g | [167755](https://fdc.nal.usda.gov/food-details/167755/nutrients) |
+| Broccoli, frozen, chopped, unprepared | 3.0 g | 1 cup (156 g) | 4.7 g | [169968](https://fdc.nal.usda.gov/food-details/169968/nutrients) |
+
+Fiber in that measure is the per-100 g figure times USDA's gram weight for the portion, rounded to one decimal. The dry lentil, black bean, and split pea cups are what you pour into the pot. Once they drink up water, that fiber is spread across more than one bowl, so don't treat 43.5 grams as dinner. One pitted prune is the small unit on [FDC 168162](https://fdc.nal.usda.gov/food-details/168162/nutrients). The pitted cup on that same record is 174 grams and 12.4 grams of fiber, which is a lot of prunes. Oatmeal, berries, and a modest lentil scoop are the gentle start. The big dry-pea number is the bag, not a dare.
 
 ## How do you add more fiber without feeling worse?
 
