@@ -142,7 +142,7 @@ In this 53-food study, chia seeds lead on fiber content and then land 13th on fi
 
 Dry green split peas place near the top of both rankings in this study: 22.2 grams per 100 grams and 71.0 grams per dollar, from a $1.42 bag. That's the closest thing to a free lunch on the shelf, and it becomes [split pea soup](/split-pea-soup-recipe-high-fiber/) with almost no technique required. The same bag is third in the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/), at 73.9 grams of protein per dollar. One pound, two spreadsheets. The popcorn row is unresolved rather than an exact match: USDA's 14.5 figure describes air-popped popcorn while the price came from unpopped kernels, so we converted it to a kernel basis and the row now reads 12.9 grams per 100 grams. That is honest arithmetic, not a published record, and we label it that way rather than quietly treating the two forms as interchangeable.
 
-The bill for a full day of it is [the grocery bill for about 30 grams](/what-30-grams-of-fiber-costs-per-day/).
+The bill for a full day of it is [the grocery bill for about 30 grams](/what-30-grams-of-fiber-costs-per-day/). Turn those day prices into one cart with the [7-day high-fiber grocery list](/high-fiber-grocery-list-30-grams/).
 
 ## How do you actually eat these?
 

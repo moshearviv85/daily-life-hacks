@@ -135,11 +135,11 @@ test("the planner, yield citation, and chart are on the article template", () =>
   assert.doesNotMatch(component, /\u2014/);
 });
 
-test("bean cluster pages link the week planner, and only the cost page moves its date", () => {
+test("bean cluster pages link the week planner with the dates those edits set", () => {
   const links = [
     ["src/data/articles/how-to-cook-dried-beans-from-scratch.md", "2026-11-25", "2026-11-25"],
     ["src/data/articles/canned-beans-vs-dried-beans-nutrition.md", "2026-11-25", "2026-11-25"],
-    ["src/data/articles/can-you-eat-rice-and-beans-everyday.md", "2026-11-23", undefined],
+    ["src/data/articles/can-you-eat-rice-and-beans-everyday.md", "2026-11-25", "2026-11-25"],
     ["src/pages/tools/dried-beans-to-canned-converter/index.astro", undefined, undefined],
   ];
   for (const [path, dateModified, substantiveUpdate] of links) {

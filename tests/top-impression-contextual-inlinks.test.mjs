@@ -118,7 +118,7 @@ function articleSlugFromHref(href) {
 
 function bodyLinks(body) {
   const links = [];
-  const pattern = /\[([^\]]+)\]\(([^)\s]+)\)|<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  const pattern = /(?<!!)\[([^\]]+)\]\(([^)\s]+)\)|<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
   for (const match of body.matchAll(pattern)) {
     const href = match[2] || match[3] || "";
     const anchor = (match[1] || match[4] || "").replace(/<[^>]+>/g, "").trim();
@@ -214,7 +214,12 @@ test("added top-impression anchors are unique and never point at noindex or redi
     assert.equal(INDEX_PRUNE_SLUGS.has(link.slug), false, `added link to noindexed ${link.slug}`);
     assert.equal(PRUNE_250.has(link.slug), false, `added link to a #250 URL /${link.slug}/`);
     assert.equal(blocked.has(link.slug), false, `added link to redirected /${link.slug}/`);
-    assert.match(link.href, new RegExp(`^/${link.slug}/$`), `${link.href} is not a canonical article path`);
+    assert.doesNotMatch(link.href, /[#?]/, `${link.href} should stay a canonical path without an anchor`);
+    assert.match(
+      link.href,
+      new RegExp(`^/${link.slug}(?:/[a-z0-9-]+)?/$`),
+      `${link.href} is not a canonical path`,
+    );
     if (TARGETS.includes(link.slug)) added.push(link);
   }
   if (added.length === 0) return;

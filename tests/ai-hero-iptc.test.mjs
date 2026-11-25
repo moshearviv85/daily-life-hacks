@@ -30,7 +30,7 @@ function sampleNames() {
 }
 
 test("hero filenames are the AI set and charts and the logo are not", () => {
-  assert.equal(heroes.length, 300);
+  assert.equal(heroes.length, 301);
   assert.equal(isAiHeroFilename("logo.png"), false);
   assert.equal(isAiHeroFilename("fiber-per-dollar-five-dollars.jpg"), false);
   assert.equal(isAiHeroFilename("sheet-pan-ginger-tofu-broccoli-sticky-glaze-ingredients.jpg"), false);
