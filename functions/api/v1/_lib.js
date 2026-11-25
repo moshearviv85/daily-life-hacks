@@ -130,6 +130,29 @@ export function baseMeta(index) {
   };
 }
 
+/**
+ * Resolve ?dataset= to one dataset object.
+ *
+ * Order: file id, then a unique historical alias, then article_slug.
+ * Several folded studies share one live article. In that case the dataset
+ * whose own key is that article wins, so the day-cost and quality studies
+ * stay the match for their pages.
+ */
+export function resolveDataset(datasets, datasetParam) {
+  if (!datasetParam || !datasets) return null;
+  if (datasets[datasetParam]) return datasets[datasetParam];
+  const list = Object.values(datasets);
+  const aliasHits = list.filter(
+    (dataset) => Array.isArray(dataset.aliases) && dataset.aliases.includes(datasetParam),
+  );
+  if (aliasHits.length === 1) return aliasHits[0];
+  const slugHits = list.filter((dataset) => dataset.article_slug === datasetParam);
+  if (slugHits.length === 1) return slugHits[0];
+  const owners = slugHits.filter((dataset) => !dataset.aliases?.length);
+  if (owners.length === 1) return owners[0];
+  return null;
+}
+
 /** Method guard shared by both endpoints. HEAD is handled by the platform. */
 export function methodGuard(request) {
   if (request.method === "OPTIONS") return preflight();

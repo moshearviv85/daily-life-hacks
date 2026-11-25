@@ -122,6 +122,30 @@ test("dataset study URLs for the redirected pillars point at the ranking pages",
   );
 });
 
+test("api index article_slug is the live page, and old slugs stay lookup aliases", () => {
+  const index = JSON.parse(read("public/data/api-index-v1.json"));
+  const sources = redirectSources();
+  const fiber = index.datasets["fiber-per-dollar-2026"];
+  const protein = index.datasets["protein-per-dollar-2026"];
+  const beans = index.datasets["canned-vs-dry-beans-cost-2026"];
+  assert.equal(fiber.article_slug, "what-30-grams-of-fiber-costs-per-day");
+  assert.deepEqual(fiber.aliases, ["fiber-per-dollar-cheapest-high-fiber-foods"]);
+  assert.equal(protein.article_slug, "protein-per-dollar-adjusted-for-quality");
+  assert.deepEqual(protein.aliases, ["protein-per-dollar-cheapest-protein-sources"]);
+  assert.equal(beans.article_slug, "canned-beans-vs-dried-beans-nutrition");
+  assert.deepEqual(beans.aliases, ["canned-vs-dry-beans-cost"]);
+  assert.equal(index.datasets["fiber-day-cost-2026"].article_slug, "what-30-grams-of-fiber-costs-per-day");
+  assert.equal(index.datasets["fiber-day-cost-2026"].aliases, undefined);
+  assert.equal(
+    index.datasets["canned-vs-dry-beans-cost-2026"].study_url,
+    "https://www.daily-life-hacks.com/canned-beans-vs-dried-beans-nutrition/#cost-per-serving",
+  );
+
+  for (const dataset of Object.values(index.datasets)) {
+    assert.equal(sources.has(`/${dataset.article_slug}/`), false, `${dataset.id} article_slug`);
+  }
+});
+
 test("dataset release bundle is generated outside dist and build", () => {
   execFileSync(process.execPath, ["scripts/build-dataset-release.mjs"], {
     cwd: ROOT,

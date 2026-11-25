@@ -13,7 +13,7 @@
  *   dataset   dataset id or study slug — returns that one dataset
  */
 
-import { loadIndex, json, fail, methodGuard, baseMeta } from "./_lib.js";
+import { loadIndex, json, fail, methodGuard, baseMeta, resolveDataset } from "./_lib.js";
 
 const NUTRIENTS = new Set(["fiber", "protein"]);
 
@@ -48,9 +48,7 @@ export async function onRequest(context) {
     .sort((a, b) => a.order - b.order || a.id.localeCompare(b.id));
 
   if (datasetParam) {
-    const match = all.find(
-      (d) => d.id === datasetParam || d.article_slug === datasetParam,
-    );
+    const match = resolveDataset(index.datasets, datasetParam);
     if (!match) {
       return fail(
         404,

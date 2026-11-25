@@ -27,6 +27,7 @@ import {
   baseMeta,
   MAX_LIMIT,
   DEFAULT_LIMIT,
+  resolveDataset,
 } from "./_lib.js";
 
 const NUTRIENT_METRIC = {
@@ -126,26 +127,20 @@ export async function onRequest(context) {
     return fail(500, "Data index unavailable", String(err.message || err));
   }
 
-  // ?dataset= accepts the dataset id (grains-fiber-per-dollar-ranked-2026) or
-  // the study slug (grains-fiber-per-dollar-ranked), because people copy
-  // whichever one they saw first.
+  // ?dataset= accepts the file id, the live article slug, or a redirected
+  // slug kept in aliases. A shared live slug resolves to the study that
+  // owns that page.
   let datasetId = null;
   if (datasetParam) {
-    if (index.datasets[datasetParam]) {
-      datasetId = datasetParam;
-    } else {
-      const bySlug = Object.values(index.datasets).find(
-        (d) => d.article_slug === datasetParam,
+    const match = resolveDataset(index.datasets, datasetParam);
+    if (!match) {
+      return fail(
+        404,
+        `Unknown dataset "${datasetParam}"`,
+        "GET /api/v1/datasets lists every valid id.",
       );
-      if (!bySlug) {
-        return fail(
-          404,
-          `Unknown dataset "${datasetParam}"`,
-          "GET /api/v1/datasets lists every valid id.",
-        );
-      }
-      datasetId = bySlug.id;
     }
+    datasetId = match.id;
   }
 
   const needle = q.toLowerCase();

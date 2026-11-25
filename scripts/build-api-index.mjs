@@ -27,6 +27,8 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { transform } from "esbuild";
 
+import { matchSiteRedirect } from "../functions/site-redirects.js";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DATA_DIR = join(ROOT, "public", "data");
@@ -130,6 +132,37 @@ const NUTRIENT_AMOUNT_FIELDS = {
   fiber_g_per_100g: "fiber",
 };
 
+/**
+ * The page a study URL actually lands on, after the public 301 map.
+ * Fragments stay off the slug: they are not a separate article.
+ */
+function finalStudySlug(studyUrl) {
+  let path = String(studyUrl || "").split("#")[0].split("?")[0];
+  if (!path.startsWith("/")) path = `/${path}`;
+  for (let hop = 0; hop < 5; hop += 1) {
+    const match = matchSiteRedirect(path) || matchSiteRedirect(path.replace(/\/$/, "") || "/");
+    if (!match) break;
+    path = match.destination.split("#")[0].split("?")[0];
+    if (!path.startsWith("/")) path = `/${path}`;
+  }
+  return path.replace(/^\/+|\/+$/g, "");
+}
+
+/**
+ * article_slug is the live article. A dataset key that 301s keeps that old
+ * key in aliases so ?dataset=<old slug> still selects this file, and it does
+ * not become the slug machines turn into a URL.
+ */
+function articleSlugFor(datasetKey, meta) {
+  const redirected = Boolean(
+    matchSiteRedirect(`/${datasetKey}`) || matchSiteRedirect(`/${datasetKey}/`),
+  );
+  if (!redirected) return { articleSlug: datasetKey, aliases: [] };
+  const live = finalStudySlug(meta?.studyUrl || "");
+  if (!live || live === datasetKey) return { articleSlug: datasetKey, aliases: [] };
+  return { articleSlug: live, aliases: [datasetKey] };
+}
+
 function coerce(value, type) {
   const raw = typeof value === "string" ? value.trim() : value;
   if (raw === "" || raw === undefined || raw === null) return null;
@@ -173,8 +206,11 @@ async function main() {
 
   for (const resource of descriptor.resources) {
     const fileName = resource.path;
-    const articleSlug = slugByCsv.get(fileName) ?? null;
-    const meta = articleSlug ? DATASETS[articleSlug] : null;
+    const datasetKey = slugByCsv.get(fileName) ?? null;
+    const meta = datasetKey ? DATASETS[datasetKey] : null;
+    const { articleSlug, aliases } = datasetKey
+      ? articleSlugFor(datasetKey, meta)
+      : { articleSlug: null, aliases: [] };
 
     const fields = resource.schema.fields;
     const typeByField = new Map(fields.map((f) => [f.name, f.type]));
@@ -265,15 +301,15 @@ async function main() {
       // for. Same terms as the index-level declaration.
       license: "CC BY 4.0",
       license_url: DATA_LICENSE_URL,
-      // studyUrl is the live write-up. Redirected pillars point at the ranking
-      // pages from #250, not at the old slugs. article_slug still resolves
-      // ?dataset= for clients that copied the dataset id.
+      // study_url keeps its fragment. article_slug is the live page path.
+      // A redirected dataset key stays in aliases for ?dataset=.
       study_url: meta?.studyUrl
         ? `${SITE}${meta.studyUrl}`
         : articleSlug
           ? `${SITE}/${articleSlug}/`
           : null,
       article_slug: articleSlug,
+      ...(aliases.length ? { aliases } : {}),
       api_url: `${SITE}/api/v1/foods?dataset=${resource.name}`,
       bytes: resource.bytes,
       hash: resource.hash,
@@ -282,7 +318,7 @@ async function main() {
         type: f.type,
         description: f.description,
       })),
-      order: articleSlug && orderIndex.has(articleSlug) ? orderIndex.get(articleSlug) : 999,
+      order: datasetKey && orderIndex.has(datasetKey) ? orderIndex.get(datasetKey) : 999,
     };
 
     if (body.length !== resource.rowCount) {
