@@ -60,7 +60,7 @@ test("one tablespoon of olive oil is the FDC portion, not a guessed density", ()
 
 test("every mapped recipe restates FDC gram weights and stays inside 15%", () => {
   const mapped = articles.filter((article) => article.data.ingredientsGrams?.length);
-  assert.equal(mapped.length, 36);
+  assert.equal(mapped.length, 38);
   for (const article of mapped) {
     const resolved = resolveRecipeLines(article.data.ingredients, foods);
     assert.equal(resolved.unmapped.length, 0, `${article.id} no longer resolves`);
@@ -94,7 +94,7 @@ test("calorie corrections match the published card and the unmapped list is the 
     assert.equal(nutrition.rounded.kcal, correction.to);
     assert.ok(calorieGap(correction.from, nutrition.raw.kcal) > 0.15);
   }
-  assert.equal(unmapped.length, articles.length - 36);
+  assert.equal(unmapped.length, articles.length - 38);
   for (const entry of unmapped) {
     const article = bySlug.get(entry.slug);
     assert.equal(article.data.ingredientsGrams, undefined, entry.slug);
@@ -111,6 +111,55 @@ test("bran muffins still land on the published 293 kcal and 5.9 g fiber", () => 
   assert.equal(nutrition.rounded.fiber, 5.9);
   const per = perServingTotals(nutrition.rows, 12);
   assert.ok(Math.abs(per.fiber - 5.9) < 0.05);
+});
+
+test("Grey Poupon Dijon counts only when the line states grams", () => {
+  const dijon = cache.foods["2597124"];
+  assert.equal(dijon.description, "GREY POUPON DIJON MUSTARD, 10 OZ");
+  assert.equal(dijon.nutrientsPer100g.kcal, 100);
+  assert.equal(dijon.nutrientsPer100g.sodium, 2300);
+  assert.equal(dijon.portions.find((portion) => portion.modifier === "tsp").grams, 5);
+
+  const weighed = resolveRecipeLines(["1 tsp Dijon mustard (5 g)"], foods);
+  assert.equal(weighed.unmapped.length, 0);
+  assert.equal(weighed.rows[0].grams, 5);
+  assert.equal(weighed.rows[0].fdcId, 2597124);
+  assert.equal(Math.round(weighed.rows[0].kcal), 5);
+
+  for (const line of ["1 tsp Dijon mustard", "1 tbsp Dijon mustard", "1/2 teaspoon Dijon mustard"]) {
+    const bare = resolveRecipeLines([line], foods);
+    assert.equal(bare.rows.length, 0, line);
+    assert.equal(bare.unmapped[0].reason, "no FDC food matched the line", line);
+  }
+
+  const cumin = resolveRecipeLines(["1/2 tsp ground cumin"], foods);
+  assert.equal(cumin.rows.length, 0);
+  assert.equal(cumin.omitted[0].reason, "spice without a matching FDC measure");
+  const lentilCumin = resolveRecipeLines(["1/2 tsp ground cumin (1.05 g)"], foods);
+  assert.equal(lentilCumin.rows.length, 0);
+  assert.equal(lentilCumin.omitted[0].reason, "spice without a matching FDC measure");
+  const weighedCumin = resolveRecipeLines(["1/2 tsp ground cumin (1.05 g, whole-seed teaspoon)"], foods);
+  assert.equal(weighedCumin.rows[0].grams, 1.05);
+  assert.equal(weighedCumin.rows[0].fdcId, 170923);
+});
+
+test("black bean tacos and quinoa salad publish the USDA per-serving totals", () => {
+  const tacos = articles.find((entry) => entry.id === "easy-black-bean-tacos-weeknight-dinner");
+  const quinoa = articles.find((entry) => entry.id === "high-fiber-quinoa-salad-for-lunch-prep");
+  const tacoNutrition = nutritionFromFrontmatter(tacos.data, cache);
+  const quinoaNutrition = nutritionFromFrontmatter(quinoa.data, cache);
+  assert.equal(tacoNutrition.rounded.kcal, 316);
+  assert.equal(tacoNutrition.rounded.protein, 15.6);
+  assert.equal(tacoNutrition.rounded.fiber, 17.6);
+  assert.equal(Number(tacos.data.calories), 316);
+  assert.equal(tacoNutrition.rows[0].fdcId, 2707363);
+  assert.equal(tacoNutrition.rows[0].grams, 540);
+  assert.equal(quinoaNutrition.rounded.kcal, 399);
+  assert.equal(quinoaNutrition.rounded.protein, 11.9);
+  assert.equal(quinoaNutrition.rounded.fiber, 8.7);
+  assert.equal(Number(quinoa.data.calories), 399);
+  assert.equal(quinoaNutrition.rows.find((row) => row.fdcId === 2597124).grams, 5);
+  assert.equal(unmapped.some((entry) => entry.slug === tacos.id || entry.slug === quinoa.id), false);
 });
 
 test("study CSV prices use package weight and only real fdc ids", () => {

@@ -92,16 +92,6 @@
     ]
   },
   {
-    "slug": "easy-black-bean-tacos-weeknight-dinner",
-    "title": "Easy Black Bean Tacos for a Weeknight Dinner",
-    "unmapped": [
-      {
-        "item": "2 (15 oz) cans black beans, drained and rinsed",
-        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
-      }
-    ]
-  },
-  {
     "slug": "easy-cold-summer-pasta-salad-potlucks",
     "title": "Easy Cold Summer Pasta Salad for Potlucks",
     "unmapped": [
@@ -328,16 +318,6 @@
       {
         "item": "1 bay leaf",
         "reason": "no FDC gram weight for count of Spices, bay leaf"
-      }
-    ]
-  },
-  {
-    "slug": "high-fiber-quinoa-salad-for-lunch-prep",
-    "title": "High Fiber Quinoa Salad for Lunch Prep",
-    "unmapped": [
-      {
-        "item": "1 tsp Dijon mustard",
-        "reason": "no FDC food matched the line"
       }
     ]
   },
