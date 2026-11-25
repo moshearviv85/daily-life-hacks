@@ -48,7 +48,7 @@ faq:
     answer: "The starter is the portion you keep and feed to maintain your sourdough culture for bread baking. The discard is the portion you remove before feeding the starter to prevent it from growing too large. Discard is essentially just unfed starter that still has plenty of flavor but less leavening power."
 ---
 
-A jar of discard should come with dinner options, not another feeding schedule. Start with pancakes if you want something in 20 minutes, skillet flatbread if you have half a cup, or crackers if you can leave the oven running for about an hour. When the jar is bigger than one of those, the [sourdough discard recipes with no added yeast](/sourdough-discard-recipes-no-yeast/) put grams and a clock on twelve batches, including the [rolled crackers](/sourdough-discard-crackers/).
+A jar of discard should come with dinner options, not another feeding schedule. Start with pancakes if you want something in 20 minutes, skillet flatbread if you have half a cup, or crackers if you can leave the oven running for about an hour. When the jar is bigger than one of those, the [sourdough discard recipes with no added yeast](/sourdough-discard-recipes-no-yeast/) put grams and a clock on twelve batches, including the [rolled crackers](/sourdough-discard-crackers/). The sweet batch in that set is the [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/).
 
 These easy sourdough discard recipes for beginners use **100% hydration discard from an established starter**, meaning equal weights of flour and water. Cold discard is fine. It doesn't need to double before you cook.
 

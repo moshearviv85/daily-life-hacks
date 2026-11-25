@@ -68,7 +68,7 @@ Heat the oven to 350F. Line a 9-by-5-inch pan with parchment and grease it light
 
 The crumb tastes like a biscuit. It can fall apart under a stacked turkey sandwich, so toast a slice or set it next to soup. Warm, with butter, is the version worth making.
 
-Cinnamon rolls without yeast are the same kind of shortcut. Lisa Bass's [quick cinnamon rolls](https://www.farmhouseonboone.com/quick-sourdough-discard-cinnamon-rolls/) use 250 grams of discard, 2 teaspoons baking powder, 1 teaspoon baking soda, and 375F for 25 to 35 minutes.
+Cinnamon rolls without yeast are the same kind of shortcut. These [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/) use 240 grams of 100% hydration discard, baking powder, and baking soda, and they go in the oven as soon as the dough is wet. Lisa Bass's [quick cinnamon rolls](https://www.farmhouseonboone.com/quick-sourdough-discard-cinnamon-rolls/) use 250 grams of discard, 2 teaspoons baking powder, 1 teaspoon baking soda, and 375F for 25 to 35 minutes.
 
 ## Twelve sourdough discard recipes, with grams and a clock
 
@@ -82,7 +82,7 @@ These sourdough discard recipes with no added yeast are a published card, or a b
 | [Pancakes](/easy-sourdough-discard-recipes-beginners/#recipe) | 227 g | Baking soda | About 20 minutes |
 | [Waffles](https://thatsourdoughgal.com/fast-easy-sourdough-discard-waffles/) | 1,000 g | Baking soda | 10 minutes prep, about 20 minutes cooking |
 | [1-2-3-4 biscuits](https://www.kingarthurbaking.com/blog/2021/08/23/how-to-make-sourdough-biscuits-without-a-recipe) | 90 g | 12 g baking powder | About 15 minutes at 450F, after mixing |
-| [Quick cinnamon rolls](https://www.farmhouseonboone.com/quick-sourdough-discard-cinnamon-rolls/) | 250 g | Baking powder and baking soda | 15 minutes prep, 25 to 35 minutes at 375F |
+| [No-yeast cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/) | 240 g | Baking powder and baking soda | Mix and bake right away, 22 to 26 minutes at 350F |
 | [Banana bread](https://www.kingarthurbaking.com/recipes/sourdough-banana-bread-recipe) | 113 g | Baking soda and baking powder | 1 hour 40 minutes total |
 | [Flour tortillas](https://www.kingarthurbaking.com/recipes/sourdough-tortillas-recipe) | 227 to 241 g | Baking powder | About 1 hour total |
 | [Thin pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/) | 227 g | Baking powder | About 40 minutes |
