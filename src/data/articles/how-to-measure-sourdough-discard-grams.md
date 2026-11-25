@@ -112,6 +112,6 @@ Eggs are the awkward part. Beat an egg, weigh it, and use the required fraction,
 
 With about **113 grams**, make one [skillet flatbread](/easy-sourdough-discard-recipes-beginners/#skillet-flatbread-with-half-a-cup). It uses a small pan and doesn't ask you to divide an egg.
 
-With **227 grams**, choose the [pancake or cracker recipes](/easy-sourdough-discard-recipes-beginners/), or the [thin discard pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/). Pancakes take about 20 minutes; the crackers take about an hour plus cooling. Pick by both the jar and the clock.
+With **227 grams**, choose the [pancake or cracker recipes](/easy-sourdough-discard-recipes-beginners/), or the [thin discard pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/). Pancakes take about 20 minutes; the crackers take about an hour plus cooling. Pick by both the jar and the clock. A jar closer to **240 grams** fits the [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/).
 
 Keep your discard covered in the refrigerator and label its collection date. Use a maintained, established starter, and discard a jar with mold, pink or orange discoloration, or a rotten smell. Weighing a questionable jar more precisely doesn't make it usable.
