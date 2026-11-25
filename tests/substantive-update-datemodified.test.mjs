@@ -28,6 +28,7 @@ const BEFORE_DATE_RESTORE = "84702a37";
  * the yogurt fiber answer added the same day.
  */
 const LATER_UPDATES = {
+  "baking-sheet-liners-parchment-silicone-when-to-use": "2026-11-25",
   "best-breakfast-foods-for-sustained-energy": "2026-11-25",
   "chia-pudding-variations-for-breakfast": "2026-11-25",
   "costco-rotisserie-chicken-meal-ideas-dinner": "2026-11-25",
@@ -40,6 +41,7 @@ const LATER_UPDATES = {
   "high-fiber-grocery-list-30-grams": "2026-11-25",
   "high-fiber-meals-for-constipation-relief": "2026-11-25",
   "high-protein-grocery-list-50-grams": "2026-11-25",
+  "sourdough-discard-buttermilk-substitute": "2026-11-25",
   "sourdough-discard-hydration-conversion-chart": "2026-11-25",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
   "canned-beans-vs-dried-beans-nutrition": "2026-11-25",

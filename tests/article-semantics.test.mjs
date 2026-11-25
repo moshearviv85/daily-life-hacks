@@ -36,6 +36,7 @@ const QUESTION_PAGES = [
     id: "what-the-heat-ratings-actually-say",
     heading: "How hot can parchment paper and silicone mats go?",
     numbers: ["425", "375", "500"],
+    substantiveUpdate: "2026-11-25",
   },
 ];
 
