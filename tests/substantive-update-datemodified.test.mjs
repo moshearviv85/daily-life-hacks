@@ -42,6 +42,8 @@ const LATER_UPDATES = {
   "high-fiber-meals-for-constipation-relief": "2026-11-25",
   "high-protein-grocery-list-50-grams": "2026-11-25",
   "sourdough-discard-buttermilk-substitute": "2026-11-25",
+  "high-protein-high-fiber-meals-for-weight-loss": "2026-11-25",
+  "low-sodium-budget-foods-ranked": "2026-11-25",
   "sourdough-discard-hydration-conversion-chart": "2026-11-25",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
   "canned-beans-vs-dried-beans-nutrition": "2026-11-25",

@@ -760,7 +760,8 @@ test("high-protein high-fiber meals title leads with the 30–40g protein templa
     false,
     "title should not lead with diet instead of meals",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 
   assert.equal(
     page.excerpt,

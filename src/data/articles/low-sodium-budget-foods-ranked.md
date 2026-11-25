@@ -9,6 +9,8 @@ image: "/images/sodium-per-dollar-cheapest-staples-chart.jpg"
 imageAlt: "Bar chart of ten budget staples ranked by sodium, from whole wheat flour at 2 mg to dry pinto beans at 12 mg per 100 grams"
 quickAnswer: "Across 56 budget staples priced on one consistent grocery basis, 26 contain under 10 mg of sodium per 100 g and 48 contain under 150 mg. The cheapest foods in the basket are also the lowest: whole wheat flour (2 mg per 100 g), oat bran (4), extra firm tofu (4), dry black beans, split peas, navy beans, brown rice and quinoa (5 each), and rolled oats (6). Five processed items carry most of the sodium in the whole basket: bacon (751 mg per 100 g), part-skim mozzarella (666), cheddar (653), commercially prepared whole wheat bread (455) and canned pink salmon (403). All values are USDA FoodData Central figures per 100 g as purchased."
 date: 2026-08-02
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 faq:
   - question: "What are the lowest sodium foods you can buy on a budget?"
@@ -68,6 +70,24 @@ The bread one is the one I keep thinking about. Whole wheat bread gets sold as t
 Bacon at 751 mg is the highest single number in the basket, which surprises nobody. The interesting part is the comparison: fresh pork loin from the same animal is 48 mg. Curing did all of it.
 
 And the beans. Dry black beans are 5 mg per 100 g. The USDA record for canned kidney beans is 296. Worth being precise about what that number is, though: it's the total can contents, packing liquid included, so it's the before-you-drain figure. A lot of that sodium is sitting in the liquid you pour down the sink. If canned is what gets beans into your week, [canned beans still beat no beans](/canned-beans-vs-dried-beans-nutrition/), and draining and rinsing is a ten-second habit that pays.
+
+## How much sodium does draining and rinsing canned beans remove?
+
+Draining canned beans for 2 minutes cut mean sodium 36%, from 503 mg to 321 mg per half-cup, across five varieties ([Duyff, Mount, and Jones, 2011](https://www.bushbeans.com/-/media/BushsBeans/FAQ/reduced_sodium_article.pdf), University of Tennessee). The [Bean Institute](https://beaninstitute.com/resources/cook-with-beans/dry-vs-canned/) reports those 36% and 41% averages. A 10-second lukewarm rinse reached 41%, down to 295 mg. [America's Test Kitchen](https://www.americastestkitchen.com/how-tos/11227-does-rinsing-canned-beans-remove-sodium) measured 20.7% to 26.5%.
+
+Table: Mean sodium per half-cup label serving after draining and rinsing five canned bean varieties.
+
+| Treatment | Mean sodium per 1/2-cup label serving | Change |
+|---|---:|---|
+| In packing liquid | 503 mg | Baseline ([Duyff, Mount, and Jones, 2011](https://www.bushbeans.com/-/media/BushsBeans/FAQ/reduced_sodium_article.pdf)) |
+| Drained 2 minutes | 321 mg | 36% less |
+| Drained + 10-second rinse | 295 mg | 41% less |
+
+The rinse gets the credit at the sink. In this lab, the 2-minute drain already did 36 of the 41 points. Beans sat in a sieve for those 2 minutes. The rinse was about 3.5 liters of lukewarm water, about 72°F, in 10 seconds, then another 2-minute drain. That method is [Duyff, Mount, and Jones, 2011](https://www.tandfonline.com/doi/full/10.1080/15428052.2011.582405), Journal of Culinary Science and Technology.
+
+[America's Test Kitchen](https://www.americastestkitchen.com/how-tos/11227-does-rinsing-canned-beans-remove-sodium) ran a coarser check: beans in their liquid versus beans drained and rinsed. About 100 mg less sodium per half-cup. That was 20.7% for Bush's black beans, 21.4% for Goya cannellini, 24.7% for Goya chickpeas, and 26.5% for Bush's pinto beans. Same direction, smaller cut. Different cans, so I'm not averaging the two labs into one number.
+
+Don't mix that half-cup mean with the basket above. Undrained canned kidney beans are [296 mg per 100 g](https://fdc.nal.usda.gov/food-details/173741/nutrients). Dry black beans are [5 mg per 100 g](https://fdc.nal.usda.gov/food-details/173734/nutrients). Drain the can and you leave the 296. You don't arrive at the dry bean.
 
 ## Almost none of the basket is the problem
 

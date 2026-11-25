@@ -11,7 +11,8 @@ tags:
 image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: Bowl of lentil stew with grilled chicken, roasted vegetables, and brown rice on a wooden table
 date: 2026-02-25
-dateModified: 2026-09-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -37,6 +38,39 @@ I spent years treating those two nutrients like separate hobbies. Protein for th
 ## What are good high protein, high fiber meals?
 
 Anything built on a legume base plus a lean protein plus a whole grain. Lentil chili, black bean burrito bowls, split pea soup with bread, chickpea pasta with chicken. Beans do both jobs at once, which is why they show up in nearly every meal on this list and why the grocery cost stays low.
+
+## Which foods give you both protein and fiber per 100 g and per dollar?
+
+Dry green split peas lead this overlap, with 23.12 g protein and 22.2 g fiber per 100 g. That's 73.9 g of protein and 71.0 g of fiber per dollar in the July 2026 [split pea overlap](/beans-double-win-fiber-protein/). Brown lentils, black beans, pintos, chickpeas, rolled oats, peanut butter, and almonds clear both lists too.
+
+Table: Protein and fiber per 100 g, plus July 2026 grams per dollar, for eight dry foods.
+
+| Food | FDC | Protein g/100 g | Fiber g/100 g | Protein g/$ | Fiber g/$ |
+|---|---|---:|---:|---:|---:|
+| Green split peas (dry) | [172428](https://fdc.nal.usda.gov/food-details/172428/nutrients) | 23.12 | 22.2 | 73.9 | 71.0 |
+| Brown lentils (dry) | [172420](https://fdc.nal.usda.gov/food-details/172420/nutrients) | 24.63 | 10.7 | 77.7 | 33.7 |
+| Black beans (dry) | [173734](https://fdc.nal.usda.gov/food-details/173734/nutrients) | 21.6 | 15.5 | 58.0 | 41.6 |
+| Pinto beans (dry) | [175199](https://fdc.nal.usda.gov/food-details/175199/nutrients) | 21.42 | 15.5 | 57.6 | 41.7 |
+| Chickpeas (dry) | [173756](https://fdc.nal.usda.gov/food-details/173756/nutrients) | 20.47 | 12.2 | 56.7 | 33.8 |
+| Old-fashioned rolled oats | [173904](https://fdc.nal.usda.gov/food-details/173904/nutrients) | 13.15 | 10.1 | 46.6 | 35.8 |
+| Peanut butter | [174266](https://fdc.nal.usda.gov/food-details/174266/nutrients) | 22.21 | 5.0 | 50.7 | 11.4 |
+| Almonds | [170567](https://fdc.nal.usda.gov/food-details/170567/nutrients) | 21.15 | 12.5 | 14.8 | 8.8 |
+
+![Horizontal bar chart of protein plus fiber grams per dollar for eight dry foods. Green split peas lead at 144.9 grams, brown lentils follow at 111.4, and almonds finish at 23.6](/images/high-protein-high-fiber-meals-for-weight-loss-chart.jpg)
+
+Almonds are the plot twist. They're dense per 100 g, then the bag price drops them to 14.8 g of protein per dollar. Peanut butter is the salted record. The unsalted twin, [FDC 172470](https://fdc.nal.usda.gov/food-details/172470/nutrients), prints the same 22.21 g protein and 5.0 g fiber per 100 g. The bean-only cut of this math is [protein and fiber per dollar for beans](/beans-double-win-fiber-protein/).
+
+Here's one day on that same dry basis. Each plate is the gram weight times the per-100 g column, rounded to the nearest tenth.
+
+Table: A sample day of dry-weight plates with protein and fiber.
+
+| Meal | Dry weight on the plate | Protein | Fiber |
+|---|---|---:|---:|
+| Breakfast | 60 g rolled oats ([173904](https://fdc.nal.usda.gov/food-details/173904/nutrients)) + 32 g peanut butter ([174266](https://fdc.nal.usda.gov/food-details/174266/nutrients)) | 15.0 g | 7.7 g |
+| Lunch | 80 g brown lentils ([172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)) | 19.7 g | 8.6 g |
+| Dinner | 90 g black beans ([173734](https://fdc.nal.usda.gov/food-details/173734/nutrients)) + 28 g almonds ([170567](https://fdc.nal.usda.gov/food-details/170567/nutrients)) | 25.4 g | 17.5 g |
+
+Add the rounded plates and you get 60.1 g of protein and 33.8 g of fiber. That's the bags. The 30 to 40 g protein template still wants chicken, yogurt, or eggs if one of these meals looks light. And don't read a cooked cup against this table. Water changes the weight.
 
 ## Why protein and fiber work better together
 
