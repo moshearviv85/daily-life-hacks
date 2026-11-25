@@ -1388,7 +1388,8 @@ test("popcorn toppings title leads with high fiber", () => {
     `popcorn toppings meta too long: ${page.excerpt.length}`,
   );
   assert.match(raw, /^date: 2026-02-01$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 });
 
 test("yogurt title leads with the 13g parfait fiber win", () => {

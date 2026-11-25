@@ -11,7 +11,8 @@ tags:
 image: /images/high-fiber-popcorn-toppings-healthy-main.jpg
 imageAlt: "Bowls of popcorn with chili lime cinnamon cocoa and savory seasonings"
 date: 2026-02-01
-dateModified: 2026-09-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 quickAnswer: "Season warm popcorn with a light mist of oil, then add a finely ground blend in two rounds so it sticks evenly. For an 8-cup bowl, start with 1 to 2 teaspoons of oil and 1 tablespoon of seasoning. Chili-lime, Parmesan-pepper, cocoa-cinnamon, and crushed berry blends add real flavor without requiring sticky syrup."
 featured: false
@@ -64,7 +65,22 @@ Add seasoning in two rounds. Toss half through the bowl, taste, then add the res
 
 If you're looking for a snack with more heft, these no-bake fiber energy balls are built for the part of the afternoon when popcorn isn't going to negotiate with your hunger.
 
-## Which toppings add fiber to popcorn?
+## Which popcorn toppings actually add fiber and protein per tablespoon?
+
+Three cups of air-popped popcorn weigh 24 grams on USDA's 8 gram cup ([FDC 167959](https://fdc.nal.usda.gov/food-details/167959/nutrients)) and carry 3.5 grams of fiber, 3.1 grams of protein, and 1.9 milligrams of sodium. Ground flaxseed is the tablespoon that moves fiber, at 1.9 grams ([FDC 169414](https://fdc.nal.usda.gov/food-details/169414/nutrients)). Grated Parmesan moves sodium, about 90 milligrams per tablespoon, and adds no fiber ([FDC 171247](https://fdc.nal.usda.gov/food-details/171247/nutrients)).
+
+Parmesan is a salt delivery system that happens to taste like cheese. Flax sneaks the fiber in while the bowl still tastes like a snack.
+
+| Topping | Household measure | Grams | Fiber | Protein | Sodium | Record |
+| --- | --- | --- | --- | --- | --- | --- |
+| Ground flaxseed | 1 tbsp, ground | 7 g | 1.9 g | 1.3 g | 2.1 mg | [FDC 169414](https://fdc.nal.usda.gov/food-details/169414/nutrients) |
+| Chia seeds, dried | 1 oz, USDA's only portion | 28.35 g | 9.8 g | 4.7 g | 4.5 mg | [FDC 170554](https://fdc.nal.usda.gov/food-details/170554/nutrients) |
+| Grated Parmesan | 1 tbsp | 5 g | 0 g | 1.4 g | 90 mg | [FDC 171247](https://fdc.nal.usda.gov/food-details/171247/nutrients) |
+| Ground cinnamon | 1 tsp | 2.6 g | 1.4 g | 0.1 g | 0.3 mg | [FDC 171320](https://fdc.nal.usda.gov/food-details/171320/nutrients) |
+| Paprika | 1 tsp | 2.3 g | 0.8 g | 0.3 g | 1.6 mg | [FDC 171329](https://fdc.nal.usda.gov/food-details/171329/nutrients) |
+| Nutritional yeast flakes, Great Value label | 5 g label serving | 5 g | 1 g | 2 g | 10 mg | [FDC 2676401](https://fdc.nal.usda.gov/food-details/2676401/nutrients) |
+
+Flaxseed and Parmesan are the rows with a USDA tablespoon. Cinnamon and paprika use USDA's teaspoon, which is the spoon you'd actually shake over a bowl. Chia publishes only a 1 ounce portion, 28.35 grams, on [FDC 170554](https://fdc.nal.usda.gov/food-details/170554/nutrients). A 12 gram kitchen tablespoon isn't on that record. Scaled from 34.4 grams of fiber, 16.54 grams of protein, and 16 mg of sodium per 100 grams, that spoon is about 4.1 grams of fiber, 2.0 grams of protein, and 1.9 mg of sodium. The 12 gram weight is a kitchen conversion, not a USDA portion. Nutritional yeast has no SR Legacy record. [FDC 2676401](https://fdc.nal.usda.gov/food-details/2676401/nutrients) is one Great Value label: 40 grams of protein, 20 grams of fiber, and 200 mg of sodium per 100 grams, which is 2 grams, 1 gram, and 10 mg in the 5 gram serving. Another jar can disagree, and that label doesn't publish a tablespoon. Popcorn's cup math is [FDC 167959](https://fdc.nal.usda.gov/food-details/167959/nutrients): 14.5 grams of fiber, 12.94 grams of protein, and 8 mg of sodium per 100 grams, times 24 grams. Grams in the table are rounded to one decimal. Sodium under 10 mg is rounded to one decimal, and 10 mg or more is rounded to the nearest milligram.
 
 Popcorn provides fiber on its own because the whole kernel is used. Ground flaxseed, chia seeds, crushed roasted chickpeas, and freeze-dried fruit can add more, but texture matters. A tablespoon of loose seeds mostly ends up under the popcorn unless you grind it or use enough oil to make it cling.
 
