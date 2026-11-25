@@ -31,6 +31,50 @@ GH_REPO       = os.environ.get("GITHUB_REPOSITORY", "")
 
 API_BASE = "https://api.pinterest.com/v5"
 
+_RETRYABLE = (
+    requests.exceptions.Timeout,         # ReadTimeout + ConnectTimeout
+    requests.exceptions.ConnectionError,
+)
+
+def _response_json(resp):
+    try:
+        data = resp.json()
+    except (ValueError, TypeError, AttributeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _is_pinterest_code_12(resp):
+    return _response_json(resp).get("code") == 12
+
+
+def request_with_retry(method, url, *, timeout, retries=3, backoff=2.0, label="", **kwargs):
+    """HTTP request with retries on Timeout, ConnectionError, 5xx, and Pinterest code 12.
+
+    Returns the Response, or None if every attempt failed with a retryable error.
+    Other non-5xx HTTP responses are returned immediately so the caller can handle 4xx.
+    """
+    last_err = None
+    for attempt in range(1, retries + 1):
+        try:
+            resp = requests.request(method, url, timeout=timeout, **kwargs)
+        except _RETRYABLE as e:
+            last_err = f"{type(e).__name__}: {e}"
+            print(f"  WARNING: {label} attempt {attempt}/{retries} — {last_err}")
+        else:
+            if resp.status_code < 500 and not _is_pinterest_code_12(resp):
+                return resp
+            last_err = f"HTTP {resp.status_code}"
+            if _is_pinterest_code_12(resp):
+                last_err += " code 12"
+            print(f"  WARNING: {label} attempt {attempt}/{retries} — {last_err}: {resp.text[:200]}")
+        if attempt < retries:
+            wait = backoff * (2 ** (attempt - 1))
+            print(f"  Retrying {label} in {wait:.0f}s...")
+            time.sleep(wait)
+    print(f"  ERROR: {label} failed after {retries} attempts ({last_err})")
+    return None
+
 # ── Token ──────────────────────────────────────────────────────────────────────
 
 def update_github_secret(name, value):
@@ -44,14 +88,18 @@ def update_github_secret(name, value):
 
 def get_access_token():
     basic = b64encode(f"{APP_ID}:{APP_SECRET}".encode()).decode()
-    resp = requests.post(
+    resp = request_with_retry(
+        "POST",
         f"{API_BASE}/oauth/token",
         headers={"Authorization": f"Basic {basic}", "Content-Type": "application/x-www-form-urlencoded"},
         data={"grant_type": "refresh_token", "refresh_token": REFRESH_TOKEN},
         timeout=15,
+        label="token refresh",
     )
-    if not resp.ok:
-        print(f"ERROR: Token refresh failed {resp.status_code}: {resp.text[:300]}")
+    if resp is None or not resp.ok:
+        status = resp.status_code if resp is not None else "no response"
+        body = resp.text[:300] if resp is not None else ""
+        print(f"ERROR: Token refresh failed {status}: {body}")
         sys.exit(1)
     data = resp.json()
     access_token = data.get("access_token")
@@ -68,7 +116,14 @@ def get_access_token():
 # ── Fetch top pins analytics ───────────────────────────────────────────────────
 
 def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
-    resp = requests.get(
+    """Return pin items for one sort metric, or None if the request failed.
+
+    None means retries were exhausted or the response was non-ok (including
+    Pinterest JSON code 12). An HTTP 200 with an empty pin list returns [] so
+    main() can still hard-fail that as missing analytics authorization.
+    """
+    resp = request_with_retry(
+        "GET",
         f"{API_BASE}/user_account/analytics/top_pins",
         headers={"Authorization": f"Bearer {access_token}"},
         params={
@@ -79,14 +134,18 @@ def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
             "metric_types": "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK",
         },
         timeout=20,
+        label=f"top_pins [{sort_by}]",
     )
+    if resp is None:
+        print(f"  top_pins [{sort_by}] → no response after retries")
+        return None
     print(f"  top_pins [{sort_by}] → {resp.status_code}")
-    if not resp.ok:
-        print(f"  ERROR: {resp.text[:500]}")
-        raise RuntimeError("Pinterest analytics request failed; existing cache was not replaced")
+    body = _response_json(resp)
+    if not resp.ok or body.get("code") == 12:
+        print(f"  ERROR: {(getattr(resp, 'text', '') or '')[:500]}")
+        return None
 
-    data  = resp.json()
-    items = data.get("pins") or []
+    items = body.get("pins") or []
     print(f"  Got {len(items)} pins")
     return items
 
@@ -101,8 +160,12 @@ def main():
 
     # Fetch top 50 pins by each metric (3 API calls total)
     pins_by_id = {}
+    top_pins_request_failed = False
     for sort_by in ["IMPRESSION", "OUTBOUND_CLICK", "SAVE"]:
         items = fetch_top_pins(access_token, start_date, end_date, sort_by)
+        if items is None:
+            top_pins_request_failed = True
+            items = []
         for item in items:
             pin_id = item.get("pin_id") or ""
             if not pin_id or pin_id in pins_by_id:
@@ -125,38 +188,63 @@ def main():
     print(f"\nUnique pins collected: {len(results)}")
 
     if not results:
+        if top_pins_request_failed:
+            # Distinguishes a Pinterest outage (5xx / code 12 / timeout) from an
+            # authorized empty payload. OpenAPI: 200 = success, 403 = not
+            # authorized. org_analytics is a rate-limit category, not a scope.
+            print(
+                "WARNING: Pinterest top_pins failed after retries "
+                "(timeout, HTTP 5xx, code 12, or non-ok). "
+                "Existing cache was not replaced. Exiting 0 so this scheduled "
+                "flake does not fail main CI."
+            )
+            sys.exit(0)
         print("No data returned. Token may be missing org_analytics scope.")
         sys.exit(1)
 
-    # Fetch title + link for each pin
+    # Fetch title + link for each pin. Metrics are already collected — a flaky
+    # GET /pins/{id} must not abort the job or drop the analytics snapshot.
     print("Fetching pin details (title, link)...")
+    skipped_details = 0
     for i, pin in enumerate(results):
         pin_id = pin["pin_id"]
-        resp = requests.get(
+        resp = request_with_retry(
+            "GET",
             f"{API_BASE}/pins/{pin_id}",
             headers={"Authorization": f"Bearer {access_token}"},
-            timeout=10,
+            timeout=20,
+            label=f"pin {pin_id}",
         )
-        if resp.ok:
+        if resp is not None and resp.ok:
             d = resp.json()
             pin["pin_title"] = (d.get("title") or "")[:80]
             pin["pin_link"]  = d.get("link") or ""
             pin["created_at"] = d.get("created_at") or ""
+        else:
+            skipped_details += 1
+            status = resp.status_code if resp is not None else "timeout/error"
+            print(f"  Skipping pin {pin_id} details ({status}) — keeping metrics")
         if (i + 1) % 10 == 0:
             print(f"  {i+1}/{len(results)} details fetched")
         time.sleep(1)  # 60 req/min limit
+    if skipped_details:
+        print(f"  Pin details skipped: {skipped_details}/{len(results)} (metrics still saved)")
 
     print("Saving to D1...")
-    save = requests.post(
+    save = request_with_retry(
+        "POST",
         f"{PINS_API_URL}/api/pinterest-analytics-save",
         params={"key": PINS_API_KEY},
         json={"pins": results},
         timeout=30,
+        label="analytics save",
     )
-    if save.ok:
+    if save is not None and save.ok:
         print(f"Done. Saved {save.json().get('saved', len(results))} pins.")
     else:
-        print(f"ERROR saving: {save.status_code} {save.text[:300]}")
+        status = save.status_code if save is not None else "no response"
+        body = save.text[:300] if save is not None else ""
+        print(f"ERROR saving: {status} {body}")
         sys.exit(1)
 
     # Fetch and save trending keywords
@@ -173,7 +261,8 @@ def fetch_trends(access_token):
     all_trends = {}
     # Valid Pinterest interest slugs for food/health niche
     for interest in ["food_and_drinks", "health"]:
-        resp = requests.get(
+        resp = request_with_retry(
+            "GET",
             f"{API_BASE}/trends/keywords/US/top/growing",
             headers={"Authorization": f"Bearer {access_token}"},
             params={
@@ -181,7 +270,11 @@ def fetch_trends(access_token):
                 "limit":     50,
             },
             timeout=15,
+            label=f"trends [{interest}]",
         )
+        if resp is None:
+            print(f"  trends [{interest}] → no response")
+            continue
         print(f"  trends [{interest}] → {resp.status_code}")
         if not resp.ok:
             print(f"  ERROR: {resp.text[:300]}")
@@ -211,16 +304,20 @@ def fetch_trends(access_token):
 
 def save_trends(trends):
     import json as _json
-    resp = requests.post(
+    resp = request_with_retry(
+        "POST",
         f"{PINS_API_URL}/api/pinterest-trends-save",
         params={"key": PINS_API_KEY},
         json={"trends": trends},
         timeout=15,
+        label="trends save",
     )
-    if resp.ok:
+    if resp is not None and resp.ok:
         print(f"Trends saved: {resp.json().get('saved', len(trends))} keywords")
     else:
-        print(f"ERROR saving trends: {resp.status_code} {resp.text[:200]}")
+        status = resp.status_code if resp is not None else "no response"
+        body = resp.text[:200] if resp is not None else ""
+        print(f"ERROR saving trends: {status} {body}")
 
 
 if __name__ == "__main__":
