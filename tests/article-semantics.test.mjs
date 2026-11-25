@@ -29,6 +29,7 @@ const QUESTION_PAGES = [
     id: "how-to-tell-when-the-chicken-and-rice-are-done",
     heading: "How do you know one-pot chicken and rice is done?",
     numbers: ["165", "18", "20"],
+    substantiveUpdate: "2026-11-25",
   },
   {
     slug: "baking-sheet-liners-parchment-silicone-when-to-use",
@@ -127,16 +128,29 @@ test("question headings keep their anchors and restate numbers already on the pa
 
     assert.equal(extractFrontmatterField(markdown, "title"), extractFrontmatterField(before, "title"));
     assert.equal(extractFrontmatterField(markdown, "author"), "David Miller");
-    assert.equal(
-      extractFrontmatterField(markdown, "dateModified"),
-      extractFrontmatterField(before, "dateModified"),
-      `${page.slug} dateModified`,
-    );
-    assert.equal(
-      extractFrontmatterField(markdown, "substantiveUpdate"),
-      extractFrontmatterField(before, "substantiveUpdate"),
-      `${page.slug} substantiveUpdate`,
-    );
+    if (page.substantiveUpdate) {
+      assert.equal(
+        extractFrontmatterField(markdown, "dateModified"),
+        page.substantiveUpdate,
+        `${page.slug} dateModified`,
+      );
+      assert.equal(
+        extractFrontmatterField(markdown, "substantiveUpdate"),
+        page.substantiveUpdate,
+        `${page.slug} substantiveUpdate`,
+      );
+    } else {
+      assert.equal(
+        extractFrontmatterField(markdown, "dateModified"),
+        extractFrontmatterField(before, "dateModified"),
+        `${page.slug} dateModified`,
+      );
+      assert.equal(
+        extractFrontmatterField(markdown, "substantiveUpdate"),
+        extractFrontmatterField(before, "substantiveUpdate"),
+        `${page.slug} substantiveUpdate`,
+      );
+    }
 
     const heading = `## ${page.heading} {#${page.id}}`;
     const at = markdown.indexOf(heading);

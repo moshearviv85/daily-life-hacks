@@ -1,0 +1,29 @@
+[
+  {
+    "fdcId": 2158088,
+    "description": "RICE VINEGAR",
+    "dataType": "Branded",
+    "brandOwner": "Kikkoman Sales USA, Inc.",
+    "brandName": "KIKKOMAN",
+    "labelServing": "15 ml (1 tbsp)",
+    "nutrientsPer100g": {
+      "kcal": 0,
+      "protein": 0,
+      "fiber": 0,
+      "sodium": 0,
+      "sugar": 0
+    },
+    "nutrientIds": {
+      "kcal": 1008,
+      "protein": 1003,
+      "sodium": 1093
+    },
+    "portions": [
+      {
+        "amount": 1,
+        "modifier": "tbsp",
+        "grams": 15
+      }
+    ]
+  }
+]

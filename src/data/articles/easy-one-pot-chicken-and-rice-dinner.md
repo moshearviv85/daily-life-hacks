@@ -1,6 +1,6 @@
 ---
 title: Easy One-Pot Chicken and Rice Dinner
-excerpt: "This one-pot chicken and rice uses browned thighs, long-grain rice, and one covered simmer for a reliable 45-minute dinner."
+excerpt: "One-pot chicken and rice in 45 minutes: browned thighs, long-grain rice, and an 18-20 minute covered simmer. Four bowls at about 383 calories each."
 quickAnswer: >-
   Brown bite-size chicken thigh pieces, set them aside, then cook onion and
   garlic in the same pot. Add rinsed long-grain rice, broth, and seasonings;
@@ -16,7 +16,8 @@ tags:
 image: /images/easy-one-pot-chicken-and-rice-dinner-main.jpg
 imageAlt: One-pot chicken and rice in a large pot, ready to serve
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -26,48 +27,48 @@ prepTime: 10 minutes
 cookTime: 35 minutes
 totalTime: 45 minutes
 servings: 4
-calories: 420
+calories: 383
 ingredientsGrams:
-  - item: "1 tbsp olive oil"
+  - item: "1 tbsp olive oil (13.5 g)"
     grams: 13.5
     fdcId: 171413
-  - item: "1 lb boneless, skinless chicken thighs, cut into bite-size pieces"
+  - item: "1 lb boneless, skinless chicken thighs, cut into bite-size pieces (452 g)"
     grams: 452
     fdcId: 173627
-  - item: "1 medium onion, diced"
+  - item: "1 medium onion, diced (110 g)"
     grams: 110
     fdcId: 170000
-  - item: "2 cloves garlic, minced"
+  - item: "2 cloves garlic, minced (6 g)"
     grams: 6
     fdcId: 169230
-  - item: "1 cup long-grain white rice, rinsed"
+  - item: "1 cup long-grain white rice, rinsed (185 g)"
     grams: 185
     fdcId: 168877
-  - item: "2 cups chicken broth"
+  - item: "2 cups chicken broth (498 g)"
     grams: 498
     fdcId: 174536
-  - item: "1/2 tsp dried thyme"
+  - item: "1/2 tsp dried thyme (0.5 g)"
     grams: 0.5
     fdcId: 170938
-  - item: "1/2 tsp paprika"
+  - item: "1/2 tsp paprika (1.15 g)"
     grams: 1.15
     fdcId: 171329
-  - item: "1 cup frozen peas (optional, add in last 5 min)"
+  - item: "1 cup frozen peas (134 g, optional, add in last 5 min)"
     grams: 134
     fdcId: 170016
 difficulty: Easy
 recipeCuisine: "American"
 ingredients:
-- 1 tbsp olive oil
-- 1 lb boneless, skinless chicken thighs, cut into bite-size pieces
-- 1 medium onion, diced
-- 2 cloves garlic, minced
-- 1 cup long-grain white rice, rinsed
-- 2 cups chicken broth
-- 1/2 tsp dried thyme
-- 1/2 tsp paprika
+- 1 tbsp olive oil (13.5 g)
+- 1 lb boneless, skinless chicken thighs, cut into bite-size pieces (452 g)
+- 1 medium onion, diced (110 g)
+- 2 cloves garlic, minced (6 g)
+- 1 cup long-grain white rice, rinsed (185 g)
+- 2 cups chicken broth (498 g)
+- 1/2 tsp dried thyme (0.5 g)
+- 1/2 tsp paprika (1.15 g)
 - Salt and black pepper to taste
-- 1 cup frozen peas (optional, add in last 5 min)
+- 1 cup frozen peas (134 g, optional, add in last 5 min)
 steps:
 - Heat olive oil in a large, deep skillet or Dutch oven over medium-high heat. Season
   chicken with salt and pepper, then add to the pan. Cook 4–5 minutes until browned
@@ -101,6 +102,13 @@ faq:
 One pot means one pan to wash. That's the whole pitch.
 
 Let's be honest, by the time Tuesday evening rolls around, the idea of using three different skillets and a saucepan to make dinner sounds like a personal insult. This easy one-pot chicken and rice dinner is the kind of meal you can throw together when your brain is running on fumes. You brown some chicken, toss in some rice and broth, and let it simmer. No fancy techniques, no hovering over the stove, and no separate pots for the rice. Everything cooks together and comes out tender, flavorful, and actually satisfying.
+
+## What one bowl actually weighs
+
+Four bowls. The raw ingredients, peas included, come out to 383 calories each, with 28.5 g protein, 2.8 g fiber, 609 mg sodium, and 3.5 g sugar. An earlier card on this page said 420. The gram total doesn't.
+
+A pound of boneless thigh is 452 g because [FDC 173627](https://fdc.nal.usda.gov/food-details/173627/nutrients) weighs its 4 oz portion at 113 g. The cup of raw long-grain rice is 185 g ([FDC 168877](https://fdc.nal.usda.gov/food-details/168877/nutrients)). Two cups of broth are 498 g ([FDC 174536](https://fdc.nal.usda.gov/food-details/174536/nutrients)). The tablespoon of olive oil is 13.5 g ([FDC 171413](https://fdc.nal.usda.gov/food-details/171413/nutrients)), the medium onion is 110 g ([FDC 170000](https://fdc.nal.usda.gov/food-details/170000/nutrients)), and the cup of peas is 134 g ([FDC 170016](https://fdc.nal.usda.gov/food-details/170016/nutrients)). Salt and pepper to taste stay off the line. USDA's teaspoon is table salt, and "to taste" isn't a teaspoon.
+
 ## Why One-Pot Makes Sense Here
 
 Cooking the rice in the same pan as the chicken does two major things. First, the rice acts like a sponge, soaking up all those savory pan drippings and chicken broth instead of just boiling in plain water. Second, you skip the usual pile of dishes sitting in the sink waiting for you after you eat. 

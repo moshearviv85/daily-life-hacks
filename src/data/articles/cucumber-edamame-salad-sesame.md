@@ -1,6 +1,6 @@
 ---
 title: "Japanese-Inspired Cucumber and Edamame Salad With Sesame"
-excerpt: "Salt and drain cucumbers, cook and cool shelled edamame, then toss both with rice vinegar, sesame oil, soy sauce, ginger, and sesame seeds."
+excerpt: "Salted cucumbers and shelled edamame with a sesame dressing. One of four servings is about 6.7 g protein and 3.2 g fiber (USDA)."
 quickAnswer: >-
   Salt sliced cucumbers for 10 minutes and squeeze out excess water. Cook frozen
   shelled edamame according to its package, cool it, and whisk rice vinegar,
@@ -15,7 +15,8 @@ tags:
 image: "/images/cucumber-edamame-salad-sesame-main.jpg"
 imageAlt: "Fresh cucumber and edamame salad tossed with sesame dressing in a wooden bowl"
 date: 2026-04-22
-dateModified: 2026-07-20
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -25,19 +26,44 @@ prepTime: "15 minutes"
 cookTime: "0 minutes"
 totalTime: "15 minutes"
 servings: 4
-calories: 185
+calories: 122
+ingredientsGrams:
+  - item: "2 large English cucumbers (301 g each), or 5 Persian cucumbers"
+    grams: 602
+    fdcId: 168409
+  - item: "1 1/2 cups shelled edamame, thawed if frozen (177 g)"
+    grams: 177
+    fdcId: 168410
+  - item: "2 tbsp rice vinegar (30 g)"
+    grams: 30
+    fdcId: 2158088
+  - item: "1 tbsp toasted sesame oil (13.6 g)"
+    grams: 13.6
+    fdcId: 171016
+  - item: "1 tbsp soy sauce or tamari (16 g)"
+    grams: 16
+    fdcId: 174277
+  - item: "1 tsp honey or maple syrup (7 g)"
+    grams: 7
+    fdcId: 169640
+  - item: "1 tsp fresh ginger, finely grated (2 g)"
+    grams: 2
+    fdcId: 169231
+  - item: "1 tbsp sesame seeds (9 g)"
+    grams: 9
+    fdcId: 170150
 difficulty: "Easy"
 recipeCuisine: "Japanese"
 ingredients:
-  - "2 large English cucumbers, or 5 Persian cucumbers"
-  - "1 1/2 cups shelled edamame (thawed if frozen)"
+  - "2 large English cucumbers (301 g each), or 5 Persian cucumbers"
+  - "1 1/2 cups shelled edamame, thawed if frozen (177 g)"
   - "1/2 tsp kosher salt"
-  - "2 tbsp rice vinegar"
-  - "1 tbsp toasted sesame oil"
-  - "1 tbsp soy sauce or tamari"
-  - "1 tsp honey or maple syrup"
-  - "1 tsp fresh ginger, finely grated"
-  - "1 tbsp sesame seeds (white, black, or a mix)"
+  - "2 tbsp rice vinegar (30 g)"
+  - "1 tbsp toasted sesame oil (13.6 g)"
+  - "1 tbsp soy sauce or tamari (16 g)"
+  - "1 tsp honey or maple syrup (7 g)"
+  - "1 tsp fresh ginger, finely grated (2 g)"
+  - "1 tbsp sesame seeds (9 g)"
   - "1 green onion, thinly sliced (optional)"
 steps:
   - "Wash the cucumbers and slice them thinly. If using English cucumbers, you can cut them in half lengthwise first before slicing."
@@ -62,7 +88,15 @@ We have all experienced the tragedy of a watery cucumber salad. You know the one
 
 This Japanese-inspired cucumber and edamame salad refuses to be that guy. It's snappy, it's savory, and it holds onto its dressing. Between the crisp cucumbers and the slightly chewy, nutty edamame, the texture is fantastic. Plus, it takes almost zero effort to put together, making it an ideal side dish when the rest of your dinner requires actual cooking.
 
-I started making this in the summer when turning on the oven felt like a personal failure, but now it's a year-round staple. It's bright enough to cut through a heavy winter meal, and it's refreshing enough for a hot July afternoon. 
+I started making this in the summer when turning on the oven felt like a personal failure, but now it's a year-round staple. It's bright enough to cut through a heavy winter meal, and it's refreshing enough for a hot July afternoon.
+
+## What one serving actually contains
+
+One of the four servings is 122 calories, 6.7 g protein, 3.2 g fiber, 226 mg sodium, and 5.1 g sugar. An older card said 185. These portions don't.
+
+Two English cucumbers are two of USDA's 8-1/4 inch cucumbers, 301 g each ([FDC 168409](https://fdc.nal.usda.gov/food-details/168409/nutrients)). That's the whole cucumber with the peel, not five Persian cucumbers. If you're holding the small ones, weigh them. The shelled edamame is the frozen cup, 118 g, so 1 1/2 cups is 177 g ([FDC 168410](https://fdc.nal.usda.gov/food-details/168410/nutrients)).
+
+Rice vinegar isn't in USDA's SR Legacy set. The Kikkoman label ([FDC 2158088](https://fdc.nal.usda.gov/food-details/2158088/nutrients)) is 0 calories per 15 ml tablespoon, and the label's carbohydrates are 0, so fiber and sugar on that line are 0 too. This card counts the tablespoon as 15 g. Two tablespoons are 30 g, and they don't move the calories. Sesame oil is 13.6 g ([FDC 171016](https://fdc.nal.usda.gov/food-details/171016/nutrients)), soy sauce is 16 g ([FDC 174277](https://fdc.nal.usda.gov/food-details/174277/nutrients)), the honey teaspoon is 7 g ([FDC 169640](https://fdc.nal.usda.gov/food-details/169640/nutrients)), ginger is 2 g ([FDC 169231](https://fdc.nal.usda.gov/food-details/169231/nutrients)), and the sesame seeds are 9 g ([FDC 170150](https://fdc.nal.usda.gov/food-details/170150/nutrients)). The half teaspoon of kosher salt stays out. FoodData Central's teaspoon is table salt, and kosher salt doesn't have one.
 
 ## The trick to crunchy cucumbers
 

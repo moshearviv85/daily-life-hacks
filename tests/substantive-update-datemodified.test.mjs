@@ -29,7 +29,10 @@ const BEFORE_DATE_RESTORE = "84702a37";
  */
 const LATER_UPDATES = {
   "best-breakfast-foods-for-sustained-energy": "2026-11-25",
+  "chia-pudding-variations-for-breakfast": "2026-11-25",
   "costco-rotisserie-chicken-meal-ideas-dinner": "2026-11-25",
+  "cucumber-edamame-salad-sesame": "2026-11-25",
+  "easy-one-pot-chicken-and-rice-dinner": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
