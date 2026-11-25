@@ -18,11 +18,37 @@
       "protein": 1003,
       "sodium": 1093
     },
-    "portions": [
+      "portions": [
       {
         "amount": 1,
         "modifier": "tbsp",
         "grams": 15
+      }
+    ]
+  },
+  {
+    "fdcId": 2707363,
+    "description": "Black beans, from canned, no added fat",
+    "dataType": "Survey (FNDDS)",
+    "nutrientsPer100g": {
+      "kcal": 134,
+      "protein": 8.87,
+      "fiber": 10.1,
+      "sodium": 348,
+      "sugar": 0.34
+    },
+    "nutrientIds": {
+      "kcal": 1008,
+      "protein": 1003,
+      "fiber": 1079,
+      "sodium": 1093,
+      "sugar": 2000
+    },
+    "portions": [
+      {
+        "amount": 1,
+        "modifier": "cup",
+        "grams": 180
       }
     ]
   }

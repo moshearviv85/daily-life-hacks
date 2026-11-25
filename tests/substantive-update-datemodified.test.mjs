@@ -34,6 +34,8 @@ const LATER_UPDATES = {
   "cucumber-edamame-salad-sesame": "2026-11-25",
   "easy-one-pot-chicken-and-rice-dinner": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
+  "can-you-eat-rice-and-beans-everyday": "2026-11-25",
+  "high-fiber-burrito-bowl-meal-prep": "2026-11-25",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
   "how-to-pack-salad-for-work-not-soggy": "2026-11-25",
@@ -239,7 +241,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 40, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 39, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.

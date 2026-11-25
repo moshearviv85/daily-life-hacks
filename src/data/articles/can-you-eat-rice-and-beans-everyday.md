@@ -8,7 +8,8 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/can-you-eat-rice-and-beans-everyday-main.jpg"
 imageAlt: "A bowl of pinto beans over brown rice with lime wedges and cilantro on a kitchen table"
 date: 2026-07-28
-dateModified: 2026-11-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -18,11 +19,11 @@ faq:
   - question: "Can you eat rice and beans every day?"
     answer: "Plenty of people do, and on protein and fiber the numbers hold up well. A dinner built from 90 grams of dry pinto beans and 60 grams of dry brown rice came to 23.8 grams of protein for about $0.32 in our audited day costing, roughly 48 percent of the FDA's 50 gram Daily Value from one plate."
   - question: "Is rice and beans good for you?"
-    answer: "On the two things we measure, it does well. Dry pinto beans returned 57.6 grams of protein per dollar and 41.7 grams of fiber per dollar from a $6.75 four pound bag. They did not lead the 49 food protein ranking. Whole wheat flour did, at 96.0. We hold no vitamin or mineral data at all, so we cannot tell you whether the combination covers your micronutrients, and we are not going to pretend otherwise."
+    answer: "On protein and fiber, it does well. Dry pinto beans returned 57.6 grams of protein per dollar and 41.7 grams of fiber per dollar from a $6.75 four pound bag. They didn't lead the 49 food protein ranking. Whole wheat flour did, at 96.0. One cooked cup of brown rice plus one cooked cup of pinto beans is a different lookup. USDA lists 0 mcg of B12, 1.37 mg of vitamin C, and 84.72 mg of calcium in that bowl."
   - question: "Do rice and beans make a complete protein?"
     answer: "Legumes and grains complement each other's amino acid profiles, which is the reason the pairing has fed people for centuries. Splitting a dollar evenly between dry pinto beans and dry brown rice bought 47.1 grams of protein in our pairing study. Splitting it between pinto beans and whole wheat flour bought 76.8. The highest pair we tested was brown lentils with whole wheat flour, at 86.8."
   - question: "What is missing from a rice and beans diet?"
-    answer: "We cannot answer that from our own data, because our 22 datasets cover protein, fiber, and price only. No vitamins, no minerals, no iron. What we can say is that adding cheap produce is not expensive: frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 10.8, so variety does not have to cost much."
+    answer: "On one cooked cup of brown rice plus one cooked cup of pinto beans, USDA lists 0 mcg of vitamin B12, 1.37 mg of vitamin C, and 84.72 mg of calcium. Iron is 4.71 mg and zinc is 3.11 mg, and phytate in the beans and rice can make those two harder to absorb. Frozen green peas still returned 17.6 grams of fiber per dollar and frozen green beans 10.8, so the vegetable add doesn't have to cost much."
   - question: "How much does a day of rice and beans cost?"
     answer: "Less than most people expect. The bean and rice portion of one dinner came to about $0.32 in our audited day costing, and a fiber focused version using 60 grams of dry pinto beans and 50 grams of dry brown rice came to $0.23 for 11.1 grams of fiber. Those are ingredient costs at July 2026 prices, not a full day of eating."
 ---
@@ -74,15 +75,33 @@ The rice is the part to watch. [FDA's Bad Bug Book](https://www.fda.gov/food/foo
 
 On the two things we measure, it holds up. Dry pinto beans returned 57.6 grams of protein per dollar in our [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) and 41.7 grams of [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/). That is not the top of either list. Split peas lead the combined bean ranking, which we wrote up in [beans win twice](/beans-double-win-fiber-protein/).
 
-Now the limit, and it's a real one. Our 22 datasets cover protein, fiber, and price. That's it. No vitamins, no minerals, no iron figures, no calorie column anywhere. So when somebody asks whether you can live on rice and beans, we can tell you the protein and fiber math works and we cannot tell you anything about the rest. If micronutrients are your question, [USDA FoodData Central](https://fdc.nal.usda.gov/) is the source, not us.
+Now the limit, and it's a real one. Our 22 datasets cover protein, fiber, and price. That's it. Vitamins and minerals aren't in those files. One cooked bowl is a separate lookup, and it's in the next section, straight from USDA FoodData Central. A different portion is a different lookup.
 
-I'd rather say that plainly than write a confident paragraph about nutritional completeness out of data we don't hold.
+I'd rather put those zeros on the page than keep pretending the price files answer a vitamin question.
 
 ## Do rice and beans make a complete protein?
 
 Legumes and grains complement each other's amino acid profiles. That's the careful version of the claim, and it's the one worth repeating instead of the folklore about combining them in the same bite.
 
 The money version is more interesting. Split a dollar evenly between dry pinto beans and dry brown rice and it bought 47.1 grams of protein in our pairing study. Split it between pinto beans and whole wheat flour instead and it bought 76.8 grams. The best pair we tested was brown lentils with whole wheat flour, at 86.8. Rice is the traditional partner. It is not the cheapest one. The full ranking of 20 pairs is in [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/), and the recipe version is [beans and rice as a complete protein meal](/beans-and-rice-complete-protein-meal/).
+
+## Is it healthy to eat rice and beans every day?
+
+Rice and beans are a complete protein, and they're a strong protein-per-dollar plate. One cooked cup of brown rice plus one cooked cup of pinto beans still isn't a complete diet on its own. Protein and fiber hold up. Vitamin B12, vitamin C, and calcium don't.
+
+Table: Micronutrients in 1 cup cooked brown rice plus 1 cup cooked pinto beans
+
+| Nutrient | Brown rice, 1 cup cooked, 202 g ([FDC 169704](https://fdc.nal.usda.gov/food-details/169704/nutrients)) | Pinto beans, 1 cup cooked, 171 g ([FDC 175200](https://fdc.nal.usda.gov/food-details/175200/nutrients)) | One bowl |
+|---|---|---|---|
+| Vitamin B12 | 0 mcg | 0 mcg | 0 mcg |
+| Vitamin C | 0 mg | 1.37 mg | 1.37 mg |
+| Calcium | 6.06 mg | 78.66 mg | 84.72 mg |
+| Iron | 1.13 mg | 3.57 mg | 4.71 mg |
+| Zinc | 1.43 mg | 1.68 mg | 3.11 mg |
+
+Both records are cooked, without salt on the beans, and the cup weights are USDA's own. Each cup cell is the per-100-gram value times that cup weight, divided by 100. Vitamin C on the beans is 0.8 mg per 100 g times 1.71, which is 1.368 mg, shown as 1.37. Iron in the bowl is the raw sum, 4.705 mg, shown as 4.71, so it won't match 1.13 plus 3.57. Calcium is the exact sum, 6.06 plus 78.66.
+
+What to add: the frozen vegetables already in this pot for vitamin C, plus an egg or a little cheese on the days you care about B12 and calcium. Iron and zinc are actually on the plate. Beans and rice also carry phytate, which can make those two harder to absorb, so the milligrams aren't a promise that you use all of them.
 
 ## What rice and beans will not do on its own
 
