@@ -14,7 +14,6 @@ const ARTICLES = join(ROOT, "src/data/articles");
 const OVER_160_GRANDFATHER = new Set([
   "beans-double-win-fiber-protein",
   "can-you-use-sourdough-discard-from-a-new-starter",
-  "cooking-oils-smoke-points-best-uses",
   "high-fiber-yogurt-parfait-for-breakfast",
   "how-long-does-sourdough-discard-last",
   "sourdough-discard-vs-active-starter",
@@ -29,6 +28,8 @@ const REWRITES = {
     "One-pot red lentil curry in 35 minutes, no soaking. Serves 4 at 475 calories each. Lentils carry 15.6 g fiber per cooked cup (USDA). Reheats well.",
   "high-fiber-meals-for-constipation-relief":
     "Food-first meals for occasional constipation: oats, chia pudding, beans, and soft cooked vegetables, added slowly with fluids as NIDDK advises.",
+  "cooking-oils-smoke-points-best-uses":
+    "Smoke points for 22 refined oils (palm 489°F, soybean 464°F, canola 457°F) plus cold-pressed lab tests, boiling-point myths, and which oil fits each pan.",
   "30-day-high-fiber-challenge-meal-plan":
     "A 4-week fiber plan: swap breakfast in week 1, add a lunch add-in in week 2, beans or grains at dinner in week 3, then lock it in. Go slow, drink water.",
   "what-30-grams-of-fiber-costs-per-day":
@@ -118,8 +119,8 @@ test("description-only and citation edits do not bump the public modified day", 
       substantiveUpdate: undefined,
     },
     "high-fiber-meals-for-constipation-relief": {
-      dateModified: "2026-07-20",
-      substantiveUpdate: undefined,
+      dateModified: "2026-11-25",
+      substantiveUpdate: "2026-11-25",
     },
     "30-day-high-fiber-challenge-meal-plan": {
       dateModified: "2026-07-20",

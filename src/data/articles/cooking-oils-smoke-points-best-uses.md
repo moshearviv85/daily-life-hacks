@@ -1,6 +1,6 @@
 ---
 title: "Smoke Point Chart: Cooking Oil Smoke Points"
-excerpt: "Smoke points for 22 refined oils and fats plus measured figures for cold-pressed bottles, each traced to the lab table it came from, and which oil to grab for searing, frying and baking."
+excerpt: "Smoke points for 22 refined oils (palm 489°F, soybean 464°F, canola 457°F) plus cold-pressed lab tests, boiling-point myths, and which oil fits each pan."
 quickAnswer: >-
   Smoke point is the temperature where an oil starts breaking down and giving
   off visible smoke, and the first thing to know is that the two big US tables
@@ -25,7 +25,8 @@ tags:
 image: "/images/cooking-oils-smoke-points-best-uses-main.jpg"
 imageAlt: "Several bottles of cooking oils lined up on a kitchen counter with labels visible"
 date: 2026-04-19
-dateModified: 2026-09-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -106,6 +107,12 @@ Real figures do exist, though. A [2021 study in *Frontiers in Nutrition* pressed
 The gap is bigger than most charts admit. Expeller-pressed sunflower came in at 228°F against ISEO's 471°F refined high-oleic, and expeller-pressed peanut at 287°F against 446°F refined. The tiers aren't equal either: a single-sample lab reading beats a producer spec sheet, and both beat a number one blog copied from another.
 
 No mystery why. ISEO says some unrefined oils carry as much as several percent free fatty acids, against under 0.1% once refined, and free fatty acids drive the smoke point down. Refining is what buys the heat.
+
+## Do cooking oils have a boiling point?
+
+Cooking oils don't reach a clean atmospheric boiling point on a home stove. Triglycerides thermally degrade and emit visible smoke first. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/deep-fat-frying) calls that the point where fat starts to break down, and a [2025 study in *Foods*](https://pmc.ncbi.nlm.nih.gov/articles/PMC12692607/) treats the smoke as the onset of thermal degradation, still judged by eye.
+
+The figure people swap in for a boiling point is a smoke point, and the bottle matters. Refined soybean oil, the one labeled vegetable oil, is 464°F on the [ISEO table](https://edibleoilproducers.org/wp-content/uploads/2025/03/foodfatsoils2016.pdf). Refined canola is 457°F on that same table. Seven degrees, both deodorized samples. Unrefined sesame is the cold-pressed black sample, not the toasted one, and it measured 343°F in the [2021 lab test](https://pmc.ncbi.nlm.nih.gov/articles/PMC8566681/). Toasted sesame has no published smoke point, so that 343°F row doesn't follow the finishing bottle onto a hot pan.
 
 ## Why does the same oil show different smoke points?
 

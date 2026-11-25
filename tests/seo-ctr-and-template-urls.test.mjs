@@ -1473,7 +1473,8 @@ test("cooking oil smoke points title leads with smoke point chart", () => {
     false,
     "smoke point title should not spend the SERP on cites-its-sources",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 });
 
 test("pizza crust fiber title leads with which crust has more fiber", () => {
