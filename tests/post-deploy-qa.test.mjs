@@ -13,7 +13,9 @@ import {
   linkedUrl,
   normalizeUrl,
   parseSitemapXml,
+  redirectCitationFailures,
   redirectDestinations,
+  redirectSourcePaths,
   robotsContent,
   runPostDeployQa,
 } from "../scripts/post-deploy-qa.mjs";
@@ -200,6 +202,12 @@ test("a live pass fails on noindex sitemap URLs, noindex redirect targets, and 4
           {"@type":"ItemList","@id":"${origin}/author/david-miller/#articles","itemListElement":[{"url":"${origin}/ok/"}]}
         </script>`,
     }],
+    [`${origin}/llms.txt`, { status: 200, type: "text/plain", body: `Study: ${origin}/ok/\n` }],
+    [`${origin}/data/datapackage.json`, {
+      status: 200,
+      type: "application/json",
+      body: `{"path":"${origin}/ok/"}`,
+    }],
   ]);
   const original = globalThis.fetch;
   globalThis.fetch = async (url) => {
@@ -223,7 +231,72 @@ test("a live pass fails on noindex sitemap URLs, noindex redirect targets, and 4
     assert.ok(result.sections.redirects.some((line) => line.includes("/bad/") && line.includes("noindex")));
     assert.ok(result.sections.internalLinks.some((line) => line.includes("/missing/") && line.includes("404")));
     assert.deepEqual(result.sections.author, []);
+    assert.deepEqual(result.sections.machineReadable, []);
     assert.match(result.summary, /dateModified: skipped/);
+  } finally {
+    globalThis.fetch = original;
+  }
+});
+
+test("llms.txt and datapackage.json fail when they cite a redirect source", async () => {
+  const rules = parseRedirectRules("/legacy /ok/ 301\n");
+  const sources = redirectSourcePaths(rules);
+  assert.deepEqual(
+    redirectCitationFailures(
+      "Study: https://www.daily-life-hacks.com/legacy/\n",
+      sources,
+      "/llms.txt",
+    ),
+    ["/llms.txt cites redirect source /legacy"],
+  );
+
+  const origin = "https://www.daily-life-hacks.com";
+  const html = (canonical) =>
+    `<html><head><link rel="canonical" href="${canonical}" /><meta name="robots" content="index, follow" /></head></html>`;
+  const pages = new Map([
+    [`${origin}/sitemap-index.xml`, {
+      status: 200,
+      type: "application/xml",
+      body: `<urlset><url><loc>${origin}/ok/</loc></url></urlset>`,
+    }],
+    [`${origin}/ok/`, { status: 200, type: "text/html", body: html(`${origin}/ok/`) }],
+    [`${origin}/author/david-miller/`, {
+      status: 200,
+      type: "text/html",
+      body: `${html(`${origin}/author/david-miller/`)}
+        <script type="application/ld+json">
+          {"@type":"ItemList","@id":"${origin}/author/david-miller/#articles","itemListElement":[{"url":"${origin}/ok/"}]}
+        </script>`,
+    }],
+    [`${origin}/llms.txt`, {
+      status: 200,
+      type: "text/plain",
+      body: `Study: ${origin}/legacy/#section\n`,
+    }],
+    [`${origin}/data/datapackage.json`, {
+      status: 200,
+      type: "application/json",
+      body: `{"path":"${origin}/ok/"}`,
+    }],
+  ]);
+  const original = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    const page = pages.get(String(url));
+    if (!page) throw new Error(`unexpected fetch ${url}`);
+    return {
+      status: page.status,
+      text: async () => page.body,
+      headers: { get: (name) => (name.toLowerCase() === "content-type" ? page.type : null) },
+    };
+  };
+  try {
+    const result = await runPostDeployQa({
+      base: origin,
+      redirectsSource: "/legacy /ok/ 301\n",
+      concurrency: 2,
+    });
+    assert.equal(result.ok, false);
+    assert.deepEqual(result.sections.machineReadable, ["/llms.txt cites redirect source /legacy"]);
   } finally {
     globalThis.fetch = original;
   }
@@ -237,6 +310,7 @@ test("post-deploy QA is its own read-only workflow after Deploy Cloudflare Pages
   assert.match(workflow, /contents: read/);
   assert.match(workflow, /actions: read/);
   assert.match(workflow, /node scripts\/post-deploy-qa\.mjs/);
+  assert.match(workflow, /llms\.txt and datapackage\.json do not cite a public\/_redirects source/);
   assert.doesNotMatch(workflow, /wrangler|pages deploy|CLOUDFLARE_API_TOKEN|npm ci/);
   assert.doesNotMatch(deployWorkflow, /post-deploy-qa/);
 });

@@ -8,6 +8,7 @@
 #   - /author/david-miller/ lists only indexable articles
 #   - pages whose public modified day changed since the previous production
 #     deploy, without substantiveUpdate on that day, stay within the cap
+#   - llms.txt and datapackage.json do not cite a public/_redirects source
 #
 # Pinterest pin aliases are not part of this check.
 

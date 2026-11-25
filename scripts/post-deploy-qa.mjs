@@ -14,6 +14,7 @@
  *   - more than DATEMODIFIED_DEPLOY_CAP articles changed their public
  *     modified day since the previous production deploy without
  *     substantiveUpdate set to that new day
+ *   - llms.txt or datapackage.json cites a public/_redirects source
  */
 import { appendFileSync, readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -156,6 +157,42 @@ export function authorArticleUrls(html) {
     }
   }
   return found;
+}
+
+export function normalizeSitePath(value) {
+  const path = String(value ?? "").split("#")[0].split("?")[0];
+  if (!path.startsWith("/")) return path;
+  if (path.length > 1 && path.endsWith("/")) return path.slice(0, -1);
+  return path;
+}
+
+export function redirectSourcePaths(rules) {
+  const sources = new Set();
+  for (const rule of rules) {
+    if (!rule.source || rule.source.includes("*")) continue;
+    sources.add(normalizeSitePath(rule.source));
+  }
+  return sources;
+}
+
+export function citedSitePaths(text) {
+  const paths = [];
+  for (const match of String(text).matchAll(/https:\/\/(?:www\.)?daily-life-hacks\.com([^"'\\\s<]*)/g)) {
+    const raw = match[1].split(/[?#]/)[0] || "/";
+    paths.push(normalizeSitePath(raw.startsWith("/") ? raw : `/${raw}`));
+  }
+  return paths;
+}
+
+export function redirectCitationFailures(text, sources, label) {
+  const failures = [];
+  const seen = new Set();
+  for (const path of citedSitePaths(text)) {
+    if (!sources.has(path) || seen.has(path)) continue;
+    seen.add(path);
+    failures.push(`${label} cites redirect source ${path}`);
+  }
+  return failures;
 }
 
 export function redirectDestinations(rules) {
@@ -455,6 +492,23 @@ export async function runPostDeployQa({
 
   const rules = parseRedirectRules(redirectsSource);
   const destinations = redirectDestinations(rules);
+  const sourcePaths = redirectSourcePaths(rules);
+  const machineFiles = ["/llms.txt", "/data/datapackage.json"];
+  const machineResponses = await mapPool(machineFiles, concurrency, async (path) => {
+    const url = new URL(path, origin).href;
+    return { path, response: await fetchText(url) };
+  });
+  const machineFailures = [];
+  for (const file of machineResponses) {
+    const response = file.response;
+    if (!response || response.error || response.status !== 200) {
+      machineFailures.push(
+        `${file.path}  ${response?.error || `HTTP ${response?.status ?? 0}`}`,
+      );
+      continue;
+    }
+    machineFailures.push(...redirectCitationFailures(response.body, sourcePaths, file.path));
+  }
   const missingDestinations = destinations
     .map((destination) => linkedUrl(destination, origin))
     .filter((url) => !byUrl.has(url));
@@ -487,6 +541,7 @@ export async function runPostDeployQa({
     redirects: redirectTargetFailures(destinations, origin, byUrl),
     internalLinks: internalLinkFailures(sitemap.pages, byUrl),
     author: authorFailures(authorUrl, byUrl.get(authorKey), byUrl),
+    machineReadable: machineFailures,
     dateModified: [],
   };
 
@@ -514,6 +569,7 @@ export async function runPostDeployQa({
       `author articles (${authorArticleUrls(byUrl.get(authorKey)?.body || "").length})`,
       sections.author,
     ),
+    formatSection("llms.txt and datapackage.json", sections.machineReadable),
     dateSummary,
     ...sections.dateModified.map((line) => `- ${line}`),
   ];
