@@ -164,4 +164,6 @@ Depends who's defining the serving, which is exactly why per-serving charts are 
 
 Nobody eats 100 grams of dry lentils at a sitting without cooking them into something, and nobody eats 100 grams of cheddar unless the night has gone sideways. Use the density column to know what you're buying and the portion sizes you actually cook to know what you're eating. How many grams a day that should add up to is a separate question, covered in [how much protein do you need per day](/how-much-protein-do-you-need-per-day/).
 
+The [fiber and protein per dollar calculator](/tools/fiber-per-dollar-calculator/) compares these 49 protein foods and the 53 fiber foods by grams per dollar, on the July 2026 prices.
+
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv -->

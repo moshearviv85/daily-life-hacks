@@ -249,7 +249,17 @@ test("added orphan anchors are unique and never point at noindex or redirected U
 
   const existing = new Map(ORPHANS.map((slug) => [slug, new Set()]));
   for (const article of articles) {
-    const before = git(["show", `origin/main:${ARTICLE_DIR}/${article.slug}.md`]);
+    let before = "";
+    try {
+      before = execFileSync(
+        "git",
+        ["show", `origin/main:${ARTICLE_DIR}/${article.slug}.md`],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] },
+      );
+    } catch {
+      // A new article has no base version. Its links are still checked above.
+      continue;
+    }
     for (const link of bodyLinks(splitArticle(before).body)) {
       if (existing.has(link.slug)) existing.get(link.slug).add(link.anchor);
     }
@@ -332,7 +342,16 @@ test("link edits keep dateModified and add at most 40 words per article", () => 
     });
     if (!addsOrphanLink) continue;
     const after = readFileSync(path, "utf8");
-    const before = git(["show", `origin/main:${path}`]);
+    let before;
+    try {
+      before = execFileSync("git", ["show", `origin/main:${path}`], {
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      });
+    } catch {
+      // A new article is not a link-only edit of an existing page.
+      continue;
+    }
     assert.equal(
       extractDateModified(after),
       extractDateModified(before),

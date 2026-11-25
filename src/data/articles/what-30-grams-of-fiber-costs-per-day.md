@@ -193,5 +193,6 @@ Don't pick one day and marry it. Steal the structure instead:
 * **Keep the no-cook day in your back pocket.** $1.74 and zero dishes is the honest answer for the weeks when cooking isn't happening.
 * **Treat the restaurant orders as emergency plays.** They're there for the days the drive-thru wins, not as a plan, and [the same menus ranked on protein per dollar](/fast-food-protein-per-dollar-ranked/) come out just as lopsided against the grocery aisle.
 * **Want one more cheap day?** The [under-a-dollar dry-goods menu](#dollar-fiber-day) is the short version.
+* **Shop the week as one list.** Those three grocery days, bought once, are the [7-day high-fiber grocery list](/high-fiber-grocery-list-30-grams/).
 
 The whole study comes down to this: 30 grams of fiber is not expensive. It never was. The expensive part is paying someone else to open the can, and the drive-thru charges 23 times the dry goods aisle for the exact same nutrient. Now you know the exact markup.
