@@ -93,6 +93,8 @@ Fresh berries can sit right in the yogurt. Frozen fruit goes on top so the juice
 
 Spoon in half the yogurt, half the berries, the seeds, then the rest. Granola goes on at the last second. You can make stripes in a clear jar if that brings you joy, but it tastes the same in the chipped cereal bowl. That jar is one piece of [a breakfast plate built to last past 10 AM](/balanced-breakfast-that-keeps-you-full/). If you want eggs, oatmeal, and yogurt on one protein-and-fiber table, that's [the sustained-energy breakfast comparison](/best-breakfast-foods-for-sustained-energy/).
 
+The parfait is the fiber. The receipt is a different question. [What these breakfast staples cost per morning](/breakfast-staples-per-dollar/) prices yogurt, oats, and berries as a bowl.
+
 ## How far ahead can you make a yogurt parfait?
 
 The night before is easy, and here's the honest boundary on going further. FoodSafety.gov's [cold food storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) has no row for yogurt or for an assembled parfait, so there's no federal number to quote you. What is federal: FDA says keep the refrigerator [at 40°F or below](https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety), and never leave perishable food out more than 2 hours, or 1 hour when the air is above 90°F. Your car in July counts.

@@ -123,4 +123,6 @@ Menus move. These rules don't.
 
 Which foods have the most fiber in a grocery bag is a different list from a drive-thru order. That ranking, per 100 grams, is [best high-fiber foods](/best-high-fiber-foods-ranked-by-fiber-content/). The vegetable question is a cooked cup, not a combo: [which vegetable has the most fiber per cup](/best-high-fiber-foods-ranked-by-fiber-content/#which-vegetable-has-the-most-fiber-per-cup).
 
+A drive-thru gram count isn't the grocery label. [What 2.8 g and 5.6 g mean on real food](/good-source-of-fiber-label-meaning/) is the cutoff for beans, oats, bread, and an apple you buy yourself.
+
 If price is the next question, the [fiber-per-dollar ranking](/what-30-grams-of-fiber-costs-per-day/) and the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) keep the same exact-order discipline. At the grocery store, the [49-food protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) puts dry pinto beans at 57.6 grams per dollar, which is the bag you cook at home rather than the scoop on the line.

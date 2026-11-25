@@ -8,7 +8,8 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/breakfast-staples-per-dollar-main.jpg"
 imageAlt: "A breakfast table with steaming oatmeal topped with banana, fried eggs, peanut butter, and a glass of milk"
 date: 2026-07-13
-dateModified: 2026-09-24
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 faq:
   - question: "What is the cheapest high protein breakfast?"
@@ -69,9 +70,26 @@ None of them bring fiber to the table, though. That's why the smart breakfast is
 
 Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.3 at $1.28 a pound ([FDC 173944](https://fdc.nal.usda.gov/food-details/173944/nutrients), [FDC 168204](https://fdc.nal.usda.gov/food-details/168204/nutrients)). That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/what-30-grams-of-fiber-costs-per-day/#what-1-buys) is all dry goods, and no fruit makes it.
 
+## How much does a high-protein, high-fiber breakfast actually cost per morning?
+
+All four clear 5.6 grams of fiber. Oats with peanut butter and a banana, and oats in whole milk with peanut butter, each cost $0.52. Eggs, whole wheat toast, and an apple cost $1.30. Plain nonfat Greek yogurt, oats, and blackberries cost $1.71. Grams follow the USDA records on those prices, oats at [FDC 173904](https://fdc.nal.usda.gov/food-details/173904/nutrients).
+
+Flour is still the spreadsheet champion, and you still can't pour milk on it and call it breakfast. These four you can. The 5.6 gram line is the high-fiber half of [the 2.8 g and 5.6 g label cutoffs](/good-source-of-fiber-label-meaning/).
+
+Table: Four breakfasts, protein, fiber, and consumed cost
+
+| Breakfast | Portion | Protein | Fiber | Cost | FDC |
+|---|---|---:|---:|---:|---|
+| Oats, peanut butter, and banana | 1/2 cup dry oats (40.5 g), 2 tbsp peanut butter (32 g), 1 medium banana (118 g edible) | 13.7 g | 8.8 g | $0.52 | [173904](https://fdc.nal.usda.gov/food-details/173904/nutrients), [174266](https://fdc.nal.usda.gov/food-details/174266/nutrients), [173944](https://fdc.nal.usda.gov/food-details/173944/nutrients) |
+| Eggs, whole wheat toast, and apple | 2 large eggs (100 g), 2 slices whole wheat toast (64 g), 1 medium gala apple (172 g edible) | 21.0 g | 7.8 g | $1.30 | [171287](https://fdc.nal.usda.gov/food-details/171287/nutrients), [172688](https://fdc.nal.usda.gov/food-details/172688/nutrients), [168204](https://fdc.nal.usda.gov/food-details/168204/nutrients) |
+| Plain nonfat Greek yogurt, oats, and blackberries | 1 container yogurt (170 g), 1/2 cup dry oats (40.5 g), 1/2 cup blackberries (72 g) | 23.6 g | 7.9 g | $1.71 | [170894](https://fdc.nal.usda.gov/food-details/170894/nutrients), [173904](https://fdc.nal.usda.gov/food-details/173904/nutrients), [173946](https://fdc.nal.usda.gov/food-details/173946/nutrients) |
+| Whole milk, oats, and peanut butter | 1 cup whole milk (244 g), 1/2 cup dry oats (40.5 g), 2 tbsp peanut butter (32 g) | 20.1 g | 5.7 g | $0.52 | [171265](https://fdc.nal.usda.gov/food-details/171265/nutrients), [173904](https://fdc.nal.usda.gov/food-details/173904/nutrients), [174266](https://fdc.nal.usda.gov/food-details/174266/nutrients) |
+
+The banana and the apple are edible weight. You pay for the peel and the core too, so the cost grosses those grams back up by the study's edible fraction. Eggs, milk, and plain nonfat Greek yogurt bring the protein and none of the fiber. Blackberries and the loaf aren't in the breakfast ranking. Their prices come from the fiber study: the 6 ounce berry box, and the loaf at the May 2026 BLS average rather than the July sticker on the oats. High fiber on a label starts at 5.6 grams. The milk bowl just clears it. The other three clear it by a wider margin.
+
 ## How did we run the numbers?
 
-Nutrient data comes from USDA FoodData Central. Prices are July 2026 US figures from audited Walmart national listings, with eggs and milk using May 2026 national average prices. The combined score adds protein grams per dollar to fiber grams per dollar, nothing fancier.
+Nutrient data comes from USDA FoodData Central. Prices are July 2026 US figures from audited Walmart national listings and BLS national averages. The combined score adds protein grams per dollar to fiber grams per dollar, nothing fancier.
 
 For scale, the FDA's Daily Value for protein is 50 grams ([FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)). One dollar of oats buys nearly that in protein alone, before the fiber shows up. If you want to see the full-day version of this math, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs it meal by meal, and the [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/) turns it into an actual shopping list. Breakfast is the easy win. It's the one meal where the cheap option and the good option are the same food.
 

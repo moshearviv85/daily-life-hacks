@@ -57,6 +57,8 @@ const LATER_UPDATES = {
   "high-fiber-quinoa-salad-for-lunch-prep": "2026-11-25",
   "how-to-store-fresh-herbs-to-last-longer": "2026-11-25",
   "keep-berries-fresh-longer-when-to-wash": "2026-11-25",
+  "breakfast-staples-per-dollar": "2026-11-25",
+  "good-source-of-fiber-label-meaning": "2026-11-25",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
@@ -258,7 +260,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 37, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 36, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
@@ -267,7 +269,12 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   // Costco's baseline was not 2026-11-23, so leaving that day also counts here.
   // The canned page's baseline was 2026-11-23, so it drops out of stillToday
   // and stays out of the restored count. The live count after that drop is 38.
-  // Beans and rice left this day for the USDA gram weights, so the count is 37.
+  // Beans and rice left this day for the USDA gram weights, so the count was 37.
+  // The fiber-label page left this day for the 2.8 g / 5.6 g food table.
+  // Its baseline was already 2026-11-23, so it drops out of stillToday and
+  // stays out of the restored count. The count is 36.
+  // Breakfast staples was already off 2026-11-23 (baseline 2026-09-24), so
+  // moving it to 2026-11-25 does not change the restored count.
   assert.equal(restored.length, 63, "pages restored off 2026-11-23");
 });
 
