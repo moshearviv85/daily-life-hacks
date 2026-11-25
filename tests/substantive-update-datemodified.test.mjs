@@ -53,6 +53,8 @@ const LATER_UPDATES = {
   "beans-and-rice-complete-protein-meal": "2026-11-25",
   "easy-black-bean-tacos-weeknight-dinner": "2026-11-25",
   "high-fiber-quinoa-salad-for-lunch-prep": "2026-11-25",
+  "how-to-store-fresh-herbs-to-last-longer": "2026-11-25",
+  "keep-berries-fresh-longer-when-to-wash": "2026-11-25",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
