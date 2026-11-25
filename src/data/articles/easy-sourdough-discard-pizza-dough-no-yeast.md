@@ -70,7 +70,7 @@ Pizza at the end of the day is a reasonable request. Remembering to start dough 
 
 It makes **one thin 12-inch crust, two meal servings**, in about 40 minutes including preheating. Expect a modest rim and a crisp base rather than an airy pizzeria crust. There's no added commercial yeast, though the starter itself contains wild yeast.
 
-The jar usually outlasts one pizza. [More no-yeast discard recipes](/sourdough-discard-recipes-no-yeast/) cover the sandwich loaf and the [no-yeast cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/), with the grams already written down.
+The jar usually outlasts one pizza. The [no-yeast sandwich loaf](/sourdough-discard-sandwich-bread-no-yeast/) and the [no-yeast cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/) use this same kind of discard, with the grams already written down. The rest of that list is [more no-yeast discard recipes](/sourdough-discard-recipes-no-yeast/).
 
 ## What goes into this sourdough discard pizza dough?
 

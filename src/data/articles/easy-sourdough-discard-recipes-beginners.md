@@ -48,7 +48,7 @@ faq:
     answer: "The starter is the portion you keep and feed to maintain your sourdough culture for bread baking. The discard is the portion you remove before feeding the starter to prevent it from growing too large. Discard is essentially just unfed starter that still has plenty of flavor but less leavening power."
 ---
 
-A jar of discard should come with dinner options, not another feeding schedule. Start with pancakes if you want something in 20 minutes, skillet flatbread if you have half a cup, or crackers if you can leave the oven running for about an hour. When the jar is bigger than one of those, the [sourdough discard recipes with no added yeast](/sourdough-discard-recipes-no-yeast/) put grams and a clock on twelve batches, including the [rolled crackers](/sourdough-discard-crackers/). The sweet batch in that set is the [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/).
+A jar of discard should come with dinner options, not another feeding schedule. Start with pancakes if you want something in 20 minutes, skillet flatbread if you have half a cup, or crackers if you can leave the oven running for about an hour. When the jar is bigger than one of those, the [sourdough discard recipes with no added yeast](/sourdough-discard-recipes-no-yeast/) put grams and a clock on thirteen batches, including the [rolled crackers](/sourdough-discard-crackers/). The sweet batch in that set is the [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/). The loaf is the [no-yeast sourdough discard sandwich bread](/sourdough-discard-sandwich-bread-no-yeast/).
 
 These easy sourdough discard recipes for beginners use **100% hydration discard from an established starter**, meaning equal weights of flour and water. Cold discard is fine. It doesn't need to double before you cook.
 
@@ -62,6 +62,7 @@ A half cup of discard makes one skillet flatbread in 10 to 15 minutes. A full cu
 | [Skillet flatbread](#skillet-flatbread-with-half-a-cup) | 1/2 cup, about 113 g | 10 to 15 minutes | 1 small flatbread |
 | [No-roll crackers](#no-roll-crackers-for-a-full-cup) | 1 cup, about 227 g | About 65 minutes, plus cooling | 1 baking sheet |
 | [Pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/) | 1 cup, 227 g | About 40 minutes | 1 thin 12-inch pizza |
+| [Sandwich loaf](/sourdough-discard-sandwich-bread-no-yeast/) | 1 cup, 227 g | About 1 hour 10 minutes | 1 loaf, 10 slices |
 
 The pancake recipe card is for pancakes only. The cracker and flatbread quantities below are separate recipes. If your jar is between measurements, the [discard conversion guide](/how-to-measure-sourdough-discard-grams/) helps you weigh what you have.
 

@@ -1,6 +1,6 @@
 ---
 title: How Many Grams Is 1 Cup of Sourdough Discard?
-excerpt: One cup of sourdough discard is about 227 grams, and 1/2 cup is about 113 grams. Weigh it in the mixing bowl and skip the sticky cup.
+excerpt: "One cup of 100% hydration sourdough discard is about 227 g and 413 kcal with all-purpose flour, or 386 kcal with whole wheat. 100 g is 182 or 170 kcal (USDA)."
 category: tips
 tags:
 - cooking basics
@@ -112,6 +112,6 @@ Eggs are the awkward part. Beat an egg, weigh it, and use the required fraction,
 
 With about **113 grams**, make one [skillet flatbread](/easy-sourdough-discard-recipes-beginners/#skillet-flatbread-with-half-a-cup). It uses a small pan and doesn't ask you to divide an egg.
 
-With **227 grams**, choose the [pancake or cracker recipes](/easy-sourdough-discard-recipes-beginners/), or the [thin discard pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/). Pancakes take about 20 minutes; the crackers take about an hour plus cooling. Pick by both the jar and the clock. A jar closer to **240 grams** fits the [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/).
+With **227 grams**, choose the [pancake or cracker recipes](/easy-sourdough-discard-recipes-beginners/), the [thin discard pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/), or the [no-yeast sandwich loaf](/sourdough-discard-sandwich-bread-no-yeast/). Pancakes take about 20 minutes; the crackers take about an hour plus cooling; the loaf needs about an hour in the oven. Pick by both the jar and the clock. A jar closer to **240 grams** fits the [no-yeast sourdough discard cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/).
 
 Keep your discard covered in the refrigerator and label its collection date. Use a maintained, established starter, and discard a jar with mold, pink or orange discoloration, or a rotten smell. Weighing a questionable jar more precisely doesn't make it usable.
