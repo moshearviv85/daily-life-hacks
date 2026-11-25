@@ -97,6 +97,8 @@ Common failure modes:
 
 Eggs, dried or canned beans and lentils, chicken thighs, Greek yogurt, cottage cheese and canned fish. Our [protein per dollar study](/protein-per-dollar-adjusted-for-quality/) ranks the grocery cost. The foods themselves are ordinary: whole wheat flour has [13.21 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/168893/nutrients), dry brown lentils have [24.63](https://fdc.nal.usda.gov/food-details/172420/nutrients), and two large hard-boiled eggs have [about 13](https://fdc.nal.usda.gov/food-details/173424/nutrients). You don't need a boutique butcher to hit how much protein you need per day.
 
+The 30 gram receipt, eggs against yogurt, chicken, and lentils, is [what 30 grams of egg protein costs](/eggs-vs-everything-protein-value/).
+
 **Cheap defaults that earn fridge space:**
 
 - Eggs (fast, flexible, hard to mess up)

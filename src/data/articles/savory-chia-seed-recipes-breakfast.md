@@ -118,6 +118,8 @@ A jar of plain savory chia is useful but boring. The toppings do the heavy lifti
 
 Between the avocado, the hemp seeds, and the chia itself, this bowl quietly checks half the boxes on our healthy fats list of foods to eat daily. Not bad for a jar you shook together in five minutes. If the jar is the fiber and you still want eggs or yogurt on the protein job, the side-by-side is [breakfast foods for protein, fiber, and staying power](/best-breakfast-foods-for-sustained-energy/).
 
+Leave the egg in the carton and the priced plates that still clear 30 grams are [egg-free breakfasts that clear 30 grams of protein](/high-protein-breakfast-without-eggs/).
+
 Packing it for work? Keep the toppings in a separate container. Nobody wants avocado that's been pressed against chia pudding since 7 AM.
 
 ## Four savory chia jars, in grams

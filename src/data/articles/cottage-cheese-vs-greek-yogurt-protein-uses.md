@@ -57,6 +57,8 @@ Same foods, weighed. USDA SR Legacy lists 11.12 grams of protein per 100 grams f
 
 Those portion grams are the per-100-gram number times the USDA weight, then rounded to one decimal. 11.12 across 225 grams is 25.02, shown as 25.0. Across 210 grams it's 23.35, shown as 23.4. The yogurt container is 10.19 across 170 grams, 17.32, shown as 17.3. The same 10.19 across 225 grams is 22.93, shown as 22.9, still under the small-curd cottage cheese cup. Half of that 225 gram cup is 112.5 grams, about 12.5 grams of protein, inside the 12 to 14 gram half-cup range above. The yogurt record simply doesn't call 225 grams a cup.
 
+Skip the eggs and the priced plates are [30 grams of breakfast protein without eggs](/high-protein-breakfast-without-eggs/).
+
 ## How does cottage cheese vs Greek yogurt protein compare by fat level?
 
 The half-cup answer above stays put. Fat level is what moves the per-100-gram and per-cup numbers ranking pages actually publish.
