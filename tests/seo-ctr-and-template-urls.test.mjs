@@ -2152,7 +2152,8 @@ test("high protein breads title leads with 5-7g protein per slice", () => {
     "high protein breads title should not be the old best healthy sandwiches stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-10-01$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 
   assert.match(page.excerpt, /^5 to 7 grams of protein per slice/);
   assert.match(page.excerpt, /sometimes/);

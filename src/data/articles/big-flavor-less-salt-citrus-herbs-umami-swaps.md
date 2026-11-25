@@ -15,7 +15,8 @@ tags:
 image: "/images/big-flavor-less-salt-citrus-herbs-umami-swaps-main.jpg"
 imageAlt: "Kitchen counter with lemons herbs garlic soy sauce and spices for flavor building"
 date: 2026-04-16
-dateModified: 2026-07-28
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -82,6 +83,26 @@ Try:
 * Miso (small spoon, stir in at the end)
 
 Yes, some of these have sodium. The trick is they are concentrated. A little goes far.
+
+## How much sodium is in everyday flavor swaps like lemon juice, vinegar, soy sauce, and Parmesan?
+
+Lemon juice and dried oregano round to 0 milligrams of sodium. Cider vinegar and a garlic clove round to 1. A tablespoon of grated Parmesan is 90 milligrams. Regular soy sauce is 879 milligrams in that same tablespoon, and the reduced-sodium bottle is still 511. The bottle is the problem.
+
+Table: Sodium per household measure for lemon juice, cider vinegar, garlic, oregano, Parmesan, and soy sauce
+
+| Flavor swap | Measure | Weight | Sodium | USDA record |
+| --- | --- | ---: | ---: | --- |
+| Lemon juice, raw | 1 tbsp | 15.25 g | 0 mg | [167747](https://fdc.nal.usda.gov/food-details/167747/nutrients) |
+| Vinegar, cider | 1 tbsp | 14.9 g | 1 mg | [173469](https://fdc.nal.usda.gov/food-details/173469/nutrients) |
+| Garlic, raw | 1 clove | 3 g | 1 mg | [169230](https://fdc.nal.usda.gov/food-details/169230/nutrients) |
+| Oregano, dried, ground | 1 tsp | 1.8 g | 0 mg | [171328](https://fdc.nal.usda.gov/food-details/171328/nutrients) |
+| Parmesan, grated | 1 tbsp | 5 g | 90 mg | [171247](https://fdc.nal.usda.gov/food-details/171247/nutrients) |
+| Soy sauce, shoyu | 1 tbsp | 16 g | 879 mg | [174277](https://fdc.nal.usda.gov/food-details/174277/nutrients) |
+| Soy sauce, shoyu, low sodium | 1 tbsp | 14.2 g | 511 mg | [172473](https://fdc.nal.usda.gov/food-details/172473/nutrients) |
+
+Sodium is the SR Legacy milligrams per 100 grams times the gram weight, divided by 100, then rounded to the nearest milligram. Lemon juice has no tablespoon on [FDC 167747](https://fdc.nal.usda.gov/food-details/167747/nutrients). One fluid ounce there is 30.5 grams, and a tablespoon is half of that, 15.25 grams, which still rounds to 0. Dried oregano's ground teaspoon is 1.8 grams on [FDC 171328](https://fdc.nal.usda.gov/food-details/171328/nutrients). The leaf teaspoon on that same record is 1 gram and also rounds to 0.
+
+The stir-fry splash further down is 1 teaspoon of soy sauce, not this tablespoon. That teaspoon is 5.3 grams on [FDC 174277](https://fdc.nal.usda.gov/food-details/174277/nutrients), about 291 milligrams. Still a real hit of sodium. About a third of the spoon people actually pour when they stop measuring. Parmesan at 90 milligrams is the polite salty hit. Lemon, vinegar, garlic, and oregano are doing the flavor work for almost nothing.
 
 ## Quick formulas you can memorize in 30 seconds
 

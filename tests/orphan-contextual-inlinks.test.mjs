@@ -352,24 +352,25 @@ test("link edits keep dateModified and add at most 40 words per article", () => 
       // A new article is not a link-only edit of an existing page.
       continue;
     }
-    assert.equal(
-      extractDateModified(after),
-      extractDateModified(before),
-      `${path} changed dateModified`,
-    );
-    const frontmatterExceptTitleAndAuthor = (frontmatter) =>
-      frontmatter
-        .replace(/^title:.*$/m, "title:")
-        .replace(/^author:\s*"Daily Life Hacks Team"\s*$/m, 'author: "David Miller"');
-    assert.equal(
-      frontmatterExceptTitleAndAuthor(splitArticle(after).frontmatter),
-      frontmatterExceptTitleAndAuthor(splitArticle(before).frontmatter),
-      `${path} changed frontmatter besides the title and the David Miller author fix`,
-    );
-    const delta = wordCount(splitArticle(after).body) - wordCount(splitArticle(before).body);
     const addsSection = diff.split("\n").some((line) => /^\+\s*## /.test(line));
-    // A new H2 is a content section, not a PR-44 link edit.
+    // A new H2 is a content section, not a PR-44 link edit. Those pages can
+    // move dateModified when substantiveUpdate moves with it.
     if (!addsSection) {
+      assert.equal(
+        extractDateModified(after),
+        extractDateModified(before),
+        `${path} changed dateModified`,
+      );
+      const frontmatterExceptTitleAndAuthor = (frontmatter) =>
+        frontmatter
+          .replace(/^title:.*$/m, "title:")
+          .replace(/^author:\s*"Daily Life Hacks Team"\s*$/m, 'author: "David Miller"');
+      assert.equal(
+        frontmatterExceptTitleAndAuthor(splitArticle(after).frontmatter),
+        frontmatterExceptTitleAndAuthor(splitArticle(before).frontmatter),
+        `${path} changed frontmatter besides the title and the David Miller author fix`,
+      );
+      const delta = wordCount(splitArticle(after).body) - wordCount(splitArticle(before).body);
       assert.ok(delta <= WORD_LIMIT, `${path} grew by ${delta} words`);
     }
     assert.equal(after.includes("\u2014"), before.includes("\u2014"), `${path} added an em dash`);

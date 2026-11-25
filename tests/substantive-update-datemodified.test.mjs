@@ -30,6 +30,8 @@ const BEFORE_DATE_RESTORE = "84702a37";
 const LATER_UPDATES = {
   "baking-sheet-liners-parchment-silicone-when-to-use": "2026-11-25",
   "best-breakfast-foods-for-sustained-energy": "2026-11-25",
+  "best-high-protein-breads-healthy-sandwiches": "2026-11-25",
+  "big-flavor-less-salt-citrus-herbs-umami-swaps": "2026-11-25",
   "chia-pudding-variations-for-breakfast": "2026-11-25",
   "costco-rotisserie-chicken-meal-ideas-dinner": "2026-11-25",
   "cooking-oils-smoke-points-best-uses": "2026-11-25",
