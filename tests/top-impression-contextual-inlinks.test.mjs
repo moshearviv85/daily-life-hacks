@@ -118,7 +118,7 @@ function articleSlugFromHref(href) {
 
 function bodyLinks(body) {
   const links = [];
-  const pattern = /\[([^\]]+)\]\(([^)\s]+)\)|<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  const pattern = /(?<!!)\[([^\]]+)\]\(([^)\s]+)\)|<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
   for (const match of body.matchAll(pattern)) {
     const href = match[2] || match[3] || "";
     const anchor = (match[1] || match[4] || "").replace(/<[^>]+>/g, "").trim();

@@ -30,7 +30,7 @@ That's 227.3 grams across seven days, about 32.5 grams a day, for one person. Th
 
 ## What goes on a 7-day high-fiber grocery list?
 
-Buy this once. Cook the dry goods on three days, eat the mixed plate twice, and keep the no-cook day for the nights the pot stays in the cabinet. Every fiber gram and every cent below is a published row in the [fiber day CSV](/data/fiber-day-cost-2026.csv), which points at the [parent fiber CSV](/data/fiber-per-dollar-2026.csv) and a USDA FoodData Central record. Cup language is the day menu's own label, multiplied. I didn't invent a new scoop.
+Buy this once. Cook the dry goods on three days, eat the mixed plate twice, and keep the no-cook day for the nights the pot stays in the cabinet. Every fiber gram and every cent below is a published row in fiber-day-cost-2026.csv, which points at fiber-per-dollar-2026.csv and a USDA FoodData Central record. Both files are on the [30-gram cost study](/what-30-grams-of-fiber-costs-per-day/). Cup language is the day menu's own label, multiplied. I didn't invent a new scoop.
 
 | Food | Week amount | Fiber | Unit price | Line cost | FDC |
 |---|---|---:|---|---:|---|
@@ -51,17 +51,17 @@ Buy this once. Cook the dry goods on three days, eat the mixed plate twice, and 
 | Frozen green peas | 240 g | 10.8 g | $0.31 per 120 g | $0.62 | [170016](https://fdc.nal.usda.gov/food-details/170016/nutrients) |
 | **Week** | | **227.3 g** | | **$9.32** | |
 
-Split peas are the quiet star. $0.48 and 33.3 grams, which is more fiber than the two apples and both bananas combined, and the [day CSV](/data/fiber-day-cost-2026.csv) is where those line items live. The apples still cost $1.02. Buy them if you want the crunch. Don't ask them to carry the week.
+Split peas are the quiet star. $0.48 and 33.3 grams, which is more fiber than the two apples and both bananas combined, and the [30-gram cost study](/what-30-grams-of-fiber-costs-per-day/) is where those line items live. The apples still cost $1.02. Buy them if you want the crunch. Don't ask them to carry the week.
 
-Four rows say proxy because the parent audit says so. Peanut butter, canned black beans, frozen broccoli, and bran flakes have a FoodData Central record, and the priced package isn't an exact form match. The [fiber CSV](/data/fiber-per-dollar-2026.csv) has the note. Popcorn stayed off the list. That row is still unresolved, and a grocery list shouldn't pretend otherwise.
+Four rows say proxy because the parent audit says so. Peanut butter, canned black beans, frozen broccoli, and bran flakes have a FoodData Central record, and the priced package isn't an exact form match. The note is in fiber-per-dollar-2026.csv, on the [30-gram cost study](/what-30-grams-of-fiber-costs-per-day/). Popcorn stayed off the list. That row is still unresolved, and a grocery list shouldn't pretend otherwise.
 
 Pinto beans and bananas use the July 2026 BLS US average already written on the day file. Whole wheat bread uses the May 2026 BLS average on that same file. I didn't relabel it as July. The other line costs are the Walmart prices those day menus already applied. Add the visible cents and you get $9.32. A price-per-100-gram multiplication can disagree by a penny, because the day rows were rounded first. The [methodology page](/methodology/) covers edible fraction, including why a banana's fiber figure doesn't include the peel.
 
 ## What does each day of the list actually eat?
 
-Three copies of the rock-bottom day, two copies of the mixed day, two copies of the no-cook day. I'm not promising you'll crave split peas on Sunday if you had them on Monday. I'm saying the math still clears 30 grams when you repeat the cheap plates from the [day CSV](/data/fiber-day-cost-2026.csv).
+Three copies of the rock-bottom day, two copies of the mixed day, two copies of the no-cook day. I'm not promising you'll crave split peas on Sunday if you had them on Monday. I'm saying the math still clears 30 grams when you repeat the cheap plates from the [30-gram cost study](/what-30-grams-of-fiber-costs-per-day/).
 
-| Day | Menu from the [day CSV](/data/fiber-day-cost-2026.csv) | Fiber | That day | Cost so far |
+| Day | Menu from the [30-gram cost study](/what-30-grams-of-fiber-costs-per-day/) | Fiber | That day | Cost so far |
 |---|---|---:|---:|---:|
 | Monday | Dry goods: oats, split peas, pintos, brown rice, barley | 31.9 g | $0.62 | $0.62 |
 | Tuesday | Mixed: oats, banana, peanut butter sandwich, apple, black beans, broccoli | 35.0 g | $1.99 | $2.61 |
@@ -71,9 +71,9 @@ Three copies of the rock-bottom day, two copies of the mixed day, two copies of 
 | Saturday | No-cook again | 30.8 g | $1.74 | $8.70 |
 | Sunday | Dry goods again | 31.9 g | $0.62 | $9.32 |
 
-The day names are mine. The grams and the cents are the [published menus](/data/fiber-day-cost-2026.csv), repeated.
+The day names are mine. The grams and the cents are the [published menus](/what-30-grams-of-fiber-costs-per-day/), repeated.
 
-Every one of those days is between 30.8 and 35.0 grams. The [same day CSV](/data/fiber-day-cost-2026.csv) is the source of the fiber column and the running cost.
+Every one of those days is between 30.8 and 35.0 grams. The [30-gram cost study](/what-30-grams-of-fiber-costs-per-day/) is the source of the fiber column and the running cost.
 
 ![Bar and line chart of daily fiber grams and the running grocery cost for a 7-day high-fiber list, ending at 227.3 grams and $9.32](/images/high-fiber-grocery-list-30-grams-chart.jpg)
 
