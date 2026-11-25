@@ -1,6 +1,6 @@
 ---
 title: Sourdough Discard Pizza Dough Without Added Yeast
-excerpt: "Mix sourdough discard with flour, baking powder, salt, and oil, then roll it thin and bake hot for a crisp pizza crust without a yeast rise."
+excerpt: "Sourdough discard pizza dough without added yeast, ready in about 40 minutes. Mix discard, flour, baking powder, salt, and oil; roll thin and bake hot."
 quickAnswer: >-
   Use 227 grams of 100% hydration discard, 180 grams of flour, and 75 grams of
   water, plus baking powder, salt, and oil. This makes one thin 12-inch crust
