@@ -37,7 +37,7 @@ The 50 gram version of this question is already on [what 50 grams of protein cos
 
 Five grocery templates land near 100 grams. Lentils, peanut butter, and oats cost $1.57. Eggs, Greek yogurt, milk, and oats cost $3.22. Drumsticks, eggs, and cottage cheese cost $2.82. Chicken breast, tuna, and mozzarella cost $3.91. Ground beef, cheddar, and bacon cost $8.33. The [National Academies](https://nap.nationalacademies.org/catalog/10490/dietary-reference-intakes-for-energy-carbohydrate-fiber-fat-fatty-acids-cholesterol-protein-and-amino-acids) RDA is 0.8 grams per kilogram, a baseline, not this target.
 
-Protein in a line is the CSV's protein per 100 grams times the gram weight. Cost is those protein grams divided by the published grams per dollar. The total is the unrounded sum, then one decimal for protein and the cent for money. A line rounded on its own can miss the total by a tenth of a gram. That's rounding, not a second price. The [methodology](/methodology/) spells out the edible fraction.
+Protein in a line is the CSV's protein per 100 grams times the gram weight. Cost is those protein grams divided by the published grams per dollar. The total is the unrounded sum, then one decimal for protein and the cent for money. A line rounded on its own can miss the total by a tenth of a gram. That's rounding, not a second price. The [50 gram day](/what-50-grams-of-protein-costs-per-day/) uses the same edible-fraction rule.
 
 ## Five templates, from $1.57 to $8.33
 

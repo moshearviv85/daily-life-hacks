@@ -209,7 +209,7 @@ test("the canned fish page prices four Best Choices from the published CSVs", ()
   assert.match(fishArticle, /## Which canned or frozen fish gives the most protein per dollar with the lowest mercury\?/);
   assert.match(fishArticle, /\/how-much-100-grams-of-protein-costs-per-day\//);
   assert.match(fishArticle, /\/animal-protein-per-dollar-ranked\//);
-  assert.match(fishArticle, /\/methodology\//);
+  assert.doesNotMatch(fishArticle, /\]\(\/methodology\//);
 
   const answer = directAnswer(
     fishArticle,
@@ -269,7 +269,7 @@ test("the 100 gram page prices five menus from the three published CSVs", () => 
   assert.match(dayArticle, /## How much does 100 grams of protein per day actually cost at the grocery store\?/);
   assert.match(dayArticle, /\/cheapest-canned-fish-and-seafood-protein-per-dollar\//);
   assert.match(dayArticle, /\/what-50-grams-of-protein-costs-per-day\//);
-  assert.match(dayArticle, /\/methodology\//);
+  assert.doesNotMatch(dayArticle, /\]\(\/methodology\//);
   assert.match(dayArticle, /0\.8 grams per kilogram/);
   assert.match(dayArticle, /172420/);
   assert.match(dayArticle, /174266/);

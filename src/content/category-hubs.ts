@@ -70,7 +70,6 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
           "beans-double-win-fiber-protein",
           "can-you-eat-rice-and-beans-everyday",
           "protein-per-serving-beans-chicken-tofu-compared",
-          "plant-based-protein-sources-complete-guide",
           "natto-japanese-fermented-soybeans-gut-health",
         ],
       },

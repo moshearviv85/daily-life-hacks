@@ -41,7 +41,7 @@ Lowest mercury and most protein per dollar aren't the same fish. Sardines and ti
 
 ## Four fish, with the sodium still on the label
 
-Protein per dollar is the same rate in protein-per-dollar-2026.csv and animal-protein-per-dollar-ranked-2026.csv. Sodium for the three cans is sodium-per-dollar-2026.csv. Cost for 30 grams is 30 divided by the grams-per-dollar rate, then rounded to the cent. The [methodology](/methodology/) is where the edible-fraction rule lives.
+Protein per dollar is the same rate in protein-per-dollar-2026.csv and animal-protein-per-dollar-ranked-2026.csv. Sodium for the three cans is sodium-per-dollar-2026.csv. Cost for 30 grams is 30 divided by the grams-per-dollar rate, then rounded to the cent. The edible fraction is already in the [tuna row](https://fdc.nal.usda.gov/food-details/173709/nutrients).
 
 | Fish | Protein per $1 | Cost for 30 g | Sodium per 100 g | Mercury mean | FDA/EPA list | FDC |
 |---|---:|---:|---:|---:|---|---|
