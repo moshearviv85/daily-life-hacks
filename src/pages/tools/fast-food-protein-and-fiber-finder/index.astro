@@ -1,0 +1,495 @@
+---
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATASET_ORGANIZATION, DATASET_PERSON_CREATOR } from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/tools/fast-food-protein-and-fiber-finder/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/fast-food-protein-and-fiber-finder-chart.jpg";
+const chartAlt =
+  "Two bar charts comparing chains: best protein grams per dollar from the priced menu file, and highest fiber grams from the fiber file";
+const PRICE_CAP = 5;
+const CALORIE_CAP = 500;
+const CHAIN_ORDER = [
+  "Chipotle",
+  "Wendy's",
+  "Taco Bell",
+  "McDonald's",
+  "KFC",
+  "Chick-fil-A",
+  "Subway",
+  "Cava",
+  "Panera",
+  "Popeyes",
+  "El Pollo Loco",
+  "Dunkin'",
+  "Starbucks",
+];
+const FAST_FOOD_INDEX = "/data/fast-food-protein-and-fiber-index/";
+const fastFoodIndexExists = existsSync(
+  join(process.cwd(), "src/pages/data/fast-food-protein-and-fiber-index/index.astro"),
+);
+
+function rowsFrom(fileName: string) {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+function blank(value: string) {
+  return value ? value : "";
+}
+
+const priced = rowsFrom("fastfood-protein-per-dollar-2026.csv").map((row) => ({
+  chain: row.chain,
+  item: row.item,
+  list: "Priced menu",
+  protein: row.protein_g,
+  fiber: "",
+  calories: "",
+  sodium: "",
+  price: row.price_usd,
+  perDollar: row.protein_g_per_dollar,
+}));
+
+const fiberRows = rowsFrom("high-fiber-fast-food-2026.csv").map((row) => ({
+  chain: row.chain,
+  item: row.item,
+  list: "Fiber menu",
+  protein: row.protein_g,
+  fiber: row.fiber_g,
+  calories: row.calories,
+  sodium: blank(row.sodium_mg),
+  price: "",
+  perDollar: "",
+}));
+
+const knownChains = new Set(CHAIN_ORDER);
+for (const row of [...priced, ...fiberRows]) {
+  if (!knownChains.has(row.chain)) throw new Error(`Unexpected chain ${row.chain}`);
+}
+
+function num(value: string) {
+  if (!value) return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function byNumberDesc(field: "perDollar" | "protein" | "fiber" | "price" | "calories") {
+  return (a: { [key: string]: string }, b: { [key: string]: string }) => {
+    const av = num(a[field]);
+    const bv = num(b[field]);
+    if (av == null && bv == null) return a.item.localeCompare(b.item);
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    return bv - av || a.item.localeCompare(b.item);
+  };
+}
+
+const orders = [...priced, ...fiberRows].sort(byNumberDesc("perDollar"));
+
+function winner<T extends { [key: string]: string }>(rows: T[], field: "perDollar" | "fiber") {
+  return rows.reduce((best, row) => (Number(row[field]) > Number(best[field]) ? row : best));
+}
+
+const chains = CHAIN_ORDER.filter((chain) => orders.some((row) => row.chain === chain)).map((chain) => {
+  const pricedHere = priced.filter((row) => row.chain === chain);
+  const fiberHere = fiberRows.filter((row) => row.chain === chain);
+  return {
+    chain,
+    protein: pricedHere.length ? winner(pricedHere, "perDollar") : null,
+    fiber: fiberHere.length ? winner(fiberHere, "fiber") : null,
+  };
+});
+
+const pricedChains = new Set(priced.map((row) => row.chain));
+const fiberChains = new Set(fiberRows.map((row) => row.chain));
+const onlyPriced = CHAIN_ORDER.filter((chain) => pricedChains.has(chain) && !fiberChains.has(chain));
+const onlyFiber = CHAIN_ORDER.filter((chain) => fiberChains.has(chain) && !pricedChains.has(chain));
+
+const underFive = priced.filter((row) => Number(row.price) <= PRICE_CAP).sort(byNumberDesc("perDollar"));
+const overFive = priced.filter((row) => Number(row.price) > PRICE_CAP).sort(byNumberDesc("perDollar"));
+const bestUnderFive = underFive[0];
+const bestOverFive = overFive[0];
+const bestFiber = [...fiberRows].sort(byNumberDesc("fiber"))[0];
+const underCalories = fiberRows
+  .filter((row) => Number(row.calories) <= CALORIE_CAP)
+  .sort(byNumberDesc("fiber"));
+const bestFiberUnderCap = underCalories[0];
+if (!bestUnderFive || !bestOverFive || !bestFiber || !bestFiberUnderCap) {
+  throw new Error("Missing a fast-food comparison row");
+}
+
+const title = "Fast-Food Protein and Fiber Order Finder";
+const description =
+  "Filter priced fast-food orders and high-fiber orders by chain, a $5 cap, 500 calories, and a protein or fiber floor.";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: "Fast-Food Protein and Fiber Finder",
+  url: pageUrl,
+  description,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  image: `${siteUrl}${chartSrc}`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Fast-Food Protein and Fiber Finder", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+
+function cell(value: string) {
+  return value ? value : "not in this file";
+}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main id="ff-finder" class="ff-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Fast-food finder</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+      <span aria-hidden="true"> · </span>
+      {priced.length} priced orders, {fiberRows.length} fiber orders
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      Filter a Fast-Food Order by Chain, Price, and Fiber
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      {bestUnderFive.chain}'s {bestUnderFive.item} is ${bestUnderFive.price} and {bestUnderFive.perDollar} grams of protein per dollar. {bestFiber.chain}'s highest fiber order is {bestFiber.fiber} grams, at {bestFiber.calories} calories. They're not the same meal. The index averages a chain. This finder names the one order that wins, then lets you throw out anything over ${PRICE_CAP} or over {CALORIE_CAP} calories.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      {priced.length} priced orders are fastfood-protein-per-dollar-2026.csv. {fiberRows.length} high-fiber orders are high-fiber-fast-food-2026.csv. The priced file has protein and a price. It doesn't have fiber or calories. The fiber file has fiber, calories, protein, and sodium. It doesn't have a price. A blank cell stays blank. It isn't zero, and it isn't a guess.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        Left bars are the best protein grams per dollar in the priced file. Right bars are the highest fiber grams in the fiber file.
+        {onlyPriced.join(", ")} {onlyPriced.length === 1 ? "has" : "have"} a price and no fiber row.
+        {onlyFiber.join(", ")} {onlyFiber.length === 1 ? "has" : "have"} fiber and no price.
+      </figcaption>
+    </figure>
+
+    <section class="mb-12">
+      <h2>What each chain's best row actually is</h2>
+      <p>
+        The $5 cap still keeps {bestUnderFive.item} at {bestUnderFive.chain}, ${bestUnderFive.price}, {bestUnderFive.perDollar} grams per dollar. The best priced row the cap removes is {bestOverFive.item} at {bestOverFive.chain}, ${bestOverFive.price}, {bestOverFive.perDollar} grams per dollar. {underFive.length} priced orders are at or under ${PRICE_CAP}. The other {overFive.length} aren't.
+      </p>
+      <p>
+        The fiber leader is {bestFiber.item}: {bestFiber.fiber} grams of fiber and {bestFiber.calories} calories, so the {CALORIE_CAP} calorie cap misses it. Under that cap, the fiber leader is {bestFiberUnderCap.item} at {bestFiberUnderCap.chain}, {bestFiberUnderCap.fiber} grams and {bestFiberUnderCap.calories} calories. {underCalories.length} fiber orders are at or under {CALORIE_CAP} calories.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>One winner per chain from each file. "No priced row" or "no fiber row" means that file has no row. It isn't a zero.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Chain</th>
+              <th scope="col">Best protein per dollar</th>
+              <th scope="col">Highest fiber</th>
+            </tr>
+          </thead>
+          <tbody>
+            {chains.map((row) => (
+              <tr>
+                <th scope="row">{row.chain}</th>
+                <td>
+                  {row.protein
+                    ? `${row.protein.item}: ${row.protein.perDollar} g per $ at $${row.protein.price}`
+                    : "no priced row"}
+                </td>
+                <td>
+                  {row.fiber
+                    ? `${row.fiber.item}: ${row.fiber.fiber} g, ${row.fiber.calories} kcal`
+                    : "no fiber row"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12" aria-label="Fast-food order filter">
+      <h2>Set the chain, the caps, and the floor</h2>
+      <p>
+        Start wide. Then cut. A price cap hides every fiber row, because those rows were never priced. A calorie cap hides every priced row, because those rows never recorded calories. That's the point of keeping two lists.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <label class="tool-label">
+          Chain
+          <select class="tool-input" id="ff-chain">
+            <option value="all" selected>All {chains.length} chains</option>
+            {chains.map((row) => (
+              <option value={row.chain}>{row.chain}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          Price cap
+          <select class="tool-input" id="ff-price">
+            <option value="" selected>Any price</option>
+            <option value={PRICE_CAP}>${PRICE_CAP} or less</option>
+          </select>
+        </label>
+        <label class="tool-label">
+          Calorie cap
+          <select class="tool-input" id="ff-calories">
+            <option value="" selected>Any calories</option>
+            <option value={CALORIE_CAP}>{CALORIE_CAP} kcal or less</option>
+          </select>
+        </label>
+        <label class="tool-label">
+          Minimum protein, grams
+          <input class="tool-input" id="ff-protein" type="number" min="0" step="1" inputmode="numeric" value="0" />
+        </label>
+        <label class="tool-label">
+          Minimum fiber, grams
+          <input class="tool-input" id="ff-fiber" type="number" min="0" step="1" inputmode="numeric" value="0" />
+        </label>
+        <label class="tool-label">
+          Sort
+          <select class="tool-input" id="ff-sort">
+            <option value="perDollar" selected>Protein grams per dollar</option>
+            <option value="protein">Protein grams</option>
+            <option value="fiber">Fiber grams</option>
+            <option value="price">Price, low first</option>
+            <option value="calories">Calories, low first</option>
+          </select>
+        </label>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button type="button" class="ff-button" id="ff-under-five">${PRICE_CAP} or less</button>
+        <button type="button" class="ff-button" id="ff-under-calories">{CALORIE_CAP} kcal or less</button>
+        <button type="button" class="ff-button" id="ff-reset">Any chain, no caps</button>
+      </div>
+      <p id="ff-count" aria-live="polite" class="count-line"></p>
+      <div class="table-wrap">
+        <table>
+          <caption>
+            {orders.length} orders from two files. Priced menu rows have no fiber, calories, or sodium. Fiber menu rows have no price and no protein-per-dollar figure.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Protein g</th>
+              <th scope="col">Fiber g</th>
+              <th scope="col">Calories</th>
+              <th scope="col">Price</th>
+              <th scope="col">Protein g per $</th>
+            </tr>
+          </thead>
+          <tbody id="ff-rows">
+            {orders.map((order) => (
+              <tr
+                data-chain={order.chain}
+                data-item={order.item}
+                data-protein={order.protein}
+                data-fiber={order.fiber}
+                data-calories={order.calories}
+                data-price={order.price}
+                data-perdollar={order.perDollar}
+              >
+                <th scope="row">
+                  {order.item}
+                  <span class="food-meta">{order.chain} · {order.list}{order.sodium ? ` · ${order.sodium} mg sodium` : ""}</span>
+                </th>
+                <td>{cell(order.protein)}</td>
+                <td>{cell(order.fiber)}</td>
+                <td>{cell(order.calories)}</td>
+                <td>{order.price ? `$${order.price}` : "not in this file"}</td>
+                <td>{cell(order.perDollar)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs" style="color:var(--muted-color);">
+        The filter runs in this browser tab. Nothing you pick is saved or sent. Prices are the tracked menu prices in the file, not a quote from the store down the road.
+      </p>
+    </section>
+
+    <article>
+      <h2>The write-ups, if you want the argument and not the filter</h2>
+      <p>
+        The priced ranking, chain by chain, is
+        <a href="/fast-food-protein-per-dollar-ranked/" class={linkClass} style={linkStyle}>fast-food protein per dollar</a>.
+        Orders written up for both protein and fiber are
+        <a href="/fast-food-meals-with-protein-and-fiber/" class={linkClass} style={linkStyle}>fast-food meals with protein and fiber</a>.
+        The $5 cut of the priced file is
+        <a href="/cheapest-fast-food-protein-under-5-dollars/" class={linkClass} style={linkStyle}>cheapest fast food protein under $5</a>.
+        The calorie cut of the fiber file is
+        <a href="/high-fiber-fast-food-under-500-calories/" class={linkClass} style={linkStyle}>high-fiber fast food under 500 calories</a>.
+        This finder doesn't replace those pages. It lets you change the cut.
+      </p>
+      {fastFoodIndexExists && (
+        <p>
+          Unweighted means by chain, and the standing 59-row table, are the
+          <a href={FAST_FOOD_INDEX} class={linkClass} style={linkStyle}>fast-food protein and fiber index</a>.
+          That page doesn't put a price cap on the menu. This one does. Use the index when you want the average. Use this finder when you want the winning item under ${PRICE_CAP} or under {CALORIE_CAP} calories.
+        </p>
+      )}
+      <p>
+        How a tracker price differs from a chain's own menu, and what we do when a number is wrong, is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>Why are priced orders and high-fiber orders on separate rows?</summary><p>The priced file records protein, a menu price, and protein grams per dollar. It doesn't record fiber or calories. The fiber file records fiber, calories, protein, and sodium. It doesn't record a price. One combined row would invent a meal the two audits didn't publish together. The same chain can appear in both files as different items, and a name that shows up twice stays two rows.</p></details>
+        <details><summary>What does the $5 price cap include?</summary><p>The cap keeps priced rows at ${PRICE_CAP} or under and hides every row that has no price. A fiber order can be inexpensive at the counter and still disappear, because high-fiber-fast-food-2026.csv never wrote a dollar amount. The price is the tracked figure in fastfood-protein-per-dollar-2026.csv. Several notes in that file already say the store range is wide.</p></details>
+        <details><summary>What does the 500 calorie cap include?</summary><p>The cap keeps fiber-file rows at {CALORIE_CAP} calories or under and hides priced rows, which have no calorie count. A strong protein-per-dollar item can be under ${PRICE_CAP} and still have an empty calorie cell here. Calories are the chain's published count in high-fiber-fast-food-2026.csv. They aren't estimated from the price.</p></details>
+        <details><summary>Which chains can the finder filter?</summary><p>The chain list is every chain in either file: {CHAIN_ORDER.join(", ")}. A chain that exists in only one file still appears. {onlyPriced.join(", ")} are priced and not in the fiber file. {onlyFiber.join(", ")} are in the fiber file and not priced. The missing column stays blank instead of turning into a zero.</p></details>
+        <details><summary>Where do the protein and fiber numbers come from?</summary><p>Protein, price, and protein per dollar come from fastfood-protein-per-dollar-2026.csv. Fiber, calories, protein, and sodium come from high-fiber-fast-food-2026.csv. Each file's source column names the chain guide and the price tracker or the check date. How a tracker price differs from the chain's own menu is on the <a href="/methodology/">methodology page</a>.</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style is:global>
+    .ff-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 2rem 0 0.7rem; color: var(--heading-color); }
+    .ff-page h2:first-child { margin-top: 0; }
+    .ff-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .ff-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .ff-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .ff-page .ff-button { border-radius: 999px; padding: 0.6rem 0.95rem; font-size: 0.85rem; font-weight: 700; color: #a85e00; border: 1px solid #F29B30; background: transparent; }
+    .ff-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); }
+    .ff-page table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .ff-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .ff-page th, .ff-page td { text-align: left; padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .ff-page th { color: var(--heading-color); }
+    .ff-page .food-meta { display: block; margin-top: 0.2rem; font-weight: 500; font-size: 0.75rem; color: var(--muted-color); }
+    .ff-page .count-line { font-weight: 700; color: var(--heading-color); }
+    .ff-page .faq-list details { margin: 0.65rem 0; border: 1px solid var(--border-color); border-radius: 0.75rem; background: var(--card-bg); padding: 0 1rem; }
+    .ff-page .faq-list summary { cursor: pointer; font-weight: 700; padding: 1rem 0; color: var(--heading-color); }
+    .ff-page .faq-list p { margin: 0 0 1rem; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById('ff-finder');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var chain = root.querySelector('#ff-chain');
+        var price = root.querySelector('#ff-price');
+        var calories = root.querySelector('#ff-calories');
+        var protein = root.querySelector('#ff-protein');
+        var fiber = root.querySelector('#ff-fiber');
+        var sort = root.querySelector('#ff-sort');
+        var count = root.querySelector('#ff-count');
+        var body = root.querySelector('#ff-rows');
+        var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
+        function num(value) {
+          if (value === '' || value == null) return null;
+          var parsed = parseFloat(value);
+          return isFinite(parsed) ? parsed : null;
+        }
+        function floor(input) {
+          var value = parseFloat(input.value);
+          if (!isFinite(value) || value < 0) return 0;
+          return value;
+        }
+        function render() {
+          var minProtein = floor(protein);
+          var minFiber = floor(fiber);
+          var priceCap = price.value === '' ? null : parseFloat(price.value);
+          var calorieCap = calories.value === '' ? null : parseFloat(calories.value);
+          var mode = sort.value;
+          var sorted = rows.slice().sort(function (a, b) {
+            var key = mode === 'perDollar' ? 'perdollar' : mode;
+            var av = num(a.dataset[key]);
+            var bv = num(b.dataset[key]);
+            var direction = mode === 'price' || mode === 'calories' ? 1 : -1;
+            if (av == null && bv == null) return a.dataset.item.localeCompare(b.dataset.item);
+            if (av == null) return 1;
+            if (bv == null) return -1;
+            return (av - bv) * direction;
+          });
+          sorted.forEach(function (row) { body.appendChild(row); });
+          var visible = 0;
+          rows.forEach(function (row) {
+            var hide = false;
+            var rowProtein = num(row.dataset.protein);
+            var rowFiber = num(row.dataset.fiber);
+            var rowCalories = num(row.dataset.calories);
+            var rowPrice = num(row.dataset.price);
+            if (chain.value !== 'all' && row.dataset.chain !== chain.value) hide = true;
+            if (priceCap != null && (rowPrice == null || rowPrice > priceCap)) hide = true;
+            if (calorieCap != null && (rowCalories == null || rowCalories > calorieCap)) hide = true;
+            if (rowProtein == null || rowProtein < minProtein) hide = true;
+            if (minFiber > 0 && (rowFiber == null || rowFiber < minFiber)) hide = true;
+            row.hidden = hide;
+            if (!hide) visible += 1;
+          });
+          count.textContent = visible + ' of ' + rows.length + ' orders match. A price cap hides rows with no price. A calorie cap hides rows with no calories. A fiber floor hides rows with no fiber.';
+        }
+        root.querySelector('#ff-under-five').addEventListener('click', function () {
+          price.value = '5';
+          calories.value = '';
+          render();
+        });
+        root.querySelector('#ff-under-calories').addEventListener('click', function () {
+          calories.value = '500';
+          price.value = '';
+          render();
+        });
+        root.querySelector('#ff-reset').addEventListener('click', function () {
+          chain.value = 'all';
+          price.value = '';
+          calories.value = '';
+          protein.value = '0';
+          fiber.value = '0';
+          sort.value = 'perDollar';
+          render();
+        });
+        root.addEventListener('change', render);
+        root.addEventListener('input', render);
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
