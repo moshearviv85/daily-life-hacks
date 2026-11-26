@@ -126,7 +126,7 @@ test("bean pages and the homepage share the kitchen conversion and link the conv
     assert.doesNotMatch(source, /aggregateRating/);
   }
 
-  assert.match(canned, /title: "Dried vs Canned Beans: Which Has More Protein\?"/);
+  assert.match(canned, /title: "Canned vs Dried Beans: Protein, Cost and Can-to-Dry Conversion"/);
   assert.match(cook, /title: How to Cook Dried Beans From Scratch/);
   assert.match(canned, new RegExp(`\\]\\(${CONVERTER}\\)`));
   assert.match(cook, new RegExp(`\\]\\(${CONVERTER}\\)`));

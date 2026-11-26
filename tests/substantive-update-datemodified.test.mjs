@@ -64,7 +64,7 @@ const LATER_UPDATES = {
   "sourdough-discard-hydration-conversion-chart": "2026-11-25",
   "sourdough-discard-pizza-and-bread-troubleshooting": "2026-11-26",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
-  "canned-beans-vs-dried-beans-nutrition": "2026-11-25",
+  "canned-beans-vs-dried-beans-nutrition": "2026-11-26",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
   "how-to-keep-sandwiches-from-getting-soggy": "2026-11-26",
   "how-to-pack-salad-for-work-not-soggy": "2026-11-25",
@@ -119,6 +119,12 @@ const LATER_UPDATES = {
   "cheapest-ways-to-add-10-grams-of-fiber-to-any-meal": "2026-11-26",
   "cheapest-family-grocery-basket-for-protein-and-fiber": "2026-11-26",
   "sourdough-discard-vs-baking-powder-and-yeast-cost-per-bake": "2026-11-26",
+};
+
+/** Title rewrites this file is allowed to carry. Every other title stays on origin/main. */
+const TITLE_UPDATES = {
+  "canned-beans-vs-dried-beans-nutrition":
+    "Canned vs Dried Beans: Protein, Cost and Can-to-Dry Conversion",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
@@ -242,12 +248,17 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   const restored = [];
   for (const article of articles) {
     const onMain = gitShow("origin/main", article.path);
-    if (onMain) {
+    const expectedTitle = TITLE_UPDATES[article.slug];
+    if (expectedTitle) {
+      assert.equal(article.title, expectedTitle, `${article.slug} title`);
+    } else if (onMain) {
       assert.equal(
         article.title,
         extractFrontmatterField(onMain, "title"),
         `${article.slug} title changed`,
       );
+    }
+    if (onMain) {
       assert.equal(
         article.author,
         extractFrontmatterField(onMain, "author"),

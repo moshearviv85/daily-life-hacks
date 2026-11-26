@@ -27,10 +27,15 @@ test("prune set is 87 unique article slugs and never overlaps KEEP or protected 
   assert.equal(INDEX_KEEP_PATHS.size, 14);
   assert.equal(INDEX_KEEP_PATHS.has("guides"), false);
   assert.equal(INDEX_KEEP_PATHS.has("research"), false);
-  assert.equal(INDEX_NOINDEX_TOOL_PATHS.size, 3);
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.size, 2);
   assert.equal(NOINDEX_FOLLOW, "noindex, follow");
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.has("tools/recipe-finder"), false);
+  assert.equal(INDEX_KEEP_PATHS.has("tools/recipe-finder"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("tools/recipe-finder"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("recipe-finder"), false);
+  assert.equal(noindexFollowFor("tools/recipe-finder"), undefined);
+  assert.equal(noindexFollowFor("/tools/recipe-finder/"), undefined);
   for (const path of [
-    "tools/recipe-finder",
     "tools/shopping-list-builder",
     "tools/grocery-trip-savings-calculator",
   ]) {
@@ -85,12 +90,14 @@ test("sitemap serialize drops a prune slug and keeps the fiber-per-dollar flagsh
   const keepUrl = `${SITE}/fiber-per-dollar-cheapest-high-fiber-foods/`;
   const droppedTools = [...INDEX_NOINDEX_TOOL_PATHS].map((path) => `${SITE}/${path}/`);
   const budgetTool = `${SITE}/tools/grocery-budget-calculator/`;
+  const finderTool = `${SITE}/tools/recipe-finder/`;
   const payload = JSON.stringify({
     urls: [
       pruneUrl,
       keepUrl,
       `${SITE}/`,
       budgetTool,
+      finderTool,
       ...droppedTools,
       ...[...INDEX_KEEP_PATHS].map((path) => `${SITE}/${path}/`),
     ],
@@ -116,4 +123,5 @@ test("sitemap serialize drops a prune slug and keeps the fiber-per-dollar flagsh
     assert.equal(parsed.results[url].excluded, true, `noindex tool stayed in sitemap rules: ${url}`);
   }
   assert.equal(parsed.results[budgetTool].excluded, false);
+  assert.equal(parsed.results[finderTool].excluded, false);
 });

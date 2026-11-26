@@ -530,9 +530,8 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
   assert.ok(!robotsFor(`${SITE}/protein-per-dollar-adjusted-for-quality/`).includes("noindex"));
 });
 
-test("three utility tools render noindex, follow and are absent from sitemap XML", () => {
+test("two utility tools render noindex, follow and are absent from sitemap XML", () => {
   const dropped = [
-    "/tools/recipe-finder/",
     "/tools/shopping-list-builder/",
     "/tools/grocery-trip-savings-calculator/",
   ];

@@ -1,5 +1,5 @@
 ---
-title: "Dried vs Canned Beans: Which Has More Protein?"
+title: "Canned vs Dried Beans: Protein, Cost and Can-to-Dry Conversion"
 excerpt: "Dried beans vs canned beans: same bean, different water. Dry black beans hold 21.6 g of protein per 100 g vs 6.0 g canned, and 58.0 g per dollar vs 30.1 g."
 category: "nutrition"
 tags: ["canned beans vs dried beans", "dried beans nutrition", "canned beans nutrition", "protein per dollar", "grocery data"]
@@ -8,8 +8,8 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/canned-beans-vs-dried-beans-nutrition-main.jpg"
 imageAlt: "A measuring bowl of dry black beans beside an opened can of black beans on a kitchen scale"
 date: 2026-07-28
-dateModified: 2026-11-25
-substantiveUpdate: 2026-11-25
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 quickAnswer: "One 15-oz can is about 1 1/2 cups drained, about 1/2 cup+ dried. One pound of dried beans cooks to about 6 cups, which is roughly 3½ to 4 cans. Our protein match for a priced 15.5 oz can of black beans is 123 g dry, a little over 1/2 cup."
 featured: false
@@ -29,9 +29,24 @@ faq:
     answer: "A 15.5 oz can, 439 grams including the liquid, holds about 26.5 grams of protein for black beans, 22.9 grams for kidney beans, and 21.6 grams for chickpeas. Black beans also hold about 30.3 grams of fiber in that same whole-can figure. Drain and rinse and the plate is a bit under those totals, because some of the 439 grams is liquid."
 ---
 
+## How many dried beans equal one can?
+
+One 15-ounce can is about 1 1/2 cups after you drain it. That replaces about 1/2 cup+ of dried beans. A pound of dried beans cooks to about 6 cups, which is about 3½ to 4 cans. That's the conversion. The protein table can wait a second.
+
+Table: One can of beans in drained cups and dry beans
+
+| Start with | Equals |
+|---|---|
+| 1 can (15 oz) | about 1 1/2 cups drained, about 1/2 cup+ dry |
+| 1 pound dry | about 6 cups cooked, about 3½ to 4 cans |
+
+A different can size, or a crowd, is the [dried beans to canned converter](/tools/dried-beans-to-canned-converter/).
+
 Same bean. Different amount of water, and a very different price per gram. Dry black beans carry 21.6 grams of protein per 100 grams against 6.0 grams for the canned version, and they return 58.0 grams of protein per dollar against 30.1 for the can.
 
 Both of those gaps are real. Only one of them means what people think it means.
+
+Table: Protein and fiber per 100 grams and per dollar, dry versus canned
 
 | Bean | Form | Protein / 100 g | Fiber / 100 g | Protein per $1 | Fiber per $1 |
 |---|---|---|---|---|---|
@@ -92,7 +107,7 @@ The one real trade with cans is sodium, since most are packed with salt added. W
 
 The bag, by about 1.9 times on protein for black beans. Dry black beans returned 58.0 grams per dollar and the can returned 30.1. Dry chickpeas returned 56.7 against 22.0 canned, about 2.6 times. On fiber the pattern holds inside this table: dry pinto beans returned 41.7 grams per dollar and canned black beans 34.4. Green split peas, at 71.0, lead the wider dry-legume fiber list.
 
-Dry pinto beans return 57.6 grams of protein and 41.7 grams of fiber per dollar. They're not the top of the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) or the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). We scored the combined number in [beans win twice](/beans-double-win-fiber-protein/). The [cost per serving](#cost-per-serving) prices those same packages for 15 grams of protein.
+Dry pinto beans return 57.6 grams of protein and 41.7 grams of fiber per dollar. They're not the top of the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) or the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). We scored the combined number in [beans win twice](/beans-double-win-fiber-protein/). The cost per serving table below prices those same packages for 15 grams of protein.
 
 A note on what's missing from the table. We priced canned kidney beans but not dry kidney beans, and we priced dry pinto, navy, lentils, and split peas but not their canned versions. So the head to head pairs are black beans and chickpeas. Everything else in that table is a single form, and we're not filling the blanks by guessing.
 

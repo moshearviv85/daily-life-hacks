@@ -23,9 +23,15 @@ test("recipe finder ranks overlap and exposes shopping gaps", () => {
 });
 
 test("recipe finder includes utility SEO and structured data", () => {
-  assert.match(source, /Recipe Finder by Ingredients: 86 Recipes/);
+  assert.match(source, /Recipes by Ingredient: Find a Recipe From What You Have/);
+  assert.match(source, /The site publishes 86 recipes/);
+  assert.match(source, /Recipes by main ingredient/);
+  assert.match(source, /href="\/how-to-cook-dried-beans-from-scratch\/"/);
+  assert.match(source, /robots=\{noindexFollowFor\("tools\/recipe-finder"\)\}/);
   assert.match(source, /"@type": "WebApplication"/);
   assert.doesNotMatch(source, /"@type": "FAQPage"/);
+  assert.doesNotMatch(source, /href=["'][^"']*#/);
+  assert.doesNotMatch(source, /\.csv/);
   assert.match(source, /<details><summary>/);
   assert.match(source, /https:\/\/www\.daily-life-hacks\.com\/tools\/recipe-finder\//);
 });

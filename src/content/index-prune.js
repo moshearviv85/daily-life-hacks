@@ -151,7 +151,6 @@ export const INDEX_KEEP_PATHS = new Set([
  */
 export const INDEX_NOINDEX_TOOL_PATHS = new Set([
   "tools/grocery-trip-savings-calculator",
-  "tools/recipe-finder",
   "tools/shopping-list-builder",
 ]);
 
@@ -215,9 +214,9 @@ function assertPruneSafety() {
   if (INDEX_KEEP_PATHS.size !== 14) {
     throw new Error(`index-prune: expected 14 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
   }
-  if (INDEX_NOINDEX_TOOL_PATHS.size !== 3) {
+  if (INDEX_NOINDEX_TOOL_PATHS.size !== 2) {
     throw new Error(
-      `index-prune: expected 3 noindex tool paths, got ${INDEX_NOINDEX_TOOL_PATHS.size}`,
+      `index-prune: expected 2 noindex tool paths, got ${INDEX_NOINDEX_TOOL_PATHS.size}`,
     );
   }
 }

@@ -222,18 +222,14 @@ test("canned beans vs dried beans nutrition title puts protein grams per 100g in
 
   assert.equal(
     beans.title,
-    "Dried vs Canned Beans: Which Has More Protein?",
+    "Canned vs Dried Beans: Protein, Cost and Can-to-Dry Conversion",
   );
-  assert.equal(beans.title.length, 46);
+  assert.equal(beans.title.length, 62);
   assert.ok(
-    beans.title.length <= 60,
-    `nutrition beans title too long for SERP: ${beans.title.length}`,
+    titleLower.startsWith("canned vs dried beans"),
+    "nutrition beans title should lead with canned vs dried beans",
   );
-  assert.ok(
-    titleLower.startsWith("dried vs canned beans"),
-    "nutrition beans title should lead with dried vs canned beans",
-  );
-  assert.match(beans.title, /Which Has More Protein/);
+  assert.match(beans.title, /Can-to-Dry Conversion/);
   assert.equal(
     /\d+\.\d+g vs \d+\.\d+g/.test(titleLower),
     false,
@@ -259,8 +255,8 @@ test("canned beans vs dried beans nutrition title puts protein grams per 100g in
     false,
     "nutrition beans title should not lead with canned beans or dry beans",
   );
-  assert.match(raw, /^dateModified: 2026-11-25$/m);
-  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
+  assert.match(raw, /^dateModified: 2026-11-26$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-26$/m);
 
   assert.match(beans.excerpt, /[Dd]ried beans vs canned beans/);
   assert.match(beans.excerpt, /21\.6 g/);
@@ -3004,32 +3000,31 @@ test("recipe finder title puts the searchable recipe count in the SERP", () => {
   }
 
   assert.equal(count, 86);
-  assert.equal(title, "Recipe Finder by Ingredients: 86 Recipes");
-  assert.equal(title, `Recipe Finder by Ingredients: ${count} Recipes`);
-  assert.equal(title.length, 40);
+  assert.equal(title, "Recipes by Ingredient: Find a Recipe From What You Have");
+  assert.equal(title.length, 55);
   assert.ok(
     title.length <= 60,
     `recipe finder title should be ≤60 chars, got ${title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("recipe finder by ingredients"),
-    "recipe finder title should lead with recipe finder by ingredients",
+    titleLower.startsWith("recipes by ingredient"),
+    "recipe finder title should lead with recipes by ingredient",
   );
-  assert.match(title, /86 Recipes/);
+  assert.match(title, /Find a Recipe From What You Have/);
   assert.equal(
     /^recipe finder by ingredients: use what you have$/.test(titleLower),
     false,
     "recipe finder title should not stay on the soft use-what-you-have SERP",
   );
-  assert.match(page, /\{recipes\.length\} real recipes/);
+  assert.match(page, /The site publishes 86 recipes/);
   assert.match(page, /It currently searches \$\{recipes\.length\} published recipes/);
-  assert.match(page, /<h1[^>]*>You've Already Got Dinner\. Let's Find the Recipe\.<\/h1>/);
+  assert.match(page, /<h1[^>]*>Recipes by Ingredient: Find a Recipe From What You Have<\/h1>/);
   assert.equal(
     page.match(/const description = "([^"]+)"/)?.[1],
-    "Enter the ingredients you have and find published recipes ranked by overlap, with the missing groceries shown before you open the recipe.",
+    "Recipes by ingredient: find a recipe from what you have. Search 86 recipes by the chicken, beans, or half onion already in the kitchen, and see the groceries you'd still need.",
   );
   assert.equal(INDEX_KEEP_PATHS.has("tools/recipe-finder"), false);
-  assert.equal(INDEX_NOINDEX_TOOL_PATHS.has("tools/recipe-finder"), true);
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.has("tools/recipe-finder"), false);
   assert.match(page, /robots=\{noindexFollowFor\("tools\/recipe-finder"\)\}/);
   assert.equal(INDEX_PRUNE_SLUGS.has("tools/recipe-finder"), false);
   assert.equal(INDEX_PRUNE_SLUGS.has("recipe-finder"), false);

@@ -8,8 +8,8 @@ import { getCollection } from "astro:content";
 import { isReleased } from "../../../content/release";
 import { isIndexPruned, noindexFollowFor } from "../../../content/index-prune.js";
 
-const title = "Recipe Finder by Ingredients: 86 Recipes";
-const description = "Enter the ingredients you have and find published recipes ranked by overlap, with the missing groceries shown before you open the recipe.";
+const title = "Recipes by Ingredient: Find a Recipe From What You Have";
+const description = "Recipes by ingredient: find a recipe from what you have. Search 86 recipes by the chicken, beans, or half onion already in the kitchen, and see the groceries you'd still need.";
 
 const allArticles = await getCollection("articles");
 const recipes = allArticles
@@ -89,6 +89,66 @@ const suggestionCandidates = [
 const searchableIngredients = recipes.flatMap((recipe: any) => recipe.ingredients).join(" ").toLowerCase();
 const suggestions = suggestionCandidates.filter((ingredient) => searchableIngredients.includes(ingredient.replace(/s$/, "")));
 
+// Server-rendered so a crawler sees recipe URLs without running the filter.
+// Priority is highest first. Broth, stock, and green beans don't steal a group.
+const mainIngredients = [
+  { label: "Chicken", pattern: /\bchicken\b/i, skip: /\b(broth|stock|bouillon)\b/i },
+  { label: "Salmon", pattern: /\bsalmon\b/i, skip: null },
+  { label: "Tuna", pattern: /\btuna\b/i, skip: null },
+  { label: "Tofu", pattern: /\btofu\b/i, skip: null },
+  { label: "Turkey", pattern: /\bturkey\b/i, skip: null },
+  { label: "Beef", pattern: /\bbeef\b/i, skip: /\b(broth|stock|bouillon)\b/i },
+  { label: "Pork", pattern: /\bpork\b/i, skip: null },
+  { label: "Shrimp", pattern: /\bshrimp\b/i, skip: null },
+  { label: "Cod", pattern: /\bcod\b/i, skip: null },
+  { label: "Sourdough discard", pattern: /\bdiscard\b/i, skip: null },
+  { label: "Chickpeas", pattern: /\bchickpeas?\b/i, skip: null },
+  { label: "Lentils", pattern: /\blentils?\b/i, skip: null },
+  { label: "Beans", pattern: /\bbeans?\b/i, skip: /\bgreen beans?\b/i },
+  { label: "Pasta", pattern: /\b(pasta|spaghetti|penne|orzo|noodles?)\b/i, skip: null },
+  { label: "Rice", pattern: /\brice\b/i, skip: null },
+  { label: "Potatoes", pattern: /\bpotatoes\b/i, skip: null },
+  { label: "Oats", pattern: /\boats?\b/i, skip: null },
+  { label: "Quinoa", pattern: /\bquinoa\b/i, skip: null },
+  { label: "Cauliflower", pattern: /\bcauliflower\b/i, skip: null },
+  { label: "Broccoli", pattern: /\bbroccoli\b/i, skip: null },
+  { label: "Spinach", pattern: /\bspinach\b/i, skip: null },
+  { label: "Tomatoes", pattern: /\btomatoes?\b/i, skip: null },
+  { label: "Carrots", pattern: /\bcarrots?\b/i, skip: null },
+  { label: "Cabbage", pattern: /\bcabbage\b/i, skip: null },
+  { label: "Avocado", pattern: /\bavocados?\b/i, skip: null },
+  { label: "Eggs", pattern: /\beggs?\b/i, skip: null },
+  { label: "Yogurt", pattern: /\byogurt\b/i, skip: null },
+  { label: "Cheese", pattern: /\b(cheese|feta|parmesan|mozzarella|cheddar)\b/i, skip: null },
+];
+
+function mainIngredient(recipe: any) {
+  for (const ingredient of mainIngredients) {
+    const hit = recipe.ingredients.some((line: string) =>
+      ingredient.pattern.test(line) && !(ingredient.skip && ingredient.skip.test(line))
+    );
+    if (hit) return ingredient.label;
+  }
+  return "More recipes";
+}
+
+const groupedRecipes = new Map();
+for (const recipe of recipes) {
+  const label = mainIngredient(recipe);
+  if (!groupedRecipes.has(label)) groupedRecipes.set(label, []);
+  groupedRecipes.get(label).push(recipe);
+}
+const recipeGroups = [...groupedRecipes.entries()]
+  .map(([label, items]) => ({
+    label,
+    recipes: items.sort((a: any, b: any) => a.title.localeCompare(b.title)),
+  }))
+  .sort((a, b) => {
+    if (a.label === "More recipes") return 1;
+    if (b.label === "More recipes") return -1;
+    return b.recipes.length - a.recipes.length || a.label.localeCompare(b.label);
+  });
+
 const faqs = [
   ["How does the recipe finder match my ingredients?", "It compares the ingredients you enter with every published recipe ingredient list, then ranks recipes by the number matched and the number still missing."],
   ["Does the recipe finder include every recipe on the site?", `It currently searches ${recipes.length} published recipes that have complete ingredient lists and serving counts.`],
@@ -104,12 +164,12 @@ const schemas = [
     "@id": "https://www.daily-life-hacks.com/tools/recipe-finder/#webapp",
     isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
     inLanguage: "en-US",
-    name: "Use What You Have Recipe Finder",
+    name: title,
     url: "https://www.daily-life-hacks.com/tools/recipe-finder/",
     description,
     applicationCategory: "LifestyleApplication",
     operatingSystem: "Any",
-    browserRequirements: "Requires JavaScript",
+    browserRequirements: "JavaScript for the ingredient filter. The recipe list is in the page.",
     isAccessibleForFree: true,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
@@ -138,10 +198,10 @@ const breadcrumbSchema = {
     </nav>
 
     <header class="max-w-4xl mb-8">
-      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">{recipes.length} real recipes. One fridge you keep reopening.</p>
-      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">You've Already Got Dinner. Let's Find the Recipe.</h1>
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">One fridge you keep reopening.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Recipes by Ingredient: Find a Recipe From What You Have</h1>
       <p class="text-lg leading-relaxed" style="color:var(--text-color);">
-        You've opened the fridge three times and the same eggs, spinach, and suspicious half-onion are still there. Add what you've got. We'll put the closest recipes first and tell you what you'd still need to buy, without sending you through 14 tabs of dinner inspiration.
+        You've opened the fridge three times. The eggs, the spinach, and that half onion are still in there. Recipes by ingredient starts from that pile. The site publishes 86 recipes with a real ingredient list. Type what you've got and the closest ones come up first, plus the groceries you'd still have to buy.
       </p>
     </header>
 
@@ -174,6 +234,25 @@ const breadcrumbSchema = {
 
       <div id="rf-results" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4" aria-live="polite"></div>
       <noscript><p class="empty-state">This finder needs JavaScript. You can still browse every adjustable recipe on the <a href="/recipes/">recipes page</a>.</p></noscript>
+    </section>
+
+    <section class="max-w-4xl mb-12" aria-labelledby="recipes-by-ingredient">
+      <h2 id="recipes-by-ingredient" class="text-2xl md:text-3xl font-extrabold leading-tight mb-3" style="color:var(--heading-color);">Recipes by main ingredient</h2>
+      <p class="text-base sm:text-lg leading-relaxed mb-5" style="color:var(--text-color);">
+        The filter above is the fast path, and it needs JavaScript. This list doesn't. It's the same published recipes the finder searches, grouped by the ingredient doing the work. A bag of dry beans still needs a pot, and that part is <a href="/how-to-cook-dried-beans-from-scratch/" class="underline font-bold" style="color:#F29B30;">how to cook dried beans from scratch</a>.
+      </p>
+      {recipeGroups.map((group) => (
+        <div class="mb-6">
+          <h3 class="text-xl font-bold mb-2" style="color:var(--heading-color);">{group.label}</h3>
+          <ul class="list-disc pl-5">
+            {group.recipes.map((recipe: any) => (
+              <li class="mb-1 leading-snug">
+                <a href={recipe.url} class="underline font-bold" style="color:#F29B30;">{recipe.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
 
     {

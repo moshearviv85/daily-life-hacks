@@ -138,7 +138,7 @@ test("the planner, yield citation, and chart are on the article template", () =>
 test("bean cluster pages link the week planner with the dates those edits set", () => {
   const links = [
     ["src/data/articles/how-to-cook-dried-beans-from-scratch.md", "2026-11-25", "2026-11-25"],
-    ["src/data/articles/canned-beans-vs-dried-beans-nutrition.md", "2026-11-25", "2026-11-25"],
+    ["src/data/articles/canned-beans-vs-dried-beans-nutrition.md", "2026-11-26", "2026-11-26"],
     ["src/data/articles/can-you-eat-rice-and-beans-everyday.md", "2026-11-25", "2026-11-25"],
     ["src/pages/tools/dried-beans-to-canned-converter/index.astro", undefined, undefined],
   ];
@@ -163,5 +163,5 @@ test("bean cluster pages link the week planner with the dates those edits set", 
   assert.match(canned, /\$7\.04/);
   assert.match(canned, /2⅓ lb/);
   assert.doesNotMatch(canned, /FAQPage/);
-  assert.equal(field(canned, "title"), "Dried vs Canned Beans: Which Has More Protein?");
+  assert.equal(field(canned, "title"), "Canned vs Dried Beans: Protein, Cost and Can-to-Dry Conversion");
 });
