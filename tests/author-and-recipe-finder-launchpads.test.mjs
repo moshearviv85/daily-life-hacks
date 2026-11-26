@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
+
+import { isIndexPruned } from "../src/content/index-prune.js";
 
 const author = readFileSync("src/pages/author/david-miller.astro", "utf8");
 const finder = readFileSync("src/pages/tools/recipe-finder/index.astro", "utf8");
@@ -27,12 +29,40 @@ const FINDER_SLUGS = [
   "cheapest-high-fiber-fruits-and-vegetables",
 ];
 
+const PANTRY_GUIDE_SLUGS = [
+  "cheapest-shelf-stable-pantry-foods-for-protein",
+  "cheapest-nuts-and-seeds-for-protein-and-fiber",
+  "how-much-fiber-and-protein-per-dollar-at-walmart-vs-bls",
+  "how-long-do-cooked-meat-and-poultry-last-in-the-fridge",
+  "plan-week-of-dinners-fewer-grocery-runs",
+  "prebiotic-foods-beyond-the-buzzwords",
+  "easy-high-fiber-breakfast-ideas-for-gut-health",
+  "high-fiber-meals-for-constipation-relief",
+];
+
+const PREP_GUIDE_SLUGS = [
+  "high-fiber-pizza-crust-cauliflower",
+  "artichoke-recipes-for-gut-health",
+  "high-fiber-quinoa-salad-for-lunch-prep",
+  "high-fiber-salad-dressings-homemade",
+  "sheet-pan-salmon-and-vegetables-30-minutes",
+  "brown-lentil-and-pearled-barley-soup-high-fiber",
+  "high-protein-overnight-oats-chia-greek-yogurt",
+  "how-long-do-cooked-meat-and-poultry-last-in-the-fridge",
+];
+
 function slugBlock(source, marker) {
   const start = source.indexOf(marker);
   assert.ok(start >= 0, `missing ${marker}`);
   const end = source.indexOf("] as const;", start);
   assert.ok(end > start, `${marker} should stay a const slug list`);
   return source.slice(start, end);
+}
+
+function orphanSlugs() {
+  const source = readFileSync("tests/orphan-contextual-inlinks.test.mjs", "utf8");
+  const block = source.match(/const ORPHANS = \[([\s\S]*?)\];/)?.[1] ?? "";
+  return new Set([...block.matchAll(/"([^"]+)"/g)].map((match) => match[1]));
 }
 
 function section(source, heading, nextHeading) {
@@ -83,4 +113,51 @@ test("recipe finder launchpad names the eight ingredient studies without changin
   assert.doesNotMatch(cards, /href=["'{][^"'}]*#/);
   assert.doesNotMatch(cards, /\.csv/);
   assert.doesNotMatch(cards, /\u2014/);
+});
+
+test("author profile adds a text-only pantry and meal-prep launchpad", () => {
+  assert.match(author, /Pantry Economics, Gut Health & Meal-Prep Guides/);
+  assert.match(author, /article\.data\.author !== "David Miller"/);
+  assert.doesNotMatch(author, /<img\b/i);
+  assert.doesNotMatch(author, /FAQPage/);
+  assert.doesNotMatch(author, /\bphoto\b/i);
+  const block = slugBlock(author, "PANTRY_GUIDE_SLUGS");
+  assert.equal(PANTRY_GUIDE_SLUGS.length, 8);
+  const orphans = orphanSlugs();
+  for (const slug of PANTRY_GUIDE_SLUGS) {
+    assert.match(block, new RegExp(`"${slug}"`));
+    assert.equal(existsSync(`src/data/articles/${slug}.md`), true, slug);
+    assert.equal(isIndexPruned(slug), false, slug);
+    assert.equal(orphans.has(slug), false, `${slug} locks dateModified as an orphan`);
+  }
+  const cards = section(author, "Pantry Economics, Gut Health & Meal-Prep Guides", 'id="articles"');
+  assert.match(cards, /href=\{guide\.href\}/);
+  assert.doesNotMatch(cards, /href=["'{][^"'}]*#/);
+  assert.doesNotMatch(cards, /\.csv/);
+  assert.doesNotMatch(cards, /\u2014/);
+  assert.doesNotMatch(cards, /<img\b/i);
+  assert.doesNotMatch(cards, /href="\/nutrition\/"/);
+});
+
+test("recipe finder adds the weak-inlink recipe and storage grid without changing the count", () => {
+  assert.match(finder, /Cost-Audited Recipes & Prep Storage Guides/);
+  assert.match(finder, /Recipe Finder by Ingredients: 84 Recipes/);
+  assert.match(finder, /article\.data\.author !== "David Miller"/);
+  assert.doesNotMatch(finder, /FAQPage/);
+  assert.doesNotMatch(finder, /\bphoto\b/i);
+  const block = slugBlock(finder, "PREP_GUIDE_SLUGS");
+  assert.equal(PREP_GUIDE_SLUGS.length, 8);
+  const orphans = orphanSlugs();
+  for (const slug of PREP_GUIDE_SLUGS) {
+    assert.match(block, new RegExp(`"${slug}"`));
+    assert.equal(existsSync(`src/data/articles/${slug}.md`), true, slug);
+    assert.equal(isIndexPruned(slug), false, slug);
+    assert.equal(orphans.has(slug), false, `${slug} locks dateModified as an orphan`);
+  }
+  const cards = section(finder, "Cost-Audited Recipes & Prep Storage Guides", 'class="prose-like max-w-4xl"');
+  assert.match(cards, /href=\{guide\.href\}/);
+  assert.doesNotMatch(cards, /href=["'{][^"'}]*#/);
+  assert.doesNotMatch(cards, /\.csv/);
+  assert.doesNotMatch(cards, /\u2014/);
+  assert.doesNotMatch(cards, /href="\/nutrition\/"/);
 });

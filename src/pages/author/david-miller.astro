@@ -57,6 +57,33 @@ const featuredStudies = FEATURED_2026_STUDY_SLUGS.flatMap((slug) => {
   ];
 });
 
+// PR-175: text-only launchpad to the newest pantry studies and the
+// weak-inlink meal-prep guides. A slug is linked only when the file is on
+// disk, written by David Miller, released, and still indexable.
+const PANTRY_GUIDE_SLUGS = [
+  "cheapest-shelf-stable-pantry-foods-for-protein",
+  "cheapest-nuts-and-seeds-for-protein-and-fiber",
+  "how-much-fiber-and-protein-per-dollar-at-walmart-vs-bls",
+  "how-long-do-cooked-meat-and-poultry-last-in-the-fridge",
+  "plan-week-of-dinners-fewer-grocery-runs",
+  "prebiotic-foods-beyond-the-buzzwords",
+  "easy-high-fiber-breakfast-ideas-for-gut-health",
+  "high-fiber-meals-for-constipation-relief",
+] as const;
+
+const pantryGuides = PANTRY_GUIDE_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? allArticles.find((entry) => entry.id === slug) : undefined;
+  if (!article || article.data.author !== "David Miller" || isIndexPruned(article.id) || !isReleased(article)) return [];
+  return [
+    {
+      href: `/${slug}/`,
+      title: article.data.title,
+      excerpt: article.data.excerpt,
+    },
+  ];
+});
+
 const authorSchema = [
   {
     "@context": "https://schema.org",
@@ -163,6 +190,35 @@ const authorSchema = [
                   </a>
                   <p class="text-base mt-1 leading-relaxed" style="color: var(--muted-color);">
                     {study.excerpt}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        pantryGuides.length > 0 && (
+          <section class="mt-10" aria-labelledby="pantry-meal-prep-guides">
+            <h2 id="pantry-meal-prep-guides" class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
+              Pantry Economics, Gut Health & Meal-Prep Guides
+            </h2>
+            <p>
+              The chart studies above are the receipt math I'd hand someone first. After that I'd open the cupboard ranking, nuts and seeds, Walmart bags versus the BLS average, and the meal-prep guides. Same grocery cart, fewer mystery purchases.
+            </p>
+            <ul class="space-y-4 list-none pl-0" style="list-style: none; padding-left: 0; margin: 0;">
+              {pantryGuides.map((guide) => (
+                <li class="rounded-xl p-4" style="list-style: none; background-color: var(--card-bg); border: 1px solid var(--border-color);">
+                  <a
+                    href={guide.href}
+                    class="font-semibold hover:text-[#F29B30] transition-colors"
+                    style="color: var(--heading-color);"
+                  >
+                    {guide.title}
+                  </a>
+                  <p class="text-base mt-1 leading-relaxed" style="color: var(--muted-color);">
+                    {guide.excerpt}
                   </p>
                 </li>
               ))}

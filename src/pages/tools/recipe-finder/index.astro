@@ -54,6 +54,33 @@ const ingredientStudies = INGREDIENT_STUDY_SLUGS.flatMap((slug) => {
   ];
 });
 
+// PR-174: crawl-path bridge to weak-inlink recipes and the cooked-meat
+// storage guide. A slug is linked only when the file is on disk, written
+// by David Miller, released, and still indexable.
+const PREP_GUIDE_SLUGS = [
+  "high-fiber-pizza-crust-cauliflower",
+  "artichoke-recipes-for-gut-health",
+  "high-fiber-quinoa-salad-for-lunch-prep",
+  "high-fiber-salad-dressings-homemade",
+  "sheet-pan-salmon-and-vegetables-30-minutes",
+  "brown-lentil-and-pearled-barley-soup-high-fiber",
+  "high-protein-overnight-oats-chia-greek-yogurt",
+  "how-long-do-cooked-meat-and-poultry-last-in-the-fridge",
+] as const;
+
+const prepGuides = PREP_GUIDE_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? allArticles.find((entry: any) => entry.id === slug) : undefined;
+  if (!article || article.data.author !== "David Miller" || isIndexPruned(article.id) || !isReleased(article)) return [];
+  return [
+    {
+      href: `/${slug}/`,
+      title: article.data.title,
+      excerpt: article.data.excerpt,
+    },
+  ];
+});
+
 const suggestionCandidates = [
   "beans", "bell pepper", "broccoli", "carrots", "cauliflower", "cheese", "chicken",
   "chickpeas", "eggs", "garlic", "lentils", "oats", "onion", "pasta", "potatoes",
@@ -165,6 +192,29 @@ const breadcrumbSchema = {
                   {study.title}
                 </a>
                 <p class="text-sm leading-snug mt-2" style="color:var(--muted-color);">{study.excerpt}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      prepGuides.length > 0 && (
+        <section class="max-w-4xl mb-12" aria-labelledby="cost-audited-recipes">
+          <h2 id="cost-audited-recipes" class="text-2xl md:text-3xl font-extrabold leading-tight mb-3" style="color:var(--heading-color);">
+            Cost-Audited Recipes & Prep Storage Guides
+          </h2>
+          <p class="text-base sm:text-lg leading-relaxed mb-5" style="color:var(--text-color);">
+            The matcher above only cares what you typed. These are the recipes and the storage guide I'd open next: a cauliflower crust that stays a crust, a jar of overnight oats, lentil barley soup, and the 3 to 4 day limit on cooked chicken. The half-onion can wait.
+          </p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0" style="list-style:none;padding-left:0;margin:0;">
+            {prepGuides.map((guide) => (
+              <li class="rounded-xl p-4" style="list-style:none;background:var(--card-bg);border:1px solid var(--border-color);">
+                <a href={guide.href} class="font-bold leading-tight underline" style="color:#F29B30;">
+                  {guide.title}
+                </a>
+                <p class="text-sm leading-snug mt-2" style="color:var(--muted-color);">{guide.excerpt}</p>
               </li>
             ))}
           </ul>
