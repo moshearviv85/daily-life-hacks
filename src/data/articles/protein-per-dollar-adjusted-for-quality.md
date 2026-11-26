@@ -133,6 +133,8 @@ Six items from that same raw dataset, priced as purchased:
 
 Call it $23. Split across seven days, one person gets about 150 grams of protein a day from the basket. That is capacity, not a target. The same prices are in the [protein CSV](/data/protein-per-dollar-2026.csv), checked the way the [methodology page](/methodology/) describes. If 150 grams a day is more pantry than you meant to eat, the [7-day high-protein grocery list](/high-protein-grocery-list-50-grams/) is the week that lands near 52.5 grams for $10.27.
 
+The package prices on this page are one month. Eggs, milk, chicken, beef, and pasta have a longer federal line in the [protein per dollar trend from 2017 to October 2026](/protein-per-dollar-2017-to-2026-bls-trends/).
+
 ## How to actually shop this
 
 You don't need a spreadsheet at the register.
