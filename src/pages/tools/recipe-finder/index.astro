@@ -1,4 +1,6 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
@@ -24,6 +26,33 @@ const recipes = allArticles
     ingredients: article.data.ingredients,
   }))
   .sort((a: any, b: any) => a.title.localeCompare(b.title));
+
+// PR-157: bridge from this follow tool page into the newest chart studies.
+// A sibling PR can land later, so a slug is linked only when its article
+// file is on disk, released, and still indexable.
+const INGREDIENT_STUDY_SLUGS = [
+  "cheapest-canned-fish-and-seafood-protein-per-dollar",
+  "cheapest-whole-grains-for-fiber-per-dollar",
+  "cheapest-dairy-and-soy-protein-per-dollar",
+  "how-much-100-grams-of-protein-costs-per-day",
+  "no-cook-emergency-protein-and-fiber-grocery-list",
+  "how-long-do-cooked-grains-and-beans-last-in-the-fridge",
+  "low-sodium-high-protein-foods-per-dollar",
+  "cheapest-high-fiber-fruits-and-vegetables",
+] as const;
+
+const ingredientStudies = INGREDIENT_STUDY_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? allArticles.find((entry: any) => entry.id === slug) : undefined;
+  if (!article || isIndexPruned(article.id) || !isReleased(article)) return [];
+  return [
+    {
+      href: `/${slug}/`,
+      title: article.data.title,
+      excerpt: article.data.excerpt,
+    },
+  ];
+});
 
 const suggestionCandidates = [
   "beans", "bell pepper", "broccoli", "carrots", "cauliflower", "cheese", "chicken",
@@ -119,6 +148,29 @@ const breadcrumbSchema = {
       <div id="rf-results" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4" aria-live="polite"></div>
       <noscript><p class="empty-state">This finder needs JavaScript. You can still browse every adjustable recipe on the <a href="/recipes/">recipes page</a>.</p></noscript>
     </section>
+
+    {
+      ingredientStudies.length > 0 && (
+        <section class="max-w-4xl mb-12" aria-labelledby="ingredient-cost-studies">
+          <h2 id="ingredient-cost-studies" class="text-2xl md:text-3xl font-extrabold leading-tight mb-3" style="color:var(--heading-color);">
+            Compare Ingredient Cost & Nutrition Studies
+          </h2>
+          <p class="text-base sm:text-lg leading-relaxed mb-5" style="color:var(--text-color);">
+            The finder matches a recipe to what's already in the fridge. These studies chart what a dollar of that ingredient buys in protein or fiber, before a second can of beans hits the cart.
+          </p>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0" style="list-style:none;padding-left:0;margin:0;">
+            {ingredientStudies.map((study) => (
+              <li class="rounded-xl p-4" style="list-style:none;background:var(--card-bg);border:1px solid var(--border-color);">
+                <a href={study.href} class="font-bold leading-tight underline" style="color:#F29B30;">
+                  {study.title}
+                </a>
+                <p class="text-sm leading-snug mt-2" style="color:var(--muted-color);">{study.excerpt}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
     <article class="prose-like max-w-4xl">
       <h2>How does the ingredient recipe finder decide what comes first?</h2>
