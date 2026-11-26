@@ -141,7 +141,7 @@ test("author profile adds a text-only pantry and meal-prep launchpad", () => {
 
 test("recipe finder adds the weak-inlink recipe and storage grid without changing the count", () => {
   assert.match(finder, /Cost-Audited Recipes & Prep Storage Guides/);
-  assert.match(finder, /Recipe Finder by Ingredients: 84 Recipes/);
+  assert.match(finder, /Recipe Finder by Ingredients: 86 Recipes/);
   assert.match(finder, /article\.data\.author !== "David Miller"/);
   assert.doesNotMatch(finder, /FAQPage/);
   assert.doesNotMatch(finder, /\bphoto\b/i);
