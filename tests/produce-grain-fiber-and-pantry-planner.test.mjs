@@ -72,6 +72,7 @@ function assertPageLinks(source, label) {
     "author/david-miller",
     "data/produce-and-grain-fiber-index",
     "tools/pantry-meal-cost-and-storage-planner",
+    "tools/rice-and-beans-portion-and-cost-calculator",
   ]);
   for (const href of hrefs(source)) {
     assert.equal(href.includes("#"), false, href);
