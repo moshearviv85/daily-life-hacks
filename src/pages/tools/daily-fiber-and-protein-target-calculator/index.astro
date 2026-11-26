@@ -1,0 +1,564 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATASET_ORGANIZATION, DATASET_PERSON_CREATOR } from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/tools/daily-fiber-and-protein-target-calculator/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/daily-fiber-and-protein-target-calculator-chart.jpg";
+const chartAlt =
+  "Bar chart of daily grocery cost for a 30 gram fiber day, a 50 gram protein day, a 75 gram protein day, and four chicken portions that still miss 100 grams";
+
+type Cells = Record<string, string>;
+
+function rowsFrom(fileName: string): Cells[] {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+const PROTEIN_DAY = "protein-day-cost-2026.csv";
+const FIBER_DAY = "fiber-day-cost-2026.csv";
+const PROTEIN_PARENT = "protein-per-dollar-2026.csv";
+const FIBER_PARENT = "fiber-per-dollar-2026.csv";
+
+const proteinDay = rowsFrom(PROTEIN_DAY);
+const fiberDay = rowsFrom(FIBER_DAY);
+const proteinParents = new Set(rowsFrom(PROTEIN_PARENT).map((row) => row.food));
+const fiberParents = new Set(rowsFrom(FIBER_PARENT).map((row) => row.food));
+
+const PARENT_ALIASES: Record<string, string> = {
+  "Greek yogurt (plain nonfat)": "Greek yogurt (plain, nonfat)",
+  "Canned tuna (chunk light in water)": "Canned tuna (chunk light, in water)",
+  "Chicken breast (boneless skinless)": "Chicken breast (boneless, skinless)",
+};
+
+function parentName(basis: string) {
+  const raw = basis.replace(/^parent CSV:\s*/i, "").trim();
+  return PARENT_ALIASES[raw] ?? raw;
+}
+
+function assertParents(rows: Cells[], parents: Set<string>, fileName: string) {
+  for (const row of rows) {
+    if (!row.grams_used) continue;
+    if (!row.basis.startsWith("parent CSV:")) throw new Error(`${fileName} grocery row has no parent: ${row.food}`);
+    const name = parentName(row.basis);
+    if (!parents.has(name)) throw new Error(`${fileName} parent missing: ${name}`);
+  }
+}
+
+assertParents(proteinDay, proteinParents, PROTEIN_DAY);
+assertParents(fiberDay, fiberParents, FIBER_DAY);
+if (proteinDay.filter((row) => !row.grams_used).length !== 3) throw new Error("protein restaurant rows drifted");
+if (fiberDay.filter((row) => !row.grams_used).length !== 4) throw new Error("fiber restaurant rows drifted");
+
+function cents(value: number) {
+  return Math.round(value * 100) / 100;
+}
+
+function round1(value: number) {
+  return Math.round(value * 10) / 10;
+}
+
+function usd(value: number) {
+  return cents(value).toLocaleString("en-US", { style: "currency", currency: "USD" });
+}
+
+function matches(fileName: string, needle: string, grams: string) {
+  const rows = fileName === PROTEIN_DAY ? proteinDay : fiberDay;
+  return rows.filter((row) => row.food.includes(needle) && row.grams_used === grams);
+}
+
+function readNutrient(
+  fileName: string,
+  needle: string,
+  grams: string,
+  column: "protein_g" | "fiber_g",
+  expected: string | null,
+) {
+  const found = matches(fileName, needle, grams);
+  if (expected === null) {
+    if (found.length) throw new Error(`${needle} ${grams} g unexpectedly in ${fileName}`);
+    return null;
+  }
+  if (!found.length) throw new Error(`missing ${needle} ${grams} g in ${fileName}`);
+  const nutrient = found[0][column];
+  const cost = found[0].cost_usd;
+  if (!found.every((row) => row[column] === nutrient && row.cost_usd === cost)) {
+    throw new Error(`drift ${needle} ${grams} g in ${fileName}`);
+  }
+  if (nutrient !== expected) throw new Error(`${needle} ${column} ${nutrient} != ${expected}`);
+  return Number(nutrient);
+}
+
+function readCost(fileName: string, needle: string, grams: string) {
+  const found = matches(fileName, needle, grams);
+  if (!found.length) throw new Error(`missing cost ${needle} ${grams} g`);
+  const cost = found[0].cost_usd;
+  if (!found.every((row) => row.cost_usd === cost)) throw new Error(`cost drift ${needle}`);
+  return cents(Number(cost));
+}
+
+type Portion = {
+  id: string;
+  label: string;
+  protein: number | null;
+  fiber: number | null;
+  cost: number;
+};
+
+type Spec = {
+  id: string;
+  label: string;
+  needle: string;
+  grams: string;
+  protein: string | null;
+  fiber: string | null;
+};
+
+const SPECS: Spec[] = [
+  { id: "oats-60", label: "Rolled oats, 60 g dry", needle: "Rolled oats", grams: "60", protein: "7.9", fiber: "6.1" },
+  { id: "peas-60", label: "Split peas, 60 g dry", needle: "split peas", grams: "60", protein: "13.9", fiber: null },
+  { id: "pinto-90", label: "Pinto beans, 90 g dry", needle: "Pinto beans", grams: "90", protein: "19.3", fiber: null },
+  { id: "rice-60", label: "Brown rice, 60 g dry", needle: "Brown rice", grams: "60", protein: "4.5", fiber: null },
+  { id: "pb-32", label: "Peanut butter, 32 g", needle: "Peanut butter", grams: "32", protein: "7.1", fiber: "1.6" },
+  { id: "yogurt-170", label: "Greek yogurt, 170 g", needle: "Greek yogurt", grams: "170", protein: "17.3", fiber: null },
+  { id: "tuna-113", label: "Canned tuna, 113 g", needle: "Canned tuna", grams: "113", protein: "22.0", fiber: null },
+  { id: "bread-52", label: "Whole wheat bread, 52 g", needle: "Whole wheat bread", grams: "52", protein: "6.5", fiber: "3.1" },
+  { id: "milk-244", label: "Whole milk, 244 g", needle: "Whole milk", grams: "244", protein: "7.7", fiber: null },
+  { id: "eggs-100", label: "Eggs, 100 g", needle: "eggs", grams: "100", protein: "12.6", fiber: null },
+  { id: "chicken-100", label: "Chicken breast, 100 g", needle: "Chicken breast", grams: "100", protein: "22.5", fiber: null },
+  { id: "beef-100", label: "Ground beef, 100 g", needle: "Ground beef", grams: "100", protein: "17.2", fiber: null },
+  { id: "black-220", label: "Canned black beans, 220 g", needle: "Canned black beans", grams: "220", protein: "13.3", fiber: "15.2" },
+  { id: "peas-50", label: "Split peas, 50 g dry", needle: "split peas", grams: "50", protein: null, fiber: "11.1" },
+  { id: "pinto-60", label: "Pinto beans, 60 g dry", needle: "Pinto beans", grams: "60", protein: null, fiber: "9.3" },
+  { id: "rice-50", label: "Brown rice, 50 g dry", needle: "Brown rice", grams: "50", protein: null, fiber: "1.8" },
+  { id: "barley-23", label: "Pearled barley, 23 g dry", needle: "Pearled barley", grams: "23", protein: null, fiber: "3.6" },
+  { id: "bran-45", label: "Bran flakes, 45 g", needle: "Bran flakes", grams: "45", protein: null, fiber: "8.2" },
+  { id: "prunes-40", label: "Prunes, 40 g", needle: "Prunes", grams: "40", protein: null, fiber: "2.8" },
+  { id: "chickpeas-220", label: "Canned chickpeas, 220 g", needle: "Canned chickpeas", grams: "220", protein: null, fiber: "9.7" },
+  { id: "peas-frozen-120", label: "Frozen green peas, 120 g", needle: "Frozen green peas", grams: "120", protein: null, fiber: "5.4" },
+  { id: "raspberries-170", label: "Raspberries, 170 g", needle: "Raspberries", grams: "170", protein: null, fiber: "11.1" },
+  { id: "banana-185", label: "Banana, 185 g with peel", needle: "banana", grams: "185", protein: null, fiber: "3.1" },
+  { id: "avocado-200", label: "Avocado, 200 g whole", needle: "avocado", grams: "200", protein: null, fiber: "9.9" },
+  { id: "carrots-100", label: "Carrots, 100 g", needle: "Carrots", grams: "100", protein: null, fiber: "2.8" },
+  { id: "sweet-150", label: "Sweet potato, 150 g", needle: "sweet potato", grams: "150", protein: null, fiber: "4.5" },
+  { id: "oats-50", label: "Rolled oats, 50 g dry", needle: "Rolled oats", grams: "50", protein: null, fiber: "5.1" },
+  { id: "apple-180", label: "Apple, 180 g", needle: "apple", grams: "180", protein: null, fiber: "3.9" },
+  { id: "broccoli-100", label: "Frozen broccoli, 100 g", needle: "Frozen broccoli", grams: "100", protein: null, fiber: "3.0" },
+];
+
+const portions: Portion[] = SPECS.map((spec) => {
+  const protein = readNutrient(PROTEIN_DAY, spec.needle, spec.grams, "protein_g", spec.protein);
+  const fiber = readNutrient(FIBER_DAY, spec.needle, spec.grams, "fiber_g", spec.fiber);
+  const costFile = spec.protein !== null ? PROTEIN_DAY : FIBER_DAY;
+  const cost = readCost(costFile, spec.needle, spec.grams);
+  if (spec.protein !== null && spec.fiber !== null && readCost(FIBER_DAY, spec.needle, spec.grams) !== cost) {
+    throw new Error(`cost drift ${spec.id}`);
+  }
+  return { id: spec.id, label: spec.label, protein, fiber, cost };
+});
+
+if (portions.length !== 29) throw new Error(`expected 29 portions, got ${portions.length}`);
+
+function tally(ids: string[]) {
+  const chosen = ids.map((id) => {
+    const portion = portions.find((item) => item.id === id);
+    if (!portion) throw new Error(`missing portion ${id}`);
+    return portion;
+  });
+  return {
+    protein: round1(chosen.reduce((sum, item) => sum + (item.protein ?? 0), 0)),
+    fiber: round1(chosen.reduce((sum, item) => sum + (item.fiber ?? 0), 0)),
+    cost: cents(chosen.reduce((sum, item) => sum + item.cost, 0)),
+    proteinListed: chosen.filter((item) => item.protein !== null).length,
+    fiberListed: chosen.filter((item) => item.fiber !== null).length,
+  };
+}
+
+const fifty = tally(["oats-60", "tuna-113", "black-220", "pb-32"]);
+const fiberDayBuild = tally(["oats-60", "peas-50", "black-220", "peas-frozen-120"]);
+const seventy = tally(["yogurt-170", "chicken-100", "tuna-113", "pinto-90"]);
+const hundred = tally(["chicken-100", "chicken-100", "chicken-100", "chicken-100"]);
+
+if (fifty.protein !== 50.3 || fifty.fiber !== 22.9 || fifty.cost !== 1.73 || fifty.fiberListed !== 3) {
+  throw new Error(`50 g day drifted ${JSON.stringify(fifty)}`);
+}
+if (fiberDayBuild.fiber !== 37.8 || fiberDayBuild.protein !== 21.2 || fiberDayBuild.cost !== 1.08) {
+  throw new Error(`fiber day drifted ${JSON.stringify(fiberDayBuild)}`);
+}
+if (seventy.protein !== 81.1 || seventy.cost !== 2.73 || seventy.fiberListed !== 0) {
+  throw new Error(`75 g day drifted ${JSON.stringify(seventy)}`);
+}
+if (hundred.protein !== 90 || hundred.cost !== 3.68 || hundred.fiberListed !== 0) {
+  throw new Error(`100 g attempt drifted ${JSON.stringify(hundred)}`);
+}
+if (usd(fifty.cost * 365) !== "$631.45") throw new Error("annual 50 g day drifted");
+if (usd(fiberDayBuild.cost * 365) !== "$394.20") throw new Error("annual fiber day drifted");
+if (usd(seventy.cost * 365) !== "$996.45") throw new Error("annual 75 g day drifted");
+if (usd(hundred.cost * 365) !== "$1,343.20") throw new Error("annual 100 g attempt drifted");
+
+const examples = [
+  { name: "30 g fiber day", note: "Oats, 50 g split peas, black beans, frozen peas", ...fiberDayBuild },
+  { name: "50 g protein day", note: "Oats, tuna, black beans, peanut butter", ...fifty },
+  { name: "75 g protein day", note: "Yogurt, chicken breast, tuna, 90 g pinto beans", ...seventy },
+  { name: "100 g attempt", note: "Chicken breast, four times. Still 10 g short.", ...hundred },
+];
+
+function pct(value: number, target: number) {
+  return Math.max(0, Math.min(100, Math.round((value / target) * 1000) / 10));
+}
+
+function gramText(value: number) {
+  return value.toFixed(1);
+}
+
+const title = "Daily Fiber and Protein Target Calculator";
+const description =
+  "Pick breakfast, lunch, dinner, and a snack from the audited day menus. See the gap to 30 g of fiber and to 50 g, 75 g, or 100 g of protein, plus the day, week, and year cost.";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: title,
+  url: pageUrl,
+  description,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript for the live totals. The portion table and the four worked days render without it.",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  image: `${siteUrl}${chartSrc}`,
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  author: DATASET_PERSON_CREATOR,
+  mainEntity: { "@id": `${pageUrl}#webapp` },
+  datePublished: "2026-11-26",
+  dateModified: "2026-11-26",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${siteUrl}${chartSrc}`,
+    caption: chartAlt,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Daily fiber and protein target", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+const slots = [
+  { id: "dft-breakfast", label: "Breakfast", selected: "oats-60" },
+  { id: "dft-lunch", label: "Lunch", selected: "tuna-113" },
+  { id: "dft-dinner", label: "Dinner", selected: "black-220" },
+  { id: "dft-snack", label: "Snack", selected: "pb-32" },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main id="daily-target" class="dft-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Daily fiber and protein target</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      Price a Day Against 30 Grams of Fiber and a Protein Target
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      Oats, one can of tuna, half a can of black beans, and two tablespoons of peanut butter come to {gramText(fifty.protein)} g of protein and {gramText(fifty.fiber)} g of fiber for {usd(fifty.cost)}. That's the default. The fiber total leaves the tuna out, because fiber-day-cost-2026.csv never priced that can.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      Four chicken breasts, the biggest protein portion in the day files, land at {gramText(hundred.protein)} g and {usd(hundred.cost)}. That's the closest these slots get to 100 g, and it's still 10 g short. A weird day, and not a dare.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        Bar height is one day of four published portions.
+        The fiber day is {usd(fiberDayBuild.cost)} for {gramText(fiberDayBuild.fiber)} g of fiber.
+        The 50 g protein day is {usd(fifty.cost)}. The 75 g protein day is {usd(seventy.cost)} and actually carries {gramText(seventy.protein)} g.
+        The last bar is four chicken portions at {usd(hundred.cost)}, still short of 100 g.
+      </figcaption>
+    </figure>
+
+    <section class="mb-12" aria-label="Daily target calculator">
+      <h2>Pick four portions and a protein target</h2>
+      <p>
+        Every grocery row below is a published line in protein-day-cost-2026.csv or fiber-day-cost-2026.csv. Each one names a parent food in protein-per-dollar-2026.csv or fiber-per-dollar-2026.csv. The grams and the receipt stay the day-file numbers. A per-100 g rate times a with-peel banana doesn't match the published fiber, so this tool doesn't recompute it. Restaurant rows have no gram weight here, so they stay off the list.
+      </p>
+      <div class="mode-row" role="group" aria-label="Protein target">
+        <button type="button" class="mode-button" data-target="50" aria-pressed="true">50 g protein</button>
+        <button type="button" class="mode-button" data-target="75" aria-pressed="false">75 g protein</button>
+        <button type="button" class="mode-button" data-target="100" aria-pressed="false">100 g protein</button>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        {slots.map((slot) => (
+          <label class="tool-label">
+            {slot.label}
+            <select class="tool-input" id={slot.id} data-slot={slot.label}>
+              <option value="skip" data-label="Skipped" data-protein="" data-fiber="" data-cost="0" data-protein-listed="0" data-fiber-listed="0">Skip this slot</option>
+              {portions.map((portion) => (
+                <option
+                  value={portion.id}
+                  data-label={portion.label}
+                  data-protein={portion.protein ?? ""}
+                  data-fiber={portion.fiber ?? ""}
+                  data-cost={portion.cost}
+                  data-protein-listed={portion.protein === null ? "0" : "1"}
+                  data-fiber-listed={portion.fiber === null ? "0" : "1"}
+                  selected={portion.id === slot.selected}
+                >
+                  {portion.label} ({usd(portion.cost)})
+                </option>
+              ))}
+            </select>
+          </label>
+        ))}
+      </div>
+      <p class="meter-label" id="dft-protein-label">Protein, toward 50 g</p>
+      <div class="meter" aria-hidden="true"><span id="dft-protein-meter" style={`width:${pct(fifty.protein, 50)}%`}></span></div>
+      <p class="meter-label">Fiber, toward 30 g</p>
+      <div class="meter" aria-hidden="true"><span id="dft-fiber-meter" style={`width:${pct(fifty.fiber, 30)}%`}></span></div>
+      <p id="dft-result" class="result-box" aria-live="polite">
+        Rolled oats, canned tuna, canned black beans, and peanut butter: {gramText(fifty.protein)} g protein from 4 priced rows, {gramText(fifty.fiber)} g fiber from 3 priced rows. {usd(fifty.cost)} today, {usd(fifty.cost * 7)} across 7 days, {usd(fifty.cost * 365)} across 365 days. Protein target 50 g: met. Fiber target 30 g: {gramText(30 - fifty.fiber)} g short. Canned tuna has no fiber row on fiber-day-cost-2026.csv, so the fiber total leaves it out.
+      </p>
+      <p class="text-xs" style="color:var(--muted-color);">
+        Your meal picks stay in this browser tab. Nothing you select is saved or sent.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2>Four worked days, from the same portions</h2>
+      <p>
+        These aren't Day 1 through Day 5 copied off the files. Day 3 protein and Day 3 fiber aren't one basket, and this page doesn't glue the two carts together. Each row is four portions you could actually put in the dropdowns.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>Cost of four published portions against a 30 g fiber day, a 50 g protein day, a 75 g protein day, and a 100 g attempt that still misses.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">What's in it</th>
+              <th scope="col">Protein</th>
+              <th scope="col">Fiber</th>
+              <th scope="col">1 day</th>
+              <th scope="col">7 days</th>
+              <th scope="col">365 days</th>
+            </tr>
+          </thead>
+          <tbody>
+            {examples.map((example) => (
+              <tr>
+                <th scope="row">{example.name}</th>
+                <td>{example.note}</td>
+                <td>{example.proteinListed ? `${gramText(example.protein)} g from ${example.proteinListed}` : "not on the protein file"}</td>
+                <td>{example.fiberListed ? `${gramText(example.fiber)} g from ${example.fiberListed}` : "not on the fiber file"}</td>
+                <td>{usd(example.cost)}</td>
+                <td>{usd(example.cost * 7)}</td>
+                <td>{usd(example.cost * 365)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2>Where these targets get a full page</h2>
+      <p>
+        The paired write-up, 50 g of protein and 30 g of fiber on one receipt, is
+        <a href="/cost-of-50g-protein-and-30g-fiber-per-day/" class={linkClass} style={linkStyle}>the cost of 50 g protein and 30 g fiber</a>.
+        The 50 g protein menus on their own are
+        <a href="/what-50-grams-of-protein-costs-per-day/" class={linkClass} style={linkStyle}>what 50 grams of protein costs per day</a>.
+        Five grocery lists that actually land near 100 g, instead of this four-slot shortfall, are
+        <a href="/how-much-100-grams-of-protein-costs-per-day/" class={linkClass} style={linkStyle}>how much 100 grams of protein costs per day</a>.
+        What $1 buys, flour included, is
+        <a href="/one-dollar-of-protein-vs-one-dollar-of-fiber/" class={linkClass} style={linkStyle}>one dollar of protein versus one dollar of fiber</a>.
+        The read-only menu index, 1 to 365 days and no slot picker, is the
+        <a href="/data/daily-protein-and-fiber-cost-index/" class={linkClass} style={linkStyle}>daily protein and fiber cost index</a>.
+      </p>
+      <p>
+        How a row earns its price is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+        A blank fiber cell is a missing row, not a promise that the food has no fiber. Chicken, tuna, eggs, and yogurt simply aren't in the fiber day file.
+      </p>
+    </section>
+
+    <section class="mb-4">
+      <h2>Questions the dropdowns keep getting</h2>
+      <div class="faq-list">
+        <details><summary>Does the calculator save the meals I pick?</summary><p>No. Breakfast, lunch, dinner, snack, and the protein target stay in this browser tab. The page can record that the tool was used. It doesn't receive the foods or the totals.</p></details>
+        <details><summary>Can four portions reach 100 g of protein?</summary><p>Not with the portions in these day files. Chicken breast is the biggest published protein line at 22.5 g. Four of them are 90.0 g and $3.68. You're 10 g short, and eating the same chicken four times is a strange way to miss a target.</p></details>
+        <details><summary>Why is the fiber total lower than the plate in my head?</summary><p>The total adds a nutrient only when that day file priced it. Tuna, eggs, yogurt, chicken, and milk have protein rows and no fiber row. The tool leaves the missing gram out instead of writing a zero and calling it a fact.</p></details>
+        <details><summary>Are the protein-day foods and the fiber-day foods one shopping list?</summary><p>No. Day 3 on the protein file is a meat-cook day. Day 3 on the fiber file is a produce day. Same label, different cart. This calculator prices the four portions you pick. It doesn't merge the two Day 3s.</p></details>
+        <details><summary>Why are the restaurant meals missing from the dropdowns?</summary><p>The McDonald's, Starbucks, Wendy's, and Taco Bell lines have a price and a nutrient, and no gram weight. Without grams they can't sit next to a 60 g scoop of oats. They stay on the day files, off this picker.</p></details>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <style is:global>
+    .dft-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 0 0 0.7rem; color: var(--heading-color); }
+    .dft-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .dft-page .mode-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
+    .dft-page .mode-button { border-radius: 999px; padding: 0.55rem 0.9rem; font-weight: 700; background: var(--card-bg); color: var(--text-color); border: 1px solid var(--border-color); }
+    .dft-page .mode-button[aria-pressed="true"] { background: #F29B30; color: #1c1917; border-color: #F29B30; }
+    .dft-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .dft-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .dft-page .meter-label { font-size: 0.8rem; font-weight: 700; margin: 0.8rem 0 0.3rem; color: var(--heading-color); }
+    .dft-page .meter { height: 0.7rem; border-radius: 999px; background: var(--card-bg); border: 1px solid var(--border-color); overflow: hidden; }
+    .dft-page .meter span { display: block; height: 100%; background: #F29B30; }
+    .dft-page .result-box { font-weight: 700; border-radius: 1rem; padding: 1rem 1.1rem; background: rgba(242,155,48,.10); border: 2px solid #F29B30; color: var(--heading-color); }
+    .dft-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); }
+    .dft-page table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .dft-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .dft-page th, .dft-page td { text-align: left; padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .dft-page th { color: var(--heading-color); }
+    .dft-page .faq-list details { margin: 0.65rem 0; border: 1px solid var(--border-color); border-radius: 0.75rem; background: var(--card-bg); padding: 0 1rem; }
+    .dft-page .faq-list summary { cursor: pointer; font-weight: 800; padding: 1rem 0; color: var(--heading-color); }
+    .dft-page .faq-list p { margin: 0 0 1rem; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById('daily-target');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var selects = ['dft-breakfast', 'dft-lunch', 'dft-dinner', 'dft-snack'].map(function (id) {
+          return root.querySelector('#' + id);
+        });
+        var targetButtons = Array.prototype.slice.call(root.querySelectorAll('[data-target]'));
+        var result = root.querySelector('#dft-result');
+        var proteinMeter = root.querySelector('#dft-protein-meter');
+        var fiberMeter = root.querySelector('#dft-fiber-meter');
+        var proteinLabel = root.querySelector('#dft-protein-label');
+        var target = 50;
+        function num(value) {
+          var parsed = parseFloat(value);
+          return isFinite(parsed) ? parsed : 0;
+        }
+        function money(amount) {
+          return amount.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        }
+        function gram(amount) {
+          return (Math.round(amount * 10) / 10).toFixed(1);
+        }
+        function chosen(select) {
+          return select.options[select.selectedIndex];
+        }
+        function render() {
+          targetButtons.forEach(function (button) {
+            button.setAttribute('aria-pressed', Number(button.dataset.target) === target ? 'true' : 'false');
+          });
+          var protein = 0;
+          var fiber = 0;
+          var cost = 0;
+          var proteinRows = 0;
+          var fiberRows = 0;
+          var labels = [];
+          var missingFiber = [];
+          var missingProtein = [];
+          selects.forEach(function (select) {
+            var option = chosen(select);
+            if (option.value === 'skip') return;
+            labels.push(option.dataset.label);
+            cost += num(option.dataset.cost);
+            if (option.dataset.proteinListed === '1') {
+              protein += num(option.dataset.protein);
+              proteinRows += 1;
+            } else {
+              missingProtein.push(option.dataset.label);
+            }
+            if (option.dataset.fiberListed === '1') {
+              fiber += num(option.dataset.fiber);
+              fiberRows += 1;
+            } else {
+              missingFiber.push(option.dataset.label);
+            }
+          });
+          protein = Math.round(protein * 10) / 10;
+          fiber = Math.round(fiber * 10) / 10;
+          cost = Math.round(cost * 100) / 100;
+          var proteinPct = Math.max(0, Math.min(100, protein / target * 100));
+          var fiberPct = Math.max(0, Math.min(100, fiber / 30 * 100));
+          proteinMeter.style.width = proteinPct + '%';
+          fiberMeter.style.width = fiberPct + '%';
+          proteinLabel.textContent = 'Protein, toward ' + target + ' g';
+          if (!labels.length) {
+            result.textContent = 'Every slot is skipped. The receipt is $0.00, and neither target has a food under it yet.';
+            return;
+          }
+          var proteinGap = protein >= target ? 'met' : gram(target - protein) + ' g short';
+          var fiberGap = fiber >= 30 ? 'met' : gram(30 - fiber) + ' g short';
+          var sentence = labels.join(', ') + ': ' + gram(protein) + ' g protein from ' + proteinRows + (proteinRows === 1 ? ' priced row' : ' priced rows') + ', ' + gram(fiber) + ' g fiber from ' + fiberRows + (fiberRows === 1 ? ' priced row' : ' priced rows') + '. ' + money(cost) + ' today, ' + money(cost * 7) + ' across 7 days, ' + money(cost * 365) + ' across 365 days. Protein target ' + target + ' g: ' + proteinGap + '. Fiber target 30 g: ' + fiberGap + '.';
+          if (missingFiber.length) {
+            sentence += ' ' + missingFiber.join(', ') + (missingFiber.length === 1 ? ' has' : ' have') + ' no fiber row on fiber-day-cost-2026.csv, so the fiber total leaves ' + (missingFiber.length === 1 ? 'it' : 'them') + ' out.';
+          }
+          if (missingProtein.length) {
+            sentence += ' ' + missingProtein.join(', ') + (missingProtein.length === 1 ? ' has' : ' have') + ' no protein row on protein-day-cost-2026.csv, so the protein total leaves ' + (missingProtein.length === 1 ? 'it' : 'them') + ' out.';
+          }
+          result.textContent = sentence;
+        }
+        targetButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            target = Number(button.dataset.target);
+            render();
+          });
+        });
+        selects.forEach(function (select) {
+          select.addEventListener('change', render);
+        });
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
