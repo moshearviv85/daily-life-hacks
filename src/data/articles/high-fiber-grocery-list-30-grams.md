@@ -85,6 +85,8 @@ The split peas want a pot. That's [split pea soup](/split-pea-soup-recipe-high-f
 
 Oats don't need a speech. Half a cup or two thirds, water, breakfast. Barley can share the pot with the rice if a third grain feels like homework. The no-cook day is a can opener, a microwave, and a sandwich. That's the $1.74 back pocket, not a personality.
 
+Those oats and beans also carry protein. Pricing both on one receipt, instead of adding this fiber cart to a separate protein cart, is the [cost of 50 g of protein and 30 g of fiber a day](/cost-of-50g-protein-and-30g-fiber-per-day/).
+
 ## What this list will not buy
 
 Salt, oil, and whatever you want next to the beans. The $9.32 is the fiber-carrying foods, the same rule as the day study. It isn't a complete diet, and it isn't a personalized plan. If this week is a jump from a white-bread routine, don't hit 32 grams tomorrow and then blame the beans. Add fiber gradually, and drink water with it. We already wrote that down in [how to increase fiber without the gas](/how-to-increase-fiber-intake-without-gas/) and [the water and fiber rule](/water-and-fiber-the-golden-rule/).

@@ -51,11 +51,10 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "fiber",
         title: "Fiber, weighed",
         intro:
-          "Start with the foods that actually carry the fiber, measured per 100 grams, before anyone turns it into a smoothie claim. The next pages price that fiber: what 30 grams costs in a day, then a 7-day grocery list built from those same receipts. After that you'll find the 28-gram daily target, how to add fiber without the gas, the water that has to show up with it, and two pages for the day the usual bowl isn't enough.",
+          "Start with the foods that actually carry the fiber, measured per 100 grams, before anyone turns it into a smoothie claim. The next page prices that fiber: what 30 grams costs in a day. After that you'll find the 28-gram daily target, how to add fiber without the gas, the water that has to show up with it, and two pages for the day the usual bowl isn't enough.",
         slugs: [
           "best-high-fiber-foods-ranked-by-fiber-content",
           "what-30-grams-of-fiber-costs-per-day",
-          "high-fiber-grocery-list-30-grams",
           "fiber-protein-daily-values-explained",
           "how-to-increase-fiber-intake-without-gas",
           "water-and-fiber-the-golden-rule",
@@ -82,12 +81,11 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "grocery-cost",
         title: "Protein and what it costs",
         intro:
-          "The first page ignores price on purpose and ranks protein in 100 grams. The dollar pages come next: quality-adjusted protein per dollar, a 50 gram day, breakfast staples, eggs versus the rest of the cart, and animal protein. Lentils with wheat, and the selenium foods, use that same cart for a different question.",
+          "The first page ignores price on purpose and ranks protein in 100 grams. The dollar pages come next: quality-adjusted protein per dollar, a 50 gram day, eggs versus the rest of the cart, and animal protein. Lentils with wheat, and the selenium foods, use that same cart for a different question.",
         slugs: [
           "foods-highest-in-protein-per-100-grams",
           "protein-per-dollar-adjusted-for-quality",
           "what-50-grams-of-protein-costs-per-day",
-          "breakfast-staples-per-dollar",
           "eggs-vs-everything-protein-value",
           "animal-protein-per-dollar-ranked",
           "cheapest-complete-protein-pairs",
