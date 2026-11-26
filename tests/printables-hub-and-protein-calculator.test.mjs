@@ -150,8 +150,10 @@ test("built sitemap includes both new pages when dist exists", () => {
   assert.match(xml, /https:\/\/www\.daily-life-hacks\.com\/tools\/protein-per-dollar-calculator\/</);
   const hubHtml = readFileSync(join(ROOT, "dist/printables/index.html"), "utf8");
   assert.equal(hubHtml.includes("FAQPage"), false);
-  assert.equal(hubHtml.includes("/cheapest-frozen-vegetables-for-fiber-and-protein/"), false);
-  assert.equal(hubHtml.includes("/cheapest-shelf-stable-pantry-foods-for-protein/"), false);
+  for (const slug of GUARDED) {
+    const exists = existsSync(join(ROOT, "src/data/articles", `${slug}.md`));
+    assert.equal(hubHtml.includes(`/${slug}/`), exists, slug);
+  }
   assert.match(hubHtml, /\/canned-vs-dry-beans-cost-and-sodium-per-serving\//);
   assert.match(hubHtml, /\/how-long-do-cooked-grains-and-beans-last-in-the-fridge\//);
   assert.match(hubHtml, /\/sourdough-discard-hydration-conversion-chart\//);
