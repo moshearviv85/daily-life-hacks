@@ -94,7 +94,6 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
           "A breakfast page is here when it names the food and the reason you aren't opening the pantry at 10. The balanced breakfast is the start, then chia, the yogurt parfait, oats versus grits, and the high-fiber breakfast ideas. The peppermint and ginger mug is the ten-minute cup when the bowl isn't happening.",
         slugs: [
           "balanced-breakfast-that-keeps-you-full",
-          "best-breakfast-foods-for-sustained-energy",
           "chia-pudding-variations-for-breakfast",
           "high-fiber-yogurt-parfait-for-breakfast",
           "oatmeal-vs-grits-fiber-content",
