@@ -16,7 +16,8 @@ image: /images/best-way-to-store-avocados-to-stop-browning-main.jpg
 imageAlt: Best Way to Store Avocados to Stop Browning - a perfectly green halved avocado
   stored with red onions in an airtight glass container
 date: 2026-01-26
-dateModified: 2026-07-20
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -101,13 +102,31 @@ Once the avocado yields slightly to gentle pressure near the stem, move it to th
 
 For a broader produce routine, this fruit and vegetable storage guide separates counter foods from refrigerator foods and explains which items should not share a drawer.
 
+## Is it safe to store cut avocados in water, and which method stops browning best?
+
+No. Don't store a whole or cut avocado in water. [FDA's FY14-16 sampling](https://www.fda.gov/food/sampling-protect-food-supply/microbiological-surveillance-sampling-fy14-16-whole-fresh-avocados) found *Listeria monocytogenes* on 17.73% of avocado skins. [FDA lab work](https://pubmed.ncbi.nlm.nih.gov/27497134/) showed it can multiply and enter the pulp in refrigerated water. FoodSafety.gov says [wash under running water](https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely), then keep it dry and cold. [UC Davis](https://postharvest.ucdavis.edu/produce-facts-sheets/avocado) holds ripe fruit at 36 to 40°F.
+
+That 17.73% is skins. It's 64 of 361 samples from the first three months of the assignment, not a count of illnesses. The [same report](https://www.fda.gov/food/sampling-protect-food-supply/microbiological-surveillance-sampling-fy14-16-whole-fresh-avocados) quotes FoodSafety.gov's running-water wash, and it didn't measure how many cells were on each fruit. Pulp, the part you eat, was 0.24%, 3 of 1,254 samples. The [water study](https://pubmed.ncbi.nlm.nih.gov/27497134/) was a lab: whole fruit, a stem-scar spot or a bath loaded at about 1 million to 100 million CFU per milliliter, then days at 4°C. In that bath, pulp next to the stem scar reached as high as 5.90 to 7.19 log CFU/g within 10 to 15 days. A kitchen bowl isn't that experiment. I still wouldn't soak an avocado in it.
+
+The wrap-and-citrus row is the one I use. Onion can buy a greener half and can also make toast taste like taco night. Oil is the backup seal. A whole ripe avocado in the fridge isn't a cut-fruit method at all. Water is the row I skip.
+
+Table: Cut-avocado browning methods against fridge time and the FDA water warning
+
+| Method | Browning control | Fridge window | Food-safety status |
+| --- | --- | --- | --- |
+| Tight wrap pressed onto the flesh, plus lemon or lime juice | Best of the dry methods. Acid slows the browning enzyme, and the wrap has to touch the flesh. | Next day if you can, inside FoodKeeper's 3 to 4 day ripe window. | Wash the whole fruit under running water, dry it, then keep the cut face cold and covered. |
+| Cut onion in an airtight container | Can slow browning. It can also leave a raw-onion flavor on the fruit. | Same 3 to 4 day ripe window. | Dry cold storage only. The onion doesn't clean bacteria off the skin. |
+| Light olive oil brush, plus airtight wrap | A seal when you're out of citrus. Press the wrap on so it actually touches. | Same 3 to 4 day ripe window. | Wash and dry first. Oil blocks air. It doesn't clean the skin. |
+| Dry whole ripe avocado, refrigerated | No cut face, so nothing browns until you slice it. UC Davis holds ripe fruit at 36 to 40°F (2 to 4°C). | [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app): 3 to 4 days once it's ripe. | The dry cold storage these pages describe. Don't soak it on the way into the fridge. |
+| Submerging in water (not safe) | A greener surface is the wrong goal. | No quality window makes this worth doing. | Not recommended. Listeria on the skin can move inward during refrigerated water storage. |
+
 ## The safest method for a cut avocado
 
 Brush the exposed flesh with lemon or lime juice. Press reusable food wrap or plastic wrap directly against every cut surface, then place the avocado in a covered container in the refrigerator. Use it as soon as practical, ideally the next day.
 
 The onion-container method may slow visible browning in some kitchens, but it is less predictable and can transfer flavor. If you want to try it, keep the onion beside the avocado rather than piled on the flesh. The direct-wrap method is simpler and doesn't make breakfast toast taste faintly like taco night.
 
-Don't store a cut avocado submerged in water. FoodKeeper doesn't give that trick a time, and a green surface isn't a safety test. Keep the cut fruit cold and covered, and eat it inside the ripe-fruit window.
+Don't store a cut avocado submerged in water. FoodKeeper doesn't give that trick a time, and the table above is why a green surface isn't a safety test. Keep the cut fruit cold and covered, and eat it inside the ripe-fruit window.
 
 ## How to keep guacamole greener
 
@@ -122,3 +141,5 @@ FoodKeeper lists freezing avocados as not recommended. If you mash one anyway fo
 Thaw the bag overnight in the refrigerator. Use the avocado in guacamole, sauces, or smoothies where the softer texture will not matter. If you need clean slices for a salad, buy another avocado. The freezer cannot negotiate with cell structure.
 
 Avocado is only useful when it gets eaten. This healthy fats food list has several cheaper options for the weeks when avocados cost more than the rest of lunch combined, and this guide to [keeping berries fresh](/keep-berries-fresh-longer-when-to-wash/) handles the other produce item that likes to expire on its own schedule.
+
+<!-- sources: FDA, "Microbiological Surveillance Sampling: FY14-16 Whole Fresh Avocados," https://www.fda.gov/food/sampling-protect-food-supply/microbiological-surveillance-sampling-fy14-16-whole-fresh-avocados (Listeria monocytogenes on 17.73% of 361 skin samples, 64 positive; 0.24% of 1,254 pulp samples, 3 positive; quotes FoodSafety.gov running-water wash before cutting); Chen et al., Journal of Food Protection, 2016, https://pubmed.ncbi.nlm.nih.gov/27497134/ (whole avocados; stem-scar inoculation and hydrocooling in water at 10^6 and 10^8 CFU/ml; pulp next to the stem scar reached up to 5.90 to 7.19 log CFU/g within 10 to 15 days at 4 C); FDA, "Selecting and Serving Produce Safely," https://www.fda.gov/food/buy-store-serve-safe-food/selecting-and-serving-produce-safely (wash under running water before preparing or eating); UC Davis Postharvest avocado fact sheet, https://postharvest.ucdavis.edu/produce-facts-sheets/avocado (ripe fruit at 2-4 C / 36-40 F); FoodKeeper, https://www.foodsafety.gov/keep-food-safe/foodkeeper-app (ripe avocados, 3 to 4 days in the refrigerator) -->
