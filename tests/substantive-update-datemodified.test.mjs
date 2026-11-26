@@ -67,6 +67,8 @@ const LATER_UPDATES = {
   "high-protein-breakfast-without-eggs": "2026-11-25",
   "best-way-to-store-avocados-to-stop-browning": "2026-11-25",
   "freezer-organization-tips-large-family-meals": "2026-11-25",
+  "prune-juice-alternatives-for-constipation": "2026-11-25",
+  "selenium-containing-foods-easy-ways": "2026-11-25",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([

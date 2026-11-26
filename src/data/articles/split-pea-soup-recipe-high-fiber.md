@@ -186,6 +186,8 @@ One pot of split pea soup covers multiple lunches. Pair it with oatmeal breakfas
 
 The [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) maps the grocery pattern. This pot is the Tuesday execution.
 
+If juice is the other constipation idea, [prune juice versus whole prunes and kiwifruit on fiber](/prune-juice-alternatives-for-constipation/) is the comparison with the gram lines filled in.
+
 Make it once when the weather turns mean. Freeze half. Eat the rest with bread and zero apologies. Thick, cheap, and quietly loaded with fiber. That's the whole pitch for this split pea soup recipe.
 
 <!-- sources: USDA FoodData Central SR Legacy FDC 172428, Peas, green, split, mature seeds, raw: 22.2g fiber and 364 kcal per 100g; USDA portion: 1 cup dry peas = 196g. USDA FoodData Central FDC 2709660, Carrots, raw: 2.9g fiber per 100g. FDC 2709778, Celery, raw: 1.6g fiber per 100g. FDC 2709795, Onions, raw: 1.7g fiber per 100g. FDC 171413, Olive oil: 884 kcal per 100g. Recipe estimate assumes 150g onion, 122g carrots, 80g celery, 13.5g oil, four servings, and about eight cups finished soup; broth brand may change calories. -->

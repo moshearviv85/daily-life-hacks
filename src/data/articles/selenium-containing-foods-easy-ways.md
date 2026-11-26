@@ -11,7 +11,8 @@ tags:
 image: "/images/selenium-containing-foods-easy-ways-main.jpg"
 imageAlt: "Eggs fish Brazil nuts oats and chicken arranged on a kitchen counter"
 date: 2026-05-06
-dateModified: 2026-09-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 quickAnswer: "The richest selenium foods are Brazil nuts, seafood, meat, poultry, eggs, and grains. Adults need 55 mcg a day and should stay under 400 mcg, per the NIH Office of Dietary Supplements. Three ounces of cooked yellowfin tuna delivers 92 mcg, a cup of cooked spaghetti 33 mcg, and one large egg 15 mcg. A single Brazil nut carries 68 to 91 mcg, so one nut alone covers the day."
 featured: false
@@ -49,6 +50,27 @@ But selenium foods aren't strange. They're eggs, canned tuna, sardines, chicken,
 What makes selenium different is that it's one of the few nutrients where you can overshoot using nothing but food, and the food that does it sits in the bulk bin looking innocent. So this covers both directions: how to hit the number, and where the ceiling is.
 
 If you're planning food variety instead of chasing one nutrient, this guide to zinc-containing foods for weekly meals uses the same normal-groceries approach.
+
+## How much selenium is in Brazil nuts, tuna, eggs, and whole-wheat bread per serving?
+
+Dried unblanched Brazil nuts (1 oz, [FDC 170569](https://fdc.nal.usda.gov/food-details/170569/nutrients)) have 543 mcg selenium on [USDA FoodData Central](https://fdc.nal.usda.gov/), 1,917 mcg per 100 g, so a 5 g kernel is about 95 mcg. [NIH Office of Dietary Supplements](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/) sets the adult RDA at 55 mcg/day and the Tolerable Upper Intake Level at 400 mcg/day. One kernel clears the day.
+
+| Food | Serving | Selenium | % of 55 mcg RDA | FDC |
+|---|---|---|---|---|
+| Dried Brazil nuts, unblanched | 1 oz (28.35 g) | 543 mcg | 987.3% | [FDC 170569](https://fdc.nal.usda.gov/food-details/170569/nutrients) |
+| Yellowfin tuna, cooked, dry heat | 3 oz (85 g) | 92.0 mcg | 167.3% | [FDC 172006](https://fdc.nal.usda.gov/food-details/172006/nutrients) |
+| Cottage cheese, type not specified | 1 cup (210 g) | 30.7 mcg | 55.8% | [FDC 2705747](https://fdc.nal.usda.gov/food-details/2705747/nutrients) |
+| Whole-wheat bread | 1 slice (32 g) | 8.22 mcg | 14.9% | [FDC 172688](https://fdc.nal.usda.gov/food-details/172688/nutrients) |
+| Egg, whole, raw | 1 large (50 g) | 15.4 mcg | 28.0% | [FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients) |
+| Chicken breast, raw, skinless, boneless | 3 oz (85 g) | 19.4 mcg | 35.3% | [FDC 171077](https://fdc.nal.usda.gov/food-details/171077/nutrients) |
+
+The kernel is the part the ounce hides. NIH's fact sheet puts one nut at 68 to 91 mcg and the ounce average at 544 mcg. This [FDC 170569](https://fdc.nal.usda.gov/food-details/170569/nutrients) row is 1,917 mcg per 100 g, which is 543 mcg in 28.35 g and about 95 mcg in the 5 g kernel on the same record. Different spreadsheets, same rule. Stop at one.
+
+The other rows are the groceries that don't ambush you. Cooked yellowfin tuna is a day and change at 92.0 mcg. A large raw egg is 15.4 mcg, close to the hard-boiled 15 mcg in the NIH table, because [FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients) is the raw egg. Cottage cheese here is the survey row that doesn't name a fat level, 30.7 mcg per cup, not the 1% cup NIH lists at 20 mcg. The chicken breast is raw too, 19.4 mcg in 3 ounces. Roast it and you're in a different record.
+
+Percent of the [55 mcg RDA](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/) is the serving divided by 55. Tuna clears it. A slice of bread, at 14.9%, doesn't. The Brazil nut ounce is 987.3%, and it's also past the 400 mcg ceiling. That's the bulk bin doing math you didn't ask for.
+
+<!-- sources: USDA FoodData Central selenium per 100 g, checked 2026-11-25. FDC 170569 Brazil nuts, dried, unblanched: 1917 mcg/100 g; 28.35 g = 543.47 mcg (shown as 543); 5 g kernel = 95.85 mcg (shown as about 95). FDC 172006 yellowfin tuna, cooked, dry heat: 108.2 mcg/100 g; 85 g = 91.97 mcg (shown as 92.0). FDC 2705747 cottage cheese, NFS: 14.6 mcg/100 g; 210 g = 30.66 mcg (shown as 30.7). FDC 172688 whole-wheat bread: 25.7 mcg/100 g; 32 g = 8.224 mcg (shown as 8.22). FDC 171287 egg, whole, raw: 30.7 mcg/100 g; 50 g = 15.35 mcg (shown as 15.4). FDC 171077 chicken breast, skinless, boneless, raw: 22.8 mcg/100 g; 85 g = 19.38 mcg (shown as 19.4). Percents use the displayed mcg divided by the 55 mcg adult RDA. RDA and 400 mcg Tolerable Upper Intake Level: NIH ODS selenium fact sheet. -->
 
 ## How much selenium do you need a day?
 
@@ -103,13 +125,13 @@ Three ounces of cooked yellowfin tuna delivers 92 mcg, about a day and two third
 
 Canned tuna is the practical pick. Cheap, shelf-stable, and lunch in about four minutes if you've got bread, crackers, or a sad bag of greens that needs a purpose.
 
-Eggs are the breakfast shortcut. One large hard-boiled egg is 15 mcg, so two eggs plus a slice of whole wheat bread (8 mcg) puts you around 38 mcg, roughly 70 percent of the day before 8 AM. Eggs pull the same weight on the grocery bill, which is what [the eggs against Greek yogurt comparison on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is really measuring.
+Eggs are the breakfast shortcut. One large hard-boiled egg is 15 mcg, so two eggs plus a slice of whole wheat bread (8 mcg) puts you around 38 mcg, roughly 70 percent of the day before 8 AM. Eggs pull the same weight on the grocery bill, which is what [the eggs against Greek yogurt comparison on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/) is really measuring.
 
 ## Do meat, dairy, and grains count?
 
 More than most lists admit. NIH says the major food sources of selenium in American diets are breads, grains, meat, poultry, seafood, and eggs. Not Brazil nuts. Bread and chicken.
 
-A cup of cooked spaghetti carries 33 mcg, which beats an egg and beats 3 ounces of roasted chicken. Turkey brings 26 mcg per 3 ounces, a broiled pork chop 37, a bottom round steak 37. Thighs are usually the better buy at the counter anyway, and [the price gap between thighs and breast per gram of protein](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is wider than most people assume.
+A cup of cooked spaghetti carries 33 mcg, which beats an egg and beats 3 ounces of roasted chicken. Turkey brings 26 mcg per 3 ounces, a broiled pork chop 37, a bottom round steak 37. Thighs are usually the better buy at the counter anyway, and [the price gap between thighs and breast per gram of protein](/protein-per-serving-beans-chicken-tofu-compared/) is wider than most people assume.
 
 Dairy pitches in quietly: a cup of 1% cottage cheese is 20 mcg, plain low fat yogurt 8, 1% milk 6.
 

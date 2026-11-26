@@ -76,6 +76,8 @@ It's often sold in multipacks of small containers. Read the package directions b
 
 Natto is notably high in vitamin K. The National Institutes of Health says vitamin K can have a serious interaction with warfarin and that people taking warfarin should keep their vitamin K intake consistent. That doesn't mean everybody needs to avoid natto. It means people using warfarin shouldn't make natto a new routine without discussing it with the clinician managing the medication. The [NIH vitamin K fact sheet](https://ods.od.nih.gov/factsheets/vitaminK-Consumer/) gives the interaction details.
 
+Selenium is a different mineral with the same grocery-store problem. The serving math for Brazil nuts, tuna, eggs, and whole-wheat bread is in [selenium foods and the 400 mcg ceiling](/selenium-containing-foods-easy-ways/).
+
 ## Dealing with the Texture
 
 Let's be honest about the texture. The Japanese word for it is neba-neba, which means sticky or slimy.
