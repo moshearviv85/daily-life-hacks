@@ -28,6 +28,7 @@ const BEFORE_DATE_RESTORE = "84702a37";
  * the yogurt fiber answer added the same day.
  */
 const LATER_UPDATES = {
+  "20-minute-high-fiber-meals-from-pantry-staples": "2026-11-26",
   "30-day-high-fiber-challenge-meal-plan": "2026-11-26",
   "animal-protein-per-dollar-ranked": "2026-11-25",
   "brown-lentil-and-pearled-barley-soup-high-fiber": "2026-11-26",
@@ -59,6 +60,7 @@ const LATER_UPDATES = {
   "high-protein-high-fiber-meals-for-weight-loss": "2026-11-25",
   "low-sodium-budget-foods-ranked": "2026-11-25",
   "sourdough-discard-hydration-conversion-chart": "2026-11-25",
+  "sourdough-discard-pizza-and-bread-troubleshooting": "2026-11-26",
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
   "canned-beans-vs-dried-beans-nutrition": "2026-11-25",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
