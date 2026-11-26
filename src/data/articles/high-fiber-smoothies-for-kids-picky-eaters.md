@@ -83,7 +83,7 @@ Use fun cups, maybe a silly straw. If it looks exciting, they might be more incl
 
 ## How much fiber is in these kids' smoothies?
 
-The strawberry-banana glass is about 7.1 grams of fiber, the berry glass about 8.1 grams before the optional chia, and the cocoa glass about 12.8 grams. Those totals use USDA cup and spoon weights on the ingredients as written. Add the fiber gradually and offer water. This is food, not a treatment.
+The strawberry-banana glass is about 7.1 grams of fiber, the berry glass about 8.1 grams before the optional chia, and the cocoa glass about 12.8 grams. Those totals use USDA cup and spoon weights on the ingredients as written. Add the fiber gradually and offer water. This is food, not a treatment. A side mug of [plain peppermint ginger tea](/gut-health-tea-peppermint-ginger/) is caffeine-free, and it isn't part of those fiber grams.
 
 Table: Fiber per kids smoothie from USDA FoodData Central ingredient weights.
 

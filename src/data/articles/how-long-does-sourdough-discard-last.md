@@ -32,7 +32,7 @@ faq:
 
 How long does sourdough discard last in the fridge? Plan on one week from the oldest date on the jar, then bake it or freeze it. That week is the planning window already used on the [beginner discard recipes](/easy-sourdough-discard-recipes-beginners/). It isn't a safety limit. [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) doesn't publish a sourdough-discard row, and the [cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) doesn't either. Keep the jar at 40°F or below. Mold, pink or orange, or a rotten smell ends it whatever the tape says.
 
-A jar without a date is just a beige mystery.
+A jar without a date is just a beige mystery. That week is for the jar, not a drink you invent from it. A separate [10-minute peppermint ginger brew](/gut-health-tea-peppermint-ginger/) is just tea.
 
 ## How long does sourdough discard last in the fridge?
 

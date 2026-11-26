@@ -16,8 +16,8 @@ tags:
 image: /images/easy-one-pot-chicken-and-rice-dinner-main.jpg
 imageAlt: One-pot chicken and rice in a large pot, ready to serve
 date: 2026-03-15
-dateModified: 2026-11-25
-substantiveUpdate: 2026-11-25
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -144,6 +144,19 @@ Use a dry measuring cup for the rice and a liquid cup for the broth if you have 
 Pan shape matters. A very wide skillet loses moisture faster than a Dutch oven. If the rice is still firm when the liquid is gone, add a quarter cup of hot broth or water, cover, and cook for another three to five minutes. If it is tender but slightly wet, rest it off the heat with the lid on.
 
 For leftover rice safety and texture, use the cooling method in this fried-rice prep guide. The same shallow-container rule applies here.
+
+## What rice-to-liquid ratio and safe temperature keep one-pot chicken and rice tender?
+
+[USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart) calls poultry done at 165°F in the thickest thigh, boneless pieces included ([FDC 173627](https://fdc.nal.usda.gov/food-details/173627/nutrients)). Long-grain white rice ([FDC 168877](https://fdc.nal.usda.gov/food-details/168877/nutrients)) takes 2 cups of liquid per cup for an 18 to 20 minute covered simmer. Brown rice ([FDC 169703](https://fdc.nal.usda.gov/food-details/169703/nutrients)) needs more liquid and 45 minutes. Peas ([FDC 170016](https://fdc.nal.usda.gov/food-details/170016/nutrients)) and carrots ([FDC 170393](https://fdc.nal.usda.gov/food-details/170393/nutrients)) don't rewrite that ratio.
+
+| Rice | Liquid per 1 cup | Covered simmer | 165°F probe |
+| --- | --- | --- | --- |
+| Long-grain white | 2 cups | 18 to 20 minutes | Thickest piece, after the rest |
+| Jasmine or basmati | 2 cups | 15 to 18 minutes | Same probe. It can finish early. |
+| Parboiled | 2 1/4 cups | 20 minutes | Same probe. Color isn't doneness. |
+| Brown, long grain | 2 1/4 cups | 40 to 45 minutes | Add the chicken near the end, then probe. |
+
+Jasmine, basmati, parboiled, and brown use the [USA Rice cooking chart](https://www.usarice.com/thinkrice/how-to/how-to-cook-rice). This pot keeps long-grain white at 2 cups and 18 to 20 minutes, a little past the chart's 15 to 18, because the chicken is in the skillet. Trust the bag when it disagrees.
 
 ## When to add vegetables
 

@@ -85,7 +85,7 @@ If you aren't the type of person who wants to spend an hour rolling dough right 
 
 Use about a teaspoon of filling per three-inch wrapper. Too much filling pushes into the seal and creates leaks. If the filling includes raw meat, use a separate spoon and cutting board for it, wash your hands after filling, and do not return the cooked dumplings to the raw-filling plate.
 
-Cook poultry fillings to 165F. Ground pork or beef fillings should reach 160F. A browned wrapper does not tell you whether the center is ready, so check a dumpling from the middle of the pan or steamer with an instant-read thermometer.
+Cook poultry fillings to 165F. Ground pork or beef fillings should reach 160F. A browned wrapper does not tell you whether the center is ready, so check a dumpling from the middle of the pan or steamer with an instant-read thermometer. Skip the wrappers and that same check still runs this [one-pot chicken and rice](/easy-one-pot-chicken-and-rice-dinner/).
 
 ## Keep stacks from becoming one dough brick
 
