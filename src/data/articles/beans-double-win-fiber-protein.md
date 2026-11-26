@@ -72,6 +72,8 @@ Brown lentils are the gateway. No soaking, quick cooking, and at 111.4 combined 
 
 Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag, roasted chickpeas are what I hand people who say they hate beans. Crunchy, salty, gone by Wednesday.
 
+If the drive-thru happens before the bag gets cooked, a few orders still clear 20 grams of protein and 10 grams of fiber. That chain-file list is [fast food meals with protein and fiber](/fast-food-meals-with-protein-and-fiber/).
+
 ## How did we calculate these numbers?
 
 Nutrient values come from USDA FoodData Central. Prices are July 2026 US figures: BLS average prices where a dried-bean series exists, and audited Walmart listings where it doesn't. The combined score is just protein grams per dollar plus fiber grams per dollar. No weighting, no adjustments, one addition problem.
