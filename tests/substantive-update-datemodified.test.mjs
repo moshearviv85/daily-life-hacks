@@ -75,8 +75,10 @@ const LATER_UPDATES = {
   "selenium-containing-foods-easy-ways": "2026-11-25",
   "high-fiber-without-beans": "2026-11-25",
   "how-long-do-cooked-grains-and-beans-last-in-the-fridge": "2026-11-25",
+  "how-to-make-grocery-shopping-cheaper": "2026-11-26",
   "low-sodium-high-protein-foods-per-dollar": "2026-11-26",
   "cheapest-high-fiber-fruits-and-vegetables": "2026-11-26",
+  "usda-thrifty-food-plan-weekly-cost": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
