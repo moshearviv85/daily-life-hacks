@@ -51,12 +51,10 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "fiber",
         title: "Fiber, weighed",
         intro:
-          "Start with the foods that actually carry the fiber, measured per 100 grams, before anyone turns it into a smoothie claim. The next page prices that fiber: what 30 grams costs in a day. After that you'll find the 28-gram daily target, how to add fiber without the gas, the water that has to show up with it, and two pages for the day the usual bowl isn't enough.",
+          "Start with the foods that actually carry the fiber, measured per 100 grams, before anyone turns it into a smoothie claim. The next page prices that fiber: what 30 grams costs in a day. Water has to show up with it, and two later pages cover the day the usual bowl isn't enough.",
         slugs: [
           "best-high-fiber-foods-ranked-by-fiber-content",
           "what-30-grams-of-fiber-costs-per-day",
-          "fiber-protein-daily-values-explained",
-          "how-to-increase-fiber-intake-without-gas",
           "water-and-fiber-the-golden-rule",
           "prune-juice-alternatives-for-constipation",
           "high-protein-high-fiber-meals-for-weight-loss",
