@@ -92,7 +92,7 @@ Peanuts and raisins are the pocket box, $0.41. An ounce of dry roasted peanuts i
 
 ## What has to stay cold
 
-Peanut butter, peanuts, sunflower kernels, prunes, raisins, and the apple can live in a bag for the morning. Carrots want the same bag, not a hot car seat in July. Yogurt and cottage cheese want a cold pack, or you eat them before you leave. This isn't a canned-fish list for a power outage. It's the stuff that fits next to a laptop.
+Peanut butter, peanuts, sunflower kernels, prunes, raisins, and the apple can live in a bag for the morning. Carrots want the same bag, not a hot car seat in July. Yogurt and cottage cheese want a cold pack, or you eat them before you leave. The canned fish, the rotisserie bird, and the two-hour rule for food left out of the fridge are a different list: the [no-cook emergency grocery list](/no-cook-emergency-protein-and-fiber-grocery-list/). This page is the stuff that fits next to a laptop.
 
 Almonds at $0.68 for 10 grams of protein are how the drawer gets expensive while looking responsible. The peanut butter scoop does the protein job for $0.20. The carrot handful does the fiber job for $0.31. Flour and dry lentils still beat every snack on the [dollar comparison](/one-dollar-of-protein-vs-one-dollar-of-fiber/), and they don't fit in a coat pocket. That's the trade. Cheap grams, or grams you can carry.
 
