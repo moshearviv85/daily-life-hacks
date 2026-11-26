@@ -145,6 +145,9 @@ About 11 grams of fiber per serving from the bulgur, before the chickpeas.
 Fiber is the part of plant foods that your body does not fully break down, and that is the point. It can help you feel full, and it pairs well with steady energy when you are not eating every hour.
 
 When you are slammed, fiber also plays well with simple meals. Beans, lentils, oats, and whole grains do not need a long speech. They just need heat and seasoning. If you want more proof, this [creamy tomato orzo with white beans](/creamy-tomato-orzo-white-beans-one-pot/) is the 30-minute cousin of the spaghetti and peas above.
+
+When you want those adds spread over a month instead of one skillet, use the [30-day high-fiber challenge meal plan](/30-day-high-fiber-challenge-meal-plan/).
+
 ## The Busy Night Game Plan
 
 Keep canned beans in the cupboard. Keep a pouch of cooked brown rice in the pantry or batch cook rice once a week, and if you never know how much to cook, [one adult gets through about two thirds of a cup of dry rice a day](/can-you-eat-rice-and-beans-everyday/). Keep frozen peppers or spinach for the nights when fresh produce is a fantasy.
