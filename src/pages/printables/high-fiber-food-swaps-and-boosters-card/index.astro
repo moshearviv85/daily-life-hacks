@@ -1,0 +1,430 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/printables/high-fiber-food-swaps-and-boosters-card/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/high-fiber-food-swaps-and-boosters-card-chart.jpg";
+const chartAlt =
+  "Two-panel bar chart of fiber grams in a tablespoon or half cup, and of white rice versus pearled barley plus potato chips versus air-popped popcorn at the same weight";
+
+type Row = Record<string, string>;
+type Portion = { modifier: string; grams: number };
+type CacheFood = { nutrientsPer100g: { fiber: number }; portions: Portion[] };
+
+function rowsFrom(fileName: string): Row[] {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+function must(rows: Row[], food: string, fileName: string) {
+  const row = rows.find((item) => item.food === food);
+  if (!row) throw new Error(`Missing ${food} in ${fileName}`);
+  return row;
+}
+
+function oneDecimal(value: number) {
+  return Math.floor(value * 10 + 0.5 + 1e-9) / 10;
+}
+
+function money(value: number) {
+  const cents = Math.floor(value * 100 + 0.5 + 1e-9);
+  return `$${(cents / 100).toFixed(2)}`;
+}
+
+const fiberFile = "fiber-per-dollar-2026.csv";
+const dayFile = "fiber-day-cost-2026.csv";
+const fiber = rowsFrom(fiberFile);
+const day = rowsFrom(dayFile);
+const cache = JSON.parse(readFileSync(join(process.cwd(), "src/data/fdc-cache.json"), "utf8")) as {
+  foods: Record<string, CacheFood>;
+};
+const yogurt = readFileSync(
+  join(process.cwd(), "src/data/articles/high-fiber-yogurt-parfait-for-breakfast.md"),
+  "utf8",
+);
+const popcorn = readFileSync(
+  join(process.cwd(), "src/data/articles/popcorn-vs-potato-chips-fiber-comparison.md"),
+  "utf8",
+);
+
+if (!yogurt.includes("1 tbsp (12 g, kitchen measure)") || !yogurt.includes("| 4.1 g |")) {
+  throw new Error("yogurt parfait lost the 12 g chia tablespoon");
+}
+if (!yogurt.includes("1 tbsp (7 g)") || !yogurt.includes("| 1.9 g |")) {
+  throw new Error("yogurt parfait lost the 7 g ground flax tablespoon");
+}
+if (!yogurt.includes("1/2 cup (62 g)") || !yogurt.includes("| 4.0 g |")) {
+  throw new Error("yogurt parfait lost the 62 g raspberry half cup");
+}
+
+function densityOf(food: string) {
+  const value = Number(must(fiber, food, fiberFile).fiber_g_per_100g);
+  if (!Number.isFinite(value)) throw new Error(`Bad fiber density for ${food}`);
+  return value;
+}
+
+function pricePer100(food: string) {
+  return Number(must(fiber, food, fiberFile).price_per_100g_usd);
+}
+
+function portionGrams(fdcId: string, modifier: string) {
+  const food = cache.foods[fdcId];
+  const portion = food?.portions.find((item) => item.modifier === modifier);
+  if (!portion) throw new Error(`${fdcId} has no portion ${modifier}`);
+  return portion.grams;
+}
+
+const chiaDensity = densityOf("Chia seeds");
+const flaxDensity = densityOf("Whole flaxseed");
+const oatDensity = densityOf("Old-fashioned rolled oats");
+const blackDensity = densityOf("Black beans (dry)");
+const navyDensity = densityOf("Navy beans (dry)");
+const peaDensity = densityOf("Frozen green peas");
+const berryDensity = densityOf("Raspberries");
+const barleyDensity = densityOf("Pearled barley (dry)");
+const breadDensity = densityOf("100% whole wheat bread");
+if (chiaDensity !== 34.4 || flaxDensity !== 27.3 || oatDensity !== 10.1) {
+  throw new Error("seed or oat density drifted");
+}
+if (blackDensity !== 15.5 || navyDensity !== 15.3 || peaDensity !== 4.5 || berryDensity !== 6.5) {
+  throw new Error("bean, pea, or berry density drifted");
+}
+if (barleyDensity !== 15.6 || breadDensity !== 6.0) throw new Error("barley or bread density drifted");
+
+const breadDay = must(day, "Whole wheat bread, 2 slices (52g)", dayFile);
+if (breadDay.grams_used !== "52" || breadDay.fiber_g !== "3.1") {
+  throw new Error("whole wheat day-file slice drifted");
+}
+
+const oatHalf = portionGrams("173904", "cup") / 2;
+const peaHalf = portionGrams("170016", "cup") / 2;
+const branHalf = portionGrams("169722", "cup") / 2;
+const flaxTbsp = portionGrams("169414", "tbsp, ground");
+const branDensity = cache.foods["169722"].nutrientsPer100g.fiber;
+const riceDensity = cache.foods["168877"].nutrientsPer100g.fiber;
+if (oatHalf !== 40.5 || peaHalf !== 67 || branHalf !== 29 || flaxTbsp !== 7) {
+  throw new Error("USDA spoon or cup weights drifted");
+}
+if (branDensity !== 42.8 || riceDensity !== 1.3) throw new Error("bran or white rice density drifted");
+if (cache.foods["170284"].nutrientsPer100g.fiber !== barleyDensity) {
+  throw new Error("barley cache and fiber file disagree");
+}
+if (cache.foods["170554"].portions.some((item) => /tbsp|tablespoon/i.test(item.modifier))) {
+  throw new Error("chia gained a USDA tablespoon");
+}
+
+const ounce = popcorn.match(/\| Fiber per ounce \(28g\) \| ~([0-9.]+)g \| ~([0-9.]+)g \|/);
+const per100 = popcorn.match(/\| Fiber per 100g \| ([0-9.]+)g \| ([0-9.]+)g \|/);
+if (!ounce || !per100) throw new Error("popcorn article lost the ounce table");
+const poppedOz = oneDecimal((Number(per100[1]) * 28) / 100);
+const chipsOz = oneDecimal((Number(per100[2]) * 28) / 100);
+if (poppedOz !== Number(ounce[1]) || chipsOz !== Number(ounce[2])) {
+  throw new Error("popcorn ounce table does not match the per-100 g line");
+}
+
+const halfCupDry = 454 / 12;
+
+function priced(food: string, grams: number) {
+  return money((grams * pricePer100(food)) / 100);
+}
+
+const boosters = [
+  {
+    food: "Wheat bran",
+    portion: "1/2 cup",
+    grams: branHalf,
+    fiber: oneDecimal((branDensity * branHalf) / 100),
+    cost: "not priced",
+    note: "FDC 169722. Not in the fiber file.",
+  },
+  {
+    food: "Black beans (dry)",
+    portion: "1/2 cup cooked",
+    grams: oneDecimal(halfCupDry),
+    fiber: oneDecimal((blackDensity * halfCupDry) / 100),
+    cost: priced("Black beans (dry)", halfCupDry),
+    note: "Dry grams behind the cooked half cup.",
+  },
+  {
+    food: "Navy beans (dry)",
+    portion: "1/2 cup cooked",
+    grams: oneDecimal(halfCupDry),
+    fiber: oneDecimal((navyDensity * halfCupDry) / 100),
+    cost: priced("Navy beans (dry)", halfCupDry),
+    note: "Same cooked half cup, navy density.",
+  },
+  {
+    food: "Chia seeds",
+    portion: "1 tbsp",
+    grams: 12,
+    fiber: oneDecimal((chiaDensity * 12) / 100),
+    cost: priced("Chia seeds", 12),
+    note: "Kitchen tablespoon, 12 g. USDA has no chia spoon.",
+  },
+  {
+    food: "Rolled oats",
+    portion: "1/2 cup",
+    grams: oatHalf,
+    fiber: oneDecimal((oatDensity * oatHalf) / 100),
+    cost: priced("Old-fashioned rolled oats", oatHalf),
+    note: "USDA cup is 81 g. The day file's 50 g scoop is a different pour.",
+  },
+  {
+    food: "Air-popped popcorn",
+    portion: "1 oz",
+    grams: 28,
+    fiber: poppedOz,
+    cost: "kernel bag",
+    note: "Popped ounce. The $2.28 bag prices kernels, not this ounce.",
+  },
+  {
+    food: "Raspberries",
+    portion: "1/2 cup",
+    grams: 62,
+    fiber: oneDecimal((berryDensity * 62) / 100),
+    cost: priced("Raspberries", 62),
+    note: "The parfait page's 62 g half cup.",
+  },
+  {
+    food: "Frozen green peas",
+    portion: "1/2 cup",
+    grams: peaHalf,
+    fiber: oneDecimal((peaDensity * peaHalf) / 100),
+    cost: priced("Frozen green peas", peaHalf),
+    note: "USDA unprepared cup, halved.",
+  },
+  {
+    food: "Ground flaxseed",
+    portion: "1 tbsp",
+    grams: flaxTbsp,
+    fiber: oneDecimal((flaxDensity * flaxTbsp) / 100),
+    cost: priced("Whole flaxseed", flaxTbsp),
+    note: "USDA ground tablespoon. The priced row is whole flaxseed.",
+  },
+];
+
+if (boosters[3].fiber !== 4.1 || boosters[6].fiber !== 4.0 || boosters[8].fiber !== 1.9) {
+  throw new Error("published spoon fiber drifted");
+}
+if (boosters[0].fiber !== 12.4 || boosters[1].fiber !== 5.9 || boosters[4].fiber !== 4.1) {
+  throw new Error("bran, bean, or oat portion drifted");
+}
+
+const twoChia = oneDecimal((chiaDensity * 24) / 100);
+const riceFiber = oneDecimal(riceDensity);
+const barleyFiber = oneDecimal(barleyDensity);
+const breadFiber = oneDecimal((breadDensity * 52) / 100);
+if (breadFiber !== 3.1 || twoChia !== 8.3) throw new Error("bread or double chia drifted");
+const barleyGain = oneDecimal(barleyFiber - riceFiber);
+const popcornGain = oneDecimal(poppedOz - chipsOz);
+if (barleyGain !== 14.3 || popcornGain !== 3.2) throw new Error("swap gap drifted");
+
+const title = "Printable High-Fiber Food Swaps & Daily Fiber Boosters Card";
+const description =
+  "A one-page card of fiber in a tablespoon or half cup, plus the rice-to-barley and chips-to-popcorn swaps with the grams on both sides.";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  author: { "@type": "Person", "@id": AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_URL },
+  datePublished: "2026-11-26",
+  dateModified: "2026-11-26",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${siteUrl}${chartSrc}`,
+    caption: chartAlt,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Printables", item: `${siteUrl}/printables/` },
+    { "@type": "ListItem", position: 3, name: "High-fiber swaps card", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#a85e00;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="sheet-page">
+    <article class="sheet">
+      <nav class="text-sm mb-4 no-print" aria-label="Breadcrumb">
+        <a href="/" class={linkClass} style={linkStyle}>Home</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/printables/" class={linkClass} style={linkStyle}>Printables</a>
+        <span aria-hidden="true"> / High-fiber swaps card</span>
+      </nav>
+
+      <p class="kicker">Printable kitchen card. One page.</p>
+      <h1>The Spoon, the Half Cup, and the Swap</h1>
+      <p class="byline no-print">
+        By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+      </p>
+      <p class="lede">
+        You already made the bowl. You want a few more grams of fiber on it, and you want the gram written down before you shake the bag over the sink. Chia at one tablespoon is {boosters[3].fiber} g. A half cup of wheat bran is {boosters[0].fiber} g. The berry box is {boosters[6].fiber} g and {boosters[6].cost}.
+      </p>
+
+      <figure class="chart no-print">
+        <img src={chartSrc} alt={chartAlt} width="1200" height="675" />
+        <figcaption>
+          Not a photograph, and not an AI illustration.
+          Left bars are fiber grams in the portion on the card. Wheat bran leads at {boosters[0].fiber} g because a half cup of it is a lot of bran, FDC 169722, and that food isn't in {fiberFile}.
+          Right bars are the two swaps with a number on both sides. Pearled barley at 100 g dry is {barleyFiber} g. White rice at the same weight is {riceFiber} g.
+        </figcaption>
+      </figure>
+
+      <section>
+        <h2>Spoons and half cups</h2>
+        <p class="note">
+          Fiber grams are the file's grams per 100 g, times the portion, rounded half up to the tenth. Chia, ground flax, and the raspberry half cup match the parfait page. Two tablespoons of chia, 24 g, are {twoChia} g, which clears 5 g. One tablespoon doesn't. The half cup of wheat bran clears 10 g by itself.
+        </p>
+        <table>
+          <caption>Portion fiber from {fiberFile}, except wheat bran and the popped ounce.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Use</th>
+              <th scope="col">Food</th>
+              <th scope="col">Portion</th>
+              <th scope="col">Grams</th>
+              <th scope="col">Fiber</th>
+              <th scope="col">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {boosters.map((row) => (
+              <tr>
+                <td><input type="checkbox" aria-label={`Use ${row.food}`} /></td>
+                <th scope="row">{row.food}</th>
+                <td>{row.portion}</td>
+                <td>{row.grams} g</td>
+                <td>{row.fiber} g</td>
+                <td>{row.cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="note">
+          Ground flax is the 7 g USDA tablespoon on FDC 169414. The price is the whole-flaxseed row in {fiberFile}, {priced("Whole flaxseed", flaxTbsp)} for that spoon. Rolled oats at a USDA half cup are {oatHalf} g and {boosters[4].fiber} g of fiber. fiber-day-cost-2026.csv calls 50 g a half cup and counts 5.1 g. Same canister, heavier pour. Black and navy use 454 g per pound and 6 cooked cups per pound, so the dry weight behind a cooked half cup is {oneDecimal(halfCupDry)} g.
+        </p>
+      </section>
+
+      <section>
+        <h2>Swaps with a gram on both sides</h2>
+        <table>
+          <caption>A swap earns a gap only when both foods have a published fiber density.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Same amount</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Gain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">100 g dry</th>
+              <td>White rice, {riceFiber} g</td>
+              <td>Pearled barley, {barleyFiber} g</td>
+              <td>{barleyGain} g</td>
+            </tr>
+            <tr>
+              <th scope="row">1 oz</th>
+              <td>Potato chips, {chipsOz} g</td>
+              <td>Air-popped popcorn, {poppedOz} g</td>
+              <td>{popcornGain} g</td>
+            </tr>
+            <tr>
+              <th scope="row">2 slices, 52 g</th>
+              <td>White bread, not in the file</td>
+              <td>100% whole wheat, {breadFiber} g</td>
+              <td>not calculated</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note">
+          Barley over white rice clears 10 g at the same dry weight. Both still need a pot. Chips to popcorn are {popcornGain} g on the published ounce, from 14.5 g and 3.1 g per 100 g. That gap doesn't clear 5 g. White sandwich bread isn't in {fiberFile}, and it isn't in the FDC cache this card reads, so the whole wheat loaf is the number we have: {breadDensity} g per 100 g, and the day file's two slices are {breadFiber} g. The gain depends on the white loaf in your hand.
+        </p>
+      </section>
+
+      <p class="print-row no-print">
+        <button type="button" onclick="window.print()">Print this card</button>
+      </p>
+
+      <section class="more no-print">
+        <h2>Where the longer counts live</h2>
+        <p>
+          Ten grams priced as a receipt, not as a spoon, is
+          <a href="/cheapest-ways-to-add-10-grams-of-fiber-to-any-meal/" class={linkClass} style={linkStyle}>the cheapest ways to add 10 grams of fiber</a>.
+          The half cup of wheat bran is the soak in
+          <a href="/high-fiber-bran-muffins-that-taste-good/" class={linkClass} style={linkStyle}>high-fiber bran muffins</a>.
+          The chia tablespoon and the raspberry half cup are the layers on
+          <a href="/high-fiber-yogurt-parfait-for-breakfast/" class={linkClass} style={linkStyle}>the high-fiber yogurt parfait</a>.
+          The ounce of chips against the ounce of popcorn is
+          <a href="/popcorn-vs-potato-chips-fiber-comparison/" class={linkClass} style={linkStyle}>popcorn versus potato chips</a>.
+          How a row earns its price is on the
+          <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+        </p>
+      </section>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .sheet-page { background: #f4f1ea; padding: 1.5rem 1rem 3rem; }
+    .sheet { max-width: 860px; margin: 0 auto; background: #fff; color: #1c1915; border: 1px solid #e4d8c4; border-radius: 12px; padding: 1.5rem 1.25rem 1.1rem; }
+    .kicker { margin: 0 0 0.35rem; color: #a85e00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 0 0 0.4rem; font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.1; letter-spacing: -0.03em; color: #1c1915; }
+    h2 { margin: 0.85rem 0 0.35rem; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a85e00; }
+    .byline, .lede, .note { margin: 0.35rem 0 0.7rem; font-size: 0.95rem; line-height: 1.5; color: #1c1915; }
+    .chart img { width: 100%; height: auto; border-radius: 12px; border: 1px solid #e4d8c4; }
+    .chart figcaption { margin: 0.45rem 0 0.9rem; font-size: 0.82rem; line-height: 1.45; color: #6b5b45; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0 0 0.45rem; }
+    caption { caption-side: bottom; text-align: left; color: #6b5b45; padding: 0.35rem 0 0; font-size: 0.75rem; }
+    th, td { text-align: left; padding: 0.22rem 0.35rem; border-bottom: 1px solid #eadfce; vertical-align: top; }
+    thead th { font-size: 0.68rem; letter-spacing: 0.03em; text-transform: uppercase; color: #6b5b45; }
+    td, tbody th { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .print-row { margin: 0.8rem 0 0; }
+    button { background: #F29B30; color: #fff; border: 0; border-radius: 999px; padding: 0.7rem 1.1rem; font-weight: 800; cursor: pointer; }
+    .more { margin-top: 1.2rem; }
+    @media print {
+      .sheet-page { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+      .no-print, header, footer { display: none !important; }
+      h1 { font-size: 16pt; }
+      table, .note, .lede { font-size: 8.5pt; }
+      a { color: inherit; text-decoration: none; }
+      @page { size: letter; margin: 0.45in; }
+    }
+  </style>
+</BaseLayout>

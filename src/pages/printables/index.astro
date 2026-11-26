@@ -16,7 +16,7 @@ const pageUrl = "https://www.daily-life-hacks.com/printables/";
 const chartSrc = "/images/printables-hub-chart.jpg";
 const title = "Printable Kitchen Charts for Beans, Fridge Life, and Oils";
 const description =
-  "Seven printable kitchen charts: beans, fridge life, smoke points, discard grams, hydration swaps, a $1 protein card, and a grocery planner.";
+  "Eight printable kitchen charts: beans, fridge life, smoke points, discard grams, hydration swaps, a $1 protein card, fiber swaps, and a grocery planner.";
 
 function parseCsv(path: string) {
   const text = readFileSync(join(process.cwd(), path), "utf8");
@@ -67,6 +67,12 @@ const dryBlack = beans.find((row) => row.food === "Black beans (dry)");
 const cannedBlack = beans.find((row) => row.food === "Canned black beans");
 if (!dryBlack || !cannedBlack || dryBlack.value !== "58.0" || cannedBlack.value !== "30.1") {
   throw new Error("printables hub: black bean protein-per-dollar rows drifted");
+}
+
+const fiberStudy = parseCsv("public/data/fiber-per-dollar-2026.csv");
+const chia = fiberStudy.find((row) => row.food === "Chia seeds");
+if (!chia || chia.fiber_g_per_100g !== "34.4") {
+  throw new Error("printables hub: chia fiber density drifted");
 }
 
 function smokeF(oil: string) {
@@ -150,6 +156,12 @@ const printables = [
     kicker: "One dollar",
     title: "Protein and fiber dollar card",
     text: "Fifteen protein foods and fifteen fiber foods, plus the published plate that clears 50 g of protein and 30 g of fiber for $0.82.",
+  },
+  {
+    href: "/printables/high-fiber-food-swaps-and-boosters-card/",
+    kicker: "Spoons",
+    title: "High-fiber swaps card",
+    text: `Chia seeds are ${chia.fiber_g_per_100g} g of fiber per 100 g. The card turns that into tablespoons, half cups, and the swaps that have a gram on both sides.`,
   },
 ];
 for (const card of printables) {
@@ -276,7 +288,7 @@ const schemas = [
     </nav>
 
     <div class="max-w-4xl mb-8">
-      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Seven sheets. One index.</p>
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Eight sheets. One index.</p>
       <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">The Printable Kitchen Charts, Finally on One Shelf</h1>
       <p class="text-sm mb-4" style="color:var(--muted-color);">
         By <a href="/author/david-miller/" class="font-bold underline" style="color:#F29B30;">{AUTHOR_NAME}</a>
@@ -287,6 +299,7 @@ const schemas = [
       <p class="text-lg leading-relaxed mt-4" style="color:var(--text-color);">
         This page is that index. The figure below is a chart drawn from the published numbers, not a photograph.
         The seventh sheet is the <a href="/printables/high-fiber-and-protein-dollar-cheat-sheet/" class="font-bold underline" style="color:#F29B30;">$1 protein and fiber card</a>. It has its own chart. It isn't a panel on the figure above.
+        The eighth sheet is the <a href="/printables/high-fiber-food-swaps-and-boosters-card/" class="font-bold underline" style="color:#F29B30;">high-fiber swaps card</a>. Spoons, half cups, and the swaps with a gram on both sides. Its chart lives on the card.
       </p>
     </div>
 
@@ -305,7 +318,7 @@ const schemas = [
     </figure>
 
     <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The seven printables</h2>
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The eight printables</h2>
       <p class="mb-6 max-w-3xl" style="color:var(--text-color);">
         Each link is the printable page itself. I'm not sending you to a file download from this index. Open the sheet, then print it there if you want paper.
       </p>
