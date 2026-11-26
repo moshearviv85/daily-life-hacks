@@ -9,6 +9,7 @@ const pages = [
   "src/pages/tools/recipe-cost-calculator/index.astro",
   "src/pages/tools/grocery-budget-calculator/index.astro",
   "src/pages/tools/protein-per-dollar-calculator/index.astro",
+  "src/pages/tools/sodium-per-dollar-calculator/index.astro",
 ];
 
 test("new calculator pages expose the required search and privacy signals", async () => {
