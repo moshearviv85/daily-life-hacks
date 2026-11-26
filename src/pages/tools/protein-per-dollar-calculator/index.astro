@@ -1,10 +1,13 @@
 ---
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { isIndexPruned } from "../../../content/index-prune.js";
+import { isReleased } from "../../../content/release";
 
 const pageUrl = "https://www.daily-life-hacks.com/tools/protein-per-dollar-calculator/";
 const chartSrc = "/images/protein-per-dollar-calculator-chart.jpg";
@@ -107,6 +110,26 @@ function cost(grams: number, rate: number) {
 const targets = [25, 50, 100];
 const chartAlt =
   "Chart of raw versus DIAAS-adjusted protein grams per dollar for chicken drumsticks, brown lentils, chickpeas, eggs, mozzarella, Greek yogurt, and chicken breast. Not a photograph.";
+
+const PROTEIN_STUDY_SLUGS = [
+  "high-protein-vs-high-fiber-satiety",
+  "best-low-cost-protein-sources-large-families",
+  "which-dried-beans-have-the-most-protein",
+  "cheapest-dairy-and-soy-protein-per-dollar",
+  "how-much-fiber-and-protein-per-dollar-at-walmart-vs-bls",
+  "how-long-do-cooked-meat-and-poultry-last-in-the-fridge",
+] as const;
+
+const proteinStudyArticles = await getCollection("articles");
+const proteinStudies = PROTEIN_STUDY_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? proteinStudyArticles.find((entry) => entry.id === slug) : undefined;
+  if (!article || article.data.author !== "David Miller" || !isReleased(article)) return [];
+  if (!isIndexPruned(article.id)) {
+    return [{ slug, title: article.data.title }];
+  }
+  return [];
+});
 
 const schemas = [
   {
@@ -303,6 +326,22 @@ const schemas = [
         <details><summary>Does the calculator save the protein target I enter?</summary><p>No. The target stays in this browser tab. The page doesn't send the grams you typed, and it doesn't build an account around a number you might change before dinner.</p></details>
         <details><summary>Where do the protein per dollar and DIAAS numbers come from?</summary><p>Raw rates are the audited rows in protein-per-dollar-2026.csv. DIAAS scores and adjusted rates are the matching rows in protein-quality-per-dollar-2026.csv. Prices are the July 2026 snapshot, matched to USDA FoodData Central. The methodology page covers the price rules. The filenames are cited in the text.</p></details>
       </div>
+
+      {proteinStudies.length > 0 && (
+        <section class="mt-10" aria-label="Related Protein Cost Studies and Family Prep Guides">
+          <h2>Related Protein Cost Studies & Family Prep Guides</h2>
+          <p>
+            The calculator prices seven staples and then it stops. These six pages pick up the rest: satiety, a cart for a big household, which dry bean actually leads, dairy and soy, the Walmart versus BLS gap, and how long cooked meat lasts once the pan is cold.
+          </p>
+          <ul class="study-grid">
+            {proteinStudies.map((item) => (
+              <li>
+                <a href={`/${item.slug}/`}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   </main>
   <Footer />
@@ -320,6 +359,8 @@ const schemas = [
     .faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}
     .faq-list summary{cursor:pointer;font-weight:800;padding:1rem 0;color:var(--heading-color)}
     .faq-list p{margin:0 0 1rem}
+    .study-grid{display:grid;grid-template-columns:1fr;gap:.75rem 1.25rem;list-style:none;padding:0;margin:1rem 0 0}
+    @media (min-width:640px){.study-grid{grid-template-columns:1fr 1fr}}
   </style>
 
   <script is:inline>

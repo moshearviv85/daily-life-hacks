@@ -1,4 +1,7 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -12,6 +15,30 @@ import {
   AUTHOR_PATH,
   AUTHOR_URL,
 } from "../content/author";
+import { isIndexPruned } from "../content/index-prune.js";
+import { isReleased } from "../content/release";
+
+const FEATURED_GUIDE_SLUGS = [
+  "high-fiber-pizza-crust-cauliflower",
+  "cheap-chicken-casserole-meals-large-families",
+  "healthy-blue-collar-lunch-ideas-men",
+  "healthy-homemade-indian-salad-dressing-recipes",
+  "high-fiber-gluten-free-bread-recipe",
+  "high-fiber-quinoa-salad-for-lunch-prep",
+  "high-fiber-salad-dressings-homemade",
+  "sheet-pan-salmon-and-vegetables-30-minutes",
+] as const;
+
+const featuredGuideArticles = await getCollection("articles");
+const featuredGuides = FEATURED_GUIDE_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? featuredGuideArticles.find((entry) => entry.id === slug) : undefined;
+  if (!article || article.data.author !== "David Miller" || !isReleased(article)) return [];
+  if (!isIndexPruned(article.id)) {
+    return [{ slug, title: article.data.title }];
+  }
+  return [];
+});
 
 const title = "About | Daily Life Hacks";
 const description = "Who's behind Daily Life Hacks. No drama, no miracle stories. Just practical food and a guy who's done with 14-step recipes.";
@@ -128,6 +155,22 @@ const aboutSchema = [
         Start with the <a href="/data/" class="underline" style="color: #F29B30;">original research</a>, check <a href="/methodology/" class="underline" style="color: #F29B30;">how we verify the math</a>, or head to the <a href="/recipes/" class="underline" style="color: #F29B30;">recipes</a> when dinner is the more urgent problem. You can also <a href="/#newsletter" class="underline" style="color: #F29B30;">join the newsletter</a> and get the new stuff before it hits the site.
       </p>
 
+      {featuredGuides.length > 0 && (
+        <section class="mt-10" aria-label="Featured Guides in Meal Prep, Family Meals and High-Fiber Cooking">
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--heading-color);">Featured Guides in Meal Prep, Family Meals & High-Fiber Cooking</h2>
+          <p>
+            These eight barely show up from the rest of the site. Meal prep, family-size cooking, and high-fiber plates you can actually repeat on a weekday.
+          </p>
+          <ul class="guide-list">
+            {featuredGuides.map((item) => (
+              <li>
+                <a href={`/${item.slug}/`} class="underline" style="color: #F29B30;">{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <p class="mt-10">If you made it this far, you have more patience than I do.</p>
       <p class="font-semibold text-xl" style="color: var(--heading-color);">
         <a href={AUTHOR_PATH} rel="author" class="underline" style="color: #F29B30;">{AUTHOR_NAME}</a>
@@ -136,3 +179,13 @@ const aboutSchema = [
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  .guide-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+</style>
