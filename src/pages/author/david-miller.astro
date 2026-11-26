@@ -1,4 +1,6 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
@@ -21,11 +23,39 @@ const title = "David Miller | Daily Life Hacks";
 const description =
   "David Miller is the pen name behind Daily Life Hacks. He publishes grocery cost research and nutrition-per-dollar studies with the calculation rows.";
 
-const articles = (await getCollection("articles"))
+const allArticles = await getCollection("articles");
+const articles = allArticles
   .filter((article) => isReleased(article))
   .filter((article) => !isIndexPruned(article.id))
   .filter((article) => resolveAuthorName(article.data.author) === AUTHOR_NAME)
   .sort((a, b) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
+
+// PR-156: profile launchpad into the newest chart studies. A sibling PR can
+// land later, so a slug is linked only when its article file is on disk,
+// released, and still indexable. Missing files render nothing and cannot 404.
+const FEATURED_2026_STUDY_SLUGS = [
+  "cost-of-50g-protein-and-30g-fiber-per-day",
+  "protein-per-dollar-2017-to-2026-bls-trends",
+  "plant-vs-animal-protein-cost-per-dollar",
+  "us-regional-grocery-protein-prices-october-2026",
+  "one-dollar-of-protein-vs-one-dollar-of-fiber",
+  "cheapest-high-protein-snacks-and-portable-foods",
+  "canned-vs-dry-beans-cost-and-sodium-per-serving",
+  "cheapest-fast-food-protein-under-5-dollars",
+] as const;
+
+const featuredStudies = FEATURED_2026_STUDY_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? allArticles.find((entry) => entry.id === slug) : undefined;
+  if (!article || isIndexPruned(article.id) || !isReleased(article)) return [];
+  return [
+    {
+      href: `/${slug}/`,
+      title: article.data.title,
+      excerpt: article.data.excerpt,
+    },
+  ];
+});
 
 const authorSchema = [
   {
@@ -111,6 +141,35 @@ const authorSchema = [
       <p>
         The <a href="/methodology/" class="underline" style="color: #F29B30;">methodology</a> is the rulebook, including the unit conversions and the part where a bone-in price gets the refuse percentage pulled out. The <a href="/about/" class="underline" style="color: #F29B30;">about page</a> is the longer version of who this site is for. The studies themselves live on the <a href="/data/" class="underline" style="color: #F29B30;">data page</a>. If a number looks wrong, <a href="/contact/" class="underline" style="color: #F29B30;">send the page and the figure</a>.
       </p>
+
+      {
+        featuredStudies.length > 0 && (
+          <section class="mt-10" aria-labelledby="featured-2026-studies">
+            <h2 id="featured-2026-studies" class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
+              Featured 2026 Research & Chart Studies
+            </h2>
+            <p>
+              The archive under this is every article, newest first. These are the 2026 chart studies I'd start with: one grocery question, the price rows, and a chart you can check against the receipt.
+            </p>
+            <ul class="space-y-4 list-none pl-0" style="list-style: none; padding-left: 0; margin: 0;">
+              {featuredStudies.map((study) => (
+                <li class="rounded-xl p-4" style="list-style: none; background-color: var(--card-bg); border: 1px solid var(--border-color);">
+                  <a
+                    href={study.href}
+                    class="font-semibold hover:text-[#F29B30] transition-colors"
+                    style="color: var(--heading-color);"
+                  >
+                    {study.title}
+                  </a>
+                  <p class="text-base mt-1 leading-relaxed" style="color: var(--muted-color);">
+                    {study.excerpt}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
 
       <h2 id="articles" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
         Articles ({articles.length})
