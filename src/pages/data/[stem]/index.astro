@@ -42,6 +42,10 @@ if (!landingPath) {
 const pageUrl = `${siteUrl}${landingPath}`;
 const catalogId = `${siteUrl}/data/#catalog`;
 const studyPath = datasetStudyPath(dataset);
+const FROZEN_VEG_DATASETS = new Set([
+  "fiber-per-dollar-cheapest-high-fiber-foods",
+  "protein-per-dollar-cheapest-protein-sources",
+]);
 const WRITE_UP: Record<string, string> = {
   "fiber-per-dollar-cheapest-high-fiber-foods": "/what-30-grams-of-fiber-costs-per-day/",
   "protein-per-dollar-cheapest-protein-sources": "/protein-per-dollar-adjusted-for-quality/",
@@ -197,6 +201,14 @@ const linkStyle = "color: #F29B30;";
       <p class="text-base">
         The caveats live on the study page, not in the CSV.
       </p>
+      {FROZEN_VEG_DATASETS.has(dataset.id) && (
+        <p class="text-base">
+          The frozen-vegetable rows in this file are ranked on
+          <a href="/cheapest-frozen-vegetables-for-fiber-and-protein/" class={linkClass} style={linkStyle}>
+            the fiber and protein per dollar page
+          </a>.
+        </p>
+      )}
     </div>
 
     <aside
