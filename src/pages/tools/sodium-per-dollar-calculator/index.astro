@@ -1,0 +1,464 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATASET_ORGANIZATION, DATASET_PERSON_CREATOR } from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/tools/sodium-per-dollar-calculator/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/sodium-per-dollar-calculator-chart.jpg";
+const chartAlt =
+  "Bar chart of sodium milligrams per 100 grams for almonds, dry black beans, frozen edamame, bone-in chicken drumsticks, canned kidney beans, and cheddar cheese";
+const FDA_LOW_SODIUM = 140;
+const DAILY_CEILING = 2300;
+const CHART_FOODS = [
+  "Almonds",
+  "Black beans (dry)",
+  "Frozen shelled edamame",
+  "Chicken drumsticks (bone-in)",
+  "Canned kidney beans",
+  "Cheddar cheese",
+];
+
+function rowsFrom(fileName: string) {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+function byFood(fileName: string) {
+  return new Map(rowsFrom(fileName).map((row) => [row.food, row]));
+}
+
+const proteinByFood = byFood("protein-per-dollar-2026.csv");
+const fiberByFood = byFood("fiber-per-dollar-2026.csv");
+const foods = rowsFrom("sodium-per-dollar-2026.csv").map((row) => {
+  const protein = proteinByFood.get(row.food);
+  const fiber = fiberByFood.get(row.food);
+  return {
+    name: row.food,
+    category: row.category,
+    sodium: row.sodium_mg_per_100g,
+    sodiumPerDollar: row.sodium_mg_per_dollar,
+    proteinPer100: row.protein_g_per_100g,
+    fiberPer100: row.fiber_g_per_100g,
+    proteinPerDollar: protein?.protein_g_per_dollar ?? "",
+    fiberPerDollar: fiber?.fiber_g_per_dollar ?? "",
+    pricePer100: row.price_per_100g_usd,
+    fdc: row.fdc_id,
+  };
+});
+
+const chartFoods = CHART_FOODS.map((name) => {
+  const food = foods.find((row) => row.name === name);
+  if (!food) throw new Error(`Missing ${name} in sodium-per-dollar-2026.csv`);
+  return food;
+});
+const lowSodium = foods.filter((food) => Number(food.sodium) <= FDA_LOW_SODIUM);
+const proteinLeaders = lowSodium
+  .filter((food) => food.proteinPerDollar)
+  .sort((a, b) => Number(b.proteinPerDollar) - Number(a.proteinPerDollar));
+const proteinLeader = proteinLeaders[0];
+if (!proteinLeader) throw new Error("No low-sodium food with a protein per dollar value");
+const drumsticks = chartFoods.find((food) => food.name.startsWith("Chicken drumsticks"));
+if (!drumsticks) throw new Error("Missing chicken drumsticks");
+
+const title = "Sodium per Dollar: Low-Sodium Protein Filter";
+const description =
+  "Filter 56 audited foods at the FDA 140 mg low-sodium line, or add a day under 2,300 mg, with protein and fiber per dollar.";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: "Sodium per Dollar Calculator",
+  url: pageUrl,
+  description,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  image: `${siteUrl}${chartSrc}`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Sodium per Dollar Calculator", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+
+function cell(value: string) {
+  return value ? value : "not measured";
+}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main id="sodium-calculator" class="sod-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Sodium per dollar</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+      <span aria-hidden="true"> · </span>
+      {foods.length} audited foods
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      Filter the Low-Sodium Staples by Protein and Fiber per Dollar
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      The dry-bean bag is quiet. The can and the cheese aren't. {lowSodium.length} of these {foods.length} foods sit at or under {FDA_LOW_SODIUM} mg of sodium per 100 g. The other {foods.length - lowSodium.length} are why the filter exists.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      <a href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.61" class={linkClass} style={linkStyle} rel="noopener" target="_blank">21 CFR 101.61</a>
+      lets a label say low sodium at {FDA_LOW_SODIUM} mg or less per reference amount. This page applies that number per 100 g, so every row shares one ruler. The Dietary Guidelines use less than {DAILY_CEILING.toLocaleString("en-US")} mg a day for people 14 and older. You can filter the first and add up the second. Sodium rows are sodium-per-dollar-2026.csv. When the food name matches, protein grams per dollar come from protein-per-dollar-2026.csv and fiber grams per dollar come from fiber-per-dollar-2026.csv.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        {chartFoods.map((food) => `${food.name} is ${food.sodium} mg per 100 g (FDC ${food.fdc}).`).join(" ")}
+        Orange bars on the chart are at or under {FDA_LOW_SODIUM} mg. The two long bars are over it.
+      </figcaption>
+    </figure>
+
+    <section class="mb-10" aria-label="Low-sodium filter">
+      <h2>Which rows clear the {FDA_LOW_SODIUM} mg line?</h2>
+      <p>
+        Under that line, the protein ranking's best number in this file is {proteinLeader.name}: {proteinLeader.proteinPerDollar} g of protein per dollar, at {proteinLeader.sodium} mg of sodium per 100 g. Flour wins the math. A pot of lentils is the one that eats like dinner. The
+        <a href="/low-sodium-high-protein-foods-per-dollar/" class={linkClass} style={linkStyle}>low-sodium high-protein ranking</a>
+        walks the same cutoff with a protein floor. This filter doesn't add that floor, so fruit and vegetables stay visible.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 items-end mb-4">
+        <label class="tool-label">
+          Maximum sodium, mg per 100 g
+          <input class="tool-input" id="sod-max" type="number" min="0" step="1" inputmode="numeric" value={FDA_LOW_SODIUM} />
+        </label>
+        <label class="tool-label">
+          Sort
+          <select class="tool-input" id="sod-sort">
+            <option value="sodium" selected>Sodium, lowest first</option>
+            <option value="protein">Protein grams per dollar</option>
+            <option value="fiber">Fiber grams per dollar</option>
+          </select>
+        </label>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" class="sod-button" id="sod-fda">FDA line, {FDA_LOW_SODIUM} mg</button>
+          <button type="button" class="sod-button" id="sod-all">All {foods.length} foods</button>
+        </div>
+      </div>
+      <p id="sod-count" aria-live="polite" class="count-line"></p>
+      <div class="table-wrap">
+        <table>
+          <caption>Sodium, protein, and fiber for the audited basket. Blank cells were not in that parent study.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Food</th>
+              <th scope="col">Sodium mg / 100 g</th>
+              <th scope="col">Sodium mg / $</th>
+              <th scope="col">Protein g / 100 g</th>
+              <th scope="col">Fiber g / 100 g</th>
+              <th scope="col">Protein g / $</th>
+              <th scope="col">Fiber g / $</th>
+            </tr>
+          </thead>
+          <tbody id="sod-rows">
+            {foods.map((food) => (
+              <tr
+                data-name={food.name}
+                data-sodium={food.sodium}
+                data-protein={food.proteinPer100}
+                data-fiber={food.fiberPer100}
+                data-ppd={food.proteinPerDollar}
+                data-fpd={food.fiberPerDollar}
+                data-price={food.pricePer100}
+              >
+                <th scope="row">
+                  {food.name}
+                  <span class="food-meta">{food.category} · <a href={`https://fdc.nal.usda.gov/food-details/${food.fdc}/nutrients`} class={linkClass} style={linkStyle} rel="noopener" target="_blank">FDC {food.fdc}</a></span>
+                </th>
+                <td>{food.sodium}</td>
+                <td>{food.sodiumPerDollar}</td>
+                <td>{cell(food.proteinPer100)}</td>
+                <td>{cell(food.fiberPer100)}</td>
+                <td>{cell(food.proteinPerDollar)}</td>
+                <td>{cell(food.fiberPerDollar)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="day-box mb-10" aria-label="Daily sodium total">
+      <h2>Add a day and watch the {DAILY_CEILING.toLocaleString("en-US")} mg ceiling</h2>
+      <p>
+        Grams follow the USDA record in sodium-per-dollar-2026.csv. Sodium, protein, and fiber are per 100 g of that record, not a label serving and not a cooked yield. Price per 100 g in the same file is the package weight, so a bone-in cut's dollar total is the price of the purchased grams. The protein grams per dollar column already includes that study's refuse factor. This counter doesn't apply it again. A blank nutrient stays blank. It isn't zero.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 items-end">
+        <label class="tool-label md:col-span-2">
+          Food to add
+          <select class="tool-input" id="sod-food">
+            {foods.map((food, index) => (
+              <option value={index}>{food.name}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          Grams
+          <input class="tool-input" id="sod-grams" type="number" min="1" step="1" inputmode="numeric" value="100" />
+        </label>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <button type="button" class="sod-button solid" id="sod-add">Add to the day</button>
+        <button type="button" class="sod-button" id="sod-clear">Clear the day</button>
+      </div>
+      <p id="sod-day-error" class="hidden empty-note" role="alert"></p>
+      <ul id="sod-day" class="day-list"></ul>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-4" aria-live="polite">
+        <p class="metric"><span>Sodium</span><strong id="sod-total-sodium">0 mg</strong></p>
+        <p class="metric"><span>Protein</span><strong id="sod-total-protein">0 g</strong></p>
+        <p class="metric"><span>Fiber</span><strong id="sod-total-fiber">0 g</strong></p>
+        <p class="metric"><span>Cost at file prices</span><strong id="sod-total-cost">$0.00</strong></p>
+      </div>
+      <label class="tool-label mt-4 max-w-xs">
+        Sodium ceiling, mg
+        <input class="tool-input" id="sod-ceiling" type="number" min="1" step="1" inputmode="numeric" value={DAILY_CEILING} />
+      </label>
+      <p id="sod-ceiling-note" class="mt-3"></p>
+      <p class="text-xs mt-2" style="color:var(--muted-color);">
+        The ceiling starts at {DAILY_CEILING.toLocaleString("en-US")} mg because that's the Dietary Guidelines figure for people 14 and older. Change it if you're comparing a different line. It isn't a meal plan, and it isn't medical advice. Gram amounts stay in this browser tab. Nothing you enter is saved or sent to us.
+      </p>
+    </section>
+
+    <article>
+      <h2>Dry beans and the can are not the same sodium story</h2>
+      <p>
+        {chartFoods.find((food) => food.name === "Black beans (dry)")?.name} are {chartFoods.find((food) => food.name === "Black beans (dry)")?.sodium} mg per 100 g. Canned kidney beans are {chartFoods.find((food) => food.name === "Canned kidney beans")?.sodium} mg on FDC {chartFoods.find((food) => food.name === "Canned kidney beans")?.fdc}, packing liquid included. Rinsing a can removes some of the liquid. It doesn't turn the can into the dry bag. The price and sodium gap for a serving is on
+        <a href="/canned-vs-dry-beans-cost-and-sodium-per-serving/" class={linkClass} style={linkStyle}>canned vs dry beans</a>.
+      </p>
+      <p>
+        Bone-in chicken drumsticks are {chartFoods.find((food) => food.name === "Chicken drumsticks (bone-in)")?.sodium} mg per 100 g on FDC {chartFoods.find((food) => food.name === "Chicken drumsticks (bone-in)")?.fdc}, under the {FDA_LOW_SODIUM} mg line. The protein ranking puts that row at {chartFoods.find((food) => food.name === "Chicken drumsticks (bone-in)")?.proteinPerDollar} g of protein per dollar after the bone-and-cartilage refuse already baked into that study. Canned fish is a different aisle, with its own sodium and a mercury class, on the
+        <a href="/cheapest-canned-fish-and-seafood-protein-per-dollar/" class={linkClass} style={linkStyle}>cheapest canned fish page</a>.
+        The federal price history, if you want the decade instead of one basket, is the
+        <a href="/data/bls-grocery-prices-2017-to-2026/" class={linkClass} style={linkStyle}>BLS grocery price explorer</a>.
+      </p>
+      <p>
+        How a row earns its USDA record, and what we do when a number is wrong, is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>What does the FDA low-sodium line mean in this calculator?</summary><p>21 CFR 101.61 lets a food use a low-sodium claim at 140 mg of sodium or less per reference amount customarily consumed. This filter applies 140 mg per 100 g so all {foods.length} rows in sodium-per-dollar-2026.csv share one scale. A package label can land on the other side of the line when its serving isn't 100 g. The filter is a grocery screen, not a diet you were assigned.</p></details>
+        <details><summary>Why filter sodium per 100 g instead of per label serving?</summary><p>The sodium column in the file is milligrams per 100 g, not per the serving printed on a can. Using 100 g means almonds, dry beans, and canned beans are comparable. It doesn't rewrite the serving on the package, and it doesn't tell you the can is salted the same way after you rinse it.</p></details>
+        <details><summary>What is the 2,300 mg daily sodium ceiling?</summary><p>The Dietary Guidelines for Americans use less than 2,300 mg of sodium a day for people 14 and older. The day total multiplies each row's milligrams per 100 g by the grams you enter, then compares the sum with that ceiling. You can change the ceiling. The comparison cites the guideline. It isn't a prescription, and it isn't a diagnosis.</p></details>
+        <details><summary>Are chicken drumsticks under the low-sodium line?</summary><p>In this file, yes. Bone-in drumsticks are {drumsticks.sodium} mg of sodium per 100 g on FDC {drumsticks.fdc}, which is under {FDA_LOW_SODIUM}. The protein sheet lists the same food at {drumsticks.proteinPerDollar} g of protein per dollar after a refuse factor for bone and cartilage. The sodium number is the meat-and-skin record. It isn't the bone, and it isn't a promise about a breaded restaurant drumstick.</p></details>
+        <details><summary>Where do the protein and fiber per dollar numbers come from?</summary><p>Sodium, the price per 100 g, and the USDA record ID come from sodium-per-dollar-2026.csv. Protein grams per dollar come from protein-per-dollar-2026.csv when the food name matches. Fiber grams per dollar come from fiber-per-dollar-2026.csv the same way. A cell that says not measured means that study didn't include the food. It doesn't mean zero.</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style is:global>
+    .sod-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 2rem 0 0.7rem; color: var(--heading-color); }
+    .sod-page h2:first-child { margin-top: 0; }
+    .sod-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .sod-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .sod-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .sod-page .sod-button { border-radius: 999px; padding: 0.6rem 0.95rem; font-size: 0.85rem; font-weight: 700; color: #a85e00; border: 1px solid #F29B30; background: transparent; }
+    .sod-page .sod-button.solid { background: #F29B30; color: #111; }
+    .sod-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); }
+    .sod-page table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .sod-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .sod-page th, .sod-page td { text-align: left; padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .sod-page th { color: var(--heading-color); }
+    .sod-page .food-meta { display: block; margin-top: 0.2rem; font-weight: 500; font-size: 0.75rem; color: var(--muted-color); }
+    .sod-page .count-line { font-weight: 700; color: var(--heading-color); }
+    .sod-page .day-box { padding: 1.25rem; border-radius: 1rem; background: var(--card-bg); border: 1px solid var(--border-color); }
+    .sod-page .day-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+    .sod-page .day-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border-color); }
+    .sod-page .metric { margin: 0; padding: 0.85rem; border-radius: 0.75rem; background: rgba(242,155,48,.10); border: 1px solid var(--border-color); }
+    .sod-page .metric span { display: block; font-size: 0.75rem; color: var(--muted-color); }
+    .sod-page .metric strong { color: var(--heading-color); font-size: 1.15rem; }
+    .sod-page .empty-note { padding: 0.9rem 1rem; border-radius: 0.75rem; background: #fff4e5; color: #7a4300; }
+    .sod-page .hidden { display: none; }
+    .sod-page .faq-list details { margin: 0.65rem 0; border: 1px solid var(--border-color); border-radius: 0.75rem; background: var(--card-bg); padding: 0 1rem; }
+    .sod-page .faq-list summary { cursor: pointer; font-weight: 700; padding: 1rem 0; color: var(--heading-color); }
+    .sod-page .faq-list p { margin: 0 0 1rem; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById('sodium-calculator');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var maxInput = root.querySelector('#sod-max');
+        var sortSelect = root.querySelector('#sod-sort');
+        var count = root.querySelector('#sod-count');
+        var rows = Array.prototype.slice.call(root.querySelectorAll('#sod-rows tr'));
+        var body = root.querySelector('#sod-rows');
+        function numberOrNull(value) {
+          if (value === '' || value == null) return null;
+          var parsed = parseFloat(value);
+          return isFinite(parsed) ? parsed : null;
+        }
+        function applyFilter() {
+          var max = parseFloat(maxInput.value);
+          if (!isFinite(max)) max = 140;
+          var mode = sortSelect.value;
+          var sorted = rows.slice().sort(function (a, b) {
+            if (mode === 'protein' || mode === 'fiber') {
+              var key = mode === 'protein' ? 'ppd' : 'fpd';
+              var av = numberOrNull(a.dataset[key]);
+              var bv = numberOrNull(b.dataset[key]);
+              if (av == null && bv == null) return a.dataset.name.localeCompare(b.dataset.name);
+              if (av == null) return 1;
+              if (bv == null) return -1;
+              return bv - av;
+            }
+            return parseFloat(a.dataset.sodium) - parseFloat(b.dataset.sodium);
+          });
+          sorted.forEach(function (row) { body.appendChild(row); });
+          var visible = 0;
+          rows.forEach(function (row) {
+            var hide = parseFloat(row.dataset.sodium) > max;
+            row.hidden = hide;
+            if (!hide) visible += 1;
+          });
+          count.textContent = visible + ' of ' + rows.length + ' foods at or under ' + max + ' mg of sodium per 100 g.';
+        }
+        root.querySelector('#sod-fda').addEventListener('click', function () {
+          maxInput.value = '140';
+          applyFilter();
+        });
+        root.querySelector('#sod-all').addEventListener('click', function () {
+          var top = 0;
+          rows.forEach(function (row) { top = Math.max(top, parseFloat(row.dataset.sodium)); });
+          maxInput.value = String(top);
+          applyFilter();
+        });
+        maxInput.addEventListener('input', applyFilter);
+        sortSelect.addEventListener('change', applyFilter);
+
+        var foods = rows.map(function (row) {
+          return {
+            name: row.dataset.name,
+            sodium: parseFloat(row.dataset.sodium),
+            protein: numberOrNull(row.dataset.protein),
+            fiber: numberOrNull(row.dataset.fiber),
+            price: parseFloat(row.dataset.price)
+          };
+        });
+        var day = [];
+        var list = root.querySelector('#sod-day');
+        var error = root.querySelector('#sod-day-error');
+        var ceiling = root.querySelector('#sod-ceiling');
+        function round(value, digits) {
+          var factor = Math.pow(10, digits);
+          return Math.round(value * factor) / factor;
+        }
+        function renderDay() {
+          list.textContent = '';
+          var sodium = 0, protein = 0, fiber = 0, cost = 0, missingProtein = false, missingFiber = false;
+          day.forEach(function (item, index) {
+            var food = foods[item.index];
+            var factor = item.grams / 100;
+            sodium += food.sodium * factor;
+            cost += food.price * factor;
+            if (food.protein == null) missingProtein = true;
+            else protein += food.protein * factor;
+            if (food.fiber == null) missingFiber = true;
+            else fiber += food.fiber * factor;
+            var li = document.createElement('li');
+            var label = document.createElement('span');
+            label.textContent = item.grams + ' g ' + food.name;
+            var remove = document.createElement('button');
+            remove.type = 'button';
+            remove.className = 'sod-button';
+            remove.textContent = 'Remove';
+            remove.addEventListener('click', function () {
+              day.splice(index, 1);
+              renderDay();
+            });
+            li.appendChild(label);
+            li.appendChild(remove);
+            list.appendChild(li);
+          });
+          root.querySelector('#sod-total-sodium').textContent = round(sodium, 1) + ' mg';
+          root.querySelector('#sod-total-protein').textContent = round(protein, 1) + ' g' + (missingProtein ? ' (some foods not measured)' : '');
+          root.querySelector('#sod-total-fiber').textContent = round(fiber, 1) + ' g' + (missingFiber ? ' (some foods not measured)' : '');
+          root.querySelector('#sod-total-cost').textContent = '$' + cost.toFixed(2);
+          var limit = parseFloat(ceiling.value);
+          var note = root.querySelector('#sod-ceiling-note');
+          if (!day.length) {
+            note.textContent = 'Add a food to see the running sodium total.';
+            return;
+          }
+          if (!isFinite(limit) || limit <= 0) {
+            note.textContent = 'Enter a ceiling greater than zero.';
+            return;
+          }
+          var gap = limit - sodium;
+          note.textContent = gap >= 0
+            ? round(gap, 1) + ' mg left under your ' + round(limit, 0) + ' mg ceiling.'
+            : 'Over your ceiling by ' + round(Math.abs(gap), 1) + ' mg. The ceiling is the line you set, not a verdict.';
+        }
+        root.querySelector('#sod-add').addEventListener('click', function () {
+          var grams = parseFloat(root.querySelector('#sod-grams').value);
+          var index = Number(root.querySelector('#sod-food').value);
+          error.classList.add('hidden');
+          if (!isFinite(grams) || grams <= 0) {
+            error.textContent = 'Enter grams greater than zero.';
+            error.classList.remove('hidden');
+            return;
+          }
+          day.push({ index: index, grams: grams });
+          renderDay();
+        });
+        root.querySelector('#sod-clear').addEventListener('click', function () {
+          day = [];
+          renderDay();
+        });
+        ceiling.addEventListener('input', renderDay);
+        applyFilter();
+        renderDay();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>

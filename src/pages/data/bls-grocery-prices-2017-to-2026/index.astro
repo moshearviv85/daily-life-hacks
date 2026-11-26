@@ -1,0 +1,522 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import {
+  DATA_LICENSE_URL,
+  DATA_RELEASE_DATE,
+  DATA_VERSION,
+  DATASET_ORGANIZATION,
+  DATASET_PERSON_CREATOR,
+} from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/data/bls-grocery-prices-2017-to-2026/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/bls-grocery-prices-2017-to-2026-data-chart.jpg";
+const chartAlt =
+  "Line chart of boneless chicken breast protein grams per dollar for the U.S. city average, Northeast, Midwest, South, and West from January 2017 to October 2026";
+
+const AREA_ORDER = ["U.S. city average", "Northeast", "Midwest", "South", "West"];
+const BREAST = "FF1101";
+
+function rowsFrom(fileName: string) {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+function shortFoodName(name: string) {
+  return name
+    .replace(/, per lb\. \(453\.6 gm\)$/i, "")
+    .replace(/, per doz\.$/i, "")
+    .replace(/, per gal\. \(3\.8 lit\)$/i, "");
+}
+
+const monthly = rowsFrom("bls-nutrition-per-dollar-monthly.csv");
+const latest = rowsFrom("bls-nutrition-per-dollar-latest.csv");
+
+const areaCodeByName = new Map<string, string>();
+for (const row of monthly) areaCodeByName.set(row.area_name, row.area_code);
+for (const name of AREA_ORDER) {
+  if (!areaCodeByName.has(name)) throw new Error(`Missing BLS area ${name}`);
+}
+const areas = AREA_ORDER.map((name) => ({ name, code: areaCodeByName.get(name)! }));
+
+const foodsByCode = new Map<string, { code: string; name: string; shortName: string; fdc: string; protein: string; fiber: string }>();
+for (const row of monthly) {
+  if (foodsByCode.has(row.bls_item_code)) continue;
+  foodsByCode.set(row.bls_item_code, {
+    code: row.bls_item_code,
+    name: row.bls_item_name,
+    shortName: shortFoodName(row.bls_item_name),
+    fdc: row.fdc_id,
+    protein: row.protein_g_per_100g,
+    fiber: row.fiber_g_per_100g,
+  });
+}
+const foods = [...foodsByCode.values()].sort((a, b) => a.shortName.localeCompare(b.shortName));
+
+const series: Record<string, string[][]> = {};
+for (const row of monthly) {
+  const key = `${row.bls_item_code}|${row.area_code}`;
+  const yyyymm = `${row.date.slice(0, 4)}${row.date.slice(5, 7)}`;
+  (series[key] ??= []).push([
+    yyyymm,
+    row.price_usd,
+    row.protein_g_per_dollar,
+    row.fiber_g_per_dollar,
+  ]);
+}
+for (const points of Object.values(series)) {
+  points.sort((a, b) => a[0].localeCompare(b[0]));
+}
+
+const latestByKey: Record<string, { date: string; price: string; protein: string; fiber: string }> = {};
+for (const row of latest) {
+  latestByKey[`${row.bls_item_code}|${row.area_code}`] = {
+    date: row.date,
+    price: row.price_usd,
+    protein: row.protein_g_per_dollar,
+    fiber: row.fiber_g_per_dollar,
+  };
+}
+
+function at(code: string, areaName: string, date: string) {
+  return monthly.find(
+    (row) => row.bls_item_code === code && row.area_name === areaName && row.date === date,
+  );
+}
+
+const breastFood = foodsByCode.get(BREAST);
+if (!breastFood) throw new Error("Missing chicken breast series FF1101");
+const breastUsJan = at(BREAST, "U.S. city average", "2017-01-01");
+const breastUsOct = at(BREAST, "U.S. city average", "2026-10-01");
+if (!breastUsJan || !breastUsOct) throw new Error("Missing chicken breast U.S. endpoints");
+
+const breastRegions = areas.map((area) => ({
+  area: area.name,
+  january: at(BREAST, area.name, "2017-01-01"),
+  october: at(BREAST, area.name, "2026-10-01"),
+}));
+const octoberBreast = breastRegions
+  .map((row) => row.october)
+  .filter((row): row is NonNullable<typeof row> => Boolean(row));
+const octoberHigh = octoberBreast.reduce((best, row) =>
+  Number(row.protein_g_per_dollar) > Number(best.protein_g_per_dollar) ? row : best,
+);
+const octoberLow = octoberBreast.reduce((best, row) =>
+  Number(row.protein_g_per_dollar) < Number(best.protein_g_per_dollar) ? row : best,
+);
+
+const usFoods = foods.map((food) => ({
+  ...food,
+  january: at(food.code, "U.S. city average", "2017-01-01"),
+  october: at(food.code, "U.S. city average", "2026-10-01"),
+}));
+const missingJanuary = usFoods.filter((food) => !food.january).map((food) => food.shortName);
+
+const seriesJson = JSON.stringify({ series, latest: latestByKey }).replace(/</g, "\\u003c");
+
+const title = "BLS Grocery Prices by Region, 2017 to 2026";
+const description =
+  "Filter BLS grocery prices from 2017 to October 2026 by food and census region. Protein and fiber per dollar, from the monthly federal series.";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  author: DATASET_PERSON_CREATOR,
+  mainEntity: { "@id": `${pageUrl}#dataset` },
+  datePublished: "2026-11-26",
+  dateModified: "2026-11-26",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${siteUrl}${chartSrc}`,
+    caption: chartAlt,
+  },
+};
+
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": `${pageUrl}#dataset`,
+  name: "BLS grocery prices and nutrition per dollar, 2017 to 2026",
+  description:
+    "Monthly BLS Average Price rows from January 2017 through October 2026, plus the latest published month for each food and census region, joined to a USDA FoodData Central match so each row carries protein and fiber per dollar.",
+  url: pageUrl,
+  identifier: `${pageUrl}#dataset`,
+  version: DATA_VERSION,
+  isAccessibleForFree: true,
+  license: DATA_LICENSE_URL,
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  includedInDataCatalog: { "@id": `${siteUrl}/data/#catalog` },
+  keywords: [
+    "BLS average prices",
+    "protein per dollar",
+    "fiber per dollar",
+    "census region",
+    "grocery prices",
+  ],
+  variableMeasured: [
+    "BLS average price (USD per priced unit)",
+    "protein grams per dollar",
+    "fiber grams per dollar",
+    "census region",
+  ],
+  temporalCoverage: "2017-01/2026-10",
+  spatialCoverage: "United States",
+  measurementTechnique: `${siteUrl}/methodology/`,
+  dateModified: DATA_RELEASE_DATE,
+  distribution: [
+    {
+      "@type": "DataDownload",
+      name: "bls-nutrition-per-dollar-monthly.csv",
+      encodingFormat: "text/csv",
+      contentUrl: `${siteUrl}/data/bls-nutrition-per-dollar-monthly.csv`,
+      license: DATA_LICENSE_URL,
+    },
+    {
+      "@type": "DataDownload",
+      name: "bls-nutrition-per-dollar-latest.csv",
+      encodingFormat: "text/csv",
+      contentUrl: `${siteUrl}/data/bls-nutrition-per-dollar-latest.csv`,
+      license: DATA_LICENSE_URL,
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Data", item: `${siteUrl}/data/` },
+    { "@type": "ListItem", position: 3, name: "BLS grocery prices, 2017 to 2026", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, datasetSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="bls-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/data/" class={linkClass} style={linkStyle}>Data</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / BLS grocery prices</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+      <span aria-hidden="true"> · </span>
+      BLS Average Price, v{DATA_VERSION}
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      BLS Grocery Prices, 2017 to October 2026
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      A July shelf tag is one afternoon. The federal average-price survey is the decade those afternoons sit inside. Pick a food and a census region and the month shows up, including the months BLS didn't publish.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      The monthly history is bls-nutrition-per-dollar-monthly.csv, January 2017 through October 2026, for the U.S. city average and four census regions. The newest published month for each series is bls-nutrition-per-dollar-latest.csv. Prices are the
+      <a href="https://www.bls.gov/cpi/factsheets/average-prices.htm" class={linkClass} style={linkStyle} rel="noopener" target="_blank">BLS Average Price survey</a>,
+      not one store's shelf. Nutrition is the USDA FoodData Central match on the row.
+    </p>
+
+    <figure class="mb-10">
+      <img
+        src={chartSrc}
+        alt={chartAlt}
+        width="1200"
+        height="675"
+        class="w-full h-auto rounded-2xl"
+      />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration. Boneless chicken breast, BLS item {BREAST}, {breastFood.protein} g of protein per 100 g on FDC {breastFood.fdc}. The lines are protein grams per dollar. A gap is a month the file doesn't have.
+      </figcaption>
+    </figure>
+
+    <section class="mb-12">
+      <h2>Boneless chicken breast, five regions, one decade</h2>
+      <p>
+        The U.S. city average went from {breastUsJan.protein_g_per_dollar} g of protein per dollar in January 2017, at ${breastUsJan.price_usd} a pound, to {breastUsOct.protein_g_per_dollar} g in October 2026, at ${breastUsOct.price_usd}. Same USDA protein, {breastFood.protein} g per 100 g. The pound got more expensive, so the dollar buys less of it.
+      </p>
+      <p>
+        In October 2026 the {octoberHigh.area_name} row is the high, {octoberHigh.protein_g_per_dollar} g per dollar at ${octoberHigh.price_usd} a pound. The {octoberLow.area_name} row is the low, {octoberLow.protein_g_per_dollar} g at ${octoberLow.price_usd}. That isn't a different chicken. It's the price.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>Boneless chicken breast protein per dollar, January 2017 and October 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Region</th>
+              <th scope="col">January 2017</th>
+              <th scope="col">October 2026</th>
+            </tr>
+          </thead>
+          <tbody>
+            {breastRegions.map((row) => (
+              <tr>
+                <th scope="row">{row.area}</th>
+                <td>{row.january ? `${row.january.protein_g_per_dollar} g at $${row.january.price_usd}` : "no row"}</td>
+                <td>{row.october ? `${row.october.protein_g_per_dollar} g at $${row.october.price_usd}` : "no row"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="bls-explorer" class="mb-12" aria-label="BLS series explorer">
+      <h2>Pick a food and a region</h2>
+      <p>
+        {foods.length} foods have a documented USDA match in this file. A region with no row stays empty. I don't average the neighbors and call it a month.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <label class="tool-label">
+          Food
+          <select class="tool-input" id="bls-food">
+            {foods.map((food) => (
+              <option value={food.code} selected={food.code === BREAST}>{food.shortName}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          Region
+          <select class="tool-input" id="bls-area">
+            {areas.map((area) => (
+              <option value={area.code} selected={area.name === "U.S. city average"}>{area.name}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          Chart
+          <select class="tool-input" id="bls-metric">
+            <option value="protein" selected>Protein grams per dollar</option>
+            <option value="fiber">Fiber grams per dollar</option>
+            <option value="price">BLS price per priced unit</option>
+          </select>
+        </label>
+      </div>
+      <p id="bls-summary" aria-live="polite" class="summary-line"></p>
+      <p id="bls-latest" class="text-sm mb-3" style="color:var(--muted-color);"></p>
+      <p id="bls-empty" class="hidden empty-note" role="status"></p>
+      <svg id="bls-chart" class="series-chart" role="img" aria-label="Selected BLS series" viewBox="0 0 720 260"></svg>
+      <div class="table-wrap month-scroll">
+        <table>
+          <caption>Every published month for the food and region you picked</caption>
+          <thead>
+            <tr>
+              <th scope="col">Month</th>
+              <th scope="col">BLS price</th>
+              <th scope="col">Protein g per $</th>
+              <th scope="col">Fiber g per $</th>
+            </tr>
+          </thead>
+          <tbody id="bls-months"></tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs" style="color:var(--muted-color);">
+        The filter runs in this browser tab. Nothing you pick is saved or sent. The tables above are the same files, already printed.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2>January 2017 against October 2026, U.S. city average</h2>
+      <p>
+        Protein per 100 g doesn't move inside a series. When grams per dollar fall, the BLS price rose. Flour barely budged. Beef didn't.
+        {missingJanuary.length > 0 && ` ${missingJanuary.join(", ")} has no January 2017 U.S. city average row in the monthly file.`}
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>U.S. city average protein per dollar at the two ends of the monthly file</caption>
+          <thead>
+            <tr>
+              <th scope="col">Food</th>
+              <th scope="col">January 2017</th>
+              <th scope="col">October 2026</th>
+              <th scope="col">FDC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {usFoods.map((food) => (
+              <tr>
+                <th scope="row">{food.shortName}</th>
+                <td>{food.january ? `${food.january.protein_g_per_dollar} g at $${food.january.price_usd}` : "no row"}</td>
+                <td>{food.october ? `${food.october.protein_g_per_dollar} g at $${food.october.price_usd}` : "no row"}</td>
+                <td>
+                  <a href={`https://fdc.nal.usda.gov/food-details/${food.fdc}/nutrients`} class={linkClass} style={linkStyle} rel="noopener" target="_blank">
+                    {food.fdc}
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h2>Where the same rows get a longer look</h2>
+      <p>
+        The egg and beef decade, with the missing months left blank, is
+        <a href="/protein-per-dollar-2017-to-2026-bls-trends/" class={linkClass} style={linkStyle}>protein per dollar from 2017 to October 2026</a>.
+        October by region, including the series that aren't actually October, is
+        <a href="/us-regional-grocery-protein-prices-october-2026/" class={linkClass} style={linkStyle}>the cheapest US region for protein in October 2026</a>.
+        What a day of 50 g protein and 30 g fiber costs is
+        <a href="/cost-of-50g-protein-and-30g-fiber-per-day/" class={linkClass} style={linkStyle}>50 g protein and 30 g fiber for $0.82</a>.
+        The plant and animal split on one price list is
+        <a href="/plant-vs-animal-protein-cost-per-dollar/" class={linkClass} style={linkStyle}>plant vs animal protein cost per dollar</a>.
+      </p>
+      <p>
+        Assumptions and the correction policy are on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+        Daily Life Hacks publishes the files. {AUTHOR_NAME} runs the checks. You're free to reuse the contribution under
+        <a href={DATA_LICENSE_URL} class={linkClass} style={linkStyle} rel="license noopener" target="_blank">CC BY 4.0</a>,
+        with credit. The catalog date on the data hub stays {DATA_RELEASE_DATE}. This page is the filter.
+      </p>
+    </section>
+  </main>
+  <Footer />
+
+  <style is:global>
+    .bls-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 0 0 0.7rem; color: var(--heading-color); }
+    .bls-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .bls-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .bls-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .bls-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); }
+    .bls-page table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .bls-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .bls-page th, .bls-page td { text-align: left; padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .bls-page th { color: var(--heading-color); }
+    .bls-page .month-scroll { max-height: 28rem; overflow: auto; margin-top: 0.75rem; }
+    .bls-page .series-chart { width: 100%; height: auto; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 1rem; }
+    .bls-page .summary-line { font-weight: 700; color: var(--heading-color); }
+    .bls-page .empty-note { padding: 0.9rem 1rem; border-radius: 0.75rem; background: #fff4e5; color: #7a4300; }
+    .bls-page .hidden { display: none; }
+  </style>
+
+  <script id="bls-series" type="application/json" set:html={seriesJson}></script>
+  <script is:inline>
+    (function () {
+      var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      function monthLabel(key) {
+        var text = String(key);
+        return MONTHS[Number(text.slice(4)) - 1] + ' ' + text.slice(0, 4);
+      }
+      function monthIndex(key) {
+        var text = String(key);
+        return Number(text.slice(0, 4)) * 12 + Number(text.slice(4));
+      }
+      function boot() {
+        var root = document.getElementById('bls-explorer');
+        var dataNode = document.getElementById('bls-series');
+        if (!root || !dataNode || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var payload = JSON.parse(dataNode.textContent || '{}');
+        var food = root.querySelector('#bls-food');
+        var area = root.querySelector('#bls-area');
+        var metric = root.querySelector('#bls-metric');
+        var summary = root.querySelector('#bls-summary');
+        var latest = root.querySelector('#bls-latest');
+        var empty = root.querySelector('#bls-empty');
+        var svg = root.querySelector('#bls-chart');
+        var tbody = root.querySelector('#bls-months');
+        var metricMap = {
+          protein: { index: 2, suffix: ' g per dollar' },
+          fiber: { index: 3, suffix: ' g per dollar' },
+          price: { index: 1, prefix: '$', suffix: '' }
+        };
+        function draw(points, index) {
+          var w = 720, h = 260, padL = 8, padR = 8, padT = 12, padB = 12;
+          var values = points.map(function (point) { return parseFloat(point[index]); });
+          var min = Math.min.apply(null, values);
+          var max = Math.max.apply(null, values);
+          if (min === max) { min -= 1; max += 1; }
+          var start = monthIndex(points[0][0]);
+          var span = monthIndex(points[points.length - 1][0]) - start || 1;
+          function x(key) { return padL + (monthIndex(key) - start) / span * (w - padL - padR); }
+          function y(value) { return padT + (max - value) / (max - min) * (h - padT - padB); }
+          var d = '';
+          var pen = false;
+          for (var i = 0; i < points.length; i++) {
+            if (i > 0 && monthIndex(points[i][0]) !== monthIndex(points[i - 1][0]) + 1) pen = false;
+            d += (pen ? 'L' : 'M') + x(points[i][0]).toFixed(1) + ' ' + y(values[i]).toFixed(1) + ' ';
+            pen = true;
+          }
+          svg.innerHTML = '<path d="' + d + '" fill="none" stroke="#F29B30" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>';
+          svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+        }
+        function render() {
+          var key = food.value + '|' + area.value;
+          var points = payload.series[key] || [];
+          var spec = metricMap[metric.value] || metricMap.protein;
+          tbody.textContent = '';
+          if (!points.length) {
+            svg.innerHTML = '';
+            summary.textContent = '';
+            latest.textContent = '';
+            empty.textContent = 'This food has no rows for that region in the monthly file. The gap is the data, not a hidden month.';
+            empty.classList.remove('hidden');
+            return;
+          }
+          empty.classList.add('hidden');
+          var high = points[0];
+          var low = points[0];
+          points.forEach(function (point) {
+            if (parseFloat(point[spec.index]) > parseFloat(high[spec.index])) high = point;
+            if (parseFloat(point[spec.index]) < parseFloat(low[spec.index])) low = point;
+          });
+          var last = points[points.length - 1];
+          function amount(point) {
+            return (spec.prefix || '') + point[spec.index] + spec.suffix;
+          }
+          summary.textContent = points.length + ' published months. High ' + amount(high) + ' in ' + monthLabel(high[0]) + '. Low ' + amount(low) + ' in ' + monthLabel(low[0]) + '. Latest monthly row is ' + amount(last) + ' in ' + monthLabel(last[0]) + '.';
+          var latestRow = payload.latest[key];
+          latest.textContent = latestRow
+            ? 'Newest row in the latest file for this food and region: ' + monthLabel(String(latestRow.date).slice(0, 4) + String(latestRow.date).slice(5, 7)) + ', ' + latestRow.protein + ' g protein per dollar at $' + latestRow.price + '.'
+            : 'The latest file has no row for this food and region.';
+          draw(points, spec.index);
+          points.forEach(function (point) {
+            var tr = document.createElement('tr');
+            [monthLabel(point[0]), '$' + point[1], point[2], point[3]].forEach(function (text) {
+              var cell = document.createElement('td');
+              cell.textContent = text;
+              tr.appendChild(cell);
+            });
+            tbody.appendChild(tr);
+          });
+        }
+        root.addEventListener('change', render);
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
