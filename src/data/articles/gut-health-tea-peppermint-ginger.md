@@ -12,8 +12,8 @@ image: /images/gut-health-tea-peppermint-ginger-main.jpg
 imageAlt: Homemade peppermint and ginger tea steeping in a glass mug on a kitchen counter
 quickAnswer: "Peppermint ginger tea is 1 cup of water, a 1-inch piece of fresh ginger sliced and bruised, and 1 tablespoon of fresh peppermint or one tea bag. Simmer the ginger 5 to 7 minutes, take it off the heat, add the mint, and steep covered 5 to 7 minutes, then strain. It's caffeine-free and about 10 to 20 cents a cup. On gut health, be honest. IBS trials used enteric-coated peppermint-oil capsules, not tea. If you get reflux, mint can make heartburn worse, so skip it. Refrigerate strained tea up to 3 days."
 date: 2026-02-28
-dateModified: 2026-11-23
-substantiveUpdate: 2026-11-23
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -87,6 +87,19 @@ The IBS trials are on enteric-coated peppermint-oil capsules, not tea. NCCIH poi
 Ginger has the same shape of problem. NCCIH says most ginger studies tested dietary supplements rather than foods, that ginger may be helpful for nausea and vomiting associated with pregnancy, and that most motion sickness studies haven't shown it to help ([Ginger: Usefulness and Safety](https://www.nccih.nih.gov/health/ginger)). A small 2008 trial in 24 healthy volunteers found that 1,200 mg of ginger in capsules sped up gastric emptying ([Effects of ginger on gastric emptying and motility in healthy humans](https://pubmed.ncbi.nlm.nih.gov/18403946/)). Capsules, fasted, in a lab. Nobody has measured what a 1-inch piece leaves in the mug after you strain it.
 
 So the honest position: warm, cheap, caffeine-free, possibly comfortable after dinner. Any gut benefit at tea strength is unproven. A mug of leaves and sliced root shouldn't borrow claims from concentrated products.
+
+## How do fresh and bagged peppermint-ginger teas compare to clinical IBS and nausea doses?
+
+[NIH NCCIH's peppermint oil sheet](https://www.nccih.nih.gov/health/peppermint-oil) and its [ginger fact sheet](https://www.nccih.nih.gov/health/ginger) describe capsules and supplements, not a home cup. Fresh peppermint ([FDC 173474](https://fdc.nal.usda.gov/food-details/173474/nutrients)) is 70 kcal and 8 g fiber per 100 g. Raw ginger ([FDC 169231](https://fdc.nal.usda.gov/food-details/169231/nutrients)) is about 19 kcal in a 24 g quarter-cup of slices. Brewed tea is not those trial doses.
+
+| Prep | Steep or simmer | Trial form vs this cup | Reflux caution |
+| --- | --- | --- | --- |
+| Fresh peppermint leaves | Off the heat, covered, 5 to 7 minutes | Enteric-coated peppermint oil in the IBS trials, not leaves | Skip it if mint already gives you heartburn |
+| Bagged peppermint tea | Covered, 5 to 7 minutes | The same leaf in paper, not the oil capsule | Same mint caution as the fresh leaves |
+| Fresh sliced ginger root | Simmer 5 to 7 minutes, then add the mint | 1,200 mg capsules in the 2008 trial, not strained tea | Heartburn is on NCCIH's oral ginger list |
+| Dried ground ginger | Don't steep a spoonful. It turns gritty. | Closer to a powder, still not a measured trial dose | Easy to overshoot, and the heartburn note shows up faster |
+
+That 19 kcal line is the arithmetic. Ginger root is 80 kcal per 100 g, and USDA's quarter-cup of slices is 24 g, so you get 19.2 kcal, about 19 ([FDC 169231](https://fdc.nal.usda.gov/food-details/169231/nutrients)). Peppermint's 70 kcal and 8 g of fiber are for 100 g of leaves, not the spoon in the mug ([FDC 173474](https://fdc.nal.usda.gov/food-details/173474/nutrients)). NCCIH still parks the IBS results on enteric-coated oil, and the nausea research it cites for ginger used supplements. A warm cup can taste like a decision. It doesn't inherit those doses.
 
 ## Fresh leaves, a tea bag, or the dried jar
 

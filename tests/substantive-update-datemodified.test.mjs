@@ -38,7 +38,7 @@ const LATER_UPDATES = {
   "costco-rotisserie-chicken-meal-ideas-dinner": "2026-11-25",
   "cooking-oils-smoke-points-best-uses": "2026-11-25",
   "cucumber-edamame-salad-sesame": "2026-11-26",
-  "easy-one-pot-chicken-and-rice-dinner": "2026-11-25",
+  "easy-one-pot-chicken-and-rice-dinner": "2026-11-26",
   "fast-food-meals-with-protein-and-fiber": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
   "can-you-eat-rice-and-beans-everyday": "2026-11-25",
@@ -67,6 +67,7 @@ const LATER_UPDATES = {
   "keep-berries-fresh-longer-when-to-wash": "2026-11-25",
   "breakfast-staples-per-dollar": "2026-11-25",
   "good-source-of-fiber-label-meaning": "2026-11-25",
+  "gut-health-tea-peppermint-ginger": "2026-11-26",
   "eggs-vs-everything-protein-value": "2026-11-25",
   "high-protein-breakfast-without-eggs": "2026-11-25",
   "best-way-to-store-avocados-to-stop-browning": "2026-11-25",
@@ -89,7 +90,6 @@ const SUBSTANTIVE_SLUGS = new Set([
   "cottage-cheese-vs-greek-yogurt-protein-uses",
   "easy-cold-summer-pasta-salad-potlucks",
   "foods-highest-in-protein-per-100-grams",
-  "gut-health-tea-peppermint-ginger",
   "healthy-blue-collar-lunch-ideas-men",
   "healthy-homemade-dumpling-wrapper-recipe",
   "high-fiber-bran-muffins-that-taste-good",
@@ -276,7 +276,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 34, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
@@ -292,14 +292,18 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   // The homemade dressing sodium and pH table left this day for 2026-11-26.
   // Its 94167b6 baseline was 2026-09-23, and 84702a37 had already moved it to
   // 2026-11-23, so leaving that day adds it to the restored count. The
-  // stillToday count is 35 and the restored count is 64.
+  // stillToday count was 35 and the restored count was 64.
   // Breakfast staples was already off 2026-11-23 (baseline 2026-09-24), so
   // moving it to 2026-11-25 does not change the restored count.
   // Lentil curry left this day for the red, brown, and green cook-time table.
   // Its 94167b6 baseline was 2026-07-16, and 84702a37 had already moved it to
+  // 2026-11-23, so leaving that day adds it to the restored count. That left
+  // stillToday at 34 and restored at 65.
+  // The peppermint-ginger tea page left this day for the NCCIH dose table.
+  // Its 94167b6 baseline was 2026-08-20, and 84702a37 had already moved it to
   // 2026-11-23, so leaving that day adds it to the restored count. The
-  // stillToday count is 34 and the restored count is 65.
-  assert.equal(restored.length, 65, "pages restored off 2026-11-23");
+  // stillToday count is 33 and the restored count is 66.
+  assert.equal(restored.length, 66, "pages restored off 2026-11-23");
 });
 
 test("restored and substantive pages render the honest Updated day", () => {

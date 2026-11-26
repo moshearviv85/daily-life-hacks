@@ -29,7 +29,7 @@ const QUESTION_PAGES = [
     id: "how-to-tell-when-the-chicken-and-rice-are-done",
     heading: "How do you know one-pot chicken and rice is done?",
     numbers: ["165", "18", "20"],
-    substantiveUpdate: "2026-11-25",
+    substantiveUpdate: "2026-11-26",
   },
   {
     slug: "baking-sheet-liners-parchment-silicone-when-to-use",
