@@ -75,6 +75,8 @@ Start with one meal, not a personality transplant.
 * Keep a glass or bottle where you can see it, because the cabinet has never reminded anyone to drink.
 * Give the change time before adding three more high-fiber foods.
 
+If the swap you're considering is prune juice, the gram lines are in [fiber and sugar in prune juice versus prunes and kiwi](/prune-juice-alternatives-for-constipation/).
+
 NIDDK gives adults a general fiber range of 22 to 34 grams a day depending on age and sex. The [FDA's Dietary Fiber guide](https://www.accessdata.fda.gov/scripts/InteractiveNutritionFactsLabel/assets/InteractiveNFL_DietaryFiber_October2021.pdf) uses 28 grams as the Daily Value for a 2,000-calorie diet. Those are useful reference points, not a dare.
 
 Our [guide to increasing fiber gradually](/how-to-increase-fiber-intake-without-gas/) handles the pacing. If dinner needs to do some of the work, a bowl of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is more practical than spending the evening counting individual bran flakes.

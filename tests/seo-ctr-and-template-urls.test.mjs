@@ -1806,7 +1806,8 @@ test("selenium foods title leads with how much you need", () => {
     false,
     "selenium foods title should not be the old three-clause comma stack",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 
   assert.match(page.excerpt, /Brazil nuts/);
   assert.match(page.excerpt, /400 mcg/);
@@ -1840,7 +1841,8 @@ test("prune juice alternatives title leads with the constipation query", () => {
     false,
     "prune juice alternatives title should not spend the SERP on with actual evidence",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-25$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-25$/m);
 
   assert.match(page.excerpt, /sorbitol/);
   assert.match(page.excerpt, /kiwifruit/);

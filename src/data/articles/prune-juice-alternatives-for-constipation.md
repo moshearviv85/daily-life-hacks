@@ -6,7 +6,8 @@ tags: ["prune juice alternatives", "constipation food options", "high fiber food
 image: "/images/prune-juice-alternatives-for-constipation-main.jpg"
 imageAlt: "A glass of prune juice beside green kiwifruit, pears, oats, and lentils on a kitchen counter"
 date: 2026-02-05
-dateModified: 2026-09-23
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 quickAnswer: "If prune juice is out, two green kiwifruit a day is the swap with the strongest human evidence: a 2024 review of 23 studies found kiwifruit produced modestly more weekly bowel movements than the standard fiber comparator, though certainty was rated low. Whole prunes at about 100 g a day and high mineral-content water also have trial support. Prune juice mostly supplies sorbitol, not fiber, because it's filtered. Whole pears, apples, oats, and beans are solid fiber, just not instant equivalents. Add fiber gradually, keep liquids in the day, and get persistent symptoms or bleeding checked."
 featured: false
@@ -37,6 +38,26 @@ Prune juice isn't working through fiber. A [published review of prune compositio
 One number to keep straight: the same paper puts fiber in whole prunes at about 6.1 g per 100 g, the identical digit to the juice's sorbitol figure. Different nutrient, different food.
 
 Here's the part the juice roundups skip. The [2025 British Dietetic Association guideline](https://pmc.ncbi.nlm.nih.gov/articles/PMC12623288/) singles out high-sorbitol fruits as an example where "robust evidence either doesn't exist or does not support their use." Swapping prune juice for pear juice because both contain sorbitol is a chemistry argument, not a trial result.
+
+## How much fiber and sugar are in prune juice vs. whole prunes, kiwifruit, pear nectar, and apple juice?
+
+Canned prune juice (256 g, [FDC 167753](https://fdc.nal.usda.gov/food-details/167753/nutrients)) has 2.56 g fiber and 42.1 g sugar on [USDA FoodData Central](https://fdc.nal.usda.gov/). Dried prunes (100 g, [FDC 2758978](https://fdc.nal.usda.gov/food-details/2758978/nutrients)) have 6.25 g fiber. Raw green kiwifruit (148 g, [FDC 168153](https://fdc.nal.usda.gov/food-details/168153/nutrients)) has 4 g fiber and 13 g sugar. The [2024 kiwifruit review](https://pubmed.ncbi.nlm.nih.gov/37905980/) and the [2021 prune trial](https://pubmed.ncbi.nlm.nih.gov/34074830/) tested the fruit, not the juice.
+
+| Food | Serving | Dietary fiber | Total sugars | Calories | Trial note | FDC |
+|---|---|---|---|---|---|---|
+| Prune juice, canned | 1 cup (256 g) | 2.56 g | 42.1 g | 182 kcal | Not tested on this page | [FDC 167753](https://fdc.nal.usda.gov/food-details/167753/nutrients) |
+| Dried prunes, uncooked | 100 g | 6.25 g | 31.4 g | 240 kcal | About the 100 g dose in the 2021 trial | [FDC 2758978](https://fdc.nal.usda.gov/food-details/2758978/nutrients) |
+| Green kiwifruit, raw | 1 NLEA serving (148 g) | 4 g | 13 g | 90 kcal | About two fruits, the 2021 and 2023 dose | [FDC 168153](https://fdc.nal.usda.gov/food-details/168153/nutrients) |
+| Pear nectar, canned | 1 cup (250 g) | 1.50 g | 37.9 g | 150 kcal | Not tested on this page | [FDC 168186](https://fdc.nal.usda.gov/food-details/168186/nutrients) |
+| Apple juice, unsweetened | 1 cup (248 g) | 0.50 g | 24 g | 114 kcal | Not tested on this page | [FDC 173933](https://fdc.nal.usda.gov/food-details/173933/nutrients) |
+
+Foundation [FDC 2758978](https://fdc.nal.usda.gov/food-details/2758978/nutrients) doesn't publish calories. The 240 kcal cell is SR Legacy [FDC 168162](https://fdc.nal.usda.gov/food-details/168162/nutrients), the same uncooked dried plums, at 240 kcal per 100 g. Fiber and sugar in that row stay on 2758978. The kiwi 4 g and 13 g figures are the label rounding of 4.44 g of fiber and 13.3 g of sugar, from 3.0 g and 8.99 g per 100 g times 148 g. Apple juice sugar is 23.9 g before it rounds to 24 g.
+
+The cup of juice has less fiber than 100 g of prunes and more sugar than the kiwi serving. Pear nectar and unsweetened apple juice land in the same neighborhood: a little fiber, a lot of sugar. If you came for a bottle swap, the gram columns are the argument against it.
+
+Two green kiwifruit and about 100 g of prunes are the doses those trials actually fed people. Nobody in them drank pear nectar. Eat the fruit if the fruit is what got tested.
+
+<!-- sources: USDA FoodData Central per 100 g, checked 2026-11-25. FDC 167753 prune juice, canned: 1.0 g fiber, 16.45 g sugar, 71 kcal; 256 g = 2.56 g fiber, 42.112 g sugar (shown as 42.1), 181.76 kcal (shown as 182). FDC 2758978 plums, dried, uncooked: 6.251 g fiber (shown as 6.25), 31.38 g sugar (shown as 31.4); energy not published. FDC 168162 SR Legacy plums, dried, uncooked: 240 kcal/100 g, used only for the calorie cell. FDC 168153 kiwifruit, green, raw: 3.0 g fiber, 8.99 g sugar, 61 kcal; 148 g = 4.44 g fiber and 13.305 g sugar before Nutrition Facts rounding to 4 g and 13 g, 90.28 kcal (shown as 90). FDC 168186 pear nectar, canned: 0.6 g fiber, 15.16 g sugar, 60 kcal; 250 g = 1.50 g fiber, 37.9 g sugar, 150 kcal. FDC 173933 apple juice, unsweetened: 0.2 g fiber, 9.62 g sugar, 46 kcal; 248 g = 0.496 g fiber (shown as 0.50), 23.858 g sugar (shown as 24), 114.08 kcal (shown as 114). Trials: PMID 37905980, PMID 34074830, PMID 36537785. -->
 
 ## Which prune juice alternatives have the best evidence?
 
