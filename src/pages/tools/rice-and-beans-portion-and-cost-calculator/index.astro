@@ -1,0 +1,342 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import {
+  BEAN_COST_FILE,
+  BEAN_FIBER_FILE,
+  FIBER_FILE,
+  LIMITS,
+  PAIRS_FILE,
+  PANTRY_FILE,
+  PRESETS,
+  PROTEIN_FILE,
+  chartPlates,
+  loadRiceBeansModel,
+  money,
+  oneDecimal,
+  quoteRiceBeans,
+  resultNote,
+} from "../../../lib/rice-beans-portion.mjs";
+
+const model = loadRiceBeansModel();
+const starter = quoteRiceBeans(model, {
+  people: 4,
+  days: 7,
+  presetId: "dinner",
+  beanFood: "Pinto beans (dry)",
+});
+const fullDay = quoteRiceBeans(model, {
+  people: 1,
+  days: 1,
+  presetId: "full-day",
+  beanFood: "Pinto beans (dry)",
+});
+const plates = chartPlates(model);
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}/tools/rice-and-beans-portion-and-cost-calculator/`;
+const title = "Rice and Beans Portion and Cost Calculator";
+const description =
+  "How much rice and beans per person per day, in dry grams, cups, rice water, and the bag price. The numbers stay in this browser tab.";
+const chart = "/images/rice-and-beans-portion-and-cost-calculator-chart.jpg";
+const chartAlt =
+  "Bar chart comparing protein grams and plate cost for five dinners of 90 grams of dry beans and 60 grams of dry brown rice";
+
+const clientJson = JSON.stringify({
+  limits: LIMITS,
+  presets: PRESETS.map((preset) => ({
+    id: preset.id,
+    beanGrams: preset.beanGrams,
+    riceGrams: preset.riceGrams,
+  })),
+  rice: {
+    proteinPer100: model.rice.proteinPer100,
+    fiberPer100: model.rice.fiberPer100,
+    packagePrice: model.rice.packagePrice,
+    packageGrams: model.rice.packageGrams,
+    cupGrams: 185,
+    waterPerCup: 2,
+  },
+  yield: {
+    poundGrams: 454,
+    dryCupGrams: 227,
+    cookedCupsPerPound: 6,
+    drainedCupsPerCan: 1.5,
+  },
+  beans: model.beans.map((bean) => ({
+    food: bean.food,
+    proteinPer100: bean.proteinPer100,
+    fiberPer100: bean.fiberPer100,
+    packagePrice: bean.packagePrice,
+    packageGrams: bean.packageGrams,
+    canFood: bean.canFood,
+    canPrice: bean.canPrice,
+  })),
+}).replace(/</g, "\\u003c");
+
+const person = {
+  "@type": "Person",
+  "@id": AUTHOR_ID,
+  name: AUTHOR_NAME,
+  url: AUTHOR_URL,
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: title,
+  url: pageUrl,
+  description,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript for the people, days, and bean controls. The reference table is in the page.",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  author: person,
+  publisher: { "@id": `${siteUrl}/#organization` },
+  isPartOf: { "@id": `${siteUrl}/#website` },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Rice and beans portion calculator", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline";
+const linkStyle = "color:#F29B30;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chart}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Rice and beans portion calculator</span>
+    </nav>
+
+    <div class="max-w-4xl mb-8">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>. The pot is a scale, not a mood.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">How much rice and beans per person per day</h1>
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        Four people, seven dinners, pinto beans, the small plate: {starter.beanGrams.toLocaleString("en-US")} g of dry beans and {starter.riceGrams.toLocaleString("en-US")} g of dry brown rice. That's {oneDecimal(starter.pounds)} lb of beans, {oneDecimal(starter.dryCups)} dry cups, and {money(starter.batchCost)} from the bags in the file.
+      </p>
+      <p class="text-lg leading-relaxed mt-4" style="color:var(--text-color);">
+        One of those dinners is 90 g of dry beans and 60 g of dry brown rice. Pinto on that plate is {oneDecimal(starter.proteinPerPerson)} g of protein and {oneDecimal(starter.fiberPerPerson)} g of fiber, at {money(starter.beanCost / starter.meals)} for the beans and {money(starter.riceCost / starter.meals)} for the rice. The everyday page calls the same grams about $0.32. The $6.75 pinto bag prices 90 g at {money(starter.beanCost / starter.meals)}, so this page's receipt is {money(starter.batchCost / starter.meals)}.
+      </p>
+    </div>
+
+    <figure class="mb-10">
+      <img src={chart} width="1200" height="675" alt={chartAlt} />
+      <figcaption class="mt-3 text-sm leading-relaxed" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        Each pair is one person and one day. Lentils are the tall protein bar, at {plates[0].protein.toFixed(1)} g for {money(plates[0].cost)}. Pinto is the plate the everyday writeup already counted.
+      </figcaption>
+    </figure>
+
+    <section id="rice-beans-calculator" class="rounded-2xl p-5 md:p-7 mb-12" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <h2 class="text-xl md:text-2xl font-bold mb-4" style="color:var(--heading-color);">Set the headcount, then pick the bag</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
+        <label class="tool-label">People<input id="people" class="tool-input" type="number" min={LIMITS.peopleMin} max={LIMITS.peopleMax} step="1" value={starter.people} inputmode="numeric" /></label>
+        <label class="tool-label">Days<input id="days" class="tool-input" type="number" min={LIMITS.daysMin} max={LIMITS.daysMax} step="1" value={starter.days} inputmode="numeric" /></label>
+        <label class="tool-label">Plate
+          <select id="preset" class="tool-input">
+            {PRESETS.map((preset) => (
+              <option value={preset.id} selected={preset.id === "dinner"}>{preset.label}: {preset.beanGrams} g beans, {preset.riceGrams} g rice</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">Bean with brown rice
+          <select id="bean" class="tool-input">
+            {model.beans.map((bean) => (
+              <option value={bean.food} selected={bean.food === "Pinto beans (dry)"}>{bean.food}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4" aria-live="polite">
+        <div class="metric highlight"><span>Batch cost</span><strong id="out-cost">{money(starter.batchCost)}</strong></div>
+        <div class="metric"><span>Dry beans</span><strong id="out-beans">{oneDecimal(starter.pounds)} lb</strong></div>
+        <div class="metric"><span>Protein / person / day</span><strong id="out-protein">{oneDecimal(starter.proteinPerPerson)} g</strong></div>
+        <div class="metric"><span>Fiber / person / day</span><strong id="out-fiber">{oneDecimal(starter.fiberPerPerson)} g</strong></div>
+      </div>
+      <p id="out-note" class="text-sm leading-relaxed" style="color:var(--text-color);">{resultNote(starter)}</p>
+      <p class="mt-3 text-xs" style="color:var(--muted-color);">
+        People, days, the plate, and the bean stay in this browser tab. The page can record that the tool was used. It doesn't send the values you typed.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">One dinner, before you change the headcount</h2>
+      <p class="mb-6 leading-relaxed" style="color:var(--text-color);">
+        The 50/50 column is the published split in {PAIRS_FILE}. Brown lentils plus brown rice are {model.beans[0].pairRateLabel} g per dollar. Navy is {model.beans[2].pairRateLabel}. Black is {model.beans[3].pairRateLabel}. Pinto is {model.beans[4].pairRateLabel}. The plate cost isn't that rate. It's 90 g of the bean bag plus 60 g of the {model.rice.package} of brown rice at ${model.rice.packagePrice.toFixed(2)}.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:720px;border-collapse:collapse;">
+          <thead>
+            <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Bean</th>
+              <th scope="col" class="cell text-right">50/50 g per $</th>
+              <th scope="col" class="cell text-right">Plate cost</th>
+              <th scope="col" class="cell text-right">Protein</th>
+              <th scope="col" class="cell text-right">Fiber</th>
+            </tr>
+          </thead>
+          <tbody>
+            {model.beans.map((bean) => {
+              const plate = quoteRiceBeans(model, { people: 1, days: 1, presetId: "dinner", beanFood: bean.food });
+              return (
+                <tr style="border-bottom:1px solid var(--border-color);">
+                  <th scope="row" class="cell text-left" style="font-weight:600;">{bean.food}</th>
+                  <td class="cell text-right">{bean.pairRateLabel}</td>
+                  <td class="cell text-right">{money(plate.batchCost)}</td>
+                  <td class="cell text-right">{oneDecimal(plate.proteinPerPerson)} g</td>
+                  <td class="cell text-right">{oneDecimal(plate.fiberPerPerson)} g</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-sm leading-relaxed" style="color:var(--muted-color);">
+        Package prices are {BEAN_COST_FILE} for the beans and {PANTRY_FILE} for the rice. Protein grams per 100 g are {PROTEIN_FILE}. Fiber grams per 100 g, including the rice at {model.rice.fiberPerDollarLabel} g per dollar, are {FIBER_FILE}. Bean fiber per dollar is {BEAN_FIBER_FILE}. A full day at the 2 to 1 basket, 400 g of rice and 200 g of pinto beans, is {money(fullDay.batchCost)} and {oneDecimal(fullDay.proteinPerPerson)} g of protein for one person.
+      </p>
+    </section>
+
+    <article class="prose-like max-w-4xl">
+      <h2>Dry cups, cooked cups, and the can the file actually priced</h2>
+      <p>
+        A pound of dry beans is 2 cups dry and about 6 cups cooked. That's the Bean Institute yield already on the <a href="/how-many-pounds-of-dried-beans-for-a-week/">dried bean week planner</a>. A drained 15.5 oz can is 1.5 cups. The week above is {oneDecimal(starter.cookedCups)} cooked cups, which is {oneDecimal(starter.cans)} cans. You can't buy a fifth of a can, so the shop count is {starter.shopCans}. Pinto doesn't have a can price in {BEAN_COST_FILE}. Black beans do, at $0.88.
+      </p>
+      <p>
+        Rice cups use 185 g, the dry cup on the <a href="/beans-and-rice-complete-protein-meal/">beans and rice complete protein meal</a>. Water is 2 cups per cup of dry brown rice. That's the ratio behind the split-pea curry's 250 g pot, which takes 2 3/4 cups of water. Bean simmer water stays the sentence on <a href="/how-to-cook-dried-beans-from-scratch/">how to cook dried beans from scratch</a>: cover the soaked beans by a few inches. I'm not going to pretend that sentence is a cup measure.
+      </p>
+      <h2>The plate is not the whole day</h2>
+      <p>
+        Ninety grams of beans and 60 grams of rice is the smaller dinner on <a href="/can-you-eat-rice-and-beans-everyday/">can you eat rice and beans every day</a>. The 400 g rice and 200 g bean line on that page is the other preset here. Neither one is a vitamin audit. The price rules, and what we refuse to guess, are on the <a href="/methodology/">methodology page</a>.
+      </p>
+      <h2>Questions the calculator actually gets</h2>
+      <div class="faq-list">
+        <details><summary>How much rice and beans per person per day?</summary><p>The dinner preset is 90 g of dry beans and 60 g of dry brown rice. That's the plate already priced on the everyday page. The other preset is 200 g of dry beans and 400 g of dry rice, the 2 to 1 basket on that same page. People runs from 1 to 50. Days runs from 1 to 14.</p></details>
+        <details><summary>How many pounds of dry beans is a week for four?</summary><p>At the dinner plate, four people for seven days is 2,520 g of dry beans, {oneDecimal(starter.pounds)} lb, and 1,680 g of dry brown rice. Pinto from the $6.75 four-pound bag plus rice from the $1.87 two-pound bag is {money(starter.batchCost)}. A half-cup cooked side, without the rice, is the week planner, not this pot.</p></details>
+        <details><summary>Why isn't one dinner $0.32?</summary><p>The everyday page rounds that pinto plate to about $0.32. This calculator divides the grams by the package in the file. Ninety grams of the $6.75 pinto bag is about $0.33, and 60 grams of the $1.87 rice bag is about $0.12. The protein is still 23.8 g. The receipt is {money(starter.batchCost / starter.meals)}.</p></details>
+        <details><summary>How much water does the rice take?</summary><p>Two cups of water per cup of dry brown rice. A cup of dry brown rice is 185 g, so the single dinner is under a cup of rice and under two cups of water. The bean pot is different. Cover soaked beans with fresh water a few inches above the beans. The cook page doesn't turn that into cups, and neither does this one.</p></details>
+        <details><summary>Does the calculator save what I type?</summary><p>No. People, days, the plate, and the bean stay in this browser tab. The site can record that the tool was used. It doesn't receive the headcount or the result.</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:700;color:var(--text-color)}
+    .tool-input{width:100%;border-radius:.75rem;padding:.65rem .75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color)}
+    .metric{display:flex;flex-direction:column;gap:.25rem;padding:1rem;border-radius:.8rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--muted-color);font-size:.78rem}
+    .metric strong{font-size:1.35rem;color:var(--heading-color)}
+    .metric.highlight{border:2px solid #F29B30}
+    .metric.highlight strong{color:#F29B30}
+    .cell{padding:.65rem}
+    img{width:100%;height:auto;border-radius:1rem;border:1px solid var(--border-color)}
+    .prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:800;margin:2.25rem 0 .7rem;color:var(--heading-color)}
+    .prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}
+    .faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}
+    .faq-list summary{cursor:pointer;font-weight:800;padding:1rem 0;color:var(--heading-color)}
+    .faq-list p{margin:0 0 1rem;line-height:1.6}
+  </style>
+
+  <script id="rice-beans-data" type="application/json" set:html={clientJson}></script>
+  <script is:inline>
+    (function () {
+      function money(amount) {
+        var cents = Math.round((amount + Number.EPSILON) * 100);
+        return "$" + (cents / 100).toFixed(2);
+      }
+      function one(value) {
+        return (Math.round((value + Number.EPSILON) * 10) / 10).toFixed(1);
+      }
+      function clamp(value, min, max, fallback) {
+        var number = Math.round(Number(value));
+        if (!isFinite(number)) return fallback;
+        return Math.max(min, Math.min(max, number));
+      }
+      function boot() {
+        var root = document.getElementById("rice-beans-calculator");
+        if (!root || root.getAttribute("data-booted") === "1") return;
+        var dataNode = document.getElementById("rice-beans-data");
+        if (!dataNode) return;
+        root.setAttribute("data-booted", "1");
+        var data = JSON.parse(dataNode.textContent);
+        var peopleEl = root.querySelector("#people");
+        var daysEl = root.querySelector("#days");
+        var presetEl = root.querySelector("#preset");
+        var beanEl = root.querySelector("#bean");
+        function findBean(food) {
+          for (var i = 0; i < data.beans.length; i++) {
+            if (data.beans[i].food === food) return data.beans[i];
+          }
+          return data.beans[0];
+        }
+        function findPreset(id) {
+          for (var i = 0; i < data.presets.length; i++) {
+            if (data.presets[i].id === id) return data.presets[i];
+          }
+          return data.presets[0];
+        }
+        function render() {
+          var limits = data.limits;
+          var people = clamp(peopleEl.value, limits.peopleMin, limits.peopleMax, 4);
+          var days = clamp(daysEl.value, limits.daysMin, limits.daysMax, 7);
+          peopleEl.value = String(people);
+          daysEl.value = String(days);
+          var preset = findPreset(presetEl.value);
+          var bean = findBean(beanEl.value);
+          var meals = people * days;
+          var beanGrams = preset.beanGrams * meals;
+          var riceGrams = preset.riceGrams * meals;
+          var beanCost = beanGrams * bean.packagePrice / bean.packageGrams;
+          var riceCost = riceGrams * data.rice.packagePrice / data.rice.packageGrams;
+          var protein = preset.beanGrams * bean.proteinPer100 / 100 + preset.riceGrams * data.rice.proteinPer100 / 100;
+          var fiber = preset.beanGrams * bean.fiberPer100 / 100 + preset.riceGrams * data.rice.fiberPer100 / 100;
+          var yield = data.yield;
+          var cans = (beanGrams / yield.poundGrams) * yield.cookedCupsPerPound / yield.drainedCupsPerCan;
+          var shop = Math.ceil(cans - 1e-9);
+          var water = (riceGrams / data.rice.cupGrams) * data.rice.waterPerCup;
+          root.querySelector("#out-cost").textContent = money(beanCost + riceCost);
+          root.querySelector("#out-beans").textContent = one(beanGrams / yield.poundGrams) + " lb";
+          root.querySelector("#out-protein").textContent = one(protein) + " g";
+          root.querySelector("#out-fiber").textContent = one(fiber) + " g";
+          var cover = "The cook page covers soaked beans with fresh water a few inches above the beans. It never gives that cover in cups, so this page doesn't invent one.";
+          var note = "Rice water is " + one(water) + " cups, at 2 cups per cup of dry brown rice. " + cover + " ";
+          if (bean.canPrice == null) {
+            note += bean.food + " has no canned price in the file. The yield is still " + one(cans) + " cans, and the shop count rounds up to " + shop + ".";
+          } else {
+            note += bean.canFood + " are " + money(bean.canPrice) + " each. " + one(cans) + " cans is " + money(cans * bean.canPrice) + ". " + shop + " cans, the rounded shop count, is " + money(shop * bean.canPrice) + ".";
+          }
+          root.querySelector("#out-note").textContent = note;
+        }
+        root.addEventListener("input", render);
+        root.addEventListener("change", render);
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
