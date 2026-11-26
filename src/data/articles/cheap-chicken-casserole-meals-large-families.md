@@ -157,7 +157,7 @@ Cool completely before wrapping for the freezer. Warm food in a cold freezer is 
 
 Skip the cracker topping until bake day so it stays crisp. Thaw overnight in the fridge. Add topping. Bake until the center is hot, not just the corners.
 
-Label the foil with the date and "chicken rice." Future-you at 6:10 PM does not want a mystery brick.
+Label the foil with the date and "chicken rice." Future-you at 6:10 PM does not want a mystery brick. A labeled pan still gets lost if the freezer is a pile. These [freezer zones for family meal prep](/freezer-organization-tips-large-family-meals/) put that casserole where you can see it.
 
 ## Sides that don't blow the budget
 

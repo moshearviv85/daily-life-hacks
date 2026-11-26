@@ -65,6 +65,8 @@ const LATER_UPDATES = {
   "good-source-of-fiber-label-meaning": "2026-11-25",
   "eggs-vs-everything-protein-value": "2026-11-25",
   "high-protein-breakfast-without-eggs": "2026-11-25",
+  "best-way-to-store-avocados-to-stop-browning": "2026-11-25",
+  "freezer-organization-tips-large-family-meals": "2026-11-25",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
