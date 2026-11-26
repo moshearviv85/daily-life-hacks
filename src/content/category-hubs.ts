@@ -77,11 +77,10 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "grocery-cost",
         title: "Protein and what it costs",
         intro:
-          "The first page ignores price on purpose and ranks protein in 100 grams. The dollar pages come next: quality-adjusted protein per dollar, a 50 gram day, and eggs versus the rest of the cart. Lentils with wheat, and the selenium foods, use that same cart for a different question.",
+          "The first page ignores price on purpose and ranks protein in 100 grams. The dollar pages come next: quality-adjusted protein per dollar, and eggs versus the rest of the cart. Lentils with wheat, and the selenium foods, use that same cart for a different question.",
         slugs: [
           "foods-highest-in-protein-per-100-grams",
           "protein-per-dollar-adjusted-for-quality",
-          "what-50-grams-of-protein-costs-per-day",
           "eggs-vs-everything-protein-value",
           "cheapest-complete-protein-pairs",
           "selenium-containing-foods-easy-ways",
@@ -91,10 +90,9 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "breakfast",
         title: "Breakfast that holds past 10",
         intro:
-          "A breakfast page is here when it names the food and the reason you aren't opening the pantry at 10. The balanced breakfast is the start, then chia, the yogurt parfait, oats versus grits, and the high-fiber breakfast ideas. The peppermint and ginger mug is the ten-minute cup when the bowl isn't happening.",
+          "A breakfast page is here when it names the food and the reason you aren't opening the pantry at 10. The balanced breakfast is the start, then the yogurt parfait, oats versus grits, and the high-fiber breakfast ideas. The peppermint and ginger mug is the ten-minute cup when the bowl isn't happening.",
         slugs: [
           "balanced-breakfast-that-keeps-you-full",
-          "chia-pudding-variations-for-breakfast",
           "high-fiber-yogurt-parfait-for-breakfast",
           "oatmeal-vs-grits-fiber-content",
           "easy-high-fiber-breakfast-ideas-for-gut-health",

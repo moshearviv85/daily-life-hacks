@@ -92,6 +92,8 @@ const LATER_UPDATES = {
   "us-regional-grocery-protein-prices-october-2026": "2026-11-26",
   "cheapest-whole-grains-for-fiber-per-dollar": "2026-11-26",
   "cheapest-high-protein-snacks-and-portable-foods": "2026-11-26",
+  "cheapest-nuts-and-seeds-for-protein-and-fiber": "2026-11-26",
+  "cheapest-shelf-stable-pantry-foods-for-protein": "2026-11-26",
   "one-dollar-of-protein-vs-one-dollar-of-fiber": "2026-11-26",
   "canned-vs-dry-beans-cost-and-sodium-per-serving": "2026-11-26",
   "cheapest-fast-food-protein-under-5-dollars": "2026-11-26",
