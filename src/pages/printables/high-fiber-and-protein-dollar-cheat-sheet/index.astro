@@ -1,0 +1,352 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/printables/high-fiber-and-protein-dollar-cheat-sheet/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/high-fiber-and-protein-dollar-cheat-sheet-chart.jpg";
+const chartAlt =
+  "Two-panel bar chart of protein grams per dollar for 15 foods and fiber grams per dollar for 15 foods, each panel from its own published list";
+
+type Row = Record<string, string>;
+
+function rowsFrom(fileName: string): Row[] {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+function must(rows: Row[], food: string, fileName: string) {
+  const row = rows.find((item) => item.food === food);
+  if (!row || row.value === "") throw new Error(`Missing ${food} in ${fileName}`);
+  return row;
+}
+
+const proteinFile = "one-dollar-protein-what-it-buys-2026.csv";
+const fiberFile = "one-dollar-fiber-what-it-buys-2026.csv";
+const protein = rowsFrom(proteinFile);
+const fiber = rowsFrom(fiberFile);
+if (protein.length !== 15) throw new Error(`Expected 15 protein rows, found ${protein.length}`);
+if (fiber.length !== 15) throw new Error(`Expected 15 fiber rows, found ${fiber.length}`);
+
+const proteinLeader = must(protein, "Whole wheat flour", proteinFile);
+const fiberLeader = must(fiber, "Whole wheat flour", fiberFile);
+if (proteinLeader.value !== "96.0" || fiberLeader.value !== "77.8") {
+  throw new Error("Flour dollar rates drifted");
+}
+
+function groupsOf(rows: Row[]) {
+  const groups: { category: string; rows: Row[] }[] = [];
+  for (const row of rows) {
+    if (!row.category) throw new Error(`Missing aisle for ${row.food}`);
+    let group = groups.find((item) => item.category === row.category);
+    if (!group) {
+      group = { category: row.category, rows: [] };
+      groups.push(group);
+    }
+    group.rows.push(row);
+  }
+  return groups;
+}
+
+const proteinAisles = groupsOf(protein);
+const fiberAisles = groupsOf(fiber);
+
+function dayRows(fileName: string, day: string) {
+  return rowsFrom(fileName).filter((row) => row.day === day);
+}
+
+function tenths(value: string) {
+  const [whole, frac = ""] = value.split(".");
+  return Number(whole) * 10 + Number((frac + "0").slice(0, 1));
+}
+
+function hundredths(value: string) {
+  const [whole, frac = ""] = value.split(".");
+  return Number(whole) * 100 + Number((frac + "00").slice(0, 2));
+}
+
+function fromHundredths(total: number) {
+  const whole = Math.trunc(total / 100);
+  const frac = Math.abs(total % 100);
+  if (frac % 10 === 0) return `${whole}.${frac / 10}`;
+  return `${whole}.${String(frac).padStart(2, "0")}`;
+}
+
+function cents(value: string) {
+  const [whole, frac = ""] = value.split(".");
+  return Number(whole) * 100 + Number((frac + "00").slice(0, 2));
+}
+
+function fromTenths(total: number) {
+  return `${Math.floor(total / 10)}.${total % 10}`;
+}
+
+function fromCents(total: number) {
+  return `${Math.floor(total / 100)}.${String(total % 100).padStart(2, "0")}`;
+}
+
+const proteinDay = dayRows("protein-day-cost-2026.csv", "Day 1: Rock-bottom dry goods");
+const fiberRows = rowsFrom("fiber-day-cost-2026.csv");
+const plateSpec = [
+  { fdc: "173904", grams: "60", protein: "7.9", cost: "0.17" },
+  { fdc: "172428", grams: "60", protein: "13.9", cost: "0.19" },
+  { fdc: "175199", grams: "90", protein: "19.3", cost: "0.20" },
+  { fdc: "169703", grams: "60", protein: "4.5", cost: "0.12" },
+  { fdc: "174266", grams: "32", protein: "7.1", cost: "0.14" },
+];
+
+const plate = plateSpec.map((spec) => {
+  const proteinRow = proteinDay.find((row) => row.fdc_id === spec.fdc && row.grams_used === spec.grams);
+  if (!proteinRow) throw new Error(`Missing protein-day row ${spec.fdc}`);
+  if (proteinRow.protein_g !== spec.protein || proteinRow.cost_usd !== spec.cost) {
+    throw new Error(`Protein-day row drifted for ${proteinRow.food}`);
+  }
+  const fiberRow =
+    fiberRows.find((row) => row.fdc_id === spec.fdc && row.grams_used === spec.grams) ??
+    fiberRows.find((row) => row.fdc_id === spec.fdc);
+  if (!fiberRow) throw new Error(`Missing fiber-day row ${spec.fdc}`);
+  const fiberHundredths = Math.round(
+    (hundredths(fiberRow.fiber_g) * Number(spec.grams)) / Number(fiberRow.grams_used),
+  );
+  return {
+    food: proteinRow.food,
+    protein: proteinRow.protein_g,
+    fiber: fromHundredths(fiberHundredths),
+    cost: proteinRow.cost_usd,
+    sameGrams: fiberRow.grams_used === spec.grams,
+  };
+});
+
+const plateProtein = fromTenths(plate.reduce((sum, item) => sum + tenths(item.protein), 0));
+const plateFiber = fromHundredths(plate.reduce((sum, item) => sum + hundredths(item.fiber), 0));
+const plateCost = fromCents(plate.reduce((sum, item) => sum + cents(item.cost), 0));
+if (plateProtein !== "52.7" || plateFiber !== "37.13" || plateCost !== "0.82") {
+  throw new Error(`Published plate drifted: ${plateProtein} protein, ${plateFiber} fiber, $${plateCost}`);
+}
+
+const noCook = dayRows("protein-day-cost-2026.csv", "Day 2: No-cook convenience");
+const noCookProtein = fromTenths(noCook.reduce((sum, row) => sum + tenths(row.protein_g), 0));
+const noCookCost = fromCents(noCook.reduce((sum, row) => sum + cents(row.cost_usd), 0));
+if (noCookProtein !== "53.5" || noCookCost !== "2.05") {
+  throw new Error(`No-cook protein day drifted: ${noCookProtein} g, $${noCookCost}`);
+}
+
+const title = "Printable $1 Protein and Fiber Grocery Card";
+const description =
+  "What $1 buys in protein and in fiber, on one printable card, plus the published $0.82 plate that clears 50 g of protein and 30 g of fiber.";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  author: { "@type": "Person", "@id": AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_URL },
+  datePublished: "2026-11-26",
+  dateModified: "2026-11-26",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${siteUrl}${chartSrc}`,
+    caption: chartAlt,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Printables", item: `${siteUrl}/printables/` },
+    { "@type": "ListItem", position: 3, name: "Protein and fiber dollar card", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#a85e00;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="sheet-page">
+    <article class="sheet">
+      <nav class="text-sm mb-4 no-print" aria-label="Breadcrumb">
+        <a href="/" class={linkClass} style={linkStyle}>Home</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/printables/" class={linkClass} style={linkStyle}>Printables</a>
+        <span aria-hidden="true"> / Protein and fiber dollar card</span>
+      </nav>
+
+      <p class="kicker">Printable grocery card. One page.</p>
+      <h1>What $1 Buys in Protein and in Fiber</h1>
+      <p class="byline no-print">
+        By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+      </p>
+      <p class="lede">
+        Fifteen protein foods from one-dollar-protein-what-it-buys-2026.csv. Fifteen fiber foods from one-dollar-fiber-what-it-buys-2026.csv. The number is grams one dollar buys. The lists aren't the same foods, and a food that sits on only one list doesn't get a zero invented for the other.
+      </p>
+
+      <figure class="chart no-print">
+        <img src={chartSrc} alt={chartAlt} width="1200" height="675" />
+        <figcaption>
+          Not a photograph, and not an AI illustration.
+          Left bars are protein grams per dollar. {proteinLeader.food} leads that file at {proteinLeader.value}.
+          Right bars are fiber grams per dollar. {fiberLeader.food} leads that file at {fiberLeader.value}.
+          Each panel is its own file.
+        </figcaption>
+      </figure>
+
+      <div class="aisles">
+        <section>
+          <h2>Protein aisle, grams per $1</h2>
+          {proteinAisles.map((aisle) => (
+            <table>
+              <caption>{aisle.category}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Food</th>
+                  <th scope="col">g / $1</th>
+                  <th scope="col">Package</th>
+                </tr>
+              </thead>
+              <tbody>
+                {aisle.rows.map((row) => (
+                  <tr>
+                    <th scope="row">{row.food}</th>
+                    <td>{row.value}</td>
+                    <td>{row.package} at ${row.package_price_usd}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ))}
+        </section>
+        <section>
+          <h2>Fiber aisle, grams per $1</h2>
+          {fiberAisles.map((aisle) => (
+            <table>
+              <caption>{aisle.category}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Food</th>
+                  <th scope="col">g / $1</th>
+                  <th scope="col">Package</th>
+                </tr>
+              </thead>
+              <tbody>
+                {aisle.rows.map((row) => (
+                  <tr>
+                    <th scope="row">{row.food}</th>
+                    <td>{row.value}</td>
+                    <td>{row.package} at ${row.package_price_usd}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ))}
+        </section>
+      </div>
+
+      <section class="plate">
+        <h2>Under $2: 50 g protein and 30 g fiber</h2>
+        <p class="note">
+          The files don't contain a $2.00 combined menu. They do contain one plate that clears both targets for ${plateCost}: the rock-bottom protein portions, with fiber counted from the matching fiber rows. That's {plateProtein} g of protein and {plateFiber} g of fiber. Brown rice isn't on the $1 protein card above. It's on this plate because protein-day-cost-2026.csv priced it. The no-cook protein day in that same file is ${noCookCost} and {noCookProtein} g of protein. Those foods aren't the fiber day's foods, so they don't get a box here.
+        </p>
+        <ul class="checks">
+          {plate.map((item) => (
+            <li>
+              <label>
+                <input type="checkbox" />
+                <span>
+                  {item.food}: {item.protein} g protein, {item.fiber} g fiber, ${item.cost}{item.sameGrams ? "." : ". Fiber is the fiber-day rate scaled to these grams."}
+                </span>
+              </label>
+            </li>
+          ))}
+        </ul>
+        <p class="note">
+          {plateProtein} g protein. {plateFiber} g fiber. ${plateCost}. Salt, oil, and the rest of the calories aren't in that total. The longer write-up of why you shouldn't add the two day files into one receipt is
+          <a href="/cost-of-50g-protein-and-30g-fiber-per-day/" class={linkClass} style={linkStyle}>what 50 g of protein and 30 g of fiber cost per day</a>.
+        </p>
+      </section>
+
+      <p class="print-row no-print">
+        <button type="button" onclick="window.print()">Print this card</button>
+      </p>
+
+      <section class="more no-print">
+        <h2>The same dollars, off the card</h2>
+        <p>
+          Side-by-side Daily Value math for these staples is
+          <a href="/one-dollar-of-protein-vs-one-dollar-of-fiber/" class={linkClass} style={linkStyle}>what $1 buys in protein versus fiber</a>.
+          A week of the basket, sized for a family, is the
+          <a href="/cheapest-family-grocery-basket-for-protein-and-fiber/" class={linkClass} style={linkStyle}>cheapest family grocery basket for protein and fiber</a>.
+          Where a Walmart bag and a BLS average are different prices, that's
+          <a href="/how-much-fiber-and-protein-per-dollar-at-walmart-vs-bls/" class={linkClass} style={linkStyle}>Walmart versus the BLS price</a>.
+          Ten grams of fiber, priced as an add-in rather than as a dollar rate, is
+          <a href="/cheapest-ways-to-add-10-grams-of-fiber-to-any-meal/" class={linkClass} style={linkStyle}>the cheapest ways to add 10 grams of fiber</a>.
+          How a row earns its number is on the
+          <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+        </p>
+      </section>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .sheet-page { background: #f4f1ea; padding: 1.5rem 1rem 3rem; }
+    .sheet { max-width: 980px; margin: 0 auto; background: #fff; color: #1c1915; border: 1px solid #e4d8c4; border-radius: 12px; padding: 1.5rem 1.25rem 1.1rem; }
+    .kicker { margin: 0 0 0.35rem; color: #a85e00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 0 0 0.4rem; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.1; letter-spacing: -0.03em; color: #1c1915; }
+    h2 { margin: 0.2rem 0 0.35rem; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a85e00; }
+    .byline, .lede, .note { margin: 0.35rem 0 0.7rem; font-size: 0.95rem; line-height: 1.5; color: #1c1915; }
+    .chart img { width: 100%; height: auto; border-radius: 12px; border: 1px solid #e4d8c4; }
+    .chart figcaption { margin: 0.45rem 0 0.9rem; font-size: 0.82rem; line-height: 1.45; color: #6b5b45; }
+    .aisles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem 1rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin: 0 0 0.55rem; }
+    caption { caption-side: top; text-align: left; font-weight: 800; color: #6b5b45; padding: 0.15rem 0; }
+    th, td { text-align: left; padding: 0.16rem 0.28rem; border-bottom: 1px solid #eadfce; vertical-align: top; }
+    thead th { font-size: 0.68rem; letter-spacing: 0.03em; text-transform: uppercase; color: #6b5b45; }
+    td, tbody th { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .plate { margin-top: 0.4rem; }
+    .checks { list-style: none; margin: 0.2rem 0 0.4rem; padding: 0; }
+    .checks li { margin: 0.15rem 0; font-size: 0.86rem; line-height: 1.35; }
+    .checks label { display: flex; gap: 0.4rem; align-items: flex-start; }
+    .print-row { margin: 0.8rem 0 0; }
+    button { background: #F29B30; color: #fff; border: 0; border-radius: 999px; padding: 0.7rem 1.1rem; font-weight: 800; cursor: pointer; }
+    .more { margin-top: 1.2rem; }
+    @media (max-width: 800px) {
+      .aisles { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .sheet-page { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+      .no-print, header, footer { display: none !important; }
+      .aisles { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+      h1 { font-size: 16pt; }
+      table, .checks li, .note, .lede { font-size: 8pt; }
+      a { color: inherit; text-decoration: none; }
+      @page { size: letter; margin: 0.4in; }
+    }
+  </style>
+</BaseLayout>

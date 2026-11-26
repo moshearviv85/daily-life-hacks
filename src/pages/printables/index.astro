@@ -16,7 +16,7 @@ const pageUrl = "https://www.daily-life-hacks.com/printables/";
 const chartSrc = "/images/printables-hub-chart.jpg";
 const title = "Printable Kitchen Charts for Beans, Fridge Life, and Oils";
 const description =
-  "Six printable kitchen charts: bean yield, fridge life, oil smoke points, discard grams, hydration swaps, and a 7-day grocery planner.";
+  "Seven printable kitchen charts: beans, fridge life, smoke points, discard grams, hydration swaps, a $1 protein card, and a grocery planner.";
 
 function parseCsv(path: string) {
   const text = readFileSync(join(process.cwd(), path), "utf8");
@@ -145,6 +145,12 @@ const printables = [
     title: "7-day grocery budget planner",
     text: "Two pages for dinners, a pantry check, and the receipt. It's a form, not a lab reading, so it isn't a bar on the chart.",
   },
+  {
+    href: "/printables/high-fiber-and-protein-dollar-cheat-sheet/",
+    kicker: "One dollar",
+    title: "Protein and fiber dollar card",
+    text: "Fifteen protein foods and fifteen fiber foods, plus the published plate that clears 50 g of protein and 30 g of fiber for $0.82.",
+  },
 ];
 for (const card of printables) {
   if (!pageExists(card.href)) throw new Error(`printables hub: missing ${card.href}`);
@@ -270,7 +276,7 @@ const schemas = [
     </nav>
 
     <div class="max-w-4xl mb-8">
-      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Five sheets. One index.</p>
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Seven sheets. One index.</p>
       <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">The Printable Kitchen Charts, Finally on One Shelf</h1>
       <p class="text-sm mb-4" style="color:var(--muted-color);">
         By <a href="/author/david-miller/" class="font-bold underline" style="color:#F29B30;">{AUTHOR_NAME}</a>
@@ -280,6 +286,7 @@ const schemas = [
       </p>
       <p class="text-lg leading-relaxed mt-4" style="color:var(--text-color);">
         This page is that index. The figure below is a chart drawn from the published numbers, not a photograph.
+        The seventh sheet is the <a href="/printables/high-fiber-and-protein-dollar-cheat-sheet/" class="font-bold underline" style="color:#F29B30;">$1 protein and fiber card</a>. It has its own chart. It isn't a panel on the figure above.
       </p>
     </div>
 
@@ -298,7 +305,7 @@ const schemas = [
     </figure>
 
     <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The six printables</h2>
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The seven printables</h2>
       <p class="mb-6 max-w-3xl" style="color:var(--text-color);">
         Each link is the printable page itself. I'm not sending you to a file download from this index. Open the sheet, then print it there if you want paper.
       </p>

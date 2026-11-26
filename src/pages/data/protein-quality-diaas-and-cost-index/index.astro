@@ -1,0 +1,442 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import {
+  DATA_LICENSE_URL,
+  DATA_RELEASE_DATE,
+  DATA_VERSION,
+  DATASET_ORGANIZATION,
+  DATASET_PERSON_CREATOR,
+} from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/data/protein-quality-diaas-and-cost-index/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/protein-quality-diaas-and-cost-index-chart.jpg";
+const chartAlt =
+  "Slope chart of raw protein grams per dollar against the published DIAAS-adjusted grams per dollar for every food that has a score in the quality file";
+
+const QUALITY_FILE = "protein-quality-per-dollar-2026.csv";
+const DAIRY_FILE = "dairy-protein-per-dollar-ranked-2026.csv";
+const MEAT_FILE = "meat-per-dollar-protein-ranked-2026.csv";
+
+type CsvRow = Record<string, string>;
+
+function rowsFrom(fileName: string): CsvRow[] {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+type Food = {
+  food: string;
+  raw: string;
+  score: string;
+  capped: string;
+  adjusted: string;
+  source: string;
+  method: string;
+  notes: string;
+  fileLabel: string;
+  gap: boolean;
+  fdc: string;
+};
+
+const quality = rowsFrom(QUALITY_FILE);
+const dairy = rowsFrom(DAIRY_FILE);
+const meat = rowsFrom(MEAT_FILE);
+const qualityByName = new Map(quality.map((row) => [row.food, row]));
+if (qualityByName.size !== quality.length) throw new Error("Duplicate name in the quality file");
+
+const scored: Food[] = quality.map((row) => {
+  if (!row.diaas_score || !row.diaas_capped_for_multiplication || !row.adjusted_g_per_dollar || !row.diaas_source) {
+    throw new Error(`Quality row missing a published DIAAS field: ${row.food}`);
+  }
+  const dairyRow = dairy.find((item) => item.food === row.food);
+  const meatRow = meat.find((item) => item.food === row.food);
+  if (dairyRow && dairyRow.value !== row.protein_g_per_dollar) {
+    throw new Error(`Dairy raw grams disagree for ${row.food}`);
+  }
+  if (meatRow && meatRow.value !== row.protein_g_per_dollar) {
+    throw new Error(`Meat raw grams disagree for ${row.food}`);
+  }
+  let fileLabel = "Quality file";
+  if (meatRow) fileLabel = "Quality file and meat file";
+  else if (dairyRow) fileLabel = "Quality file and dairy file";
+  return {
+    food: row.food,
+    raw: row.protein_g_per_dollar,
+    score: row.diaas_score,
+    capped: row.diaas_capped_for_multiplication,
+    adjusted: row.adjusted_g_per_dollar,
+    source: row.diaas_source,
+    method: row.diaas_method,
+    notes: row.notes,
+    fileLabel,
+    gap: false,
+    fdc: row.fdc_id,
+  };
+});
+
+const gaps: Food[] = [...dairy, ...meat]
+  .filter((row) => !qualityByName.has(row.food))
+  .map((row) => ({
+    food: row.food,
+    raw: row.value,
+    score: "none",
+    capped: "",
+    adjusted: "",
+    source: "",
+    method: "",
+    notes: "",
+    fileLabel: dairy.some((item) => item.food === row.food) ? "Dairy file only" : "Meat file only",
+    gap: true,
+    fdc: row.fdc_id,
+  }));
+
+if (gaps.length === 0) throw new Error("Expected meat or dairy foods with no DIAAS row");
+const gapNames = new Set(gaps.map((row) => row.food));
+if (gapNames.size !== gaps.length) throw new Error("Duplicate unscored food");
+
+const foods = [...scored, ...gaps].sort(
+  (a, b) => Number(b.raw) - Number(a.raw) || a.food.localeCompare(b.food),
+);
+
+const lentils = scored.find((row) => row.food === "Brown lentils (dry)");
+const drumsticks = scored.find((row) => row.food === "Chicken drumsticks (bone-in)");
+const flour = scored.find((row) => row.food === "Whole wheat flour");
+if (!lentils || !drumsticks || !flour) throw new Error("Missing a comparison row");
+
+const milkScored = scored.filter((row) => row.source.toLowerCase().includes("milk"));
+const milkScore = milkScored[0]?.score ?? "";
+if (!milkScore || milkScored.some((row) => row.score !== milkScore)) {
+  throw new Error("Milk-protein DIAAS rows don't share one published score");
+}
+const dairyGaps = gaps.filter((row) => row.fileLabel === "Dairy file only");
+const chickenPaper = scored.filter((row) => row.source.includes("cooked chicken breast"));
+const chickenGaps = gaps.filter((row) => /chicken/i.test(row.food));
+const beef = scored.find((row) => row.food === "Ground beef (80/20)");
+if (!beef) throw new Error("Missing ground beef 80/20");
+
+function fdcHref(id: string) {
+  return /^\d+$/.test(id) ? `https://fdc.nal.usda.gov/food-details/${id}/nutrients` : "";
+}
+
+function readout(food: Food) {
+  if (food.gap) {
+    return `${food.food} is ${food.raw} grams of protein per dollar in the ${food.fileLabel.toLowerCase()}. ${QUALITY_FILE} has no DIAAS row for this food, so this page doesn't assign a score or an adjusted figure.`;
+  }
+  return `${food.food}: raw ${food.raw} g per dollar. DIAAS ${food.score} (${food.source}), method ${food.method}. Capped at ${food.capped} for the multiplication. Adjusted ${food.adjusted} g per dollar. ${food.notes}`;
+}
+
+const title = "DIAAS-Adjusted Protein Quality and Cost";
+const description =
+  "Raw protein grams per dollar next to the published DIAAS score. Meat and dairy foods with no score in the file stay unscored.";
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  author: DATASET_PERSON_CREATOR,
+  mainEntity: { "@id": `${pageUrl}#dataset` },
+  datePublished: "2026-11-26",
+  dateModified: "2026-11-26",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${siteUrl}${chartSrc}`,
+    caption: chartAlt,
+  },
+};
+
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": `${pageUrl}#dataset`,
+  name: "DIAAS-adjusted protein grams per dollar",
+  description:
+    "Protein grams per dollar from the quality file, with the published DIAAS score, the capped multiplier, and the file's adjusted grams. Meat and dairy rows that have no matching quality-file name are listed with their raw grams and no score.",
+  url: pageUrl,
+  identifier: `${pageUrl}#dataset`,
+  version: DATA_VERSION,
+  isAccessibleForFree: true,
+  license: DATA_LICENSE_URL,
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  includedInDataCatalog: { "@id": `${siteUrl}/data/#catalog` },
+  keywords: ["DIAAS", "protein quality", "protein per dollar", "grocery prices"],
+  variableMeasured: [
+    "raw protein grams per dollar",
+    "published DIAAS score",
+    "DIAAS-adjusted protein grams per dollar",
+  ],
+  spatialCoverage: "United States",
+  measurementTechnique: `${siteUrl}/methodology/`,
+  dateModified: DATA_RELEASE_DATE,
+  distribution: [QUALITY_FILE, DAIRY_FILE, MEAT_FILE].map((file) => ({
+    "@type": "DataDownload",
+    name: file,
+    encodingFormat: "text/csv",
+    contentUrl: `${siteUrl}/data/${file}`,
+    license: DATA_LICENSE_URL,
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Data", item: `${siteUrl}/data/` },
+    { "@type": "ListItem", position: 3, name: "DIAAS protein quality and cost", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+const gapList = gaps.map((row) => row.food).join("; ");
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, datasetSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main id="diaas-index" class="diaas-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/data/" class={linkClass} style={linkStyle}>Data</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / DIAAS protein quality and cost</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+      <span aria-hidden="true"> · </span>
+      {scored.length} scored foods, {gaps.length} named gaps, v{DATA_VERSION}
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      Raw Grams per Dollar, Then the Published DIAAS Cut
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      {flour.food} leads the raw column at {flour.raw} grams per dollar. The quality file multiplies by DIAAS {flour.score} and the adjusted column says {flour.adjusted}. {lentils.food} go from {lentils.raw} to {lentils.adjusted} at a score of {lentils.score}. {drumsticks.food} stay {drumsticks.adjusted}: the score is {drumsticks.score}, and the file caps the multiplication at {drumsticks.capped}.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      Every score on this page is a cell in {QUALITY_FILE}. The raw grams for the scored rows are that file's protein_g_per_dollar column. The adjusted grams are that file's adjusted_g_per_dollar column. This page doesn't multiply again, and it doesn't lend a score to a food the file left out. {DAIRY_FILE} and {MEAT_FILE} add the grocery rows that have no matching name.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        Each line is one scored food. The orange dot is the raw grams. The slate dot is the adjusted column, and the number sits on that dot.
+        An orange line means those two figures are equal. Not drawn, because {QUALITY_FILE} has no DIAAS row: {gapList}.
+      </figcaption>
+    </figure>
+
+    <section class="mb-12">
+      <h2>Scores that stay on their own row</h2>
+      <p>
+        {milkScored.map((row) => row.food).join(", ")} carry DIAAS {milkScore} because their source line names milk protein.
+        {dairyGaps.map((row) => row.food).join(", ")} {dairyGaps.length === 1 ? "is" : "are"} in the dairy file and {dairyGaps.length === 1 ? "has" : "have"} no DIAAS row, so {milkScore} is not copied over.
+      </p>
+      <p>
+        {chickenPaper.map((row) => row.food).join(", ")} already cite {chickenPaper[0]?.source}. The notes on the rows that say chicken proxy are the file's notes, not a new guess.
+        {chickenGaps.map((row) => row.food).join(" and ")} {chickenGaps.length === 1 ? "isn't" : "aren't"} in the quality file. The breast paper doesn't get extended to {chickenGaps.length === 1 ? "that cut" : "those cuts"}.
+      </p>
+      <p>
+        {beef.food} is DIAAS {beef.score} from {beef.source}. The other beef grind, the pork cuts, the turkey, and the bacon have no DIAAS row. Their raw grams still show. Their score cell stays empty.
+      </p>
+    </section>
+
+    <section class="mb-12" aria-label="DIAAS protein explorer">
+      <h2>Raw grams per dollar, or the adjusted column</h2>
+      <p>
+        The toggle sorts the same {foods.length} rows. It doesn't create a third number. Pick a food and the line under the controls reads that row's source, or says the quality file has no DIAAS row.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <label class="tool-label">
+          Sort
+          <select class="tool-input" id="diaas-mode">
+            <option value="raw" selected>Raw grams per dollar</option>
+            <option value="adjusted">DIAAS-adjusted grams per dollar</option>
+          </select>
+        </label>
+        <label class="tool-label">
+          Source citation
+          <select class="tool-input" id="diaas-food">
+            {foods.map((food) => (
+              <option value={food.food}>{food.food}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <p id="diaas-count" class="count-line" aria-live="polite">
+        Sorted by raw grams per dollar. {scored.length} foods have a published score. {gaps.length} foods are named and left unscored.
+      </p>
+      <p id="diaas-readout" class="readout">{readout(foods[0])}</p>
+      <div class="table-wrap">
+        <table>
+          <caption>
+            {scored.length} rows from {QUALITY_FILE}, plus {gaps.length} meat and dairy foods that file doesn't score. Adjusted grams are the file's column.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Food</th>
+              <th scope="col">Raw g per $</th>
+              <th scope="col">DIAAS</th>
+              <th scope="col">Capped</th>
+              <th scope="col">Adjusted g per $</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody id="diaas-rows">
+            {foods.map((food) => (
+              <tr
+                data-name={food.food}
+                data-raw={food.raw}
+                data-score={food.score}
+                data-capped={food.capped}
+                data-adjusted={food.adjusted}
+                data-source={food.source}
+                data-method={food.method}
+                data-notes={food.notes}
+                data-file={food.fileLabel}
+                data-gap={food.gap ? "1" : "0"}
+              >
+                <th scope="row">
+                  {food.food}
+                  <span class="food-meta">
+                    {food.fileLabel}
+                    {fdcHref(food.fdc) ? (
+                      <>
+                        {" · "}
+                        <a href={fdcHref(food.fdc)} class={linkClass} style={linkStyle} rel="noopener" target="_blank">FDC {food.fdc}</a>
+                      </>
+                    ) : " · no FDC id on this row"}
+                  </span>
+                </th>
+                <td data-col="raw">{food.raw}</td>
+                <td>{food.gap ? "No published DIAAS" : food.score}</td>
+                <td>{food.gap ? "No published DIAAS" : food.capped}</td>
+                <td data-col="adjusted">{food.gap ? "No published DIAAS" : food.adjusted}</td>
+                <td>{food.gap ? `${QUALITY_FILE} has no DIAAS row` : food.source}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs" style="color:var(--muted-color);">
+        The sort and the citation line run in this browser tab. Nothing you pick is saved or sent. The table above is the same files, already printed.
+      </p>
+    </section>
+
+    <section class="mb-4">
+      <h2>Where the same foods get a longer look</h2>
+      <p>
+        The write-up that already walks through the quality haircut is
+        <a href="/protein-per-dollar-adjusted-for-quality/" class={linkClass} style={linkStyle}>protein per dollar adjusted for quality</a>.
+        Plant and animal prices on one list are
+        <a href="/plant-vs-animal-protein-cost-per-dollar/" class={linkClass} style={linkStyle}>plant vs animal protein cost per dollar</a>.
+        Eggs, yogurt, tofu, and the soy row share a chart on
+        <a href="/cheapest-dairy-and-soy-protein-per-dollar/" class={linkClass} style={linkStyle}>cheapest dairy and soy protein per dollar</a>.
+        The meat file on its own, including the cuts this page leaves unscored, is
+        <a href="/animal-protein-per-dollar-ranked/" class={linkClass} style={linkStyle}>animal protein per dollar</a>.
+      </p>
+      <p>
+        A score isn't a meal plan, and a missing score isn't a zero. How a row earns its USDA record is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+        Daily Life Hacks publishes the files. {AUTHOR_NAME} runs the checks. You're free to reuse the contribution under
+        <a href={DATA_LICENSE_URL} class={linkClass} style={linkStyle} rel="license noopener" target="_blank">CC BY 4.0</a>,
+        with credit. The catalog date on the data hub stays {DATA_RELEASE_DATE}. This page is the comparison.
+      </p>
+    </section>
+  </main>
+  <Footer />
+
+  <style is:global>
+    .diaas-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 0 0 0.7rem; color: var(--heading-color); }
+    .diaas-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .diaas-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .diaas-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .diaas-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); }
+    .diaas-page table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .diaas-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .diaas-page th, .diaas-page td { text-align: left; padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .diaas-page th { color: var(--heading-color); }
+    .diaas-page .food-meta { display: block; margin-top: 0.2rem; font-weight: 500; font-size: 0.75rem; color: var(--muted-color); }
+    .diaas-page .count-line, .diaas-page .readout { font-weight: 700; color: var(--heading-color); }
+    .diaas-page .readout { font-weight: 500; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById('diaas-index');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var mode = root.querySelector('#diaas-mode');
+        var pick = root.querySelector('#diaas-food');
+        var readout = root.querySelector('#diaas-readout');
+        var count = root.querySelector('#diaas-count');
+        var body = root.querySelector('#diaas-rows');
+        var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
+        function num(value) {
+          var parsed = parseFloat(value);
+          return isFinite(parsed) ? parsed : -1;
+        }
+        function render() {
+          var adjusted = mode.value === 'adjusted';
+          var sorted = rows.slice().sort(function (a, b) {
+            if (adjusted) {
+              var ag = a.dataset.gap === '1' ? 1 : 0;
+              var bg = b.dataset.gap === '1' ? 1 : 0;
+              if (ag !== bg) return ag - bg;
+              return num(b.dataset.adjusted) - num(a.dataset.adjusted);
+            }
+            return num(b.dataset.raw) - num(a.dataset.raw);
+          });
+          sorted.forEach(function (row) { body.appendChild(row); });
+          rows.forEach(function (row) {
+            var rawCell = row.querySelector('[data-col="raw"]');
+            var adjustedCell = row.querySelector('[data-col="adjusted"]');
+            if (rawCell) rawCell.style.fontWeight = adjusted ? '500' : '800';
+            if (adjustedCell) adjustedCell.style.fontWeight = adjusted ? '800' : '500';
+          });
+          var chosen = rows.filter(function (row) { return row.dataset.name === pick.value; })[0];
+          if (!chosen) return;
+          if (chosen.dataset.gap === '1') {
+            readout.textContent = chosen.dataset.name + ' is ' + chosen.dataset.raw + ' grams of protein per dollar in the ' + chosen.dataset.file.toLowerCase() + '. protein-quality-per-dollar-2026.csv has no DIAAS row for this food, so this page doesn\'t assign a score or an adjusted figure.';
+          } else {
+            readout.textContent = chosen.dataset.name + ': raw ' + chosen.dataset.raw + ' g per dollar. DIAAS ' + chosen.dataset.score + ' (' + chosen.dataset.source + '), method ' + chosen.dataset.method + '. Capped at ' + chosen.dataset.capped + ' for the multiplication. Adjusted ' + chosen.dataset.adjusted + ' g per dollar. ' + chosen.dataset.notes;
+          }
+          var scoredCount = rows.filter(function (row) { return row.dataset.gap !== '1'; }).length;
+          var gapCount = rows.length - scoredCount;
+          count.textContent = (adjusted ? 'Sorted by DIAAS-adjusted grams per dollar. ' : 'Sorted by raw grams per dollar. ') + scoredCount + ' foods have a published score. ' + gapCount + ' foods are named and left unscored.';
+        }
+        mode.addEventListener('change', render);
+        pick.addEventListener('change', render);
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
