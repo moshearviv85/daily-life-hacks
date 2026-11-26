@@ -93,6 +93,8 @@ const LATER_UPDATES = {
   "one-dollar-of-protein-vs-one-dollar-of-fiber": "2026-11-26",
   "canned-vs-dry-beans-cost-and-sodium-per-serving": "2026-11-26",
   "cheapest-fast-food-protein-under-5-dollars": "2026-11-26",
+  "cheapest-canned-fish-and-seafood-protein-per-dollar": "2026-11-26",
+  "how-much-100-grams-of-protein-costs-per-day": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
