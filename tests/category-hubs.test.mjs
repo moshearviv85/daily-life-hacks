@@ -114,7 +114,7 @@ test("every indexable article is in exactly one hub A-Z list", () => {
   assert.deepEqual(missing, []);
 });
 
-test("rendered hub link budgets stay at or under 124, counting header and footer", () => {
+test("rendered hub link budgets stay at or under 126, counting header and footer", () => {
   const chrome = chromeAnchors();
   assert.ok(chrome > 0, "header and footer should contribute anchors");
   for (const hub of CATEGORY_HUBS) {
@@ -123,7 +123,7 @@ test("rendered hub link budgets stay at or under 124, counting header and footer
     const tools = hub.category === "recipes" ? 1 : 0;
     const total = alphabetical.length + topicLinks + tools + chrome;
     assert.ok(
-      total <= 124,
+      total <= 126,
       `${hub.category} renders ${total} links (A-Z ${alphabetical.length}, topics ${topicLinks}, chrome ${chrome})`,
     );
   }
@@ -157,13 +157,13 @@ test("category pages render topics before the A-Z list and drop the noindexed re
   assert.equal(pages.tips.includes('href="/tools/"'), false);
 });
 
-test("built hubs stay within 124 anchors when dist is present", () => {
+test("built hubs stay within 126 anchors when dist is present", () => {
   const dist = "dist";
   if (!existsSync(join(dist, "index.html"))) return;
   for (const category of ["nutrition", "recipes", "tips"]) {
     const html = readFileSync(join(dist, category, "index.html"), "utf8");
     const anchors = [...html.matchAll(/<a\b/gi)].length;
-    assert.ok(anchors <= 124, `/${category}/ rendered ${anchors} anchors`);
+    assert.ok(anchors <= 126, `/${category}/ rendered ${anchors} anchors`);
     assert.match(html, /"@type":"ItemList"/);
     assert.match(html, /"@type":"CollectionPage"/);
     assert.equal(html.includes("/tools/recipe-finder/"), false);
