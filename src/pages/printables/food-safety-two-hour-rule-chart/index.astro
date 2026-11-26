@@ -1,0 +1,235 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+
+const pageUrl = "https://www.daily-life-hacks.com/printables/food-safety-two-hour-rule-chart/";
+const chartSrc = "/images/food-safety-two-hour-rule-chart-chart.jpg";
+const chartAlt =
+  "Chart with a 2-hour bar for air from 40 to 90 degrees Fahrenheit, a 1-hour bar for air above 90, and a temperature panel marking the 40 to 140 danger zone. Not a photograph.";
+const title = "Printable 2-Hour Rule and Leftover Cooling Chart";
+const description =
+  "Print the USDA and CDC 2-hour rule, the 1-hour hot-day limit, shallow-pan cooling, and when thawed vegetables can be refrozen.";
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    name: title,
+    description,
+    url: pageUrl,
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    author: {
+      "@type": "Person",
+      name: AUTHOR_NAME,
+      url: AUTHOR_URL,
+    },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `https://www.daily-life-hacks.com${chartSrc}`,
+      caption: "Chart of the 2-hour and 1-hour counter clocks beside the 40 to 140 F danger zone. Not a photograph.",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+      { "@type": "ListItem", position: 2, name: "Printables", item: "https://www.daily-life-hacks.com/printables/" },
+      { "@type": "ListItem", position: 3, name: title, item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={schemas}
+>
+  <Header />
+  <main class="sheet-wrap">
+    <figure class="chart no-print">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" />
+      <figcaption>
+        Not a photograph, and not an AI illustration.
+        Left: how long perishable food can sit out. Right: 40°F to 140°F is the danger zone. The dashed line at 90°F is the air temperature that shortens the clock to 1 hour.
+      </figcaption>
+    </figure>
+
+    <article class="sheet">
+      <p class="kicker">Printable. One page. By {AUTHOR_NAME}.</p>
+      <h1>The 2-Hour Rule and Leftover Cooling Chart</h1>
+      <p class="lede">
+        A pot of rice is perishable the minute it leaves the boil. USDA FSIS and CDC use the same two clocks: 2 hours when the air is 40°F to 90°F, and 1 hour when the air is above 90°F. The fridge and the cooler have to sit at 40°F or below. The image above is a chart, not a photograph.
+      </p>
+
+      <p class="print-row no-print">
+        <button type="button" onclick="window.print()">Print this page</button>
+      </p>
+
+      <h2>The two clocks</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Situation</th>
+            <th scope="col">Limit</th>
+            <th scope="col">Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Air 40°F to 90°F</th>
+            <td>2 hours, then discard</td>
+            <td>USDA FSIS, CDC</td>
+          </tr>
+          <tr>
+            <th scope="row">Air above 90°F</th>
+            <td>1 hour, then discard</td>
+            <td>USDA FSIS, CDC</td>
+          </tr>
+          <tr>
+            <th scope="row">Danger zone for the food</th>
+            <td>40°F to 140°F</td>
+            <td>USDA FSIS</td>
+          </tr>
+          <tr>
+            <th scope="row">Fridge or cooler</th>
+            <td>At or below 40°F</td>
+            <td>USDA FSIS</td>
+          </tr>
+          <tr>
+            <th scope="row">Hot holding</th>
+            <td>140°F or above</td>
+            <td>USDA FSIS</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        FSIS says bacteria can double in as little as 20 minutes between 40°F and 140°F. That's why the clock is short. It's not a smell test. The leftovers page is
+        <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety">USDA FSIS leftovers and food safety</a>,
+        and the zone itself is the
+        <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f">40°F to 140°F danger zone</a>.
+      </p>
+
+      <h2>Rice, beans, and the shallow pan</h2>
+      <p class="note">
+        Split a big pot into shallow containers and get it into the fridge inside the clock above. FSIS says shallow containers so the center actually reaches 40°F. Hot food can go straight into the refrigerator. Letting the pot "stop steaming" on the counter spends the hour you were supposed to use for cooling.
+      </p>
+      <p class="note">
+        Extension cooling sheets put that food about 2 inches deep. Mississippi State Extension says to limit the depth to 2 inches and cover it loosely so heat can leave. A stockpot isn't a shallow pan just because it has handles. The weeknight version of this problem is
+        <a href="/can-you-eat-rice-and-beans-everyday/">rice and beans</a>.
+        Once the pot is cold, the day count is
+        <a href="/how-long-do-cooked-grains-and-beans-last-in-the-fridge/">how long cooked grains and beans last in the fridge</a>.
+      </p>
+
+      <h2>Picnic cooler</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Pack</th>
+            <th scope="col">Rule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Cooler temperature</th>
+            <td>At or below 40°F</td>
+          </tr>
+          <tr>
+            <th scope="row">Ice</th>
+            <td>Several inches of ice or frozen gel packs</td>
+          </tr>
+          <tr>
+            <th scope="row">Lid</th>
+            <td>Closed and shaded</td>
+          </tr>
+          <tr>
+            <th scope="row">On the table</th>
+            <td>Same 2-hour clock, or 1 hour above 90°F</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        Mayonnaise isn't the only food that cares. The pasta and the vegetables are perishable too. Pack the salad cold. Nest the serving bowl in ice, and don't put the backup tub in the sun. The picnic write-up is
+        <a href="/easy-cold-summer-pasta-salad-potlucks/">cold pasta salad for potlucks</a>.
+        FSIS outdoor guidance is
+        <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping">food safety while hiking, camping, and boating</a>.
+      </p>
+
+      <h2>Thawed vegetables</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Where it thawed</th>
+            <th scope="col">Refreeze?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">In the refrigerator, at or below 40°F</th>
+            <td>Yes. Texture may suffer.</td>
+          </tr>
+          <tr>
+            <th scope="row">Still partly frozen, or ice crystals, or 40°F</th>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <th scope="row">Out of the fridge more than 2 hours</th>
+            <td>No</td>
+          </tr>
+          <tr>
+            <th scope="row">Out more than 1 hour above 90°F</th>
+            <td>No</td>
+          </tr>
+          <tr>
+            <th scope="row">Warmer than 40°F for more than 2 hours</th>
+            <td>Discard</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        FSIS draws the line by where the bag sat, not by how it looks. The full set of cases, including cooking then refreezing, is
+        <a href="/can-you-refreeze-frozen-vegetables-after-thawing/">can you refreeze frozen vegetables after thawing</a>.
+        The freezing page is
+        <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety">USDA FSIS freezing and food safety</a>.
+      </p>
+    </article>
+  </main>
+  <Footer signup="none" />
+
+  <style>
+    .sheet-wrap { background: #f4f1ea; padding: 2rem 1rem 3rem; }
+    .chart { max-width: 960px; margin: 0 auto 1.25rem; }
+    .chart img { width: 100%; height: auto; border-radius: 12px; background: #fff; }
+    .chart figcaption { margin-top: 0.45rem; color: #6b5b45; font-size: 0.85rem; line-height: 1.45; }
+    .sheet { max-width: 760px; margin: 0 auto; background: #fff; color: #1c1915; border: 1px solid #e4d8c4; border-radius: 12px; padding: 1.5rem 1.25rem 1rem; box-shadow: 0 12px 32px rgba(28, 25, 21, 0.06); }
+    .kicker { margin: 0 0 0.35rem; color: #a85e00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 0 0 0.55rem; font-size: 1.7rem; line-height: 1.1; letter-spacing: -0.03em; }
+    h2 { margin: 0.85rem 0 0.3rem; font-size: 0.92rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a85e00; }
+    .lede, .note { margin: 0.3rem 0 0.45rem; font-size: 0.86rem; line-height: 1.4; }
+    a { color: #a85e00; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 0.2rem; }
+    th, td { text-align: left; padding: 0.22rem 0.3rem; border-bottom: 1px solid #eadfce; vertical-align: top; }
+    thead th { font-size: 0.68rem; letter-spacing: 0.03em; text-transform: uppercase; color: #6b5b45; }
+    .print-row { margin: 0.6rem 0 0.2rem; }
+    button { background: #F29B30; color: #fff; border: 0; border-radius: 999px; padding: 0.7rem 1.1rem; font-weight: 800; cursor: pointer; }
+    @media print {
+      .sheet-wrap { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+      .no-print, header, footer { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      h1 { font-size: 1.25rem; }
+      h2 { margin-top: 0.45rem; }
+      @page { size: letter; margin: 0.45in; }
+    }
+  </style>
+</BaseLayout>
