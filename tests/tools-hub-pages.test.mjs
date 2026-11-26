@@ -11,6 +11,7 @@ const pages = [
   "src/pages/tools/protein-per-dollar-calculator/index.astro",
   "src/pages/tools/sodium-per-dollar-calculator/index.astro",
   "src/pages/tools/complete-protein-pair-builder/index.astro",
+  "src/pages/tools/pantry-meal-cost-and-storage-planner/index.astro",
 ];
 
 test("new calculator pages expose the required search and privacy signals", async () => {

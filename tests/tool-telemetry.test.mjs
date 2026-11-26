@@ -20,6 +20,8 @@ test("every interactive tool root is covered by the shared funnel tracker", () =
     "sodium-calculator",
     "bls-explorer",
     "complete-protein-pair-builder",
+    "pantry-planner",
+    "fiber-index",
   ]) {
     assert.match(layout, new RegExp(`'#${root}'`), root);
   }
