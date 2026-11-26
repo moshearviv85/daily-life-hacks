@@ -130,8 +130,8 @@ test("description-only and citation edits do not bump the public modified day", 
       substantiveUpdate: undefined,
     },
     "lentil-curry-high-fiber-vegan-dinner": {
-      dateModified: "2026-11-23",
-      substantiveUpdate: "2026-11-23",
+      dateModified: "2026-11-26",
+      substantiveUpdate: "2026-11-26",
     },
     "what-30-grams-of-fiber-costs-per-day": {
       dateModified: "2026-11-23",

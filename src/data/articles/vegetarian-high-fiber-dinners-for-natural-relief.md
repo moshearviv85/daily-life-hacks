@@ -146,7 +146,7 @@ Taste before adding salt. Canned chickpeas and broth can both bring sodium, whil
 
 Frozen cauliflower works when fresh is expensive or tired-looking. Add it straight from the freezer and expect a few extra minutes of simmering. Frozen spinach also works; thaw it first and squeeze out excess water so it does not dilute the sauce.
 
-For a less rich pot, replace half the coconut milk with broth. For more crunch, finish each bowl with toasted pumpkin seeds or chopped peanuts rather than simmering them in the sauce. And if you want a different bean, cannellini beans stay creamy while black-eyed peas hold their shape. Lentils need a separate timing plan, so they are not a straight one-for-one swap here.
+For a less rich pot, replace half the coconut milk with broth. For more crunch, finish each bowl with toasted pumpkin seeds or chopped peanuts rather than simmering them in the sauce. And if you want a different bean, cannellini beans stay creamy while black-eyed peas hold their shape. Lentils need a separate timing plan, so they are not a straight one-for-one swap here. Split red is the bag that melts on purpose, and the clock for that pot is this [red lentil curry](/lentil-curry-high-fiber-vegan-dinner/).
 
 For a grain pot, make [hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/). For a fast pan, make [a vegetable stir-fry with the fiber still in it](/high-fiber-stir-fry-vegetables/).
 

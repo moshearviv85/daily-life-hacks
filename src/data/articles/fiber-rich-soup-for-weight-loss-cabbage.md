@@ -123,7 +123,7 @@ Want it thicker? Mash a scoop of the beans against the side of the pot and stir.
 
 ## Meal prep, leftovers, and the "I forgot lunch" use case
 
-This soup is aggressively meal-prep friendly. Make a double batch on Sunday. Fridge portions last three to four days. Freeze the rest. The cabbage softens more after a night in the fridge, which somehow makes it better, like the soup finally decided to commit.
+This soup is aggressively meal-prep friendly. Make a double batch on Sunday. Fridge portions last three to four days. Freeze the rest. The cabbage softens more after a night in the fridge, which somehow makes it better, like the soup finally decided to commit. When the pot should taste like curry instead, [red lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is the other Sunday batch that reheats from the fridge.
 
 Reheat on the stove. Microwave works if you're at work and your only tool is optimism and a plastic container. Add a crack of pepper and eat it with crackers, toast, or nothing. I've eaten it from a mug standing at the counter. That still counts as dinner.
 
