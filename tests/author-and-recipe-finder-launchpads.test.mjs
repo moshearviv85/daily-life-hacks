@@ -67,7 +67,7 @@ test("author profile launchpad names the eight 2026 chart studies and skips miss
 test("recipe finder launchpad names the eight ingredient studies without changing the tool", () => {
   assert.match(finder, /Compare Ingredient Cost & Nutrition Studies/);
   assert.match(finder, /robots=\{noindexFollowFor\("tools\/recipe-finder"\)\}/);
-  assert.match(finder, /Recipe Finder by Ingredients: 84 Recipes/);
+  assert.match(finder, /Recipe Finder by Ingredients: 86 Recipes/);
   assert.match(finder, /existsSync\(join\(process\.cwd\(\), "src\/data\/articles"/);
   assert.match(finder, /isIndexPruned\(article\.id\)/);
   assert.match(finder, /!isReleased\(article\)/);

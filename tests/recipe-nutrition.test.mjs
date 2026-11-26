@@ -60,8 +60,8 @@ test("one tablespoon of olive oil is the FDC portion, not a guessed density", ()
 
 test("every mapped recipe restates FDC gram weights and stays inside 15%", () => {
   const mapped = articles.filter((article) => article.data.ingredientsGrams?.length);
-  // Overnight oats and lentil-barley soup publish ingredientsGrams.
-  assert.equal(mapped.length, 40);
+  // Overnight oats, lentil-barley soup, sheet-pan chicken, and split-pea curry publish ingredientsGrams.
+  assert.equal(mapped.length, 42);
   for (const article of mapped) {
     const resolved = resolveRecipeLines(article.data.ingredients, foods);
     assert.equal(resolved.unmapped.length, 0, `${article.id} no longer resolves`);
@@ -95,7 +95,7 @@ test("calorie corrections match the published card and the unmapped list is the 
     assert.equal(nutrition.rounded.kcal, correction.to);
     assert.ok(calorieGap(correction.from, nutrition.raw.kcal) > 0.15);
   }
-  assert.equal(unmapped.length, articles.length - 40);
+  assert.equal(unmapped.length, articles.length - 42);
   for (const entry of unmapped) {
     const article = bySlug.get(entry.slug);
     assert.equal(article.data.ingredientsGrams, undefined, entry.slug);

@@ -3003,8 +3003,8 @@ test("recipe finder title puts the searchable recipe count in the SERP", () => {
     count += 1;
   }
 
-  assert.equal(count, 84);
-  assert.equal(title, "Recipe Finder by Ingredients: 84 Recipes");
+  assert.equal(count, 86);
+  assert.equal(title, "Recipe Finder by Ingredients: 86 Recipes");
   assert.equal(title, `Recipe Finder by Ingredients: ${count} Recipes`);
   assert.equal(title.length, 40);
   assert.ok(
@@ -3015,7 +3015,7 @@ test("recipe finder title puts the searchable recipe count in the SERP", () => {
     titleLower.startsWith("recipe finder by ingredients"),
     "recipe finder title should lead with recipe finder by ingredients",
   );
-  assert.match(title, /84 Recipes/);
+  assert.match(title, /86 Recipes/);
   assert.equal(
     /^recipe finder by ingredients: use what you have$/.test(titleLower),
     false,
@@ -3070,8 +3070,8 @@ test("shopping list builder title puts the recipe count in the SERP", () => {
     count += 1;
   }
 
-  assert.equal(count, 84);
-  assert.equal(title, "Shopping List Builder: 84 Recipes, One List");
+  assert.equal(count, 86);
+  assert.equal(title, "Shopping List Builder: 86 Recipes, One List");
   assert.equal(title, `Shopping List Builder: ${count} Recipes, One List`);
   assert.equal(title.length, 43);
   assert.ok(
@@ -3082,7 +3082,7 @@ test("shopping list builder title puts the recipe count in the SERP", () => {
     titleLower.startsWith("shopping list builder"),
     "shopping list builder title should lead with shopping list builder",
   );
-  assert.match(title, /84 Recipes/);
+  assert.match(title, /86 Recipes/);
   assert.equal(
     /^multi-recipe shopping list builder: scale and combine ingredients$/.test(titleLower),
     false,
@@ -3187,11 +3187,11 @@ test("tools hub title puts the on-page recipe count in the SERP", () => {
     count += 1;
   }
 
-  assert.equal(count, 84);
-  assert.match(page, /Searches 84 real recipes/);
-  assert.match(page, /Built into 84 recipes/);
-  assert.match(page, /84 recipes are already loaded/);
-  assert.equal(title, "Free Grocery Tools Built From 84 Recipes");
+  assert.equal(count, 86);
+  assert.match(page, /Searches 86 real recipes/);
+  assert.match(page, /Built into 86 recipes/);
+  assert.match(page, /86 recipes are already loaded/);
+  assert.equal(title, "Free Grocery Tools Built From 86 Recipes");
   assert.equal(title, `Free Grocery Tools Built From ${count} Recipes`);
   assert.equal(title.length, 40);
   assert.ok(
@@ -3202,7 +3202,7 @@ test("tools hub title puts the on-page recipe count in the SERP", () => {
     titleLower.startsWith("free grocery tools"),
     "tools hub title should lead with free grocery tools",
   );
-  assert.match(title, /84 Recipes/);
+  assert.match(title, /86 Recipes/);
   assert.equal(
     /^free grocery and recipe tools built from real site data$/.test(titleLower),
     false,
@@ -3215,7 +3215,7 @@ test("tools hub title puts the on-page recipe count in the SERP", () => {
   );
   assert.equal(
     page.match(/const description = "([^"]+)"/)?.[1],
-    "Find recipes from ingredients, combine shopping lists, scale 84 recipes, plan a food-cost week, and check prices. Free and private.",
+    "Find recipes from ingredients, combine shopping lists, scale 86 recipes, plan a food-cost week, and check prices. Free and private.",
   );
   assert.equal(INDEX_KEEP_PATHS.has("tools"), true);
   assert.equal(INDEX_PRUNE_SLUGS.has("tools"), false);

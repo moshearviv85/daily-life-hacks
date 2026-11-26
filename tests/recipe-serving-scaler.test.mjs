@@ -16,7 +16,7 @@ test("all declared recipes can use the shared serving scaler", async () => {
     assert.match(source, /^servings:\s*\d+/m, name);
     assert.match(source, /^ingredients:\s*$/m, name);
   }
-  assert.equal(recipes, 84);
+  assert.equal(recipes, 86);
 });
 
 test("article recipe card uses the serving scaler while schema keeps original ingredients", async () => {
