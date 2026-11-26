@@ -61,6 +61,8 @@ const LATER_UPDATES = {
   "keep-berries-fresh-longer-when-to-wash": "2026-11-25",
   "breakfast-staples-per-dollar": "2026-11-25",
   "good-source-of-fiber-label-meaning": "2026-11-25",
+  "eggs-vs-everything-protein-value": "2026-11-25",
+  "high-protein-breakfast-without-eggs": "2026-11-25",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([

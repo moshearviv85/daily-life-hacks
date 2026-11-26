@@ -6,7 +6,8 @@ tags: ["are eggs cheap protein", "eggs protein per dollar", "egg prices 2026", "
 image: "/images/eggs-vs-everything-protein-value-main.jpg"
 imageAlt: "A carton of brown eggs surrounded by bowls of beans, canned tuna, peanut butter, and chicken drumsticks"
 date: 2026-07-13
-dateModified: 2026-09-24
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 faq:
   - question: "Are eggs the cheapest protein?"
@@ -68,6 +69,23 @@ Almost the entire animal side of the store, where eggs finish second only to bon
 
 Eggs beat chicken breast (24.6) by roughly 40 percent per dollar ([FDC 171077](https://fdc.nal.usda.gov/food-details/171077/nutrients)). They beat every fish in the sample: canned tuna at 22.4, canned pink salmon at 21.6, frozen tilapia at 20.9, sardines at 20.2 ([FDC 173709](https://fdc.nal.usda.gov/food-details/173709/nutrients)). Those eggs and the fish they beat are also everyday [selenium from eggs, tuna, and sardines](/selenium-containing-foods-easy-ways/). They beat every dairy product, including whole milk at 28.5 and cheddar way down at 18.1 ([FDC 171265](https://fdc.nal.usda.gov/food-details/171265/nutrients), [FDC 173414](https://fdc.nal.usda.gov/food-details/173414/nutrients)). And they triple ground beef, which limps in at 11.3 for the 80/20 and 11.2 for the 93/7 ([FDC 174036](https://fdc.nal.usda.gov/food-details/174036/nutrients)). Bacon holds last place among all 49 foods at 9.4 grams per dollar ([FDC 168277](https://fdc.nal.usda.gov/food-details/168277/nutrients)). Whole wheat flour, at 96.0, is about ten times that ([FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). Nobody buys bacon for protein, but it's fun to have it in writing.
 
+## How much do 30 grams of protein from eggs cost compared with yogurt, chicken, and lentils?
+
+Five large eggs (250 grams) carry 31.4 grams of protein ([FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients)). Thirty grams of that protein costs $0.87 at 34.4 grams per dollar. The same 30 grams costs $0.39 from dry lentils ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)), $0.59 from peanut butter, $1.09 from nonfat Greek yogurt, $1.14 from 4% cottage cheese, and $1.22 from chicken breast.
+
+A dozen in eggs-vs-everything-protein-value-2026.csv is 600 grams edible, so one large egg is 50 grams and five are 250 grams ([FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients)). That portion is 31.4 grams of protein, a little over the 30 gram line. The cost column is exactly 30 grams at the published grams-per-dollar rate, not the price of the five-egg pile. Eggs, yogurt, cottage cheese, and chicken breast are July 2026 rows. Dry lentils and peanut butter keep the audited price, which has a blank month cell. The rates are the same rows in eggs-vs-everything-protein-value-2026.csv and protein-per-dollar-2026.csv.
+
+| Food | Portion for ~30 g | Protein in it | FDC | Protein per $1 | Cost for 30 g |
+|---|---|---:|---|---:|---:|
+| Eggs (large) | 5 large (250 g) | 31.4 g | [171287](https://fdc.nal.usda.gov/food-details/171287/nutrients) | 34.4 g | $0.87 |
+| Greek yogurt (plain, nonfat) | 294 g | 30.0 g | [170894](https://fdc.nal.usda.gov/food-details/170894/nutrients) | 27.5 g | $1.09 |
+| Cottage cheese (4%) | 270 g | 30.0 g | [172179](https://fdc.nal.usda.gov/food-details/172179/nutrients) | 26.3 g | $1.14 |
+| Chicken breast (boneless, skinless) | 133 g | 29.9 g | [171077](https://fdc.nal.usda.gov/food-details/171077/nutrients) | 24.6 g | $1.22 |
+| Brown lentils (dry) | 122 g | 30.0 g | [172420](https://fdc.nal.usda.gov/food-details/172420/nutrients) | 77.7 g | $0.39 |
+| Peanut butter | 135 g | 30.0 g | [174266](https://fdc.nal.usda.gov/food-details/174266/nutrients) | 50.7 g | $0.59 |
+
+Lentils win the 30 gram receipt. Eggs beat the yogurt tub, the cottage cheese, and the chicken breast, and they lose to peanut butter. If the carton is empty, the priced egg-free plates are [high-protein breakfasts without eggs](/high-protein-breakfast-without-eggs/).
+
 ## So are eggs still worth buying for protein?
 
 Rank 17 undersells the convenience: eggs are the cheapest protein in this sample that asks almost nothing of the cook. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, [about 12.6 grams of protein in the standard two egg breakfast](/foods-highest-in-protein-per-100-grams/), and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/protein-per-dollar-adjusted-for-quality/#no-cook) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
@@ -80,4 +98,4 @@ Pair eggs with the foods ranked above them instead of below them. Eggs over savo
 
 That's the honest verdict: eggs aren't the budget champion the internet says they are, but they're the best protein deal that comes with an off switch for effort. For the full strategy around these numbers, see our [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/), and for what a whole day costs, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs the totals.
 
-<!-- numbers-source: pipeline-data/derived-studies/eggs-vs-everything-protein-value.json -->
+<!-- numbers-source: pipeline-data/derived-studies/eggs-vs-everything-protein-value.json, public/data/eggs-vs-everything-protein-value-2026.csv, public/data/protein-per-dollar-2026.csv -->
