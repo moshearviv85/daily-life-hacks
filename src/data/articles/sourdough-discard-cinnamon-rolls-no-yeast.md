@@ -126,7 +126,7 @@ The recipe card is the batch. This is the same list, so you can shop from the ta
 
 At 100% hydration, those 240 grams of discard are about 120 grams of flour and 120 grams of water. The [discard gram guide](/how-to-measure-sourdough-discard-grams/) is the cup chart if another card says cups. Stir the jar flat before you weigh it. Bubbles make a cup lie.
 
-The extra 260 grams of all-purpose flour sits on top of the flour already in the jar. Whole milk at 120 grams, plus 45 grams of melted butter in the dough, keeps it soft enough to roll. If the dough fights you and cracks, it was probably too dry, not too weak. Wet your hands. Don't dump in another handful of flour or the centers bake up tough.
+The extra 260 grams of all-purpose flour sits on top of the flour already in the jar. Whole milk at 120 grams, plus 45 grams of melted butter in the dough, keeps it soft enough to roll. A gallon of that milk isn't one national price. The October 2026 census-region cut is [US regional grocery protein prices](/us-regional-grocery-protein-prices-october-2026/). If the dough fights you and cracks, it was probably too dry, not too weak. Wet your hands. Don't dump in another handful of flour or the centers bake up tough.
 
 If the jar isn't 100% hydration, stop and use the [discard gram guide](/how-to-measure-sourdough-discard-grams/). A thicker starter is more flour than water, and this dough doesn't have spare liquid to hide that.
 

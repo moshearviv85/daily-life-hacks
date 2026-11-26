@@ -4,7 +4,7 @@
  * Each indexable article belongs to exactly one category hub (the A-Z list).
  * A slug may also appear in one topic section, and only one. Start-here is
  * slugs[0]. Sections stay at 4-8 links so the rendered hub, including the
- * header and footer, stays under 120 anchors.
+ * header and footer, stays under 124 anchors.
  *
  * Do not add a slug that is noindexed, pruned, or a 301/410 source.
  * PR #250's extra prune and 301 slugs are omitted from these sections even

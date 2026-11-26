@@ -244,7 +244,7 @@ Fiber is one factor, not the only score. Taste, price, allergens, preparation ti
 
 One quarter of the crust is the stated serving, but a lightly topped quarter with a substantial side salad makes a different meal from a cheese-heavy half crust eaten over the sink. Both have happened in real kitchens.
 
-For more fiber without overloading the crust, put the extra food beside it. A chopped salad with chickpeas, a tray of roasted broccoli, or a simple white bean and tomato salad can round out the plate. These sides may also help the meal feel more substantial without asking the cauliflower base to carry six toppings and a personal dream.
+For more fiber without overloading the crust, put the extra food beside it. A chopped salad with chickpeas, a tray of roasted broccoli, or a simple white bean and tomato salad can round out the plate. Chickpeas are also the plant side of a different comparison, raw protein grams versus a DIAAS cap next to chicken and eggs, on [plant versus animal protein per dollar](/plant-vs-animal-protein-cost-per-dollar/). These sides may also help the meal feel more substantial without asking the cauliflower base to carry six toppings and a personal dream.
 
 If you're feeding people who are skeptical of cauliflower crust, don't introduce it with a speech about how they won't notice the difference. They'll notice. This has a toasted cauliflower and Parmesan flavor, and that's fine. Serve it crisp, top it thoughtfully, and call it cauliflower crust. Food tends to do better when it isn't forced to wear a fake mustache.
 
