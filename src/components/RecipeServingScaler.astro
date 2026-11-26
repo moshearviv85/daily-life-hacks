@@ -5,6 +5,8 @@ interface Props {
 }
 
 const { ingredients, servings } = Astro.props;
+const soupPath = "/brown-lentil-and-pearled-barley-soup-high-fiber/";
+const showSoupLink = !Astro.url.pathname.replace(/\/+$/, "").endsWith(soupPath.slice(0, -1));
 ---
 
 <div class="recipe-scaler" data-recipe-scaler data-base-servings={servings}>
@@ -22,6 +24,15 @@ const { ingredients, servings } = Astro.props;
       </div>
     </div>
     <p data-serving-note class="mt-3 text-xs" style="color:var(--muted-color);" hidden></p>
+    {
+      showSoupLink && (
+        <p class="mt-3 text-sm" style="color:var(--text-color);">
+          Scaling a pot instead of a jar? The
+          <a href={soupPath} class="underline" style="color:#F29B30;">brown lentil and pearled barley soup</a>
+          is written for six bowls, and these amounts move with the servings.
+        </p>
+      )
+    }
   </div>
 
   <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">

@@ -27,6 +27,8 @@ interface Props {
 
 const { rows, perServing, publishedCalories, servings, costLine } = Astro.props;
 const divisor = servings || 1;
+const oatsPath = "/high-protein-overnight-oats-chia-greek-yogurt/";
+const showOatsLink = !Astro.url.pathname.replace(/\/+$/, "").endsWith(oatsPath.slice(0, -1));
 const format = (value: number, digits = 1) =>
   value.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
 const cardDiffers = publishedCalories != null && publishedCalories !== perServing.kcal;
@@ -90,6 +92,15 @@ const cardDiffers = publishedCalories != null && publishedCalories !== perServin
     <p class="text-sm leading-relaxed" style="color: var(--text-color);">
       Per serving: {format(perServing.protein)} g protein, {format(perServing.fiber)} g fiber, {perServing.sodium.toLocaleString("en-US")} mg sodium, {format(perServing.sugar)} g sugar. The serving total is rounded once from the unrounded row math.
     </p>
+    {
+      showOatsLink && (
+        <p class="text-sm leading-relaxed" style="color: var(--text-color);">
+          The same USDA gram table is how the
+          <a href={oatsPath} class="underline" style="color: #F29B30;">high-protein overnight oats with chia and Greek yogurt</a>
+          land at 30.8 grams of protein and $1.01 a jar.
+        </p>
+      )
+    }
     {costLine && (
       <p class="text-sm leading-relaxed" style="color: var(--text-color);">{costLine}</p>
     )}
