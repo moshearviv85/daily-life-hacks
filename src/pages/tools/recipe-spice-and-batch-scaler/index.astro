@@ -1,0 +1,409 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATASET_ORGANIZATION, DATASET_PERSON_CREATOR } from "../../../content/datasets";
+
+const PAGE_PATH = "/tools/recipe-spice-and-batch-scaler/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/recipe-spice-and-batch-scaler-chart.jpg";
+const chartAlt =
+  "Line chart comparing a full batch multiplier with the lower curve for salt and strong spices and the trimmed curve for braise liquid, from a 0.5x batch to a 4x batch";
+
+const BATCHES = [0.5, 1.5, 2, 3, 4];
+
+function strong(batch: number) {
+  if (batch === 1.5) return 1.25;
+  return 0.75 * batch;
+}
+
+function liquid(batch: number) {
+  if (batch <= 1.5) return batch;
+  return batch * 0.875;
+}
+
+function full(batch: number) {
+  return batch;
+}
+
+const CLASSES = [
+  { id: "salt", label: "Salt", note: "then taste", factor: strong },
+  { id: "chili", label: "Chili / cayenne", note: "or less", factor: strong },
+  { id: "garlic", label: "Garlic and onion", note: "then taste", factor: strong },
+  { id: "dried", label: "Dried herbs", note: "then taste", factor: strong },
+  { id: "fresh", label: "Fresh herbs", note: "close to the full batch", factor: full },
+  { id: "leaven", label: "Baking powder / soda", note: "straight multiple", factor: full },
+  { id: "liquid", label: "Cooking liquid / stock", note: "trim from 2x up", factor: liquid },
+];
+
+const PANS = [
+  { id: "8-round", label: "8-inch round", area: Math.PI * 16 },
+  { id: "9-round", label: "9-inch round", area: Math.PI * 20.25 },
+  { id: "10-round", label: "10-inch round", area: Math.PI * 25 },
+  { id: "8-square", label: "8x8 square", area: 64 },
+  { id: "9-square", label: "9x9 square", area: 81 },
+  { id: "9x13", label: "9x13 rectangle", area: 117 },
+  { id: "loaf-small", label: "8.5x4.5 loaf", area: 38.25 },
+  { id: "loaf", label: "9x5 loaf", area: 45 },
+];
+
+function formatFactor(value: number) {
+  const rounded = Math.round(value * 1000) / 1000;
+  return String(rounded);
+}
+
+function formatArea(value: number) {
+  const rounded = Math.round(value * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
+const defaultBatch = 2;
+const defaultClass = "salt";
+const defaultAmount = 1;
+const defaultUnit = "tsp";
+const defaultFrom = "8-round";
+const defaultTo = "9x13";
+
+const clientJson = JSON.stringify({
+  batches: BATCHES,
+  classes: CLASSES.map((item) => ({ id: item.id, label: item.label })),
+  pans: PANS.map((pan) => ({ id: pan.id, label: pan.label, area: pan.area })),
+}).replace(/</g, "\\u003c");
+
+const title = "Recipe Spice and Batch Scaler";
+const description =
+  "Scale salt, chili, herbs, leavening, and broth from 0.5x to 4x without doubling the loud ingredients, and swap baking pans by area.";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: title,
+  url: pageUrl,
+  description,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript for the amount and pan controls. The multiplier table is in the page.",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  image: `${siteUrl}${chartSrc}`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Recipe spice and batch scaler", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+const saltAtDouble = formatFactor(strong(2));
+const fromPan = PANS.find((pan) => pan.id === defaultFrom);
+const toPan = PANS.find((pan) => pan.id === defaultTo);
+if (!fromPan || !toPan) throw new Error("Missing default pans");
+const panRatio = toPan.area / fromPan.area;
+const defaultPanText = `${toPan.label} is ${formatFactor(panRatio)}x the area of ${fromPan.label} (${formatArea(fromPan.area)} sq in to ${formatArea(toPan.area)} sq in). Keep the batter depth the same, so that ratio is the batter. Start salt near ${formatFactor(strong(panRatio))}x. Leavening stays near ${formatFactor(panRatio)}x if the formula has been tested at that size.`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="sp-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Spice and batch scaler</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      Double the beef. Don't double the cayenne.
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      Doubling the pot is easy. Doubling the cayenne is how dinner becomes a dare. For a 2x batch, start salt, dried herbs, garlic, onion, and chili near {saltAtDouble}x the original teaspoon, not 2x. Fresh herbs can sit close to the full double. Baking powder moves with the flour. The broth gets a trim once the pot is big enough to stop evaporating like a saucepan.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      The recipe cards on this site scale 1x, 2x, and 3x across every line. This page doesn't. It keeps a different multiplier for the loud ingredients, from 0.5x through 4x, and it can swap a pan by area when the cake has to change dishes. The written version of the same table is
+      <a href="/how-to-double-recipe-seasoning-without-guessing/" class={linkClass} style={linkStyle}>how to double a recipe's seasoning without guessing</a>.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        The dashed line is a blind scale. The orange line is salt, dried herbs, garlic, onion, and chili. At 2x that line is 1.5x, the start from Mississippi State University Extension and Heart Foundation NZ. The deep line is braise liquid: full through 1.5x, then 12.5% under the batch factor. Fresh herbs and leavening stay on the dashed line.
+      </figcaption>
+    </figure>
+
+    <section class="mb-10" aria-label="Seasoning multipliers">
+      <h2>Seasoning multipliers from 0.5x to 4x</h2>
+      <p>
+        Numbers in the cells are what you multiply the original amount by. A 2x batch of salt starts at {saltAtDouble}x the teaspoon in the recipe, then you taste. The 1.5x batch row uses 1.25x for the strong column, which is the published table, a little higher than three quarters of 1.5. Every other batch button is three quarters of the batch factor. Chili is the same number with a shorter leash: you can add heat, and you can't scoop it back out.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4" role="group" aria-label="Batch factor">
+        {BATCHES.map((batch) => (
+          <button
+            type="button"
+            class:list={["sp-button", batch === defaultBatch ? "solid" : ""]}
+            data-batch={batch}
+            aria-pressed={batch === defaultBatch ? "true" : "false"}
+          >
+            {formatFactor(batch)}x batch
+          </button>
+        ))}
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+        <label class="tool-label">
+          Original amount
+          <input id="sp-amount" class="tool-input" type="number" min="0" step="any" inputmode="decimal" value={defaultAmount} />
+        </label>
+        <label class="tool-label">
+          Unit
+          <input id="sp-unit" class="tool-input" type="text" value={defaultUnit} maxlength="16" />
+        </label>
+        <label class="tool-label">
+          Ingredient
+          <select id="sp-class" class="tool-input">
+            {CLASSES.map((item) => (
+              <option value={item.id} selected={item.id === defaultClass}>{item.label}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <p id="sp-result" aria-live="polite" class="result">
+        Start salt at {formatFactor(defaultAmount * strong(defaultBatch))} {defaultUnit}. A blind {formatFactor(defaultBatch)}x would be {formatFactor(defaultAmount * defaultBatch)} {defaultUnit}.
+      </p>
+      <p class="text-sm" style="color:var(--muted-color);">
+        The batch factor, the pan, and the teaspoon stay in this browser tab. Nothing you type is stored.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Multipliers on the original amount. Meat, vegetables, grains, and beans use the batch factor itself. Sautéing oil doesn't get a multiplier. Use enough to coat the pan that's actually on the burner.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Ingredient</th>
+              {BATCHES.map((batch) => (
+                <th scope="col" data-col={batch}>{formatFactor(batch)}x</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {CLASSES.map((item) => (
+              <tr>
+                <th scope="row">
+                  {item.label}
+                  <span class="food-meta">{item.note}</span>
+                </th>
+                {BATCHES.map((batch) => (
+                  <td data-col={batch} data-class={item.id}>{formatFactor(item.factor(batch))}x</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-label="Pan area swap">
+      <h2>What changes when the pan changes</h2>
+      <p>
+        Keep the depth of batter the same as the original pan. The multiplier is the new area divided by the old area, which sometimes means a second pan instead of a deeper one. A pan-area ratio uses three quarters for salt and the other strong ingredients, because the published table doesn't have a row for 2.33x. Leavening stays on the straight area ratio. Heart Foundation NZ still suggests trying 1.5x baking powder, baking soda, and yeast when the batch itself is a double, then checking the bake. A home cake that hasn't been tested bigger is more predictable as two batches.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4 mb-4">
+        <label class="tool-label">
+          Original pan
+          <select id="sp-from" class="tool-input">
+            {PANS.map((pan) => (
+              <option value={pan.id} selected={pan.id === defaultFrom}>{pan.label} ({formatArea(pan.area)} sq in)</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          New pan
+          <select id="sp-to" class="tool-input">
+            {PANS.map((pan) => (
+              <option value={pan.id} selected={pan.id === defaultTo}>{pan.label} ({formatArea(pan.area)} sq in)</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <p id="sp-pan" aria-live="polite" class="result">{defaultPanText}</p>
+    </section>
+
+    <section class="mb-10">
+      <h2>Taste it once it's safe, not once you're nervous</h2>
+      <p>
+        The 1.5x salt start isn't a law for every pot. Broth, canned tomatoes, cheese, and soy sauce already brought sodium. If several of those are in the recipe, hold back more than the table says.
+        <a href="/fix-oversalted-soup-sauce-rice/" class={linkClass} style={linkStyle}>Fixing an oversalted soup</a>
+        is a longer afternoon than another pinch. If the double tastes flat, acid, herbs, browning, and umami are on the
+        <a href="/big-flavor-less-salt-citrus-herbs-umami-swaps/" class={linkClass} style={linkStyle}>less-salt flavor swaps</a>.
+        That's a better next move than treating the salt jar like a panic button.
+      </p>
+      <p>
+        Stop at 4x. Past that, make another batch. A stockpot the size of a cooler cooks unevenly, and the seasoning guesses get worse. This scaler doesn't price the pot, and it doesn't use the grocery files. How those files get checked is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+        Cook meat, poultry, seafood, and eggs through before you taste anything. The clock on a bigger pot is an estimate. Doneness isn't.
+      </p>
+    </section>
+
+    <section>
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>Do you double the seasoning when you double a recipe?</summary><p>Not the loud stuff. For a 2x savory batch, start salt, dried herbs, garlic, onion, and chili at 1.5x the original amount, then taste once the food is safe to taste. Mississippi State University Extension and Heart Foundation NZ both publish that 1.5x start. Meat, vegetables, grains, and beans still take the full double. The recipe cards elsewhere on the site multiply every line. This page keeps the lines apart.</p></details>
+        <details><summary>How much salt should a doubled recipe start with?</summary><p>1.5 times the listed salt. One teaspoon becomes 1 1/2 teaspoons, not 2. If the pot already has broth, canned tomatoes, cheese, or soy sauce, hold back more. Those ingredients brought their own sodium. Taste near the end, after the food is safe to sample. Fixing an oversalted soup takes longer than the pinch you skipped.</p></details>
+        <details><summary>Do fresh herbs scale like dried herbs?</summary><p>No. Dried herbs sit with the strong column, so a double batch starts near 1.5x. Fresh herbs are milder, so they can sit close to the full batch factor. A 2x pot of cilantro can go to about 2x. You can still add more at the end. You can't unsalt the pot, which is why the dried row stays cautious and the fresh row doesn't.</p></details>
+        <details><summary>Should baking powder double when the batch doubles?</summary><p>The straight multiple is 2x, because leavening moves with the flour when a formula has already been tested at that size. Heart Foundation NZ suggests trying 1.5x baking powder, baking soda, and yeast when you double, then checking the result. A home cake that hasn't been tested bigger is more predictable as two batches. This scaler shows the straight multiple. It doesn't pretend a 1.5x trial is the only legal bake.</p></details>
+        <details><summary>Does the scaler save the amount I type?</summary><p>No. The batch factor, the pan choice, and the teaspoon stay in this browser tab. Nothing you type is stored on the site. The multiplier table is the same answer with JavaScript off. The buttons only highlight a column and do the multiplication for the amount you typed.</p></details>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .sp-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 2rem 0 0.7rem; color: var(--heading-color); }
+    .sp-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .sp-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .sp-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .sp-page .sp-button { border-radius: 999px; padding: 0.6rem 0.95rem; font-size: 0.85rem; font-weight: 700; color: #a85e00; border: 1px solid #F29B30; background: transparent; cursor: pointer; }
+    .sp-page .sp-button.solid { background: #F29B30; color: #111; }
+    .sp-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); margin-top: 1rem; }
+    .sp-page table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .sp-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .sp-page th, .sp-page td { text-align: left; padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .sp-page th { color: var(--heading-color); }
+    .sp-page td.is-on, .sp-page th.is-on { background: rgba(242,155,48,.16); }
+    .sp-page .food-meta { display: block; margin-top: 0.2rem; font-weight: 500; font-size: 0.75rem; color: var(--muted-color); }
+    .sp-page .result { margin: 0.5rem 0 0.25rem; padding: 0.9rem 1rem; border-radius: 0.75rem; background: rgba(242,155,48,.10); }
+    .sp-page .faq-list details { margin: 0.65rem 0; border: 1px solid var(--border-color); border-radius: 0.75rem; background: var(--card-bg); padding: 0 1rem; }
+    .sp-page .faq-list summary { cursor: pointer; font-weight: 700; padding: 1rem 0; color: var(--heading-color); }
+    .sp-page .faq-list p { margin: 0 0 1rem; }
+  </style>
+
+  <script id="sp-data" type="application/json" set:html={clientJson}></script>
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.querySelector('.sp-page');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var dataNode = document.getElementById('sp-data');
+        var data = dataNode ? JSON.parse(dataNode.textContent || '{}') : { batches: [], classes: [], pans: [] };
+        var amountInput = document.getElementById('sp-amount');
+        var unitInput = document.getElementById('sp-unit');
+        var classInput = document.getElementById('sp-class');
+        var result = document.getElementById('sp-result');
+        var fromInput = document.getElementById('sp-from');
+        var toInput = document.getElementById('sp-to');
+        var panResult = document.getElementById('sp-pan');
+        var batch = 2;
+
+        function formatFactor(value) {
+          var rounded = Math.round(value * 1000) / 1000;
+          return String(rounded);
+        }
+        function formatArea(value) {
+          var rounded = Math.round(value * 10) / 10;
+          return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+        }
+        function strong(value) {
+          if (Math.abs(value - 1.5) < 0.0001) return 1.25;
+          return 0.75 * value;
+        }
+        function liquid(value) {
+          if (value <= 1.5) return value;
+          return value * 0.875;
+        }
+        function factorFor(id, value) {
+          if (id === 'fresh' || id === 'leaven') return value;
+          if (id === 'liquid') return liquid(value);
+          return strong(value);
+        }
+        function classLabel(id) {
+          var match = data.classes.filter(function (item) { return item.id === id; })[0];
+          return match ? match.label.toLowerCase() : 'that ingredient';
+        }
+        function panById(id) {
+          return data.pans.filter(function (pan) { return pan.id === id; })[0];
+        }
+        function highlight() {
+          root.querySelectorAll('[data-col]').forEach(function (cell) {
+            cell.classList.toggle('is-on', Number(cell.getAttribute('data-col')) === batch);
+          });
+          root.querySelectorAll('[data-batch]').forEach(function (button) {
+            var on = Number(button.getAttribute('data-batch')) === batch;
+            button.classList.toggle('solid', on);
+            button.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+        }
+        function renderAmount() {
+          var amount = Number(amountInput.value);
+          var unit = (unitInput.value || 'units').trim() || 'units';
+          var id = classInput.value;
+          if (!isFinite(amount) || amount < 0) {
+            result.textContent = 'Enter an original amount of zero or more.';
+            return;
+          }
+          var factor = factorFor(id, batch);
+          var scaled = amount * factor;
+          var blind = amount * batch;
+          var line = 'Start ' + classLabel(id) + ' at ' + formatFactor(scaled) + ' ' + unit + '. A blind ' + formatFactor(batch) + 'x would be ' + formatFactor(blind) + ' ' + unit + '.';
+          if (id === 'chili') line += ' Or less, if the original already made someone reach for a drink.';
+          if (id === 'leaven' && Math.abs(batch - 2) < 0.0001) {
+            line += ' Heart Foundation NZ suggests trying 1.5x leavening on a double, then checking the bake. Two untested batches are still the predictable option.';
+          }
+          result.textContent = line;
+        }
+        function renderPan() {
+          var fromPan = panById(fromInput.value);
+          var toPan = panById(toInput.value);
+          if (!fromPan || !toPan || !fromPan.area) {
+            panResult.textContent = 'Pick two pans.';
+            return;
+          }
+          var ratio = toPan.area / fromPan.area;
+          var salt = strong(ratio);
+          panResult.textContent = toPan.label + ' is ' + formatFactor(ratio) + 'x the area of ' + fromPan.label + ' (' + formatArea(fromPan.area) + ' sq in to ' + formatArea(toPan.area) + ' sq in). Keep the batter depth the same, so that ratio is the batter. Start salt near ' + formatFactor(salt) + 'x. Leavening stays near ' + formatFactor(ratio) + 'x if the formula has been tested at that size.';
+        }
+        root.querySelectorAll('[data-batch]').forEach(function (button) {
+          button.addEventListener('click', function () {
+            batch = Number(button.getAttribute('data-batch'));
+            highlight();
+            renderAmount();
+          });
+        });
+        amountInput.addEventListener('input', renderAmount);
+        unitInput.addEventListener('input', renderAmount);
+        classInput.addEventListener('change', renderAmount);
+        fromInput.addEventListener('change', renderPan);
+        toInput.addEventListener('change', renderPan);
+        highlight();
+        renderAmount();
+        renderPan();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>

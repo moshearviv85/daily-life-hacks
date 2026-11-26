@@ -1,0 +1,603 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATASET_ORGANIZATION, DATASET_PERSON_CREATOR } from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/tools/selenium-daily-intake-and-cost-calculator/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/selenium-daily-intake-and-cost-calculator-chart.jpg";
+const chartAlt =
+  "Bar chart of selenium micrograms in NIH servings of yellowfin tuna, one Brazil nut, sardines, a pork chop, spaghetti, chicken, cottage cheese, an egg, oatmeal, and lentils, with a line at the 55 mcg adult RDA";
+const RDA = 55;
+const UL = 400;
+const NIH_URL = "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/";
+
+type RawFood = {
+  id: string;
+  name: string;
+  serving: string;
+  mcgLow: number;
+  mcgHigh: number;
+  csvFood: string | null;
+  pricedGrams: number | null;
+  priceNote: string;
+  defaultServings: number;
+};
+
+const RAW_FOODS: RawFood[] = [
+  {
+    id: "brazil",
+    name: "Brazil nuts",
+    serving: "1 nut (NIH: 68 to 91 mcg)",
+    mcgLow: 68,
+    mcgHigh: 91,
+    csvFood: null,
+    pricedGrams: null,
+    priceNote: "Not in protein-per-dollar-2026.csv. An ounce, 6 to 8 nuts, averages 544 mcg on the NIH fact sheet.",
+    defaultServings: 0,
+  },
+  {
+    id: "tuna",
+    name: "Yellowfin tuna, cooked",
+    serving: "3 oz",
+    mcgLow: 92,
+    mcgHigh: 92,
+    csvFood: null,
+    pricedGrams: null,
+    priceNote: "Not in protein-per-dollar-2026.csv. Canned chunk light tuna is a different fish, so this page doesn't borrow its price.",
+    defaultServings: 0,
+  },
+  {
+    id: "sardines",
+    name: "Sardines, canned in oil",
+    serving: "3 oz",
+    mcgLow: 45,
+    mcgHigh: 45,
+    csvFood: "Sardines (canned in oil, drained)",
+    pricedGrams: 85,
+    priceNote: "85 g of Sardines (canned in oil, drained) in protein-per-dollar-2026.csv.",
+    defaultServings: 0,
+  },
+  {
+    id: "shrimp",
+    name: "Shrimp, cooked",
+    serving: "3 oz",
+    mcgLow: 42,
+    mcgHigh: 42,
+    csvFood: null,
+    pricedGrams: null,
+    priceNote: "Not in protein-per-dollar-2026.csv.",
+    defaultServings: 0,
+  },
+  {
+    id: "pork",
+    name: "Pork chop, broiled",
+    serving: "3 oz",
+    mcgLow: 37,
+    mcgHigh: 37,
+    csvFood: "Pork loin chops (boneless)",
+    pricedGrams: 85,
+    priceNote: "85 g raw of Pork loin chops (boneless). NIH's 37 mcg is a broiled chop, so this dollar is the raw stand-in.",
+    defaultServings: 0,
+  },
+  {
+    id: "steak",
+    name: "Beef steak, bottom round",
+    serving: "3 oz",
+    mcgLow: 37,
+    mcgHigh: 37,
+    csvFood: null,
+    pricedGrams: null,
+    priceNote: "Not in protein-per-dollar-2026.csv. Ground beef is a different cut, so it doesn't get this 37 mcg.",
+    defaultServings: 0,
+  },
+  {
+    id: "spaghetti",
+    name: "Spaghetti, cooked",
+    serving: "1 cup",
+    mcgLow: 33,
+    mcgHigh: 33,
+    csvFood: "Spaghetti (regular, dry)",
+    pricedGrams: 56,
+    priceNote: "56 g dry of Spaghetti (regular, dry), about 2 oz, for 1 cup cooked.",
+    defaultServings: 1,
+  },
+  {
+    id: "turkey",
+    name: "Turkey, roasted",
+    serving: "3 oz",
+    mcgLow: 26,
+    mcgHigh: 26,
+    csvFood: null,
+    pricedGrams: null,
+    priceNote: "Not in protein-per-dollar-2026.csv. Ground turkey isn't roasted turkey.",
+    defaultServings: 0,
+  },
+  {
+    id: "cod",
+    name: "Pacific cod, cooked",
+    serving: "3 oz",
+    mcgLow: 24,
+    mcgHigh: 24,
+    csvFood: null,
+    pricedGrams: null,
+    priceNote: "Not in protein-per-dollar-2026.csv.",
+    defaultServings: 0,
+  },
+  {
+    id: "chicken",
+    name: "Chicken, light meat, roasted",
+    serving: "3 oz",
+    mcgLow: 22,
+    mcgHigh: 22,
+    csvFood: "Chicken breast (boneless, skinless)",
+    pricedGrams: 85,
+    priceNote: "85 g raw of Chicken breast (boneless, skinless). NIH's 22 mcg is roasted light meat, so cooked ounces can cost more than this.",
+    defaultServings: 1,
+  },
+  {
+    id: "cottage",
+    name: "Cottage cheese, 1%",
+    serving: "1 cup",
+    mcgLow: 20,
+    mcgHigh: 20,
+    csvFood: "Cottage cheese (4%)",
+    pricedGrams: 226,
+    priceNote: "226 g of Cottage cheese (4%). NIH's 20 mcg is the 1% cup, and the file prices the 4% tub.",
+    defaultServings: 0,
+  },
+  {
+    id: "egg",
+    name: "Egg, hard-boiled",
+    serving: "1 large",
+    mcgLow: 15,
+    mcgHigh: 15,
+    csvFood: "Eggs (large)",
+    pricedGrams: 50,
+    priceNote: "50 g of Eggs (large). The file's dozen is 600 g.",
+    defaultServings: 1,
+  },
+  {
+    id: "oats",
+    name: "Oatmeal, cooked with water",
+    serving: "1 cup",
+    mcgLow: 13,
+    mcgHigh: 13,
+    csvFood: "Old-fashioned rolled oats",
+    pricedGrams: 40,
+    priceNote: "40 g dry of Old-fashioned rolled oats, about a half cup, for 1 cup cooked.",
+    defaultServings: 0,
+  },
+  {
+    id: "rice",
+    name: "Brown rice, cooked",
+    serving: "1 cup",
+    mcgLow: 12,
+    mcgHigh: 12,
+    csvFood: "Brown rice (dry)",
+    pricedGrams: 62,
+    priceNote: "62 g dry of Brown rice (dry), about a third of a 185 g dry cup, for 1 cup cooked.",
+    defaultServings: 0,
+  },
+  {
+    id: "yogurt",
+    name: "Yogurt, plain, low fat",
+    serving: "1 cup",
+    mcgLow: 8,
+    mcgHigh: 8,
+    csvFood: null,
+    pricedGrams: null,
+    priceNote: "No matching row. The file's Greek yogurt isn't this low-fat cup.",
+    defaultServings: 0,
+  },
+  {
+    id: "lentils",
+    name: "Lentils, boiled",
+    serving: "1 cup",
+    mcgLow: 6,
+    mcgHigh: 6,
+    csvFood: "Brown lentils (dry)",
+    pricedGrams: 76,
+    priceNote: "76 g dry of Brown lentils (dry). A pound cooks to about 6 cups, so one cooked cup is about 76 g of the bag.",
+    defaultServings: 0,
+  },
+];
+
+function rowsFrom(fileName: string) {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+const proteinByFood = new Map(rowsFrom("protein-per-dollar-2026.csv").map((row) => [row.food, row]));
+
+function priceFor(name: string, grams: number) {
+  const row = proteinByFood.get(name);
+  if (!row) throw new Error(`Missing ${name} in protein-per-dollar-2026.csv`);
+  const per100 = Number(row.price_per_100g_usd);
+  if (!Number.isFinite(per100)) throw new Error(`Bad price for ${name}`);
+  return (grams / 100) * per100;
+}
+
+const foods = RAW_FOODS.map((food) => ({
+  ...food,
+  pricePerServing:
+    food.csvFood && food.pricedGrams != null ? priceFor(food.csvFood, food.pricedGrams) : null,
+}));
+
+function trim(value: number) {
+  const rounded = Math.round(value * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
+function trimPct(mcg: number) {
+  const value = Math.round((mcg / RDA) * 1000) / 10;
+  return Number.isInteger(value) ? String(value) : value.toFixed(1);
+}
+
+function money(value: number) {
+  return value.toLocaleString("en-US", { style: "currency", currency: "USD" });
+}
+
+function mcgLabel(low: number, high: number) {
+  return low === high ? `${trim(low)} mcg` : `${trim(low)} to ${trim(high)} mcg`;
+}
+
+function pctLabel(low: number, high: number) {
+  return low === high ? `${trimPct(low)}%` : `${trimPct(low)}% to ${trimPct(high)}%`;
+}
+
+type DayTotals = { low: number; high: number; cost: number; unpriced: number; any: boolean };
+
+function totalsFor(counts: Record<string, number>): DayTotals {
+  let low = 0;
+  let high = 0;
+  let cost = 0;
+  let unpriced = 0;
+  let any = false;
+  for (const food of foods) {
+    const count = counts[food.id] ?? 0;
+    if (!count) continue;
+    any = true;
+    low += food.mcgLow * count;
+    high += food.mcgHigh * count;
+    if (food.pricePerServing == null) unpriced += count;
+    else cost += food.pricePerServing * count;
+  }
+  return { low, high, cost, unpriced, any };
+}
+
+function summaryText(day: DayTotals) {
+  if (!day.any) return "Add a serving. An empty plate is 0 mcg, which is a perfect score only if you don't eat.";
+  const ceiling =
+    day.low > UL
+      ? "Even the low end is over the 400 mcg NIH ceiling."
+      : day.high > UL
+        ? "The high end crosses the 400 mcg NIH ceiling."
+        : day.high < RDA
+          ? "That's still under the 55 mcg adult RDA."
+          : "That stays under the 400 mcg NIH ceiling.";
+  const priceBits = [];
+  if (day.cost > 0) priceBits.push(`Priced servings come to ${money(day.cost)}.`);
+  if (day.unpriced > 0) {
+    const verb = day.unpriced === 1 ? "serving isn't" : "servings aren't";
+    priceBits.push(
+      `${day.unpriced} ${verb} in protein-per-dollar-2026.csv, so that part of the day has no dollar figure.`,
+    );
+  } else {
+    priceBits.push("Every serving in this mix has a row in protein-per-dollar-2026.csv.");
+  }
+  return `${mcgLabel(day.low, day.high)}, ${pctLabel(day.low, day.high)} of the 55 mcg adult RDA. ${ceiling} ${priceBits.join(" ")}`;
+}
+
+const defaultCounts = Object.fromEntries(foods.map((food) => [food.id, food.defaultServings]));
+const defaultDay = totalsFor(defaultCounts);
+const defaultSummary = summaryText(defaultDay);
+const clientJson = JSON.stringify({
+  rda: RDA,
+  ul: UL,
+  foods: foods.map((food) => ({
+    id: food.id,
+    mcgLow: food.mcgLow,
+    mcgHigh: food.mcgHigh,
+    price: food.pricePerServing,
+  })),
+  presets: {
+    ordinary: { egg: 1, spaghetti: 1, chicken: 1 },
+    nut: { brazil: 1 },
+    six: { brazil: 6 },
+    clear: {},
+  },
+}).replace(/</g, "\\u003c");
+
+const title = "Selenium Daily Intake and Cost Calculator";
+const description =
+  "Add NIH selenium servings against the 55 mcg adult RDA and the 400 mcg ceiling, and price the rows that match the protein file.";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: title,
+  url: pageUrl,
+  description,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript for the serving counts. The reference table is in the page.",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  image: `${siteUrl}${chartSrc}`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Selenium daily intake calculator", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="se-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Selenium daily intake</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      How much selenium is in the groceries, and what did that serving cost?
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      The Brazil nut is the one grocery that can blow a selenium daily intake without looking like a project. The
+      <a href={NIH_URL} class={linkClass} style={linkStyle} rel="noopener" target="_blank">NIH Office of Dietary Supplements</a>
+      puts one nut at 68 to 91 mcg. The adult RDA is 55 mcg. An ounce, 6 to 8 nuts, averages 544 mcg, and the adult ceiling is 400.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      Pick the servings you actually eat. The total is the percent of that 55 mcg line, with a flag if the day crosses 400. Where the grocery row is the same food, the price comes from protein-per-dollar-2026.csv. Yellowfin tuna keeps its 92 mcg and doesn't get a made-up dollar. There's no pill row on this page.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        Orange bars are at or over 55 mcg. The Brazil nut bar is the 68 mcg low end. The high end of that same nut is 91 mcg. One ounce averages 544 mcg, which is past 400, so it isn't on the axis. Bottom round steak ties the pork chop at 37 mcg per 3 oz. Prices for the matching rows are on the table, from protein-per-dollar-2026.csv.
+      </figcaption>
+    </figure>
+
+    <section class="mb-10" aria-label="Selenium day builder">
+      <h2>Build a selenium daily intake from the NIH table</h2>
+      <p>
+        The ordinary day already filled in is one large egg (15 mcg), one cup of cooked spaghetti (33 mcg), and 3 ounces of roasted chicken (22 mcg). That's {mcgLabel(defaultDay.low, defaultDay.high)}, {pctLabel(defaultDay.low, defaultDay.high)} of the adult RDA, at {money(defaultDay.cost)} for the priced grams. Still under 400. The
+        <a href="/selenium-containing-foods-easy-ways/" class={linkClass} style={linkStyle}>selenium foods writeup</a>
+        is the same NIH table in paragraph form.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button type="button" class="se-button solid" data-preset="ordinary">Ordinary day</button>
+        <button type="button" class="se-button" data-preset="nut">One Brazil nut</button>
+        <button type="button" class="se-button" data-preset="six">Six Brazil nuts</button>
+        <button type="button" class="se-button" data-preset="clear">Clear</button>
+      </div>
+      <p id="se-summary" aria-live="polite" class="result">{defaultSummary}</p>
+      <p class="text-sm" style="color:var(--muted-color);">
+        Serving counts stay in this browser tab. The page can record that the tool was used. It doesn't send the foods you picked.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Selenium amounts are the NIH Office of Dietary Supplements food table for health professionals. A priced cell uses protein-per-dollar-2026.csv. A blank dollar means that serving isn't in the file.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Food</th>
+              <th scope="col">NIH serving</th>
+              <th scope="col">Selenium</th>
+              <th scope="col">% of 55 mcg</th>
+              <th scope="col">Servings</th>
+              <th scope="col">Price per serving</th>
+              <th scope="col">What got priced</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foods.map((food) => (
+              <tr>
+                <th scope="row">{food.name}</th>
+                <td>{food.serving}</td>
+                <td>{mcgLabel(food.mcgLow, food.mcgHigh)}</td>
+                <td>{pctLabel(food.mcgLow, food.mcgHigh)}</td>
+                <td>
+                  <label class="sr-only" for={`se-${food.id}`}>Servings of {food.name}</label>
+                  <input
+                    id={`se-${food.id}`}
+                    class="tool-input se-count"
+                    data-id={food.id}
+                    type="number"
+                    min="0"
+                    max="8"
+                    step="1"
+                    inputmode="numeric"
+                    value={food.defaultServings}
+                  />
+                </td>
+                <td>{food.pricePerServing == null ? "not in the file" : money(food.pricePerServing)}</td>
+                <td>{food.priceNote}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2>The 55 mcg line and the 400 mcg ceiling</h2>
+      <p>
+        Eight nuts at the 68 mcg low end land on 544 mcg, the same figure NIH gives for a 1-ounce average. That isn't proof every nut in the bag is 68 mcg. The fact sheet says the ounce average comes from USDA FoodData Central and that other analyses vary widely. Six nuts at 68 mcg is 408 mcg, already over the ceiling. NIH says Brazil nuts could cause selenium toxicity if eaten regularly. One nut covers the day. A handful is a different hobby.
+      </p>
+      <p>
+        Seafood, eggs, and grains do the ordinary work. Sardines are the canned fish where the NIH 3-ounce serving and the grocery file are the same kind of fish. The
+        <a href="/cheapest-canned-fish-and-seafood-protein-per-dollar/" class={linkClass} style={linkStyle}>canned fish protein ranking</a>
+        prices that sardine can, plus tuna, on protein per dollar. Eggs are the 15 mcg breakfast shortcut, and the
+        <a href="/eggs-vs-everything-protein-value/" class={linkClass} style={linkStyle}>eggs versus everything comparison</a>
+        is where that dozen sits against the rest of the protein file. The full 49-food ranking, quality adjustment included, is
+        <a href="/protein-per-dollar-adjusted-for-quality/" class={linkClass} style={linkStyle}>protein per dollar adjusted for quality</a>.
+      </p>
+      <p>
+        Lentils are 6 mcg a cup. They're still worth cooking. They're just not the selenium plan. Soil changes plant foods more than it changes tuna, chicken, and eggs, which is NIH's point, not a reason to skip the oatmeal. How a grocery row earns its USDA record is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>How much selenium do adults need in a day?</summary><p>Adults 19 and older have a 55 mcg RDA, according to the NIH Office of Dietary Supplements. Pregnancy is 60 mcg and breastfeeding is 70 mcg on that same fact sheet. This calculator uses the 55 mcg adult line. The tolerable upper intake level for adults is 400 mcg a day. Both numbers are reference lines for the servings you add up, not a lab result for the nuts in your pantry.</p></details>
+        <details><summary>How much selenium is in one Brazil nut?</summary><p>NIH puts one Brazil nut at 68 to 91 mcg, already over the 55 mcg adult RDA. An ounce, about 6 to 8 nuts, averages 544 mcg. That ounce is past the 400 mcg ceiling. NIH says Brazil nuts could cause selenium toxicity if eaten regularly, and that the 544 mcg average comes from USDA data that varies widely from bag to bag. One nut is the serving. The ounce is the caution.</p></details>
+        <details><summary>Why doesn't yellowfin tuna have a price?</summary><p>The 92 mcg figure is cooked yellowfin, 3 ounces, from the NIH table. protein-per-dollar-2026.csv doesn't have a yellowfin row. Canned chunk light tuna is in that file, and it's a different fish, so this page doesn't borrow its price or its selenium. Sardines are the seafood row where the NIH serving and the grocery file are the same kind of fish.</p></details>
+        <details><summary>Where do the dollar figures come from?</summary><p>When a NIH serving maps to a grocery row, the price is that row's price per 100 grams in protein-per-dollar-2026.csv, times the grams named in the table. July 2026 is the snapshot. A cooked NIH serving and a raw package aren't the same weigh-in, and the price note says when the page is using raw grams as a stand-in. The methodology page covers how those grocery rows were checked.</p></details>
+        <details><summary>Does the calculator save the servings I enter?</summary><p>No. The serving counts stay in this browser tab. The page can record that the tool was used. It doesn't send the foods you picked or the total. Clear the table and the numbers are gone. There's no account sitting on a Brazil nut count.</p></details>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .se-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 2rem 0 0.7rem; color: var(--heading-color); }
+    .se-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .se-page .tool-input { width: 4.5rem; border-radius: 0.65rem; padding: 0.45rem 0.5rem; background: var(--page-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .se-page .se-button { border-radius: 999px; padding: 0.6rem 0.95rem; font-size: 0.85rem; font-weight: 700; color: #a85e00; border: 1px solid #F29B30; background: transparent; cursor: pointer; }
+    .se-page .se-button.solid { background: #F29B30; color: #111; }
+    .se-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); margin-top: 1rem; }
+    .se-page table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .se-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .se-page th, .se-page td { text-align: left; padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .se-page th { color: var(--heading-color); }
+    .se-page .result { margin: 0.5rem 0 0.25rem; padding: 0.9rem 1rem; border-radius: 0.75rem; background: rgba(242,155,48,.10); }
+    .se-page .faq-list details { margin: 0.65rem 0; border: 1px solid var(--border-color); border-radius: 0.75rem; background: var(--card-bg); padding: 0 1rem; }
+    .se-page .faq-list summary { cursor: pointer; font-weight: 700; padding: 1rem 0; color: var(--heading-color); }
+    .se-page .faq-list p { margin: 0 0 1rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  </style>
+
+  <script id="se-data" type="application/json" set:html={clientJson}></script>
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.querySelector('.se-page');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var dataNode = document.getElementById('se-data');
+        var data = dataNode ? JSON.parse(dataNode.textContent || '{}') : { foods: [], presets: {}, rda: 55, ul: 400 };
+        var summary = document.getElementById('se-summary');
+        var inputs = Array.prototype.slice.call(root.querySelectorAll('.se-count'));
+
+        function trim(value) {
+          var rounded = Math.round(value * 10) / 10;
+          return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+        }
+        function trimPct(mcg) {
+          var value = Math.round((mcg / data.rda) * 1000) / 10;
+          return Number.isInteger(value) ? String(value) : value.toFixed(1);
+        }
+        function money(value) {
+          return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        }
+        function mcgLabel(low, high) {
+          return low === high ? trim(low) + ' mcg' : trim(low) + ' to ' + trim(high) + ' mcg';
+        }
+        function pctLabel(low, high) {
+          return low === high ? trimPct(low) + '%' : trimPct(low) + '% to ' + trimPct(high) + '%';
+        }
+        function counts() {
+          var out = {};
+          inputs.forEach(function (input) {
+            var typed = Math.round(Number(input.value));
+            if (!isFinite(typed) || typed < 0) typed = 0;
+            if (typed > 8) typed = 8;
+            input.value = String(typed);
+            out[input.getAttribute('data-id')] = typed;
+          });
+          return out;
+        }
+        function render() {
+          var chosen = counts();
+          var low = 0;
+          var high = 0;
+          var cost = 0;
+          var unpriced = 0;
+          var any = false;
+          data.foods.forEach(function (food) {
+            var count = chosen[food.id] || 0;
+            if (!count) return;
+            any = true;
+            low += food.mcgLow * count;
+            high += food.mcgHigh * count;
+            if (food.price == null) unpriced += count;
+            else cost += food.price * count;
+          });
+          if (!any) {
+            summary.textContent = "Add a serving. An empty plate is 0 mcg, which is a perfect score only if you don't eat.";
+            return;
+          }
+          var ceiling = 'That stays under the 400 mcg NIH ceiling.';
+          if (low > data.ul) ceiling = 'Even the low end is over the 400 mcg NIH ceiling.';
+          else if (high > data.ul) ceiling = 'The high end crosses the 400 mcg NIH ceiling.';
+          else if (high < data.rda) ceiling = "That's still under the 55 mcg adult RDA.";
+          var price = '';
+          if (cost > 0) price += 'Priced servings come to ' + money(cost) + '. ';
+          if (unpriced > 0) {
+            var verb = unpriced === 1 ? "serving isn't" : "servings aren't";
+            price += unpriced + ' ' + verb + " in protein-per-dollar-2026.csv, so that part of the day has no dollar figure.";
+          } else {
+            price += 'Every serving in this mix has a row in protein-per-dollar-2026.csv.';
+          }
+          summary.textContent = mcgLabel(low, high) + ', ' + pctLabel(low, high) + ' of the 55 mcg adult RDA. ' + ceiling + ' ' + price;
+        }
+        function applyPreset(name) {
+          var preset = data.presets[name] || {};
+          inputs.forEach(function (input) {
+            var id = input.getAttribute('data-id');
+            input.value = String(preset[id] || 0);
+          });
+          render();
+        }
+        inputs.forEach(function (input) { input.addEventListener('input', render); });
+        root.querySelectorAll('[data-preset]').forEach(function (button) {
+          button.addEventListener('click', function () { applyPreset(button.getAttribute('data-preset')); });
+        });
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
