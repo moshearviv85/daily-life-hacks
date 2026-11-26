@@ -89,6 +89,8 @@ const LATER_UPDATES = {
   "plant-vs-animal-protein-cost-per-dollar": "2026-11-26",
   "us-regional-grocery-protein-prices-october-2026": "2026-11-26",
   "cheapest-whole-grains-for-fiber-per-dollar": "2026-11-26",
+  "cheapest-high-protein-snacks-and-portable-foods": "2026-11-26",
+  "one-dollar-of-protein-vs-one-dollar-of-fiber": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
