@@ -46,6 +46,7 @@ const LATER_UPDATES = {
   "cooking-oils-smoke-points-best-uses": "2026-11-25",
   "cucumber-edamame-salad-sesame": "2026-11-26",
   "easy-one-pot-chicken-and-rice-dinner": "2026-11-26",
+  "easy-sourdough-discard-pizza-dough-no-yeast": "2026-11-26",
   "fast-food-meals-with-protein-and-fiber": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-26",
   "can-you-eat-rice-and-beans-everyday": "2026-11-25",
@@ -86,6 +87,7 @@ const LATER_UPDATES = {
   "best-way-to-store-avocados-to-stop-browning": "2026-11-25",
   "freezer-organization-tips-large-family-meals": "2026-11-25",
   "prune-juice-alternatives-for-constipation": "2026-11-25",
+  "savory-chia-seed-recipes-breakfast": "2026-11-26",
   "selenium-containing-foods-easy-ways": "2026-11-25",
   "high-fiber-without-beans": "2026-11-25",
   "how-long-do-cooked-grains-and-beans-last-in-the-fridge": "2026-11-25",
@@ -145,7 +147,6 @@ const SUBSTANTIVE_SLUGS = new Set([
   "protein-per-dollar-adjusted-for-quality",
   "protein-per-serving-beans-chicken-tofu-compared",
   "quick-20-minute-high-fiber-meals-for-busy-days",
-  "savory-chia-seed-recipes-breakfast",
   "sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes",
   "sourdough-discard-recipes-no-yeast",
   "what-30-grams-of-fiber-costs-per-day",
@@ -242,7 +243,11 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   const restored = [];
   for (const article of articles) {
     const onMain = gitShow("origin/main", article.path);
-    if (onMain) {
+    const retitled = new Set([
+      "easy-sourdough-discard-pizza-dough-no-yeast",
+      "savory-chia-seed-recipes-breakfast",
+    ]);
+    if (onMain && !retitled.has(article.slug)) {
       assert.equal(
         article.title,
         extractFrontmatterField(onMain, "title"),
@@ -316,7 +321,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 32, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 30, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
@@ -344,8 +349,12 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   // 2026-11-23, so leaving that day adds it to the restored count.
   // The soggy-sandwich moisture table left this day for 2026-11-26.
   // Its 94167b6 baseline was already 2026-11-23, so it drops out of
-  // stillToday and stays out of the restored count. The stillToday count
-  // is 32 and the restored count stays 66.
+  // stillToday and stays out of the restored count. That left stillToday
+  // at 32 and the restored count at 66.
+  // The no-yeast pizza dough page and the savory chia page left this day
+  // for the 2026-11-26 snippet refresh. Both baselines were already
+  // 2026-11-23, so they drop out of stillToday and stay out of restored.
+  // stillToday is 30 and the restored count stays 66.
   assert.equal(restored.length, 66, "pages restored off 2026-11-23");
 });
 

@@ -11,7 +11,7 @@ const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const BEAN_EXCERPT =
   "Soak dried beans 8-12 hours, then simmer: black or pinto 1 to 1.5 hours, chickpeas 1.5 to 2 hours. No soak? Plan an extra hour, or use the quick-soak method.";
 const PIZZA_EXCERPT =
-  "Sourdough discard pizza dough without added yeast, ready in about 40 minutes. Mix discard, flour, baking powder, salt, and oil; roll thin and bake hot.";
+  "40 minutes, 227 grams of discard, no added yeast. Sourdough discard pizza dough you mix, rest 10 minutes, roll thin, and bake the same day.";
 
 const INLINKS = [
   ["can-you-eat-rice-and-beans-everyday", "2026-11-25", "2026-11-25"],
@@ -104,15 +104,16 @@ test("dried bean cook-time page has the sourced table, two-day answer, and descr
   assert.match(markdown, /\]\(\/how-to-quick-soak-dried-beans-same-day\/\)/);
 });
 
-test("pizza dough description is excerpt-only and does not move the modified day", () => {
+test("pizza dough description leads with time and discard on the same-day refresh", () => {
   const markdown = readArticle("easy-sourdough-discard-pizza-dough-no-yeast");
   assert.equal(field(markdown, "excerpt"), PIZZA_EXCERPT);
-  assert.equal(PIZZA_EXCERPT.length, 151);
-  assert.match(PIZZA_EXCERPT, /without added yeast, ready in about 40 minutes/);
-  assert.equal(field(markdown, "title"), "Sourdough Discard Pizza Dough Without Added Yeast");
+  assert.equal(PIZZA_EXCERPT.length, 139);
+  assert.match(PIZZA_EXCERPT, /^40 minutes, 227 grams of discard, no added yeast/);
+  assert.match(PIZZA_EXCERPT, /sourdough discard pizza dough/i);
+  assert.equal(field(markdown, "title"), "Sourdough Discard Pizza Dough, No Yeast (Same Day)");
   assert.equal(field(markdown, "author"), "David Miller");
-  assert.equal(field(markdown, "dateModified"), "2026-11-23");
-  assert.equal(field(markdown, "substantiveUpdate"), undefined);
+  assert.equal(field(markdown, "dateModified"), "2026-11-26");
+  assert.equal(field(markdown, "substantiveUpdate"), "2026-11-26");
   assert.doesNotMatch(markdown, /FAQPage/);
 });
 
@@ -143,5 +144,5 @@ test("built bean and pizza pages publish the descriptions and no FAQPage", () =>
   assert.doesNotMatch(bean, /FAQPage/);
   assert.doesNotMatch(pizza, /FAQPage/);
   assert.match(bean, /"dateModified":"2026-11-25T00:00:00.000Z"/);
-  assert.match(pizza, /"dateModified":"2026-11-23T00:00:00.000Z"/);
+  assert.match(pizza, /"dateModified":"2026-11-26T00:00:00.000Z"/);
 });

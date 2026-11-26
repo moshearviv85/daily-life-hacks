@@ -281,7 +281,7 @@ test("the eggs page adds a 30 g cost table and cites the CSV without linking it"
 test("contextual links land on the named pages without moving dateModified", () => {
   const sources = [
     ["src/data/articles/cottage-cheese-vs-greek-yogurt-protein-uses.md", "2026-11-23", "/high-protein-breakfast-without-eggs/"],
-    ["src/data/articles/savory-chia-seed-recipes-breakfast.md", "2026-11-23", "/high-protein-breakfast-without-eggs/"],
+    ["src/data/articles/savory-chia-seed-recipes-breakfast.md", "2026-11-26", "/high-protein-breakfast-without-eggs/"],
     ["src/data/articles/how-much-protein-do-you-need-per-day.md", "2026-07-12", "/eggs-vs-everything-protein-value/"],
     ["src/data/articles/best-low-cost-protein-sources-large-families.md", "2026-09-24", "/eggs-vs-everything-protein-value/"],
   ];
@@ -297,7 +297,7 @@ test("contextual links land on the named pages without moving dateModified", () 
   );
   assert.equal(
     field(read("src/data/articles/savory-chia-seed-recipes-breakfast.md"), "substantiveUpdate"),
-    "2026-11-23",
+    "2026-11-26",
   );
   assert.equal(
     field(read("src/data/articles/how-much-protein-do-you-need-per-day.md"), "substantiveUpdate"),

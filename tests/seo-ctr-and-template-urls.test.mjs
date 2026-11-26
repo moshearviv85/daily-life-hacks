@@ -1047,9 +1047,9 @@ test("savory chia title leads with seed pudding and the on-page fiber", () => {
 
   assert.equal(
     page.title,
-    "Savory Chia Seed Pudding Recipes (About 16g Fiber)",
+    "Savory Chia Seed Pudding Recipes for Breakfast (5 Flavors)",
   );
-  assert.equal(page.title.length, 50);
+  assert.equal(page.title.length, 58);
   assert.ok(
     page.title.length <= 60,
     `savory chia title too long for SERP: ${page.title.length}`,
@@ -1067,8 +1067,12 @@ test("savory chia title leads with seed pudding and the on-page fiber", () => {
     "savory chia title should keep chia seed in the lead",
   );
   assert.ok(
-    titleLower.includes("(about 16g fiber)"),
-    "savory chia title should use the on-page bowl fiber, hedged as about",
+    titleLower.includes("(5 flavors)"),
+    "savory chia title should count the pudding flavors on the page",
+  );
+  assert.ok(
+    titleLower.includes("breakfast"),
+    "savory chia title should keep breakfast in the SERP",
   );
   assert.equal(
     titleLower.includes("best"),
@@ -1091,8 +1095,10 @@ test("savory chia title leads with seed pudding and the on-page fiber", () => {
     "savory chia title should not be the old seed recipes for breakfast SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-26$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-26$/m);
   assert.match(raw, /clears 16 grams of fiber/);
+  assert.match(raw, /savoury chia pudding/);
 
   assert.match(page.excerpt, /^Savory chia seed recipes/i);
   assert.match(page.excerpt, /pudding/i);
