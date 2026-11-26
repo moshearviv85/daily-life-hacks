@@ -80,6 +80,8 @@ const LATER_UPDATES = {
   "selenium-containing-foods-easy-ways": "2026-11-25",
   "high-fiber-without-beans": "2026-11-25",
   "how-long-do-cooked-grains-and-beans-last-in-the-fridge": "2026-11-25",
+  "how-long-do-cooked-meat-and-poultry-last-in-the-fridge": "2026-11-26",
+  "how-much-fiber-and-protein-per-dollar-at-walmart-vs-bls": "2026-11-26",
   "how-to-make-grocery-shopping-cheaper": "2026-11-26",
   "low-sodium-high-protein-foods-per-dollar": "2026-11-26",
   "cheapest-dairy-and-soy-protein-per-dollar": "2026-11-26",
