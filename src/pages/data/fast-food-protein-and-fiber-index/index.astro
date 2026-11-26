@@ -1,0 +1,325 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_URL } from "../../../content/author";
+import {
+  DATA_LICENSE_URL,
+  DATASET_ORGANIZATION,
+  DATASET_PERSON_CREATOR,
+} from "../../../content/datasets";
+import {
+  FIBER_FILE,
+  PROTEIN_FILE,
+  loadFastFoodIndex,
+} from "../../../content/fast-food-protein-fiber-index.mjs";
+
+const index = loadFastFoodIndex();
+const site = "https://www.daily-life-hacks.com";
+const path = "/data/fast-food-protein-and-fiber-index/";
+const pageUrl = `${site}${path}`;
+const title = "Fast Food Protein and Fiber Index: 59 Restaurant Orders";
+const description = "Filter 59 restaurant orders by chain, protein, fiber, calories, and sodium. Two published 2026 menu tables, one page.";
+
+const meanText = (value: number | null) => (value == null ? "not in file" : value.toFixed(1));
+const shown = (value: string, prefix = "") => (value ? `${prefix}${value}` : "not recorded");
+
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": `${pageUrl}#dataset`,
+  name: "Fast Food Protein and Fiber Index: 59 Restaurant Orders (2026)",
+  description: "Fifty-nine U.S. restaurant orders from two published 2026 tables: 30 priced protein items and 29 fiber orders. Protein, fiber, calories, sodium, and price appear only when that source file recorded them.",
+  url: pageUrl,
+  identifier: `${pageUrl}#dataset`,
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  license: DATA_LICENSE_URL,
+  isAccessibleForFree: true,
+  keywords: ["fast food protein", "fast food fiber", "restaurant nutrition", "protein per dollar"],
+  spatialCoverage: "United States",
+  variableMeasured: ["protein grams", "protein grams per dollar", "dietary fiber grams", "calories", "sodium milligrams", "menu price"],
+  distribution: [
+    { "@type": "DataDownload", encodingFormat: "text/csv", name: PROTEIN_FILE, contentUrl: `${site}/data/${PROTEIN_FILE}` },
+    { "@type": "DataDownload", encodingFormat: "text/csv", name: FIBER_FILE, contentUrl: `${site}/data/${FIBER_FILE}` },
+  ],
+  includedInDataCatalog: {
+    "@type": "DataCatalog",
+    "@id": `${site}/data/#catalog`,
+    name: "Daily Life Hacks Food Cost Data Catalog",
+    url: `${site}/data/`,
+    publisher: { "@id": `${site}/#organization` },
+  },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${site}/#website` },
+  publisher: { "@id": `${site}/#organization` },
+  author: DATASET_PERSON_CREATOR,
+  mainEntity: { "@id": `${pageUrl}#dataset` },
+  dateModified: "2026-11-26",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+    { "@type": "ListItem", position: 2, name: "Data", item: `${site}/data/` },
+    { "@type": "ListItem", position: 3, name: "Fast food protein and fiber index", item: pageUrl },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image="/images/fast-food-protein-and-fiber-index-chart.jpg"
+  author="David Miller"
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, datasetSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main id="fast-food-index" class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/data/" class="underline" style="color:#F29B30;">Data</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Fast food protein and fiber</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">30 priced items. 29 fiber orders. Zero invented cells.</p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">The Drive-Thru, Finally in One Table</h1>
+    <p class="text-lg leading-relaxed max-w-3xl" style="color:var(--text-color);">
+      I can tell you what a chicken cup costs in protein. I can also tell you which bowl actually has fiber. Those used to live in two files that refused to share a table. This page is the truce. Filter by chain, protein, fiber, calories, or sodium. If a cell says "not recorded," that file never had the number, and I didn't guess.
+    </p>
+    <p class="mt-4 text-sm" style="color:var(--muted-color);">
+      By <a href="/author/david-miller/" class="underline" style="color:#F29B30;">David Miller</a>
+    </p>
+
+    <figure class="my-8">
+      <img
+        src="/images/fast-food-protein-and-fiber-index-chart.jpg"
+        width="1200"
+        height="750"
+        alt="Bar chart comparing restaurant chains by mean protein grams per dollar and mean fiber grams."
+      />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Chart of unweighted means from the two published restaurant files. A chain with one row gets the same kind of bar as a chain with five.
+      </figcaption>
+    </figure>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">What each chain averages, before you filter</h2>
+      <p class="mb-4 max-w-3xl" style="color:var(--text-color);">
+        The means are unweighted. Five KFC rows don't count five times more than one Starbucks oatmeal just because the chain printed more lines. That's the chart being literal, not a claim that the menus are the same size. Sorted by mean protein grams per dollar, then chain name.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:640px;border-collapse:collapse;">
+          <caption class="sr-only">Unweighted mean protein grams per dollar and mean fiber grams by restaurant chain.</caption>
+          <thead>
+            <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Chain</th>
+              <th scope="col" class="cell text-right">Protein rows</th>
+              <th scope="col" class="cell text-right">Mean g protein per $</th>
+              <th scope="col" class="cell text-right">Fiber rows</th>
+              <th scope="col" class="cell text-right">Mean fiber g</th>
+            </tr>
+          </thead>
+          <tbody>
+            {index.summary.map((chain) => (
+              <tr style="border-bottom:1px solid var(--border-color);">
+                <th scope="row" class="cell text-left" style="font-weight:700;">{chain.chain}</th>
+                <td class="cell text-right">{chain.proteinCount || "not in file"}</td>
+                <td class="cell text-right" style="font-weight:700;">{meanText(chain.proteinMean)}</td>
+                <td class="cell text-right">{chain.fiberCount || "not in file"}</td>
+                <td class="cell text-right" style="font-weight:700;">{meanText(chain.fiberMean)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">All {index.rows.length} orders</h2>
+      <p class="mb-4 max-w-3xl" style="color:var(--text-color);">
+        Leave a box empty and that rule stays off. Type a minimum fiber and the protein-per-dollar rows drop out, because that file never recorded fiber. Same trick for calories and sodium. The protein file is a price sheet. The fiber file is a nutrition sheet. They're not the same sandwich wearing two hats.
+      </p>
+      <div class="rounded-2xl p-5 md:p-6 mb-4" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <label class="tool-label">Chain
+            <select id="ff-chain" class="tool-input">
+              <option value="">All chains</option>
+              {index.chains.map((chain) => <option value={chain}>{chain}</option>)}
+            </select>
+          </label>
+          <label class="tool-label">Sheet
+            <select id="ff-sheet" class="tool-input">
+              <option value="">Both sheets</option>
+              <option value="protein">Protein per dollar</option>
+              <option value="fiber">Fiber orders</option>
+            </select>
+          </label>
+          <label class="tool-label">Minimum protein (g)
+            <input id="ff-protein" class="tool-input" type="number" min="0" step="1" inputmode="decimal" />
+          </label>
+          <label class="tool-label">Minimum fiber (g)
+            <input id="ff-fiber" class="tool-input" type="number" min="0" step="1" inputmode="decimal" />
+          </label>
+          <label class="tool-label">Maximum calories
+            <input id="ff-calories" class="tool-input" type="number" min="0" step="1" inputmode="numeric" />
+          </label>
+          <label class="tool-label">Maximum sodium (mg)
+            <input id="ff-sodium" class="tool-input" type="number" min="0" step="1" inputmode="numeric" />
+          </label>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
+          <p id="ff-count" class="font-bold" style="color:#F29B30;">Showing all {index.rows.length} orders.</p>
+          <button id="ff-clear" type="button" class="clear-button">Clear filters</button>
+        </div>
+        <p class="mt-3 text-xs" style="color:var(--muted-color);">Filters stay in this browser tab. The full table is already in the page, so you can read it with the filters left alone.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:860px;border-collapse:collapse;">
+          <caption class="sr-only">All 59 restaurant orders, with protein, fiber, calories, sodium, and price only where the source file recorded them.</caption>
+          <thead>
+            <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Chain</th>
+              <th scope="col" class="cell text-left">Item</th>
+              <th scope="col" class="cell text-left">Sheet</th>
+              <th scope="col" class="cell text-right">Protein g</th>
+              <th scope="col" class="cell text-right">Fiber g</th>
+              <th scope="col" class="cell text-right">Calories</th>
+              <th scope="col" class="cell text-right">Sodium mg</th>
+              <th scope="col" class="cell text-right">Price</th>
+              <th scope="col" class="cell text-right">Protein g per $</th>
+            </tr>
+          </thead>
+          <tbody id="ff-rows">
+            {index.rows.map((row) => (
+              <tr
+                style="border-bottom:1px solid var(--border-color);"
+                data-chain={row.chain}
+                data-sheet={row.sheet}
+                data-protein={row.protein}
+                data-fiber={row.fiber}
+                data-calories={row.calories}
+                data-sodium={row.sodium}
+              >
+                <td class="cell">{row.chain}</td>
+                <th scope="row" class="cell text-left item">{row.item}</th>
+                <td class="cell">{row.sheetLabel}</td>
+                <td class="cell text-right">{shown(row.protein)}</td>
+                <td class="cell text-right">{shown(row.fiber)}</td>
+                <td class="cell text-right">{shown(row.calories)}</td>
+                <td class="cell text-right">{shown(row.sodium)}</td>
+                <td class="cell text-right">{shown(row.price, "$")}</td>
+                <td class="cell text-right" style="font-weight:700;">{shown(row.perDollar)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">How to read the two files together</h2>
+      <p class="mb-4" style="color:var(--text-color);">
+        The priced menu items are {PROTEIN_FILE}. The write-up is the <a href="/fast-food-protein-per-dollar-ranked/" class="underline" style="color:#F29B30;">fast-food protein per dollar ranking</a>. Items at or under $5 have their own cut on the <a href="/cheapest-fast-food-protein-under-5-dollars/" class="underline" style="color:#F29B30;">cheapest fast-food protein under $5</a> page. Those prices are dated menu observations. Your store can disagree, and it often will.
+      </p>
+      <p class="mb-4" style="color:var(--text-color);">
+        The fiber orders are {FIBER_FILE}. Those are the meals with fiber actually counted, in the <a href="/fast-food-meals-with-protein-and-fiber/" class="underline" style="color:#F29B30;">fast-food meals with protein and fiber</a> guide. A Chipotle row on the price sheet and a Chipotle row on the fiber sheet are different builds. Same logo, different tray.
+      </p>
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">What this table won't do</h2>
+      <p class="mb-4" style="color:var(--text-color);">
+        It won't tell you the order is a good idea for your week, your sodium budget, or your kid. Sodium on the fiber sheet gets high fast, and a cheap protein gram can still come with a salt lick. The <a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a> covers how the rows were checked. The files are cited here as text. Download them from the <a href="/data/" class="underline" style="color:#F29B30;">data catalog</a> if you want the raw columns.
+      </p>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:700;color:var(--text-color)}
+    .tool-input{width:100%;border-radius:.75rem;padding:.65rem .75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color)}
+    .tool-input:focus{outline:2px solid #F29B30;outline-offset:1px}
+    .clear-button{border-radius:999px;padding:.55rem .9rem;font-size:.8rem;font-weight:800;background:transparent;color:var(--heading-color);border:1px solid var(--border-color)}
+    .cell{padding:.65rem .75rem;vertical-align:top}
+    .item{font-weight:650;max-width:28rem;white-space:normal}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById("fast-food-index");
+        if (!root || root.getAttribute("data-booted") === "1") return;
+        var rows = root.querySelectorAll("#ff-rows tr");
+        var chain = document.getElementById("ff-chain");
+        var sheet = document.getElementById("ff-sheet");
+        var protein = document.getElementById("ff-protein");
+        var fiber = document.getElementById("ff-fiber");
+        var calories = document.getElementById("ff-calories");
+        var sodium = document.getElementById("ff-sodium");
+        var count = document.getElementById("ff-count");
+        var clear = document.getElementById("ff-clear");
+        if (!rows.length || !chain || !sheet || !protein || !fiber || !calories || !sodium || !count || !clear) return;
+        root.setAttribute("data-booted", "1");
+
+        function optional(input) {
+          if (input.value.trim() === "") return null;
+          var value = Number(input.value);
+          return isFinite(value) ? value : null;
+        }
+        function missing(value) {
+          return value === null || value === "";
+        }
+        function apply() {
+          var chainValue = chain.value;
+          var sheetValue = sheet.value;
+          var minProtein = optional(protein);
+          var minFiber = optional(fiber);
+          var maxCalories = optional(calories);
+          var maxSodium = optional(sodium);
+          var shown = 0;
+          Array.prototype.forEach.call(rows, function (row) {
+            var ok = true;
+            if (chainValue && row.getAttribute("data-chain") !== chainValue) ok = false;
+            if (sheetValue && row.getAttribute("data-sheet") !== sheetValue) ok = false;
+            var proteinValue = row.getAttribute("data-protein");
+            var fiberValue = row.getAttribute("data-fiber");
+            var calorieValue = row.getAttribute("data-calories");
+            var sodiumValue = row.getAttribute("data-sodium");
+            if (minProtein !== null && (missing(proteinValue) || Number(proteinValue) < minProtein)) ok = false;
+            if (minFiber !== null && (missing(fiberValue) || Number(fiberValue) < minFiber)) ok = false;
+            if (maxCalories !== null && (missing(calorieValue) || Number(calorieValue) > maxCalories)) ok = false;
+            if (maxSodium !== null && (missing(sodiumValue) || Number(sodiumValue) > maxSodium)) ok = false;
+            row.hidden = !ok;
+            if (ok) shown += 1;
+          });
+          count.textContent = "Showing " + shown + " of " + rows.length + " orders.";
+        }
+        root.addEventListener("input", apply);
+        root.addEventListener("change", apply);
+        clear.addEventListener("click", function () {
+          chain.value = "";
+          sheet.value = "";
+          protein.value = "";
+          fiber.value = "";
+          calories.value = "";
+          sodium.value = "";
+          apply();
+        });
+      }
+      boot();
+      document.addEventListener("astro:page-load", boot);
+    })();
+  </script>
+</BaseLayout>

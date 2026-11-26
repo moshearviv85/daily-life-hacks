@@ -1,0 +1,314 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { PAIR_FILE, QUALITY_FILE, loadProteinPairs } from "../../../content/complete-protein-pairs.mjs";
+
+const model = loadProteinPairs();
+const site = "https://www.daily-life-hacks.com";
+const path = "/tools/complete-protein-pair-builder/";
+const pageUrl = `${site}${path}`;
+const title = "Complete Protein Pair Builder: Legume and Grain Splits";
+const description = "Price a pulse and a grain from the published 50/50 protein splits. The builder won't invent a DIAAS score for the mixture.";
+const lentils = model.pulses.find((food) => food.food === "Brown lentils (dry)");
+const flour = model.grains.find((food) => food.food === "Whole wheat flour");
+const top = model.pairs[0];
+if (!lentils || !flour || top.food !== "Brown lentils (dry) + Whole wheat flour") {
+  throw new Error("complete protein pair builder lost its default pair");
+}
+
+const builderJson = JSON.stringify({
+  pulses: model.pulses,
+  grains: model.grains,
+  pairs: model.pairs.map((pair) => ({
+    value: pair.value,
+    parts: pair.parts.map((part) => ({ food: part.food })),
+  })),
+}).replace(/</g, "\\u003c");
+
+const sheetNote = (part: { diaas: { diaas: string; note: string } | null }) =>
+  part.diaas ? `DIAAS ${part.diaas.diaas}. ${part.diaas.note}` : "Not on the DIAAS sheet.";
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: "Complete Protein Pair Builder",
+  url: pageUrl,
+  description,
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript for the pair builder. The audited pair table renders without it.",
+  isAccessibleForFree: true,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${site}/#website` },
+  publisher: { "@id": `${site}/#organization` },
+  author: {
+    "@type": "Person",
+    "@id": "https://www.daily-life-hacks.com/author/david-miller/#person",
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${site}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Complete protein pair builder", item: pageUrl },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image="/images/complete-protein-pair-builder-chart.jpg"
+  author="David Miller"
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webAppSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Complete protein pair builder</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">20 audited splits. No invented mixture score.</p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Split the Dollar Between the Lentil and the Flour</h1>
+    <p class="text-lg leading-relaxed max-w-3xl" style="color:var(--text-color);">
+      Brown lentils and whole wheat flour lead the sheet at {top.value} g of protein per dollar when the dollar is cut in half. That's a grocery average. It's not a lab score for the bowl you'd actually cook. Pick two foods, set the dollars, and the builder does the same split the published pairs already used.
+    </p>
+    <p class="mt-4 mb-8 text-sm" style="color:var(--muted-color);">
+      By <a href="/author/david-miller/" class="underline" style="color:#F29B30;">David Miller</a>
+    </p>
+
+    <figure class="mb-10">
+      <img
+        src="/images/complete-protein-pair-builder-chart.jpg"
+        width="1200"
+        height="1000"
+        alt="Horizontal bar chart ranking 20 legume and grain pairs by protein grams per dollar."
+      />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Chart of the 20 audited 50/50 splits. Bar length is protein grams per dollar, not a digestibility score.
+      </figcaption>
+    </figure>
+
+    <section id="complete-protein-pair-builder" class="rounded-2xl p-5 md:p-7 mb-12" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">Build a split</h2>
+      <p class="mb-5 text-sm" style="color:var(--muted-color);">
+        The first list is the pulses, soy foods, and peanut butter on the 25-food sheet. The second list is the grains. Brown rice and pearled barley show up in the audited pairs below, and they stay out of these menus because the DIAAS sheet never priced them.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <label class="tool-label">Pulse, soy, or peanut
+          <select id="pair-first" class="tool-input">
+            {model.pulses.map((food) => (
+              <option value={food.food} selected={food.food === lentils.food}>{food.food}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">Grain
+          <select id="pair-second" class="tool-input">
+            {model.grains.map((food) => (
+              <option value={food.food} selected={food.food === flour.food}>{food.food}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">Dollars on the first food
+          <input id="pair-dollars-a" class="tool-input" type="number" min="0" step="0.01" value="1" inputmode="decimal" />
+        </label>
+        <label class="tool-label">Dollars on the grain
+          <input id="pair-dollars-b" class="tool-input" type="number" min="0" step="0.01" value="1" inputmode="decimal" />
+        </label>
+      </div>
+      <div id="pair-result" class="rounded-xl p-5" aria-live="polite" style="background:rgba(242,155,48,.10);border:2px solid #F29B30;">
+        <p>{lentils.food}: {lentils.proteinPerDollar} g protein per dollar, DIAAS {lentils.diaas}. {lentils.note}</p>
+        <p>{flour.food}: {flour.proteinPerDollar} g protein per dollar, DIAAS {flour.diaas}. {flour.note}</p>
+        <p>A 50/50 dollar split of $1 and $1 is the audited pair at {top.value} g protein per dollar. The tool won't average the two DIAAS scores into a score for the mixed plate.</p>
+      </div>
+      <p class="mt-4 text-xs" style="color:var(--muted-color);">
+        Your picks stay in this browser tab. Nothing you select is sent to us. Prices are the published study prices, not a quote from the store on your corner.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The 20 audited pairs</h2>
+      <p class="mb-4 max-w-3xl" style="color:var(--text-color);">
+        Each value is the 50/50 dollar split already printed in {PAIR_FILE}. Half the money on the first food, half on the second, then average the two protein-per-dollar rates. If a food isn't on the DIAAS sheet, the cell says so. I didn't borrow a score from a cousin with a similar name.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:720px;border-collapse:collapse;">
+          <caption class="sr-only">Twenty audited legume and grain pairs ranked by protein grams per dollar on a 50/50 split.</caption>
+          <thead>
+            <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Pair</th>
+              <th scope="col" class="cell text-right">g protein per $</th>
+              <th scope="col" class="cell text-left">First food</th>
+              <th scope="col" class="cell text-left">Second food</th>
+            </tr>
+          </thead>
+          <tbody>
+            {model.pairs.map((pair) => (
+              <tr style="border-bottom:1px solid var(--border-color);">
+                <th scope="row" class="cell text-left">{pair.food}</th>
+                <td class="cell text-right" style="font-weight:800;">{pair.value}</td>
+                <td class="cell">{pair.parts[0].food} at {pair.parts[0].grams} g/$. {sheetNote(pair.parts[0])}</td>
+                <td class="cell">{pair.parts[1].food} at {pair.parts[1].grams} g/$. {sheetNote(pair.parts[1])}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The other 10 foods on the DIAAS sheet</h2>
+      <p class="mb-4 max-w-3xl" style="color:var(--text-color);">
+        Chicken, eggs, dairy, tuna, and beef sit on {QUALITY_FILE} too. The sheet's own note calls them complete proteins, so they don't need a grain to patch a limiting amino acid. They stay out of the dropdowns. Pairing drumsticks with flour would be a cost stunt, not the comparison this page is for.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:680px;border-collapse:collapse;">
+          <caption class="sr-only">Ten DIAAS foods that are not pair inputs, with protein grams per dollar and the sheet note.</caption>
+          <thead>
+            <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Food</th>
+              <th scope="col" class="cell text-right">g protein per $</th>
+              <th scope="col" class="cell text-right">DIAAS</th>
+              <th scope="col" class="cell text-right">Adjusted g per $</th>
+              <th scope="col" class="cell text-left">Sheet note</th>
+            </tr>
+          </thead>
+          <tbody>
+            {model.others.map((food) => (
+              <tr style="border-bottom:1px solid var(--border-color);">
+                <th scope="row" class="cell text-left">{food.food}</th>
+                <td class="cell text-right">{food.proteinPerDollar}</td>
+                <td class="cell text-right">{food.diaas}</td>
+                <td class="cell text-right">{food.adjusted}</td>
+                <td class="cell">{food.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <article class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The average isn't a lab score</h2>
+      <p class="mb-4" style="color:var(--text-color);">
+        Lentils on this sheet are limited by sulfur amino acids. Wheat is limited by lysine. Cooks have paired them for that reason for a long time. Averaging 0.63 and 0.45 doesn't produce the DIAAS of the mixture, and this page won't print a number it didn't measure. The single-food ranking, after that quality adjustment, is the <a href="/protein-per-dollar-adjusted-for-quality/" class="underline" style="color:#F29B30;">protein per dollar adjusted for quality</a> study.
+      </p>
+      <p class="mb-4" style="color:var(--text-color);">
+        If you want the pair in a pot instead of a spreadsheet, the <a href="/beans-and-rice-complete-protein-meal/" class="underline" style="color:#F29B30;">beans and rice complete protein meal</a> is the recipe. Whether that bowl belongs on the calendar every night is a different question, answered on <a href="/can-you-eat-rice-and-beans-everyday/" class="underline" style="color:#F29B30;">can you eat rice and beans every day</a>. The method notes, including what we refuse to estimate, are on the <a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a>.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>What does the complete protein pair builder calculate?</summary><p>It prices a pulse, soy food, or peanut butter against a grain using the published protein grams per dollar. Spend the same amount on each and it averages those two rates. That 50/50 figure is a cost split. It's the same arithmetic as the audited pairs.</p></details>
+        <details><summary>Why isn't the DIAAS score just the average of the two foods?</summary><p>DIAAS is measured on a food, and sometimes on a blend, in a lab. Averaging the two published scores doesn't produce the score of the mixture. You get each food's score and the note about which amino acid limits it. You don't get a made-up third score.</p></details>
+        <details><summary>Where do the 20 pairs and the 25 scores come from?</summary><p>The pairs are the 20 rows in cheapest-complete-protein-pairs-2026.csv. The scores are the 25 rows in protein-quality-per-dollar-2026.csv. Grocery prices are the published study prices. The methodology page has the matching rules.</p></details>
+        <details><summary>Why do brown rice and barley show up in the table but not the dropdowns?</summary><p>The audited pairs include brown rice and pearled barley. Those two aren't on the 25-food DIAAS sheet, so the builder can't price them without inventing a rate. The table still lists the published pair values.</p></details>
+        <details><summary>Does this save the foods I pick?</summary><p>No. The dropdowns and dollar amounts stay in this browser tab. The site can see that the tool was used. It doesn't receive the foods or the dollars you typed.</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:700;color:var(--text-color)}
+    .tool-input{width:100%;border-radius:.75rem;padding:.65rem .75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color)}
+    .tool-input:focus{outline:2px solid #F29B30;outline-offset:1px}
+    .cell{padding:.65rem .75rem;vertical-align:top}
+    #pair-result p{margin:.4rem 0;line-height:1.6;color:var(--text-color)}
+    .faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}
+    .faq-list summary{cursor:pointer;font-weight:800;padding:1rem 0;color:var(--heading-color)}
+    .faq-list p{margin:0 0 1rem;line-height:1.7;color:var(--text-color)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+
+  <script id="pair-builder-data" type="application/json" set:html={builderJson}></script>
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById("complete-protein-pair-builder");
+        if (!root || root.getAttribute("data-booted") === "1") return;
+        var dataNode = document.getElementById("pair-builder-data");
+        var first = document.getElementById("pair-first");
+        var second = document.getElementById("pair-second");
+        var dollarsA = document.getElementById("pair-dollars-a");
+        var dollarsB = document.getElementById("pair-dollars-b");
+        var result = document.getElementById("pair-result");
+        if (!dataNode || !first || !second || !dollarsA || !dollarsB || !result) return;
+        root.setAttribute("data-booted", "1");
+        var data = JSON.parse(dataNode.textContent);
+
+        function findFood(list, name) {
+          for (var i = 0; i < list.length; i++) {
+            if (list[i].food === name) return list[i];
+          }
+          return null;
+        }
+        function dollars(input) {
+          var value = parseFloat(input.value);
+          return isFinite(value) && value >= 0 ? value : null;
+        }
+        function oneDecimal(value) {
+          return (Math.round(value * 10) / 10).toFixed(1);
+        }
+        function audited(a, b) {
+          var want = [a, b].slice().sort().join("|");
+          for (var i = 0; i < data.pairs.length; i++) {
+            var names = data.pairs[i].parts.map(function (part) { return part.food; }).sort().join("|");
+            if (names === want) return data.pairs[i];
+          }
+          return null;
+        }
+        function render() {
+          var a = findFood(data.pulses, first.value);
+          var b = findFood(data.grains, second.value);
+          var spendA = dollars(dollarsA);
+          var spendB = dollars(dollarsB);
+          if (!a || !b || spendA === null || spendB === null) {
+            result.textContent = "Enter a dollar amount of zero or more for each food.";
+            return;
+          }
+          var protein = a.proteinPerDollar * spendA + b.proteinPerDollar * spendB;
+          var spend = spendA + spendB;
+          var lines = [
+            a.food + ": " + a.proteinPerDollar + " g protein per dollar, DIAAS " + a.diaas + ". " + a.note,
+            b.food + ": " + b.proteinPerDollar + " g protein per dollar, DIAAS " + b.diaas + ". " + b.note
+          ];
+          var even = Math.abs(spendA - spendB) < 0.001 && spendA > 0;
+          var match = even ? audited(a.food, b.food) : null;
+          if (spend > 0 && even && match) {
+            lines.push("This split buys about " + oneDecimal(protein) + " g of protein for $" + spend.toFixed(2) + ". The audited row records that 50/50 split as " + match.value + " g per dollar.");
+          } else if (spend > 0) {
+            lines.push("This split buys about " + oneDecimal(protein) + " g of protein for $" + spend.toFixed(2) + ", or " + oneDecimal(protein / spend) + " g per dollar.");
+          } else {
+            lines.push("Both amounts are zero, so the split buys no protein.");
+          }
+          if (even && !match) {
+            lines.push("This pair isn't one of the 20 audited rows. The average is still just the cost split.");
+          } else if (!even && spend > 0) {
+            lines.push("The dollars aren't equal, so this is your split, not the audited 50/50 row.");
+          }
+          lines.push("The tool won't average the two DIAAS scores into a score for the mixed plate.");
+          result.textContent = lines.join(" ");
+        }
+        first.addEventListener("change", render);
+        second.addEventListener("change", render);
+        dollarsA.addEventListener("input", render);
+        dollarsB.addEventListener("input", render);
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
