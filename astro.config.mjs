@@ -105,6 +105,7 @@ function loadSitemapExclusions() {
     '/printables/weekly-grocery-budget-planner',
     '/printables/smoke-point-chart',
     '/printables/fridge-life-card',
+    // /printables/sourdough-discard-hydration-and-swap-card stays indexable.
   ]) {
     addPath(path);
   }

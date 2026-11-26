@@ -16,7 +16,7 @@ const pageUrl = "https://www.daily-life-hacks.com/printables/";
 const chartSrc = "/images/printables-hub-chart.jpg";
 const title = "Printable Kitchen Charts for Beans, Fridge Life, and Oils";
 const description =
-  "Five printable kitchen charts in one index: bean yield, fridge windows, oil smoke points, sourdough discard grams, and a 7-day grocery planner.";
+  "Six printable kitchen charts: bean yield, fridge life, oil smoke points, discard grams, hydration swaps, and a 7-day grocery planner.";
 
 function parseCsv(path: string) {
   const text = readFileSync(join(process.cwd(), path), "utf8");
@@ -132,6 +132,12 @@ const printables = [
     kicker: "100% jar",
     title: "Sourdough discard grams",
     text: "One stirred cup is 227 grams. At 100% hydration, half of that cup is flour and half is water.",
+  },
+  {
+    href: "/printables/sourdough-discard-hydration-and-swap-card/",
+    kicker: "50% to 100%",
+    title: "Discard hydration and swap card",
+    text: "Flour and water at 50%, 80%, and 100%, a buttermilk swap, and the 100 g, 150 g, and 227 g no-yeast dough scale.",
   },
   {
     href: "/printables/weekly-grocery-budget-planner/",
@@ -292,7 +298,7 @@ const schemas = [
     </figure>
 
     <section class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The five printables</h2>
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The six printables</h2>
       <p class="mb-6 max-w-3xl" style="color:var(--text-color);">
         Each link is the printable page itself. I'm not sending you to a file download from this index. Open the sheet, then print it there if you want paper.
       </p>

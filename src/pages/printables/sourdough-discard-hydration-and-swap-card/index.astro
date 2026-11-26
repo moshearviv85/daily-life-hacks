@@ -1,0 +1,251 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { CUP_GRAMS, discardSplit } from "../../../lib/sourdough-discard-math.js";
+
+const pageUrl = "https://www.daily-life-hacks.com/printables/sourdough-discard-hydration-and-swap-card/";
+const chartSrc = "/images/sourdough-discard-hydration-and-swap-card-chart.jpg";
+const chartAlt =
+  "Grouped bar chart of flour grams in 100 grams, 150 grams, and 227 grams of sourdough discard at 100 percent, 80 percent, and 50 percent hydration. Not a photograph.";
+const title = "Sourdough Discard Hydration and Swap Card";
+const description =
+  "Print flour and water for 50%, 80%, and 100% discard, the buttermilk swap, and a 100 g, 150 g, and 227 g dough scale.";
+
+function tenth(value: number) {
+  const rounded = Math.round(value * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
+const HYDRATIONS = [100, 80, 50] as const;
+const WEIGHTS = [50, 100, 150, 200, CUP_GRAMS];
+const BUTTERMILK_CUP = 245;
+const BUTTERMILK = [
+  ["1/4 cup", 61.25],
+  ["1/2 cup", 122.5],
+  ["3/4 cup", 183.75],
+  ["1 cup", BUTTERMILK_CUP],
+] as const;
+const PIZZA_DISCARD = CUP_GRAMS;
+const PIZZA_FLOUR = 180;
+const PIZZA_WATER = 75;
+const PIZZA_WEIGHTS = [100, 150, PIZZA_DISCARD];
+
+const hydrationRows = WEIGHTS.map((grams) => {
+  const cells = HYDRATIONS.map((hydration) => {
+    const split = discardSplit(grams, hydration);
+    if (!split) throw new Error(`discard split failed for ${grams} g at ${hydration}%`);
+    return { flour: tenth(split.flour), water: tenth(split.water) };
+  });
+  return { grams, cells };
+});
+
+const buttermilkRows = BUTTERMILK.map(([label, grams]) => {
+  const flours = HYDRATIONS.map((hydration) => {
+    const split = discardSplit(grams, hydration);
+    if (!split) throw new Error(`buttermilk split failed for ${grams} g at ${hydration}%`);
+    return tenth(split.flour);
+  });
+  return { label, grams: tenth(grams), flours };
+});
+
+const pizzaRows = PIZZA_WEIGHTS.map((grams) => ({
+  discard: String(grams),
+  flour: tenth(PIZZA_FLOUR * (grams / PIZZA_DISCARD)),
+  water: tenth(PIZZA_WATER * (grams / PIZZA_DISCARD)),
+}));
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    name: title,
+    description,
+    url: pageUrl,
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    author: {
+      "@type": "Person",
+      name: AUTHOR_NAME,
+      url: AUTHOR_URL,
+    },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `https://www.daily-life-hacks.com${chartSrc}`,
+      caption: "Chart of flour already in 100 g, 150 g, and 227 g of discard. Not a photograph.",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+      { "@type": "ListItem", position: 2, name: "Printables", item: "https://www.daily-life-hacks.com/printables/" },
+      { "@type": "ListItem", position: 3, name: title, item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={schemas}
+>
+  <Header />
+  <main class="sheet-wrap">
+    <figure class="chart no-print">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" />
+      <figcaption>
+        Not a photograph, and not an AI illustration.
+        Flour grams use flour = discard ÷ (1 + hydration). 100 g at 100% is 50 g of flour. 227 g at 100% is 113.5 g of flour. Water is whatever is left in the scoop.
+      </figcaption>
+    </figure>
+
+    <article class="sheet">
+      <p class="kicker">Printable. One page. By {AUTHOR_NAME}.</p>
+      <h1>Sourdough Discard Hydration and Swap Card</h1>
+      <p class="lede">
+        A stiff scoop poured into a recipe written for a pourable jar turns the batter into spackle. Hydration is the reason.
+        At 100% the scoop is half flour and half water. At 80% you divide by 1.8. At 50% two-thirds of the weight is flour.
+        Subtract the flour from the recipe flour. The water in the scoop is already part of the liquid.
+      </p>
+
+      <h2>Flour and water in the scoop</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Discard</th>
+            <th scope="col">100% flour</th>
+            <th scope="col">100% water</th>
+            <th scope="col">80% flour</th>
+            <th scope="col">80% water</th>
+            <th scope="col">50% flour</th>
+            <th scope="col">50% water</th>
+          </tr>
+        </thead>
+        <tbody>
+          {hydrationRows.map((row) => (
+            <tr>
+              <th scope="row">{row.grams} g</th>
+              {row.cells.map((cell) => (
+                <>
+                  <td>{cell.flour} g</td>
+                  <td>{cell.water} g</td>
+                </>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">
+        Tenths match the
+        <a href="/tools/sourdough-discard-calculator/">sourdough discard calculator</a>.
+        {CUP_GRAMS} g is this site's stirred cup. The same weights, with the formula written out, are the
+        <a href="/sourdough-discard-hydration-conversion-chart/">hydration conversion chart</a>.
+      </p>
+
+      <h2>Buttermilk swap</h2>
+      <p class="note">
+        One cup of lowfat cultured buttermilk is {BUTTERMILK_CUP} g, not the {CUP_GRAMS} g discard cup. Weigh discard equal to the buttermilk.
+        Subtract the flour below, and add that same number of grams of milk or water. The thinning pour equals the flour because the scoop was weighed to the buttermilk.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Buttermilk</th>
+            <th scope="col">Discard</th>
+            <th scope="col">100% flour</th>
+            <th scope="col">80% flour</th>
+            <th scope="col">50% flour</th>
+          </tr>
+        </thead>
+        <tbody>
+          {buttermilkRows.map((row) => (
+            <tr>
+              <th scope="row">{row.label}</th>
+              <td>{row.grams} g</td>
+              {row.flours.map((flour) => (
+                <td>{flour} g</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">
+        One cup at 100% is 122.5 g of flour to subtract and 122.5 g of thinning liquid. At 80% that cup is 136.1 g of flour and 108.9 g of water already in the scoop.
+        The write-up, including where the swap fails, is
+        <a href="/sourdough-discard-buttermilk-substitute/">sourdough discard as a buttermilk substitute</a>.
+      </p>
+
+      <h2>No-yeast pizza dough, scaled</h2>
+      <p class="note">
+        The 227 g batch is 100% hydration discard, 180 g flour, and 75 g water, plus 1 tsp baking powder and 1/2 tsp fine salt.
+        The smaller rows keep that ratio. An 80% or 50% jar is a different dough. Don't reuse these added-water numbers for a stiff scoop.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">100% discard</th>
+            <th scope="col">Flour to add</th>
+            <th scope="col">Water to add</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pizzaRows.map((row) => (
+            <tr>
+              <th scope="row">{row.discard} g</th>
+              <td>{row.flour} g</td>
+              <td>{row.water} g</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">
+        The 227 g line is the
+        <a href="/easy-sourdough-discard-pizza-dough-no-yeast/">no-yeast sourdough discard pizza dough</a>.
+        What the flour in a 113 g scoop and a 227 g cup costs next to baking powder and yeast is
+        <a href="/sourdough-discard-vs-baking-powder-and-yeast-cost-per-bake/">discard versus baking powder and yeast, cost per bake</a>.
+      </p>
+
+      <p class="print-row no-print">
+        <button type="button" onclick="window.print()">Print this page</button>
+      </p>
+    </article>
+  </main>
+  <Footer signup="none" />
+
+  <style>
+    .sheet-wrap { background: #f4f1ea; padding: 2rem 1rem 3rem; }
+    .chart { max-width: 960px; margin: 0 auto 1.25rem; }
+    .chart img { width: 100%; height: auto; border-radius: 12px; background: #fff; }
+    .chart figcaption { margin-top: 0.45rem; color: #6b5b45; font-size: 0.85rem; line-height: 1.45; }
+    .sheet { max-width: 760px; margin: 0 auto; background: #fff; color: #1c1915; border: 1px solid #e4d8c4; border-radius: 12px; padding: 1.5rem 1.25rem 1rem; box-shadow: 0 12px 32px rgba(28, 25, 21, 0.06); }
+    .kicker { margin: 0 0 0.35rem; color: #a85e00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 0 0 0.55rem; font-size: 1.7rem; line-height: 1.1; letter-spacing: -0.03em; }
+    h2 { margin: 0.85rem 0 0.3rem; font-size: 0.92rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a85e00; }
+    .lede, .note { margin: 0.3rem 0 0.45rem; font-size: 0.86rem; line-height: 1.4; }
+    a { color: #a85e00; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    th, td { text-align: left; padding: 0.22rem 0.3rem; border-bottom: 1px solid #eadfce; }
+    thead th { font-size: 0.68rem; letter-spacing: 0.03em; text-transform: uppercase; color: #6b5b45; }
+    td, tbody th { font-variant-numeric: tabular-nums; }
+    .print-row { margin: 0.8rem 0 0; }
+    button { background: #F29B30; color: #fff; border: 0; border-radius: 999px; padding: 0.7rem 1.1rem; font-weight: 800; cursor: pointer; }
+    @media print {
+      .sheet-wrap { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+      .no-print, header, footer { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      h1 { font-size: 1.35rem; }
+      @page { size: letter; margin: 0.45in; }
+    }
+  </style>
+</BaseLayout>
