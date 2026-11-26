@@ -15,7 +15,8 @@ tags:
 image: "/images/baked-cod-lemon-capers-green-beans-main.jpg"
 imageAlt: "Baked cod fillets with lemon slices capers and green beans on a baking sheet"
 date: 2026-04-08
-dateModified: 2026-07-20
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -120,11 +121,22 @@ A quick batch of couscous takes five minutes and is perfect for soaking up the e
 
 If you are cooking for people with bigger appetites, double the green beans and add a big scoop of farro on the side. Don't overthink it. The fish is doing the heavy lifting, the green beans bring the crunch, and you get to look like a culinary genius with minimal effort.
 
-## Check thickness, not just the timer
+## How long should you bake cod at 400°F by thickness, and what does one serving deliver?
 
-Cod fillets vary from thin tail pieces to thick center cuts. Start checking thin pieces at 10 minutes and remove them when they reach 145 degrees F in the center. A thick fillet may need the full 15 minutes or slightly longer.
+Fish is done at 145°F, opaque and flaking with a fork, per USDA FSIS. At 400°F a half-inch tail finishes before a thick loin. A 3 oz (85 g) piece of dry-heat Atlantic cod ([FDC 171956](https://fdc.nal.usda.gov/food-details/171956/nutrients)) has 19.4 g protein, 89.3 kcal, 0.73 g fat, and 32.0 mcg selenium, beside raw fillets (FDC 171955) and green beans (FDC 169961).
 
-If one end is much thinner, fold it underneath before baking. That creates a more even package and keeps the tail from drying out while the center finishes. The fish should flake with light pressure, not collapse into dry white sawdust.
+The timer is the part people trust, and it's the part that dries the tail out. The [USDA FSIS chart](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart) is the finish line. [Washington State's fish guidance](https://doh.wa.gov/community-and-environment/food/fish/health-benefits/healthy-fish-recipes) starts the clock at about 10 minutes per inch. This pan is 400°F with butter and beans, so a 1-inch loin takes the recipe's 12 to 15 minutes. A thick center cut usually needs a look after that. Fold a skinny tail under the fillet if you don't want two clocks.
+
+The orange card still says 285 kcal. Divide the USDA gram weights by 4 and the nutrition box prints 294 kcal. The table uses that USDA total.
+
+Table: Cod thickness at 400°F, the 145°F check, and USDA protein and calories
+
+| Piece | 400°F window | 145°F check | Protein and calories |
+| --- | --- | --- | --- |
+| 0.5 in thin tail | 8 to 10 minutes. Start here. A shared 400°F pan runs slower than the 10-minutes-per-inch clock. | Opaque and flakes. 145°F in that piece. Take it off. | 3 oz (85 g) cooked dry heat, [FDC 171956](https://fdc.nal.usda.gov/food-details/171956/nutrients): 19.4 g protein, 89.3 kcal, 0.73 g fat, 32.0 mcg selenium |
+| 1.0 in standard loin | 12 to 15 minutes. That's this recipe's fillet. | 145°F in the center, then it flakes with a fork. | This plate, USDA grams divided by 4: 32.8 g protein and 294 kcal. The raw fillet is about 170 g ([FDC 171955](https://fdc.nal.usda.gov/food-details/171955/nutrients)): 30.3 g protein and 139 kcal before the sauce. |
+| 1.5 in thick center-cut | Check at 15 minutes, then every couple of minutes. Pull the thinner pieces first. | Thermometer in the center. The thin edge will lie to you. | A 3 oz cooked slice is the same 19.4 g and 89.3 kcal ([FDC 171956](https://fdc.nal.usda.gov/food-details/171956/nutrients)). The whole thick fillet is a bigger serving than that. |
+| 1 lb trimmed green beans | 12 to 15 minutes on the other half of the pan. | Tender-crisp. The 145°F check stays on the cod. | 453.59 g raw, [FDC 169961](https://fdc.nal.usda.gov/food-details/169961/nutrients), split four ways: 2.1 g protein and 35 kcal. |
 
 ## Store leftovers without drowning the beans
 
