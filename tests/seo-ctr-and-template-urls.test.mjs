@@ -880,7 +880,8 @@ test("homemade salad dressing title puts the fridge windows in the title", () =>
     false,
     "dressing title should not lead with oil-and-vinegar-only framing",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-26$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-26$/m);
 
   assert.match(dressing.excerpt, /oil\s*(?:and|&)\s*vinegar/i);
   assert.match(dressing.excerpt, /[Rr]efrigerat/);

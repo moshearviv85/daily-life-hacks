@@ -36,7 +36,7 @@ const LATER_UPDATES = {
   "chia-pudding-variations-for-breakfast": "2026-11-25",
   "costco-rotisserie-chicken-meal-ideas-dinner": "2026-11-25",
   "cooking-oils-smoke-points-best-uses": "2026-11-25",
-  "cucumber-edamame-salad-sesame": "2026-11-25",
+  "cucumber-edamame-salad-sesame": "2026-11-26",
   "easy-one-pot-chicken-and-rice-dinner": "2026-11-25",
   "fast-food-meals-with-protein-and-fiber": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
@@ -53,6 +53,7 @@ const LATER_UPDATES = {
   "canned-beans-vs-dried-beans-nutrition": "2026-11-25",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
   "how-to-pack-salad-for-work-not-soggy": "2026-11-25",
+  "how-to-store-homemade-salad-dressing-safely": "2026-11-26",
   "how-to-quick-soak-dried-beans-same-day": "2026-11-25",
   "beans-and-rice-complete-protein-meal": "2026-11-25",
   "easy-black-bean-tacos-weeknight-dinner": "2026-11-25",
@@ -94,7 +95,6 @@ const SUBSTANTIVE_SLUGS = new Set([
   "how-to-double-recipe-seasoning-without-guessing",
   "how-to-keep-sandwiches-from-getting-soggy",
   "how-to-measure-sourdough-discard-grams",
-  "how-to-store-homemade-salad-dressing-safely",
   "lentil-curry-high-fiber-vegan-dinner",
   "meal-prep-for-beginners-complete-system",
   "prebiotic-foods-beyond-the-buzzwords",
@@ -272,7 +272,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 36, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 35, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
@@ -284,10 +284,14 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   // Beans and rice left this day for the USDA gram weights, so the count was 37.
   // The fiber-label page left this day for the 2.8 g / 5.6 g food table.
   // Its baseline was already 2026-11-23, so it drops out of stillToday and
-  // stays out of the restored count. The count is 36.
+  // stays out of the restored count. The count was 36.
+  // The homemade dressing sodium and pH table left this day for 2026-11-26.
+  // Its 94167b6 baseline was 2026-09-23, and 84702a37 had already moved it to
+  // 2026-11-23, so leaving that day adds it to the restored count. The
+  // stillToday count is 35 and the restored count is 64.
   // Breakfast staples was already off 2026-11-23 (baseline 2026-09-24), so
   // moving it to 2026-11-25 does not change the restored count.
-  assert.equal(restored.length, 63, "pages restored off 2026-11-23");
+  assert.equal(restored.length, 64, "pages restored off 2026-11-23");
 });
 
 test("restored and substantive pages render the honest Updated day", () => {

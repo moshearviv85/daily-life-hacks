@@ -15,8 +15,8 @@ tags:
 image: "/images/cucumber-edamame-salad-sesame-main.jpg"
 imageAlt: "Fresh cucumber and edamame salad tossed with sesame dressing in a wooden bowl"
 date: 2026-04-22
-dateModified: 2026-11-25
-substantiveUpdate: 2026-11-25
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -127,6 +127,22 @@ Whisk it all together, toss in the dry cucumbers and the edamame, and you're don
 This Japanese-inspired cucumber and edamame salad plays nicely with almost anything. It's the perfect partner for grilled salmon, teriyaki chicken thighs, or even a simple bowl of rice and a fried egg. I reach for thighs over breast there for the flavor. It's also exactly what you want next to a batch of [homemade dumplings](/healthy-homemade-dumpling-wrapper-recipe/) if you're taking on the whole make-your-own-wrapper project. I have eaten a massive bowl of it on its own for lunch and felt perfectly happy about it.
 
 If you want to prep it ahead of time, do the salting step, mix the dressing, but keep them in separate containers in the fridge until right before you eat. That guarantees maximum crunch when you finally sit down.
+
+## How long does cucumber edamame salad keep in the fridge without turning watery?
+
+Salt the cucumbers for 10 minutes and drain them. Cucumber ([FDC 168409](https://fdc.nal.usda.gov/food-details/168409/nutrients)) is 95.23 g water per 100 g, and 177 g of shelled edamame ([FDC 168410](https://fdc.nal.usda.gov/food-details/168410/nutrients)) supplies most of the 6.7 g protein and 3.2 g fiber per serving. [FoodSafety.gov](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) gives mixed salads 3 to 4 days refrigerated. I use that for a dressed bowl or separate parts.
+
+The water isn't a rounding quirk. Two English cucumbers are 602 g, and 95.23 g of water per 100 g means about 573 g of that weight is water. Salt them or the sesame dressing takes a bath.
+
+| Component | Recipe weight | What it does in the bowl | Make-ahead timing |
+|---|---|---|---|
+| English cucumber, with peel, [FDC 168409](https://fdc.nal.usda.gov/food-details/168409/nutrients) | 602 g, two 301 g cucumbers | About 95% water (95.23 g per 100 g). Roughly 573 g of this row is water | Salt 10 minutes, squeeze, and keep it out of the dressing until you eat |
+| Shelled edamame, frozen, unprepared, [FDC 168410](https://fdc.nal.usda.gov/food-details/168410/nutrients) | 177 g, which is 1 1/2 cups. USDA's cup is 118 g | Most of the protein and fiber. About 5.0 g of the 6.7 g protein and 2.1 g of the 3.2 g fiber per serving | Cook, cool, and refrigerate in its own container |
+| Toasted sesame oil, [FDC 171016](https://fdc.nal.usda.gov/food-details/171016/nutrients) | 13.6 g, 1 tbsp | The fat. That spoon is about 120 kcal for the whole batch, with no sodium | Whisk it into the dressing jar |
+| Rice vinegar, honey, and soy sauce, [FDC 2158088](https://fdc.nal.usda.gov/food-details/2158088/nutrients), [FDC 169640](https://fdc.nal.usda.gov/food-details/169640/nutrients), [FDC 174277](https://fdc.nal.usda.gov/food-details/174277/nutrients) | 30 g vinegar, 7 g honey, 16 g soy, plus 2 g fresh ginger | The acid, the honey's sugar, and the salt. The soy sauce is about 879 mg sodium for the batch | Mix the jar ahead. Fresh ginger puts the jar on about a one-week clock |
+| Sesame seeds, [FDC 170150](https://fdc.nal.usda.gov/food-details/170150/nutrients) | 9 g, 1 tbsp | Crunch, plus about 1.1 g fiber in the spoon | Add them at serving so they don't go soft |
+
+I skipped the salt exactly once. The bowl looked like sesame soup. Ten minutes in a colander is the whole trick, and the edamame is why the salad isn't just crunchy water. [FoodSafety.gov](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) doesn't name this salad. It gives egg, chicken, ham, tuna, and macaroni salads 3 to 4 days. I use that window for the dressed bowl, and I keep the drained cucumbers, cooled edamame, and dressing in separate containers so Monday's crunch survives. The jar has fresh ginger, so I finish the dressing itself in about a week, same as any fresh-ingredient vinaigrette.
 
 ## How should you store cucumber edamame salad?
 

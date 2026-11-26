@@ -139,6 +139,8 @@ Dressing can't save a bowl of lonely iceberg. Give it something to land on.
 
 Chickpeas or black beans. Shredded cabbage. Carrots. Cucumber. Leftover roasted broccoli. Cooked lentils. Seeds on top. Suddenly the homemade high fiber dressing is coating a meal instead of a garnish.
 
+Cucumber is the one that weeps. Salt and drain it first, the way this [salted cucumber and edamame salad](/cucumber-edamame-salad-sesame/) does, or the tahini just goes for a swim.
+
 Office lunch tip: pack the dressing in a separate small jar if your greens are delicate. Sturdy chopped salads can handle being dressed ahead and usually taste better after a short sit. Soggy spring mix does not.
 
 If you're building these lunches on a budget, beans again do the heavy lifting. They're the same pantry item showing up in the [fiber budget guide](/what-30-grams-of-fiber-costs-per-day/) for a reason. Dressing is the flavor. Beans are the staying power.
