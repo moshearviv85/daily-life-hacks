@@ -1,8 +1,12 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
+import { isReleased } from "../../content/release";
+import { isIndexPruned } from "../../content/index-prune.js";
 import {
   STUDY_DATASETS,
   TOTAL_DATA_ROWS,
@@ -40,6 +44,33 @@ const organization = DATASET_ORGANIZATION;
 
 const articles = await getCollection("articles");
 const titleBySlug = new Map(articles.map((entry) => [entry.id, entry.data.title]));
+
+// PR-151: /data/ launchpad into the newest chart studies. Link a slug only
+// when the article file is on disk, released, and still indexable, so a
+// later sibling PR cannot make this build emit a 404.
+const FEATURED_STUDY_SLUGS = [
+  "cheapest-canned-fish-and-seafood-protein-per-dollar",
+  "how-much-100-grams-of-protein-costs-per-day",
+  "no-cook-emergency-protein-and-fiber-grocery-list",
+  "cheapest-dairy-and-soy-protein-per-dollar",
+  "cheapest-whole-grains-for-fiber-per-dollar",
+  "high-protein-grocery-list-50-grams",
+  "high-fiber-without-beans",
+  "sourdough-discard-hydration-conversion-chart",
+] as const;
+
+const featuredStudies = FEATURED_STUDY_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? articles.find((entry) => entry.id === slug) : undefined;
+  if (!article || isIndexPruned(article.id) || !isReleased(article)) return [];
+  return [
+    {
+      href: `/${slug}/`,
+      title: article.data.title,
+      excerpt: article.data.excerpt,
+    },
+  ];
+});
 
 const RANKING_WRITEUP: Record<string, string> = {
   "fiber-per-dollar-cheapest-high-fiber-foods": "/what-30-grams-of-fiber-costs-per-day/",
@@ -329,6 +360,31 @@ const linkStyle = "color: #F29B30;";
         </tbody>
       </table>
     </div>
+
+    {
+      featuredStudies.length > 0 && (
+        <div class="article-content space-y-6 text-lg mt-10" style="color: var(--text-color);">
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
+            Featured 2026 Visual Studies Built From These Datasets
+          </h2>
+          <p>
+            Spreadsheets are honest, and they're also a chore. These studies chart the same rows, so you can see the answer before you download anything.
+          </p>
+          <ul class="space-y-4">
+            {featuredStudies.map((study) => (
+              <li>
+                <a href={study.href} class={linkClass} style={linkStyle}>
+                  {study.title}
+                </a>
+                <span class="block mt-1 text-base leading-relaxed" style="color: var(--muted-color);">
+                  {study.excerpt}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
 
     <div class="article-content space-y-6 text-lg mt-10" style="color: var(--text-color);">
       <h2 id="how-to-cite" class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
