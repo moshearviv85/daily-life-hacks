@@ -11,8 +11,8 @@ tags:
 image: "/images/lentil-curry-high-fiber-vegan-dinner-main.jpg"
 imageAlt: "A bowl of creamy coconut lentil curry served with fresh cilantro and naan bread"
 date: 2026-04-08
-dateModified: 2026-11-23
-substantiveUpdate: 2026-11-23
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -124,6 +124,23 @@ The liquid is the part that goes wrong. Red lentils drink the broth and then dis
 | Green, whole | 35 to 45 minutes | Firmest of the three | Salads and sides | 15.6 g |
 
 USDA publishes one cooked lentil cup, not three. [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) is lentils, mature seeds, cooked, boiled, without salt: 7.9 grams of fiber per 100 grams, and the cup weighs 198 grams, which is 15.6 grams. Red and green don't have their own cooked records. Dry red is 10.8 grams per 100 grams ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)) and dry brown is 10.7 ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)), so the cooked cup doesn't split them. Cook times above are kitchen times for a normal simmer. They aren't on the USDA record.
+
+## Should you use red, brown, or green lentils for creamy vegan lentil curry?
+
+Use split red lentils. The hull is already gone, so they melt into a creamy curry in 15 to 20 minutes with no soak. Brown stays in pieces for 20 to 30 minutes. Green stays firmer for 35 to 45. USDA files one cooked lentil record, so the color difference is the pot, not a separate nutrition label.
+
+Green lentils in this curry are a salad lentil that took a wrong turn. You'll be chewing the sauce. That's fine if you wanted chew. It's a bad surprise if you wanted something to drag bread through.
+
+[NDSU Extension](https://www.ndsu.edu/agriculture/extension/publications/pocket-guide-preparing-pulse-foods) puts 2 1/2 cups of water on every 1 cup of dry lentils, no soak, and a 15 to 20 minute simmer. That clock is the red lentil. Brown and green drink the same water and then sit longer, which is why a swap needs a splash of broth. Those longer clocks are kitchen times. They're not a second USDA record. This curry is also wetter than that plain simmer: 2 cups of broth, a can of coconut milk, and the tomato juice, because the red lentils are supposed to disappear into a sauce. Dry protein and fiber below are per 100 g of the raw seed. The cooked row is per 100 g after boiling, so it looks smaller. It's mostly water.
+
+| Lentil | Water for 1 cup dry | Simmer | Curry texture | Protein per 100 g | Fiber per 100 g |
+|---|---|---|---|---|---|
+| Split red, dry ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)) | 2 1/2 cups | 15 to 20 minutes | Melts into the sauce | 23.91 g | 10.8 g |
+| Brown, dry ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)) | 2 1/2 cups | 20 to 30 minutes | Soft, still in pieces | 24.63 g | 10.7 g |
+| Cooked, boiled, no salt ([FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients)) | Already cooked. 1 cup dry yields 2 to 2 1/2 cups | None. It's done | Soft. This is the measured cup, not a color | 9.02 g | 7.9 g |
+| Green, whole, dry (no separate record; same numbers as [FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)) | 2 1/2 cups, plus a splash if the longer simmer cooks it down | 35 to 45 minutes | Firmest of the three | 24.63 g | 10.7 g |
+
+A cooked cup on [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) weighs 198 g. That's 17.9 g of protein (9.02 g per 100 g) and 15.6 g of fiber (7.9 g per 100 g). Red and green still don't get their own cooked lines. This pot uses the dry red cup, 192 g, and lets it disappear.
 
 ## Why red lentils are the best shortcut
 

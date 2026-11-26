@@ -52,6 +52,8 @@ Add frozen fruit for texture. Add a handful of greens if you want nutrients with
 
 Add oats or chia for fiber. Rolled oats have [10.1 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/173904/nutrients), and dried chia has [34.4 grams per 100 grams](https://fdc.nal.usda.gov/food-details/170554/nutrients), about 4 grams in a 12 gram spoon. If you hate chia texture, grind chia in a spice grinder first or use ground flax.
 
+If the gel is the part you actually want, skip the blender. These [chia pudding jars](/chia-pudding-variations-for-breakfast/) chill the same seeds overnight.
+
 Add protein if you need the smoothie to carry you to lunch. Greek yogurt, silken tofu, or a spoon of peanut butter all work, depending on your goals and tolerance. If you'd rather spoon the yogurt than blend it, [a spoonable high-fiber yogurt parfait](/high-fiber-yogurt-parfait-for-breakfast/) stacks the berries and seeds where you can see them. Greek yogurt is the easy default, though [eggs and Greek yogurt sit in very different places on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) if the grocery bill is part of the decision.
 ## Two Blends Worth Repeating
 

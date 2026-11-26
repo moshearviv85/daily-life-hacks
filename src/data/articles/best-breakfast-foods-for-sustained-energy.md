@@ -100,6 +100,8 @@ Spoon plain Greek yogurt into a bowl, add rolled oats and berries, and stop ther
 
 For mornings without cooking, portion yogurt and oats the night before or keep boiled eggs ready in the refrigerator. The savory oatmeal bowl guide is useful when sweet oatmeal has started to feel like mandatory breakfast wallpaper. If you want seeds instead of oats, [savory chia breakfast bowls](/savory-chia-seed-recipes-breakfast/) skip the sweet default.
 
+The sweet overnight jar is [chia pudding](/chia-pudding-variations-for-breakfast/), four measured variations from one ratio, and the protein still depends on the milk.
+
 ## How to read the breakfast label
 
 Compare added sugar, fiber, and protein on cereal, yogurt, and bread labels. Serving sizes can be smaller than the amount you actually pour, so check the weight rather than assuming the front of the box has developed an honest personality.

@@ -11,8 +11,8 @@ tags:
 image: /images/chia-pudding-variations-for-breakfast-main.jpg
 imageAlt: Four jars of chia pudding topped with cocoa, berries, mango, and vanilla yogurt
 date: 2026-02-23
-dateModified: 2026-11-25
-substantiveUpdate: 2026-11-25
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 quickAnswer: "The base never changes: 1/4 cup chia seeds to 1 cup liquid, whisked, whisked again after five minutes, then chilled at least four hours. Four variations cover most cravings: cocoa with a pinch of salt, mashed berries, mango with lime, and vanilla with cinnamon. USDA puts one ounce of dried chia at 9.8 grams of fiber, about 35 percent of the FDA's 28-gram Daily Value, so start at 3 tablespoons if your diet is low fiber, and drink water. Keep jars at 40°F or below and eat within 3 to 4 days, or the milk's date, whichever is sooner. Never eat the seeds dry."
 featured: false
@@ -140,6 +140,23 @@ The quiet workhorse. Less Instagram, more "I will actually eat this on a Wednesd
 * **Cinnamon:** 1.3 g, half of the 2.6 g teaspoon ([FDC 171320](https://fdc.nal.usda.gov/food-details/171320/nutrients))
 
 If you only meal-prep one flavor, make this one and change what you put on top each morning so your brain doesn't file it under "boredom." Diced apple and a peanut-butter swirl stay off the gram card unless you weigh them.
+
+## Is chia pudding actually filling on its own, and which variation has the most protein?
+
+Dried chia ([FDC 170554](https://fdc.nal.usda.gov/food-details/170554/nutrients)) has 9.8 g of fiber in 28 g, about 10 g as two tablespoons. Whole milk ([FDC 171265](https://fdc.nal.usda.gov/food-details/171265/nutrients)) makes the plain jar 15.6 g protein. Cocoa tops the four at 16.7 g. Berries ([FDC 167755](https://fdc.nal.usda.gov/food-details/167755/nutrients), [167762](https://fdc.nal.usda.gov/food-details/167762/nutrients), [171711](https://fdc.nal.usda.gov/food-details/171711/nutrients)) add fiber, not a protein rescue. Yogurt, nut butter, or extra seeds clear a 15 to 25 g breakfast.
+
+Cocoa wins by about a gram. That isn't a victory lap. Unsweetened cocoa is 19.6 g protein per 100 g ([FDC 169593](https://fdc.nal.usda.gov/food-details/169593/nutrients)), so one tablespoon behaves like a bean that wandered into dessert. The gel those seeds form may [slow digestion](https://nutritionsource.hsph.harvard.edu/food-features/chia-seeds/). Your 10:15 self isn't impressed by a one-gram margin.
+
+Every row below starts from the weighed base: 48 g chia, 244 g whole milk, 10 g maple syrup, and 0.75 g salt. The recipe card's 408 calories stop there. These totals add the flavor on top. The ratio doesn't change. Fridge life doesn't either. [FoodSafety.gov](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) puts refrigerated leftovers at 3 to 4 days at 40°F, or the date on the milk, whichever comes first.
+
+| Variation | Chia to liquid | Calories | Fiber | Protein | Fridge hold |
+|---|---|---|---|---|---|
+| Vanilla cinnamon (4.2 g vanilla, 1.3 g cinnamon) | 48 g chia to 244 g milk | 423 | 17.2 g | 15.7 g | 3 to 4 days |
+| Berry burst (74 g blueberries, [FDC 171711](https://fdc.nal.usda.gov/food-details/171711/nutrients)) | 48 g chia to 244 g milk | 450 | 18.3 g | 16.2 g | 3 to 4 days |
+| Velvet chocolate (5.4 g cocoa, [FDC 169593](https://fdc.nal.usda.gov/food-details/169593/nutrients)) | 48 g chia to 244 g milk | 420 | 18.5 g | 16.7 g | 3 to 4 days |
+| Tropical mango (82.5 g mango, [FDC 169910](https://fdc.nal.usda.gov/food-details/169910/nutrients), plus 5 g lime) | 48 g chia to 244 g milk | 459 | 17.9 g | 16.3 g | 3 to 4 days |
+
+Swap the blueberries for 61.5 g raspberries ([FDC 167755](https://fdc.nal.usda.gov/food-details/167755/nutrients)) and that jar goes to about 20.5 g fiber and 16.4 g protein. Half a cup of strawberry halves is 76 g ([FDC 167762](https://fdc.nal.usda.gov/food-details/167762/nutrients)), about 18.0 g fiber and 16.1 g protein. None of those fruit swaps clears 25 g of protein. A spoon of yogurt or nut butter is still the move if the jar is supposed to be the whole breakfast.
 
 ## Is chia pudding enough for breakfast?
 

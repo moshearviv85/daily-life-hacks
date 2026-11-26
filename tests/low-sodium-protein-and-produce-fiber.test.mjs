@@ -283,7 +283,9 @@ test("contextual links do not move the source page dates", () => {
     const beforeHrefs = [...body(before).matchAll(/\]\(([^)\s]+)\)/g)]
       .map((match) => match[1])
       .filter((value) => value === href);
-    assert.equal(hrefs.length, beforeHrefs.length + 1, slug);
+    // The links landed with #295. Later diffs keep that count. They do not add another.
+    assert.ok(beforeHrefs.length >= 1, `${slug} missing ${href} on main`);
+    assert.equal(hrefs.length, beforeHrefs.length, slug);
     assert.equal(href.includes("#"), false, href);
   }
 });
