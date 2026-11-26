@@ -30,6 +30,7 @@ const BEFORE_DATE_RESTORE = "84702a37";
 const LATER_UPDATES = {
   "30-day-high-fiber-challenge-meal-plan": "2026-11-26",
   "animal-protein-per-dollar-ranked": "2026-11-25",
+  "brown-lentil-and-pearled-barley-soup-high-fiber": "2026-11-26",
   "baked-cod-lemon-capers-green-beans": "2026-11-26",
   "baking-sheet-liners-parchment-silicone-when-to-use": "2026-11-25",
   "best-breakfast-foods-for-sustained-energy": "2026-11-25",
@@ -49,6 +50,7 @@ const LATER_UPDATES = {
   "high-fiber-hummus-recipe-homemade": "2026-11-26",
   "high-fiber-meals-for-constipation-relief": "2026-11-25",
   "high-protein-grocery-list-50-grams": "2026-11-25",
+  "high-protein-overnight-oats-chia-greek-yogurt": "2026-11-26",
   "protein-per-dollar-2017-to-2026-bls-trends": "2026-11-26",
   "sourdough-discard-buttermilk-substitute": "2026-11-25",
   "high-protein-high-fiber-meals-for-weight-loss": "2026-11-25",

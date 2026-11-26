@@ -23,7 +23,7 @@ test("recipe finder ranks overlap and exposes shopping gaps", () => {
 });
 
 test("recipe finder includes utility SEO and structured data", () => {
-  assert.match(source, /Recipe Finder by Ingredients: 82 Recipes/);
+  assert.match(source, /Recipe Finder by Ingredients: 84 Recipes/);
   assert.match(source, /"@type": "WebApplication"/);
   assert.doesNotMatch(source, /"@type": "FAQPage"/);
   assert.match(source, /<details><summary>/);
