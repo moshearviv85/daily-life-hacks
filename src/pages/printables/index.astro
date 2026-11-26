@@ -1,0 +1,340 @@
+---
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../content/author";
+import {
+  CANS_PER_DRY_POUND,
+  CUPS_COOKED_PER_CAN,
+  CUPS_COOKED_PER_POUND,
+} from "../../lib/bean-crowd-math.js";
+import { FRIDGE_LIFE_SECTIONS, SMOKE_POINT_ROWS } from "../../content/lead-magnet-data.mjs";
+
+const pageUrl = "https://www.daily-life-hacks.com/printables/";
+const chartSrc = "/images/printables-hub-chart.jpg";
+const title = "Printable Kitchen Charts for Beans, Fridge Life, and Oils";
+const description =
+  "Five printable kitchen charts in one index: bean yield, fridge windows, oil smoke points, sourdough discard grams, and a 7-day grocery planner.";
+
+function parseCsv(path: string) {
+  const text = readFileSync(join(process.cwd(), path), "utf8");
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines[0].split(",").map((header) => header.trim());
+  return lines.slice(1).map((line) => {
+    const cells: string[] = [];
+    let field = "";
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (inQuotes) {
+        if (c === '"' && line[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else if (c === '"') inQuotes = false;
+        else field += c;
+      } else if (c === '"') inQuotes = true;
+      else if (c === ",") {
+        cells.push(field);
+        field = "";
+      } else field += c;
+    }
+    cells.push(field);
+    const row: Record<string, string> = {};
+    headers.forEach((header, index) => {
+      row[header] = (cells[index] ?? "").trim();
+    });
+    return row;
+  });
+}
+
+function articleExists(slug: string) {
+  return existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+}
+
+function pageExists(route: string) {
+  const slug = route.replace(/^\/|\/$/g, "");
+  return (
+    existsSync(join(process.cwd(), "src/pages", slug, "index.astro")) ||
+    existsSync(join(process.cwd(), "src/pages", `${slug}.astro`)) ||
+    articleExists(slug)
+  );
+}
+
+const beans = parseCsv("public/data/canned-vs-dry-beans-cost-2026.csv");
+const dryBlack = beans.find((row) => row.food === "Black beans (dry)");
+const cannedBlack = beans.find((row) => row.food === "Canned black beans");
+if (!dryBlack || !cannedBlack || dryBlack.value !== "58.0" || cannedBlack.value !== "30.1") {
+  throw new Error("printables hub: black bean protein-per-dollar rows drifted");
+}
+
+function smokeF(oil: string) {
+  const row = SMOKE_POINT_ROWS.find((item) => item.oil === oil);
+  const match = row?.point.match(/^(\d+)°F$/);
+  if (!match) throw new Error(`printables hub: missing single smoke point for ${oil}`);
+  return Number(match[1]);
+}
+
+const smokePoints = [
+  ["Coconut", smokeF("Coconut (refined, deodorized)")],
+  ["Peanut", smokeF("Peanut (refined, deodorized)")],
+  ["Canola", smokeF("Canola (refined, deodorized)")],
+  ["Soybean", smokeF("Soybean, aka vegetable oil (refined, deodorized)")],
+] as const;
+
+function fridgeValue(sectionTitle: string, label: string) {
+  const section = FRIDGE_LIFE_SECTIONS.find((item) => item.title === sectionTitle);
+  const row = section?.rows.find(([name]) => name === label);
+  if (!row) throw new Error(`printables hub: missing fridge row ${sectionTitle} / ${label}`);
+  return row[1];
+}
+
+const fridgeWindows = [
+  ["Cooked leftovers", fridgeValue("Leftovers", "Cooked meat or poultry"), "4 days"],
+  ["Dairy or buttermilk dressing", fridgeValue("Homemade dressing", "Dairy or buttermilk"), "4 days"],
+  ["Dressing with fresh garlic or herbs", fridgeValue("Homemade dressing", "With fresh garlic or herbs"), "7 days"],
+  ["Plain vinaigrette", fridgeValue("Homemade dressing", "Vinaigrette (oil, vinegar, dried herbs and spices)"), "14 days"],
+] as const;
+if (fridgeWindows[0][1] !== "3 to 4 days" || fridgeWindows[2][1] !== "Up to 1 week" || fridgeWindows[3][1] !== "Up to 2 weeks") {
+  throw new Error("printables hub: fridge windows drifted");
+}
+
+const hydration = readFileSync(
+  join(process.cwd(), "src/data/articles/sourdough-discard-hydration-conversion-chart.md"),
+  "utf8",
+);
+if (!hydration.includes("100 gram pour is 50 grams of each") || !hydration.includes("100 gram scoop is 55.6 grams of flour")) {
+  throw new Error("printables hub: discard flour split drifted");
+}
+
+const printables = [
+  {
+    href: "/printables/bean-conversion-card/",
+    kicker: "Yield",
+    title: "Bean conversion card",
+    text: `1 pound dried cooks to about ${CUPS_COOKED_PER_POUND} cups, or ${CANS_PER_DRY_POUND} cans. One can is about ${CUPS_COOKED_PER_CAN} cups drained.`,
+  },
+  {
+    href: "/printables/fridge-life-card/",
+    kicker: "Cold storage",
+    title: "Fridge life card",
+    text: "Cooked leftovers sit at 3 to 4 days. Dressing runs from 4 days to 2 weeks, depending on what's in the jar.",
+  },
+  {
+    href: "/printables/smoke-point-chart/",
+    kicker: "Heat",
+    title: "Smoke point chart",
+    text: `Refined coconut ${smokePoints[0][1]}°F, peanut ${smokePoints[1][1]}°F, canola ${smokePoints[2][1]}°F, soybean ${smokePoints[3][1]}°F. Avocado and butter stay "not listed."`,
+  },
+  {
+    href: "/printables/sourdough-discard-grams-cheat-sheet/",
+    kicker: "100% jar",
+    title: "Sourdough discard grams",
+    text: "One stirred cup is 227 grams. At 100% hydration, half of that cup is flour and half is water.",
+  },
+  {
+    href: "/printables/weekly-grocery-budget-planner/",
+    kicker: "Paper",
+    title: "7-day grocery budget planner",
+    text: "Two pages for dinners, a pantry check, and the receipt. It's a form, not a lab reading, so it isn't a bar on the chart.",
+  },
+];
+for (const card of printables) {
+  if (!pageExists(card.href)) throw new Error(`printables hub: missing ${card.href}`);
+}
+
+const companions = [
+  {
+    slug: "canned-vs-dry-beans-cost-and-sodium-per-serving",
+    label: "canned versus dry beans, cost and sodium per serving",
+  },
+  {
+    slug: "cheapest-frozen-vegetables-for-fiber-and-protein",
+    label: "cheapest frozen vegetables for fiber and protein",
+  },
+  {
+    slug: "cheapest-shelf-stable-pantry-foods-for-protein",
+    label: "cheapest shelf-stable pantry foods for protein",
+  },
+  {
+    slug: "how-long-do-cooked-grains-and-beans-last-in-the-fridge",
+    label: "how long cooked grains and beans last in the fridge",
+  },
+  {
+    slug: "sourdough-discard-hydration-conversion-chart",
+    label: "sourdough discard hydration conversion chart",
+  },
+].filter((item) => articleExists(item.slug));
+
+const related = [
+  ["/tools/dried-beans-to-canned-converter/", "dried beans to canned converter"],
+  ["/cooking-oils-smoke-points-best-uses/", "cooking oil smoke points"],
+  ["/how-to-measure-sourdough-discard-grams/", "how to measure sourdough discard in grams"],
+  ["/tools/grocery-budget-calculator/", "weekly food cost planner"],
+  ["/tools/protein-per-dollar-calculator/", "protein per dollar calculator"],
+  ["/methodology/", "methodology"],
+].filter(([href]) => pageExists(href));
+
+const chartAlt =
+  "Chart comparing dry and canned black-bean protein per dollar, fridge storage days, refined-oil smoke points, and flour grams in 100 grams of 100 percent and 80 percent sourdough discard. Not a photograph.";
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    name: title,
+    description,
+    url: pageUrl,
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    author: { "@type": "Person", "@id": AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_URL },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+    breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+    mainEntity: { "@id": `${pageUrl}#item-list` },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `https://www.daily-life-hacks.com${chartSrc}`,
+      caption: "Chart of kitchen benchmarks behind the printable guides. Not a photograph.",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}#item-list`,
+    name: "Printable kitchen guides",
+    numberOfItems: printables.length,
+    itemListElement: printables.map((card, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: card.title,
+      url: `https://www.daily-life-hacks.com${card.href}`,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+      { "@type": "ListItem", position: 2, name: "Printables", item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={schemas}
+>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class="underline" style="color:#F29B30;">Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Printables</span>
+    </nav>
+
+    <div class="max-w-4xl mb-8">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Five sheets. One index.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">The Printable Kitchen Charts, Finally on One Shelf</h1>
+      <p class="text-sm mb-4" style="color:var(--muted-color);">
+        By <a href="/author/david-miller/" class="font-bold underline" style="color:#F29B30;">{AUTHOR_NAME}</a>
+      </p>
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        The bean card, the fridge card, the smoke-point chart, the discard cheat sheet, and the grocery planner were already on the site. The index for them wasn't. You'd hit a 404 looking for printable kitchen charts, which is a rude way to treat a stack of paper you meant to stick on the fridge.
+      </p>
+      <p class="text-lg leading-relaxed mt-4" style="color:var(--text-color);">
+        This page is that index. The figure below is a chart drawn from the published numbers, not a photograph.
+      </p>
+    </div>
+
+    <figure class="mb-12">
+      <img
+        src={chartSrc}
+        width="1200"
+        height="675"
+        alt={chartAlt}
+        class="w-full h-auto rounded-2xl"
+        style="border:1px solid var(--border-color);"
+      />
+      <figcaption class="mt-3 text-sm leading-relaxed" style="color:var(--muted-color);">
+        Chart, not a photograph. Dry black beans return {dryBlack.value} grams of protein per dollar against {cannedBlack.value} for the can. Fridge bars use the upper published day. Smoke points are the single lab readings. Discard bars are flour grams in a 100 gram scoop. The grocery planner is a form, so it doesn't get a bar.
+      </figcaption>
+    </figure>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">The five printables</h2>
+      <p class="mb-6 max-w-3xl" style="color:var(--text-color);">
+        Each link is the printable page itself. I'm not sending you to a file download from this index. Open the sheet, then print it there if you want paper.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {printables.map((card) => (
+          <a href={card.href} class="block rounded-2xl p-5" style="background:var(--card-bg);border:1px solid var(--border-color);">
+            <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">{card.kicker}</p>
+            <h3 class="text-xl font-bold mb-2" style="color:var(--heading-color);">{card.title}</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--text-color);">{card.text}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <article class="max-w-4xl">
+      <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">Dry beans versus the can</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">
+        One pound dried still cooks to about {CUPS_COOKED_PER_POUND} cups, which is {CANS_PER_DRY_POUND} (15-oz) cans. One can is about {CUPS_COOKED_PER_CAN} cups drained. That's the card. The price is a different sentence. In canned-vs-dry-beans-cost-2026.csv, dry black beans are a {dryBlack.package} at ${Number(dryBlack.package_price_usd).toFixed(2)} and return {dryBlack.value} grams of protein per dollar. The canned black beans are a {cannedBlack.package} at ${Number(cannedBlack.package_price_usd).toFixed(2)} and return {cannedBlack.value}. Same bean, more water, fewer grams per dollar. A can is dinner tonight. A bag is dinner after the pot finishes.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">Fridge windows worth taping up</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">
+        Cooked meat on the fridge card is {fridgeWindows[0][1]}. That 3 to 4 day leftovers window is the USDA cold-storage figure the card copies, and the chart uses the upper day so the bar has one number. Dairy dressing is the same {fridgeWindows[1][1]}. Fresh garlic or herbs shortens the fancy vinaigrette to {fridgeWindows[2][1]}. A plain vinaigrette, oil and vinegar and dried spices, is {fridgeWindows[3][1]}. Cooked grains and beans don't all share that leftovers line. Their page is in the chart-study list below.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">Smoke points with one lab number</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">
+        The smoke-point printable copies the lab table, including the two oils that table refuses to number. This chart only draws the single readings: coconut {smokePoints[0][1]}°F, peanut {smokePoints[1][1]}°F, canola {smokePoints[2][1]}°F, soybean {smokePoints[3][1]}°F. Olive oil is a range on that page, so it doesn't get to pretend it's one bar. If the bottle says cold-pressed and the table says refined, believe the bottle in your hand, not the taller bar.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">100% discard versus 80%</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">
+        The cheat sheet is the pourable jar. One cup is 227 grams, and at 100% hydration a 100 gram pour is 50 grams of flour and 50 grams of water. The same 100 gram scoop at 80% is 55.6 grams of flour and 44.4 grams of water. That's the gap on the chart. Use the stiff scoop in a pancake card written for a pourable jar and the batter turns into spackle. Weigh it.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">The planner is paper on purpose</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">
+        The two-page grocery planner doesn't contain a gram-per-dollar reading, so I didn't invent one to fill a fifth panel. Write the week on the sheet. If you want the priced menus instead of a blank box, the weekly food cost planner already has them.
+      </p>
+
+      {companions.length > 0 && (
+        <>
+          <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">Chart studies that sit next to the sheets</h2>
+          <ul class="list-disc pl-5 space-y-2 mb-6" style="color:var(--text-color);">
+            {companions.map((item) => (
+              <li>
+                <a href={`/${item.slug}/`} class="font-bold underline" style="color:#F29B30;">{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {related.length > 0 && (
+        <>
+          <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">The tools behind the paper</h2>
+          <ul class="list-disc pl-5 space-y-2" style="color:var(--text-color);">
+            {related.map(([href, label]) => (
+              <li>
+                <a href={href} class="font-bold underline" style="color:#F29B30;">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
