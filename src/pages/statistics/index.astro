@@ -1,9 +1,14 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import dataIndex from "../../../public/data/api-index-v1.json";
 import { DATA_RELEASE_DATE, DATA_VERSION } from "../../content/datasets";
+import { isIndexPruned } from "../../content/index-prune.js";
+import { isReleased } from "../../content/release";
 
 const siteUrl = "https://www.daily-life-hacks.com";
 const pageUrl = `${siteUrl}/statistics/`;
@@ -115,6 +120,32 @@ const schemas = [
   },
 ];
 
+const BENCHMARK_SLUGS = [
+  "cost-of-50g-protein-and-30g-fiber-per-day",
+  "protein-per-dollar-2017-to-2026-bls-trends",
+  "plant-vs-animal-protein-cost-per-dollar",
+  "us-regional-grocery-protein-prices-october-2026",
+  "one-dollar-of-protein-vs-one-dollar-of-fiber",
+  "canned-vs-dry-beans-cost-and-sodium-per-serving",
+  "high-protein-vs-high-fiber-satiety",
+  "best-low-cost-protein-sources-large-families",
+] as const;
+
+const benchmarkArticles = await getCollection("articles");
+const benchmarkCards = BENCHMARK_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? benchmarkArticles.find((entry) => entry.id === slug) : undefined;
+  if (!article || article.data.author !== "David Miller" || !isReleased(article)) return [];
+  if (!isIndexPruned(article.id)) {
+    return [{
+      href: `/${slug}/`,
+      title: article.data.title,
+      excerpt: article.data.excerpt,
+    }];
+  }
+  return [];
+});
+
 const linkClass = "font-bold underline decoration-[#F29B30] underline-offset-4";
 const compactDay = (day: string) => day.replace(/^Day \d+:\s*/, "");
 const nutritionStatus = (row: any) =>
@@ -195,6 +226,29 @@ const nutritionStatusDetail = (row: any) => {
       Prices use BLS Average Price data where available and dated national retail listings
       otherwise. Read the <a href="/methodology/" class={linkClass}>methodology</a>.
     </p>
+
+    {benchmarkCards.length > 0 && (
+      <section class="mb-14" data-recent-benchmarks>
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">
+          Recent Statistical Benchmarks & Cost Studies
+        </h2>
+        <p class="max-w-4xl mb-6" style="color:var(--muted-color);">
+          The July tables are the long version. These cards point at the newer 2026 cost studies, including two guides the rest of the site barely links. David Miller wrote each one.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {benchmarkCards.map((card) => (
+            <a
+              href={card.href}
+              class="rounded-2xl p-5 block transition-shadow hover:shadow-lg"
+              style="background:var(--card-bg);border:1px solid var(--border-color);"
+            >
+              <h3 class="font-bold text-lg leading-snug" style="color:var(--heading-color);">{card.title}</h3>
+              <p class="text-sm mt-2 leading-relaxed" style="color:var(--muted-color);">{card.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     <section class="grid lg:grid-cols-2 gap-7 mb-14">
       <div>
