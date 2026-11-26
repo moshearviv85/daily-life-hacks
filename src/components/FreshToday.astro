@@ -1,5 +1,9 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { getCollection } from "astro:content";
 import { isIndexPruned } from "../content/index-prune.js";
+import { isReleased } from "../content/release";
 
 interface ArticleSummary {
   slug: string;
@@ -19,6 +23,61 @@ interface Props {
 const { articles: sourceArticles } = Astro.props;
 const articles = sourceArticles.filter((article) => !isIndexPruned(article.slug));
 const articlesJson = JSON.stringify(articles);
+
+const categories = ["nutrition", "recipes", "tips"] as const;
+
+function categoryLabel(category: (typeof categories)[number]) {
+  if (category === "recipes") return "Recipe";
+  if (category === "tips") return "Tip";
+  return "Nutrition";
+}
+
+function releaseTime(article: ArticleSummary) {
+  return new Date(article.publishAt || article.date).getTime();
+}
+
+function formatDate(value: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(value));
+}
+
+function webpSrc(image: string, width: number) {
+  return image.replace(/^\/images\//, "/images/opt/").replace(/\.jpg$/, `-${width}w.webp`);
+}
+
+const now = Date.now();
+const latestCards = categories.map((category) => {
+  const released = articles
+    .filter((article) => article.category === category && releaseTime(article) <= now)
+    .sort((a, b) => releaseTime(b) - releaseTime(a));
+  return { category, label: categoryLabel(category), article: released[0] };
+});
+
+// Weak-inlink studies. A file has to exist, be released, stay indexable, and
+// carry David Miller as the author. Missing files render nothing.
+const CRAWL_BRIDGE_SLUGS = [
+  "high-protein-vs-high-fiber-satiety",
+  "best-low-cost-protein-sources-large-families",
+  "high-fiber-pizza-crust-cauliflower",
+  "which-dried-beans-have-the-most-protein",
+  "cheapest-canned-fish-and-seafood-protein-per-dollar",
+  "how-much-100-grams-of-protein-costs-per-day",
+] as const;
+
+const bridgeCollection = await getCollection("articles");
+const crawlBridges = CRAWL_BRIDGE_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
+  const article = onDisk ? bridgeCollection.find((entry) => entry.id === slug) : undefined;
+  if (!article || article.data.author !== "David Miller" || !isReleased(article)) return [];
+  if (!isIndexPruned(article.id)) {
+    return [{ href: `/${slug}/`, title: article.data.title }];
+  }
+  return [];
+});
 ---
 
 <section class="w-full max-w-6xl mx-auto px-4 py-4" data-fresh-today-root>
@@ -29,19 +88,81 @@ const articlesJson = JSON.stringify(articles);
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="fresh-today-grid">
-    <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
-      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Nutrition</p>
-      <p class="text-sm" style="color: var(--muted-color);">Loading latest nutrition post...</p>
-    </div>
-    <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
-      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Recipes</p>
-      <p class="text-sm" style="color: var(--muted-color);">Loading latest recipe...</p>
-    </div>
-    <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
-      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Tips</p>
-      <p class="text-sm" style="color: var(--muted-color);">Loading latest tip...</p>
-    </div>
+    {latestCards.map(({ category, label, article }) => (
+      article ? (
+        <a
+          href={`/${article.slug}/`}
+          class="group block overflow-hidden rounded-xl border transition-shadow duration-300 hover:shadow-lg"
+          style="border-color: var(--border-color); background-color: var(--card-bg);"
+          data-fresh-today-ssr={category}
+        >
+          {article.image?.endsWith(".jpg") ? (
+            <div class="aspect-video overflow-hidden">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset={`${webpSrc(article.image, 400)} 400w, ${webpSrc(article.image, 800)} 800w, ${webpSrc(article.image, 1200)} 1200w`}
+                  sizes="(max-width: 768px) 100vw, 400px"
+                />
+                <img
+                  src={article.image}
+                  alt={article.imageAlt}
+                  width="800"
+                  height="450"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          ) : (
+            <div
+              class="aspect-video flex items-center justify-center bg-gradient-to-br from-orange-50 to-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:from-slate-800 dark:to-slate-900 dark:text-slate-300"
+              role="img"
+              aria-label={article.imageAlt}
+            >
+              Daily Life Hacks
+            </div>
+          )}
+          <div class="p-4">
+            <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #F29B30;">{label}</p>
+            <h3 class="text-lg font-bold leading-snug mb-2" style="color: var(--heading-color);">{article.title}</h3>
+            <p class="text-sm leading-relaxed mb-3" style="color: var(--muted-color);">{article.excerpt}</p>
+            <p class="text-xs" style="color: var(--label-color);">Released {formatDate(article.publishAt || article.date)}</p>
+          </div>
+        </a>
+      ) : (
+        <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
+          <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">{label}</p>
+          <p class="text-sm" style="color: var(--muted-color);">No scheduled {category} release yet.</p>
+        </div>
+      )
+    ))}
   </div>
+
+  {crawlBridges.length > 0 && (
+    <div class="mt-4" data-crawl-path-bridges>
+      <h3 class="text-sm font-bold uppercase tracking-wide mb-2" style="color: var(--heading-color);">
+        Crawl-Path Bridges & Recent 2026 Studies
+      </h3>
+      <p class="text-sm mb-3" style="color: var(--muted-color);">
+        These six barely show up from anywhere else on the site. The price math is already written.
+      </p>
+      <ul class="flex flex-wrap gap-2">
+        {crawlBridges.map((bridge) => (
+          <li>
+            <a
+              href={bridge.href}
+              class="inline-block rounded-full border px-3 py-1 text-sm font-semibold"
+              style="border-color: var(--border-color); color: var(--heading-color);"
+            >
+              {bridge.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
 </section>
 
 <script define:vars={{ articlesJson }}>
