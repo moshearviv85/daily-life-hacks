@@ -17,8 +17,8 @@ tags:
 image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28
-dateModified: 2026-11-23
-substantiveUpdate: 2026-11-23
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 faq:
@@ -55,6 +55,28 @@ Most of the time this is a waste-and-taste question. Once in a while, specifical
 Worth being honest about the limits. No federal chart lists homemade salad dressing, so the homemade rows use the closest extension and USDA references. Read the vinaigrette, fresh garlic or herbs, dairy, mayo, and opened store-bought rows as quality windows. The raw-egg row is a safety limit. Garlic packed in oil with no acid is the other safety limit, and it isn't a row here because that jar isn't a dressing. University of Maine's basic card says 7 days even for a simple mix, so the 2-week line is the upper end Ask Extension gives a plain vinaigrette with dried herbs, not a dare.
 
 The pattern is simple. More acid buys you time. More fresh, once-living ingredients takes it away. Oil, red wine vinegar, and dried oregano coasts for two weeks. A ranch with fresh dill and buttermilk is on a much shorter clock.
+
+## How much sodium and sugar do homemade vinaigrettes save vs. bottled dressing, and what pH keeps them safe?
+
+Italian dressing carries 150 mg sodium and 2 g sugar in one tablespoon (14.7 g, [FDC 171019](https://fdc.nal.usda.gov/food-details/171019/nutrients)). A 3:1 olive-oil vinaigrette ([FDC 171413](https://fdc.nal.usda.gov/food-details/171413/nutrients)) skips most of both. pH 4.6 or below inhibits *Clostridium botulinum* spores under [21 CFR 114](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-114) and the [Food Code](https://www.fda.gov/food/fda-food-code/food-code-2022). Garlic or herbs in plain oil sit near pH 5.3 to 6.7 and keep 4 days refrigerated.
+
+The homemade spoon isn't the low-calorie one. It's the low-salt, low-sugar one. The servings below aren't matched, because USDA and the labels don't use the same spoon.
+
+| Dressing | Calories | Sodium | Sugar | Typical pH tier | Fridge window |
+|---|---:|---:|---:|---|---|
+| Homemade 3:1 olive oil and distilled vinegar, 1 tbsp | 90 kcal | under 1 mg | 0 g | Below 4.6. The water phase is vinegar | Up to 2 weeks if it's just oil, vinegar, and dried herbs |
+| Commercial regular Italian, [FDC 171019](https://fdc.nal.usda.gov/food-details/171019/nutrients), 1 tbsp (14.7 g) | 35 kcal | 146 mg (150 mg on a rounded label) | 1.6 g (2 g on a rounded label) | Acid dressing. This record doesn't publish a pH | 1 to 3 months after opening, or the date on the bottle |
+| Hy-Vee classic Italian, [FDC 2066636](https://fdc.nal.usda.gov/food-details/2066636/nutrients), 2 tbsp (31 g) | 100 kcal | 510 mg | 2 g | Vinegar is on the label. pH isn't in this record | 1 to 3 months after opening, or the date on the bottle |
+| Sesame tahini dressing, [FDC 2164710](https://fdc.nal.usda.gov/food-details/2164710/nutrients), 1 oz (30 g) | 110 kcal | 230 mg | 2 g | Rice vinegar and lemon juice are on the label. pH isn't in this record | 1 to 3 months after opening, or the date on the bottle |
+| Yogurt or buttermilk ranch made at home. Numbers are commercial regular ranch, [FDC 173592](https://fdc.nal.usda.gov/food-details/173592/nutrients), 1 tbsp (15 g) | 65 kcal | 135 mg | 0.7 g | Dairy base. pH isn't in this record, so don't assume it's under 4.6 | 3 to 4 days for the homemade jar. Bottled ranch follows its label |
+
+That 150 mg and 2 g are label rounding, not a second lab. FDC 171019 is 240 kcal, 993 mg sodium, and 10.77 g sugar per 100 g. Times 14.7 g, that's 35 kcal, 146 mg sodium, and 1.6 g sugar. Labels round sodium above 140 mg to the nearest 10 mg and sugar to the nearest gram.
+
+The 3:1 tablespoon is three quarters of USDA's olive-oil tablespoon, 10.125 g from [FDC 171413](https://fdc.nal.usda.gov/food-details/171413/nutrients), plus a quarter of the distilled-vinegar tablespoon, 3.725 g from [FDC 172237](https://fdc.nal.usda.gov/food-details/172237/nutrients). That's 90 kcal, under 1 mg sodium, and 0 g sugar. You save the salt and the sugar. You don't save the olive oil. Whisking it yourself doesn't make the fat less caloric.
+
+Hy-Vee's 510 mg and the tahini dressing's 230 mg are the printed label servings, 2 tablespoons and 1 ounce, not a quiet per-tablespoon conversion. The ranch tablespoon is commercial regular ranch: 15 g times 430 kcal, 901 mg sodium, and 4.69 g sugar per 100 g. That's 64.5 kcal before it rounds to 65, plus 135 mg sodium and 0.7 g sugar. A yogurt or buttermilk ranch you mix at home isn't that composite. It does share the 3-to-4-day clock from the first table. A bottled ranch with preservatives is the opened-dressing window, 1 to 3 months, unless the label is shorter.
+
+The pH column is a tier, not a meter reading from your jar. [21 CFR 114](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-114) calls a food with a natural pH of 4.6 or below an acid food, and it requires acidified foods to finish at pH 4.6 or lower. Vinegar is that water phase in a plain vinaigrette. Garlic isn't. UC Agriculture and Natural Resources puts a raw clove around pH 5.3 to 6.3 ([preserving garlic](https://ucanr.edu/sites/default/files/2023-09/388534.pdf)). A University of Idaho study measured fresh basil, oregano, and rosemary at pH 6.3 to 6.7 before any acid soak ([Food Protection Trends, 2014](https://www.foodprotection.org/publications/food-protection-trends/archive/2014-07acidification-of-garlic-and-herbs-for-consumer-preparation-of-infused-oils/)). Pack those in oil with no vinegar and you're in the low-acid, no-oxygen case: refrigerate and use it within 4 days, or freeze it. If you can taste the vinegar in the same jar as the garlic, you're on the one-week fresh-ingredient window above, not the 4-day infused-oil clock. Lemon juice splashed in afterward still isn't the tested acidification.
 
 ## Do you have to refrigerate homemade salad dressing?
 
