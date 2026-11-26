@@ -37,6 +37,12 @@ const GUARDED = [
   "cheapest-shelf-stable-pantry-foods-for-protein",
   "how-long-do-cooked-grains-and-beans-last-in-the-fridge",
   "sourdough-discard-hydration-conversion-chart",
+  "how-much-protein-and-fiber-in-canned-vs-frozen-vs-dry-staples",
+  "how-long-do-cooked-meat-and-poultry-last-in-the-fridge",
+  "sourdough-discard-buttermilk-substitute",
+  "sheet-pan-chicken-thighs-and-chickpeas-high-protein",
+  "budget-green-split-pea-and-sweet-potato-curry",
+  "high-protein-overnight-oats-chia-greek-yogurt",
 ];
 
 function literalHrefs(source) {
@@ -83,13 +89,15 @@ test("companion studies are linked only when the article file exists", () => {
   assert.match(hub, /articleExists\(item\.slug\)/);
   for (const slug of GUARDED) {
     assert.match(hub, new RegExp(slug));
+    assert.equal(ORPHANS.includes(slug), false, `${slug} locks dateModified as an orphan`);
+    assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
     const exists = existsSync(join(ROOT, "src/data/articles", `${slug}.md`));
+    assert.equal(exists, true, slug);
     assert.equal(
       hub.includes(`href="/${slug}/"`),
       false,
       `${slug} is emitted from the filtered list, not a hardcoded href`,
     );
-    if (!exists) assert.equal(ORPHANS.includes(slug), false, slug);
   }
   for (const href of literalHrefs(hub)) {
     if (!href.startsWith("/") || href.startsWith("//")) continue;

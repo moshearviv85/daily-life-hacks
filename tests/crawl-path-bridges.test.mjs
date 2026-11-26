@@ -27,6 +27,15 @@ const BENCHMARKS = [
   "best-low-cost-protein-sources-large-families",
 ];
 
+const NEWEST_BENCHMARKS = [
+  "cheapest-frozen-vegetables-for-fiber-and-protein",
+  "high-fiber-fast-food-under-500-calories",
+  "cheapest-shelf-stable-pantry-foods-for-protein",
+  "cheapest-nuts-and-seeds-for-protein-and-fiber",
+  "how-much-fiber-and-protein-per-dollar-at-walmart-vs-bls",
+  "cheapest-ways-to-add-10-grams-of-fiber-to-any-meal",
+];
+
 function read(path) {
   return readFileSync(join(ROOT, path), "utf8");
 }
@@ -50,7 +59,7 @@ function articleMeta(slug) {
 test("crawl bridges and benchmark targets exist, are indexable, and are David Miller", () => {
   const orphanTest = read("tests/orphan-contextual-inlinks.test.mjs");
   const orphanBlock = orphanTest.match(/const ORPHANS = \[([\s\S]*?)\];/)?.[1] ?? "";
-  const slugs = [...new Set([...CRAWL_BRIDGES, ...BENCHMARKS])];
+  const slugs = [...new Set([...CRAWL_BRIDGES, ...BENCHMARKS, ...NEWEST_BENCHMARKS])];
   for (const slug of slugs) {
     assert.equal(existsSync(join(ROOT, "src/data/articles", `${slug}.md`)), true, slug);
     assert.equal(isIndexPruned(slug), false, `${slug} is pruned`);
@@ -98,11 +107,13 @@ test("statistics hub links the recent benchmark studies without new file or hash
   const section = source.slice(start, end);
 
   assert.match(source, /Recent Statistical Benchmarks & Cost Studies/);
+  assert.match(source, /Newest 2026 Grocery & Fast-Food Benchmarks/);
   assert.match(source, /existsSync/);
   assert.match(source, /!isIndexPruned/);
   assert.match(source, /!isReleased/);
   assert.match(source, /author !== "David Miller"/);
   assert.match(source, /DATA_VERSION/);
+  assert.match(source, /name: AUTHOR_NAME/);
   assert.doesNotMatch(source, /FAQPage/);
   assert.doesNotMatch(section, /\.csv/);
   assert.doesNotMatch(section, /#/);
@@ -110,7 +121,13 @@ test("statistics hub links the recent benchmark studies without new file or hash
   assert.doesNotMatch(section, /\bphoto\b/i);
   assert.doesNotMatch(source, /\u2014/);
 
+  const newest = source.indexOf("data-newest-grocery-benchmarks");
+  assert.ok(newest > start && newest < end, "newest grocery grid should sit inside the benchmark block");
+
   for (const slug of BENCHMARKS) {
+    assert.match(source, new RegExp(`"${slug}"`));
+  }
+  for (const slug of NEWEST_BENCHMARKS) {
     assert.match(source, new RegExp(`"${slug}"`));
   }
 });
@@ -137,7 +154,7 @@ test("built homepage and statistics include the canonical study paths", () => {
     assert.equal(bridges.includes(`href="/${slug}#`), false);
     assert.equal(bridges.includes(`${slug}.csv`), false);
   }
-  for (const slug of BENCHMARKS) {
+  for (const slug of [...BENCHMARKS, ...NEWEST_BENCHMARKS]) {
     assert.match(benchmarks, new RegExp(`href="/${slug}/"`));
     assert.equal(benchmarks.includes(`href="/${slug}#`), false);
     assert.equal(benchmarks.includes(`${slug}.csv`), false);

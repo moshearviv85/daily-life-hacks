@@ -6,6 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import dataIndex from "../../../public/data/api-index-v1.json";
+import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../content/author";
 import { DATA_RELEASE_DATE, DATA_VERSION } from "../../content/datasets";
 import { isIndexPruned } from "../../content/index-prune.js";
 import { isReleased } from "../../content/release";
@@ -76,6 +77,12 @@ const schemas = [
     inLanguage: "en-US",
     dateModified: DATA_RELEASE_DATE,
     isPartOf: { "@id": `${siteUrl}/#website` },
+    author: {
+      "@type": "Person",
+      "@id": AUTHOR_ID,
+      name: AUTHOR_NAME,
+      url: AUTHOR_URL,
+    },
     publisher: organization,
     mainEntity: {
       "@type": "ItemList",
@@ -131,8 +138,18 @@ const BENCHMARK_SLUGS = [
   "best-low-cost-protein-sources-large-families",
 ] as const;
 
+const NEWEST_BENCHMARK_SLUGS = [
+  "cheapest-frozen-vegetables-for-fiber-and-protein",
+  "high-fiber-fast-food-under-500-calories",
+  "cheapest-shelf-stable-pantry-foods-for-protein",
+  "cheapest-nuts-and-seeds-for-protein-and-fiber",
+  "how-much-fiber-and-protein-per-dollar-at-walmart-vs-bls",
+  "cheapest-ways-to-add-10-grams-of-fiber-to-any-meal",
+] as const;
+
 const benchmarkArticles = await getCollection("articles");
-const benchmarkCards = BENCHMARK_SLUGS.flatMap((slug) => {
+
+function studyCard(slug: string) {
   const onDisk = existsSync(join(process.cwd(), "src/data/articles", `${slug}.md`));
   const article = onDisk ? benchmarkArticles.find((entry) => entry.id === slug) : undefined;
   if (!article || article.data.author !== "David Miller" || !isReleased(article)) return [];
@@ -144,7 +161,10 @@ const benchmarkCards = BENCHMARK_SLUGS.flatMap((slug) => {
     }];
   }
   return [];
-});
+}
+
+const benchmarkCards = BENCHMARK_SLUGS.flatMap((slug) => studyCard(slug));
+const newestBenchmarkCards = NEWEST_BENCHMARK_SLUGS.flatMap((slug) => studyCard(slug));
 
 const linkClass = "font-bold underline decoration-[#F29B30] underline-offset-4";
 const compactDay = (day: string) => day.replace(/^Day \d+:\s*/, "");
@@ -161,7 +181,7 @@ const nutritionStatusDetail = (row: any) => {
 };
 ---
 
-<BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas}>
+<BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas} author={AUTHOR_NAME} authorUrl={AUTHOR_URL}>
   <Header />
   <main class="max-w-6xl mx-auto px-4 py-12 md:py-16">
     <nav class="text-sm mb-6" style="color:var(--muted-color);" aria-label="Breadcrumb">
@@ -177,6 +197,9 @@ const nutritionStatusDetail = (row: any) => {
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5" style="color:var(--heading-color);">
         What a Dollar Actually Buys at the Grocery Store
       </h1>
+      <p class="text-sm mb-4" style="color:var(--muted-color);">
+        By <a href="/author/david-miller/" class={linkClass}>{AUTHOR_NAME}</a>
+      </p>
       <p class="text-xl leading-relaxed" style="color:var(--text-color);">
         In our July 2026 price snapshot, $1 bought {topProteinValue.toFixed(1)} grams of
         protein from {proteinTop[0].food.toLowerCase()} or {topFiberValue.toFixed(1)} grams
@@ -237,6 +260,29 @@ const nutritionStatusDetail = (row: any) => {
         </p>
         <div class="grid sm:grid-cols-2 gap-4">
           {benchmarkCards.map((card) => (
+            <a
+              href={card.href}
+              class="rounded-2xl p-5 block transition-shadow hover:shadow-lg"
+              style="background:var(--card-bg);border:1px solid var(--border-color);"
+            >
+              <h3 class="font-bold text-lg leading-snug" style="color:var(--heading-color);">{card.title}</h3>
+              <p class="text-sm mt-2 leading-relaxed" style="color:var(--muted-color);">{card.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {newestBenchmarkCards.length > 0 && (
+      <section class="mb-14" data-newest-grocery-benchmarks>
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">
+          Newest 2026 Grocery & Fast-Food Benchmarks
+        </h2>
+        <p class="max-w-4xl mb-6" style="color:var(--muted-color);">
+          Frozen peas, a pantry bag that never sees the fridge, peanut butter, a Walmart shelf price set next to BLS, a 10-gram fiber add-on, and a fast-food order under 500 calories. David Miller wrote each one. The July tables don't cover them.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {newestBenchmarkCards.map((card) => (
             <a
               href={card.href}
               class="rounded-2xl p-5 block transition-shadow hover:shadow-lg"
