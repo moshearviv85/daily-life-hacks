@@ -101,6 +101,8 @@ const LATER_UPDATES = {
   "cheapest-fast-food-protein-under-5-dollars": "2026-11-26",
   "cheapest-canned-fish-and-seafood-protein-per-dollar": "2026-11-26",
   "how-much-100-grams-of-protein-costs-per-day": "2026-11-26",
+  "how-much-protein-and-fiber-in-canned-vs-frozen-vs-dry-staples": "2026-11-26",
+  "cheapest-ways-to-add-10-grams-of-fiber-to-any-meal": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
