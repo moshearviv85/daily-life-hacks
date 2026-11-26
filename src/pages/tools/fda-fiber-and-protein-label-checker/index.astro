@@ -1,0 +1,649 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATASET_ORGANIZATION, DATASET_PERSON_CREATOR } from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/tools/fda-fiber-and-protein-label-checker/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/fda-fiber-and-protein-label-checker-chart.jpg";
+const chartAlt =
+  "Bar chart of fiber grams per 100 grams for strawberries, bananas, carrots, dry brown rice, blackberries, and whole wheat bread, with dashed lines at 2.8 grams, 5.32 grams, and 5.6 grams. Not a photograph.";
+
+const FIBER_DRV = 28;
+const PROTEIN_DRV = 50;
+function percentGrams(drv: number, percent: number) {
+  return (drv * percent) / 100;
+}
+const FIBER_GOOD_MIN = percentGrams(FIBER_DRV, 10);
+const FIBER_GOOD_MAX = percentGrams(FIBER_DRV, 19);
+const FIBER_HIGH_MIN = percentGrams(FIBER_DRV, 20);
+const PROTEIN_GOOD_MIN = percentGrams(PROTEIN_DRV, 10);
+const PROTEIN_GOOD_MAX = percentGrams(PROTEIN_DRV, 19);
+const PROTEIN_HIGH_MIN = percentGrams(PROTEIN_DRV, 20);
+if (FIBER_GOOD_MIN !== 2.8 || FIBER_GOOD_MAX !== 5.32 || FIBER_HIGH_MIN !== 5.6) {
+  throw new Error("fiber claim grams drifted from 21 CFR 101.54 and the 28 g DRV");
+}
+if (PROTEIN_GOOD_MIN !== 5 || PROTEIN_GOOD_MAX !== 9.5 || PROTEIN_HIGH_MIN !== 10) {
+  throw new Error("protein claim grams drifted from 21 CFR 101.54 and the 50 g DRV");
+}
+const LOW_SODIUM_MG = 140;
+const VERY_LOW_SODIUM_MG = 35;
+const SODIUM_FREE_MG = 5;
+const LOW_FAT_G = 3;
+
+const CHART_FOODS = [
+  "Strawberries",
+  "Bananas",
+  "Carrots (whole, bagged)",
+  "Brown rice (dry)",
+  "Blackberries",
+  "100% whole wheat bread",
+];
+
+function rowsFrom(fileName: string) {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+function asNumber(value: string | undefined) {
+  if (!value) return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+type Preset = {
+  name: string;
+  fiber: number | null;
+  protein: number | null;
+  sodium: number | null;
+  fdc: string;
+};
+
+const byName = new Map<string, Preset>();
+function ensure(name: string) {
+  let item = byName.get(name);
+  if (!item) {
+    item = { name, fiber: null, protein: null, sodium: null, fdc: "" };
+    byName.set(name, item);
+  }
+  return item;
+}
+
+const fiberRows = rowsFrom("fiber-per-dollar-2026.csv");
+for (const row of fiberRows) {
+  const item = ensure(row.food);
+  item.fiber = asNumber(row.fiber_g_per_100g);
+  if (!item.fdc) item.fdc = row.fdc_id;
+}
+for (const row of rowsFrom("protein-per-dollar-2026.csv")) {
+  const item = ensure(row.food);
+  if (item.protein == null) item.protein = asNumber(row.protein_g_per_100g);
+  if (!item.fdc) item.fdc = row.fdc_id;
+}
+for (const row of rowsFrom("sodium-per-dollar-2026.csv")) {
+  const item = ensure(row.food);
+  item.sodium = asNumber(row.sodium_mg_per_100g);
+  if (item.fiber == null) item.fiber = asNumber(row.fiber_g_per_100g);
+  if (item.protein == null) item.protein = asNumber(row.protein_g_per_100g);
+  if (!item.fdc) item.fdc = row.fdc_id;
+}
+
+const presets = [...byName.values()].sort((a, b) => a.name.localeCompare(b.name));
+const fiberByFood = new Map(fiberRows.map((row) => [row.food, row]));
+
+function exactPercent(grams: number, drv: number) {
+  return (grams / drv) * 100;
+}
+function bandName(exact: number) {
+  if (exact >= 20) return "High";
+  if (exact >= 10 && exact <= 19) return "Good source";
+  if (exact > 19 && exact < 20) return "Between 19 and 20 percent";
+  return "Under 10 percent";
+}
+function formatNumber(value: number, digits: number) {
+  const rounded = Math.round(value * 10 ** digits) / 10 ** digits;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(digits);
+}
+
+const chartFoods = CHART_FOODS.map((name) => {
+  const fiber = fiberByFood.get(name);
+  const preset = byName.get(name);
+  if (!fiber || fiber.nutrition_source_status !== "exact" || !preset) {
+    throw new Error(`Missing exact USDA row for ${name}`);
+  }
+  const fiberGrams = Number(fiber.fiber_g_per_100g);
+  const fiberPercent = exactPercent(fiberGrams, FIBER_DRV);
+  const proteinGrams = preset.protein;
+  const proteinPercent = proteinGrams == null ? null : exactPercent(proteinGrams, PROTEIN_DRV);
+  return {
+    name,
+    fdc: fiber.fdc_id,
+    fiberGrams,
+    fiberPercent: formatNumber(fiberPercent, 2),
+    fiberBand: bandName(fiberPercent),
+    proteinGrams,
+    proteinPercent: proteinPercent == null ? null : formatNumber(proteinPercent, 2),
+    proteinBand: proteinPercent == null ? null : bandName(proteinPercent),
+    sodium: preset.sodium,
+  };
+});
+
+const title = "FDA Fiber and Protein Label Claim Checker";
+const description =
+  "Check a serving against 21 CFR 101.54. Good source is 10 to 19 percent of the Daily Value. High starts at 20 percent.";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: "FDA Fiber and Protein Label Claim Checker",
+  url: pageUrl,
+  description,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  image: `${siteUrl}${chartSrc}`,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "FDA Fiber and Protein Label Checker", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main id="fda-checker" class="fda-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / FDA label checker</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+      <span aria-hidden="true"> · </span>
+      {presets.length} audited foods
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      Check a Fiber or Protein Claim Against the Actual FDA Line
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      The box says good source of fiber. The panel says 5 grams. Those two sentences are not doing the same job, and 5 grams is not automatically either claim.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      <a href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54" class={linkClass} style={linkStyle} rel="noopener" target="_blank">21 CFR 101.54</a>
+      is a percent rule, per reference amount customarily consumed. "Good source," "contains," and "provides" mean 10 to 19 percent of the Daily Value. "High," "rich in," and "excellent source of" mean 20 percent or more. The fiber Daily Value in 21 CFR 101.9(c)(9) is {FIBER_DRV} grams, so those gates are {FIBER_GOOD_MIN} grams, {FIBER_GOOD_MAX} grams, and {FIBER_HIGH_MIN} grams. Protein's Daily Value is {PROTEIN_DRV} grams, so the same percents are {PROTEIN_GOOD_MIN} grams, {PROTEIN_GOOD_MAX} grams, and {PROTEIN_HIGH_MIN} grams. Five and a half grams of fiber is not the top of the good-source band. Nineteen percent of 28 is 5.32.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        The dashed lines are the per-reference-amount gates. The bars are grams per 100 g from fiber-per-dollar-2026.csv, which is a different ruler.
+        {chartFoods.map((food) => `${food.name} is ${food.fiberGrams} g fiber per 100 g (FDC ${food.fdc}).`).join(" ")}
+        Orange is inside 10 to 19 percent if 100 g were the reference amount. The deep bar is at or over 20 percent on that same hypothetical. A labeled serving is usually not 100 g.
+      </figcaption>
+    </figure>
+
+    <section class="mb-10" aria-label="Published FDA thresholds">
+      <h2>What 21 CFR 101.54 actually says</h2>
+      <p>
+        Meal products and main dishes are carved out of 101.54(b)(1) and 101.54(c)(1). This checker is the ordinary-food rule. A frozen dinner has to point at a component that meets the claim. It doesn't get to average the tray and call the whole box excellent.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>Claim bands for an ordinary food. Grams use the 28 g fiber DRV and the 50 g protein DRV in 21 CFR 101.9(c)(9).</caption>
+          <thead>
+            <tr>
+              <th scope="col">Package words</th>
+              <th scope="col">Rule</th>
+              <th scope="col">Percent of the DRV</th>
+              <th scope="col">Fiber</th>
+              <th scope="col">Protein</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Good source, contains, or provides</th>
+              <td>21 CFR 101.54(c)</td>
+              <td>10 to 19 percent</td>
+              <td>{FIBER_GOOD_MIN} g to {FIBER_GOOD_MAX} g</td>
+              <td>{PROTEIN_GOOD_MIN} g to {PROTEIN_GOOD_MAX} g</td>
+            </tr>
+            <tr>
+              <th scope="row">High, rich in, or excellent source of</th>
+              <td>21 CFR 101.54(b)</td>
+              <td>20 percent or more</td>
+              <td>{FIBER_HIGH_MIN} g or more</td>
+              <td>{PROTEIN_HIGH_MIN} g or more</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The gap is real. Above 19 percent and below 20 percent is neither band. For fiber that is more than {FIBER_GOOD_MAX} g and less than {FIBER_HIGH_MIN} g. The Nutrition Facts percent is rounded to the nearest whole percent, so 19.5 percent prints as 20. The regulation itself still uses the unrounded percent.
+      </p>
+    </section>
+
+    <section class="day-box mb-10" aria-label="Label claim checker">
+      <h2>Check the grams on the serving line</h2>
+      <p>
+        Type the reference amount, or fill it from an audited row. Presets are per 100 g in fiber-per-dollar-2026.csv, protein-per-dollar-2026.csv, and sodium-per-dollar-2026.csv. Those file names are citations, not download buttons. A blank nutrient was not in the matching row. It is not zero. A protein claim also has to use the corrected amount in 21 CFR 101.9(c)(7): grams times the digestibility-corrected amino acid score, and a score above 1.00 is set at 1.00.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 items-end">
+        <label class="tool-label md:col-span-2">
+          Audited food, optional
+          <select class="tool-input" id="fda-food">
+            <option value="">Type the grams yourself</option>
+            {presets.map((food, index) => (
+              <option value={index}>{food.name}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          Grams of that food
+          <input class="tool-input" id="fda-grams" type="number" min="1" step="1" inputmode="decimal" value="100" />
+        </label>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <button type="button" class="fda-button" id="fda-fill">Fill from the audited row</button>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4 items-end mt-4">
+        <label class="tool-label">
+          Dietary fiber, grams
+          <input class="tool-input" id="fda-fiber" type="number" min="0" step="0.01" inputmode="decimal" />
+        </label>
+        <label class="tool-label">
+          Protein, grams
+          <input class="tool-input" id="fda-protein" type="number" min="0" step="0.01" inputmode="decimal" />
+        </label>
+        <label class="tool-label">
+          Protein score, 0 to 1, optional
+          <input class="tool-input" id="fda-pdcaas" type="number" min="0" max="1" step="0.01" inputmode="decimal" />
+        </label>
+        <label class="tool-label">
+          Sodium, mg, optional
+          <input class="tool-input" id="fda-sodium" type="number" min="0" step="1" inputmode="decimal" />
+        </label>
+        <label class="tool-label">
+          Total fat, grams, optional
+          <input class="tool-input" id="fda-fat" type="number" min="0" step="0.1" inputmode="decimal" />
+        </label>
+        <label class="tool-label">
+          Reference amount, grams, optional
+          <input class="tool-input" id="fda-racc" type="number" min="0" step="0.1" inputmode="decimal" />
+        </label>
+      </div>
+      <label class="check-line">
+        <input id="fda-small" type="checkbox" />
+        Reference amount is 30 g or less, or 2 tablespoons or less
+      </label>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <button type="button" class="fda-button solid" id="fda-check">Check the claim</button>
+        <button type="button" class="fda-button" id="fda-clear">Clear</button>
+      </div>
+      <p class="text-xs mt-3" style="color:var(--muted-color);">
+        The numbers stay in this browser tab. Nothing you enter is saved or sent to us. This is the label math, not a meal plan.
+      </p>
+      <div id="fda-result" class="result" aria-live="polite">
+        <p>Enter a serving and check it. Nothing runs until you do.</p>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-label="Per 100 gram illustration">
+      <h2>What these six foods do at 100 grams</h2>
+      <p>
+        This table pretends the reference amount is 100 g, so you can see the chart's bars against the percent. A slice of bread is not 100 g. A handful of berries isn't either. Read it as a ruler, not as a verdict on the package in your hand.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>Exact USDA rows per 100 g. The claim column applies only if that 100 g is the reference amount.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Food</th>
+              <th scope="col">Fiber g / 100 g</th>
+              <th scope="col">Fiber percent</th>
+              <th scope="col">Fiber band</th>
+              <th scope="col">Protein g / 100 g</th>
+              <th scope="col">Protein percent</th>
+              <th scope="col">Sodium mg / 100 g</th>
+            </tr>
+          </thead>
+          <tbody>
+            {chartFoods.map((food) => (
+              <tr>
+                <th scope="row">
+                  {food.name}
+                  <span class="food-meta"><a href={`https://fdc.nal.usda.gov/food-details/${food.fdc}/nutrients`} class={linkClass} style={linkStyle} rel="noopener" target="_blank">FDC {food.fdc}</a></span>
+                </th>
+                <td>{food.fiberGrams}</td>
+                <td>{food.fiberPercent}</td>
+                <td>{food.fiberBand}</td>
+                <td>{food.proteinGrams == null ? "not measured" : food.proteinGrams}</td>
+                <td>{food.proteinPercent == null ? "not measured" : `${food.proteinPercent} (${food.proteinBand})`}</td>
+                <td>{food.sodium == null ? "not measured" : food.sodium}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Blackberries at 5.3 g are still on the good-source side of 19 percent. Whole wheat bread at 6.0 g is past 20 percent. That is the difference between 5.32 g and 5.6 g, and it is why a slogan that says "about 5.5 grams" is the wrong ceiling.
+      </p>
+    </section>
+
+    <article>
+      <h2>Where the same numbers are already written out</h2>
+      <p>
+        The cereal-aisle walk-through is
+        <a href="/good-source-of-fiber-label-meaning/" class={linkClass} style={linkStyle}>what "good source of fiber" means</a>.
+        The 28 gram and 50 gram Daily Values, including where the percents come from, are
+        <a href="/fiber-protein-daily-values-explained/" class={linkClass} style={linkStyle}>fiber and protein daily values explained</a>.
+        The 140 mg sodium amount, priced per dollar, is
+        <a href="/low-sodium-high-protein-foods-per-dollar/" class={linkClass} style={linkStyle}>low-sodium high-protein foods per dollar</a>.
+        The can versus the dry bag, sodium included, is
+        <a href="/canned-vs-dry-beans-cost-and-sodium-per-serving/" class={linkClass} style={linkStyle}>canned versus dry beans, cost and sodium per serving</a>.
+      </p>
+      <p>
+        How a row earns its USDA record is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>What percent is a good source under 21 CFR 101.54?</summary><p>For an ordinary food, "good source," "contains," and "provides" mean 10 to 19 percent of the Daily Value per reference amount customarily consumed. On the 28 gram fiber Daily Value that is 2.8 grams through 5.32 grams. On the 50 gram protein Daily Value that is 5 grams through 9.5 grams. Meal products and main dishes are not this paragraph. They have to name a component food that meets it.</p></details>
+        <details><summary>What percent is high, rich in, or an excellent source?</summary><p>21 CFR 101.54(b) starts that claim at 20 percent or more of the Daily Value per reference amount. For fiber that is 5.6 grams or more. For protein that is 10 grams or more. The step from 19 percent to 20 percent is not a rounding slogan. 5.32 grams of fiber is the 19 percent line. 5.6 grams is the 20 percent line.</p></details>
+        <details><summary>Why is 5.5 grams of fiber not the top of the good-source band?</summary><p>Because 19 percent of 28 grams is 5.32 grams. Five and a half grams is about 19.6 percent of the fiber Daily Value, which is above 19 percent and below 20 percent. That amount is between the two published bands. A label can still print 20 percent after nearest-whole-percent rounding, and the checker shows both readings so you can see the disagreement.</p></details>
+        <details><summary>How does a protein claim differ from the gram line?</summary><p>The 5 gram and 10 gram lines are 10 percent and 20 percent of the 50 gram Daily Value before quality. When the package makes a protein claim, 21 CFR 101.9(c)(7) uses the corrected amount: protein grams times the digestibility-corrected amino acid score, with any score above 1.00 set at 1.00. Leave the score blank and this page checks the grams you typed, then says the claim still needs that correction.</p></details>
+        <details><summary>What does the 140 mg sodium line actually cover?</summary><p>21 CFR 101.61(b)(4) lets an ordinary food say low sodium at 140 mg or less per reference amount. If that amount is 30 g or less, or 2 tablespoons or less, the food also has to be at or under 140 mg per 50 g. Very low sodium is 35 mg or less under 101.61(b)(2), with the same small-amount extra test. Sodium free is less than 5 mg under 101.61(b)(1), and it also cares about sodium ingredients, which a milligram field can't see. A fiber claim on a food that is not low fat has to disclose total fat. Low fat for an ordinary food is 3 g or less under 21 CFR 101.62(b)(2), which is the cross-reference in 101.54(d).</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <pre id="fda-presets" hidden>{JSON.stringify(presets)}</pre>
+
+  <style is:global>
+    .fda-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 2rem 0 0.7rem; color: var(--heading-color); }
+    .fda-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .fda-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .fda-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .fda-page .fda-button { border-radius: 999px; padding: 0.6rem 0.95rem; font-size: 0.85rem; font-weight: 700; color: #a85e00; border: 1px solid #F29B30; background: transparent; cursor: pointer; }
+    .fda-page .fda-button.solid { background: #F29B30; color: #111; }
+    .fda-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); }
+    .fda-page table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .fda-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .fda-page th, .fda-page td { text-align: left; padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .fda-page th { color: var(--heading-color); }
+    .fda-page .food-meta { display: block; margin-top: 0.2rem; font-weight: 500; font-size: 0.75rem; color: var(--muted-color); }
+    .fda-page .day-box { padding: 1.25rem; border-radius: 1rem; background: var(--card-bg); border: 1px solid var(--border-color); }
+    .fda-page .check-line { display: flex; gap: 0.55rem; align-items: flex-start; margin-top: 0.9rem; font-size: 0.9rem; color: var(--text-color); }
+    .fda-page .result { margin-top: 1rem; padding: 0.9rem 1rem; border-radius: 0.75rem; background: rgba(242,155,48,.10); }
+    .fda-page .result p { margin: 0.45rem 0; }
+    .fda-page .faq-list details { margin: 0.65rem 0; border: 1px solid var(--border-color); border-radius: 0.75rem; background: var(--card-bg); padding: 0 1rem; }
+    .fda-page .faq-list summary { cursor: pointer; font-weight: 700; padding: 1rem 0; color: var(--heading-color); }
+    .fda-page .faq-list p { margin: 0 0 1rem; }
+  </style>
+
+  <script is:inline>
+    (function () {
+      var FIBER_DRV = 28;
+      var PROTEIN_DRV = 50;
+      var LOW_SODIUM_MG = 140;
+      var VERY_LOW_SODIUM_MG = 35;
+      var SODIUM_FREE_MG = 5;
+      var LOW_FAT_G = 3;
+
+      function boot() {
+        var root = document.getElementById('fda-checker');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var presetNode = document.getElementById('fda-presets');
+        var presets = presetNode ? JSON.parse(presetNode.textContent || '[]') : [];
+        var result = root.querySelector('#fda-result');
+
+        function trim(value, digits) {
+          var factor = Math.pow(10, digits);
+          var rounded = Math.round(value * factor) / factor;
+          return String(rounded);
+        }
+        function readOptional(id) {
+          var raw = root.querySelector(id).value.trim();
+          if (raw === '') return null;
+          var parsed = parseFloat(raw);
+          return isFinite(parsed) ? parsed : NaN;
+        }
+        function paragraph(text) {
+          var node = document.createElement('p');
+          node.textContent = text;
+          return node;
+        }
+        function show(lines) {
+          result.textContent = '';
+          lines.forEach(function (line) { result.appendChild(paragraph(line)); });
+        }
+        function bandPhrase(band) {
+          if (band === 'high') return 'a high, rich-in, or excellent-source claim, which is 20 percent or more';
+          if (band === 'good') return 'a good-source, contains, or provides claim, which is 10 to 19 percent';
+          if (band === 'between') return 'neither published band, because it is above 19 percent and below 20 percent';
+          return 'neither a good-source nor a high claim, because it is under 10 percent';
+        }
+        function exactBand(exact) {
+          if (exact >= 20) return 'high';
+          if (exact >= 10 && exact <= 19) return 'good';
+          if (exact > 19 && exact < 20) return 'between';
+          return 'below';
+        }
+        function declaredBand(declared) {
+          if (declared >= 20) return 'high';
+          if (declared >= 10 && declared <= 19) return 'good';
+          return 'below';
+        }
+        function nutrientLines(label, grams, drv, goodMin, goodMax, highMin, extra) {
+          var exact = (grams / drv) * 100;
+          var declared = Math.round(exact);
+          var exactName = exactBand(exact);
+          var declaredName = declaredBand(declared);
+          var lines = [
+            label + ': ' + trim(grams, 2) + ' g is ' + trim(exact, 2) + ' percent of the ' + drv + ' g Daily Value.',
+            'Unrounded, 21 CFR 101.54 calls that ' + bandPhrase(exactName) + '.',
+            'Rounded to the nearest whole percent, the Nutrition Facts figure is ' + declared + ' percent, which reads as ' + bandPhrase(declaredName) + '.',
+            'The gram gates on this Daily Value are ' + goodMin + ' g at 10 percent, ' + goodMax + ' g at 19 percent, and ' + highMin + ' g at 20 percent.'
+          ];
+          if (exactName !== declaredName) {
+            lines.push('Those two readings disagree. The regulation uses the percent. The panel prints the rounded percent.');
+          }
+          if (extra) lines.push(extra);
+          return { lines: lines, exactName: exactName };
+        }
+        function per50(amount, racc) {
+          if (racc == null || !(racc > 0)) return null;
+          return (amount / racc) * 50;
+        }
+        function sodiumLines(sodium, small, racc) {
+          var per50Sodium = per50(sodium, racc);
+          var lines = ['Sodium: ' + trim(sodium, 1) + ' mg per reference amount.'];
+          if (small && per50Sodium == null) {
+            lines.push('The reference amount is marked small, and 21 CFR 101.61 also tests per 50 g. Enter the reference amount in grams before treating a small serving as low, very low, or free.');
+            return lines;
+          }
+          function passes(limit, strictLess) {
+            var onAmount = strictLess ? sodium < limit : sodium <= limit;
+            if (!small) return onAmount;
+            var on50 = strictLess ? per50Sodium < limit : per50Sodium <= limit;
+            return onAmount && on50;
+          }
+          var free = passes(SODIUM_FREE_MG, true);
+          var veryLow = passes(VERY_LOW_SODIUM_MG, false);
+          var low = passes(LOW_SODIUM_MG, false);
+          if (free) {
+            lines.push('The milligrams meet the sodium-free amount in 21 CFR 101.61(b)(1), less than 5 mg. That claim also needs no sodium ingredient, or the asterisk statement if one is present. A number cannot see the ingredient list.');
+          } else if (veryLow) {
+            lines.push('The milligrams meet very low sodium in 21 CFR 101.61(b)(2), 35 mg or less. They also meet the 140 mg low-sodium amount in 101.61(b)(4). They are not under 5 mg, so they are not sodium free.');
+          } else if (low) {
+            lines.push('The milligrams meet low sodium in 21 CFR 101.61(b)(4), 140 mg or less. They are over the 35 mg very-low line.');
+          } else {
+            lines.push('The milligrams do not meet the 140 mg low-sodium amount in 21 CFR 101.61(b)(4).');
+          }
+          if (small && per50Sodium != null) {
+            lines.push('Per 50 g that is ' + trim(per50Sodium, 1) + ' mg. A small reference amount has to pass both tests.');
+          } else if (!small) {
+            lines.push('The per-50 g test is not applied. Check the small-serving box if the reference amount is 30 g or less, or 2 tablespoons or less.');
+          }
+          return lines;
+        }
+        function fatLines(fat, small, racc, fiberClaim) {
+          var lines = [];
+          if (!fiberClaim) {
+            lines.push('No good-source or high fiber claim is on the table, so the total-fat disclosure in 21 CFR 101.54(d) is not triggered by those words. A "more fiber" claim can still trigger it, and this page does not check a reference food.');
+            return lines;
+          }
+          if (fat == null) {
+            lines.push('Total fat is blank, so the fiber-claim disclosure in 21 CFR 101.54(d) cannot be checked. Low fat for an ordinary food is 3 g or less under 21 CFR 101.62(b)(2).');
+            return lines;
+          }
+          var per50Fat = per50(fat, racc);
+          if (small && per50Fat == null) {
+            lines.push('Fat is ' + trim(fat, 2) + ' g, and the reference amount is marked small. Enter the grams of that reference amount to test the per-50 g half of 21 CFR 101.62(b)(2).');
+            return lines;
+          }
+          var lowFat = fat <= LOW_FAT_G && (!small || per50Fat <= LOW_FAT_G);
+          if (lowFat) {
+            lines.push('Total fat meets the 3 g low-fat amount in 21 CFR 101.62(b)(2)' + (small ? ', including per 50 g' : '') + '. On that basis, 21 CFR 101.54(d) does not demand a total-fat disclosure next to the fiber claim.');
+          } else {
+            lines.push('Total fat is over the 3 g low-fat amount in 21 CFR 101.62(b)(2). A fiber claim then has to disclose the total fat per labeled serving, under 21 CFR 101.54(d).');
+          }
+          return lines;
+        }
+
+        root.querySelector('#fda-fill').addEventListener('click', function () {
+          var index = root.querySelector('#fda-food').value;
+          if (index === '') {
+            show(['Pick an audited food, or type the grams yourself.']);
+            return;
+          }
+          var grams = parseFloat(root.querySelector('#fda-grams').value);
+          if (!isFinite(grams) || grams <= 0) {
+            show(['Enter grams of that food greater than zero.']);
+            return;
+          }
+          var food = presets[Number(index)];
+          var factor = grams / 100;
+          function fill(id, per100) {
+            var input = root.querySelector(id);
+            if (per100 == null || per100 === '') input.value = '';
+            else input.value = trim(Number(per100) * factor, 2);
+          }
+          fill('#fda-fiber', food.fiber);
+          fill('#fda-protein', food.protein);
+          fill('#fda-sodium', food.sodium);
+          var missing = [];
+          if (food.fiber == null) missing.push('fiber');
+          if (food.protein == null) missing.push('protein');
+          if (food.sodium == null) missing.push('sodium');
+          var note = grams + ' g of ' + food.name + ' uses the per-100 g row times ' + trim(factor, 2) + '. That product is what the checker will treat as the reference amount.';
+          if (missing.length) note += ' Not in the file, so left blank: ' + missing.join(', ') + '.';
+          show([note]);
+        });
+
+        root.querySelector('#fda-check').addEventListener('click', function () {
+          var fiber = readOptional('#fda-fiber');
+          var protein = readOptional('#fda-protein');
+          var score = readOptional('#fda-pdcaas');
+          var sodium = readOptional('#fda-sodium');
+          var fat = readOptional('#fda-fat');
+          var racc = readOptional('#fda-racc');
+          var small = root.querySelector('#fda-small').checked || (racc != null && racc <= 30);
+          var values = [fiber, protein, score, sodium, fat, racc];
+          if (values.some(function (value) { return typeof value === 'number' && isNaN(value); })) {
+            show(['One of the fields is not a number.']);
+            return;
+          }
+          if ([fiber, protein, sodium, fat, racc].some(function (value) { return value != null && value < 0; })) {
+            show(['Nutrient amounts cannot be negative.']);
+            return;
+          }
+          if (fiber == null && protein == null && sodium == null) {
+            show(['Enter fiber grams, protein grams, or sodium milligrams.']);
+            return;
+          }
+          if (racc != null && racc <= 0) {
+            show(['Enter a reference amount greater than zero, or leave it blank.']);
+            return;
+          }
+          var lines = ['Ordinary-food rules only. Meal products and main dishes are outside 21 CFR 101.54(b)(1) and 101.54(c)(1).'];
+          var fiberClaim = false;
+          if (fiber != null) {
+            var fiberResult = nutrientLines('Fiber', fiber, FIBER_DRV, 2.8, 5.32, 5.6, '');
+            lines = lines.concat(fiberResult.lines);
+            fiberClaim = fiberResult.exactName === 'good' || fiberResult.exactName === 'high';
+          }
+          if (protein != null) {
+            var proteinGrams = protein;
+            var proteinNote = 'The score box is blank, so this uses the grams you typed. A protein claim still has to use the corrected amount in 21 CFR 101.9(c)(7).';
+            if (score != null) {
+              if (score < 0) {
+                show(['The protein score cannot be negative.']);
+                return;
+              }
+              var used = score > 1 ? 1 : score;
+              proteinGrams = protein * used;
+              proteinNote = score > 1
+                ? 'A score above 1.00 is set at 1.00 under 21 CFR 101.9(c)(7). The corrected amount is the grams you typed.'
+                : 'Corrected protein is ' + trim(protein, 2) + ' g times ' + trim(used, 2) + ', which is ' + trim(proteinGrams, 2) + ' g, under 21 CFR 101.9(c)(7).';
+            }
+            lines = lines.concat(nutrientLines('Protein', proteinGrams, PROTEIN_DRV, 5, 9.5, 10, proteinNote).lines);
+          }
+          if (sodium != null) lines = lines.concat(sodiumLines(sodium, small, racc));
+          if (fiber != null || fat != null) lines = lines.concat(fatLines(fat, small, racc, fiberClaim));
+          show(lines);
+        });
+
+        root.querySelector('#fda-clear').addEventListener('click', function () {
+          ['#fda-fiber', '#fda-protein', '#fda-pdcaas', '#fda-sodium', '#fda-fat', '#fda-racc'].forEach(function (id) {
+            root.querySelector(id).value = '';
+          });
+          root.querySelector('#fda-food').value = '';
+          root.querySelector('#fda-grams').value = '100';
+          root.querySelector('#fda-small').checked = false;
+          show(['Cleared. The audited rows are still in the list.']);
+        });
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
