@@ -1016,7 +1016,8 @@ test("soggy sandwich title locks the fat barrier differentiator", () => {
     "sandwich title should not be the old generic SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-26$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-26$/m);
 
   assert.match(page.excerpt, /^How to keep sandwiches from getting soggy/i);
   assert.match(page.excerpt, /soggy/i);

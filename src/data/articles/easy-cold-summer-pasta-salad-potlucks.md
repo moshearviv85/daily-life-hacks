@@ -110,6 +110,8 @@ I once watched a perfectly good bowl of tortellini salad turn into a lukewarm, g
 
 **Layers.** In a deep container, put the heavy stuff on the bottom and the delicate stuff on top. Pasta, chickpeas, bell peppers, and carrots go first. Salami, hard cheese, and olives go in the middle. Herbs, spinach, and cherry tomatoes stay on top so they don't turn into wet rags. If the green is arugula, bring it in a separate bag and throw it on at the end. It's the same stacking logic behind [keeping a packed sandwich from going soggy](/how-to-keep-sandwiches-from-getting-soggy/) on a workday.
 
+Chicken salad in the same cooler needs the fat barrier and the ice pack from [packing a chicken salad sandwich so the bread stays dry](/how-to-keep-sandwiches-from-getting-soggy/).
+
 **The cooler.** Pack the salad cold, in a watertight container, with several inches of ice, frozen gel packs, or frozen water bottles. Keep the cooler closed, shaded, and covered. A container sitting on one ice pack is not a force field. Enough cold packs to hold 40 degrees F is the actual job. [USDA's outdoor food-safety guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping) puts pasta salad in that cooler on purpose.
 
 **The seal.** Coolers smell like soda cans and damp sandwiches. If the lid isn't airtight, the pasta picks that up. Use a locking lid with a silicone seal. If you're stuck with plastic wrap, double-wrap it: one layer across the top and another around the rim.

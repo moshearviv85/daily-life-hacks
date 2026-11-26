@@ -28,6 +28,7 @@ const BEFORE_DATE_RESTORE = "84702a37";
  * the yogurt fiber answer added the same day.
  */
 const LATER_UPDATES = {
+  "30-day-high-fiber-challenge-meal-plan": "2026-11-26",
   "animal-protein-per-dollar-ranked": "2026-11-25",
   "baked-cod-lemon-capers-green-beans": "2026-11-26",
   "baking-sheet-liners-parchment-silicone-when-to-use": "2026-11-25",
@@ -56,6 +57,7 @@ const LATER_UPDATES = {
   "high-fiber-smoothies-for-kids-picky-eaters": "2026-11-25",
   "canned-beans-vs-dried-beans-nutrition": "2026-11-25",
   "how-to-cook-dried-beans-from-scratch": "2026-11-25",
+  "how-to-keep-sandwiches-from-getting-soggy": "2026-11-26",
   "how-to-pack-salad-for-work-not-soggy": "2026-11-25",
   "how-to-store-homemade-salad-dressing-safely": "2026-11-26",
   "lentil-curry-high-fiber-vegan-dinner": "2026-11-26",
@@ -104,7 +106,6 @@ const SUBSTANTIVE_SLUGS = new Set([
   "high-fiber-yogurt-parfait-for-breakfast",
   "how-much-protein-in-bagel-sandwich",
   "how-to-double-recipe-seasoning-without-guessing",
-  "how-to-keep-sandwiches-from-getting-soggy",
   "how-to-measure-sourdough-discard-grams",
   "meal-prep-for-beginners-complete-system",
   "prebiotic-foods-beyond-the-buzzwords",
@@ -282,7 +283,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 32, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
@@ -307,8 +308,11 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   // stillToday at 34 and restored at 65.
   // The peppermint-ginger tea page left this day for the NCCIH dose table.
   // Its 94167b6 baseline was 2026-08-20, and 84702a37 had already moved it to
-  // 2026-11-23, so leaving that day adds it to the restored count. The
-  // stillToday count is 33 and the restored count is 66.
+  // 2026-11-23, so leaving that day adds it to the restored count.
+  // The soggy-sandwich moisture table left this day for 2026-11-26.
+  // Its 94167b6 baseline was already 2026-11-23, so it drops out of
+  // stillToday and stays out of the restored count. The stillToday count
+  // is 32 and the restored count stays 66.
   assert.equal(restored.length, 66, "pages restored off 2026-11-23");
 });
 
@@ -319,7 +323,7 @@ test("restored and substantive pages render the honest Updated day", () => {
     ["cottage-cheese-vs-greek-yogurt-protein-uses", TODAY],
     ["what-30-grams-of-fiber-costs-per-day", TODAY],
     ["protein-per-dollar-adjusted-for-quality", TODAY],
-    ["how-to-keep-sandwiches-from-getting-soggy", TODAY],
+    ["how-to-keep-sandwiches-from-getting-soggy", "2026-11-26"],
   ];
   const built = cases.every(([slug]) => existsSync(join(ROOT, "dist", slug, "index.html")));
   if (!built) return;

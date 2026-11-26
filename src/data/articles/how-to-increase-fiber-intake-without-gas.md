@@ -72,6 +72,8 @@ If you want something concrete, use this:
 * Days 3 to 4: add a second swap (a half serving of beans or lentils at dinner, or chia in yogurt)
 * Days 5 to 7: keep going in small steps, not big jumps. If you feel bloated, pause for a couple of days and reassess
 
+If one week feels too short, the [30-day high-fiber challenge meal plan](/30-day-high-fiber-challenge-meal-plan/) spreads those same small adds across four weeks.
+
 The point is consistency. You are training your gut, not arguing with it. Chia in yogurt only helps if the yogurt isn't the fiber. [Fiber in a yogurt-and-chia parfait](/high-fiber-yogurt-parfait-for-breakfast/) puts the yogurt itself at 0 grams.
 
 ## Beyond Fiber: Habits That Make Digestion Feel Easier

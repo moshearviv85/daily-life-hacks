@@ -104,6 +104,8 @@ Not every bagel is the same when you want staying power. A standard white flour 
 
 Mayonnaise is fine, and it mostly adds fat. When the filling is chicken or tuna salad, swap at least half the mayo for plain Greek yogurt. You get the creamy tang and a real protein bump.
 
+The mayo you keep is still a fat barrier when the bagel sits until noon. Packing steps for that chicken salad version are in [how to keep a chicken salad sandwich from going soggy](/how-to-keep-sandwiches-from-getting-soggy/).
+
 Mix shredded rotisserie chicken with a dollop of Greek yogurt, a squeeze of lemon, and black pepper. If the yogurt is too tart, a little Dijon usually balances it. The mixture stays put better than loose deli slices that slide out the back of the bagel. Amounts for the chicken version are in the [recipe card](#recipe).
 
 ## Savory breakfast-for-lunch options

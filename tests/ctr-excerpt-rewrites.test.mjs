@@ -126,8 +126,8 @@ test("description-only and citation edits do not bump the public modified day", 
       substantiveUpdate: "2026-11-25",
     },
     "30-day-high-fiber-challenge-meal-plan": {
-      dateModified: "2026-07-20",
-      substantiveUpdate: undefined,
+      dateModified: "2026-11-26",
+      substantiveUpdate: "2026-11-26",
     },
     "lentil-curry-high-fiber-vegan-dinner": {
       dateModified: "2026-11-26",
