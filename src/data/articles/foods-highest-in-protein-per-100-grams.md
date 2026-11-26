@@ -1,6 +1,6 @@
 ---
-title: "Highest Protein Foods per 100g: TVP 52.17g"
-excerpt: "Foods highest in protein per 100g: TVP 52.17g (label proxy). Exact USDA matches: dry brown lentils 24.63g, drained sardines 24.62g. 49-food July 2026 study."
+title: "Highest Protein Foods per 100g: Top 15, Cooked vs Dry"
+excerpt: "Highest protein foods per 100g, as eaten: Parmesan 35.75g, jerky 33.2g, roasted chicken 31.02g. July 2026 study of 49 foods."
 category: "nutrition"
 tags: ["foods highest in protein", "protein per 100g", "high protein foods", "protein content", "grocery data"]
 cluster: "budget-protein"
@@ -8,8 +8,8 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/foods-highest-in-protein-per-100-grams-main.jpg"
 imageAlt: "Bags of dry lentils, peanuts, and beans lined up beside a block of cheese and a pack of chicken breast on a counter"
 date: 2026-07-28
-dateModified: 2026-11-23
-substantiveUpdate: 2026-11-23
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -28,9 +28,28 @@ faq:
     answer: "No. In our 49-food dataset, the label-sourced TVP row leads the density column at 52.17 g per 100 g but ranks 30th on protein per dollar at 23.4 g per dollar. Whole wheat flour, which has an exact USDA match, leads the value ranking at 96.0 g per dollar. Density and price answer different questions."
 ---
 
-In our July 2026 US price study of 49 grocery foods, the TVP row led at 52.17 grams of protein per 100 grams. That figure is a proxy, not a USDA match: the manufacturer's current 12-gram-per-23-gram label works out to 52.17, and USDA FoodData Central publishes no textured vegetable protein record to check it against. Among rows with an exact USDA food-and-form match in our 49-food study, dry brown lentils led at 24.63, followed by canned sardines in oil, drained, at 24.62. This is a bounded grocery comparison, not a claim about every food sold worldwide.
+A dry lentil bag and a roasted chicken breast are having two different conversations. Per 100 grams of the food you'd actually eat, hard Parmesan leads at 35.75 grams of protein ([FDC 170848](https://fdc.nal.usda.gov/food-details/170848/nutrients)), beef jerky is 33.2, and roasted chicken breast is 31.02. Dry brown lentils are 24.63 grams on the bag ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)) and 9.02 grams once they're boiled ([FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients)). Raw chicken breast is 22.5 grams in the priced study and 31.02 after you roast the meat-only breast ([FDC 171477](https://fdc.nal.usda.gov/food-details/171477/nutrients)), because water left. In our July 2026 study of 49 foods, that dry-versus-cooked gap is the whole trick. This is a bounded grocery comparison, not a claim about every food sold worldwide.
 
-One thing to get straight before the table. This ranks foods by protein density, not by price. The cheapest-per-dollar question is a different study, and we ran that one separately as the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/).
+## Cooked versus dry, same weight
+
+| Food | Protein g/100 g | Dry/raw or Cooked | FDC |
+|---|---:|---|---|
+| Parmesan, hard | 35.75 | Dry/raw | [170848](https://fdc.nal.usda.gov/food-details/170848/nutrients) |
+| Beef jerky, chopped and formed | 33.2 | Dry/raw | [167536](https://fdc.nal.usda.gov/food-details/167536/nutrients) |
+| Chicken breast, meat only, roasted | 31.02 | Cooked | [171477](https://fdc.nal.usda.gov/food-details/171477/nutrients) |
+| Beef top sirloin, lean only, broiled | 30.29 | Cooked | [168635](https://fdc.nal.usda.gov/food-details/168635/nutrients) |
+| Turkey breast, meat only, roasted | 30.13 | Cooked | [171496](https://fdc.nal.usda.gov/food-details/171496/nutrients) |
+| Pumpkin seed kernels, roasted, without salt | 29.84 | Dry/raw | [170557](https://fdc.nal.usda.gov/food-details/170557/nutrients) |
+| Swiss cheese | 26.96 | Dry/raw | [171251](https://fdc.nal.usda.gov/food-details/171251/nutrients) |
+| Shrimp, cooked | 23.98 | Cooked | [175180](https://fdc.nal.usda.gov/food-details/175180/nutrients) |
+| Tempeh | 20.29 | Dry/raw | [174272](https://fdc.nal.usda.gov/food-details/174272/nutrients) |
+| Light tuna, canned in water, drained | 19.44 | Dry/raw | [173709](https://fdc.nal.usda.gov/food-details/173709/nutrients) |
+
+Dry/raw means the as-sold USDA form, the number on the package. Cooked means a cooked yield. The cheeses, jerky, pumpkin seeds, tempeh, and drained tuna are as sold. The roasted meats and the shrimp are the plate. Don't average a dry bag with a roasted breast.
+
+In our July 2026 US price study of 49 grocery foods, the TVP row led at 52.17 grams of protein per 100 grams. That figure is a proxy, not a USDA match: the manufacturer's current 12-gram-per-23-gram label works out to 52.17, and USDA FoodData Central publishes no textured vegetable protein record to check it against. Among rows with an exact USDA food-and-form match in our 49-food study, dry brown lentils led at 24.63, followed by canned sardines in oil, drained, at 24.62. This is a bounded grocery comparison, not a claim about every food sold worldwide. The TVP line stays in the shopping table below, under this USDA shortlist, with that caveat attached.
+
+One thing to get straight before the full table. This ranks foods by protein density, not by price. The cheapest-per-dollar question is a different study, and we ran that one separately as the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/).
 
 | Food | Protein per 100 g | USDA form / status | Price per 100 g | Nutrition source |
 |---|---|---|---|---|
@@ -84,9 +103,9 @@ One thing to get straight before the table. This ranks foods by protein density,
 | Canned chickpeas | 4.92 g | Mature seeds, canned, solids and liquids | $0.223 | [FDC 175206](https://api.nal.usda.gov/fdc/v1/food/175206?api_key=DEMO_KEY) · proxy |
 | Whole milk | 3.15 g | Whole, 3.25% milkfat, with added vitamin D | $0.11 | [FDC 171265](https://api.nal.usda.gov/fdc/v1/food/171265?api_key=DEMO_KEY) |
 
-In our July 2026 study of 49 foods, dry brown lentils (24.63 g) and drained sardines (24.62 g) had the most protein per 100 g among exact USDA matches. TVP led the same study at 52.17 g on a label proxy. [USDA FoodData Central](https://fdc.nal.usda.gov/) doesn't publish a textured vegetable protein record, and the July 2026 prices are in the [49-row CSV](/data/protein-per-dollar-2026.csv).
+In our July 2026 study of 49 foods, dry brown lentils (24.63 g) and drained sardines (24.62 g) had the most protein per 100 g among exact USDA matches. TVP led the same study at 52.17 g on a label proxy. [USDA FoodData Central](https://fdc.nal.usda.gov/) doesn't publish a textured vegetable protein record, and the July 2026 prices are in protein-per-dollar-2026.csv.
 
-*Provenance checked July 30, 2026: 39 rows have an exact USDA FoodData Central food-and-form match and 10 use a proxy with the mismatch disclosed. No rows remain unresolved. The [49-row raw CSV](/data/protein-per-dollar-2026.csv) contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
+*Provenance checked July 30, 2026: 39 rows have an exact USDA FoodData Central food-and-form match and 10 use a proxy with the mismatch disclosed. No rows remain unresolved. protein-per-dollar-2026.csv contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
 
 ## Which food led protein per 100 grams in our 49-food study?
 
@@ -112,9 +131,9 @@ What survives the caveat is the shopping math. A 16 ounce bag of brown lentils i
 
 ## Highest-protein common foods per 100 g, as eaten
 
-The 49-row table is a shopping list. Dry lentils, raw chicken, and a can you can eat with a fork all share it. Handy at the store. A bad picture if you wanted the plate. These 14 rows are the form you eat, or the form the package already is. Every number is the linked USDA FoodData Central record, matched to a tenth of a gram. Seitan isn't here. FoodData Central publishes no seitan entry, so that row got dropped instead of guessed.
+The 49-row table is a shopping list. Dry lentils, raw chicken, and a can you can eat with a fork all share it. Handy at the store. A bad picture if you wanted the plate. The 10-row shortlist above is the dense end. These 14 rows are the full set you'd eat, or the form the package already is, including the wet foods that look weak. Every number is the linked USDA FoodData Central record, matched to a tenth of a gram. Seitan isn't here. FoodData Central publishes no seitan entry, so that row got dropped instead of guessed.
 
-Dry versus cooked is the whole trick. Brown lentils in the priced study are 24.63 grams per 100 grams dry ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)), 24.6 grams to a tenth. Boil them and [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) is 9.02 grams per 100 grams, about 9 grams, because the pot is mostly water. Raw chicken breast is 22.5 grams in the study. Roasted, the meat-only breast below is 31.02. Water left. The scoops people actually eat are in [Common portions, not 100 gram slabs](#common-portions-not-100-gram-slabs).
+Dry versus cooked is the whole trick. Brown lentils in the priced study are 24.63 grams per 100 grams dry ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)), 24.6 grams to a tenth. Boil them and [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) is 9.02 grams per 100 grams, about 9 grams, because the pot is mostly water. Raw chicken breast is 22.5 grams in the study. Roasted, the meat-only breast below is 31.02. Water left. The scoops people actually eat are in the common portions section below.
 
 Parmesan is the dense end, at 35.75 grams. A hard cheese barely has water left in it. Jerky is beef dried on purpose, at 33.2, and the roasted meats sit around 30. Egg whites at 10.9 and nonfat Greek yogurt at 10.19 aren't weak. They're wet. Your breakfast doesn't care. Firm tofu here is the calcium-sulfate record at 17.27 grams, not the extra-firm nigari row at 9.98. Don't average them.
 
@@ -143,7 +162,7 @@ Whole wheat flour led our 49-food value ranking at 96.0 grams of protein per dol
 
 Meanwhile cheddar sits high on density at 22.87 grams and returns just 18.1 grams per dollar, because it costs $1.27 per 100 grams. Sardines are dense and pricey. Almonds at 21.15 grams per 100 grams return 14.8 per dollar, which is one of the worst deals in the set.
 
-In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. Dry green split peas, at 23.12 grams of protein per 100 grams in this table, are also the cook-and-eat leader on the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) at 71.0 grams of fiber per dollar. Density and the other nutrient's price tag agree on that bag. The full plant-side list is in [the cheapest plant protein ranking](/protein-per-dollar-adjusted-for-quality/#plant), and the shopping version of all of it lives in [our high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/).
+In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. Dry green split peas, at 23.12 grams of protein per 100 grams in this table, are also the cook-and-eat leader on the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) at 71.0 grams of fiber per dollar. Density and the other nutrient's price tag agree on that bag. The full plant-side list and the shopping version of it live in [the protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/).
 
 ## Common portions, not 100 gram slabs
 

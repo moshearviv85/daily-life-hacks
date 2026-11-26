@@ -365,13 +365,18 @@ for (const table of tables) {
       );
     }
 
-    assert.match(
-      markdown,
-      new RegExp(
-        `\\[[^\\]]*raw CSV\\]\\(${table.csvHref.replaceAll("/", "\\/")}\\)`,
-        "i",
-      ),
-    );
+    if (table.csvHref.includes("protein-per-dollar-2026.csv")) {
+      assert.match(markdown, /protein-per-dollar-2026\.csv/);
+      assert.doesNotMatch(markdown, /\]\([^)]*\.csv\)/);
+    } else {
+      assert.match(
+        markdown,
+        new RegExp(
+          `\\[[^\\]]*raw CSV\\]\\(${table.csvHref.replaceAll("/", "\\/")}\\)`,
+          "i",
+        ),
+      );
+    }
   });
 
   test(`${table.name} renders every row, provenance, and the CSV link`, () => {

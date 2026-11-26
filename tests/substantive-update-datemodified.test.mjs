@@ -121,6 +121,8 @@ const LATER_UPDATES = {
   "cheapest-ways-to-add-10-grams-of-fiber-to-any-meal": "2026-11-26",
   "cheapest-family-grocery-basket-for-protein-and-fiber": "2026-11-26",
   "sourdough-discard-vs-baking-powder-and-yeast-cost-per-bake": "2026-11-26",
+  "foods-highest-in-protein-per-100-grams": "2026-11-26",
+  "popcorn-vs-potato-chips-fiber-comparison": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
@@ -132,7 +134,6 @@ const SUBSTANTIVE_SLUGS = new Set([
   "crispy-roasted-chickpeas-high-fiber-snack",
   "cottage-cheese-vs-greek-yogurt-protein-uses",
   "easy-cold-summer-pasta-salad-potlucks",
-  "foods-highest-in-protein-per-100-grams",
   "healthy-blue-collar-lunch-ideas-men",
   "healthy-homemade-dumpling-wrapper-recipe",
   "high-fiber-bran-muffins-that-taste-good",
@@ -246,6 +247,8 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
     const retitled = new Set([
       "easy-sourdough-discard-pizza-dough-no-yeast",
       "savory-chia-seed-recipes-breakfast",
+      "foods-highest-in-protein-per-100-grams",
+      "popcorn-vs-potato-chips-fiber-comparison",
     ]);
     if (onMain && !retitled.has(article.slug)) {
       assert.equal(
@@ -321,7 +324,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 30, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 29, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
@@ -354,7 +357,11 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
   // The no-yeast pizza dough page and the savory chia page left this day
   // for the 2026-11-26 snippet refresh. Both baselines were already
   // 2026-11-23, so they drop out of stillToday and stay out of restored.
-  // stillToday is 30 and the restored count stays 66.
+  // That left stillToday at 30.
+  // The per-100g protein page left this day for the as-eaten shortlist.
+  // Its 94167b6 baseline was already 2026-11-23, so it drops out of
+  // stillToday and stays out of the restored count. stillToday is 29
+  // and the restored count stays 66.
   assert.equal(restored.length, 66, "pages restored off 2026-11-23");
 });
 

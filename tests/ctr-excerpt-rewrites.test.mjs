@@ -138,8 +138,8 @@ test("description-only and citation edits do not bump the public modified day", 
       substantiveUpdate: "2026-11-23",
     },
     "foods-highest-in-protein-per-100-grams": {
-      dateModified: "2026-11-23",
-      substantiveUpdate: "2026-11-23",
+      dateModified: "2026-11-26",
+      substantiveUpdate: "2026-11-26",
     },
     "best-high-fiber-foods-ranked-by-fiber-content": {
       dateModified: "2026-11-23",
@@ -191,7 +191,9 @@ test("per-100g index pages quote the table leaders and link the existing dataset
     protein,
     /In our July 2026 study of 49 foods, dry brown lentils \(24\.63 g\) and drained sardines \(24\.62 g\) had the most protein per 100 g among exact USDA matches\. TVP led the same study at 52\.17 g on a label proxy\./,
   );
-  assert.match(protein, /\]\(\/data\/protein-per-dollar-2026\.csv\)/);
+  assert.match(protein, /protein-per-dollar-2026\.csv/);
+  assert.doesNotMatch(protein, /\]\([^)]*\.csv\)/);
+  assert.doesNotMatch(protein, /\]\(\/[^)]*#/);
   assert.match(
     fiber,
     /In our July 2026 study of 53 foods, chia seeds had the most fiber per 100 g at 34\.4 g, whole flaxseed followed at 27\.3 g, and dry green split peas at 22\.2 g\./,

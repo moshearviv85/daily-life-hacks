@@ -812,7 +812,8 @@ test("per-100g index pages cite the #258 dataset records without a second Datase
       datasetId: `${SITE}/data/protein-per-dollar-2026/#dataset`,
       stat: "TVP led the same study at 52.17 g on a label proxy",
       excerpt:
-        "Foods highest in protein per 100g: TVP 52.17g (label proxy). Exact USDA matches: dry brown lentils 24.63g, drained sardines 24.62g. 49-food July 2026 study.",
+        "Highest protein foods per 100g, as eaten: Parmesan 35.75g, jerky 33.2g, roasted chicken 31.02g. July 2026 study of 49 foods.",
+      modified: "2026-11-26",
     },
     {
       slug: "best-high-fiber-foods-ranked-by-fiber-content",
@@ -822,6 +823,7 @@ test("per-100g index pages cite the #258 dataset records without a second Datase
       stat: "chia seeds had the most fiber per 100 g at 34.4 g",
       excerpt:
         "Best high-fiber foods ranked by fiber per 100g: chia seeds 34.4g, whole flaxseed 27.3g, dry split peas 22.2g. USDA dry weight, 53-food study, not servings.",
+      modified: "2026-11-23",
     },
   ];
 
@@ -851,13 +853,13 @@ test("per-100g index pages cite the #258 dataset records without a second Datase
     assert.equal(articles.length, 1, `${page.slug} should have one Article node`);
     assert.equal(articles[0].isBasedOn?.["@id"], page.datasetId);
     assert.equal(articles[0].author?.name, "David Miller");
-    assert.equal(articles[0].dateModified?.slice(0, 10), "2026-11-23");
+    assert.equal(articles[0].dateModified?.slice(0, 10), page.modified);
 
     const lastmod = sitemapEntries().find((entry) => entry.loc === url)?.lastmod ?? "";
     assert.equal(
       lastmod.slice(0, 10),
-      "2026-11-23",
-      `${page.slug} lastmod should stay on the existing public day`,
+      page.modified,
+      `${page.slug} lastmod should match the public modified day`,
     );
   }
 });

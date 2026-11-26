@@ -47,18 +47,19 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const popcorn = articleFrontmatter("popcorn-vs-potato-chips-fiber-comparison");
   assert.equal(
     popcorn.title,
-    "Chips vs Popcorn: Which Has More Fiber?",
+    "Popcorn vs Chips: Calories, Fiber and Sodium per 100 g",
   );
-  assert.equal(popcorn.title.length, 39);
+  assert.equal(popcorn.title.length, 54);
   assert.ok(
     popcorn.title.length <= 60,
     `popcorn title too long for SERP: ${popcorn.title.length}`,
   );
   const titleLower = popcorn.title.toLowerCase();
   assert.ok(
-    titleLower.startsWith("chips vs popcorn"),
-    "popcorn title should lead with chips vs popcorn",
+    titleLower.startsWith("popcorn vs chips"),
+    "popcorn title should lead with popcorn vs chips",
   );
+  assert.match(popcorn.title, /Calories, Fiber and Sodium/);
   assert.equal(
     /^\d/.test(popcorn.title),
     false,
@@ -79,25 +80,26 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     false,
     "popcorn title should not be the old flat calorie comparison",
   );
-  assert.equal(
-    titleLower.startsWith("popcorn vs"),
-    false,
-    "popcorn title should not lead popcorn-first and miss chips vs popcorn",
+  assert.notEqual(
+    titleLower,
+    "chips vs popcorn: which has more fiber?",
+    "popcorn title should not stay on the fiber-only SERP",
   );
-  assert.match(popcornRaw, /^dateModified: 2026-09-23$/m);
-  assert.match(popcorn.excerpt, /[Cc]hips vs popcorn calories/);
-  assert.match(popcorn.excerpt, /108/);
-  assert.match(popcorn.excerpt, /149/);
-  assert.match(popcorn.excerpt, /4\.1g/);
-  assert.match(popcorn.excerpt, /0\.9g/);
+  assert.match(popcornRaw, /^dateModified: 2026-11-26$/m);
+  assert.match(popcornRaw, /^substantiveUpdate: 2026-11-26$/m);
+  assert.match(popcorn.excerpt, /[Pp]opcorn vs chips calories/);
+  assert.match(popcorn.excerpt, /387/);
+  assert.match(popcorn.excerpt, /532/);
+  assert.match(popcorn.excerpt, /14\.5g/);
+  assert.match(popcorn.excerpt, /3\.1g/);
   const excerptLower = popcorn.excerpt.toLowerCase();
   assert.ok(
-    excerptLower.indexOf("calorie") < excerptLower.search(/fiber|4\.1g/),
+    excerptLower.indexOf("calorie") < excerptLower.search(/fiber|14\.5g/),
     "popcorn meta should put calories before fiber so the SERP snippet is not truncated",
   );
   assert.ok(
-    excerptLower.indexOf("chips vs popcorn calories") < excerptLower.indexOf("149"),
-    "popcorn meta should put chips vs popcorn calories before the USDA numbers",
+    excerptLower.indexOf("popcorn vs chips calories") < excerptLower.indexOf("387"),
+    "popcorn meta should put popcorn vs chips calories before the USDA numbers",
   );
   assert.ok(
     popcorn.excerpt.length <= 160,
@@ -1537,8 +1539,8 @@ test("protein density title leads with highest protein foods per 100g", () => {
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.equal(page.title, "Highest Protein Foods per 100g: TVP 52.17g");
-  assert.equal(page.title.length, 42);
+  assert.equal(page.title, "Highest Protein Foods per 100g: Top 15, Cooked vs Dry");
+  assert.equal(page.title.length, 53);
   assert.ok(
     page.title.length <= 60,
     `protein density title should be ≤60 chars, got ${page.title.length}`,
@@ -1547,11 +1549,12 @@ test("protein density title leads with highest protein foods per 100g", () => {
     titleLower.startsWith("highest protein foods per 100g"),
     "protein density title should lead with highest protein foods per 100g",
   );
-  assert.ok(
-    titleLower.indexOf("highest protein foods per 100g") < titleLower.indexOf("52.17g"),
-    "protein density title should put the ranking query before the 52.17g leader",
+  assert.match(page.title, /Cooked vs Dry/);
+  assert.equal(
+    titleLower.includes("tvp"),
+    false,
+    "protein density title should not lead the SERP with the TVP proxy",
   );
-  assert.match(page.title, /52\.17g/);
   assert.equal(
     titleLower.includes("study"),
     false,
@@ -1562,16 +1565,20 @@ test("protein density title leads with highest protein foods per 100g", () => {
     false,
     "protein density title should not be the old 49-food study SERP",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-26$/m);
+  assert.match(raw, /^substantiveUpdate: 2026-11-26$/m);
 
-  assert.match(page.excerpt, /[Ff]oods highest in protein/);
-  assert.match(page.excerpt, /52\.17g/);
-  assert.match(page.excerpt, /proxy/i);
-  assert.match(page.excerpt, /24\.63g/);
-  assert.match(page.excerpt, /24\.62g/);
-  assert.match(page.excerpt, /July 2026/);
+  assert.match(page.excerpt, /[Hh]ighest protein foods per 100g/);
+  assert.match(page.excerpt, /35\.75g/);
+  assert.match(page.excerpt, /31\.02g/);
+  assert.match(page.excerpt, /July 2026 study of 49 foods/);
+  assert.equal(
+    excerptLower.includes("52.17g"),
+    false,
+    "protein density meta should not lead with the TVP proxy figure",
+  );
   assert.ok(
-    excerptLower.indexOf("foods highest in protein") < excerptLower.indexOf("52.17g"),
+    excerptLower.indexOf("highest protein foods per 100g") < excerptLower.indexOf("35.75g"),
     "protein density meta should put the ranking query before the table numbers",
   );
 });

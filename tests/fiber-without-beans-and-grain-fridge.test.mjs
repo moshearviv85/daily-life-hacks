@@ -228,7 +228,7 @@ test("the grain fridge page reconciles FoodKeeper ranges with the FSIS leftovers
 test("the new pages are linked from the pages the spec names, without a date bump", () => {
   const sources = [
     ["src/data/articles/oatmeal-vs-grits-fiber-content.md", "/high-fiber-without-beans/", "2026-09-23"],
-    ["src/data/articles/popcorn-vs-potato-chips-fiber-comparison.md", "/high-fiber-without-beans/", "2026-09-23"],
+    ["src/data/articles/popcorn-vs-potato-chips-fiber-comparison.md", "/high-fiber-without-beans/", "2026-11-26"],
     ["src/data/articles/how-long-do-leftovers-last-in-the-fridge.md", "/how-long-do-cooked-grains-and-beans-last-in-the-fridge/", null],
     ["src/data/articles/freezer-inventory-simple-system.md", "/how-long-do-cooked-grains-and-beans-last-in-the-fridge/", "2026-07-20"],
   ];
