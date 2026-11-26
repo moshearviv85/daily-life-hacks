@@ -70,7 +70,7 @@ Five milligrams versus 384. That's the black bean pair, per 100 g, and 384 divid
 
 [FDA 21 CFR 101.61](https://www.ecfr.gov/current/title-21/section-101.61) is the sodium-claim rule. Less than 5 mg per reference amount is the sodium-free line. 35 mg or less is very low sodium, and 140 mg or less is low sodium, when the reference amount is over 30 g. The rule judges the reference amount, not a flat 100 g, so a 100 g column isn't a verdict on the label. It's still the only unit these files share. Every dry row here is 5 to 24 mg per 100 g. Every can is 278 to 384 mg per 100 g, already past 140 mg before you scale the scoop. The wider low-sodium grocery list, same milligrams, is [low-sodium foods by the dollar](/low-sodium-budget-foods-ranked/).
 
-Drain and rinse and some of that sodium goes down the sink. These USDA records are the can as packed, liquid included. I don't have a rinsed number I'm willing to invent.
+Drain and rinse and some of that sodium goes down the sink. These USDA records are the can as packed, liquid included. I don't have a rinsed number I'm willing to invent. The measured rinse, and the pantry foods under 140 mg per 100 g, are in [how to cut sodium in canned beans](/how-to-cut-sodium-in-canned-beans-and-budget-meals/).
 
 ## The can is still dinner when the bag is a rock
 
