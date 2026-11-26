@@ -1,0 +1,287 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATA_LICENSE_URL } from "../../../content/datasets";
+import {
+  DAY_COST_FILE,
+  FORMATS,
+  GRAINS_FILE,
+  PRODUCE_FILE,
+  fiberDaySummaries,
+  loadFiberIndex,
+  money,
+} from "../../../lib/produce-grain-fiber-index.mjs";
+
+const rows = loadFiberIndex();
+const days = fiberDaySummaries();
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}/data/produce-and-grain-fiber-index/`;
+const title = "Produce and Whole-Grain Fiber Index";
+const description =
+  "Sort 33 produce and grain rows by fiber per dollar. Flour leads at 77.8 g. Frozen peas are 17.6 g. Dried fruit has no ranked row.";
+const chart = "/images/produce-and-grain-fiber-index-chart.jpg";
+const chartAlt =
+  "Grouped bar chart of fiber grams per dollar for the top three whole grains, fresh vegetables, frozen vegetables, and fresh fruits. Not a photograph.";
+
+const person = {
+  "@type": "Person",
+  "@id": AUTHOR_ID,
+  name: AUTHOR_NAME,
+  url: AUTHOR_URL,
+};
+
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": `${pageUrl}#dataset`,
+  name: "Produce and Whole-Grain Fiber Index",
+  description:
+    "Thirty-three grocery rows: 22 fresh and frozen produce foods plus 11 whole-grain foods, each scored as dietary fiber grams per dollar. The rows are the published produce and grain rankings, with the five fiber-day menus summarized beside them. Prices are the study prices already in those files. Popcorn kernels and frozen shelled edamame have no USDA record there. Dried fruit is not a ranked row.",
+  url: pageUrl,
+  inLanguage: "en-US",
+  creator: person,
+  author: person,
+  publisher: { "@id": `${siteUrl}/#organization` },
+  license: DATA_LICENSE_URL,
+  isAccessibleForFree: true,
+  keywords: ["fiber per dollar", "whole grains", "fresh produce", "frozen vegetables"],
+  distribution: [PRODUCE_FILE, GRAINS_FILE, DAY_COST_FILE].map((fileName) => ({
+    "@type": "DataDownload",
+    name: fileName,
+    encodingFormat: "text/csv",
+    contentUrl: `${siteUrl}/data/${fileName}`,
+    license: DATA_LICENSE_URL,
+  })),
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  author: person,
+  publisher: { "@id": `${siteUrl}/#organization` },
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  mainEntity: { "@id": `${pageUrl}#dataset` },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Data", item: `${siteUrl}/data/` },
+    { "@type": "ListItem", position: 3, name: "Produce and grain fiber index", item: pageUrl },
+  ],
+};
+
+const flour = rows.find((row) => row.food === "Whole wheat flour");
+const peas = rows.find((row) => row.food === "Frozen green peas");
+const oats = rows.find((row) => row.food === "Old-fashioned rolled oats");
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chart}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, datasetSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class="underline" style="color:#F29B30;">Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/data/" class="underline" style="color:#F29B30;">Data</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Produce and grain fiber index</span>
+    </nav>
+
+    <div class="max-w-4xl mb-8">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">33 rows. One unit. No dried fruit hiding in the list.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">The grain file and the produce file, finally in one list</h1>
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        I kept opening two rankings to answer one cart question. Whole wheat flour is {flour?.fiberLabel} grams of fiber per dollar. Frozen green peas are {peas?.fiberLabel}. Rolled oats are {oats?.fiberLabel}. Same unit, different aisle, and the pea number looks small until you remember the flour still has to become dinner.
+      </p>
+      <p class="text-lg leading-relaxed mt-4" style="color:var(--text-color);">
+        This index is the 22 produce rows in {PRODUCE_FILE} and the 11 grain rows in {GRAINS_FILE}. Filter by whole grains, fresh produce, frozen vegetables, or dried fruit, then sort. Dried fruit isn't a ranked row. Prunes show up as a meal line in {DAY_COST_FILE}, not as a produce score. By {AUTHOR_NAME}.
+      </p>
+    </div>
+
+    <figure class="mb-10">
+      <img src={chart} width="1200" height="675" alt={chartAlt} />
+      <figcaption class="mt-3 text-sm leading-relaxed" style="color:var(--muted-color);">
+        Not a photograph. Grouped bars are the top three foods in each format, read from the two ranked files. The shared scale is the point: grains sit on a different shelf from carrots. A star means that row has no USDA record. Popcorn is the grain one. The write-ups live on the <a href="/cheapest-whole-grains-for-fiber-per-dollar/" class="underline" style="color:#F29B30;">whole-grain fiber ranking</a> and the <a href="/cheapest-high-fiber-fruits-and-vegetables/" class="underline" style="color:#F29B30;">fruit and vegetable ranking</a>.
+      </figcaption>
+    </figure>
+
+    <section id="fiber-index" class="rounded-2xl p-5 md:p-7 mb-12" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-4">
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold" style="color:var(--heading-color);">Filter the 33 rows</h2>
+          <p id="fiber-count" class="text-sm mt-1" style="color:var(--muted-color);" aria-live="polite">Showing {rows.length} of {rows.length}</p>
+        </div>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Sort the rows">
+          <button type="button" class="sort-button" data-sort-key="fiber" aria-pressed="true">Fiber per dollar</button>
+          <button type="button" class="sort-button" data-sort-key="name" aria-pressed="false">Name</button>
+          <button type="button" class="sort-button" data-sort-key="price" aria-pressed="false">Package price</button>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-5" role="group" aria-label="Filter by format">
+        {FORMATS.map((format, index) => (
+          <button type="button" class="format-button" data-format-filter={format.id} aria-pressed={index === 0 ? "true" : "false"}>
+            {format.id === "all" ? `All ${rows.length}` : format.label}
+          </button>
+        ))}
+      </div>
+      <p id="dried-fruit-note" class="text-sm mb-4" style="color:var(--text-color);">
+        Dried fruit has zero rows in these two files. The filter is here so that empty result is obvious, not implied.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:720px;border-collapse:collapse;">
+          <thead>
+            <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Food</th>
+              <th scope="col" class="cell text-left">Format</th>
+              <th scope="col" class="cell text-right">Fiber per $1</th>
+              <th scope="col" class="cell text-left">Package</th>
+              <th scope="col" class="cell text-right">Package price</th>
+              <th scope="col" class="cell text-left">USDA id</th>
+            </tr>
+          </thead>
+          <tbody id="fiber-rows">
+            {rows.map((row) => (
+              <tr data-format={row.format} data-fiber={row.fiberPerDollar} data-name={row.food} data-price={row.packagePrice} style="border-bottom:1px solid var(--border-color);">
+                <th scope="row" class="cell text-left" style="font-weight:600;color:var(--heading-color);">{row.food}</th>
+                <td class="cell text-left" style="color:var(--muted-color);">{row.formatLabel}</td>
+                <td class="cell text-right" style="font-weight:700;">{row.fiberLabel} g</td>
+                <td class="cell text-left">{row.package}</td>
+                <td class="cell text-right">{money(row.packagePrice)}</td>
+                <td class="cell text-left" style="color:var(--muted-color);">{row.fdcId || "No USDA record"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed" style="color:var(--muted-color);">
+        Your filter stays in this browser tab. The numbers don't. They're the published rows. Two of them, popcorn kernels and frozen shelled edamame, are in the files without a USDA id, and the table says so instead of borrowing a neighbor.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">What a day of about 30 grams costs in the same files</h2>
+      <p class="mb-6 leading-relaxed" style="color:var(--text-color);">
+        {DAY_COST_FILE} prices five ways to land near 30 grams of fiber. The totals below are the meal lines added up. The write-up is the 30 grams of fiber cost study, caveats included. This table is just the arithmetic.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:560px;border-collapse:collapse;">
+          <thead>
+            <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Menu day</th>
+              <th scope="col" class="cell text-right">Lines</th>
+              <th scope="col" class="cell text-right">Fiber</th>
+              <th scope="col" class="cell text-right">Consumed cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {days.map((day) => (
+              <tr style="border-bottom:1px solid var(--border-color);">
+                <th scope="row" class="cell text-left" style="font-weight:600;">{day.day}</th>
+                <td class="cell text-right">{day.meals}</td>
+                <td class="cell text-right">{day.fiber} g</td>
+                <td class="cell text-right" style="font-weight:700;">{money(day.cost)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <article class="prose-like max-w-4xl">
+      <h2>Why the flour number and the pea number can share a page</h2>
+      <p>
+        They're both fiber grams divided by a documented package price. Flour at {flour?.fiberLabel} grams per dollar is a baking ingredient. Peas at {peas?.fiberLabel} are closer to something you'd actually put next to dinner tonight. The index doesn't declare a winner. It stops you from comparing a memory of one file to a memory of the other.
+      </p>
+      <p>
+        Fresh produce here means the fresh vegetables and the fresh fruit. Frozen vegetables stay their own filter, because a bag of peas and a pint of blueberries are not the same shopping problem. Carrots, cabbage, sweet potatoes, and bananas are all in the table. So are the berries, which is where the fiber-per-dollar number gets humble.
+      </p>
+      <h2>Where the rows are explained</h2>
+      <p>
+        The cookable grain ranking, popcorn's missing USDA record included, is the <a href="/cheapest-whole-grains-for-fiber-per-dollar/" class="underline" style="color:#F29B30;">cheapest whole grains for fiber per dollar</a>. The 22 produce rows, edamame's missing record included, are the <a href="/cheapest-high-fiber-fruits-and-vegetables/" class="underline" style="color:#F29B30;">cheapest high-fiber fruits and vegetables</a>. Price rules sit on the <a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a>. If the question is how many days the cooked batch lasts, that's the <a href="/tools/pantry-meal-cost-and-storage-planner/" class="underline" style="color:#F29B30;">pantry meal cost and storage planner</a>, not this filter.
+      </p>
+      <p>
+        Filenames, since the files aren't linked from this page: {PRODUCE_FILE}, {GRAINS_FILE}, and {DAY_COST_FILE}. All three are in the public data folder.
+      </p>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .format-button,.sort-button{border-radius:999px;padding:.55rem .9rem;font-size:.8rem;font-weight:800;background:var(--page-bg);color:var(--text-color);border:1px solid var(--border-color)}
+    .format-button[aria-pressed="true"],.sort-button[aria-pressed="true"]{background:#F29B30;color:#111;border-color:#F29B30}
+    .cell{padding:.65rem}
+    img{width:100%;height:auto;border-radius:1rem;border:1px solid var(--border-color)}
+    .prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:800;margin:2.25rem 0 .7rem;color:var(--heading-color)}
+    .prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}
+  </style>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById("fiber-index");
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = "1";
+        var body = document.getElementById("fiber-rows");
+        var count = document.getElementById("fiber-count");
+        var format = "all";
+        var sort = "fiber";
+        function rows() {
+          return Array.prototype.slice.call(body.querySelectorAll("tr"));
+        }
+        function render() {
+          var list = rows();
+          list.sort(function (a, b) {
+            if (sort === "name") return a.dataset.name.localeCompare(b.dataset.name);
+            if (sort === "price") return Number(a.dataset.price) - Number(b.dataset.price);
+            return Number(b.dataset.fiber) - Number(a.dataset.fiber);
+          });
+          var shown = 0;
+          list.forEach(function (row) {
+            var keep = format === "all" || row.dataset.format === format;
+            row.hidden = !keep;
+            if (keep) shown += 1;
+            body.appendChild(row);
+          });
+          count.textContent = "Showing " + shown + " of " + list.length;
+        }
+        root.addEventListener("click", function (event) {
+          var formatButton = event.target.closest("[data-format-filter]");
+          var sortButton = event.target.closest("[data-sort-key]");
+          if (formatButton) {
+            format = formatButton.dataset.formatFilter;
+            root.querySelectorAll("[data-format-filter]").forEach(function (button) {
+              button.setAttribute("aria-pressed", button === formatButton ? "true" : "false");
+            });
+            render();
+          }
+          if (sortButton) {
+            sort = sortButton.dataset.sortKey;
+            root.querySelectorAll("[data-sort-key]").forEach(function (button) {
+              button.setAttribute("aria-pressed", button === sortButton ? "true" : "false");
+            });
+            render();
+          }
+        });
+        render();
+      }
+      boot();
+      document.addEventListener("astro:page-load", boot);
+    })();
+  </script>
+</BaseLayout>
