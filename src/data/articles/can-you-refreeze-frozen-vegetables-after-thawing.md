@@ -80,6 +80,8 @@ Don't thaw them on the counter first. The FDA's safe thaw list is the fridge, co
 
 Preheat the skillet or sheet pan. Keep a single layer with gaps, because a pile steams itself. Oil the vegetables after they're on the hot surface, not while they're still icy. Pull them while they still have a little bite. The minute after they leave the heat is when they go from tender to cafeteria.
 
+Once the bag is cooked, the fiber-per-dollar ranking of those same vegetables is [cheapest high-fiber fruits and vegetables](/cheapest-high-fiber-fruits-and-vegetables/).
+
 ## How to freeze fresh vegetables
 
 Wash, cut, and blanch. [UMN Extension](https://extension.umn.edu/preserving-and-preparing/how-blanch-vegetables-safe-preservation) and [NDSU](https://www.ndsu.edu/agriculture/extension/publications/freezing-vegetables) both want the boiling-water step, and both say the microwave is a bad substitute because it may not shut the enzymes off. NCHFP's water-blanch times are a useful start: green beans 3 minutes, peas 1 1/2 minutes, sliced carrots 2 minutes, broccoli florets 3 minutes. Use about a gallon of water per pound, and start the timer when the water returns to a boil.

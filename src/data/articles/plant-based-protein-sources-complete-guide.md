@@ -68,6 +68,8 @@ Dry beans and lentils run 20 to 25 grams of protein per 100 grams before you coo
 
 Lentils are the easy on-ramp because they don't need soaking. Throw them into soups, use them as a base for tacos, mix them into grain bowls, or stir them into pasta sauce. Canned beans are perfectly fine and save a ton of time; give them a quick rinse to cut the sodium. Cooking from dry on a Sunday will carry you most of the week, and the price gap is real: a $0.88 can of black beans buys 30.1 grams of protein per dollar, while the dry bag buys 58.0. We priced that gap bean by bean in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving). Beans also carry serious fiber, which may help keep you full longer.
 
+Dry lentils and beans also stay under the FDA low-sodium line. The joined ranking is [low-sodium high-protein foods per dollar](/low-sodium-high-protein-foods-per-dollar/).
+
 ## Do tofu and tempeh have more protein than beans?
 
 Tempeh roughly ties dry beans at 20.3 grams of protein per 100 grams. Tofu does not come close, at 10.0 grams per 100 grams, less than half of dry lentils. Per dollar the gap is wider still: tofu delivers 13.6 grams per dollar and tempeh 13.2, against 77.7 for dry brown lentils and 57.6 for dry pinto beans.

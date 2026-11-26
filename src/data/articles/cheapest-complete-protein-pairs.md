@@ -70,4 +70,6 @@ Protein values come from USDA FoodData Central and prices are July 2026 US figur
 
 The legume half of every pair is also doing fiber work while it sits in the pot, which we scored separately in [protein and fiber per dollar across ten beans and lentils](/beans-double-win-fiber-protein/) and across the whole store in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/). If you're building actual meals out of this, the [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/) is the full playbook, and [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) prices out the daily version. The short answer stays the same either way: buy a bag of beans, buy a bag of something grainy, and let two of the cheapest foods in the store cover for each other.
 
+If sodium is the other constraint, [low-sodium high-protein foods per dollar](/low-sodium-high-protein-foods-per-dollar/) keeps the foods that sit at or under 140 mg per 100 g.
+
 <!-- numbers-source: pipeline-data/derived-studies/cheapest-complete-protein-pairs.json -->
