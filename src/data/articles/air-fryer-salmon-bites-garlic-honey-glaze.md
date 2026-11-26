@@ -129,6 +129,8 @@ Check the largest cube first. It should separate into moist flakes with gentle p
 
 Pull finished pieces early if your batch is uneven. Air fryers continue moving fierce heat across the surface, and one extra round can take salmon from glossy to pencil eraser. If you cook fish often, an instant-read thermometer earns its drawer space quickly.
 
+A whole fillet is the same 145°F check with a less forgiving tail. The [baked cod with lemon, capers, and green beans](/baked-cod-lemon-capers-green-beans/) is that sheet-pan version.
+
 ## Store and reheat the glaze separately
 
 Refrigerate leftovers promptly in a covered container and use them within a few days. If you expect leftovers, glaze only the portion you are serving. Plain cooked bites reheat more evenly, while honey-coated pieces can darken before the center gets hot.

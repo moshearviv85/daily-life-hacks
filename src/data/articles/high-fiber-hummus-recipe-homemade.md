@@ -10,7 +10,8 @@ tags:
 image: /images/high-fiber-hummus-recipe-homemade-main.jpg
 imageAlt: Creamy homemade hummus topped with olive oil, chickpeas, and paprika
 date: 2026-04-28
-dateModified: 2026-07-20
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 quickAnswer: "For creamy homemade hummus, process two cans of well-rinsed chickpeas with tahini, lemon, garlic, cumin, and salt for at least one full minute. Drizzle in olive oil, then add reserved chickpea liquid or ice water one tablespoon at a time. You don't need to peel every chickpea; enough blending time and controlled liquid do most of the work."
 featured: false
@@ -88,6 +89,24 @@ faq:
 Homemade hummus turns creamy when you give it enough tahini, enough blending time, and a little cold liquid at the end. That's the whole operation. No chickpea peeling marathon. No specialty equipment beyond a food processor. No tiny refrigerated tub charging rent by the ounce.
 
 This version uses two cans of chickpeas and half a cup of tahini, so it has real body without becoming stiff. Fresh lemon and garlic keep it sharp. Two cans is also a couple of dollars of groceries. The dry bag is cheaper still. The texture should hold a swipe from a piece of pita but shouldn't grip the pita and refuse to let go.
+
+## How much fiber and protein does homemade chickpea hummus have, and what fixes grainy texture?
+
+One serving has 14.2 g protein and 10.9 g fiber. The batch is 508 g drained chickpeas ([FDC 173801](https://fdc.nal.usda.gov/food-details/173801/nutrients)), 120 g tahini (FDC 170189), 61 g lemon juice (FDC 167747), and olive oil (FDC 171413). Blend chickpeas, tahini, and lemon for 60 seconds before ice water or aquafaba so the skins smooth out without peeling.
+
+Grainy hummus is a stopped processor. The first half minute only breaks the chickpeas into gravel. Give it a full minute with the tahini and lemon before you pour anything cold in, and you can skip the peeling project.
+
+The orange card still says 380 kcal. The same gram weights come out to 420 kcal a serving, which is the number in the nutrition box. Fiber and protein above are that USDA total.
+
+Table: Chickpea hummus batch weights, the fiber fat or acid job, and the texture fix
+
+| Ingredient | Batch weight | Fiber, fat, or acid | Texture fix |
+| --- | --- | --- | --- |
+| Canned chickpeas, [FDC 173801](https://fdc.nal.usda.gov/food-details/173801/nutrients) | 508 g | 32.0 g fiber and 35.8 g protein in the batch. That's the fiber. | Grainy: blend at least 60 seconds with the tahini and lemon before any water. Peeling is optional. Skipping it is the point. |
+| Sesame tahini, [FDC 170189](https://fdc.nal.usda.gov/food-details/170189/nutrients) | 120 g | 11.2 g fiber, 20.4 g protein, and 64.5 g fat (53.76 g fat per 100 g). | Thick paste: stir the jar first. The oil floats, and a dry scoop seizes when the lemon hits it. |
+| Extra-virgin olive oil, [FDC 171413](https://fdc.nal.usda.gov/food-details/171413/nutrients) | 27 g | 239 kcal and 0 g fiber. This line is the fat. | Stream it in after the chickpeas are already smooth. Oil on a coarse paste stays grainy. |
+| Lemon juice, [FDC 167747](https://fdc.nal.usda.gov/food-details/167747/nutrients) | 61 g | The acid. About 13 kcal. It doesn't carry the fiber. | Flat: add a little more lemon, then salt. More garlic won't fix a dull batch. |
+| Reserved aquafaba or ice water | 1 tbsp at a time | Loosens the emulsion. The reserved can liquid isn't a separate USDA line on this card. | Thick: 1 tbsp, blend, look again. Thin: stop and chill 20 minutes before you add more chickpeas. |
 
 ## Why does homemade hummus turn grainy?
 

@@ -97,6 +97,8 @@ Tahini does a weird thing when you add lemon juice. It thickens like it's trying
 
 Whisk in warm water slowly and it turns into a smooth, pourable sauce that tastes rich and bright at the same time. A little sweetener helps, too. Not enough to make it dessert. Just enough to round out the bitterness that tahini sometimes has.
 
+If you'd rather scoop than drizzle, [homemade high-fiber hummus](/high-fiber-hummus-recipe-homemade/) is that lemon and tahini with chickpeas in the bowl.
+
 ## How to meal prep this farro lunch bowl
 
 If you want the bowls to stay fresh for 4 days, keep the components separate:
