@@ -64,10 +64,9 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "beans",
         title: "Beans, dried and canned",
         intro:
-          "Dried beans and canned beans stop being the same food once you read protein per 100 grams. Start there, then the split-pea dollar math and the rice-and-beans plate people actually cook. Chicken and tofu sit in the same per-serving table so the bean number has something next to it.",
+          "Dried beans and canned beans stop being the same food once you read protein per 100 grams. Start there, then the rice-and-beans plate people actually cook. Chicken and tofu sit in the same per-serving table so the bean number has something next to it.",
         slugs: [
           "canned-beans-vs-dried-beans-nutrition",
-          "beans-double-win-fiber-protein",
           "can-you-eat-rice-and-beans-everyday",
           "protein-per-serving-beans-chicken-tofu-compared",
           "natto-japanese-fermented-soybeans-gut-health",
@@ -90,10 +89,9 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "breakfast",
         title: "Breakfast that holds past 10",
         intro:
-          "A breakfast page is here when it names the food and the reason you aren't opening the pantry at 10. The balanced breakfast is the start, then the yogurt parfait, oats versus grits, and the high-fiber breakfast ideas. The peppermint and ginger mug is the ten-minute cup when the bowl isn't happening.",
+          "A breakfast page is here when it names the food and the reason you aren't opening the pantry at 10. The balanced breakfast is the start, then oats versus grits and the high-fiber breakfast ideas. The peppermint and ginger mug is the ten-minute cup when the bowl isn't happening.",
         slugs: [
           "balanced-breakfast-that-keeps-you-full",
-          "high-fiber-yogurt-parfait-for-breakfast",
           "oatmeal-vs-grits-fiber-content",
           "easy-high-fiber-breakfast-ideas-for-gut-health",
           "gut-health-tea-peppermint-ginger",
