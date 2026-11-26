@@ -1,0 +1,569 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+import { DATASET_ORGANIZATION, DATASET_PERSON_CREATOR } from "../../../content/datasets";
+import { parseCsv } from "../../../content/price-basis.mjs";
+
+const PAGE_PATH = "/tools/work-lunch-protein-and-fiber-builder/";
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}${PAGE_PATH}`;
+const chartSrc = "/images/work-lunch-protein-and-fiber-builder-chart.jpg";
+const chartAlt =
+  "Bar chart of protein grams in eight work-lunch portions, labeled with each portion's grocery cost";
+
+type Cells = Record<string, string>;
+
+function rowsFrom(fileName: string): Cells[] {
+  const parsed = parseCsv(readFileSync(join(process.cwd(), "public/data", fileName), "utf8"));
+  return parsed.rows.map((cells) =>
+    Object.fromEntries(parsed.header.map((name, index) => [name, cells[index] ?? ""])),
+  );
+}
+
+function byFood(fileName: string) {
+  return new Map(rowsFrom(fileName).map((row) => [row.food, row]));
+}
+
+const proteinRows = byFood("protein-per-dollar-2026.csv");
+const fiberRows = byFood("fiber-per-dollar-2026.csv");
+const noCook = rowsFrom("no-cook-protein-per-dollar-2026.csv");
+const snacks = rowsFrom("high-fiber-snacks-per-dollar-2026.csv");
+if (noCook.length !== 15) throw new Error(`no-cook file has ${noCook.length} rows`);
+if (snacks.length !== 10) throw new Error(`snack file has ${snacks.length} rows`);
+const noCookNames = new Set(noCook.map((row) => row.food));
+const snackNames = new Set(snacks.map((row) => row.food));
+
+function mustRate(fileRows: Cells[], food: string, parent: Map<string, Cells>, parentKey: string) {
+  const row = fileRows.find((item) => item.food === food);
+  const parentRow = parent.get(food);
+  if (!row || !parentRow) throw new Error(`Missing ${food}`);
+  if (row.value !== parentRow[parentKey]) {
+    throw new Error(`${food} rate ${row.value} != ${parentRow[parentKey]}`);
+  }
+}
+
+for (const food of [
+  "Canned tuna (chunk light, in water)",
+  "Greek yogurt (plain, nonfat)",
+  "Cottage cheese (4%)",
+  "Peanut butter",
+  "Dry roasted peanuts",
+  "Sunflower seed kernels",
+]) {
+  mustRate(noCook, food, proteinRows, "protein_g_per_dollar");
+}
+for (const food of ["Eggs (large)", "Mozzarella (low-moisture part-skim)"]) {
+  if (noCookNames.has(food)) throw new Error(`${food} unexpectedly appeared on the no-cook file`);
+  if (!proteinRows.has(food)) throw new Error(`Missing ${food} on the protein file`);
+}
+for (const food of ["Carrots (whole, bagged)", "Bananas", "Apples (gala)", "Popcorn kernels", "Almonds"]) {
+  mustRate(snacks, food, fiberRows, "fiber_g_per_dollar");
+}
+
+function round1(value: number) {
+  return Math.round(value * 10) / 10;
+}
+
+function cents(value: number) {
+  return Math.round(value * 100) / 100;
+}
+
+function usd(value: number) {
+  return `$${cents(value).toFixed(2)}`;
+}
+
+function gramText(value: number) {
+  return round1(value).toFixed(1);
+}
+
+function metrics(food: string | null, grams: number) {
+  if (!food || grams <= 0) return { protein: 0, fiber: 0, cost: 0 };
+  const proteinRow = proteinRows.get(food);
+  const fiberRow = fiberRows.get(food);
+  if (proteinRow && fiberRow && proteinRow.price_per_100g_usd !== fiberRow.price_per_100g_usd) {
+    throw new Error(`${food} has two prices`);
+  }
+  const price = proteinRow?.price_per_100g_usd ?? fiberRow?.price_per_100g_usd;
+  if (!price) throw new Error(`No price for ${food}`);
+  return {
+    protein: proteinRow ? (Number(proteinRow.protein_g_per_100g) * grams) / 100 : 0,
+    fiber: fiberRow ? (Number(fiberRow.fiber_g_per_100g) * grams) / 100 : 0,
+    cost: (Number(price) * grams) / 100,
+  };
+}
+
+type Part = {
+  id: string;
+  label: string;
+  grams: number;
+  protein: number;
+  fiber: number;
+  cost: number;
+  pack: string;
+  note: string;
+};
+
+function part(
+  id: string,
+  label: string,
+  food: string | null,
+  grams: number,
+  pack: string,
+  note: string,
+): Part {
+  const scored = metrics(food, grams);
+  return { id, label, grams, pack, note, ...scored };
+}
+
+const bases: Part[] = [
+  part(
+    "bagel",
+    "Bagel",
+    null,
+    0,
+    "The bagel isn't in the grocery files, so this line adds $0. Toast it, let it cool all the way, then keep the wet add-in in its own cup. Peanut butter can sit on the bagel. Carrots and apple should not.",
+    "No priced bagel row. The receipt is the filling only.",
+  ),
+  part(
+    "bread",
+    "Whole wheat sandwich bread",
+    "100% whole wheat bread",
+    52,
+    "Spread a fat edge to edge first. Peanut butter counts. Put cheese or another dry protein against both slices. Keep the crisp add-in in a cup unless you want carrot sticks living inside the sandwich until noon.",
+    "52 g is two slices, the same weight the day menus use. The price is the BLS loaf in protein-per-dollar-2026.csv, not the older $1.97 Walmart loaf.",
+  ),
+  part(
+    "wrap",
+    "Tortilla wrap",
+    null,
+    0,
+    "The tortilla isn't a priced row, so this line adds $0. Spread peanut butter or cheese first if that's the protein. Roll the rest of the protein inside. Leave the apple, banana, or carrots beside the wrap.",
+    "No priced tortilla row. The receipt is the filling only.",
+  ),
+  part(
+    "jar",
+    "Mason-jar salad",
+    null,
+    0,
+    "No dressing is priced here. Put the crisp add-in on the bottom and the protein above it. Don't pour yogurt over carrots if you want crunch at noon. Greens aren't in this receipt.",
+    "A packing style, not a priced ingredient.",
+  ),
+  part(
+    "box",
+    "No-bread snack box",
+    null,
+    0,
+    "Protein in one cup, crisp add-in in another. Nothing stacked, nothing steaming. This base adds $0 because there's no bread to price.",
+    "Two cups. No bread line.",
+  ),
+];
+
+const proteins: Part[] = [
+  part("eggs", "Eggs", "Eggs (large)", 100, "", "2 large eggs, 100 g. Priced from protein-per-dollar-2026.csv. The no-cook file doesn't list eggs."),
+  part("tuna", "Canned tuna", "Canned tuna (chunk light, in water)", 113, "", "One drained can, 113 g, on no-cook-protein-per-dollar-2026.csv."),
+  part("yogurt", "Greek yogurt", "Greek yogurt (plain, nonfat)", 170, "", "170 g, the protein day menu's tub, on the no-cook file."),
+  part("cottage", "Cottage cheese", "Cottage cheese (4%)", 113, "", "113 g, the same weight as the tuna can, on the no-cook file."),
+  part("pb", "Peanut butter", "Peanut butter", 32, "", "32 g, 2 tablespoons. On both the no-cook file and the fiber file."),
+  part("peanuts", "Dry roasted peanuts", "Dry roasted peanuts", 28, "", "28 g, 1 ounce, on the no-cook file."),
+  part("sunflower", "Sunflower seeds", "Sunflower seed kernels", 28, "", "28 g of sunflower seed kernels, the name on the no-cook file."),
+  part("mozz", "Mozzarella", "Mozzarella (low-moisture part-skim)", 28, "", "28 g. Priced from protein-per-dollar-2026.csv. The no-cook file stops before mozzarella."),
+];
+
+const addins: Part[] = [
+  part("carrots", "Carrots", "Carrots (whole, bagged)", 100, "", "100 g, on high-fiber-snacks-per-dollar-2026.csv."),
+  part("bananas", "Bananas", "Bananas", 100, "", "100 g edible banana, not the with-peel line. On the snack file."),
+  part("apples", "Gala apples", "Apples (gala)", 100, "", "100 g, on the snack file."),
+  part("popcorn", "Popcorn", "Popcorn kernels", 28, "", "28 g of unpopped kernels. The snack file has no USDA id on this row."),
+  part("almonds", "Almonds", "Almonds", 28, "", "28 g. On the snack file, and the protein file still counts."),
+];
+
+const bread = bases.find((item) => item.id === "bread");
+const tuna = proteins.find((item) => item.id === "tuna");
+const carrots = addins.find((item) => item.id === "carrots");
+const popcorn = addins.find((item) => item.id === "popcorn");
+if (!bread || !tuna || !carrots || !popcorn) throw new Error("Missing a default lunch part");
+
+function combo(base: Part, protein: Part, addin: Part) {
+  return {
+    label: `${base.label} + ${protein.label} + ${addin.label}`,
+    protein: base.protein + protein.protein + addin.protein,
+    fiber: base.fiber + protein.fiber + addin.fiber,
+    cost: base.cost + protein.cost + addin.cost,
+  };
+}
+
+const fallback = combo(bread, tuna, carrots);
+let cheapest = fallback;
+let richest = fallback;
+let lightest = fallback;
+let heaviest = fallback;
+for (const base of bases) {
+  for (const protein of proteins) {
+    for (const addin of addins) {
+      const built = combo(base, protein, addin);
+      if (built.cost < cheapest.cost) cheapest = built;
+      if (built.cost > richest.cost) richest = built;
+      if (built.protein < lightest.protein) lightest = built;
+      if (built.protein > heaviest.protein) heaviest = built;
+    }
+  }
+}
+
+const popcornRate = snacks.find((row) => row.food === "Popcorn kernels");
+if (!popcornRate) throw new Error("Missing popcorn");
+
+function sentence(base: Part, protein: Part, addin: Part) {
+  const built = combo(base, protein, addin);
+  return `${base.label} (${base.grams} g) + ${protein.label} (${protein.grams} g) + ${addin.label} (${addin.grams} g): ${gramText(built.protein)} g protein, ${gramText(built.fiber)} g fiber, ${usd(built.cost)}. ${base.pack}`;
+}
+
+const faqs = [
+  [
+    "How much protein and fiber are in one built lunch?",
+    `The default, two slices of whole wheat bread, one can of tuna, and 100 g of carrots, is ${gramText(fallback.protein)} g protein and ${gramText(fallback.fiber)} g fiber. Across every combination on this page, protein runs from ${gramText(lightest.protein)} g (${lightest.label}) to ${gramText(heaviest.protein)} g (${heaviest.label}). Fiber moves with the add-in, and peanut butter brings its own.`,
+  ],
+  [
+    "What does this work lunch cost?",
+    `The default is ${usd(fallback.cost)}. The lowest receipt is ${usd(cheapest.cost)} for ${cheapest.label}. The highest is ${usd(richest.cost)} for ${richest.label}. A $0 base means that bread isn't in the grocery files. It doesn't mean the store gave it to you.`,
+  ],
+  [
+    "How do you pack the lunch so the bread or the crunch stays firm?",
+    "Put a fat layer on bread before anything wet. Keep carrots, apple, and banana in their own cup unless the base is a jar, where the crisp add-in sits on the bottom and the protein sits above it. USDA FSIS says perishable food shouldn't sit out more than 2 hours, or 1 hour above 90 degrees F.",
+  ],
+  [
+    "What protein can go with a bagel if the bagel has no price here?",
+    "Eggs, canned tuna, Greek yogurt, cottage cheese, peanut butter, dry roasted peanuts, sunflower seeds, or mozzarella. The bagel line stays at $0 because no bagel row exists in these files. Peanut butter is the one that also seals the crumb. The other proteins ride beside the bagel if they're wet.",
+  ],
+  [
+    "Which crisp add-in has the most fiber in the portion this page uses?",
+    `Popcorn kernels. 28 g has ${gramText(popcorn.fiber)} g of fiber and costs ${usd(popcorn.cost)}. The snack file rates that row at ${popcornRate.value} g of fiber per dollar, and it has no USDA id. An ounce of kernels beats 100 g of carrots on fiber grams. Carrots are still the crunch you can hear.`,
+  ],
+];
+
+const title = "Work Lunch Protein and Fiber Builder";
+const description =
+  "Price one work lunch from a base, a protein, and a crisp fiber add-in. Exact protein grams, fiber grams, cost, and a packing order.";
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${pageUrl}#webapp`,
+  name: title,
+  url: pageUrl,
+  description,
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript for the lunch builder. The portion table and packing orders render without it.",
+  isAccessibleForFree: true,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  creator: DATASET_PERSON_CREATOR,
+  publisher: DATASET_ORGANIZATION,
+  image: `${siteUrl}${chartSrc}`,
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  author: DATASET_PERSON_CREATOR,
+  mainEntity: { "@id": `${pageUrl}#webapp` },
+  datePublished: "2026-11-26",
+  dateModified: "2026-11-26",
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${siteUrl}${chartSrc}`,
+    caption: chartAlt,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${siteUrl}/tools/` },
+    { "@type": "ListItem", position: 3, name: "Work lunch builder", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline font-semibold";
+const linkStyle = "color:#F29B30;";
+const parts = [...bases, ...proteins, ...addins];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={[webPageSchema, appSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main id="lunch-builder" class="wlb-page max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/" class={linkClass} style={linkStyle}>Home</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / </span>
+      <a href="/tools/" class={linkClass} style={linkStyle}>Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Work lunch builder</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">
+      By <a href="/author/david-miller/" class={linkClass} style={linkStyle}>{AUTHOR_NAME}</a>
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
+      Build a Work Lunch and See the Receipt Before Noon
+    </h1>
+    <p class="text-lg max-w-3xl mb-4" style="color:var(--text-color);">
+      Two slices of whole wheat bread, one drained can of tuna, and 100 g of carrots come to {gramText(fallback.protein)} g of protein, {gramText(fallback.fiber)} g of fiber, and {usd(fallback.cost)}. That's the default. That's a lunch, not a personality.
+    </p>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      The proteins are the eight lunch portions below. Six of them are on no-cook-protein-per-dollar-2026.csv. Eggs and mozzarella aren't, so their grams come from protein-per-dollar-2026.csv. The crisp add-ins are five rows from high-fiber-snacks-per-dollar-2026.csv. A bagel, a tortilla, a jar, and a snack box add $0 because those bases aren't priced foods. The bread is the one base with a row.
+    </p>
+
+    <figure class="mb-10">
+      <img src={chartSrc} alt={chartAlt} width="1200" height="675" class="w-full h-auto rounded-2xl" />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Not a photograph, and not an AI illustration.
+        Bar length is protein in the lunch portion. The label is that portion's cost.
+        Tuna is one can, {gramText(tuna.protein)} g protein, {usd(tuna.cost)}.
+        The bread, the fiber add-in, and the $0 bases aren't on this chart.
+      </figcaption>
+    </figure>
+
+    <section class="mb-12" aria-label="Lunch builder">
+      <h2>Pick a base, a protein, and a crisp add-in</h2>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <label class="tool-label">
+          Base
+          <select class="tool-input" id="lunch-base">
+            {bases.map((item) => (
+              <option
+                value={item.id}
+                data-label={item.label}
+                data-grams={item.grams}
+                data-protein={item.protein}
+                data-fiber={item.fiber}
+                data-cost={item.cost}
+                data-pack={item.pack}
+                selected={item.id === "bread"}
+              >
+                {item.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          Protein
+          <select class="tool-input" id="lunch-protein">
+            {proteins.map((item) => (
+              <option
+                value={item.id}
+                data-label={item.label}
+                data-grams={item.grams}
+                data-protein={item.protein}
+                data-fiber={item.fiber}
+                data-cost={item.cost}
+                data-pack=""
+                selected={item.id === "tuna"}
+              >
+                {item.label}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">
+          Crisp fiber add-in
+          <select class="tool-input" id="lunch-addin">
+            {addins.map((item) => (
+              <option
+                value={item.id}
+                data-label={item.label}
+                data-grams={item.grams}
+                data-protein={item.protein}
+                data-fiber={item.fiber}
+                data-cost={item.cost}
+                data-pack=""
+                selected={item.id === "carrots"}
+              >
+                {item.label}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <p id="lunch-result" class="result-box" aria-live="polite">{sentence(bread, tuna, carrots)}</p>
+      <p class="text-xs" style="color:var(--muted-color);">
+        Your picks stay in this browser tab. Nothing you select is saved or sent. Portion math uses the unrounded grams, then one rounding for the total.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2>The portions, with the file that priced them</h2>
+      <p>
+        Protein grams are protein per 100 g times the portion. Fiber grams use the fiber file the same way. Cost is the price per 100 g times the portion. Where a food sits on both files, the price per 100 g matches. Popcorn kernels are the awkward row: {popcornRate.value} g of fiber per dollar, and no FDC id.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>Every base, protein, and crisp add-in the builder can pick. A $0.00 base is unpriced, not free at the store.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Part</th>
+              <th scope="col">Grams</th>
+              <th scope="col">Protein</th>
+              <th scope="col">Fiber</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Where the number lives</th>
+            </tr>
+          </thead>
+          <tbody>
+            {parts.map((item) => (
+              <tr>
+                <th scope="row">{item.label}</th>
+                <td>{item.grams} g</td>
+                <td>{gramText(item.protein)} g</td>
+                <td>{gramText(item.fiber)} g</td>
+                <td>{usd(item.cost)}</td>
+                <td>{item.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2>Packing order for each base</h2>
+      <p>
+        The numbers don't care if the carrots steamed the bread. You will. USDA's clock still applies: perishable food out of the fridge for more than 2 hours, or 1 hour above 90 degrees F, is past the line they publish.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <caption>Packing order for the five bases. Only the sandwich bread has a grocery price.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Base</th>
+              <th scope="col">Order</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bases.map((item) => (
+              <tr>
+                <th scope="row">{item.label}</th>
+                <td>{item.pack}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2>Questions the builder keeps getting</h2>
+      <div class="faq-list">
+        {faqs.map(([question, answer]) => (
+          <details><summary>{question}</summary><p>{answer}</p></details>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h2>Where the same lunch gets a longer look</h2>
+      <p>
+        A full day of packed meals for a physical job is
+        <a href="/healthy-blue-collar-lunch-ideas-men/" class={linkClass} style={linkStyle}>healthy blue collar lunch ideas</a>.
+        The jar order, dressing kept off the greens, is
+        <a href="/how-to-pack-salad-for-work-not-soggy/" class={linkClass} style={linkStyle}>how to pack salad for work so it stays crisp</a>.
+        The no-cook grocery list behind six of these proteins is
+        <a href="/no-cook-emergency-protein-and-fiber-grocery-list/" class={linkClass} style={linkStyle}>the no-cook emergency protein and fiber grocery list</a>.
+        The ten snack rows, popcorn first, are
+        <a href="/cheapest-high-fiber-snacks-per-dollar/" class={linkClass} style={linkStyle}>the cheapest high-fiber snacks per dollar</a>.
+      </p>
+      <p>
+        How a gram earns its price is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+        The danger-zone clock is the
+        <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f" class={linkClass} style={linkStyle} rel="noopener" target="_blank">USDA FSIS danger zone page</a>.
+        {AUTHOR_NAME} checked the portions against the files. The builder doesn't add a bagel price it can't show you.
+      </p>
+    </section>
+  </main>
+  <Footer />
+
+  <style is:global>
+    .wlb-page h2 { font-size: 1.65rem; line-height: 1.2; font-weight: 700; margin: 0 0 0.7rem; color: var(--heading-color); }
+    .wlb-page p { line-height: 1.7; margin: 0.7rem 0; color: var(--text-color); }
+    .wlb-page .tool-label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text-color); }
+    .wlb-page .tool-input { width: 100%; border-radius: 0.75rem; padding: 0.65rem 0.75rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+    .wlb-page .result-box { font-weight: 700; border-radius: 1rem; padding: 1rem 1.1rem; background: rgba(242,155,48,.10); border: 2px solid #F29B30; color: var(--heading-color); }
+    .wlb-page .table-wrap { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 1rem; background: var(--card-bg); }
+    .wlb-page table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .wlb-page caption { caption-side: bottom; text-align: left; padding: 0.75rem 1rem; color: var(--muted-color); font-size: 0.8rem; }
+    .wlb-page th, .wlb-page td { text-align: left; padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+    .wlb-page th { color: var(--heading-color); }
+    .wlb-page details { border-top: 1px solid var(--border-color); padding: 0.8rem 0; }
+    .wlb-page summary { cursor: pointer; font-weight: 700; color: var(--heading-color); }
+  </style>
+
+  <script is:inline>
+    (function () {
+      function boot() {
+        var root = document.getElementById('lunch-builder');
+        if (!root || root.dataset.booted) return;
+        root.dataset.booted = '1';
+        var base = root.querySelector('#lunch-base');
+        var protein = root.querySelector('#lunch-protein');
+        var addin = root.querySelector('#lunch-addin');
+        var result = root.querySelector('#lunch-result');
+        function num(value) {
+          var parsed = parseFloat(value);
+          return isFinite(parsed) ? parsed : 0;
+        }
+        function gram(amount) {
+          return (Math.round(amount * 10) / 10).toFixed(1);
+        }
+        function money(amount) {
+          return '$' + (Math.round(amount * 100) / 100).toFixed(2);
+        }
+        function picked(select) {
+          return select.options[select.selectedIndex];
+        }
+        function render() {
+          var parts = [picked(base), picked(protein), picked(addin)];
+          var proteinGrams = 0;
+          var fiberGrams = 0;
+          var cost = 0;
+          parts.forEach(function (option) {
+            proteinGrams += num(option.dataset.protein);
+            fiberGrams += num(option.dataset.fiber);
+            cost += num(option.dataset.cost);
+          });
+          var names = parts.map(function (option) {
+            return option.dataset.label + ' (' + option.dataset.grams + ' g)';
+          }).join(' + ');
+          result.textContent = names + ': ' + gram(proteinGrams) + ' g protein, ' + gram(fiberGrams) + ' g fiber, ' + money(cost) + '. ' + picked(base).dataset.pack;
+        }
+        base.addEventListener('change', render);
+        protein.addEventListener('change', render);
+        addin.addEventListener('change', render);
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
