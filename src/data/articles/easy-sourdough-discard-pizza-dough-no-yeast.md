@@ -1,6 +1,6 @@
 ---
-title: Sourdough Discard Pizza Dough Without Added Yeast
-excerpt: "Sourdough discard pizza dough without added yeast, ready in about 40 minutes. Mix discard, flour, baking powder, salt, and oil; roll thin and bake hot."
+title: "Sourdough Discard Pizza Dough, No Yeast (Same Day)"
+excerpt: "40 minutes, 227 grams of discard, no added yeast. Sourdough discard pizza dough you mix, rest 10 minutes, roll thin, and bake the same day."
 quickAnswer: >-
   Use 227 grams of 100% hydration discard, 180 grams of flour, and 75 grams of
   water, plus baking powder, salt, and oil. This makes one thin 12-inch crust
@@ -16,7 +16,8 @@ tags:
 image: "/images/easy-sourdough-discard-pizza-dough-no-yeast-main.jpg"
 imageAlt: A close-up, top-down view of a golden-brown pizza crust with airy edges on a wooden surface.
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 prepTime: "25 minutes"
@@ -71,6 +72,16 @@ Pizza at the end of the day is a reasonable request. Remembering to start dough 
 It makes **one thin 12-inch crust, two meal servings**, in about 40 minutes including preheating. Expect a modest rim and a crisp base rather than an airy pizzeria crust. There's no added commercial yeast, though the starter itself contains wild yeast.
 
 The jar usually outlasts one pizza. The [no-yeast sandwich loaf](/sourdough-discard-sandwich-bread-no-yeast/) and the [no-yeast cinnamon rolls](/sourdough-discard-cinnamon-rolls-no-yeast/) use this same kind of discard, with the grams already written down. The rest of that list is [more no-yeast discard recipes](/sourdough-discard-recipes-no-yeast/).
+
+## Same-day timeline
+
+This clock is the 40-minute crust. No added yeast, and not the three-hour hybrid further down.
+
+- Start the pan at 450 degrees F. Give it at least 20 minutes, and mix while it heats.
+- In that same window, knead about 1 minute, then cover and rest 10 minutes.
+- Bake 12 to 15 minutes, then stand 2 minutes before you slice.
+
+Pale bottom or a wet center? The [sourdough discard pizza and bread troubleshooting](/sourdough-discard-pizza-and-bread-troubleshooting/) page starts with the jar, not the oven.
 
 ## What goes into this sourdough discard pizza dough?
 
@@ -147,4 +158,4 @@ Use discard from an established, maintained starter. Don't use a jar with mold, 
 
 Refrigerate leftover pizza within two hours, or one hour above 90 degrees F. Use refrigerated leftovers within three to four days and reheat to 165 degrees F, following [USDA leftover guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety). A hot skillet or toaster oven helps the base crisp again.
 
-If you only have half a cup of discard, scale the crust down or make the [small skillet flatbread](/easy-sourdough-discard-recipes-beginners/#skillet-flatbread-with-half-a-cup). There's no need to feed a whole starter just to use up its leftovers.
+If you only have half a cup of discard, scale the crust down or make the [small skillet flatbread](/easy-sourdough-discard-recipes-beginners/). There's no need to feed a whole starter just to use up its leftovers.

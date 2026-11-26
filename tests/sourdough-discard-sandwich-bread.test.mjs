@@ -74,7 +74,8 @@ test("the discard cluster links the sandwich loaf without moving dates", () => {
     const pageBody = pageSource.replace(/^---\r?\n[\s\S]*?\r?\n---/, "");
     assert.match(pageBody, new RegExp(`\\(/${slug}/\\)`), page);
     assert.doesNotMatch(pageBody, new RegExp(`\\(/${slug}/#`), page);
-    assert.equal(field(pageSource, "dateModified"), "2026-11-23", page);
+    const modified = page === "easy-sourdough-discard-pizza-dough-no-yeast" ? "2026-11-26" : "2026-11-23";
+    assert.equal(field(pageSource, "dateModified"), modified, page);
   }
   const hub = readFileSync(
     join("src/data/articles", "sourdough-discard-recipes-no-yeast.md"),
