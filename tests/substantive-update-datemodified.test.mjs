@@ -107,6 +107,8 @@ const LATER_UPDATES = {
   "how-much-100-grams-of-protein-costs-per-day": "2026-11-26",
   "how-much-protein-and-fiber-in-canned-vs-frozen-vs-dry-staples": "2026-11-26",
   "cheapest-ways-to-add-10-grams-of-fiber-to-any-meal": "2026-11-26",
+  "cheapest-family-grocery-basket-for-protein-and-fiber": "2026-11-26",
+  "sourdough-discard-vs-baking-powder-and-yeast-cost-per-bake": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([
