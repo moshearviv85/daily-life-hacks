@@ -74,7 +74,7 @@ None of these portions is a high-protein breakfast. The wheat-bran cup has 9.0 g
 
 ## What you can stir into yogurt
 
-Chia wants a stir and a wait. Leave the ounce dry on the yogurt and you'll chew seeds like they owed you money. The bowl that already does this is the [high-fiber yogurt parfait](/high-fiber-yogurt-parfait-for-breakfast/).
+Chia wants a stir and a wait. Leave the ounce dry on the yogurt and you'll chew seeds like they owed you money. The bowl that already does this is the [yogurt parfait with the chia counted in the cup](/high-fiber-yogurt-parfait-for-breakfast/).
 
 Wheat bran wants a soak. The [bran muffins](/high-fiber-bran-muffins-that-taste-good/) mix it with buttermilk and leave it 10 minutes. A cup of crude bran on a finished bowl is sawdust with a trophy. Skip it.
 

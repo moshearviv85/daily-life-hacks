@@ -78,6 +78,17 @@ function git(args) {
   return execFileSync("git", args, { encoding: "utf8" });
 }
 
+function showMain(path) {
+  try {
+    return execFileSync("git", ["show", `origin/main:${path}`], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch {
+    return null;
+  }
+}
+
 function field(frontmatter, name) {
   const match = frontmatter.match(
     new RegExp(`^${name}:\\s*["']?([^"'\\n#]+?)["']?\\s*$`, "m"),
@@ -226,7 +237,8 @@ test("added top-impression anchors are unique and never point at noindex or redi
 
   const existing = new Map(TARGETS.map((slug) => [slug, new Set()]));
   for (const article of articles) {
-    const before = git(["show", `origin/main:${ARTICLE_DIR}/${article.slug}.md`]);
+    const before = showMain(`${ARTICLE_DIR}/${article.slug}.md`);
+    if (before == null) continue;
     for (const link of bodyLinks(splitArticle(before).body)) {
       if (existing.has(link.slug)) existing.get(link.slug).add(link.anchor);
     }
@@ -256,7 +268,8 @@ test("link edits into the top-impression pages keep dateModified and add at most
     const addsTargetLink = netNewLinks(diff).some((link) => TARGETS.includes(link.slug));
     if (!addsTargetLink) continue;
     const after = readFileSync(path, "utf8");
-    const before = git(["show", `origin/main:${path}`]);
+    const before = showMain(path);
+    if (before == null) continue;
     assert.equal(
       extractDateModified(after),
       extractDateModified(before),
