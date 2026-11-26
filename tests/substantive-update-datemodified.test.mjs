@@ -82,6 +82,8 @@ const LATER_UPDATES = {
   "low-sodium-high-protein-foods-per-dollar": "2026-11-26",
   "cheapest-high-fiber-fruits-and-vegetables": "2026-11-26",
   "usda-thrifty-food-plan-weekly-cost": "2026-11-26",
+  "plant-vs-animal-protein-cost-per-dollar": "2026-11-26",
+  "us-regional-grocery-protein-prices-october-2026": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([

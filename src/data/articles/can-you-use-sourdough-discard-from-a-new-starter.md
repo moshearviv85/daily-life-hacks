@@ -77,4 +77,4 @@ So the decision is the overlap, not the fight. Mold, pink, orange, or a rotten s
 
 ## Your first discard recipe once the starter is ready
 
-When the rise is reliable, the first cooks are the small ones. Half a cup, about 113 grams, is one skillet flatbread. A full cup, about 227 grams, is pancakes, crackers, or the thin pizza crust. Those are the [beginner discard recipes](/easy-sourdough-discard-recipes-beginners/), and they assume 100% hydration discard from the established jar. Weigh it. Then cook it through.
+When the rise is reliable, the first cooks are the small ones. Half a cup, about 113 grams, is one skillet flatbread. A full cup, about 227 grams, is pancakes, crackers, or the thin pizza crust. Those are the [beginner discard recipes](/easy-sourdough-discard-recipes-beginners/), and they assume 100% hydration discard from the established jar. Once that jar is real, the milk and eggs in those recipes follow October's regional prices, not one US average. That chart is [US regional grocery protein prices](/us-regional-grocery-protein-prices-october-2026/). Weigh it. Then cook it through.

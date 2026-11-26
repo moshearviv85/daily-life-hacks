@@ -135,6 +135,8 @@ Cool 10 minutes in the pan, then a rack. Slice it warm, not steaming. A hot crum
 
 The number is the raw ingredient weights divided by 10. Discard counts as half flour, because 100% hydration is half flour and half water, and the water has no calories. Flour is [FDC 168894](https://fdc.nal.usda.gov/food-details/168894/nutrients). Butter is [FDC 173430](https://fdc.nal.usda.gov/food-details/173430/nutrients). Whole milk is [FDC 171265](https://fdc.nal.usda.gov/food-details/171265/nutrients). One slice is about 202 calories, 5.2 grams of protein, 1.1 grams of fiber, and 408 milligrams of sodium. The nutrition box under the recipe lists every row.
 
+Five grams in the slice isn't the protein decision. Eggs, milk, and beans don't cost the same per usable gram, and that comparison is [plant versus animal protein per dollar](/plant-vs-animal-protein-cost-per-dollar/).
+
 A smear of butter after slicing, oil on the pan, and whatever you put between two slices aren't in that total. The batter should look thick. Wet-looking batter is how this loaf bakes.
 
 ## After it cools
