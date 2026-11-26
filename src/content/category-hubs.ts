@@ -4,7 +4,7 @@
  * Each indexable article belongs to exactly one category hub (the A-Z list).
  * A slug may also appear in one topic section, and only one. Start-here is
  * slugs[0]. Sections stay at 4-8 links so the rendered hub, including the
- * header and footer, stays at or under 126 anchors.
+ * header and footer, stays at or under 124 anchors.
  *
  * Do not add a slug that is noindexed, pruned, or a 301/410 source.
  * PR #250's extra prune and 301 slugs are omitted from these sections even
@@ -64,10 +64,9 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "beans",
         title: "Beans, dried and canned",
         intro:
-          "Dried beans and canned beans stop being the same food once you read protein per 100 grams. Start there, then the dried bean that wins on protein, the split-pea dollar math, and the rice-and-beans plate people actually cook. Chicken and tofu sit in the same per-serving table so the bean number has something next to it.",
+          "Dried beans and canned beans stop being the same food once you read protein per 100 grams. Start there, then the split-pea dollar math and the rice-and-beans plate people actually cook. Chicken and tofu sit in the same per-serving table so the bean number has something next to it.",
         slugs: [
           "canned-beans-vs-dried-beans-nutrition",
-          "which-dried-beans-have-the-most-protein",
           "beans-double-win-fiber-protein",
           "can-you-eat-rice-and-beans-everyday",
           "protein-per-serving-beans-chicken-tofu-compared",
@@ -79,13 +78,12 @@ export const CATEGORY_HUBS: readonly CategoryHubDefinition[] = [
         id: "grocery-cost",
         title: "Protein and what it costs",
         intro:
-          "The first page ignores price on purpose and ranks protein in 100 grams. The dollar pages come next: quality-adjusted protein per dollar, a 50 gram day, eggs versus the rest of the cart, and animal protein. Lentils with wheat, and the selenium foods, use that same cart for a different question.",
+          "The first page ignores price on purpose and ranks protein in 100 grams. The dollar pages come next: quality-adjusted protein per dollar, a 50 gram day, and eggs versus the rest of the cart. Lentils with wheat, and the selenium foods, use that same cart for a different question.",
         slugs: [
           "foods-highest-in-protein-per-100-grams",
           "protein-per-dollar-adjusted-for-quality",
           "what-50-grams-of-protein-costs-per-day",
           "eggs-vs-everything-protein-value",
-          "animal-protein-per-dollar-ranked",
           "cheapest-complete-protein-pairs",
           "selenium-containing-foods-easy-ways",
         ],
