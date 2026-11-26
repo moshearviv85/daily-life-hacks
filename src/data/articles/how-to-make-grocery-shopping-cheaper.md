@@ -11,7 +11,8 @@ tags:
 image: /images/how-to-make-grocery-shopping-cheaper-main.jpg
 imageAlt: Shopper checking a grocery total on a phone while sitting in a cart aisle
 date: 2026-01-25
-dateModified: 2026-07-12
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -116,6 +117,25 @@ Dried beans, lentils, oats, rice, eggs, and canned tomatoes are the boring heroe
 
 Build dinners around those staples, then add the more expensive items as toppings or once-a-week treats. A pot of lentils with a little sausage goes further than a cart full of individually portioned "healthy" snacks that disappear by Wednesday.
 
+## Which grocery-aisle swaps save the most money per gram of protein and fiber?
+
+[USDA FoodData Central](https://fdc.nal.usda.gov/food-details/172420/nutrients) puts dry brown lentils at 77.7 grams of protein per dollar and 80/20 ground beef at 11.3. Bone-in drumsticks return 50.3 against 24.6 for boneless chicken breast. Dry pearled barley returns 57.1 grams of fiber per dollar, quinoa 10.6, frozen peas 17.6, and fresh blueberries 2.5.
+
+Table: July 2026 aisle swaps for protein and fiber grams per dollar
+
+| Aisle swap | Cheaper pick | g/$ | Record | Spendier pick | g/$ | Record | Nutrient |
+| --- | --- | ---: | --- | --- | ---: | --- | --- |
+| Dry beans vs ground beef | Brown lentils, dry | 77.7 | [172420](https://fdc.nal.usda.gov/food-details/172420/nutrients) | Ground beef, 80/20 | 11.3 | [174036](https://fdc.nal.usda.gov/food-details/174036/nutrients) | Protein |
+| Chicken case | Bone-in drumsticks | 50.3 | [172373](https://fdc.nal.usda.gov/food-details/172373/nutrients) | Boneless chicken breast | 24.6 | [171077](https://fdc.nal.usda.gov/food-details/171077/nutrients) | Protein |
+| Grain shelf | Pearled barley, dry | 57.1 | [170284](https://fdc.nal.usda.gov/food-details/170284/nutrients) | Quinoa, dry | 10.6 | [168874](https://fdc.nal.usda.gov/food-details/168874/nutrients) | Fiber |
+| Freezer vs berry case | Frozen green peas | 17.6 | [170016](https://fdc.nal.usda.gov/food-details/170016/nutrients) | Fresh blueberries | 2.5 | [171711](https://fdc.nal.usda.gov/food-details/171711/nutrients) | Fiber |
+| Beans vs breakfast meat | Pinto beans, dry | 57.6 | [175199](https://fdc.nal.usda.gov/food-details/175199/nutrients) | Bacon | 9.4 | [168277](https://fdc.nal.usda.gov/food-details/168277/nutrients) | Protein |
+| Oats vs fresh berries | Rolled oats | 35.8 | [173904](https://fdc.nal.usda.gov/food-details/173904/nutrients) | Strawberries | 2.7 | [167762](https://fdc.nal.usda.gov/food-details/167762/nutrients) | Fiber |
+
+The first four rows are the rude ones. Lentils against ground beef, drumsticks against boneless breast, barley against quinoa, frozen peas against blueberries. Two more from the same July 2026 files belong on that list: dry pintos at 57.6 grams of protein per dollar against bacon at 9.4, and rolled oats at 35.8 grams of fiber per dollar against strawberries at 2.7. Protein figures are in protein-per-dollar-2026. Fiber figures are in fiber-per-dollar-2026. Drumsticks already drop the bone. That 50.3 uses a 0.67 edible fraction, about a third refuse for bone and cartilage, so you're comparing meat with meat ([FDC 172373](https://fdc.nal.usda.gov/food-details/172373/nutrients)).
+
+Buy the boring bag first. Then decide if the blueberries are for eating, not for winning a fiber contest. The protein side of this table is the same sheet as the [July 2026 protein per dollar study](/protein-per-dollar-adjusted-for-quality/).
+
 ## Meat without the wallet drama
 
 Meat is often the line item that blows the total. You don't have to go vegetarian to fix that. You just have to stop treating every dinner like a steakhouse plate.
@@ -159,3 +179,5 @@ You don't need a color-coded binder. You need a repeatable loop:
 That rhythm is how people who aren't naturally organized still spend less. And if your grocery total went up once you started cooking more, that isn't automatically a failure; the takeout and delivery money simply moved onto the grocery line, so compare total food spending before you panic. The goal isn't perfect optimization. It's fewer impulse buys, less waste, and a cart built around food you'll actually cook.
 
 Learning how to make grocery shopping cheaper is mostly a defensive mindset plus better defaults. Stick to your list, skip the marketing traps, buy the cheap nutrition first, and never, ever go shopping when you're hungry.
+
+<!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

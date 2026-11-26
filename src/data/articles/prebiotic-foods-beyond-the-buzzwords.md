@@ -127,3 +127,5 @@ That doesn't make the soda evil. If it's replacing a regular soda, fine. Just do
 * **Snack:** Apple slices, a firm banana, or hummus with vegetables.
 
 Buy onions, oats, apples, and a couple cans of beans. That grocery bag does more for your week than another promise from the wellness aisle.
+
+That bag is also a money question. Oats, beans, and the rest of a low-cost week are priced, staple by staple, in [USDA Thrifty Food Plan staple prices for 2026](/usda-thrifty-food-plan-weekly-cost/).

@@ -70,3 +70,5 @@ Coffee can suppress your appetite temporarily, masking how hungry you actually a
 You don't need to overhaul your entire morning routine today. Start by taking whatever you currently eat and just adding one thing. 
 
 If you always eat a piece of fruit, add a handful of cashews. If you always eat plain cereal, switch to milk with more protein. Building a balanced breakfast that actually holds you over is just about making small tweaks that make your food work for you, instead of against you. And if you want a full menu to steal from, these [best breakfast foods for sustained energy](/best-breakfast-foods-for-sustained-energy/) all run on the same formula.
+
+The oats, eggs, and yogurt on that plate are also a receipt. Shop the swaps in [aisle swaps that cut the grocery total](/how-to-make-grocery-shopping-cheaper/) before you pay extra for the same breakfast.

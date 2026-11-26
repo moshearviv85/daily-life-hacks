@@ -100,3 +100,5 @@ Cool them all the way. Then a tin or a jar. [FoodKeeper](https://www.foodsafety.
 A bendy center means more oven, not a different recipe. Spread the done edges off the sheet and put the middle back in. Next time, roll more evenly.
 
 Use discard from a starter that already rises after feeding. Don't bake a jar with mold, pink or orange streaks, or a rotten smell, and don't taste the raw dough. If the cup in the fridge is headed for dinner instead of a snack, the [baking-powder pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/) uses this same 227 gram scoop. The rest of the no-yeast list, with the grams and the clock, is the [sourdough discard recipes with no added yeast](/sourdough-discard-recipes-no-yeast/).
+
+Flour and butter are the whole bill on this batch. Buy them like staples. The store habits are in [the cheaper way to buy the same pantry](/how-to-make-grocery-shopping-cheaper/).

@@ -99,6 +99,8 @@ I love the idea of risotto, but I don't love the reality of standing over the st
 
 For the bigger pantry plan, this [budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) maps out how barley, beans, oats, and other inexpensive staples can share the weekly workload.
 
+Barley is one of those cheap grains. The weekly government benchmark, with the October shelf prices beside it, is [what those thrifty staples cost in a USDA week](/usda-thrifty-food-plan-weekly-cost/).
+
 You get the cozy, savory bowl of comfort food, but you only actively cook for about ten minutes. The pot does the rest of the work.
 
 ## Why mushrooms and barley make sense together

@@ -6,7 +6,8 @@ tags: ["USDA Thrifty Food Plan", "weekly grocery budget", "family food cost", "f
 image: "/images/usda-thrifty-food-plan-weekly-cost-main.jpg"
 imageAlt: "Playful editorial illustration of a family grocery table divided into seven affordable meal days"
 date: 2026-07-14
-dateModified: 2026-07-17
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -78,6 +79,25 @@ It agrees with the boring aisle, and I mean that as a compliment. Our [protein-p
 
 Our eat-healthy-on-a-budget playbook lands there too: buy an inexpensive base, cook leftovers, and spend more where you care. You need dependable meals, not an optimization model beside the freezer case or an armful of unplanned extras.
 
+## How do USDA FNS Thrifty Food Plan staples compare to 2026 BLS average grocery prices?
+
+The [USDA FNS Thrifty Food Plan](https://www.fns.usda.gov/cnpp/thrifty-food-plan-2021) prices a whole week, not one staple. [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/171287/nutrients) grams against October 2026 BLS averages put large eggs at $2.32 a dozen and boneless chicken breast at $4.10 a pound. Dry pinto beans still beat 80/20 ground beef at $6.76 a pound.
+
+Table: October 2026 BLS staple prices next to USDA FoodData Central protein and fiber
+
+| Staple | Price | Protein / 100 g | Protein g/$ | Fiber / 100 g | Fiber g/$ | USDA record |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| Dry pinto beans | $6.75 / 4 lb, July 2026 | 21.42 g | 57.6 | 15.5 g | 41.7 | [175199](https://fdc.nal.usda.gov/food-details/175199/nutrients) |
+| Rolled oats | $3.36 / 42 oz, July 2026 | 13.15 g | 46.6 | 10.1 g | 35.8 | [173904](https://fdc.nal.usda.gov/food-details/173904/nutrients) |
+| Large Grade A eggs | $2.32 / doz, Oct 2026 | 12.56 g | 32.48 | 0 g | 0 | [171287](https://fdc.nal.usda.gov/food-details/171287/nutrients) |
+| Whole milk | $4.10 / gal, Oct 2026 | 3.15 g | 29.99 | 0 g | 0 | [171265](https://fdc.nal.usda.gov/food-details/171265/nutrients) |
+| Boneless chicken breast | $4.10 / lb, Oct 2026 | 22.5 g | 24.90 | 0 g | 0 | [171077](https://fdc.nal.usda.gov/food-details/171077/nutrients) |
+| Ground beef, 80/20 | $6.76 / lb, Oct 2026 | 17.17 g | 11.53 | 0 g | 0 | [174036](https://fdc.nal.usda.gov/food-details/174036/nutrients) |
+
+Eggs, milk, boneless chicken breast, and 80/20 ground beef are the October 2026 U.S. city average in bls-nutrition-per-dollar-latest, rounded to the cent from $2.320, $4.101, $4.099, and $6.755. Protein grams per dollar use those unrounded prices, so whole milk is 29.99 and chicken breast is 24.90 ([FDC 171077](https://fdc.nal.usda.gov/food-details/171077/nutrients)). Dry pinto beans and rolled oats aren't in that October file. Their prices are the July 2026 rows in protein-per-dollar-2026 and fiber-per-dollar-2026: pintos at $6.75 for 4 pounds, oats at $3.36 for a 42 ounce canister. The same foods show up as plated costs in protein-day-cost-2026 and fiber-day-cost-2026. A rock-bottom day prices 90 grams of dry pintos at $0.20 for 19.3 grams of protein, and 60 grams of rolled oats at $0.17 for 6.1 grams of fiber.
+
+Nobody is meal-prepping a government PDF. You're in the aisle, deciding whether the chicken case is worth it this week. The $235 week above is still the household ruler. This table is the shelf under it.
+
 ## Where does the model miss real grocery life?
 
 First, the plan isn't a contest to see how long you can live beside a bulk sack of dried beans. USDA includes variety and convenience. Its 2021 basket assumed nearly all beans, peas, and lentils were canned. Our rankings favor dried legumes because they cost less per gram.
@@ -96,4 +116,4 @@ Then look at the gap. Spending more might reflect local prices, convenience, or 
 
 That's what the USDA number is good for. It gives you a credible place to start asking why your total is different. It doesn't get to stand at the checkout and judge the fancy mustard.
 
-<!-- sources: USDA Food and Nutrition Service, "Official USDA Thrifty Food Plan: U.S. Average, May 2026," issued June 2026, https://www.fns.usda.gov/sites/default/files/resource-files/cnpp-costfood-tfp-may2026.pdf; USDA Food and Nutrition Service, "Thrifty Food Plan, 2021," FNS-916, Table 1 and pp. 34-39, https://www.fns.usda.gov/sites/default/files/resource-files/TFP2021.pdf; derived arithmetic: $235/7=$33.57 family-day, $235/28=$8.39 person-day, $235/84=$2.80 person-meal. -->
+<!-- sources: USDA Food and Nutrition Service, "Official USDA Thrifty Food Plan: U.S. Average, May 2026," issued June 2026, https://www.fns.usda.gov/sites/default/files/resource-files/cnpp-costfood-tfp-may2026.pdf; USDA Food and Nutrition Service, "Thrifty Food Plan, 2021," FNS-916, Table 1 and pp. 34-39, https://www.fns.usda.gov/sites/default/files/resource-files/TFP2021.pdf; derived arithmetic: $235/7=$33.57 family-day, $235/28=$8.39 person-day, $235/84=$2.80 person-meal. numbers-source: public/data/bls-nutrition-per-dollar-latest.csv, public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv, public/data/fiber-day-cost-2026.csv -->
