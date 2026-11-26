@@ -1,0 +1,476 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { AUTHOR_ID, AUTHOR_NAME, AUTHOR_URL } from "../../../content/author";
+
+const pageUrl = "https://www.daily-life-hacks.com/tools/protein-swap-cost-calculator/";
+const chartSrc = "/images/protein-swap-cost-calculator-chart.jpg";
+const title = "Protein Swap Cost Calculator: Chicken, Tofu, Beef, and Beans";
+const description =
+  "Compare chicken, tofu, ground beef, and beans for 25 to 150 g of protein. Raw cost, DIAAS-adjusted cost, weight, and fiber.";
+
+type Spec = {
+  food: string;
+  label: string;
+  raw: string;
+  proteinPer100: string;
+  edibleFraction: string;
+  score: string | null;
+  capped: string | null;
+  adjusted: string | null;
+  fiberPerDollar: string | null;
+  cookedPer100: number | null;
+  lists: Array<"meat" | "plant">;
+};
+
+const SPECS: Spec[] = [
+  { food: "Brown lentils (dry)", label: "Brown lentils", raw: "77.7", proteinPer100: "24.63", edibleFraction: "1.0", score: "0.63", capped: "0.63", adjusted: "49.0", fiberPerDollar: "33.7", cookedPer100: null, lists: ["plant"] },
+  { food: "Pinto beans (dry)", label: "Pinto beans", raw: "57.6", proteinPer100: "21.42", edibleFraction: "1.0", score: "0.59", capped: "0.59", adjusted: "34.0", fiberPerDollar: "41.7", cookedPer100: 9.01, lists: ["plant"] },
+  { food: "Chicken drumsticks (bone-in)", label: "Chicken drumsticks", raw: "50.3", proteinPer100: "18.08", edibleFraction: "0.67", score: "1.08", capped: "1.00", adjusted: "50.3", fiberPerDollar: "0", cookedPer100: null, lists: ["meat"] },
+  { food: "Eggs (large)", label: "Eggs", raw: "34.4", proteinPer100: "12.56", edibleFraction: "1.0", score: "1.13", capped: "1.00", adjusted: "34.4", fiberPerDollar: "0", cookedPer100: null, lists: [] },
+  { food: "Chicken thighs (boneless, skinless)", label: "Chicken thighs", raw: "27.7", proteinPer100: "19.66", edibleFraction: "1.0", score: "1.08", capped: "1.00", adjusted: "27.7", fiberPerDollar: "0", cookedPer100: null, lists: ["meat"] },
+  { food: "Pork shoulder butt roast (boneless)", label: "Pork shoulder", raw: "25.2", proteinPer100: "17.42", edibleFraction: "1.0", score: null, capped: null, adjusted: null, fiberPerDollar: "0", cookedPer100: null, lists: ["meat"] },
+  { food: "Chicken breast (boneless, skinless)", label: "Chicken breast", raw: "24.6", proteinPer100: "22.5", edibleFraction: "1.0", score: "1.08", capped: "1.00", adjusted: "24.6", fiberPerDollar: "0", cookedPer100: 31, lists: ["meat"] },
+  { food: "TVP (textured vegetable protein)", label: "TVP", raw: "23.4", proteinPer100: "52.17", edibleFraction: "1.0", score: "0.90", capped: "0.90", adjusted: "21.1", fiberPerDollar: null, cookedPer100: null, lists: ["plant"] },
+  { food: "Canned tuna (chunk light, in water)", label: "Canned tuna", raw: "22.4", proteinPer100: "19.44", edibleFraction: "1.0", score: "1.00", capped: "1.00", adjusted: "22.4", fiberPerDollar: "0", cookedPer100: null, lists: [] },
+  { food: "Tofu (extra firm)", label: "Extra-firm tofu", raw: "13.6", proteinPer100: "9.98", edibleFraction: "1.0", score: "0.90", capped: "0.90", adjusted: "12.2", fiberPerDollar: null, cookedPer100: null, lists: ["plant"] },
+  { food: "Ground beef (80/20)", label: "Ground beef 80/20", raw: "11.3", proteinPer100: "17.17", edibleFraction: "1.0", score: "1.11", capped: "1.00", adjusted: "11.3", fiberPerDollar: "0", cookedPer100: null, lists: ["meat"] },
+];
+
+function parseCsv(path: string) {
+  const text = readFileSync(join(process.cwd(), path), "utf8");
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines[0].split(",").map((header) => header.trim());
+  return lines.slice(1).map((line) => {
+    const cells: string[] = [];
+    let field = "";
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (inQuotes) {
+        if (c === '"' && line[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else if (c === '"') inQuotes = false;
+        else field += c;
+      } else if (c === '"') inQuotes = true;
+      else if (c === ",") {
+        cells.push(field);
+        field = "";
+      } else field += c;
+    }
+    cells.push(field);
+    const row: Record<string, string> = {};
+    headers.forEach((header, index) => {
+      row[header] = (cells[index] ?? "").trim();
+    });
+    return row;
+  });
+}
+
+function must(row: Record<string, string> | undefined, food: string, file: string) {
+  if (!row) throw new Error(`protein swap: ${food} missing from ${file}`);
+  return row;
+}
+
+const protein = new Map(parseCsv("public/data/protein-per-dollar-2026.csv").map((row) => [row.food, row]));
+const quality = new Map(parseCsv("public/data/protein-quality-per-dollar-2026.csv").map((row) => [row.food, row]));
+const meat = new Map(parseCsv("public/data/meat-per-dollar-protein-ranked-2026.csv").map((row) => [row.food, row]));
+const plant = new Map(parseCsv("public/data/plant-protein-per-dollar-ranked-2026.csv").map((row) => [row.food, row]));
+const fiber = new Map(parseCsv("public/data/beans-double-win-fiber-protein-2026.csv").map((row) => [row.food, row]));
+
+const foods = SPECS.map((spec) => {
+  const proteinRow = must(protein.get(spec.food), spec.food, "protein-per-dollar-2026.csv");
+  if (proteinRow.protein_g_per_dollar !== spec.raw || proteinRow.protein_g_per_100g !== spec.proteinPer100 || proteinRow.edible_fraction !== spec.edibleFraction) {
+    throw new Error(`protein swap: ${spec.food} protein row drifted`);
+  }
+  if (spec.lists.includes("meat") && must(meat.get(spec.food), spec.food, "meat-per-dollar-protein-ranked-2026.csv").value !== spec.raw) {
+    throw new Error(`protein swap: ${spec.food} meat rate drifted`);
+  }
+  if (spec.lists.includes("plant") && must(plant.get(spec.food), spec.food, "plant-protein-per-dollar-ranked-2026.csv").value !== spec.raw) {
+    throw new Error(`protein swap: ${spec.food} plant rate drifted`);
+  }
+  const qualityRow = quality.get(spec.food);
+  if (spec.adjusted === null) {
+    if (qualityRow) throw new Error(`protein swap: ${spec.food} unexpectedly has a DIAAS row`);
+  } else {
+    const row = must(qualityRow, spec.food, "protein-quality-per-dollar-2026.csv");
+    if (row.protein_g_per_dollar !== spec.raw || row.diaas_score !== spec.score || row.diaas_capped_for_multiplication !== spec.capped || row.adjusted_g_per_dollar !== spec.adjusted) {
+      throw new Error(`protein swap: ${spec.food} DIAAS row drifted`);
+    }
+  }
+  if (spec.fiberPerDollar && spec.fiberPerDollar !== "0") {
+    const fiberRow = must(fiber.get(spec.food), spec.food, "beans-double-win-fiber-protein-2026.csv");
+    if (fiberRow.fiber_g_per_dollar !== spec.fiberPerDollar || fiberRow.protein_g_per_dollar !== spec.raw) {
+      throw new Error(`protein swap: ${spec.food} fiber rate drifted`);
+    }
+  }
+  return {
+    food: spec.food,
+    label: spec.label,
+    raw: Number(spec.raw),
+    proteinPer100: Number(spec.proteinPer100),
+    edibleFraction: Number(spec.edibleFraction),
+    score: spec.score,
+    capped: spec.capped,
+    adjusted: spec.adjusted === null ? null : Number(spec.adjusted),
+    fiberPerDollar: spec.fiberPerDollar === null ? null : Number(spec.fiberPerDollar),
+    cookedPer100: spec.cookedPer100,
+  };
+});
+
+function money(value: number) {
+  return `$${value.toFixed(2)}`;
+}
+function oneDecimal(value: number) {
+  return value.toFixed(1);
+}
+function cost(grams: number, rate: number) {
+  return money(grams / rate);
+}
+function pricedGrams(target: number, proteinPer100: number) {
+  return oneDecimal((target * 100) / proteinPer100);
+}
+function fiberGrams(target: number, raw: number, fiberPerDollar: number | null) {
+  if (fiberPerDollar === null) return "Not scored";
+  return `${oneDecimal((target / raw) * fiberPerDollar)} g`;
+}
+
+const breast = foods.find((food) => food.food === "Chicken breast (boneless, skinless)");
+const tofu = foods.find((food) => food.food === "Tofu (extra firm)");
+const lentils = foods.find((food) => food.food === "Brown lentils (dry)");
+const pintos = foods.find((food) => food.food === "Pinto beans (dry)");
+const beef = foods.find((food) => food.food === "Ground beef (80/20)");
+if (!breast || !tofu || !lentils || !pintos || !beef || breast.cookedPer100 === null || pintos.cookedPer100 === null || tofu.adjusted === null) {
+  throw new Error("protein swap: default foods missing");
+}
+
+const chartAlt =
+  "Horizontal bar chart of the dollar cost of 100 grams of protein for lentils, beans, chicken, eggs, pork, tuna, tofu, TVP, and ground beef, raw versus DIAAS-adjusted. Not a photograph.";
+
+const clientJson = JSON.stringify({
+  foods: foods.map((food) => ({
+    food: food.food,
+    label: food.label,
+    raw: food.raw,
+    adjusted: food.adjusted,
+    proteinPer100: food.proteinPer100,
+    edibleFraction: food.edibleFraction,
+    fiberPerDollar: food.fiberPerDollar,
+    cookedPer100: food.cookedPer100,
+  })),
+}).replace(/</g, "\\u003c");
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": `${pageUrl}#webapp`,
+    name: "Protein Swap Cost Calculator",
+    url: pageUrl,
+    description,
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    applicationCategory: "LifestyleApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    author: { "@type": "Person", "@id": AUTHOR_ID, name: AUTHOR_NAME, url: AUTHOR_URL },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+      { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+      { "@type": "ListItem", position: 3, name: "Protein Swap Cost Calculator", item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={chartSrc}
+  canonicalURL={pageUrl}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+  jsonLd={schemas}
+>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Protein swap cost calculator</span>
+    </nav>
+
+    <div class="max-w-4xl mb-8">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Same grams. Different receipt.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Chicken, Tofu, Beef, or Beans: What the Swap Costs</h1>
+      <p class="text-sm mb-4" style="color:var(--muted-color);">
+        By <a href="/author/david-miller/" class="font-bold underline" style="color:#F29B30;">{AUTHOR_NAME}</a>
+      </p>
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        Extra-firm tofu is {cost(25, tofu.raw)} for 25 grams of protein. Boneless chicken breast is {cost(25, breast.raw)} for the same 25 grams. That's {tofu.raw.toFixed(1)} grams per dollar against {breast.raw.toFixed(1)}. I keep wanting the block to win this. It doesn't.
+      </p>
+      <p class="text-lg leading-relaxed mt-4" style="color:var(--text-color);">
+        Pick two foods and a target from 25 to 150 grams. You get the dollar cost, the DIAAS-adjusted cost, the weight of the form we priced, and the fiber that comes along. The image under this paragraph is a chart, not a photograph.
+      </p>
+    </div>
+
+    <figure class="mb-10">
+      <img
+        src={chartSrc}
+        width="1200"
+        height="675"
+        alt={chartAlt}
+        class="w-full h-auto rounded-2xl"
+        style="border:1px solid var(--border-color);"
+      />
+      <figcaption class="mt-3 text-sm" style="color:var(--muted-color);">
+        Chart, not a photograph. Orange is the raw cost of 100 g of protein. Slate is the cost after the DIAAS cap. Pork shoulder has no slate bar because it isn't on the quality sheet.
+      </figcaption>
+    </figure>
+
+    <section id="protein-swap-app" class="rounded-2xl p-5 md:p-7 mb-12" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <label class="tool-label">Protein A
+          <select id="swap-a" class="tool-input">
+            {foods.map((food) => (
+              <option value={food.food} selected={food.food === breast.food}>{food.label}</option>
+            ))}
+          </select>
+        </label>
+        <label class="tool-label">Protein B
+          <select id="swap-b" class="tool-input">
+            {foods.map((food) => (
+              <option value={food.food} selected={food.food === tofu.food}>{food.label}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div class="flex flex-wrap items-end gap-4 mb-4">
+        <label class="tool-label">
+          Protein target (grams)
+          <input id="swap-target" class="tool-input" type="number" min="25" max="150" step="1" value="100" inputmode="numeric" />
+        </label>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Protein target presets">
+          <button type="button" class="preset" data-target-preset="25">25 g</button>
+          <button type="button" class="preset" data-target-preset="50">50 g</button>
+          <button type="button" class="preset" data-target-preset="100">100 g</button>
+          <button type="button" class="preset" data-target-preset="150">150 g</button>
+        </div>
+      </div>
+      <p id="swap-status" class="text-sm mb-4" style="color:var(--muted-color);">100 g of protein from chicken breast and from extra-firm tofu.</p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:720px;border-collapse:collapse;">
+          <thead>
+            <tr style="background:var(--page-bg);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Compare</th>
+              <th scope="col" class="cell text-right" id="swap-head-a">{breast.label}</th>
+              <th scope="col" class="cell text-right" id="swap-head-b">{tofu.label}</th>
+            </tr>
+          </thead>
+          <tbody id="swap-live-body">
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <th scope="row" class="cell text-left">Raw cost</th>
+              <td class="cell text-right">{cost(100, breast.raw)}</td>
+              <td class="cell text-right">{cost(100, tofu.raw)}</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <th scope="row" class="cell text-left">DIAAS-adjusted cost</th>
+              <td class="cell text-right">{cost(100, breast.adjusted ?? breast.raw)}</td>
+              <td class="cell text-right">{cost(100, tofu.adjusted)}</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <th scope="row" class="cell text-left">Priced-form weight</th>
+              <td class="cell text-right">{pricedGrams(100, breast.proteinPer100)} g raw</td>
+              <td class="cell text-right">{pricedGrams(100, tofu.proteinPer100)} g block</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-color);">
+              <th scope="row" class="cell text-left">Cooked weight</th>
+              <td class="cell text-right">{pricedGrams(100, breast.cookedPer100)} g cooked breast</td>
+              <td class="cell text-right">Priced form</td>
+            </tr>
+            <tr>
+              <th scope="row" class="cell text-left">Fiber with that protein</th>
+              <td class="cell text-right">{fiberGrams(100, breast.raw, breast.fiberPerDollar)}</td>
+              <td class="cell text-right">{fiberGrams(100, tofu.raw, tofu.fiberPerDollar)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs" style="color:var(--muted-color);">
+        The two foods and the gram target stay in this browser tab. The page records that the tool was used, not the names you picked. Cost is the target divided by grams per dollar.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">100 grams of protein, before you move the target</h2>
+      <p class="mb-6 max-w-4xl" style="color:var(--text-color);">
+        Brown lentils are {cost(100, lentils.raw)} raw and {cost(100, lentils.adjusted ?? lentils.raw)} after a score of {lentils.score}. Ground beef stays {cost(100, beef.raw)} either way, because {beef.score} gets capped at {beef.capped}. Pinto beans drop from {cost(100, pintos.raw)} to {cost(100, pintos.adjusted ?? pintos.raw)}. A higher score here isn't a health claim. It's a published multiplier, and this page stops it at 1.00.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:980px;border-collapse:collapse;">
+          <thead>
+            <tr style="background:var(--page-bg);color:var(--heading-color);">
+              <th scope="col" class="cell text-left">Food</th>
+              <th scope="col" class="cell text-right">Raw g/$</th>
+              <th scope="col" class="cell text-right">Score used</th>
+              <th scope="col" class="cell text-right">$ for 100 g raw</th>
+              <th scope="col" class="cell text-right">$ for 100 g DIAAS</th>
+              <th scope="col" class="cell text-right">Priced weight</th>
+              <th scope="col" class="cell text-right">Cooked weight</th>
+              <th scope="col" class="cell text-right">Fiber</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foods.map((food) => (
+              <tr style="border-bottom:1px solid var(--border-color);">
+                <th scope="row" class="cell text-left">{food.label}</th>
+                <td class="cell text-right">{food.raw.toFixed(1)}</td>
+                <td class="cell text-right">{food.capped ?? "No row"}</td>
+                <td class="cell text-right">{cost(100, food.raw)}</td>
+                <td class="cell text-right">{food.adjusted === null ? "No row" : cost(100, food.adjusted)}</td>
+                <td class="cell text-right">{pricedGrams(100, food.proteinPer100)} g</td>
+                <td class="cell text-right">{food.cookedPer100 === null ? "Priced form" : `${pricedGrams(100, food.cookedPer100)} g`}</td>
+                <td class="cell text-right">{fiberGrams(100, food.raw, food.fiberPerDollar)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 max-w-4xl text-sm" style="color:var(--muted-color);">
+        Chicken breast cooked weight uses 31.0 g of protein per 100 g roasted, the cooked record next to the raw 22.5 g the price uses. Pinto cooked weight uses 9.01 g per 100 g boiled. Dry lentils stay dry here: a cooked cup is about 18 g of protein, and this table doesn't pretend a dry gram is a cooked one. Drumsticks at 100 g of protein are {pricedGrams(100, foods[2].proteinPer100)} g of raw meat, or {oneDecimal((100 * 100) / foods[2].proteinPer100 / foods[2].edibleFraction)} g once the 33% bone refuse is put back on the scale.
+      </p>
+    </section>
+
+    <article class="prose-like max-w-4xl">
+      <h2>Where the swap rates come from</h2>
+      <p>
+        Raw grams per dollar and protein per 100 g are the matching rows in protein-per-dollar-2026.csv. Meat cuts are the same rates in meat-per-dollar-protein-ranked-2026.csv. Lentils, pintos, TVP, and extra-firm tofu are the same rates in plant-protein-per-dollar-ranked-2026.csv. DIAAS scores are protein-quality-per-dollar-2026.csv. Those names are citations, not download buttons. Pork shoulder is 25.2 g per dollar in the meat file and it isn't on the quality sheet, so the adjusted cell stays blank. Chunk light tuna in water is 22.4 g per dollar here. The <a href="/methodology/">methodology</a> is where the edible-fraction rules live.
+      </p>
+      <p>
+        Fiber with the protein target is grams per dollar times the dollars you had to spend. Brown lentils are 33.7 g of fiber per dollar and pintos are 41.7, both from beans-double-win-fiber-protein-2026.csv. Meat, eggs, and tuna are 0 g in these records. Extra-firm tofu and TVP aren't in that fiber file, so they say "Not scored" instead of a guessed zero.
+      </p>
+      <p>
+        The serving sizes, including why raw chicken breast at 22.5 g per 100 g isn't the roasted 31.0, are <a href="/protein-per-serving-beans-chicken-tofu-compared/">protein per serving for beans, chicken, and tofu</a>. The plant-versus-animal cut of the same rates is <a href="/plant-vs-animal-protein-cost-per-dollar/">plant versus animal protein cost</a>. Tofu next to eggs and yogurt is <a href="/cheapest-dairy-and-soy-protein-per-dollar/">the cheapest dairy and soy protein</a>. The full capped ranking is <a href="/protein-per-dollar-adjusted-for-quality/">protein per dollar adjusted for quality</a>.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>Does tofu or chicken cost more per gram of protein?</summary><p>Extra-firm tofu costs more. At the July 2026 rates, 25 grams of protein is {cost(25, tofu.raw)} from tofu and {cost(25, breast.raw)} from boneless chicken breast. Per dollar that's {tofu.raw.toFixed(1)} grams against {breast.raw.toFixed(1)}. After the DIAAS cap, tofu's 0.90 score makes the gap wider and chicken stays put because 1.08 is capped at 1.00.</p></details>
+        <details><summary>What is the price comparison between chicken and tofu?</summary><p>Chicken breast is {breast.raw.toFixed(1)} g of protein per dollar and extra-firm tofu is {tofu.raw.toFixed(1)}. For 100 grams of protein the receipts are {cost(100, breast.raw)} and {cost(100, tofu.raw)} before the score, then {cost(100, breast.adjusted ?? breast.raw)} and {cost(100, tofu.adjusted)} after it. Drumsticks are the cheap chicken cut, at {foods[2].raw.toFixed(1)} g per dollar once the bone is removed from the edible weight.</p></details>
+        <details><summary>How do pinto beans compare with ground beef on protein per dollar?</summary><p>Dry pintos are {pintos.raw.toFixed(1)} g per dollar raw and {pintos.adjusted?.toFixed(1)} after a DIAAS of {pintos.score}. Ground beef, 80/20, stays at {beef.raw.toFixed(1)} because a score of {beef.score} is capped at 1.00. One hundred grams of protein is {cost(100, pintos.raw)} of pintos before the score and {cost(100, beef.raw)} of beef. The beans also bring fiber. The beef doesn't.</p></details>
+        <details><summary>Why isn't canned tuna 25 grams of protein per dollar?</summary><p>The priced can in protein-per-dollar-2026.csv is chunk light in water at {foods[8].raw.toFixed(1)} g per dollar, drained solids, FDC 173709. This calculator uses that row. A different can, or a solid-white price, would move the rate. The page doesn't invent a 25.1 figure the file doesn't have.</p></details>
+        <details><summary>Does the calculator save the foods I pick?</summary><p>No. Protein A, protein B, and the gram target stay in this browser tab. The site can see that the tool was used. It doesn't receive the foods or the number you typed.</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:700;color:var(--text-color)}
+    .tool-input{width:100%;max-width:20rem;border-radius:.75rem;padding:.65rem .75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}
+    .tool-input:focus{box-shadow:0 0 0 2px #F29B30}
+    .preset{border-radius:999px;padding:.55rem .85rem;font-size:.875rem;font-weight:800;background:var(--page-bg);color:var(--heading-color);border:1px solid var(--border-color)}
+    .preset[aria-pressed="true"]{background:#F29B30;color:white;border-color:#F29B30}
+    .cell{padding:.65rem}
+    .prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:800;margin:2.25rem 0 .7rem;color:var(--heading-color)}
+    .prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}
+    .prose-like a{color:#F29B30;text-decoration:underline;font-weight:700}
+    .faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}
+    .faq-list summary{cursor:pointer;font-weight:800;padding:1rem 0;color:var(--heading-color)}
+    .faq-list p{margin:0 0 1rem}
+  </style>
+
+  <script id="protein-swap-data" type="application/json" set:html={clientJson}></script>
+  <script is:inline>
+    (function(){
+      function money(value){return '$'+(isFinite(value)?value:0).toFixed(2)}
+      function one(value){return (isFinite(value)?value:0).toFixed(1)}
+      function esc(value){return String(value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+      function boot(){
+        var root=document.getElementById('protein-swap-app');
+        var dataNode=document.getElementById('protein-swap-data');
+        if(!root||!dataNode||root.dataset.booted)return;
+        root.dataset.booted='1';
+        var foods=JSON.parse(dataNode.textContent);
+        var selectA=root.querySelector('#swap-a');
+        var selectB=root.querySelector('#swap-b');
+        var input=root.querySelector('#swap-target');
+        var status=root.querySelector('#swap-status');
+        var body=root.querySelector('#swap-live-body');
+        var headA=root.querySelector('#swap-head-a');
+        var headB=root.querySelector('#swap-head-b');
+        function byName(name){
+          for(var i=0;i<foods.length;i++) if(foods[i].food===name) return foods[i];
+          return foods[0];
+        }
+        function weight(food, target){
+          var priced=(target*100)/food.proteinPer100;
+          var note=one(priced)+' g';
+          if(food.edibleFraction<1) note=one(priced)+' g meat ('+one(priced/food.edibleFraction)+' g with bone)';
+          return note;
+        }
+        function cooked(food, target){
+          if(!food.cookedPer100) return 'Priced form';
+          return one((target*100)/food.cookedPer100)+' g';
+        }
+        function fiber(food, target){
+          if(food.fiberPerDollar===null) return 'Not scored';
+          return one((target/food.raw)*food.fiberPerDollar)+' g';
+        }
+        function adjustedCost(food, target){
+          if(food.adjusted===null) return 'No DIAAS row';
+          return money(target/food.adjusted);
+        }
+        function render(){
+          var a=byName(selectA.value);
+          var b=byName(selectB.value);
+          var typed=parseFloat(input.value);
+          var presets=root.querySelectorAll('[data-target-preset]');
+          if(!isFinite(typed)){
+            status.textContent='Enter a target from 25 to 150 grams.';
+            presets.forEach(function(button){button.setAttribute('aria-pressed','false')});
+            return;
+          }
+          var target=Math.min(150,Math.max(25,typed));
+          if(typed<25||typed>150) status.textContent='Targets on this tool run from 25 to 150 grams. Showing '+target+' g.';
+          else status.textContent=target+' g of protein from '+a.label+' and from '+b.label+'.';
+          presets.forEach(function(button){button.setAttribute('aria-pressed',String(Number(button.getAttribute('data-target-preset'))===target))});
+          headA.textContent=a.label;
+          headB.textContent=b.label;
+          var rows=[
+            ['Raw cost', money(target/a.raw), money(target/b.raw)],
+            ['DIAAS-adjusted cost', adjustedCost(a, target), adjustedCost(b, target)],
+            ['Priced-form weight', weight(a, target), weight(b, target)],
+            ['Cooked weight', cooked(a, target), cooked(b, target)],
+            ['Fiber with that protein', fiber(a, target), fiber(b, target)]
+          ];
+          body.innerHTML=rows.map(function(row){
+            return '<tr style="border-bottom:1px solid var(--border-color);"><th scope="row" class="cell text-left">'+esc(row[0])+'</th><td class="cell text-right">'+esc(row[1])+'</td><td class="cell text-right">'+esc(row[2])+'</td></tr>';
+          }).join('');
+        }
+        root.addEventListener('input',render);
+        root.addEventListener('change',render);
+        root.querySelectorAll('[data-target-preset]').forEach(function(button){
+          button.addEventListener('click',function(){
+            input.value=button.getAttribute('data-target-preset');
+            render();
+          });
+        });
+        render();
+      }
+      boot();
+      document.addEventListener('astro:page-load', boot);
+    })();
+  </script>
+</BaseLayout>
