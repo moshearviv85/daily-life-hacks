@@ -28,6 +28,7 @@ const BEFORE_DATE_RESTORE = "84702a37";
  * the yogurt fiber answer added the same day.
  */
 const LATER_UPDATES = {
+  "animal-protein-per-dollar-ranked": "2026-11-25",
   "baking-sheet-liners-parchment-silicone-when-to-use": "2026-11-25",
   "best-breakfast-foods-for-sustained-energy": "2026-11-25",
   "best-high-protein-breads-healthy-sandwiches": "2026-11-25",
@@ -37,6 +38,7 @@ const LATER_UPDATES = {
   "cooking-oils-smoke-points-best-uses": "2026-11-25",
   "cucumber-edamame-salad-sesame": "2026-11-25",
   "easy-one-pot-chicken-and-rice-dinner": "2026-11-25",
+  "fast-food-meals-with-protein-and-fiber": "2026-11-25",
   "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
   "can-you-eat-rice-and-beans-everyday": "2026-11-25",
   "high-fiber-burrito-bowl-meal-prep": "2026-11-25",

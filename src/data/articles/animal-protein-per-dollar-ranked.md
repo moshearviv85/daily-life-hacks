@@ -8,7 +8,8 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/animal-protein-per-dollar-ranked-main.jpg"
 imageAlt: "A table spread with roasted drumsticks, brown eggs, a glass of milk, canned sardines, and cheese"
 date: 2026-07-13
-dateModified: 2026-09-24
+dateModified: 2026-11-25
+substantiveUpdate: 2026-11-25
 author: "David Miller"
 faq:
   - question: "What is the cheapest animal protein?"
@@ -53,6 +54,26 @@ Source: [USDA FoodData Central](https://fdc.nal.usda.gov/) + single-store prices
 ![Bar chart ranking 21 animal proteins by protein per dollar](/images/animal-protein-per-dollar-ranked-chart.jpg)
 
 Below the table: canned tuna at 22.4, canned pink salmon at 21.6, frozen tilapia at 20.9, sardines at 20.2, cheddar at 18.1, ground turkey at 15.6, ground beef at 11.3 (80/20) and 11.2 (93/7), and bacon dead last at 9.4 ([FDC 168277](https://fdc.nal.usda.gov/food-details/168277/nutrients), [FDC 174036](https://fdc.nal.usda.gov/food-details/174036/nutrients), [FDC 173414](https://fdc.nal.usda.gov/food-details/173414/nutrients), [FDC 173709](https://fdc.nal.usda.gov/food-details/173709/nutrients)).
+
+## How much does a 30-gram serving of animal protein cost across chicken, eggs, dairy, fish, and beef?
+
+At the July 2026 prices in public/data/animal-protein-per-dollar-ranked-2026.csv, 30 grams of protein costs about $0.60 from bone-in chicken drumsticks (50.3 grams per dollar) and about $0.87 from large eggs (34.4). Part-skim mozzarella is about $1.00, whole milk about $1.05, chicken breast about $1.22, canned tuna about $1.34, and 80/20 ground beef about $2.65.
+
+That $0.60 isn't one drumstick posing on a plate. It's the edible meat, bone already subtracted, that adds up to 30 grams of protein. Divide 30 by the grams-per-dollar figure and round to the nearest cent. Drumsticks are 30 divided by 50.3, which is $0.60. Ground beef is 30 divided by 11.3, which is $2.65. Same portion. Different mood in the checkout line.
+
+Table: Cost of 30 grams of protein from seven animal foods at July 2026 prices
+
+| Food | FDC | Protein per $1 | Cost of 30 g protein |
+|---|---|---:|---:|
+| Chicken drumsticks (bone-in) | [172373](https://fdc.nal.usda.gov/food-details/172373/nutrients) | 50.3 g | $0.60 |
+| Eggs (large) | [171287](https://fdc.nal.usda.gov/food-details/171287/nutrients) | 34.4 g | $0.87 |
+| Mozzarella (low-moisture part-skim) | [171244](https://fdc.nal.usda.gov/food-details/171244/nutrients) | 30.1 g | $1.00 |
+| Whole milk | [171265](https://fdc.nal.usda.gov/food-details/171265/nutrients) | 28.5 g | $1.05 |
+| Chicken breast (boneless, skinless) | [171077](https://fdc.nal.usda.gov/food-details/171077/nutrients) | 24.6 g | $1.22 |
+| Chunk light tuna, canned in water | [173709](https://fdc.nal.usda.gov/food-details/173709/nutrients) | 22.4 g | $1.34 |
+| Ground beef (80/20) | [174036](https://fdc.nal.usda.gov/food-details/174036/nutrients) | 11.3 g | $2.65 |
+
+You can still want the burger. Just don't tell yourself it's the cheap 30 grams. The breast in a hot skillet is a different cut and a different bill, and [how to cook chicken breast](/best-way-to-cook-chicken/) doesn't change the $1.22.
 
 ## Do eggs and dairy really beat most meat?
 
