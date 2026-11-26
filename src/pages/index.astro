@@ -104,6 +104,34 @@ const selectedTips = shuffle(tipsArticles).slice(0, 4);
 const moreToRead = shuffle([...selectedNutrition, ...selectedRecipes, ...selectedTips]);
 
 const badgeColor = (cat: string) => '#F29B30';
+
+// PR-150: homepage launchpad into the newest chart studies. A sibling PR can
+// land later, so a slug is linked only when its article file is on disk,
+// released, and still indexable. Missing files render nothing and cannot 404.
+const LATEST_2026_STUDY_SLUGS = [
+  'high-protein-breakfast-without-eggs',
+  'fast-food-meals-with-protein-and-fiber',
+  'low-sodium-high-protein-foods-per-dollar',
+  'cheapest-high-fiber-fruits-and-vegetables',
+  'cost-of-50g-protein-and-30g-fiber-per-day',
+  'protein-per-dollar-2017-to-2026-bls-trends',
+  'plant-vs-animal-protein-cost-per-dollar',
+  'us-regional-grocery-protein-prices-october-2026',
+] as const;
+
+const latestStudyCards = LATEST_2026_STUDY_SLUGS.flatMap((slug) => {
+  const onDisk = existsSync(join(process.cwd(), 'src/data/articles', `${slug}.md`));
+  const article = onDisk ? allArticles.find((entry: Article) => entry.id === slug) : undefined;
+  if (!article || isIndexPruned(article.id) || !isReleased(article)) return [];
+  const image = hasShippedImage(article.data.image) ? article.data.image : '';
+  return [{
+    href: `/${slug}/`,
+    title: article.data.title,
+    excerpt: article.data.excerpt,
+    image,
+    imageAlt: article.data.imageAlt,
+  }];
+});
 ---
 
 <BaseLayout
@@ -230,6 +258,47 @@ const badgeColor = (cat: string) => '#F29B30';
         </p>
       </div>
     </section>
+
+    {latestStudyCards.length > 0 && (
+      <section class="w-full max-w-6xl mx-auto px-4 pt-2 pb-8">
+        <h2 class="text-2xl md:text-3xl font-extrabold leading-tight mb-3" style="color: var(--heading-color);">
+          Latest 2026 Grocery & Nutrition Studies
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-5" style="color: var(--text-color);">
+          The long rankings are already up top. These are the newer 2026 studies: one chart, one grocery question, and a price you can check.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {latestStudyCards.map((study) => (
+            <a
+              href={study.href}
+              class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
+              style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+            >
+              {study.image && (
+                <div class="overflow-hidden relative aspect-video shrink-0">
+                  <OptImage
+                    src={study.image}
+                    alt={study.imageAlt}
+                    width={640}
+                    height={360}
+                    sizes="(max-width: 768px) 100vw, 560px"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    data-pin-nopin="true"
+                  />
+                </div>
+              )}
+              <div class="p-4 flex-1 flex flex-col gap-1.5">
+                <span class="self-start px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none" style="background-color: #F29B30;">Data Study</span>
+                <h3 class="font-bold text-lg leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">{study.title}</h3>
+                <p class="text-sm leading-snug" style="color: var(--muted-color);">{study.excerpt}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     <!-- Mobile-only Category Quick Nav (Sticky-like) -->
     <nav class="lg:hidden flex justify-center gap-3 py-4 px-4 sticky top-[60px] z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-orange-100 dark:border-orange-900/20 mb-2 overflow-x-auto whitespace-nowrap">
