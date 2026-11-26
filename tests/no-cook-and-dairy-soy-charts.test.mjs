@@ -177,8 +177,8 @@ test("both chart-hero pages cite the CSVs in plain text and skip FAQPage", () =>
     assert.equal(field(markdown, "date"), DAY, page.slug);
     assert.equal(field(markdown, "dateModified"), DAY, page.slug);
     assert.equal(field(markdown, "substantiveUpdate"), DAY, page.slug);
-    // Tips, not nutrition: /nutrition/ is already at the 120-anchor hub cap,
-    // and the required contextual link uses the last slot.
+    // Tips, not nutrition: the nutrition hub is at the 124-anchor cap once
+    // this page's contextual link is added, so these charts stay on /tips/.
     assert.equal(field(markdown, "category"), "tips", page.slug);
     assert.equal(field(markdown, "image"), `/images/${page.chart}`, page.slug);
     assert.match(field(markdown, "imageAlt"), /chart/i, page.slug);
