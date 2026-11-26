@@ -42,7 +42,7 @@ const LATER_UPDATES = {
   "cucumber-edamame-salad-sesame": "2026-11-26",
   "easy-one-pot-chicken-and-rice-dinner": "2026-11-26",
   "fast-food-meals-with-protein-and-fiber": "2026-11-25",
-  "gluten-free-sourdough-discard-pizza-dough": "2026-11-25",
+  "gluten-free-sourdough-discard-pizza-dough": "2026-11-26",
   "can-you-eat-rice-and-beans-everyday": "2026-11-25",
   "high-fiber-burrito-bowl-meal-prep": "2026-11-25",
   "high-fiber-grocery-list-30-grams": "2026-11-25",
@@ -86,6 +86,7 @@ const LATER_UPDATES = {
   "usda-thrifty-food-plan-weekly-cost": "2026-11-26",
   "plant-vs-animal-protein-cost-per-dollar": "2026-11-26",
   "us-regional-grocery-protein-prices-october-2026": "2026-11-26",
+  "cheapest-whole-grains-for-fiber-per-dollar": "2026-11-26",
 };
 
 const SUBSTANTIVE_SLUGS = new Set([

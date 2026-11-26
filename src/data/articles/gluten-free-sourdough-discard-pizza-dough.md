@@ -12,8 +12,8 @@ tags:
 image: "/images/gluten-free-sourdough-discard-pizza-dough-main.jpg"
 imageAlt: A slice of gluten-free sourdough pizza with tomato sauce, mozzarella, and basil is being lifted from the whole pizza.
 date: 2026-04-28
-dateModified: 2026-11-25
-substantiveUpdate: 2026-11-25
+dateModified: 2026-11-26
+substantiveUpdate: 2026-11-26
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -81,6 +81,29 @@ Table: Par-bake, then topping bake, for this gluten-free discard crust.
 | With toppings | 7 to 10 minutes | Until the edges are golden brown. |
 
 That's the clock already in the recipe steps. A thicker crust can take the extra two minutes on the par-bake, and you still don't walk away.
+
+## Is sourdough discard pizza dough safe for celiac diets, and which gluten-free flour and binder ratio crisps best?
+
+Only if that starter was fed gluten-free flour, never wheat. [FDA 21 CFR 101.91](https://www.ecfr.gov/current/title-21/section-101.91) requires under 20 ppm gluten, and wheat flour in the jar is a gluten-containing grain. Psyllium husk on brown rice and tapioca takes more water and a longer par-bake than xanthan gum. The gram table uses USDA FoodData Central [169640](https://fdc.nal.usda.gov/food-details/169640/nutrients), [169655](https://fdc.nal.usda.gov/food-details/169655/nutrients), [169714](https://fdc.nal.usda.gov/food-details/169714/nutrients), and [175043](https://fdc.nal.usda.gov/food-details/175043/nutrients).
+
+A wheat-fed starter and a starter fed only gluten-free flour aren't the same jar. The rule names wheat, rye, and barley as gluten-containing grains, and it says a fermented food has to already qualify before fermentation. Sourdough is fermented. One wheat feeding fails that test before the dough hits the stone. A shared scoop from the wheat bin is the same mistake. Feed the jar on gluten-free flours only.
+
+I don't toss this dough. I press it. The binder is why the slice either bends or snaps.
+
+The blend I weigh when the bag doesn't decide for me is 120 grams of brown rice flour and 80 grams of tapioca starch. That's 200 grams. Hydration is the water divided by those 200 grams, and oil stays out of the percent. 220 divided by 200 is 110%. The 2 gram xanthan line is the teaspoon already in the gram table, [FDC 2396335](https://fdc.nal.usda.gov/food-details/2396335/nutrients). The 5-minute par-bake is the clock in the steps. Wetter doughs take the extra minute or two this page already allows before the sauce goes on.
+
+Table: Brown rice, tapioca, and the binder that decides the crisp.
+
+| Blend | Binder | Water | Hydration | Par-bake | Crispness |
+|---|---|---:|---:|---|---|
+| Brown rice 120 g + tapioca 80 g | Psyllium husk, 10 g | 220 g | 110% | 7 minutes | Bends. The edge browns. The center doesn't snap. |
+| Brown rice 120 g + tapioca 80 g | Psyllium husk, 10 g | 160 g | 80% | 6 minutes | Sets, then eats like a cracker if you wanted a fold. |
+| Brown rice 120 g + tapioca 80 g | Xanthan gum, 2 g ([FDC 2396335](https://fdc.nal.usda.gov/food-details/2396335/nutrients)) | 150 g | 75% | 5 minutes | Crisper. A hard fold can split the slice. |
+| Brown rice 120 g + tapioca 80 g | Xanthan gum, 2 g ([FDC 2396335](https://fdc.nal.usda.gov/food-details/2396335/nutrients)) | 190 g | 95% | 6 minutes | Holds, then stays pale and soft in the middle. |
+
+If the bagged blend already contains xanthan, skip the extra 2 grams. The gram table already says that. The 200 gram discard in the bowl is separate. If that jar is the 100 percent hydration the [sourdough discard calculator](/tools/sourdough-discard-calculator/) assumes, half of those grams are already water. This table is the flour on top of the jar, not a second accounting of it.
+
+That's the crisp. Wheat in the starter, and you don't have a gluten-free crust. Psyllium and more water, and the slice bends. Xanthan and a shorter par-bake, and it snaps if you fold it like a New York slice.
 
 ## Why use discard in gluten free pizza?
 
